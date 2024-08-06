@@ -1,6 +1,7 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json"
+    "/content/world-bank/global/:/",
+    "/content/world-bank/global/en/:/",
+    "/content/world-bank/configuration:/.helix/config.json"
   ]
 }
