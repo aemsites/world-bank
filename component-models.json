@@ -185,5 +185,63 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "data-cards",
+    "fields": [
+     {
+        "component": "select",
+        "name": "tag",
+        "value": "",
+        "label": "Tag",
+        "valueType": "string",
+        "options": [
+            {
+            "name": "prosperity",
+            "value": "Prosperity"
+            },
+            {
+            "name": "people",
+            "value": "People"
+            },
+            {
+            "name": "planet",
+            "value": "Planet"
+            },
+            {
+            "name": "infrastructure",
+            "value": "Infrastructure"
+            },
+            {
+            "name": "digital",
+            "value": "Digital"
+            }
+        ]
+     },
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+     },
+     {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "validation": {
+        "maxSize": 1000
+      }
+     },
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "disclaimer",
+        "value": "",
+        "label": "Disclaimer Text"
+     }
+    ]
   }
 ]
