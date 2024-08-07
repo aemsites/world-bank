@@ -27,6 +27,7 @@
       "title",
       "hero",
       "cards",
+      "curated-card",
       "columns"
     ]
   },
