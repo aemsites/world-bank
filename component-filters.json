@@ -27,8 +27,14 @@
       "title",
       "hero",
       "cards",
-      "curated-card",
+      "curated-cards",
       "columns"
+    ]
+  },
+  {
+    "id": "curated-cards",
+    "components": [
+      "curated-card"
     ]
   },
   {
