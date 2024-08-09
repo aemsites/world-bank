@@ -192,28 +192,32 @@
       {
         "component": "text",
         "valueType": "string",
+        "name": "Search Text",
+        "value": "",
+        "label": "Search Text"
+     },
+      {
+        "component": "text",
+        "valueType": "string",
         "name": "logoAlt",
         "value": "",
-        "label": "Logo Image alt text",
-        "description": "A descriptive text of the logo image."
+        "label": "Logo Image alt text"
+       
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "hamburgerAlt",
         "value": "",
-        "label": "Hamburger icon alt text",
-        "description": "A descriptive text of the hamburger icon."
+        "label": "Hamburger icon alt text"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "searchAlt",
         "value": "",
-        "label": "search icon alt text",
-        "description": "A descriptive text of the searc icon."
+        "label": "Search icon alt text"
       }
-      
     ]
   }
 ]
