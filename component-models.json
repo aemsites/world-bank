@@ -185,5 +185,89 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "curated-card",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Background Color",
+        "description": "Background Color for card",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "primary",
+            "value": "blue"
+          },
+          {
+            "name": "secondary",
+            "value": "white"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "aem-tag",
+        "name": "tags",
+        "label": "Tags for Card",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/world-bank",
+        "description": "Tags for the curated card"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "description": "Sets the title of the Card"
+      },
+      {
+        "component": "date-time",
+        "valueType": "date",
+        "name": "date",
+        "label": "Date",
+        "description": "Stores date of the event",
+        "placeholder": "YYYY-MM-DD"
+      },
+      {
+        "component": "date-time",
+        "valueType": "time",
+        "name": "time",
+        "label": "Time",
+        "description": "Stores the time of Event",
+        "placeholder": "HH:mm:ss"
+      },
+      {
+        "component": "text",
+        "name": "location",
+        "value": "",
+        "label": "Location",
+        "valueType": "string",
+        "description": "Stores Location of the event"
+      },
+      {
+        "component": "text",
+        "name": "link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string"
+      }
+    ]
   }
 ]
