@@ -185,5 +185,35 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "global-header",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "logoAlt",
+        "value": "",
+        "label": "Logo Image alt text",
+        "description": "A descriptive text of the logo image."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "hamburgerAlt",
+        "value": "",
+        "label": "Hamburger icon alt text",
+        "description": "A descriptive text of the hamburger icon."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "searchAlt",
+        "value": "",
+        "label": "search icon alt text",
+        "description": "A descriptive text of the searc icon."
+      }
+      
+    ]
   }
 ]
