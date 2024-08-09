@@ -185,5 +185,39 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "global-header",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "Search Text",
+        "value": "",
+        "label": "Search Text"
+     },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "logoAlt",
+        "value": "",
+        "label": "Logo Image alt text"
+       
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "hamburgerAlt",
+        "value": "",
+        "label": "Hamburger icon alt text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "searchAlt",
+        "value": "",
+        "label": "Search icon alt text"
+      }
+    ]
   }
 ]
