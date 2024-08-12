@@ -190,33 +190,12 @@
     "id": "data-cards",
     "fields": [
      {
-        "component": "select",
-        "name": "tag",
-        "value": "",
-        "label": "Tag",
+        "component": "aem-tag",
+        "name": "tags",
+        "label": "Tags for Card",
         "valueType": "string",
-        "options": [
-            {
-            "name": "prosperity",
-            "value": "Prosperity"
-            },
-            {
-            "name": "people",
-            "value": "People"
-            },
-            {
-            "name": "planet",
-            "value": "Planet"
-            },
-            {
-            "name": "infrastructure",
-            "value": "Infrastructure"
-            },
-            {
-            "name": "digital",
-            "value": "Digital"
-            }
-        ]
+        "rootPath": "/content/cq:tags/world-bank",
+        "description": "Tags for data card"
      },
      {
         "component": "text",
