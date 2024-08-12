@@ -20,25 +20,43 @@
   --text-color: black;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback;
+  --body-font-family: 'Open Sans', roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 16px;
+  --body-font-size-xl: 24px;
+  --body-font-size-l: 20px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
+  --body-font-size-citation: 12px;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
-  --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  /* eyebrow styles */
+  --eyebrow-font-size-l: 16px;
+  --eyebrow-font-size-m: 14px;
+  --eyebrow-font-size-s: 12px;
 
-  /* nav height */
+  /* heading sizes - as per interactive strategies */
+  --h1-font-size-xxxl: 60px;
+  --h1-font-size-xxl: 48px;
+  --h1-font-size-xl: 40px;
+  --h1-font-size-l: 36px;
+  --h1-font-size-m: 28px;
+  --h1-font-size-s: 24px;
+  --h1-font-size-xs: 20px;
+  --h1-font-size-xxs: 16px;
+
+  /* nav height TODO: Update this */
   --nav-height: 64px;
+
+  /* shadows & elevations */
+  --section-shadow: 0 2px 4px rgba(0 0 0 10%);
+  --cards-shadow: 0 2px 6px rgba(0 0 0 8%);
+  --modals-shadow: 0 4px 12px rgba(0 0 0 32%);
+  --dropdown-shadow: 0 4px 12px rgba(0 0 0 32%);
+  --map-elements-shadow: 0 2px 4px rgba(0 0 0 32%);
+  --dashboard-cards-shadow: 5px 5px 12px rgba(0 0 0 25%);
 }
 
 @font-face {

@@ -28,7 +28,8 @@
       "hero",
       "cards",
       "columns",
-      "global-header"
+      "global-header",
+      "data-cards"
     ]
   },
   {
