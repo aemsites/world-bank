@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p63946-e1325077.adobeaemcloud.com/bin/franklin.delivery/samriddhi-1998/world-bank/main"
+    url: "https://author-p63946-e1325077.adobeaemcloud.com/bin/franklin.delivery/samriddhi-1998/samriddhi-world-bank/main"
     type: "markup"
     suffix: ".html"
