@@ -51,12 +51,12 @@
   --nav-height: 64px;
 
   /* shadows & elevations */
-  --section-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --cards-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  --modals-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
-  --dropdown-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
-  --map-elements-shadow: 0 2px 4px rgba(0, 0, 0, 0.32);
-  --dashboard-cards-shadow: 5px 5px 12px rgba(0, 0, 0, 0.25);
+  --section-shadow: 0 2px 4px rgba(0 0 0 10%);
+  --cards-shadow: 0 2px 6px rgba(0 0 0 8%);
+  --modals-shadow: 0 4px 12px rgba(0 0 0 32%);
+  --dropdown-shadow: 0 4px 12px rgba(0 0 0 32%);
+  --map-elements-shadow: 0 2px 4px rgba(0 0 0 32%);
+  --dashboard-cards-shadow: 5px 5px 12px rgba(0 0 0 25%);
 }
 
 @font-face {
