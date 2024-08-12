@@ -150,6 +150,21 @@
               }
             }
           }
+        },
+        {
+          "title": "Data Card",
+          "id": "data-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Data Card",
+                  "model": "data-card"
+                }
+              }
+            }
+          }
         }
       ]
     }

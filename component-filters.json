@@ -36,5 +36,11 @@
     "components": [
       "card"
     ]
+  },
+  {
+    "id": "data-cards",
+    "components": [
+      "data-card"
+    ]
   }
 ]
