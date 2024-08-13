@@ -24,11 +24,11 @@
       "text",
       "image",
       "button",
+      "data-cards",
       "title",
       "hero",
       "cards",
-      "columns",
-      "data-cards"
+      "columns"
     ]
   },
   {
