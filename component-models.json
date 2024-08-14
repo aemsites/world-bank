@@ -240,14 +240,14 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "Search Text",
+        "name": "search",
         "value": "",
         "label": "Search Text"
      },
       {
         "component": "text",
         "valueType": "string",
-        "name": "logoAlt",
+        "name": "logoAltTxt",
         "value": "",
         "label": "Logo Image alt text"
        
@@ -255,7 +255,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "hamburgerAlt",
+        "name": "hamburgerAltTxt",
         "value": "",
         "label": "Hamburger icon alt text"
       },
