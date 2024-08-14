@@ -45,6 +45,4 @@ export default function decorate(block) {
   // Replace the existing hero block with the new hero container
   block.innerHTML = '';
   block.appendChild(heroContainer);
-
 }
-
