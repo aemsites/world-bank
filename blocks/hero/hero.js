@@ -24,7 +24,7 @@ export default function decorate(block) {
   // Create and set up the button div
   const heroButton = document.createElement('a');
   heroButton.href = linkElement.href;
-  heroButton.textContent = buttonElement.textContent; 
+  heroButton.textContent = buttonElement.textContent;
   heroButton.classList.add('hero-button');
   const buttonDiv = document.createElement('div');
   buttonDiv.appendChild(heroButton);
