@@ -1,4 +1,4 @@
-main .hero-container > div {
+main .hero-container>div {
   max-width: unset;
 }
 
@@ -32,3 +32,91 @@ main .hero-container {
   width: 100%;
   height: 100%;
 }
+
+.hero.block {
+  position: relative;
+}
+
+.hero .hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: absolute;
+  bottom: 40px;
+  width: 95%;
+}
+
+.hero .hero-content h1 {
+  margin: 0px;
+  font-size: var(--h1-font-size-xxl);
+  font-weight: 700;
+  line-height: 57.6px;
+  text-align: left;
+
+}
+
+.hero .hero-content p {
+  margin: 0px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  color: white;
+}
+
+.hero-wrapper a {
+  background: var(--background-color);
+  border-radius: 15px;
+  padding: 5px 15px;
+  color: #004370;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+@media (width <= 900px) {
+  .hero .hero-content {
+    display: grid;
+    gap: 20px;
+  }
+
+  .hero .hero-content h1 {
+    font-size: 36px;
+    line-height: 43.2px;
+  }
+  .hero .hero-content p {
+    font-size: 18px;
+    line-height: 25.2px;
+  }
+
+  .hero-wrapper a {
+    font-size: 14px;
+  }
+
+}
+
+@media (width <= 600px) {
+
+  .hero .hero-content h1 {
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+  .hero .hero-content p {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .hero-wrapper a {
+    font-size: 14px;
+  }
+
+}
+
+@media (width >900px) and (width <=1200px) { 
+  .hero .hero-content > div:first-child {
+    width: 700px;
+  }
+}
+
