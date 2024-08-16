@@ -247,9 +247,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "logo",
+        "name": "logo url",
         "value": "",
-        "label": "Logo Image alt text"
+        "label": "Logo url"
        
       },
       {
