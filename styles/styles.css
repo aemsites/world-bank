@@ -109,7 +109,10 @@ h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
+h1 {
+  color: blueviolet; 
+  font-size: var(--heading-font-size-xxl);
+}
 h2 { font-size: var(--heading-font-size-xl); }
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
