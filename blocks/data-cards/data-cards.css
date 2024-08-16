@@ -1,0 +1,58 @@
+.data-cards>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.data-cards>ul>li {
+
+    border-radius: 10px 0px 0px 0px;
+    border: 4px 0px 0px 0px;
+    opacity: 5px;
+    width: 402px;
+    height: 388px;
+    gap: 10px;
+    border: 4px solid #dadada;
+    padding: 40px 40px 40px 40px;
+    margin-top: 10px;
+}
+
+.data-cards .data-card .data-card-tag {
+
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 13.2px;
+    letter-spacing: 0.05em;
+    text-align: left;
+
+}
+
+.data-cards .data-card .data-card-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43.2px;
+    text-align: left;
+}
+
+.data-cards .data-card .data-card-description {
+
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+
+}
+
+.data-cards .data-card .data-card-disclaimer {
+
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 16.8px;
+    text-align: left;
+
+}
