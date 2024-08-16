@@ -240,7 +240,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "Search Text",
+        "name": "Search",
         "value": "",
         "label": "Search Text"
      },
