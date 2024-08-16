@@ -24,17 +24,23 @@
       "text",
       "image",
       "button",
+      "data-cards",
       "title",
       "hero",
       "cards",
-      "columns",
-      "data-cards"
+      "columns"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "data-cards",
+    "components": [
+      "data-card"
     ]
   }
 ]
