@@ -146,4 +146,88 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  fetchingAuthoredData(block)
 }
+let listOfAllAuthoredData = [];
+
+function fetchingAuthoredData(block) {
+    const authoredDiv=block.querySelector('.global-header-container .global-header-wrapper');
+    listOfAllAuthoredData = Array.from(authoredDiv.querySelectorAll('p')).map(p => p.textContent);
+    makeImageClickableNSettingAltText();
+    settingAltTextForSearchIcon();
+}
+
+function settingAltTextForSearchIcon(){
+  const searchImage = document.querySelector('.icon-search');
+  searchImage.addEventListener('click',()=>{
+    createSearchBox();
+  })
+  searchImage.setAttribute('title',listOfAllAuthoredData[3]&& listOfAllAuthoredData[3]?listOfAllAuthoredData[3]:'Alt text for search');
+}
+
+function makeImageClickableNSettingAltText(){
+  const logoImage = document.querySelector('.nav-brand img');
+  const anchor = document.createElement('a');
+  Object.assign(anchor, {
+    href: listOfAllAuthoredData[1],
+    title: logoImage.alt,
+  });
+  anchor.appendChild(document.querySelector('.nav-brand picture'));
+  document.querySelector('.nav-brand .default-content-wrapper').appendChild(anchor);
+}
+
+function createSearchBox() {
+  const navWrapper = document.querySelector('.nav-wrapper');
+  const navTools = document.querySelector('.nav-tools p');
+  let searchDiv = navWrapper.querySelector('.search-div');
+  let cancelDiv = navWrapper.querySelector('.cancel-div');
+  const searchImage = document.querySelector('.icon-search');
+
+  if (searchDiv) {
+    const isVisible = searchDiv.style.display !== 'none';
+    searchDiv.style.display = isVisible ? 'none' : 'flex';
+    if (cancelDiv) {
+      cancelDiv.style.display = isVisible ? 'none' : 'flex';
+    }
+    searchImage.style.display = isVisible ? 'block' : 'none';
+  } else {
+    cancelDiv= document.createElement('div');
+    cancelDiv.classList.add('cancel-div');
+
+
+    let cancelImg = document.createElement('img');
+    cancelImg.classList.add('cancel-image');
+    cancelImg.src='/icons/cancel.svg';
+    cancelImg.alt='cancel';
+    
+    cancelImg.style.display = 'flex'; // Initially visible
+    cancelImg.style.cursor = 'pointer';
+    cancelImg.addEventListener('click', () => {
+      searchDiv.style.display = 'none';
+      cancelDiv.style.display = 'none';
+      searchImage.style.display = 'block'; // Show search icon again
+    });
+    cancelDiv.appendChild(cancelImg);
+    
+    navTools.appendChild(cancelDiv);
+  
+    // Hide search icon
+    searchImage.style.display = 'none';
+
+
+    searchDiv = document.createElement('div');
+    searchDiv.classList.add('search-div');
+    const searchInputBox = document.createElement('input');
+    Object.assign(searchInputBox, {
+      type: 'text',
+      id: 'searchInput',
+      name:'myInput',
+      placeholder:'Enter text here',
+      value:listOfAllAuthoredData[0]
+    });
+    searchDiv.appendChild(searchInputBox);
+    navWrapper.appendChild(searchDiv);
+  }
+}
+
+
