@@ -18,6 +18,97 @@
   --light-color: #eee;
   --dark-color: #ccc;
   --text-color: black;
+  --color-white: #FFF;
+  --color-black: #000;
+  --transparent: rgb(255 255 255 / 0%);
+  --primary-blue-10: #F6FCFF;
+  --primary-blue-20: #E9F7FD;
+  --primary-blue-30: #CDE7F9;
+  --primary-blue-40: #A3DAFF;
+  --primary-blue-50: #169AF3;
+  --primary-blue-60: #0071BC;
+  --primary-blue-70: #00538A;
+  --primary-blue-80: #004370;
+  --primary-blue-90: #053657;
+  --primary-blue-100: #012740;
+  --primary-blue-101: #002035;
+  --primary-blue-102: #001C2D;
+
+  /* neutrals */
+  --neutrals-10: #F5F7F9;
+  --neutrals-20: #E7EDF3;
+  --neutrals-30: #DAE3EB;
+  --neutrals-40: #BDCCDB;
+  --neutrals-50: #8A9DB1;
+  --neutrals-60: #586E84;
+  --neutrals-70: #4B5E71;
+  --neutrals-80: #3D4C5C;
+  --neutrals-90: #252E37;
+  --neutrals-100: #181F25;
+  --neutrals-101: #181F25;
+  --neutrals-103: #D4DEE8;
+
+  /* neutrals - alpha */
+  --neutrals-a-10: rgb(0 57 107 / 3%);
+  --neutrals-a-20: rgb(0 57 107 / 5%);
+  --neutrals-a-30: rgb(0 57 107 / 8%);
+  --neutrals-a-40: rgb(0 57 107 / 16%);
+  --neutrals-a-50: rgb(0 57 107 / 24%);
+  --neutrals-a-60: rgb(0 41 77 / 42%);
+  --neutrals-a-70: rgb(0 13 26 / 57%);
+  --neutrals-a-80: rgb(0 13 26 / 65%);
+  --neutrals-a-90: rgb(0 13 26 / 70%);
+  --neutrals-a-100: rgb(0 13 26 / 96%);
+
+  /* Semantic/interactive */
+  --red-10: #FDF2F2;
+  --red-20: #F6BCBF;
+  --red-30: #EC747A;
+  --red-40: #E64750;
+  --red-50: #DA1E28;
+  --red-60: #C91C25;
+  --red-70: #9D161D;
+  --red-80: #861319;
+  --red-90: #550C10;
+  --green-10: #F6FEF0;
+  --green-20: #EDFEE2;
+  --green-30: #B8EC93;
+  --green-40: #56C606;
+  --green-50: #459E05;
+  --green-60: #388004;
+  --green-70: #234F03;
+  --green-80: #1E4602;
+  --green-90: #163102;
+  --yellow-10: #FFF7E6;
+  --yellow-20: #FEF3D7;
+  --yellow-30: #FFECC2;
+  --yellow-40: #FED881;
+  --yellow-50: #E19D00;
+  --yellow-60: #CA8D02;
+  --yellow-70: #B27C00;
+  --yellow-80: #896001;
+  --yellow-90: #473201;
+  --purple-10: #F1E1FF;
+  --purple-20: #E5C7FF;
+  --purple-30: #CD95FE;
+  --purple-40: #C17CFE;
+  --purple-50: #B25DFE;
+  --purple-60: #7702DF;
+  --purple-70: #5C01AC;
+  --purple-80: #410179;
+  --purple-90: #260147;
+
+  /* spacing (Padding & Margins) (Todo: open questions, values subject to change) */
+  --spacing-0: 0;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
 
   /* fonts */
   --body-font-family: 'Open Sans', roboto, roboto-fallback;
@@ -25,27 +116,27 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-xl: 24px;
-  --body-font-size-l: 20px;
+  --body-font-size-xl: 20px;
+  --body-font-size-l: 18px;
   --body-font-size-m: 16px;
   --body-font-size-s: 14px;
   --body-font-size-xs: 12px;
   --body-font-size-citation: 12px;
 
   /* eyebrow styles */
-  --eyebrow-font-size-l: 16px;
+  --eyebrow-font-size-l: 14px;
   --eyebrow-font-size-m: 14px;
   --eyebrow-font-size-s: 12px;
 
   /* heading sizes - as per interactive strategies */
-  --h1-font-size-xxxl: 60px;
-  --h1-font-size-xxl: 48px;
-  --h1-font-size-xl: 40px;
-  --h1-font-size-l: 36px;
-  --h1-font-size-m: 28px;
-  --h1-font-size-s: 24px;
-  --h1-font-size-xs: 20px;
-  --h1-font-size-xxs: 16px;
+  --h1-font-size-xxxl: 44px;
+  --h1-font-size-xxl: 36px;
+  --h1-font-size-xl: 32px;
+  --h1-font-size-l: 28px;
+  --h1-font-size-m: 24px;
+  --h1-font-size-s: 20px;
+  --h1-font-size-xs: 18px;
+  --h1-font-size-xxs: 14px;
 
   /* nav height TODO: Update this */
   --nav-height: 64px;
@@ -57,6 +148,30 @@
   --dropdown-shadow: 0 4px 12px rgba(0 0 0 32%);
   --map-elements-shadow: 0 2px 4px rgba(0 0 0 32%);
   --dashboard-cards-shadow: 5px 5px 12px rgba(0 0 0 25%);
+
+  @media (width >= 600px) {
+    --h1-font-size-xxxl: 60px;
+    --h1-font-size-xxl: 48px;
+    --h1-font-size-xl: 40px;
+    --h1-font-size-l: 36px;
+    --h1-font-size-m: 28px;
+    --h1-font-size-s: 24px;
+    --h1-font-size-xs: 20px;
+    --h1-font-size-xxs: 16px;
+
+    /* body styles */
+    --body-font-size-xl: 24px;
+    --body-font-size-l: 20px;
+    --body-font-size-m: 16px;
+    --body-font-size-s: 14px;
+    --body-font-size-xs: 12px;
+    --body-font-size-citation: 12px;
+    
+    /* eyebrow styles */
+    --eyebrow-font-size-l: 16px;
+    --eyebrow-font-size-m: 14px;
+    --eyebrow-font-size-s: 12px;
+  }
 }
 
 @font-face {
