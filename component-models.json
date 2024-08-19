@@ -167,18 +167,6 @@
       }
     ]
   },
-  {
-    "id": "who-we-are-section",
-    "fields": [
-      {
-        "component": "text",
-        "name": "style",
-        "value": "",
-        "label": "Style",
-        "valueType": "string"
-      }
-    ]
-  },
  
   {
     "id": "hero",

@@ -2,20 +2,7 @@
   {
     "id": "main",
     "components": [
-      "section", "who-we-are-section"
-    ]
-  },
-  {
-    "id": "main-who-we-are",
-    "components": ["section", "who-we-are-section"]
-  },
-  {
-    "id": "who-we-are-section",
-    "components": [
-      "text",
-      "image",
-      "title",
-      "columns"
+      "section"
     ]
   },
   {
