@@ -69,6 +69,23 @@
               }
             }
           }
+        },
+        {
+          "title": "Editable who we are Section",
+          "id": "who-we-are-section",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "filter": "who-we-are-section",
+                  "name": "Who We Are Section",
+                  "model": "who-we-are-section",
+                  "style": "who-we-are-section"
+                }
+              }
+            }
+          }
         }
       ]
     },

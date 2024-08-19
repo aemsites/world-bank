@@ -6,6 +6,10 @@
     ]
   },
   {
+    "id": "main-who-we-are",
+    "components": ["section", "who-we-are-section"]
+  },
+  {
     "id": "columns",
     "components": []
   },
