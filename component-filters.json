@@ -10,6 +10,15 @@
     "components": ["section", "who-we-are-section"]
   },
   {
+    "id": "who-we-are-section",
+    "components": [
+      "text",
+      "image",
+      "title",
+      "columns"
+    ]
+  },
+  {
     "id": "columns",
     "components": []
   },
