@@ -105,6 +105,14 @@
           {
             "name": "secondary",
             "value": "secondary"
+          },
+          {
+            "name": "ghost",
+            "value": "ghost"
+          },
+          {
+            "name": "text",
+            "value": "text"
           }
         ]
       }
@@ -271,6 +279,7 @@
         "name": "link",
         "value": "",
         "label": "Link",
+        "multi": true,
         "description": "What link to open when clicking the button."
       }
     ]
