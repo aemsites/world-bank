@@ -262,7 +262,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "searchAlt",
+        "name": "search-alt-text",
         "value": "",
         "label": "Search icon alt text"
       }
