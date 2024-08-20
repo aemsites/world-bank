@@ -240,10 +240,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "link",
+        "name": "jcr:title",
         "value": "",
-        "label": "Link",
-        "description": "What link to open when clicking the button."
+        "label": "Text"
       }
     ]
   }
