@@ -167,7 +167,6 @@
       }
     ]
   },
- 
   {
     "id": "hero",
     "fields": [
@@ -211,35 +210,35 @@
   {
     "id": "data-cards",
     "fields": [
-     {
+      {
         "component": "aem-tag",
         "name": "tags",
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank",
         "description": "Tags for data card"
-     },
-     {
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",
         "label": "Title"
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "description",
         "value": "",
         "label": "Description",
         "valueType": "string"
-     },
-     {
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "disclaimer",
         "value": "",
         "label": "Disclaimer Text"
-     }
+      }
     ]
   }
 ]
