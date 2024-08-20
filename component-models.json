@@ -233,5 +233,47 @@
         "label": "Disclaimer Text"
      }
     ]
+  },
+  {
+    "id": "feature-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "thumbnail",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "thumbnailAlt",
+        "value": "",
+        "label": "Image Description",
+        "description": "Alt text for the image"
+      },
+      {
+        "component": "richtext",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link",
+        "value": "",
+        "label": "Link",
+        "description": "What link to open when clicking the button."
+      }
+    ]
   }
 ]
