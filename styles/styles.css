@@ -358,17 +358,3 @@ main .section.highlight {
   background-color: var(--light-color);
 }
 
-main .section.sub-header-container h1 {
-  color: #012740;
-  font-family: Open sans;
-  font-weight: 700;
-  font-size: 28px;
-}
-main .section.sub-header-container > div > p{
-  color: #181F25;
-  font-family: Open Sans;
-  font-size: 24px;
-  font-weight: 400;
-  text-align: left;
-  margin-top: 0;
-}
