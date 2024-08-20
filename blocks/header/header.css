@@ -41,6 +41,7 @@ header nav[aria-expanded='true'] {
   header nav {
     display: flex;
     justify-content: space-between;
+    height: 120px;
 
   }
 
@@ -133,13 +134,6 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-/* @media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-} */
-
 /* brand */
 header .nav-brand {
   grid-area: brand;
@@ -205,7 +199,6 @@ header nav .nav-sections ul > li > ul > li {
     }
   }
     
-
   header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
   }
@@ -286,13 +279,14 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
-/* added by naina */
+
 .section.nav-sections .default-content-wrapper,.section.nav-tools .default-content-wrapper{
   display: flex;
   align-items: center;
   gap: 10px;
   justify-content: center;
 }
+
 .section.nav-sections .default-content-wrapper{
   gap:10px;
 }
@@ -301,57 +295,62 @@ header nav .nav-tools {
   gap:25px;
 }
 .section.nav-sections .default-content-wrapper h6{
-  margin: 0px;
+  margin: 0;
   font-size: var(--body-font-size-m);
-  padding:0px 14px 3px 0px;
-  border-right: 2px solid #169AF3;
+  padding:0 14px 3px 0;
+  border-right: 2px solid var(--primary-blue-50);
 }
 .section.nav-sections .default-content-wrapper p{
   font-size: var(--body-font-size-m);
   color: var(--color-004370);
   text-decoration: underline;
 }
+
 .section.nav-tools h6{
   font-size: var(--body-font-size-m);
   color: var(--color-004370);
-  margin: 0px;
+  margin: 0;
   font-weight: normal;
 }
+
 .global-header-wrapper{
   display: none;
 }
+
 #searchInput{
   width: 70%;
-    border: none;
-    border-bottom: 2px solid #004972;
-    background: #002337;
-    height: 40px;
-    font-size: 30px;
-    color: #fff;
-    font-weight: normal;
+  border: none;
+  border-bottom: 2px solid #004972;
+  background: #002337;
+  height: 40px;
+  font-size: 30px;
+  color: #fff;
+  font-weight: normal;
 }
+
 #searchInput:focus-visible{
 border: transparent;
 }
+
 .search-div{
   background-color: rgb(0, 35, 55);
-    height: 196px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 196px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .cancel-div{
-  background: #169AF3;
-    height: 44px;
-    display: flex;
-    width: 44px;
-    border-radius: 50px;
-    align-items: center;
-    justify-content: center;
+  background: var(--primary-blue-50);
+  height: 44px;
+  display: flex;
+  width: 44px;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
 }
 
 #searchInput::before{
   content:url('../../icons/search-white.png');
-  
 }
 
