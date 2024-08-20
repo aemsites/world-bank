@@ -274,13 +274,13 @@
         "valueType": "string"
       },
       {
-        "component": "text",
+        "component": "button",
         "valueType": "string",
-        "name": "link",
+        "name": "button",
         "value": "",
-        "label": "Link",
+        "label": "Button",
         "multi": true,
-        "description": "What link to open when clicking the button."
+        "description": "Button with link and text"
       }
     ]
   }
