@@ -29,7 +29,7 @@
       "cards",
       "columns",
       "data-cards",
-      "features-cards"
+      "feature-cards"
     ]
   },
   {
@@ -39,9 +39,9 @@
     ]
   },
   {
-    "id": "features-cards",
+    "id": "feature-cards",
     "components": [
-      "features-card"
+      "feature-card"
     ]
   }
 ]
