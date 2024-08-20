@@ -308,7 +308,7 @@ header nav .nav-tools {
   text-decoration: underline;
 }
 
-.section.nav-tools h6{
+.section.nav-tools .default-content-wrapper h6{
   font-size: var(--body-font-size-m);
   color: var(--color-004370);
   margin: 0;
@@ -335,7 +335,7 @@ border: transparent;
 }
 
 .search-div{
-  background-color: rgb(0, 35, 55);
+  background-color: #002337;
   height: 196px;
   display: flex;
   align-items: center;
@@ -352,7 +352,6 @@ border: transparent;
   justify-content: center;
 }
 
-#searchInput::before{
+#search-input::before{
   content:url('../../icons/search-white.png');
 }
-
