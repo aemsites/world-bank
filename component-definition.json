@@ -165,21 +165,6 @@
               }
             }
           }
-        },
-        {
-          "title": "Features Card",
-          "id": "features-card",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "features-card",
-                  "model": "features-card"
-                }
-              }
-            }
-          }
         }
       ]
     }

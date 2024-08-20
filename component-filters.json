@@ -37,11 +37,5 @@
     "components": [
       "card"
     ]
-  },
-  {
-    "id": "features-cards",
-    "components": [
-      "features-card"
-    ]
   }
 ]
