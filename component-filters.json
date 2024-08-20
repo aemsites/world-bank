@@ -43,5 +43,11 @@
     "components": [
       "feature-card"
     ]
+  },
+  {
+    "id": "feature-card",
+    "components": [
+      "button"
+    ]
   }
 ]
