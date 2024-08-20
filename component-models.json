@@ -233,5 +233,46 @@
         "label": "Disclaimer Text"
      }
     ]
+  },
+  {
+    "id": "explore-cards",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Section Title"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "container",
+        "label": "Cards",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": true,
+        "multi": true,
+        "fields": [
+          {
+            "component": "text-input",
+            "label": "Simple Text 1",
+            "name": "text",
+            "valueType": "string"
+          },
+          {
+            "component": "text-input",
+            "label": "Simple Text 2",
+            "name": "text2",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
   }
 ]
