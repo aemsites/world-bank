@@ -233,17 +233,5 @@
         "label": "Disclaimer Text"
      }
     ]
-  },
-  {
-    "id": "feature-card",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "jcr:title",
-        "value": "",
-        "label": "Text"
-      }
-    ]
   }
 ]

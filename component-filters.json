@@ -28,20 +28,13 @@
       "hero",
       "cards",
       "columns",
-      "data-cards",
-      "feature-cards"
+      "data-cards"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
-    ]
-  },
-  {
-    "id": "feature-cards",
-    "components": [
-      "feature-card"
     ]
   }
 ]
