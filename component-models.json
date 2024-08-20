@@ -258,29 +258,6 @@
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank",
         "description": "Tags for the curated card"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Title",
-        "description": "Sets the title of the Card"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "description",
-        "value": "",
-        "label": "Description",
-        "description": "Sets the description of the Card"
-      },
-      {
-        "component": "text",
-        "name": "link",
-        "value": "",
-        "label": "Link",
-        "valueType": "string"
       }
     ]
   }
