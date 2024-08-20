@@ -250,7 +250,7 @@
         "name": "thumbnailAlt",
         "value": "",
         "label": "Image Description",
-        "description": "Alt text for the image"
+        "description": "Alt text for the thumbnail image"
       },
       {
         "component": "richtext",
