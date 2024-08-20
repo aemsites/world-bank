@@ -142,7 +142,7 @@ function createSearchBox() {
     const searchInputBox = document.createElement('input');
     Object.assign(searchInputBox, {
       type: 'text',
-      id: 'searchInput',
+      id: 'search-input',
       name: 'myInput',
       placeholder: 'Enter text here',
       value: listOfAllAuthoredData[0],
