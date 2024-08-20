@@ -235,7 +235,7 @@
     ]
   },
   {
-    "id": "features-card",
+    "id": "features-cards",
     "fields": [
       {
         "component": "reference",
