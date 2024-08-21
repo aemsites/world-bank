@@ -357,6 +357,7 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
 }
-body.blur {
-  overflow: hidden; /* Prevent scrolling */
+
+body.no-scroll {
+  overflow-y: hidden; /* Prevent scrolling */
 }
