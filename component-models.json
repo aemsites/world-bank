@@ -115,6 +115,13 @@
     "fields": [
       {
         "component": "text",
+        "name": "style",
+        "value": "",
+        "label": "Style",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
         "valueType": "number",
         "name": "columns",
         "value": "",
@@ -235,75 +242,52 @@
     ]
   },
   {
-    "id": "explore-cards",
-    "fields": [
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Section Title"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "fileReference",
-        "label": "Background Image",
-        "multi": false
-      }
-    ]
-  },
-  {
-    "id": "explore-card",
+    "id": "curated-card",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
-        "name": "fileReference",
-        "label": "Thumbnail",
+        "name": "image",
+        "label": "Image",
         "multi": false
-      },
-      {
-        "component": "select",
-        "name": "type",
-        "value": "",
-        "label": "Content type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Podcast / Audio",
-            "value": "podcast-audio"
-          },
-          {
-            "name": "Video",
-            "value": "video"
-          },
-          {
-            "name": "Text",
-            "value": "text"
-          }
-        ]
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Title"
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
       },
       {
         "component": "aem-tag",
         "name": "tags",
-        "label": "Tag",
+        "label": "Tags for Card",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank"
+        "rootPath": "/content/cq:tags/world-bank",
+        "description": "Tags for the curated card"
       },
       {
         "component": "text",
         "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "description": "Sets the title of the Card"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "description": "Sets the description of the Card"
+      },
+      {
+        "component": "text",
         "name": "link",
         "value": "",
-        "label": "Link"
+        "label": "Link",
+        "valueType": "string"
       }
     ]
   }

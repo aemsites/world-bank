@@ -2,6 +2,7 @@
   "mappings": [
     "/content/world-bank/global/:/",
     "/content/world-bank/global/en:/",
+    "/content/world-bank/global/en/:/en/",
     "/content/world-bank/global/zh:/zh",
     "/content/world-bank/global/zh/:/zh/",
     "/content/world-bank/global/ru:/ru",
@@ -20,7 +21,13 @@
     "/content/world-bank/global/ru/data/placeholders:/ru/placeholders.json",
     "/content/world-bank/global/fr/data/placeholders:/fr/placeholders.json",
     "/content/world-bank/global/es/data/placeholders:/es/placeholders.json",
-    "/content/world-bank/global/ar/data/placeholders:/ar/placeholders.json"
+    "/content/world-bank/global/ar/data/placeholders:/ar/placeholders.json",
+    "/content/world-bank/global/en/data/navigation:/en/navigation.json",
+    "/content/world-bank/global/zh/data/navigation:/zh/navigation.json",
+    "/content/world-bank/global/ru/data/navigation:/ru/navigation.json",
+    "/content/world-bank/global/fr/data/navigation:/fr/navigation.json",
+    "/content/world-bank/global/es/data/navigation:/es/navigation.json",
+    "/content/world-bank/global/ar/data/navigation:/ar/navigation.json"
   ],
   "includes": ["/content/world-bank/"]
 }

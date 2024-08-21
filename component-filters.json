@@ -29,7 +29,7 @@
       "cards",
       "columns",
       "data-cards",
-      "explore-cards"
+      "curated-cards"
     ]
   },
   {
@@ -39,9 +39,9 @@
     ]
   },
   {
-    "id": "explore-cards",
+    "id": "curated-cards",
     "components": [
-      "explore-card"
+      "curated-card"
     ]
   }
 ]
