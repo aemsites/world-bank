@@ -113,7 +113,7 @@ function handleEnterKey(event) {
 function createSearchBox() {
   const navWrapper = document.querySelector('.nav-wrapper');
   const navTools = document.querySelector('.nav-tools p');
-  let searchDiv = navWrapper.querySelector('.search-div');
+  let searchDiv = navWrapper.querySelector('.search-input-container');
   let cancelDiv = navWrapper.querySelector('.cancel-div');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
@@ -147,7 +147,7 @@ function createSearchBox() {
     searchImage.style.display = 'none';
     searchDiv = document.createElement('div');
     overlay = document.createElement('div');
-    searchDiv.className = 'search-div';
+    searchDiv.className = 'search-input-container';
     overlay.className = 'overlay';
     document.body.appendChild(overlay);
     document.body.classList.add('no-scroll');

@@ -298,19 +298,19 @@ header nav .nav-tools {
 .section.nav-sections .default-content-wrapper h6{
   margin: 0;
   font-size: var(--body-font-size-m);
-  padding: 0 14px 3px 0;
+  padding: 2.5px 14px 2.5px 0;
   border-right: 2px solid var(--primary-blue-50);
 }
 
 .section.nav-sections .default-content-wrapper p{
   font-size: var(--body-font-size-m);
-  color: var(--color-004370);
+  color: var(--primary-blue-80);
   text-decoration: underline;
 }
 
 .section.nav-tools .default-content-wrapper h6{
   font-size: var(--body-font-size-m);
-  color: var(--color-004370);
+  color: var(--primary-blue-80);
   margin: 0;
   font-weight: normal;
 }
@@ -320,7 +320,7 @@ header nav .nav-tools {
 }
 
 #search-input{
-  width: 70%;
+  width: 75%;
   border: none;
   border-bottom: 2px solid #004972;
   background: #002337;
@@ -342,7 +342,7 @@ header nav .nav-tools {
 outline: none;
 }
 
-.search-div{
+.search-input-container{
   background-color: #002337;
   height: 196px;
   display: flex;
