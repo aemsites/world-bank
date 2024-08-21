@@ -180,6 +180,21 @@
               }
             }
           }
+        },
+        {
+          "title": "Feature Card Link",
+          "id": "feature-card-link",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "feature-card-link",
+                  "model": "feature-card-link"
+                }
+              }
+            }
+          }
         }
       ]
     }

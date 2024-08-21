@@ -41,7 +41,8 @@
   {
     "id": "feature-cards",
     "components": [
-      "feature-card"
+      "feature-card",
+      "feature-card-link"
     ]
   }
 ]

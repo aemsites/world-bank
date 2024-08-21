@@ -272,15 +272,61 @@
         "value": "",
         "label": "Description",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "feature-card-link",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
+        "label": "Link"
       },
       {
-        "component": "button",
+        "component": "text",
         "valueType": "string",
-        "name": "button",
+        "name": "text",
         "value": "",
-        "label": "Button",
-        "multi": true,
-        "description": "Button with link and text"
+        "label": "Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "type",
+        "value": "",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "ghost",
+            "value": "ghost"
+          },
+          {
+            "name": "text",
+            "value": "text"
+          }
+        ]
       }
     ]
   }
