@@ -159,11 +159,31 @@
     "id": "section",
     "fields": [
       {
-        "component": "text",
+        "component": "select",
         "name": "style",
         "value": "",
-        "label": "Style",
-        "valueType": "string"
+        "label": "Background style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": "default"
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-fullwidth",
+        "label": "Show as full width container"
       }
     ]
   },
