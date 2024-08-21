@@ -170,11 +170,39 @@
     "id": "section",
     "fields": [
       {
-        "component": "text",
+        "component": "multiselect",
         "name": "style",
         "value": "",
-        "label": "Style",
-        "valueType": "string"
+        "label": "Section style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Primary Background",
+            "value": "bg-primary"
+          },
+          {
+            "name": "Secondary Background",
+            "value": "bg-secondary"
+          },
+          {
+            "name": "-----",
+            "value": "--"
+          },
+          {
+            "name": "Swish - Left",
+            "value": "swish-left"
+          },
+          {
+            "name": "Swish - Right",
+            "value": "swish-right"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "fullwidth",
+        "label": "Show as full width container"
       }
     ]
   },
