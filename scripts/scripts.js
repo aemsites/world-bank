@@ -10,9 +10,54 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  fetchPlaceholders,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
+
+let lang;
+
+/**
+ * Process current pathname and return details for use in language switching
+ * Considers pathnames like /en/path/to/content and
+ * /content/world-bank/global/en/path/to/content.html for both EDS and AEM
+ */
+export function getPathDetails() {
+  const { pathname } = window.location;
+  const isContentPath = pathname.startsWith('/content');
+  const parts = pathname.split('/');
+  const safeLangGet = (index) => (parts.length > index ? parts[index] : 'en');
+  /* 4 is the index of the language in the path for AEM content paths like
+     /content/world-bank/global/en/path/to/content.html
+     1 is the index of the language in the path for EDS paths like /en/path/to/content
+    */
+  let langCode = isContentPath ? safeLangGet(4) : safeLangGet(1);
+  // remove suffix from lang if any
+  if (langCode.indexOf('.') > -1) {
+    langCode = langCode.substring(0, langCode.indexOf('.'));
+  }
+  if (!langCode) langCode = 'en'; // default to en
+  // substring before lang
+  const prefix = pathname.substring(0, pathname.indexOf(`/${langCode}`)) || '';
+  const suffix = pathname.substring(pathname.indexOf(`/${langCode}`) + langCode.length + 1) || '';
+  return {
+    prefix,
+    suffix,
+    langCode,
+    isContentPath,
+  };
+}
+
+/**
+ * Fetch and return language of current page.
+ * @returns language of current page
+ */
+export function getLanguage() {
+  if (!lang) {
+    lang = getPathDetails().langCode;
+  }
+  return lang;
+}
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -112,6 +157,29 @@ async function loadEager(doc) {
 }
 
 /**
+ * Return the placeholder file specific to language
+ * @returns
+ */
+export async function fetchLanguagePlaceholders() {
+  const langCode = getLanguage();
+  try {
+    // Try fetching placeholders with the specified language
+    return await fetchPlaceholders(`/${langCode}`);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(`Error fetching placeholders for lang: ${langCode}. Will try to get en placeholders`, error);
+    // Retry without specifying a language (using the default language)
+    try {
+      return await fetchPlaceholders('/en');
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Error fetching placeholders:', err);
+    }
+  }
+  return {}; // default to empty object
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
@@ -128,6 +196,7 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+  fetchLanguagePlaceholders();
 
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
