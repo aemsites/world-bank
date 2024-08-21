@@ -233,39 +233,5 @@
         "label": "Disclaimer Text"
      }
     ]
-  },
-  {
-    "id":"global-header",
-    "fields":[
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "Search",
-        "value": "",
-        "label": "Search Text"
-     },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "logo url",
-        "value": "",
-        "label": "Logo url"
-       
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "hamburger",
-        "value": "",
-        "label": "Hamburger icon alt text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "search-alt-text",
-        "value": "",
-        "label": "Search icon alt text"
-      }
-    ]
   }
 ]
