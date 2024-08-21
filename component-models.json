@@ -156,18 +156,6 @@
     ]
   },
   {
-    "id": "section12",
-    "fields": [
-      {
-        "component": "text",
-        "name": "style",
-        "value": "",
-        "label": "Section style",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
     "id": "section",
     "fields": [
       {
