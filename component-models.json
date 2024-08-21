@@ -128,6 +128,10 @@
           {
             "name": "divider-variant",
             "value": "columns-divider-variant"
+          },
+          {
+            "name": "feature-card",
+            "value": "columns-feature-card"
           }
         ]
       },
@@ -183,6 +187,10 @@
           {
             "name": "Secondary Background",
             "value": "bg-secondary"
+          },
+          {
+            "name": "Primary Blue Background",
+            "value": "bg-primary-blue"
           },
           {
             "name": "-----",
