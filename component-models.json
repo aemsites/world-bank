@@ -178,41 +178,26 @@
         "valueType": "string",
         "options": [
           {
-            "name": "Backgrounds",
-            "value": ""
+            "name": "Primary Background",
+            "value": "bg-primary"
           },
           {
-            "name": "Primary",
-            "value": "primary"
+            "name": "Secondary Background",
+            "value": "bg-secondary"
           },
           {
-            "name": "Secondary",
-            "value": "secondary"
+            "name": "-----",
+            "value": "--"
           },
           {
-            "name": "Spacing",
-            "value": ""
+            "name": "Swish - Left",
+            "value": "swish-left"
           },
           {
-            "name": "Small",
-            "value": "small"
-          },
-          {
-            "name": "Medium",
-            "value": "medium"
-          },
-          {
-            "name": "Large",
-            "value": "large"
+            "name": "Swish - Right",
+            "value": "swish-right"
           }
         ]
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "background",
-        "label": "Image",
-        "multi": false
       },
       {
         "component": "boolean",
