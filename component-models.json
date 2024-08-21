@@ -182,7 +182,7 @@
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "show-fullwidth",
+        "name": "fullwidth",
         "label": "Show as full width container"
       }
     ]
