@@ -114,11 +114,22 @@
     "id": "columns",
     "fields": [
       {
-        "component": "text",
-        "name": "style",
+        "component": "select",
+        "name": "classes",
         "value": "",
-        "label": "Style",
-        "valueType": "string"
+        "label": "Column Variants",
+        "description": "Different column variants",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "divider-variant",
+            "value": "columns-divider-variant"
+          }
+        ]
       },
       {
         "component": "text",
