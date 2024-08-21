@@ -22,6 +22,7 @@ module.exports = {
       'error',
       {
         '*': 4,
+        'curated-card': 7,
         hero: 5,
       },
     ],
