@@ -21,7 +21,7 @@ module.exports = {
     'xwalk/max-cells': [ // DOC: https://github.com/adobe-rnd/eslint-plugin-xwalk/blob/main/docs/rules/max-cells.md
       'error',
       {
-        '*': 4,
+        '*': 5,
         hero: 5,
       },
     ],
