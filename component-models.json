@@ -174,43 +174,118 @@
     "id": "section",
     "fields": [
       {
-        "component": "multiselect",
-        "name": "style",
+        "component": "select",
+        "name": "bottom-spacing",
         "value": "",
-        "label": "Section style",
+        "label": "Section Bottom Spacing",
+        "description": "Section Top spacing will always be 0, bottom spacing can configured, default is 32px.",
         "valueType": "string",
         "options": [
           {
-            "name": "Primary Background",
-            "value": "bg-primary"
+            "name": "Default spacing",
+            "value": "sec-spacing-default"
           },
           {
-            "name": "Secondary Background",
-            "value": "bg-secondary"
+            "name": "No space / padding",
+            "value": "sec-spacing-none"
           },
           {
-            "name": "Primary Blue Background",
-            "value": "bg-primary-blue"
+            "name": "Spacing 8px",
+            "value": "sec-spacing-8"
           },
           {
-            "name": "-----",
-            "value": "--"
+            "name": "Spacing 12px",
+            "value": "sec-spacing-12"
           },
           {
-            "name": "Swish - Left",
-            "value": "swish-left"
+            "name": "Spacing 16px",
+            "value": "sec-spacing-16"
           },
           {
-            "name": "Swish - Right",
-            "value": "swish-right"
+            "name": "Spacing 20px",
+            "value": "sec-spacing-20"
+          },
+          {
+            "name": "Spacing 24px",
+            "value": "sec-spacing-24"
+          },
+          {
+            "name": "Spacing 28px",
+            "value": "sec-spacing-28"
+          },
+          {
+            "name": "Spacing 32px",
+            "value": "sec-spacing-32"
+          },
+          {
+            "name": "Spacing 48px",
+            "value": "sec-spacing-48"
+          },
+          {
+            "name": "Spacing 64px",
+            "value": "sec-spacing-64"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "sec-swish",
+        "value": "",
+        "label": "Section Swish",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Swish",
+            "value": "sec-swish-none"
+          },
+          {
+            "name": "Swish on left",
+            "value": "sec-swish-left"
+          },
+          {
+            "name": "Swish on center",
+            "value": "sec-swish-center"
+          },
+          {
+            "name": "Swish on right",
+            "value": "sec-swish-right"
+          },
+          {
+            "name": "Swish with Primary blue 95",
+            "value": "sec-swish-primary-blue-95"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "style",
+        "value": "",
+        "label": "Section Background color",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Transparent / White / Default",
+            "value": "bg-default"
+          },
+          {
+            "name": "Primary Blue 90",
+            "value": "bg-primary-blue-90"
+          },
+          {
+            "name": "Primary Blue 70",
+            "value": "bg-primary-blue-70"
+          },
+          {
+            "name": "Neutrals 10",
+            "value": "bg-neutrals-10"
           }
         ]
       },
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "fullwidth",
-        "label": "Show as full width container"
+        "name": "bg-inside-container",
+        "label": "Show background color inside container."
       }
     ]
   },
