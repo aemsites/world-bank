@@ -357,6 +357,82 @@ main .section {
   padding: var(--spacing-32) 0;
 }
 
+main .section.bg-primary-blue-90 {
+  background-color: var(--primary-blue-90);
+}
+
+main .section.bg-primary-blue-90[data-bg-inside-container="true"] {
+  background-color: transparent;
+}
+
+main .section.bg-primary-blue-90[data-bg-inside-container="true"] > div {
+  background-color: var(--primary-blue-90);
+}
+
+main .section.bg-primary-blue-70 {
+  background-color: var(--primary-blue-70);
+}
+
+main .section.bg-primary-blue-70[data-bg-inside-container="true"] {
+  background-color: transparent;
+}
+
+main .section.bg-primary-blue-70[data-bg-inside-container="true"] > div {
+  background-color: var(--primary-blue-70);
+}
+
+main .section.bg-neutrals-10 {
+  background-color: var(--neutrals-10);
+}
+
+main .section.bg-neutrals-10[data-bg-inside-container="true"] {
+  background-color: transparent;
+}
+
+main .section.bg-neutrals-10[data-bg-inside-container="true"] > div {
+  background-color: var(--neutrals-10);
+}
+
+main .section[data-bottom-spacing="sec-spacing-none"] {
+  margin-bottom: var(--spacing-0);
+}
+
+main .section[data-bottom-spacing="sec-spacing-8"] {
+  margin-bottom: var(--spacing-8);
+}
+
+main .section[data-bottom-spacing="sec-spacing-12"] {
+  margin-bottom: var(--spacing-12);
+}
+
+main .section[data-bottom-spacing="sec-spacing-16"] {
+  margin-bottom: var(--spacing-16);
+}
+
+main .section[data-bottom-spacing="sec-spacing-20"] {
+  margin-bottom: var(--spacing-20);
+}
+
+main .section[data-bottom-spacing="sec-spacing-24"] {
+  margin-bottom: var(--spacing-24);
+}
+
+main .section[data-bottom-spacing="sec-spacing-28"] {
+  margin-bottom: var(--spacing-28);
+}
+
+main .section[data-bottom-spacing="sec-spacing-32"] {
+  margin-bottom: var(--spacing-32);
+}
+
+main .section[data-bottom-spacing="sec-spacing-48"] {
+  margin-bottom: var(--spacing-48);
+}
+
+main .section[data-bottom-spacing="sec-spacing-64"] {
+  margin-bottom: var(--spacing-64);
+}
+
 main .section > div {
   padding: 0 var(--section-gutter-space);
 }
@@ -366,10 +442,4 @@ main .section > div {
     max-width: var(--screen-width);
     margin: auto;
   }
-}
-
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
 }
