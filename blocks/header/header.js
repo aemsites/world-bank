@@ -104,54 +104,67 @@ function makeImageClickableNSettingAltText() {
   document.querySelector('.nav-brand .default-content-wrapper').appendChild(anchor);
 }
 function handleEnterKey(event) {
-  if (event.key === 'Enter') {
-    window.location.href = listOfAllPlaceholdersData.searchRedirectUrl
-    + listOfAllPlaceholdersData.searchVariable;
-  }
+  if (event.key !== 'Enter') return;
+  const inputValue = document.querySelector('.search-container input').value;
+  const url = listOfAllPlaceholdersData.searchRedirectUrl + inputValue;
+  if (inputValue) window.location.href = url;
 }
 
 function createSearchBox() {
   const navWrapper = document.querySelector('.nav-wrapper');
   const navTools = document.querySelector('.nav-tools p');
-  let searchDiv = navWrapper.querySelector('.search-input-container');
-  let cancelDiv = navWrapper.querySelector('.cancel-div');
+  let searchContainer = navWrapper.querySelector('.search-container');
+  let cancelContainer = navWrapper.querySelector('.cancel-container');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
-  if (searchDiv) {
-    const isVisible = searchDiv.style.display !== 'none';
-    searchDiv.style.display = isVisible ? 'none' : 'flex';
-    if (cancelDiv) {
-      cancelDiv.style.display = isVisible ? 'none' : 'flex';
+  if (searchContainer) {
+    const isVisible = searchContainer.style.display !== 'none';
+    searchContainer.style.display = isVisible ? 'none' : 'flex';
+    if (cancelContainer) {
+      cancelContainer.style.display = isVisible ? 'none' : 'flex';
     }
     overlay.style.display = isVisible ? 'none' : 'block';
 
     searchImage.style.display = isVisible ? 'block' : 'none';
   } else {
-    cancelDiv = document.createElement('div');
-    cancelDiv.classList.add('cancel-div');
+    cancelContainer = document.createElement('div');
+    cancelContainer.classList.add('cancel-container');
     const cancelImg = document.createElement('img');
     cancelImg.classList.add('cancel-image');
     cancelImg.src = '/icons/cancel.svg';
     cancelImg.alt = 'cancel';
     cancelImg.style.display = 'flex'; // Initially visible
     cancelImg.style.cursor = 'pointer';
-    cancelImg.addEventListener('click', () => {
-      searchDiv.style.display = 'none';
-      cancelDiv.style.display = 'none';
+    cancelContainer.addEventListener('click', () => {
+      searchContainer.style.display = 'none';
+      cancelContainer.style.display = 'none';
       searchImage.style.display = 'block'; // Show search icon again
       overlay.style.display = 'none';
     });
-    cancelDiv.appendChild(cancelImg);
-    navTools.appendChild(cancelDiv);
+    cancelContainer.appendChild(cancelImg);
+    navTools.appendChild(cancelContainer);
     // Hide search icon
     searchImage.style.display = 'none';
-    searchDiv = document.createElement('div');
+    searchContainer = document.createElement('div');
     overlay = document.createElement('div');
-    searchDiv.className = 'search-input-container';
+    searchContainer.className = 'search-container';
     overlay.className = 'overlay';
     document.body.appendChild(overlay);
     document.body.classList.add('no-scroll');
+    const searchInputContainer = document.createElement('div');
+    searchInputContainer.className = 'search-input-container';
     const searchInputBox = document.createElement('input');
+    const searchIcon = document.createElement('img');
+    searchIcon.classList.add('search-icon');
+    searchIcon.src = '/icons/search-white.svg';
+    searchIcon.alt = 'search';
+    searchIcon.addEventListener('click', () => {
+      if (searchInputBox.value) {
+        window.location.href = listOfAllPlaceholdersData.searchRedirectUrl
+        + searchInputBox.value;
+      }
+    });
+
     Object.assign(searchInputBox, {
       type: 'text',
       id: 'search-input',
@@ -160,8 +173,10 @@ function createSearchBox() {
       value: '',
     });
     searchInputBox.addEventListener('keydown', handleEnterKey);
-    searchDiv.appendChild(searchInputBox);
-    navWrapper.appendChild(searchDiv);
+    searchInputContainer.appendChild(searchInputBox);
+    searchInputContainer.appendChild(searchIcon);
+    searchContainer.appendChild(searchInputContainer);
+    navWrapper.appendChild(searchContainer);
   }
 }
 

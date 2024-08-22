@@ -307,15 +307,15 @@ header nav .nav-tools {
 #search-input{
   width: 75%;
   border: none;
-  border-bottom: 2px solid #004972;
   background: #002337;
   height: 71px;
   font-size: var(--heading-font-size-m);
   color: var(--color-white);
   font-weight: normal;
-  background-image: url('../../icons/search-white.svg');
-  background-repeat: no-repeat;
-  background-position: right center;
+  cursor: pointer;
+}
+
+.search-icon{
   cursor: pointer;
 }
 
@@ -328,6 +328,13 @@ outline: none;
 }
 
 .search-input-container{
+  display: flex;
+  border-bottom: 2px solid #004972;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.search-container{
   background-color: #002337;
   height: 196px;
   display: flex;
@@ -335,7 +342,7 @@ outline: none;
   justify-content: center;
 }
 
-.cancel-div{
+.cancel-container{
   background: var(--primary-blue-50);
   height: 44px;
   display: flex;
@@ -343,6 +350,7 @@ outline: none;
   border-radius: 50px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .overlay{
