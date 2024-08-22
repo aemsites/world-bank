@@ -374,11 +374,6 @@ main .section.highlight {
   background-color: var(--light-color);
 }
 
-.main .section.sub-header-container {
-  background-image: url(../icons/bg-swoosh.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 main .section.sub-header-container > div > h2 {
   color: #012740;
@@ -393,3 +388,10 @@ main .section.sub-header-container > div > p {
   font-weight: 400;
   margin: 0.2em 0 1.5em 0;
 }
+
+@media (max-width: 767px) {
+  main .section.sub-header-container > div > p {
+    font-size: 18px !important;
+  }
+}
+
