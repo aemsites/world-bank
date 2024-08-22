@@ -118,6 +118,7 @@
   --text-color: var(--neutrals-100);
   --color-white: #FFF;
   --color-black: #000;
+  --input-background-color:#002337;
 
   /* body sizes */
   --body-font-size-xl: 20px;

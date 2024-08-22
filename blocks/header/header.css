@@ -265,18 +265,15 @@ header nav .nav-tools {
   grid-area: tools;
 }
 
-.section.nav-sections .default-content-wrapper,.section.nav-tools .default-content-wrapper{
+.nav-sections .default-content-wrapper,
+.nav-tools .default-content-wrapper{
   display: flex;
   align-items: center;
   gap: 10px;
   justify-content: center;
 }
 
-.section.nav-sections .default-content-wrapper{
-  gap:10px;
-}
-
-.section.nav-tools .default-content-wrapper{
+.nav-tools .default-content-wrapper{
   gap:25px;
 }
 
@@ -307,7 +304,7 @@ header nav .nav-tools {
 #search-input{
   width: 75%;
   border: none;
-  background: #002337;
+  background: var(--input-background-color);
   height: 71px;
   font-size: var(--heading-font-size-m);
   color: var(--color-white);
@@ -335,7 +332,7 @@ outline: none;
 }
 
 .search-container{
-  background-color: #002337;
+  background-color: var(--input-background-color);
   height: 196px;
   display: flex;
   align-items: center;
