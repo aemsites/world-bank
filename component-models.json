@@ -485,6 +485,13 @@
         "label": "Title"
       },
       {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
         "component": "aem-tag",
         "name": "tags",
         "label": "Tag",
