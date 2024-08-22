@@ -27,8 +27,5 @@
     "eslint-plugin-xwalk": "github:adobe-rnd/eslint-plugin-xwalk#v0.1.0",
     "stylelint": "16.6.1",
     "stylelint-config-standard": "36.0.0"
-  },
-  "dependencies": {
-    "lint": "^0.8.19"
   }
 }
