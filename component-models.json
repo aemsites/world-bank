@@ -175,10 +175,10 @@
     "fields": [
       {
         "component": "select",
-        "name": "bottom-spacing",
+        "name": "sec-spacing",
         "value": "",
-        "label": "Section Bottom Spacing",
-        "description": "Section Top spacing will always be 0, bottom spacing can configured, default is 32px.",
+        "label": "Section Spacing (padding)",
+        "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
           {
