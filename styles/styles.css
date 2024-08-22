@@ -373,3 +373,24 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
 }
+
+.main .section.sub-header-container {
+  background-image: url(../icons/bg-swoosh.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main .section.sub-header-container > div > h2 {
+  color: #012740;
+  font-weight: 700;
+  font-size: 36px;
+  margin: 0;
+}
+
+main .section.sub-header-container > div > p {
+  color: #181f25;
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 0.2em;
+  margin-bottom: 1.5em;
+}
