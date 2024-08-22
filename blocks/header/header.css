@@ -131,12 +131,12 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-@media (width >= 900px) {
+/*@media (width >= 900px) {
   header nav .nav-hamburger {
     display: none;
     visibility: hidden;
   }
-}
+}*/
 
 /* brand */
 header .nav-brand {
@@ -272,4 +272,95 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* new styles */
+header nav .nav-menu-overlay{
+  position: fixed;
+  top: 2px;
+  width: 1600px;
+  height: 800px;
+  left: -100%;
+  background:  #012740;
+  transition: left 0.3s ease-in-out;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav .nav-menu-overlay.open {
+  left: 0;
+}
+
+header nav .nav-menu{
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  width: 800px;
+  display: flex;
+  color: white;
+}
+header nav .nav-menu .nav-menu-column {
+  flex: 1;
+  padding: 10px;
+}
+.nav-menu .nav-menu-column.left ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-menu .nav-menu-column.left li {
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  color: white;
+}
+.nav-menu .nav-menu-column.left li.selected {
+  background-color: white;
+  color: #333;
+  font-weight: bold;
+}
+.nav-menu .nav-menu-column.left li.selected::after {
+  content: ">";
+  position: absolute;
+  right: 10px;
+  color: blue;
+  font-weight: bold;
+}
+
+.nav-menu .nav-menu-column.right ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-menu .nav-menu-column.right ul li{
+  width: 50%;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+.nav-menu .nav-menu-column.right ul li::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  margin-top: 5px;
+}
+.nav-menu .nav-menu-column.right ul li ul{
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.nav-menu .nav-menu-column.right ul li ul li{
+  padding-left: 20px;
+  color: white;
+  font-weight: normal;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: white;
 }
