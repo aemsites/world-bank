@@ -391,6 +391,5 @@ main .section.sub-header-container > div > p {
   color: #181f25;
   font-size: 24px;
   font-weight: 400;
-  margin-top: 0.2em;
-  margin-bottom: 1.5em;
+  margin: 0.2em 0 1.5em 0;
 }

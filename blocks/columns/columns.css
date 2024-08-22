@@ -47,9 +47,7 @@
   }
 
   .columns.columns-divider-variant > div > div:first-child > p {
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 33.6px;
+    font-size: 22px;
     text-align: left;
   }
 }
