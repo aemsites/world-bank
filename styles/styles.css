@@ -498,3 +498,28 @@ main .section[data-sec-spacing="sec-spacing-48"] {
 main .section[data-sec-spacing="sec-spacing-64"] {
   padding: var(--spacing-64) 0;
 }
+.bg-primary-blue-90 .columns-2-cols p{
+  margin: 0px;
+}
+.bg-primary-blue-90 .columns-2-cols p:nth-child(1){
+  font-size: 40px;
+}
+
+.bg-primary-blue-90 .columns-2-cols p:nth-child(3) a{
+  background-color: #fff;
+  color: #012740;
+  font-size: 16px;
+}
+.bg-primary-blue-90 .columns-2-cols p:nth-child(4) a{
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  border-bottom: 2px solid #FFFFFF4D;
+  border-radius: 0px;
+  padding: 0px;
+}
+.bg-primary-blue-90 .columns-2-cols .columns-img-col{
+  position: absolute;
+  right: 30px;
+  top: 0px;
+}
