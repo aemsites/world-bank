@@ -34,16 +34,21 @@
 
 .columns-divider-variant {
   display: grid;
-  grid-template-columns: 1fr 2fr;
   gap: 20px;
   align-items: start;
   width: 100%;
-  padding: 10px;
 }
 
+.columns-divider-variant > div > div{
+  padding: 10px;
+}
 .columns-divider-variant > div > div:first-child > p {
   font-size: 23px;
   font-weight: 700;
   line-height: 33.6px;
   text-align: left;
+}
+
+.columns-divider-variant > div > div:last-child {
+  border-left: 1px solid #E7EDF3;
 }
