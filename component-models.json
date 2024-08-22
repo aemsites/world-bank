@@ -278,6 +278,10 @@
           {
             "name": "Neutrals 10",
             "value": "bg-neutrals-10"
+          },
+          {
+            "name": "Neutrals 20",
+            "value": "bg-neutrals-20"
           }
         ]
       },
