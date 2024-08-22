@@ -12,14 +12,6 @@
 
 :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: white;
-  --light-color: #eee;
-  --dark-color: #ccc;
-  --text-color: black;
-  --color-white: #FFF;
-  --color-black: #000;
   --transparent: rgb(255 255 255 / 0%);
   --primary-blue-10: #F6FCFF;
   --primary-blue-20: #E9F7FD;
@@ -109,11 +101,23 @@
   --spacing-24: 24px;
   --spacing-28: 28px;
   --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
 
   /* fonts */
   --body-font-family: 'Open Sans', roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+
+  /* Custom variables */
+  --link-color: #035fe6;
+  --link-hover-color: #136ff6;
+  --background-color: white;
+  --light-color: #eee;
+  --dark-color: #ccc;
+  --text-color: var(--neutrals-100);
+  --color-white: #FFF;
+  --color-black: #000;
 
   /* body sizes */
   --body-font-size-xl: 20px;
@@ -122,6 +126,7 @@
   --body-font-size-s: 14px;
   --body-font-size-xs: 12px;
   --body-font-size-citation: 12px;
+  --body-font-size: 18px;
 
   /* eyebrow styles */
   --eyebrow-font-size-l: 14px;
@@ -129,17 +134,18 @@
   --eyebrow-font-size-s: 12px;
 
   /* heading sizes - as per interactive strategies */
-  --h1-font-size-xxxl: 44px;
-  --h1-font-size-xxl: 36px;
-  --h1-font-size-xl: 32px;
-  --h1-font-size-l: 28px;
-  --h1-font-size-m: 24px;
-  --h1-font-size-s: 20px;
-  --h1-font-size-xs: 18px;
-  --h1-font-size-xxs: 14px;
+  --heading-font-size-xxl: 44px;
+  --heading-font-size-xl: 36px;
+  --heading-font-size-l: 32px;
+  --heading-font-size-m: 28px;
+  --heading-font-size-s: 24px;
+  --heading-font-size-xs: 20px;
+  --heading-font-size-xxs: 18px;
+  --heading-font-size-xxxs: 14px;
 
   /* nav height TODO: Update this */
   --nav-height: 120px;
+  --screen-width: 1456px;
 
   /* shadows & elevations */
   --section-shadow: 0 2px 4px rgba(0 0 0 10%);
@@ -150,15 +156,23 @@
   --dashboard-cards-shadow: 5px 5px 12px rgba(0 0 0 25%);
   --overlay-color:rgba(255 255 255 / 50%);
 
-  @media (width >= 600px) {
-    --h1-font-size-xxxl: 60px;
-    --h1-font-size-xxl: 48px;
-    --h1-font-size-xl: 40px;
-    --h1-font-size-l: 36px;
-    --h1-font-size-m: 28px;
-    --h1-font-size-s: 24px;
-    --h1-font-size-xs: 20px;
-    --h1-font-size-xxs: 16px;
+  /* Gutter space */
+  --section-gutter-space: 28px;
+  
+  /*
+    Desktop: >= 1024px
+    Tab: 768px - 1023px
+    Mobile: <= 767px
+  */
+  @media (width >= 768px) {
+    --heading-font-size-xxl: 60px;
+    --heading-font-size-xl: 48px;
+    --heading-font-size-l: 40px;
+    --heading-font-size-m: 36px;
+    --heading-font-size-s: 28px;
+    --heading-font-size-xs: 24px;
+    --heading-font-size-xxs: 20px;
+    --heading-font-size-xxxs: 16px;
 
     /* body styles */
     --body-font-size-xl: 24px;
@@ -172,6 +186,16 @@
     --eyebrow-font-size-l: 16px;
     --eyebrow-font-size-m: 14px;
     --eyebrow-font-size-s: 12px;
+
+    /* Gutter space */
+    --section-gutter-space: 48px;
+  }
+
+  @media (width >= 1024px) {
+    --body-font-size: 20px;
+
+    /* Gutter space */
+    --section-gutter-space: 72px;
   }
 }
 
@@ -182,22 +206,11 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
-  :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
-  }
-}
-
 body {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 1.6;
+  line-height: 1.4;
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
@@ -218,16 +231,24 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 1rem 0;
+  letter-spacing: 0;
+  color: var(--primary-blue-100);
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
+h1 { 
+  font-size: var(--heading-font-size-xxl); 
+  line-height: 1.1; 
+}
 h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
+
+h3 { 
+  font-size: var(--heading-font-size-l); 
+  line-height: 1.1; 
+}
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
@@ -337,26 +358,146 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  margin: 0;
+  padding: var(--spacing-32) 0;
 }
 
-@media (width >= 600px) {
-  main .section {
-    padding: 64px 32px;
-  }
+main .section > div {
+  padding: 0 var(--section-gutter-space);
 }
 
-@media (width >= 900px) {
-  .section > div {
-    max-width: 1200px;
+@media (width >= 1024px) {
+  main .section > div {
+    max-width: var(--screen-width);
     margin: auto;
   }
 }
 
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
+main .section.bg-primary-blue-90,
+main .section.bg-primary-blue-70,
+main .section.bg-primary-blue-90 h1,
+main .section.bg-primary-blue-90 h2,
+main .section.bg-primary-blue-90 h3,
+main .section.bg-primary-blue-90 h4,
+main .section.bg-primary-blue-90 h5,
+main .section.bg-primary-blue-90 h6,
+main .section.bg-primary-blue-70 h1,
+main .section.bg-primary-blue-70 h2,
+main .section.bg-primary-blue-70 h3,
+main .section.bg-primary-blue-70 h4,
+main .section.bg-primary-blue-70 h5,
+main .section.bg-primary-blue-70 h6 {
+  color: var(--color-white);
+}
+
+main .section.bg-neutrals-10,
+main .section.bg-neutrals-20 {
+  color: var(--neutrals-100);
+}
+
+main .section.bg-neutrals-10 h1,
+main .section.bg-neutrals-10 h2,
+main .section.bg-neutrals-10 h3,
+main .section.bg-neutrals-10 h4,
+main .section.bg-neutrals-10 h5,
+main .section.bg-neutrals-10 h6,
+main .section.bg-neutrals-20 h1,
+main .section.bg-neutrals-20 h2,
+main .section.bg-neutrals-20 h3,
+main .section.bg-neutrals-20 h4,
+main .section.bg-neutrals-20 h5,
+main .section.bg-neutrals-20 h6 {
+  color: var(--primary-blue-100);
+}
+
+main .section.bg-primary-blue-90 {
+  background-color: var(--primary-blue-90);
+}
+
+main .section.bg-primary-blue-90[data-bg-inside-container="true"] {
+  background-color: transparent;
+}
+
+main .section.bg-primary-blue-90[data-bg-inside-container="true"] > div {
+  background-color: var(--primary-blue-90);
+}
+
+main .section.bg-primary-blue-70 {
+  background-color: var(--primary-blue-70);
+}
+
+main .section.bg-primary-blue-70[data-bg-inside-container="true"] {
+  background-color: transparent;
+}
+
+main .section.bg-primary-blue-70[data-bg-inside-container="true"] > div {
+  background-color: var(--primary-blue-70);
+}
+
+main .section.bg-neutrals-10 {
+  background-color: var(--neutrals-10);
+}
+
+main .section.bg-neutrals-10[data-bg-inside-container="true"] {
+  background-color: transparent;
+}
+
+main .section.bg-neutrals-10[data-bg-inside-container="true"] > div {
+  background-color: var(--neutrals-10);
+  padding: 0;
+}
+
+main .section.bg-neutrals-20 {
+  background-color: var(--neutrals-20);
+}
+
+main .section.bg-neutrals-20[data-bg-inside-container="true"] {
+  background-color: transparent;
+}
+
+main .section.bg-neutrals-20[data-bg-inside-container="true"] > div {
+  background-color: var(--neutrals-20);
+  padding: 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-none"] {
+  padding: var(--spacing-0) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-8"] {
+  padding: var(--spacing-8) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-12"] {
+  padding: var(--spacing-12) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-16"] {
+  padding: var(--spacing-16) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-20"] {
+  padding: var(--spacing-20) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-24"] {
+  padding: var(--spacing-24) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-28"] {
+  padding: var(--spacing-28) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-32"] {
+  padding: var(--spacing-32) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-48"] {
+  padding: var(--spacing-48) 0;
+}
+
+main .section[data-sec-spacing="sec-spacing-64"] {
+  padding: var(--spacing-64) 0;
 }
 
 body.no-scroll {

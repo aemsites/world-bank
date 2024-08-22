@@ -114,11 +114,26 @@
     "id": "columns",
     "fields": [
       {
-        "component": "text",
-        "name": "style",
+        "component": "select",
+        "name": "classes",
         "value": "",
-        "label": "Style",
-        "valueType": "string"
+        "label": "Column Variants",
+        "description": "Different column variants",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "divider-variant",
+            "value": "columns-divider-variant"
+          },
+          {
+            "name": "feature-card",
+            "value": "columns-feature-card"
+          }
+        ]
       },
       {
         "component": "text",
@@ -159,11 +174,122 @@
     "id": "section",
     "fields": [
       {
-        "component": "text",
+        "component": "select",
+        "name": "sec-spacing",
+        "value": "",
+        "label": "Section Spacing (padding)",
+        "description": "Section Top and bottom spacing, default is 32px.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default spacing",
+            "value": "sec-spacing-default"
+          },
+          {
+            "name": "No space / padding",
+            "value": "sec-spacing-none"
+          },
+          {
+            "name": "Spacing 8px",
+            "value": "sec-spacing-8"
+          },
+          {
+            "name": "Spacing 12px",
+            "value": "sec-spacing-12"
+          },
+          {
+            "name": "Spacing 16px",
+            "value": "sec-spacing-16"
+          },
+          {
+            "name": "Spacing 20px",
+            "value": "sec-spacing-20"
+          },
+          {
+            "name": "Spacing 24px",
+            "value": "sec-spacing-24"
+          },
+          {
+            "name": "Spacing 28px",
+            "value": "sec-spacing-28"
+          },
+          {
+            "name": "Spacing 32px",
+            "value": "sec-spacing-32"
+          },
+          {
+            "name": "Spacing 48px",
+            "value": "sec-spacing-48"
+          },
+          {
+            "name": "Spacing 64px",
+            "value": "sec-spacing-64"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "sec-swish",
+        "value": "",
+        "label": "Section Swish",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Swish",
+            "value": "sec-swish-none"
+          },
+          {
+            "name": "Swish on left",
+            "value": "sec-swish-left"
+          },
+          {
+            "name": "Swish on center",
+            "value": "sec-swish-center"
+          },
+          {
+            "name": "Swish on right",
+            "value": "sec-swish-right"
+          },
+          {
+            "name": "Swish with Primary blue 95",
+            "value": "sec-swish-primary-blue-95"
+          }
+        ]
+      },
+      {
+        "component": "select",
         "name": "style",
         "value": "",
-        "label": "Style",
-        "valueType": "string"
+        "label": "Section Background color",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Transparent / White / Default",
+            "value": "bg-default"
+          },
+          {
+            "name": "Primary Blue 90",
+            "value": "bg-primary-blue-90"
+          },
+          {
+            "name": "Primary Blue 70",
+            "value": "bg-primary-blue-70"
+          },
+          {
+            "name": "Neutrals 10",
+            "value": "bg-neutrals-10"
+          },
+          {
+            "name": "Neutrals 20",
+            "value": "bg-neutrals-20"
+          }
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "bg-inside-container",
+        "label": "Show background color inside container."
       }
     ]
   },
@@ -361,6 +487,13 @@
         "name": "title",
         "value": "",
         "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
       },
       {
         "component": "aem-tag",

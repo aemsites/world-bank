@@ -2,6 +2,8 @@
 coverage/*
 logs/*
 node_modules/*
+package-lock.json
+package.json
 
 helix-importer-ui
 .DS_Store
