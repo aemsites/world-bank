@@ -233,9 +233,17 @@ h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); line-height: 1.1; letter-spacing: -2%; }
+h1 { 
+  font-size: var(--heading-font-size-xxl); 
+  line-height: 1.1; 
+  letter-spacing: -2%; 
+}
 h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); line-height: 1.1; }
+
+h3 { 
+  font-size: var(--heading-font-size-l); 
+  line-height: 1.1; 
+}
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
