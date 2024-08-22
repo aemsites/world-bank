@@ -1,6 +1,9 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import {
+  div, img,
+} from '../../scripts/dom-helpers.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -103,6 +106,7 @@ function makeImageClickableNSettingAltText() {
   anchor.appendChild(document.querySelector('.nav-brand picture'));
   document.querySelector('.nav-brand .default-content-wrapper').appendChild(anchor);
 }
+
 function handleEnterKey(event) {
   if (event.key !== 'Enter') return;
   const inputValue = document.querySelector('.search-container input').value;
@@ -127,14 +131,11 @@ function createSearchBox() {
 
     searchImage.style.display = isVisible ? 'block' : 'none';
   } else {
-    cancelContainer = document.createElement('div');
-    cancelContainer.classList.add('cancel-container');
-    const cancelImg = document.createElement('img');
-    cancelImg.classList.add('cancel-image');
+    cancelContainer = div({ class: 'cancel-container' });
+    const cancelImg = img({ class: 'cancel-image' });
     cancelImg.src = '/icons/cancel.svg';
     cancelImg.alt = 'cancel';
-    cancelImg.style.display = 'flex'; // Initially visible
-    cancelImg.style.cursor = 'pointer';
+    cancelImg.style.cssText = 'display: flex; cursor: pointer;';
     cancelContainer.addEventListener('click', () => {
       searchContainer.style.display = 'none';
       cancelContainer.style.display = 'none';
@@ -145,17 +146,13 @@ function createSearchBox() {
     navTools.appendChild(cancelContainer);
     // Hide search icon
     searchImage.style.display = 'none';
-    searchContainer = document.createElement('div');
-    overlay = document.createElement('div');
-    searchContainer.className = 'search-container';
-    overlay.className = 'overlay';
+    searchContainer = div({ class: 'search-container' });
+    overlay = div({ class: 'overlay' });
     document.body.appendChild(overlay);
     document.body.classList.add('no-scroll');
-    const searchInputContainer = document.createElement('div');
-    searchInputContainer.className = 'search-input-container';
+    const searchInputContainer = div({ class: 'search-input-container' });
     const searchInputBox = document.createElement('input');
-    const searchIcon = document.createElement('img');
-    searchIcon.classList.add('search-icon');
+    const searchIcon = img({ class: 'search-icon' });
     searchIcon.src = '/icons/search-white.svg';
     searchIcon.alt = 'search';
     searchIcon.addEventListener('click', () => {
@@ -173,8 +170,7 @@ function createSearchBox() {
       value: '',
     });
     searchInputBox.addEventListener('keydown', handleEnterKey);
-    searchInputContainer.appendChild(searchInputBox);
-    searchInputContainer.appendChild(searchIcon);
+    searchInputContainer.append(searchInputBox, searchIcon);
     searchContainer.appendChild(searchInputContainer);
     navWrapper.appendChild(searchContainer);
   }
