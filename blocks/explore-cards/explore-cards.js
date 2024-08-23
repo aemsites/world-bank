@@ -58,23 +58,24 @@ function processRow(row) {
 // Main function to decorate the block
 export default function decorate(block) {
   const ul = createElement('ul');
+  console.log(block);
   const childrenArray = Array.from(block.children);
   console.log(childrenArray);
   
   if (childrenArray.length > 0) {
-    const featureCard = createFeatureCard(childrenArray[0]);
+   // const featureCard = createFeatureCard(childrenArray[0]);
 
     for (let index = 1; index < childrenArray.length; index++) {
       const row = childrenArray[index];
-      const li = processRow(row);
-      ul.appendChild(li);
+      //const li = processRow(row);
+      //ul.appendChild(li);
     }
 
     // Optimize images
     ul.querySelectorAll('picture > img').forEach((img) => {
-      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-      moveInstrumentation(img, optimizedPic.querySelector('img'));
-      img.closest('picture').replaceWith(optimizedPic);
+    //  const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+    //  moveInstrumentation(img, optimizedPic.querySelector('img'));
+    //  img.closest('picture').replaceWith(optimizedPic);
     });
 
     // Clear block and append the new content
