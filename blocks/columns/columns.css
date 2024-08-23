@@ -7,10 +7,6 @@
   width: 100%;
 }
 
-.columns > div > div {
-  order: 1;
-}
-
 .columns > div > .columns-img-col {
   order: 0;
 }
@@ -22,6 +18,10 @@
 .columns-divider-variant > div {
   display: flex;
   gap: 20px;
+
+  > div {
+    order: 1;
+  }
 
   > div:first-child {
     flex-basis: 33%;
