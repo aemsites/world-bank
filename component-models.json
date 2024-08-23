@@ -224,6 +224,14 @@
           {
             "name": "Spacing 64px",
             "value": "sec-spacing-64"
+          },
+          {
+            "name": "Spacing 80px",
+            "value": "sec-spacing-80"
+          },
+          {
+            "name": "Spacing 96px",
+            "value": "sec-spacing-96"
           }
         ]
       },
