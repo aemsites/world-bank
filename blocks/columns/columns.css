@@ -15,62 +15,49 @@
   display: block;
 }
 
-.columns-divider-variant > div {
-  display: flex;
-  gap: 20px;
-
-  > div {
-    order: 1;
-  }
-
-  > div:first-child {
-    flex-basis: 33%;
-    font-size: var(--body-font-size-xl);
-    margin-bottom: 0;
-
-        p {
-          font-size: var(--body-font-size-xl);
-          text-align: left;
-          color: var(--neutrals-100);
-        }
-  }
-
-  > div:last-child {
-    flex-basis: 66%;
-    border-left: 1px solid var(--neutrals-20);
-    padding-left: 20px;
-    color: var(--neutrals-100);
-    font-size: var(--body-font-size);
-  }
+.columns > div > div > {
+  order: 1;
 }
 
-@media (width >= 900px) {
+@media (width >= 1024px) {
   .columns > div {
     align-items: start;
     flex-direction: row;
     gap: 32px;
-
-    > div {
-      flex: 1;
-      order: unset;
-    }
+  }
+  
+  .columns > div > div {
+    flex: 1;
+    order: unset;
   }
 }
 
-@media (width >= 768px) and (width <= 1024px) {
+.columns-divider-variant > div {
+  flex-direction: column;
+
+  > div:first-child {
+    > p {
+      font-size: var(--body-font-size-xl);
+      text-align: left;
+      color: var(--neutrals-100);
+      margin: 0;
+      line-height: 28px;
+    }
+  }
+
+  > div:last-child {
+    border-left: 1px solid var(--neutrals-20);
+    padding-left: 10px;
+    font-size: var(--body-font-size-l);
+    line-height: 25px;
+    color: var(--neutrals-100);
+  }
+}
+
+@media (width >= 768px) {
   .columns.columns-divider-variant > div {
     flex-direction: column;
-
-    > div {
-      flex-basis: 100%;
-
-      p {
-        font-size: var(--body-font-size-xl);
-        text-align: left;
-        color: var(--neutrals-100);
-        margin: 0;
-      }
-    }
+    gap: 22px;
 
     > div:last-child {
       border-left: 1px solid var(--neutrals-20);
@@ -84,26 +71,26 @@
   }
 }
 
-@media (width <= 767px) {
+@media (width > 1024px) {
   .columns.columns-divider-variant > div {
-    flex-direction: column;
-
-    > div {
-      flex-basis: 100%;
+    flex-direction: row;
+    
+    > div:first-child {
+      font-size: var(--body-font-size-xl);
+      margin-bottom: 0;
 
       p {
         font-size: var(--body-font-size-xl);
         text-align: left;
         color: var(--neutrals-100);
-        line-height: 29px;
-        margin: 0;
       }
     }
 
     > div:last-child {
       border-left: 1px solid var(--neutrals-20);
-      padding-left: 10px;
-      margin: 0;
+      padding-left: 20px;
+      color: var(--neutrals-100);
+      font-size: var(--body-font-size);
     }
   }
 }
