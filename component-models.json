@@ -157,7 +157,7 @@
       },
       {
         "component": "select",
-        "name": "classes",
+        "name": "type",
         "value": "",
         "label": "Columns Layout",
         "description": "Different column layouts",
