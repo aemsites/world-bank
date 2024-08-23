@@ -143,6 +143,7 @@
   /* nav height TODO: Update this */
   --nav-height: 64px;
   --screen-width: 1456px;
+  --nav-menu-overlay-height: 961px;
 
   /* shadows & elevations */
   --section-shadow: 0 2px 4px rgba(0 0 0 10%);

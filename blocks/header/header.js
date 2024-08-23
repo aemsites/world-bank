@@ -9,7 +9,9 @@ function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
     const navSections = nav.querySelector('.nav-sections');
-    const navSectionExpanded = navSections.querySelector("[aria-expanded='true']");
+    const navSectionExpanded = navSections.querySelector(
+      '[aria-expanded="true"]',
+    );
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleAllNavSections(navSections);
@@ -34,7 +36,9 @@ function closesideMenu() {
   });
   const sidemenuBackButton = document.querySelector('.nav-menu-overlay-back');
   sidemenuBackButton.style.display = 'none';
-  const CurrentSubMenu = document.querySelector('.nav-menu-column.right .submenu-main-title');
+  const CurrentSubMenu = document.querySelector(
+    '.nav-menu-column.right .submenu-main-title',
+  );
   CurrentSubMenu.style.display = 'none';
 }
 
@@ -58,11 +62,17 @@ function toggleAllNavSections(sections, expanded = false) {
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
  */
 function toggleMenu(nav, navSections, forceExpanded = null) {
-  const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
+  const expanded = forceExpanded !== null
+    ? !forceExpanded
+    : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
+  // document.body.style.overflowY = expanded ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSections, expanded ? 'false' : 'true');
-  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  button.setAttribute(
+    'aria-label',
+    expanded ? 'Open navigation' : 'Close navigation',
+  );
 
   const navMenuOverlay = navSections.querySelector('.nav-menu-overlay');
   if (!expanded) {
@@ -70,7 +80,6 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     navMenuOverlay.classList.remove('open');
   }
-  // enable menu collapse on escape keypress
   if (!expanded || isDesktop.matches) {
     // collapse menu on escape press
     window.addEventListener('keydown', closeOnEscape);
@@ -92,7 +101,7 @@ function formatNavigationJsonData(navJson) {
       };
       structuredData.push(level0);
       currentLevel0 = level0;
-    } else if (item.Type === 'category' || item.Type === 'footer' || item.Type === 'dropdown') {
+    } else if (item.Type === 'category' || item.Type === 'footer') {
       const category = {
         title: item.Title,
         type: item.Type,
@@ -113,9 +122,11 @@ function showSubMenu(submenuId, submenuTitle, currentIndex) {
   if (!isDesktop.matches) {
     const sidemenuBackButton = document.querySelector('.nav-menu-overlay-back');
     sidemenuBackButton.style.display = 'block';
-    const currentSubMenu = document.querySelector('.nav-menu-column.right .submenu-main-title');
-    currentSubMenu.textContent = submenuTitle;
-    currentSubMenu.style.display = 'block';
+    const CurrentSubMenu = document.querySelector(
+      '.nav-menu-column.right .submenu-main-title',
+    );
+    CurrentSubMenu.textContent = submenuTitle;
+    CurrentSubMenu.style.display = 'flex';
   }
   if (!isDesktop.matches) {
     const leftColumn = document.querySelector('.nav-menu-column.left');
@@ -123,7 +134,7 @@ function showSubMenu(submenuId, submenuTitle, currentIndex) {
   }
   const submenus = document.querySelectorAll('.submenu');
   submenus.forEach((submenu) => {
-    submenu.style.display = submenu.id === submenuId ? 'block' : 'none';
+    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
   });
 
   const level0Items = document.querySelectorAll('.nav-menu-column.left li');
@@ -169,7 +180,7 @@ function createNavMenu(structuredNav) {
     level0MenuItem.textContent = level0Item.title;
     level0MenuItem.prepend(level0MenuItemArrow);
 
-    const isSelected = isDesktop.matches ? `${index === 0 ? 'selected' : ''}` : '';
+    const isSelected = '';
     if (isSelected) level0MenuItem.classList.add(`${isSelected}`);
 
     level0MenuItem.addEventListener('click', () => showSubMenu(`${submenuId}`, `${level0Item.title}`, `${index}`));
@@ -255,8 +266,9 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     // Navigation Data
-    const structuredNav = formatNavigationJsonData(await fetchLanguageNavigation());
-    console.log(structuredNav);
+    const structuredNav = formatNavigationJsonData(
+      await fetchLanguageNavigation(),
+    );
     navSections.append(createNavMenu(structuredNav));
 
     navSections
@@ -267,15 +279,18 @@ export default async function decorate(block) {
           if (isDesktop.matches) {
             const expanded = navSection.getAttribute('aria-expanded') === 'true';
             toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            navSection.setAttribute(
+              'aria-expanded',
+              expanded ? 'false' : 'true',
+            );
           }
         });
       });
   }
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
-  hamburger.innerHTML = `<button type='button' aria-controls='nav' aria-label='Open navigation'>
-      <span class='nav-hamburger-icon'></span>
+  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
+      <span class="nav-hamburger-icon"></span>
     </button>`;
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);

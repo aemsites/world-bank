@@ -10,8 +10,10 @@ header .nav-wrapper {
 header nav {
   box-sizing: border-box;
   display: grid;
-  grid-template: "hamburger brand tools" var(--nav-height) "sections sections sections" 1fr / auto 1fr auto;
+  grid-template:
+    "hamburger brand tools" var(--nav-height) "sections sections sections" 1fr / auto 1fr auto;
   align-items: center;
+
   gap: 0 2em;
   margin: auto;
   max-width: 1264px;
@@ -30,9 +32,12 @@ header nav[aria-expanded="true"] {
 
 header .nav-menu-overlay {
   position: absolute;
+
   top: 0;
-  min-width: 100%;
+  width: 100vw;
+
   left: 0;
+
   min-height: 100vh;
   display: none;
 }
@@ -44,6 +49,14 @@ header .nav-menu-overlay.open {
 header .nav-menu-overlay .nav-menu {
   background-color: rgb(1, 39, 64);
   height: 100vh;
+  background-image: url('../../icons/Vector.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top left;
+  background-size: 55%;
+
+  /* background-position: contain; */
+
 }
 
 header .nav-menu-overlay .nav-menu {
@@ -92,6 +105,7 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
   border-bottom: 3px solid black;
   border-left: 3px solid black;
   border-radius: 1px;
+  /* border-radius: 10px; */
 }
 
 header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::after {
@@ -99,22 +113,31 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::after {
   width: 17px;
   position: absolute;
   left: 13px;
+
   height: 3px;
   border-radius: 10px;
   top: 18.5px;
   background-color: black;
+
   border: 3px;
+
+  /* border-radius: 10px; */
 }
 
 header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
   position: absolute;
-  left: 30px;
-  width: 85%;
+  display: block;
+  margin: 0 auto;
+  /* width: ; */
+  width: 90%;
+  display: flex;
+  justify-content: center;
   z-index: 1;
   text-align: center;
   word-wrap: break-word;
   color: white;
   font-size: 20px;
+
   font-weight: 700;
   text-align: center;
   top: 40px;
@@ -134,9 +157,14 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
   display: none;
 }
 
+header .nav-menu-overlay .nav-menu-column.right>.submenu>li {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
 header .nav-menu-overlay .nav-menu-column.right>ul {
   font-size: 16px;
-  font-weight: 800;
+
   color: white;
   line-height: 21.79px;
   letter-spacing: 0.06em;
@@ -151,6 +179,8 @@ header .nav-menu-overlay .nav-menu-column.right>ul>li>ul {
   font-weight: normal;
   color: #bdccdb;
   margin-top: 10px;
+  font-family: 'Open Sans';
+  text-transform: none;
   padding-top: 15px;
   border-top: 1px solid #004370;
   font-weight: 400;
@@ -164,9 +194,11 @@ header .nav-menu-overlay .nav-menu-column.right>ul>li>ul {
 header .nav-menu-overlay .nav-menu-column.left ul li span {
   /* padding: 2px; */
   display: inline-block;
+
   min-width: 36px;
   min-height: 36px;
   border-radius: 50%;
+
   position: relative;
   margin-right: 15px;
   margin-bottom: -8px;
@@ -210,6 +242,7 @@ header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="sear
 
 header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="search"]::placeholder {
   color: #ffffff76;
+
   font-family: var(--body-font-family);
   font-size: 16px;
 }
@@ -221,31 +254,52 @@ header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="sear
 
   header .nav-menu {
     max-height: 400px;
+    /* min-width: 100vw; */
     min-height: 100vh;
   }
 
-  /* header .nav-menu .nav-menu-column.right::-webkit-scrollbar {
-     display: block; 
-  } */
+  header .nav-menu-overlay .nav-menu {
+
+    background-size: 60%;
+
+    /* background-position: contain; */
+
+  }
+
+  header .nav-menu .nav-menu-column.right::-webkit-scrollbar {
+    /* display: block; */
+  }
 
   header .nav-menu-overlay .nav-menu-column.right {
     flex-wrap: wrap !important;
     min-width: 100%;
     display: flex !important;
     justify-content: flex-start;
-    max-height: 400px;
+    max-height: 500px;
     /* gap: 30px; */
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
+    width: 95%;
+
   }
 
   header .nav-menu-overlay .nav-menu-column.right>.submenu {
     display: flex;
-    max-width: 40%;
+    max-width: 100%;
+    flex-direction: column;
+    row-gap: 50px;
+    column-gap: 50px;
+
     /* display: flex; */
+    flex-wrap: wrap;
+    max-height: 300px;
     height: auto;
   }
 
   header .nav-menu-overlay .nav-menu-column.right>.submenu>li {
     max-width: 100%;
+    min-width: 40%;
     height: auto;
   }
 
@@ -254,7 +308,8 @@ header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="sear
     min-width: 89%;
     padding-top: 20px;
     position: absolute;
-    width: 100%;
+    width: 95%;
+    top: 550px;
     display: flex;
     border-top: 1px solid #004370;
     flex-direction: row;
@@ -274,7 +329,7 @@ header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="sear
 
   header .nav-menu-overlay .nav-menu-column.right>.submenu:nth-child(3)>li:last-child>ul>li {
     color: #99b6c7;
-    padding: 0px 25px;
+    padding: 0px 35px;
     margin: 0;
     border-right: 1px solid #99b6c7;
   }
@@ -310,16 +365,29 @@ header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="sear
   header .nav-menu-overlay .nav-menu {
     display: flex;
     flex-direction: row;
+
+    background-size: 35%;
     padding: 100px 60px !important;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.left {
+    display: block;
+
   }
 
   header .nav-menu-overlay .nav-menu-column.right {
     display: block;
-    padding-left: 30px;
-    width: 600px;
+    padding-left: 80px;
+    position: relative;
+    /* width: ?600px; */
+    height: 400px;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
+    display: none;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
     display: none;
   }
 
@@ -333,19 +401,27 @@ header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="sear
 
   header .nav-menu-overlay .nav-menu-column.left>ul {
     border-right: 1px solid #004370;
-    gap: 20px;
+    gap: 5px;
+    min-width: 340px;
     width: 300px;
+    font-size: 18px;
   }
 
   header .nav-menu-overlay .nav-menu-column.left>ul>li {
-    font-size: 18px;
-    padding-left: 10px;
+
+
+    padding: 10px 40px 10px 20px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
   }
 
+  header .nav-menu-overlay .nav-menu-column.right>ul>li>ul {
+    font-weight: 800;
+  }
+
   header .nav-menu-overlay .nav-menu-column.left>ul>li.selected {
     background-color: white;
+    font-weight: 800;
     color: black;
   }
 
@@ -354,16 +430,31 @@ header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="sear
   }
 
   header .nav-menu-overlay .nav-menu-column.right>.submenu {
-    position: relative;
+
+    display: flex;
+    max-height: 300px;
+    row-gap: 50px;
+    column-gap: 100px;
+    flex-direction: column;
+    flex-wrap: wrap;
+
   }
 
-  header .nav-menu-overlay .nav-menu-column.right>.submenu:nth-child(3)>li:last-child {
-    bottom: -70px;
+  header .nav-menu-overlay .nav-menu-column.right>.submenu>li {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+
   }
 
   header .nav-menu-overlay .nav-menu-column.right>.submenu:nth-child(3)>li:last-child,
   header .nav-menu-overlay .nav-menu-column.right>.submenu:nth-child(5)>li:last-child {
-    min-width: 100%;
+    bottom: 20px;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right>.submenu:nth-child(3)>li:last-child,
+  header .nav-menu-overlay .nav-menu-column.right>.submenu:nth-child(5)>li:last-child {
+    min-width: 600px;
     padding-top: 20px;
     margin-top: 40px;
     position: absolute;
@@ -393,6 +484,8 @@ header .nav-menu-overlay .nav-menu-column.right ul:nth-child(5) input[type="sear
   }
 
   header .nav-menu-overlay .nav-menu-column.right>.submenu:nth-child(5)>li:last-child ul {
+    margin: 0;
+    padding: 0;
     border: none;
     display: flex;
     flex-direction: row;
@@ -658,7 +751,8 @@ header .nav-menu-overlay.open .nav-menu::-webkit-scrollbar {
   }
 
   header .nav-menu-overlay.open .nav-menu {
-    height: 50vh;
+    height: 56vh;
+    overflow-y: hidden;
     padding: 100px 40px;
     width: 100%;
   }
