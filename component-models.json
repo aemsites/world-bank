@@ -247,12 +247,8 @@
             "value": "sec-swoosh-type2"
           },
           {
-            "name": "Swoosh Type 3",
+            "name": "Swoosh Type 3 (default position)",
             "value": "sec-swish-type3"
-          },
-          {
-            "name": "Swoosh Type 4",
-            "value": "sec-swoosh-type4"
           }
         ]
       },
