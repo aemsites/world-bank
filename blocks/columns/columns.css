@@ -7,9 +7,9 @@
   width: 100%;
 }
 
-/* .columns > div > div {
+.columns > div > div {
   order: 1;
-} */
+}
 
 .columns > div > .columns-img-col {
   order: 0;
