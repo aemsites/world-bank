@@ -130,26 +130,6 @@
             "value": "columns-divider-variant"
           },
           {
-            "name": "variant-50-50",
-            "value": "col-variant-50-50"
-          },
-          {
-            "name": "variant-33-66",
-            "value": "col-variant-33-66"
-          },
-          {
-            "name": "variant-66-33",
-            "value": "col-variant-66-33"
-          },
-          {
-            "name": "variant-25-75",
-            "value": "col-variant-25-75"
-          },
-          {
-            "name": "variant-75-25",
-            "value": "col-variant-75-25"
-          },
-          {
             "name": "feature-card",
             "value": "columns-feature-card"
           }
@@ -166,10 +146,6 @@
           {
             "name": "default",
             "value": ""
-          },
-          {
-            "name": "column-50-50",
-            "value": "column-layout-50-50"
           },
           {
             "name": "column-33-66",
