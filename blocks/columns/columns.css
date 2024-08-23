@@ -50,60 +50,158 @@
     flex-direction: row;
     gap: 32px;
 
-    > div {
-      flex: 1;
-      order: unset;
-    }
+  .columns > div > div {
+    flex: 1;
+    order: unset;
   }
 }
 
-@media (width >= 768px) and (width <= 1024px) {
-  .columns.columns-divider-variant > div {
-    flex-direction: column;
+.columns-feature-card {
+  & > .columns-feature-card-list {
+    padding: 0;
+    margin: 0;
 
-    > div {
-      flex-basis: 100%;
+    & .columns-feature-card-item {
+      list-style: none;
 
-      p {
-        font-size: var(--body-font-size-xl);
+      > p:first-child {
+        font-family: var(--heading-font-family);
+        font-size: 28px;
+        line-height: 31px;
+        margin-top: 0;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+
+      .columns-feature-card-description {
+        font-family: var(--heading-font-family);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25px;
         text-align: left;
-        color: var(--neutrals-100);
         margin: 0;
+        margin-bottom: 4px;
+      }
+
+      picture {
+        display: block;
+        box-sizing: border-box;
+        overflow: hidden;
+        aspect-ratio: 3 / 2;
+        margin-bottom: 24px;
+        
+        img {
+          border-radius: 5px;
+          aspect-ratio: 3/2;
+        }
+      }
+
+      /* TODO: Temporary - to be handled in button component */
+      .button-container {
+        margin: 0;
+        display: flex;
+
+        a.button {
+          background-color: transparent;
+          border: 0 none;
+          border-radius: 0;
+          padding: 0;
+          padding-top: 12px;
+          padding-bottom: 8px;
+          border-bottom: 2px solid rgb(255 255 255 / 24%);
+          margin: 0;
+          font-size: 14px;
+          line-height: 24px;
+          font-weight: 700;
+        }
+      }
+
+      .button-container:last-child {
+        margin-bottom: 40px;
       }
     }
 
-    > div:last-child {
-      border-left: 1px solid var(--neutrals-20);
-      padding-left: 10px;
-
-      p {
-        font-size: var(--body-font-size);
-        margin: 0;
+    & .columns-feature-card-item:last-child {
+      .button-container {
+        margin-bottom: 0;
       }
     }
   }
 }
 
-@media (width <= 767px) {
-  .columns.columns-divider-variant > div {
-    flex-direction: column;
+@media (width >= 768px) {
+  /* TODO: Move to main styles after confirmation from Maria */
+  main .section[data-sec-spacing="sec-spacing-64"] {
+    padding: var(--spacing-80) 0;
+  }
 
-    > div {
-      flex-basis: 100%;
+  .columns-feature-card {
+    & > .columns-feature-card-list {
+      & .columns-feature-card-item {
+        > p:first-child {
+          font-size: 32px;
+          line-height: 35px;
+        }
 
-      p {
-        font-size: var(--body-font-size-xl);
-        text-align: left;
-        color: var(--neutrals-100);
-        line-height: 29px;
-        margin: 0;
+        .columns-feature-card-description {
+          font-size: 16px;
+          line-height: 22px;
+          margin-bottom: 8px;
+        }
+
+        .button-container {
+          a.button {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+
+        .columns-feature-card-group {
+          display: grid;
+          grid-template-columns: 228px 1fr;
+          gap: 24px;
+        }
       }
     }
-
-    > div:last-child {
-      border-left: 1px solid var(--neutrals-20);
-      padding-left: 10px;
-      margin: 0;
-    }
-  }
+  }  
 }
+
+@media (width >= 1024px) {
+  /* TODO: Move to main styles after confirmation from Maria */
+  main .section[data-sec-spacing="sec-spacing-64"] {
+    padding: var(--spacing-96) 0;
+  }
+
+  .columns-feature-card {
+    & > .columns-feature-card-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 98px;
+
+      & .columns-feature-card-item {
+        > p:first-child {
+          font-size: 40px;
+          line-height: 44px;
+          min-height: 132px;
+        }
+
+        .columns-feature-card-description {
+          font-size: 20px;
+          line-height: 28px;
+        }
+
+        .button-container {
+          a.button {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+
+        .columns-feature-card-group {
+          display: unset;
+        }
+      }
+    }
+  }  
+}
+
