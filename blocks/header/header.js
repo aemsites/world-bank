@@ -1,5 +1,9 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+import { fetchLanguagePlaceholders, getLanguage } from '../../scripts/scripts.js';
+import {
+  div, img,
+} from '../../scripts/dom-helpers.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -90,10 +94,113 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
+let listOfAllPlaceholdersData = [];
+
+function makeImageClickableNSettingAltText() {
+  const logoImage = document.querySelector('.nav-brand img');
+  const anchor = document.createElement('a');
+  Object.assign(anchor, {
+    href: listOfAllPlaceholdersData.logoUrl,
+    title: logoImage.alt,
+  });
+  anchor.appendChild(document.querySelector('.nav-brand picture'));
+  document.querySelector('.nav-brand .default-content-wrapper').appendChild(anchor);
+}
+
+function handleEnterKey(event) {
+  if (event.key !== 'Enter') return;
+  const inputValue = document.querySelector('.search-container input').value;
+  const url = listOfAllPlaceholdersData.searchRedirectUrl + inputValue;
+  if (inputValue) window.location.href = url;
+}
+
+function createSearchBox() {
+  const navWrapper = document.querySelector('.nav-wrapper');
+  const navTools = document.querySelector('.nav-tools p');
+  let searchContainer = navWrapper.querySelector('.search-container');
+  let cancelContainer = navWrapper.querySelector('.cancel-container');
+  let overlay = document.querySelector('.overlay');
+  const searchImage = document.querySelector('.icon-search');
+  document.body.classList.add('no-scroll');
+  if (searchContainer) {
+    const isVisible = searchContainer.style.display !== 'none';
+    searchContainer.style.display = isVisible ? 'none' : 'flex';
+    if (cancelContainer) {
+      cancelContainer.style.display = isVisible ? 'none' : 'flex';
+    }
+    overlay.style.display = isVisible ? 'none' : 'block';
+
+    searchImage.style.display = isVisible ? 'block' : 'none';
+  } else {
+    cancelContainer = div({ class: 'cancel-container' });
+    const cancelImg = img({ class: 'cancel-image' });
+    cancelImg.src = '/icons/cancel.svg';
+    cancelImg.alt = 'cancel';
+    cancelImg.style.cssText = 'display: flex; cursor: pointer;';
+    cancelContainer.addEventListener('click', () => {
+      searchContainer.style.display = 'none';
+      cancelContainer.style.display = 'none';
+      searchImage.style.display = 'block'; // Show search icon again
+      overlay.style.display = 'none';
+      document.body.classList.remove('no-scroll');
+    });
+    cancelContainer.appendChild(cancelImg);
+    navTools.appendChild(cancelContainer);
+    // Hide search icon
+    searchImage.style.display = 'none';
+    searchContainer = div({ class: 'search-container' });
+    overlay = div({ class: 'overlay' });
+    document.body.appendChild(overlay);
+    const searchInputContainer = div({ class: 'search-input-container' });
+    const searchInputBox = document.createElement('input');
+    const searchIcon = img({ class: 'search-icon' });
+    searchIcon.src = '/icons/search-white.svg';
+    searchIcon.alt = 'search';
+    searchIcon.addEventListener('click', () => {
+      if (searchInputBox.value) {
+        window.location.href = listOfAllPlaceholdersData.searchRedirectUrl
+        + searchInputBox.value;
+      }
+    });
+
+    Object.assign(searchInputBox, {
+      type: 'text',
+      id: 'search-input',
+      name: 'myInput',
+      placeholder: listOfAllPlaceholdersData.searchVariable,
+      value: '',
+    });
+    searchInputBox.addEventListener('keydown', handleEnterKey);
+    searchInputContainer.append(searchInputBox, searchIcon);
+    const searchContainerWrapper = div({ class: 'search-input-wrapper' });
+    searchContainerWrapper.append(searchInputContainer);
+    searchContainer.appendChild(searchContainerWrapper);
+    navWrapper.appendChild(searchContainer);
+  }
+}
+
+function settingAltTextForSearchIcon() {
+  const searchImage = document.querySelector('.icon-search');
+  searchImage.style.cursor = 'pointer';
+  searchImage.addEventListener('click', () => {
+    createSearchBox();
+  });
+  searchImage.setAttribute('title', listOfAllPlaceholdersData.searchAltText);
+}
+
+async function fetchingPlaceholdersData() {
+  listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
+  const hamburger = document.querySelector('.nav-hamburger');
+  hamburger.setAttribute('title', listOfAllPlaceholdersData.hamburgerAltText);
+  makeImageClickableNSettingAltText();
+  settingAltTextForSearchIcon();
+}
+
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const lang = getLanguage();
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : `/${lang}/nav`;
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -139,11 +246,12 @@ export default async function decorate(block) {
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
   // prevent mobile nav behavior on window resize
-  toggleMenu(nav, navSections, isDesktop.matches);
+  // toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  fetchingPlaceholdersData(block);
 }
