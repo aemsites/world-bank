@@ -25,6 +25,7 @@ module.exports = {
         'curated-card': 7,
         hero: 5,
         'explore-card': 7,
+        section: 7,
       },
     ],
   },
