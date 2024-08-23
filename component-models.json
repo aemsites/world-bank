@@ -224,35 +224,84 @@
           {
             "name": "Spacing 64px",
             "value": "sec-spacing-64"
+          },
+          {
+            "name": "Spacing 80px",
+            "value": "sec-spacing-80"
+          },
+          {
+            "name": "Spacing 96px",
+            "value": "sec-spacing-96"
           }
         ]
       },
       {
         "component": "select",
-        "name": "sec-swish",
+        "name": "sec-swoosh",
         "value": "",
-        "label": "Section Swish",
+        "label": "Section Swoosh",
         "valueType": "string",
         "options": [
           {
-            "name": "No Swish",
-            "value": "sec-swish-none"
+            "name": "No Swoosh",
+            "value": "sec-swoosh-none"
           },
           {
-            "name": "Swish on left",
-            "value": "sec-swish-left"
+            "name": "Swoosh Type 1",
+            "value": "sec-swoosh-type1"
           },
           {
-            "name": "Swish on center",
-            "value": "sec-swish-center"
+            "name": "Swoosh Type 2",
+            "value": "sec-swoosh-type2"
           },
           {
-            "name": "Swish on right",
-            "value": "sec-swish-right"
+            "name": "Swoosh Type 3 (default position)",
+            "value": "sec-swish-type3"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "sec-swoosh-position",
+        "value": "",
+        "label": "Section Swoosh Position",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Left - Top",
+            "value": "swoosh-left-top"
           },
           {
-            "name": "Swish with Primary blue 95",
-            "value": "sec-swish-primary-blue-95"
+            "name": "Left - Center",
+            "value": "swoosh-left-center"
+          },
+          {
+            "name": "Left - Bottom",
+            "value": "swoosh-left-bottom"
+          },
+          {
+            "name": "Center - Top",
+            "value": "swoosh-center-top"
+          },
+          {
+            "name": "Center - Center",
+            "value": "swoosh-center-center"
+          },
+          {
+            "name": "Bottom - Bottom",
+            "value": "swoosh-center-bottom"
+          },
+          {
+            "name": "Right - Top",
+            "value": "swoosh-right-top"
+          },
+          {
+            "name": "Right - Center",
+            "value": "swoosh-right-center"
+          },
+          {
+            "name": "Right - Bottom",
+            "value": "swoosh-right-bottom"
           }
         ]
       },
@@ -334,7 +383,7 @@
     ]
   },
   {
-    "id": "data-cards",
+    "id": "data-card",
     "fields": [
      {
         "component": "aem-tag",
