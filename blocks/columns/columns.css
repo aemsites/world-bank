@@ -42,9 +42,12 @@
 
       > p:first-child {
         font-family: var(--heading-font-family);
-        color: #fff;
+        color: var(--color-white);
         font-size: 28px;
         line-height: 31px;
+        margin-top: 0;
+        margin-bottom: 24px;
+        text-transform: uppercase;
       }
 
       .columns-feature-card-description {
@@ -53,39 +56,84 @@
         font-weight: 400;
         line-height: 25px;
         text-align: left;
-        color: #fff;
+        color: var(--color-white);
+        margin: 0;
+        margin-bottom: 4px;
       }
 
-      img {
-        border-radius: 5px;
-        aspect-ratio: 3/2;
+      picture {
+        display: block;
+        box-sizing: border-box;
+        overflow: hidden;
+        aspect-ratio: 3 / 2;
+        margin-bottom: 24px;
+        
+        img {
+          border-radius: 5px;
+          aspect-ratio: 3/2;
+        }
       }
 
+      /* TODO: Temporary - to be handled in button component */
       .button-container {
         margin: 0;
         display: flex;
-        margin-bottom: 16px;
 
         a.button {
           background-color: transparent;
           border: 0 none;
           border-radius: 0;
           padding: 0;
-          border-bottom: 2px solid rgb(255 255 255 / 30%);
+          padding-top: 12px;
+          padding-bottom: 8px;
+          border-bottom: 2px solid rgb(255 255 255 / 24%);
           margin: 0;
-          font-size: var(--body-font-size-m);
+          font-size: 14px;
+          line-height: 24px;
           font-weight: 700;
-          line-height: 22px;
         }
+      }
+
+      .button-container:last-child {
+        margin-bottom: 40px;
+      }
+    }
+
+    & .columns-feature-card-item:last-child {
+      .button-container {
+        margin-bottom: 0;
       }
     }
   }
 }
 
 @media (width >= 768px) {
+  /* TODO: Move to main styles after confirmation from Maria */
+  main .section[data-sec-spacing="sec-spacing-64"] {
+    padding: var(--spacing-80) 0;
+  }
+
   .columns-feature-card {
     & > .columns-feature-card-list {
       & .columns-feature-card-item {
+        > p:first-child {
+          font-size: 32px;
+          line-height: 35px;
+        }
+
+        .columns-feature-card-description {
+          font-size: 16px;
+          line-height: 22px;
+          margin-bottom: 8px;
+        }
+
+        .button-container {
+          a.button {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+
         .columns-feature-card-group {
           display: grid;
           grid-template-columns: 228px 1fr;
@@ -97,6 +145,11 @@
 }
 
 @media (width >= 1024px) {
+  /* TODO: Move to main styles after confirmation from Maria */
+  main .section[data-sec-spacing="sec-spacing-64"] {
+    padding: var(--spacing-96) 0;
+  }
+
   .columns-feature-card {
     & > .columns-feature-card-list {
       display: grid;
@@ -104,6 +157,24 @@
       column-gap: 98px;
 
       & .columns-feature-card-item {
+        > p:first-child {
+          font-size: 40px;
+          line-height: 44px;
+          min-height: 132px;
+        }
+
+        .columns-feature-card-description {
+          font-size: 20px;
+          line-height: 28px;
+        }
+
+        .button-container {
+          a.button {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+
         .columns-feature-card-group {
           display: unset;
         }
