@@ -36,6 +36,14 @@
         }
 
         .data-card-description {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            text-align: left;
+
+        }
+
+        .data-card-disclaimer{
             font-size: 14px;
             font-style: italic;
             font-weight: 400;
