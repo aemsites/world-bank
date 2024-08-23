@@ -113,11 +113,9 @@ function showSubMenu(submenuId, submenuTitle, currentIndex) {
   if (!isDesktop.matches) {
     const sidemenuBackButton = document.querySelector('.nav-menu-overlay-back');
     sidemenuBackButton.style.display = 'block';
-    const CurrentSubMenu = document.querySelector(
-      '.nav-menu-column.right .submenu-main-title'
-    );
-    CurrentSubMenu.textContent = submenuTitle;
-    CurrentSubMenu.style.display = 'block';
+    const currentSubMenu = document.querySelector('.nav-menu-column.right .submenu-main-title');
+    currentSubMenu.textContent = submenuTitle;
+    currentSubMenu.style.display = 'block';
   }
   if (!isDesktop.matches) {
     const leftColumn = document.querySelector('.nav-menu-column.left');
