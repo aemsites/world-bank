@@ -549,5 +549,110 @@
         "label": "Link"
       }
     ]
+  },
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "teaserBlurb",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "teaserStyle",
+        "value": "",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          { "name": "Video", "value": "video" },
+          { "name": "Image", "value": "image" }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Video Properties",
+        "name": "videoProperties",
+        "valueType": "string",
+        "condition": { "===": [{"var" : "teaserStyle"}, "video"] },
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "videoReference",
+            "label": "Video",
+            "multi": false
+          },
+          {
+            "component": "select",
+            "name": "videoBehavior",
+            "value": "",
+            "label": "Video Behavior (on load)",
+            "valueType": "string",
+            "options": [
+              { "name": "Autoplay", "value": "autoplay" },
+              { "name": "Pause", "value": "pause" }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Image Properties",
+        "name": "imageProperties",
+        "valueType": "string",
+        "condition": { "===": [{"var" : "teaserStyle"}, "image"] },
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "imageReference",
+            "label": "Image",
+            "multi": false
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "swooshReference",
+        "label": "Swoosh Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "btn-style",
+        "value": "",
+        "label": "Button Style",
+        "options": [
+          { "name": "Style 1", "value": "style1" },
+          { "name": "Style 2", "value": "style2" }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "btn-text",
+        "value": "Button text",
+        "label": "Button Text"
+      },
+      {
+        "component": "aem-content",
+        "name": "btn-link",
+        "label": "Button Link",
+        "valueType": "string",
+        "rootPath": "",
+        "description": "Path to linked AEM content"
+     }
+    ]
   }
 ]
