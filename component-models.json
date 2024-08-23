@@ -277,27 +277,27 @@
           },
           {
             "name": "Center - Top",
-            "value": "swoosh-left-top"
+            "value": "swoosh-center-top"
           },
           {
             "name": "Center - Center",
-            "value": "swoosh-left-center"
+            "value": "swoosh-center-center"
           },
           {
             "name": "Bottom - Bottom",
-            "value": "swoosh-left-bottom"
+            "value": "swoosh-center-bottom"
           },
           {
             "name": "Right - Top",
-            "value": "swoosh-left-top"
+            "value": "swoosh-right-top"
           },
           {
             "name": "Right - Center",
-            "value": "swoosh-left-center"
+            "value": "swoosh-right-center"
           },
           {
             "name": "Right - Bottom",
-            "value": "swoosh-left-bottom"
+            "value": "swoosh-right-bottom"
           }
         ]
       },
