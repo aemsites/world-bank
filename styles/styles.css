@@ -146,6 +146,8 @@
 
   /* Screen variables */
   --screen-width: 1456px;
+  --nav-height: 34px;
+  --nav-padding: 25px;
 
   /* shadows & elevations */
   --section-shadow: 0 2px 4px rgba(0 0 0 10%);
@@ -189,6 +191,9 @@
 
     /* Gutter space */
     --section-gutter-space: 48px;
+
+    /* Screen variables */
+    --nav-height: 44px;
   }
 
   @media (width >= 1024px) {
@@ -196,6 +201,10 @@
 
     /* Gutter space */
     --section-gutter-space: 72px;
+
+     /* Screen variables */
+     --nav-height: 50px;
+     --nav-padding: 35px;
   }
 }
 

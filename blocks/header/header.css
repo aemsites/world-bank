@@ -1,13 +1,10 @@
 :root {
-  --nav-height: 34px;
-  --nav-padding: 25px;
   --hamburger-right-space: 20px;
   --logo-width: 170px;
   --search-wrapper-height: 125px;
   --search-text-size: 20px;
 
   @media (width >= 768px) {
-    --nav-height: 44px;
     --hamburger-right-space: 28px;
     --logo-width: 220px;
     --search-wrapper-height: 196px;
@@ -15,8 +12,6 @@
   }
 
   @media (width >= 1024px) {
-    --nav-height: 50px;
-    --nav-padding: 35px;
     --hamburger-right-space: 32px;
   }
 }
