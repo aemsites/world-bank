@@ -334,7 +334,7 @@
     ]
   },
   {
-    "id": "data-cards",
+    "id": "data-card",
     "fields": [
      {
         "component": "aem-tag",
@@ -426,20 +426,6 @@
         "name": "title",
         "value": "",
         "label": "Title"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "fileReference",
-        "label": "Background Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
-        "label": "Alt Text"
       }
     ]
   },
