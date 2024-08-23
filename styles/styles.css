@@ -120,6 +120,7 @@
   --text-color: var(--neutrals-100);
   --color-white: #FFF;
   --color-black: #000;
+  --input-background-color:#002337;
 
   /* body sizes */
   --body-font-size-xl: 20px;
@@ -145,9 +146,10 @@
   --heading-font-size-xxs: 18px;
   --heading-font-size-xxxs: 14px;
 
-  /* nav height TODO: Update this */
-  --nav-height: 64px;
+  /* Screen variables */
   --screen-width: 1456px;
+  --nav-height: 34px;
+  --nav-padding: 25px;
 
   /* shadows & elevations */
   --section-shadow: 0 2px 4px rgba(0 0 0 10%);
@@ -156,6 +158,7 @@
   --dropdown-shadow: 0 4px 12px rgba(0 0 0 32%);
   --map-elements-shadow: 0 2px 4px rgba(0 0 0 32%);
   --dashboard-cards-shadow: 5px 5px 12px rgba(0 0 0 25%);
+  --overlay-color:rgba(255 255 255 / 50%);
 
   /* Gutter space */
   --section-gutter-space: 28px;
@@ -190,6 +193,9 @@
 
     /* Gutter space */
     --section-gutter-space: 48px;
+
+    /* Screen variables */
+    --nav-height: 44px;
   }
 
   @media (width >= 1024px) {
@@ -197,6 +203,10 @@
 
     /* Gutter space */
     --section-gutter-space: 72px;
+
+     /* Screen variables */
+     --nav-height: 50px;
+     --nav-padding: 35px;
   }
 }
 
@@ -223,6 +233,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  padding: var(--nav-padding) 0;
 }
 
 h1,
