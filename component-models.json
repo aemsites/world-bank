@@ -255,8 +255,12 @@
             "value": "sec-swoosh-type2"
           },
           {
-            "name": "Swoosh Type 3 (default position)",
-            "value": "sec-swish-type3"
+            "name": "Swoosh Type 3",
+            "value": "sec-swoosh-type3"
+          },
+          {
+            "name": "Swoosh Primary Blue 90 theme",
+            "value": "sec-swoosh-primary-blue-90"
           }
         ]
       },
