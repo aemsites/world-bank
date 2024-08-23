@@ -3,13 +3,13 @@ import { loadFragment } from '../fragment/fragment.js';
 import { fetchLanguageNavigation } from '../../scripts/scripts.js';
 
 // media query match that indicates mobile/tablet width
-const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 1024px)');
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
     const navSections = nav.querySelector('.nav-sections');
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
+    const navSectionExpanded = navSections.querySelector("[aria-expanded='true']");
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleAllNavSections(navSections);
@@ -33,6 +33,21 @@ function openOnKeydown(e) {
   }
 }
 
+function closesideMenu() {
+  const leftColumn = document.querySelector('.nav-menu-column.left');
+  leftColumn.style.display = 'flex';
+
+  const rightColumn = document.querySelector('.nav-menu-column.right');
+  rightColumn.style.display = 'none';
+  const submenus = document.querySelectorAll('.submenu');
+  submenus.forEach((submenu) => {
+    submenu.style.display = 'none';
+  });
+  const sidemenuBackButton = document.querySelector('.nav-menu-overlay-back');
+  sidemenuBackButton.style.display = 'none';
+  const CurrentSubMenu = document.querySelector('.nav-menu-column.right .submenu-main-title');
+  CurrentSubMenu.style.display = 'none';
+}
 function focusNavSection() {
   document.activeElement.addEventListener('keydown', openOnKeydown);
 }
@@ -43,9 +58,11 @@ function focusNavSection() {
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
 function toggleAllNavSections(sections, expanded = false) {
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
-    section.setAttribute('aria-expanded', expanded);
-  });
+  sections
+    .querySelectorAll('.nav-sections .default-content-wrapper > ul > li')
+    .forEach((section) => {
+      section.setAttribute('aria-expanded', expanded);
+    });
 }
 
 /**
@@ -60,7 +77,10 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   // document.body.style.overflowY = expanded ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSections, expanded ? 'false' : 'true');
-  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  button.setAttribute(
+    'aria-label',
+    expanded ? 'Open navigation' : 'Close navigation'
+  );
 
   const navMenuOverlay = navSections.querySelector('.nav-menu-overlay');
   if (!expanded) {
@@ -131,17 +151,35 @@ function formatNavigationJsonData(navJson) {
   return structuredData;
 }
 
-function showSubMenu(submenuId) {
+function showSubMenu(submenuId, submenuTitle, currentIndex) {
+  const rightColumn = document.querySelector('.nav-menu-column.right');
+  rightColumn.style.display = 'block';
+  if (!isDesktop.matches) {
+    const sidemenuBackButton = document.querySelector('.nav-menu-overlay-back');
+    sidemenuBackButton.style.display = 'block';
+    const CurrentSubMenu = document.querySelector(
+      '.nav-menu-column.right .submenu-main-title'
+    );
+    CurrentSubMenu.textContent = submenuTitle;
+    CurrentSubMenu.style.display = 'block';
+  }
+  if (!isDesktop.matches) {
+    const leftColumn = document.querySelector('.nav-menu-column.left');
+    leftColumn.style.display = 'none';
+  }
   const submenus = document.querySelectorAll('.submenu');
   submenus.forEach((submenu) => {
     submenu.style.display = submenu.id === submenuId ? 'block' : 'none';
   });
 
-  const level0Items = document.querySelectorAll('#level0Menu li');
+  const level0Items = document.querySelectorAll('.nav-menu-column.left li');
   level0Items.forEach((item) => {
     item.classList.remove('selected');
   });
-  document.querySelector(`[onclick="showSubMenu('${submenuId}')"]`).classList.add('selected');
+
+  document
+    .querySelectorAll('.nav-menu-column.left li')
+    [currentIndex].classList.add('selected');
 }
 
 function createNavMenu(structuredNav) {
@@ -159,14 +197,32 @@ function createNavMenu(structuredNav) {
   const menuColumnRight = document.createElement('div');
   menuColumnRight.className = 'nav-menu-column right';
 
+  const backButton = document.createElement('button');
+  backButton.classList.add('nav-menu-overlay-back');
+  menuColumnRight.appendChild(backButton);
+  backButton.addEventListener('click', () => {
+    closesideMenu();
+  });
+
+  const submenuMainTitle = document.createElement('p');
+  submenuMainTitle.classList.add('submenu-main-title');
+
+  menuColumnRight.appendChild(submenuMainTitle);
+
   structuredNav.forEach((level0Item, index) => {
     const level0MenuItem = document.createElement('li');
+    const level0MenuItemArrow = document.createElement('span');
+    level0MenuItemArrow.textContent = '';
     const submenuId = `submenu_${index}`;
     level0MenuItem.textContent = level0Item.title;
-    const isSelected = `${index === 0 ? 'selected' : ''}`;
+    level0MenuItem.prepend(level0MenuItemArrow);
+
+    const isSelected = isDesktop.matches
+      ? `${index == 0 ? 'selected' : ''}`
+      : '';
     if (isSelected) level0MenuItem.classList.add(`${isSelected}`);
 
-    level0MenuItem.addEventListener('click', () => showSubMenu(`${submenuId}`));
+    level0MenuItem.addEventListener('click', () => showSubMenu(`${submenuId}`, `${level0Item.title}`, `${index}`));
 
     listMainNavTitle.appendChild(level0MenuItem);
 
@@ -174,7 +230,11 @@ function createNavMenu(structuredNav) {
     const submenu = document.createElement('ul');
     submenu.id = submenuId;
     submenu.classList.add('submenu');
-    if (index !== 0) submenu.style.display = 'none';
+    if (isDesktop.matches) {
+      if (index !== 0) submenu.style.display = 'none';
+    } else {
+      submenu.style.display = 'none';
+    }
 
     level0Item.categories.forEach((category) => {
       const categoryItem = document.createElement('li');
@@ -193,7 +253,18 @@ function createNavMenu(structuredNav) {
       categoryItem.appendChild(categoryList);
       submenu.appendChild(categoryItem);
     });
+    if (index === 2) {
+      const searchBarWrapper = document.createElement('li');
 
+      const searchBar = document.createElement('input');
+      searchBar.type = 'search';
+      searchBar.placeholder = 'Search by Country Name...';
+      const searchBarWrapperElement = document.createElement('ul');
+      searchBarWrapperElement.textContent = 'Browse By Country';
+      searchBarWrapperElement.appendChild(searchBar);
+      searchBarWrapper.appendChild(searchBarWrapperElement);
+      submenu.appendChild(searchBarWrapper);
+    }
     menuColumnRight.appendChild(submenu);
   });
 
@@ -237,22 +308,23 @@ export default async function decorate(block) {
     const structuredNav = formatNavigationJsonData(await fetchLanguageNavigation());
     navSections.append(createNavMenu(structuredNav));
 
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        }
+    navSections
+      .querySelectorAll(':scope .default-content-wrapper > ul > li')
+      .forEach((navSection) => {
+        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+        navSection.addEventListener('click', () => {
+          if (isDesktop.matches) {
+            const expanded = navSection.getAttribute('aria-expanded') === 'true';
+            toggleAllNavSections(navSections);
+            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          }
+        });
       });
-    });
   }
-  // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
-  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-      <span class="nav-hamburger-icon"></span>
+  hamburger.innerHTML = `<button type='button' aria-controls='nav' aria-label='Open navigation'>
+      <span class='nav-hamburger-icon'></span>
     </button>`;
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
