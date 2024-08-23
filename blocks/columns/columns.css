@@ -181,43 +181,44 @@
   }  
 }
 
-.columns-layout-33-66 > div > div:first-child,
-.columns-layout-66-33 > div > div:last-child,
-.columns-layout-25-75 > div > div:first-child,
-.columns-layout-75-25 > div > div:last-child {
-    flex-basis: 33%;
+.columns-layout-33-66 > div > div,
+.columns-layout-66-33 > div > div,
+.columns-layout-25-75 > div > div,
+.columns-layout-75-25 > div > div {
+    flex-basis: 100%;
+    flex-direction: column;
 }
 
-.columns-layout-33-66 > div > div:last-child,
-.columns-layout-66-33 > div > div:first-child,
-.columns-layout-25-75 > div > div:last-child,
-.columns-layout-75-25 > div > div:first-child {
-    flex-basis: 66%;
-}
-
-.columns-layout-25-75 > div > div:first-child,
-.columns-layout-75-25 > div > div:last-child {
-    flex-basis: 25%;
-}
-
-.columns-layout-25-75 > div > div:last-child,
-.columns-layout-75-25 > div > div:first-child {
-    flex-basis: 75%;
-}
-
-@media (width <= 1024px) {
+@media (width >= 1024px) {
     .columns-layout-33-66 > div,
     .columns-layout-66-33 > div,
     .columns-layout-25-75 > div,
     .columns-layout-75-25 > div {
-        flex-direction: column;
+        flex-direction: row;
+  }
+
+    .columns-layout-33-66 > div > div:first-child,
+    .columns-layout-66-33 > div > div:last-child,
+    .columns-layout-25-75 > div > div:first-child,
+    .columns-layout-75-25 > div > div:last-child {
+        flex-basis: 33%;
     }
 
-    .columns-layout-33-66 > div > div,
-    .columns-layout-66-33 > div > div,
-    .columns-layout-25-75 > div > div,
-    .columns-layout-75-25 > div > div {
-        flex-basis: 100%;
+    .columns-layout-33-66 > div > div:last-child,
+    .columns-layout-66-33 > div > div:first-child,
+    .columns-layout-25-75 > div > div:last-child,
+    .columns-layout-75-25 > div > div:first-child {
+        flex-basis: 66%;
+    }
+
+    .columns-layout-25-75 > div > div:first-child,
+    .columns-layout-75-25 > div > div:last-child {
+        flex-basis: 25%;
+    }
+
+    .columns-layout-25-75 > div > div:last-child,
+    .columns-layout-75-25 > div > div:first-child {
+        flex-basis: 75%;
     }
 }
 
