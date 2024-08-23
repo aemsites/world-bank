@@ -144,8 +144,7 @@
   --heading-font-size-xxs: 18px;
   --heading-font-size-xxxs: 14px;
 
-  /* nav height TODO: Update this */
-  --nav-height: 120px;
+  /* Screen variables */
   --screen-width: 1456px;
 
   /* shadows & elevations */
@@ -223,6 +222,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  padding: var(--nav-padding) 0;
 }
 
 h1,
