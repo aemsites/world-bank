@@ -149,7 +149,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Data Cards",
+                  "name": "data-cards",
                   "filter": "data-cards"
                 }
               }
