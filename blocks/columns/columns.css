@@ -1,3 +1,24 @@
+.columns > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns img {
+  width: 100%;
+}
+
+.columns > div > div {
+  order: 1;
+}
+
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
+.columns > div > .columns-img-col img {
+  display: block;
+}
+
 .columns-divider-variant > div {
   display: flex;
   gap: 20px;
@@ -21,27 +42,6 @@
     color: var(--neutrals-100);
     font-size: var(--body-font-size);
   }
-}
-
-.columns > div {
-  display: flex;
-  flex-direction: column;
-}
-
-.columns img {
-  width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
-}
-
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
 }
 
 @media (width >= 900px) {
