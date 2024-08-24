@@ -136,6 +136,36 @@
         ]
       },
       {
+        "component": "select",
+        "name": "type",
+        "value": "",
+        "label": "Columns Layout",
+        "description": "Different column layouts",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "column-33-66",
+            "value": "column-layout-33-66"
+          },
+          {
+            "name": "column-66-33",
+            "value": "column-layout-66-33"
+          },
+          {
+            "name": "column-25-75",
+            "value": "column-layout-25-75"
+          },
+          {
+            "name": "column-75-25",
+            "value": "column-layout-75-25"
+          }
+        ]
+      },
+      {
         "component": "text",
         "valueType": "number",
         "name": "columns",
