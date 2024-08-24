@@ -161,8 +161,9 @@ function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchP
       const searchBarWrapper = li(
         {},
         ul(
-          { textContent: category.Title },
+          category.Title,
           input({ type: 'search', placeholder: countrySearchPlaceholder }),
+          div(),
         ),
       );
       submenu.appendChild(searchBarWrapper);
@@ -175,7 +176,10 @@ function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchP
       category.items.forEach((subItem) => {
         const subMenuItem = li(
           {},
-          a({ href: subItem.Link, textContent: subItem.Title }),
+          a(
+            { href: subItem.Link },
+            subItem.Title,
+          ),
         );
         categoryList.appendChild(subMenuItem);
       });
