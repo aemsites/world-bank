@@ -151,7 +151,7 @@
   .columns-feature-card {
     & > .columns-feature-card-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, calc(33.3333% - 49px));
       column-gap: 98px;
 
       & .columns-feature-card-item {
