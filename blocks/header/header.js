@@ -152,7 +152,7 @@ function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchP
     {
       id: submenuId,
       class: 'submenu',
-      style: isDesktop.matches && index === 0 ? 'display: block;' : 'display: none;',
+      style: isDesktop.matches && index === 0 ? 'display: flex;' : 'display: none;',
     },
   );
 
