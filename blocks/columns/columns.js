@@ -39,7 +39,7 @@ export default function decorate(block) {
       const cardLi = li({ class: 'columns-feature-card-item' }, ...card.children);
       cardsList.appendChild(cardLi);
     });
-    block.innerHTML = '';
+    // block.innerHTML = '';
     block.appendChild(cardsList);
   }
 }
