@@ -1,6 +1,5 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
-import { p, button, div, img } from '../../scripts/dom-helpers.js';
+// Removed unused imports
+import { div, img } from '../../scripts/dom-helpers.js';
 
 export default function decorate(block) {
     // Select all cards except the first child (heading)
@@ -17,44 +16,44 @@ export default function decorate(block) {
     // Create a container for all the cards
     const storiesContainer = div({ class: 'stories-container' });
 
+    // Map of content types to icons
+    const contentTypeIcons = {
+        'podcast-audio': '/icons/podcast.svg',
+        'video': '/icons/playbutton.svg',
+    };
+
     // Iterate through each card and transform it
     cards.forEach(card => {
         // Extract elements from the card
-        const [imageContainer, altText, contentType, storyType, storyHeading, tags, link] = card.children;
-        const storyCard = div({ class: 'story-card' }
-        );
+        const [imageContainer, altText, contentType, storyType, storyHeading, , link] = card.children;
 
-        imageContainer.getElementsByTagName('img')[0].setAttribute("alt", altText.textContent);
+        // Set alt attribute for the image
+        const imgElement = imageContainer.querySelector('img');
+        imgElement.setAttribute('alt', altText.textContent);
 
         // Style the story type and create content container
         storyType.classList.add('story-type');
-
         const storyContent = div({ class: 'story-content' });
-        var iconsrc = '';
-        const contentTypeText = contentType.textContent;
 
-        if (contentTypeText === 'podcast-audio') {
-            iconsrc = '/icons/podcast.svg';
-        } else if (contentTypeText === 'video') {
-            iconsrc = '/icons/playbutton.svg'
-        }
-
+        // Append content type icon if applicable
+        const iconsrc = contentTypeIcons[contentType.textContent];
         if (iconsrc) {
             const contentTypeDiv = div({ class: 'contenttype-icon' }, img({ src: iconsrc }));
             storyContent.appendChild(contentTypeDiv);
         }
 
-        const anchorTag = link.getElementsByTagName('a')[0];
+        // Clear the anchor tag's text content and append the image container
+        const anchorTag = link.querySelector('a');
         anchorTag.textContent = '';
         anchorTag.appendChild(imageContainer);
+
+        // Append story type and heading to the story content
+        storyHeading.classList.add('story-heading');
         storyContent.appendChild(storyType);
         storyContent.appendChild(storyHeading);
 
-        // Append image and content to the card
-        storyCard.appendChild(anchorTag);
-        storyCard.appendChild(storyContent);
-
-        // Add the card to the container
+        // Create story card and append content
+        const storyCard = div({ class: 'story-card' }, anchorTag, storyContent);
         storiesContainer.appendChild(storyCard);
     });
 

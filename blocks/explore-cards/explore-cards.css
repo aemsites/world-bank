@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: var(--spacing-20);
 }
 
 .development-stories {
@@ -10,18 +10,18 @@
 }
 
 .explore-title {
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-20);
 }
 
 .explore-title p {
-    font-size: 40px;
-    color: white;
+    font-size: var(--heading-font-size-l);
+    color: var(--background-color);
 }
 
 .stories-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: var(--spacing-20);
 }
 
 .story-card {
@@ -34,7 +34,7 @@
 .story-card .contenttype-icon {
     width: 72px;
     height: 72px;
-    background: white;
+    background: var(--background-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@
 
 .story-card a {
     text-decoration: none;
-    color: white;
+    color: var(--color-white);
     display: block;
     height: 100%;
 
@@ -64,12 +64,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px;
+    padding: var(--spacing-20);;
     background: linear-gradient(180deg, rgba(1, 39, 64, 0) 39.98%, #012740 78.99%);
-    color: white;
+    color: var(--color-white);
     z-index: 1;
 
-    div:nth-child(2) p {
+    .story-heading p {
         font-size: 24px;
         line-height: 29px;
         font-weight: 700;
@@ -79,23 +79,23 @@
 .story-type p {
     font-size: 12px;
     text-transform: uppercase;
-    color: white;
+    color:var(--color-white);
     margin-bottom: 10px;
 }
 
-.story-content h3 {
-    font-size: 1.25rem;
+.story-content .story-heading h3 {
+    font-size: var(--heading-font-size-l);
     margin: 0;
-    color: white;
+    color: var(--color-white);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1024px) {
     .stories-container {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .story-content h3 {
-        font-size: 40px;
+    .story-content .story-heading h3 {
+        font-size: var(--heading-font-size-l);
     }
 }
 
