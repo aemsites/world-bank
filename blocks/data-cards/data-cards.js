@@ -1,5 +1,13 @@
-import { ul, li, hr } from '../../scripts/dom-helpers.js';
-import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+function decorateCard(block) {
+  [...block.children].forEach((row) => {
+    row.className = 'data-card';
+    const [tag, title, description, disclaimer] = [...row.children];
+    tag.className = 'data-card-tag';
+    title.className = 'data-card-title';
+    description.className = 'data-card-description';
+    disclaimer.className = 'data-card-disclaimer';
+  });
+}
 
 /*
 function decorateCard() {
@@ -70,16 +78,5 @@ function decorateCard() {
 */
 
 export default async function decorate(block) {
-  const ulEl = ul({ class: 'data-cards' });
-  const paragraphs = block.querySelectorAll('p');
-  let placeholder = {};
-
-  try {
-    placeholder = await fetchLanguagePlaceholders();
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error('Error fetching placeholders:', error);
-  } finally {
-    //  decorateCard();
-  }
+  decorateCard(block);
 }
