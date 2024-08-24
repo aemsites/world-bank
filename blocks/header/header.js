@@ -147,6 +147,28 @@ function showSubMenu(leftColumn, rightColumn, submenuId, submenuTitle, currentIn
     }
   });
 }
+
+function createListItemWithAnchor(item) {
+  // Create the main list item
+  const listItem = li(
+    a(
+      { href: item.Link },
+      item.Title,
+    ),
+  );
+
+  // If the item has sub-items, recursively create sub-menu
+  if (item.items && item.items.length > 0) {
+    const subList = ul();
+    item.items.forEach((subItem) => {
+      subList.appendChild(createListItemWithAnchor(subItem));
+    });
+    listItem.appendChild(subList);
+  }
+
+  return listItem;
+}
+
 function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchPlaceholder) {
   const submenu = ul(
     {
@@ -158,14 +180,27 @@ function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchP
 
   level0Item.categories.forEach((category) => {
     if (category.Type === Constants.DROPDOWN) {
+      const countryList = ul(
+        { class: 'countryList' },
+      );
       const searchBarWrapper = li(
         {},
         ul(
-          category.Title,
-          input({ type: 'search', placeholder: countrySearchPlaceholder }),
-          div(),
+          {
+            class: 'browse-country',
+          },
+          span(category.Title),
+          div(
+            input({ type: 'search', placeholder: countrySearchPlaceholder }),
+            countryList,
+          ),
         ),
       );
+      category.items.forEach((country) => {
+        countryList.append(li(
+          country.Title,
+        ));
+      });
       submenu.appendChild(searchBarWrapper);
     } else {
       const categoryList = ul();
@@ -174,13 +209,7 @@ function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchP
         category.Title,
       );
       category.items.forEach((subItem) => {
-        const subMenuItem = li(
-          {},
-          a(
-            { href: subItem.Link },
-            subItem.Title,
-          ),
-        );
+        const subMenuItem = createListItemWithAnchor(subItem);
         categoryList.appendChild(subMenuItem);
       });
       categoryItem.appendChild(categoryList);
@@ -224,7 +253,7 @@ function createNavMenu(structuredNav, searchByCountryPlaceholder) {
     const level0MenuItem = li(
       {
         onclick:
-        () => showSubMenu(menuLeftColumn, menuRightColumn, submenuId, level0Item.title, index),
+          () => showSubMenu(menuLeftColumn, menuRightColumn, submenuId, level0Item.title, index),
       },
       span({ textContent: '' }), // level0MenuItemArrow
       level0Item.title,

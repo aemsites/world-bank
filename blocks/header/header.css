@@ -1405,3 +1405,11 @@ header .nav-menu-overlay.open .nav-menu::-webkit-scrollbar {
 }
 
 /* new styles */
+ul.country-list{
+  display: block !important;
+}
+
+/* ul.browse-country{
+  align-items: flex-start !important;
+  margin-top: 2rem !important;
+} */
