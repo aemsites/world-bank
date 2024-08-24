@@ -7,8 +7,10 @@ export default function decorate(block) {
     const cards = block.querySelectorAll('.explore-cards > div:nth-child(n+2)');
 
     // Create and style the main container
-    const developmentStories = document.createElement('div');
-    developmentStories.classList.add('development-stories');
+    const developmentStories =  div({ class: 'development-stories' });
+    
+    // const developmentStories = document.createElement('div');
+   // developmentStories.classList.add('development-stories');
 
     // Style and append the heading to the main container
     const heading = block.querySelector('.explore-cards > div:first-child');
@@ -16,25 +18,27 @@ export default function decorate(block) {
     developmentStories.appendChild(heading);
 
     // Create a container for all the cards
-    const storiesContainer = document.createElement('div');
-    storiesContainer.classList.add('stories-container');
+   // const storiesContainer = document.createElement('div');
+    const storiesContainer = div({ class: 'stories-container' });
+   // storiesContainer.classList.add('stories-container');
 
     // Iterate through each card and transform it
     cards.forEach(card => {
-        const storyCard = document.createElement('div');
-        storyCard.classList.add('story-card');
+      //  const storyCard = document.createElement('div');
+      //  storyCard.classList.add('story-card');
 
         // Extract elements from the card
         const [imageContainer, altText, contentType, storyType, storyHeading, tags, link] = card.children;
-
+        const storyCard =  div({ class: 'story-card' });
         storyCard.classList.add(contentType.textContent);
         imageContainer.getElementsByTagName('img')[0].setAttribute("alt",altText.textContent);
 
         // Style the story type and create content container
         storyType.classList.add('story-type');
 
-        const storyContent = document.createElement('div');
-        storyContent.classList.add('story-content');
+       // const storyContent = document.createElement('div');
+        const storyContent = div({ class: 'story-content' });
+       // storyContent.classList.add('story-content');
 
         const anchorTag = link.getElementsByTagName('a')[0];
         anchorTag.textContent = ''; 
