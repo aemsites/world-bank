@@ -99,12 +99,28 @@
             "value": ""
           },
           {
-            "name": "primary",
+            "name": "primary (blue)",
             "value": "primary"
           },
           {
-            "name": "secondary",
+            "name": "secondary (border)",
             "value": "secondary"
+          },
+          {
+            "name": "primary (white)",
+            "value": "primary-white"
+          },
+          {
+            "name": "ghost",
+            "value": "ghost"
+          },
+          {
+            "name": "text (underline - blue)",
+            "value": "text-underline-blue"
+          },
+          {
+            "name": "text (underline - white)",
+            "value": "text-underline-white"
           }
         ]
       }
