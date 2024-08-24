@@ -1,6 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { fetchLanguagePlaceholders, getLanguage } from '../../scripts/scripts.js';
 import {
   div, img,
 } from '../../scripts/dom-helpers.js';
@@ -122,6 +122,7 @@ function createSearchBox() {
   let cancelContainer = navWrapper.querySelector('.cancel-container');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
+  document.body.classList.add('no-scroll');
   if (searchContainer) {
     const isVisible = searchContainer.style.display !== 'none';
     searchContainer.style.display = isVisible ? 'none' : 'flex';
@@ -142,6 +143,7 @@ function createSearchBox() {
       cancelContainer.style.display = 'none';
       searchImage.style.display = 'block'; // Show search icon again
       overlay.style.display = 'none';
+      document.body.classList.remove('no-scroll');
     });
     cancelContainer.appendChild(cancelImg);
     navTools.appendChild(cancelContainer);
@@ -150,7 +152,6 @@ function createSearchBox() {
     searchContainer = div({ class: 'search-container' });
     overlay = div({ class: 'overlay' });
     document.body.appendChild(overlay);
-    document.body.classList.add('no-scroll');
     const searchInputContainer = div({ class: 'search-input-container' });
     const searchInputBox = document.createElement('input');
     const searchIcon = img({ class: 'search-icon' });
@@ -172,8 +173,10 @@ function createSearchBox() {
     });
     searchInputBox.addEventListener('keydown', handleEnterKey);
     searchInputContainer.append(searchInputBox, searchIcon);
-    headerWrapper.appendChild(searchInputContainer);
-    navWrapper.appendChild(searchContainer);
+    const searchContainerWrapper = div({ class: 'search-input-wrapper' });
+    searchContainerWrapper.append(searchInputContainer);
+    searchContainer.appendChild(searchContainerWrapper);
+    headerWrapper.appendChild(searchContainer);
   }
 }
 
@@ -197,7 +200,8 @@ async function fetchingPlaceholdersData() {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const lang = getLanguage();
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : `/${lang}/nav`;
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
