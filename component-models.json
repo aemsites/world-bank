@@ -614,13 +614,6 @@
         ]
       },
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "swooshReference",
-        "label": "Swoosh Image",
-        "multi": false
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "alt",
@@ -634,8 +627,11 @@
         "value": "",
         "label": "Button Style",
         "options": [
-          { "name": "Style 1", "value": "style1" },
-          { "name": "Style 2", "value": "style2" }
+          { "name": "Dark Background", "value": "darkBG" },
+          { "name": "Dark Background - Underline", "value": "darkBG-ul" },
+          { "name": "Light Background - Primary", "value": "lightBG-1" },
+          { "name": "Light Background - Secondary", "value": "lightBG-2" },
+          { "name": "Light Background - Underline", "value": "lightBG-ul" }
         ]
       },
       {

@@ -1,101 +1,150 @@
-import { div, a, span, img } from '../../scripts/dom-helpers.js';
+import {
+  div, a, span, img, video, source,
+} from '../../scripts/dom-helpers.js';
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-export default function decorate(block) {
+function createVideoPlayer(videoSrc) {
+  const pauseIcon = `${window.hlx.codeBasePath}/icons/SM-Icon_Pause.svg`;
+  const playIcon = `${window.hlx.codeBasePath}/icons/MD-Icon_Video.svg`;
 
-  console.log(block);
-  testBuild(block);
+  // adding newlines after paren makes this harder to read
+  /* eslint-disable function-paren-newline */
+  const videoPlayer = div({ class: 'video-container' },
+    div({ class: 'video-play', id: 'playButton', tabindex: 0 },
+      img({ class: 'play-icon controls', src: playIcon }),
+    ),
+    div({ class: 'video-pause inactive', id: 'pauseButton' },
+      img({ class: 'pause-icon controls', src: pauseIcon }),
+    ),
+    video({ id: 'videoPlayer' },
+      source({ src: videoSrc, type: 'video/mp4' }, 'Your browser does not support the video tag.'),
+    ),
+  );
 
-  //console.log(properties);
+  const videoEl = videoPlayer.querySelector('video');
+  videoEl.muted = true;
+  videoEl.playsInline = true;
+  videoEl.loop = true;
 
+  return videoPlayer;
 }
 
-function testBuild(block) {
+function createBackgroundImage(properties) {
+  const imgSrc = properties.imageReference;
+  const imgAlt = properties.alt;
+  const imgBackground = div({ class: 'background-image' },
+    img({ class: 'teaser-background', src: imgSrc, alt: imgAlt }),
+  );
+
+  return imgBackground;
+}
+
+function observeVideo(block, autoplay) {
+  const videoPlayerEl = block.querySelector('video');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (!(prefersReducedMotion.matches) && autoplay && (videoPlayerEl.dataset.state !== 'pause')) {
+          const playButton = document.getElementById('playButton');
+          const pauseButton = document.getElementById('pauseButton');
+          playButton.classList.add('inactive');
+          playButton.removeAttribute('tabindex');
+          pauseButton.classList.remove('inactive');
+          pauseButton.setAttribute('tabindex', 0);  // hide 'play' button and show 'pause' button
+          videoPlayerEl.play(); // Play the video when it enters the viewport, unless user 'prefers reduced motion'
+        }
+      } else {
+        videoPlayerEl.pause(); // Pause the video when it leaves the viewport
+      }
+    });
+  }, { threshold: 0.5 });
+  observer.observe(videoPlayerEl);
+}
+
+function attachListeners() {
+  const videoPlayer = document.getElementById('videoPlayer');
+  const playButton = document.getElementById('playButton');
+  const pauseButton = document.getElementById('pauseButton');
+
+  // Play the video when the play button is clicked or a keyboard button pressed
+  ['click', 'keydown'].forEach(eventType => {
+    playButton.addEventListener(eventType, (event) => {
+      if (eventType === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
+      playButton.classList.add('inactive');
+      playButton.removeAttribute('tabindex');
+      pauseButton.classList.remove('inactive');
+      pauseButton.setAttribute('tabindex', 0);
+      videoPlayer.autoplay = true;
+      videoPlayer.dataset.state = 'play';
+      videoPlayer.play();
+    });
+  });
+
+  ['click', 'keydown'].forEach(eventType => {
+    pauseButton.addEventListener(eventType, (event) => {
+      if (eventType === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
+      playButton.classList.remove('inactive');
+      playButton.setAttribute('tabindex', 0);
+      pauseButton.classList.add('inactive');
+      pauseButton.removeAttribute('tabindex');
+      videoPlayer.autoplay = false;
+      videoPlayer.dataset.state = 'pause';
+      videoPlayer.pause();
+    });
+  });
+}
+
+export default function decorate(block) {
   const properties = {};
-  const swooshFirst = '/content/dam/wb-md/teaser_innerswoosh.svg'; // todo use decorateicons + icons\swoosh
-  const swooshSecond = '/content/dam/wb-md/teaser_outerswoosh.svg'; // todo use decorateicons + icons\swoosh
-  console.log(block);
-  console.log(block.children);
+  const swooshFirst = `${window.hlx.codeBasePath}/icons/teaser_innerswoosh.svg`;
+  const swooshSecond = `${window.hlx.codeBasePath}/icons/teaser_outerswoosh.svg`;
+
   [...block.children].forEach((row) => {
     const propEl = row.querySelector('p');
-    console.log(propEl);
     if (propEl) {
-      if (propEl.children.length == 0) {
-        const key = propEl.dataset.aueProp;
-        const value = propEl.textContent;
-        properties[key] = value;
+      const key = propEl.dataset.aueProp;
+      if (propEl.children.length === 0) {
+        properties[key] = propEl.textContent;
+      } else if (propEl.classList.contains('button-container')) {
+        const link = propEl.querySelector('a').href;
+        properties[link.includes('html') ? 'link' : 'videoReference'] = link;
       } else {
-        if (propEl.classList.contains('button-container')) {
-          properties['link'] = propEl.querySelector('a').href;
-        } else {
-          const key = 'teaserBlurb';
-          //console.log(propEl.innerHTML);
-          //const value = propEl.textContent;
-          const value = propEl.innerHTML;
-          properties[key] = value;
-        }
+        properties.teaserBlurb = propEl.innerHTML;
       }
     } else {
-      console.log(row);
       const picEl = row.querySelector('picture > img');
       if (picEl) {
-        const key = picEl.dataset.aueProp;
-        const value = picEl.src;
-        properties[key] = value;
+        properties[picEl.dataset.aueProp] = picEl.src;
       }
     }
   });
 
-  const imgSrc = properties['imageReference'];
-  const swooshSrc = properties['swooshReference'];
-
-  console.log(properties);
-
-  /*
+  const isVideo = (properties.teaserStyle === 'video');
   const teaser = div({ class: 'teaser-container' },
-    div({ class: 'background-image' },
-      img({ class: 'teaser-background', src: imgSrc })
-    ),
-    div({ class: 'teaser-swish-wrapper'}, 
-      img({ class: 'teaser-swish', src: swooshSrc }),
-      div({ class: 'teaser-title-wrapper'},
-        div({ class: 'teaser-title'}),
-        div({ class: 'button-container'},
-          a({ id: 'button', href: properties['link'], class: 'button white'}, 
-            span({ class: 'button-text' }, properties['btn-text'])
-          )
-        )
-      )
-    )
-  );
-  */
-  const teaser = div({ class: 'teaser-container' },
-    div({ class: 'background-image' },
-      img({ class: 'teaser-background', src: imgSrc })
-    ),
-    div({ class: 'teaser-swish-wrapper'},
-      div({ class: 'swoosh-bg'}),
-      div({ class: 'swoosh-layers'},
+    isVideo ? createVideoPlayer(properties.videoReference) : createBackgroundImage(properties),
+    div({ class: 'teaser-swoosh-wrapper' },
+      div({ class: 'swoosh-bg' }),
+      div({ class: 'swoosh-layers' },
         img({ class: 'swoosh first', src: swooshFirst }),
-        img({ class: 'swoosh second', src: swooshSecond })
+        img({ class: 'swoosh second', src: swooshSecond }),
       ),
-      div({ class: 'teaser-title-wrapper'},
-        div({ class: 'teaser-title'}),
-        div({ class: 'button-container'},
-          a({ id: 'button', href: properties['link'], class: 'button white'}, 
-            span({ class: 'button-text' }, properties['btn-text'])
-          )
-        )
-      )
-    )
+      div({ class: 'teaser-title-wrapper' },
+        div({ class: 'teaser-title' }),
+        div({ class: 'button-container' },
+          a({ id: 'button', href: properties.link, class: `button ${properties['btn-style']}` },
+            span({ class: 'button-text' }, properties['btn-text']),
+          ),
+        ),
+      ),
+    ),
   );
 
-
-
-
-  console.log(teaser);
-  teaser.querySelector('.teaser-title').innerHTML = properties['teaserBlurb'];
+  teaser.querySelector('.teaser-title').innerHTML = properties.teaserBlurb;
   block.innerHTML = '';
   block.appendChild(teaser);
+
+  // add observer for video
+  if (isVideo) observeVideo(block);
+  attachListeners();
 }
