@@ -169,6 +169,30 @@ function createListItemWithAnchor(item) {
   return listItem;
 }
 
+function createCountryDropDown(category, countrySearchPlaceholder) {
+  const countryList = ul(
+    { class: 'countryList' },
+  );
+  const searchBarWrapper = li(
+    {},
+    ul(
+      {
+        class: 'browse-country',
+      },
+      span(category.Title),
+      div(
+        input({ type: 'search', placeholder: countrySearchPlaceholder }),
+        countryList,
+      ),
+    ),
+  );
+  category.items.forEach((country) => {
+    countryList.append(li(
+      country.Title,
+    ));
+  });
+  return searchBarWrapper;
+}
 function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchPlaceholder) {
   const submenu = ul(
     {
@@ -180,28 +204,7 @@ function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchP
 
   level0Item.categories.forEach((category) => {
     if (category.Type === Constants.DROPDOWN) {
-      const countryList = ul(
-        { class: 'countryList' },
-      );
-      const searchBarWrapper = li(
-        {},
-        ul(
-          {
-            class: 'browse-country',
-          },
-          span(category.Title),
-          div(
-            input({ type: 'search', placeholder: countrySearchPlaceholder }),
-            countryList,
-          ),
-        ),
-      );
-      category.items.forEach((country) => {
-        countryList.append(li(
-          country.Title,
-        ));
-      });
-      submenu.appendChild(searchBarWrapper);
+      submenu.appendChild(createCountryDropDown(category, countrySearchPlaceholder));
     } else {
       const categoryList = ul();
       const categoryItem = li(
