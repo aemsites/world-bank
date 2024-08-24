@@ -13,8 +13,8 @@ export default function decorate(block) {
 
 function testBuild(block) {
   const properties = {};
-  const swooshFirst = '/content/dam/wb-md/teaser_innerswoosh.svg';
-  const swooshSecond = '/content/dam/wb-md/teaser_outerswoosh.svg';
+  const swooshFirst = '/content/dam/wb-md/teaser_innerswoosh.svg'; // todo use decorateicons + icons\swoosh
+  const swooshSecond = '/content/dam/wb-md/teaser_outerswoosh.svg'; // todo use decorateicons + icons\swoosh
   console.log(block);
   console.log(block.children);
   [...block.children].forEach((row) => {
@@ -75,6 +75,7 @@ function testBuild(block) {
       img({ class: 'teaser-background', src: imgSrc })
     ),
     div({ class: 'teaser-swish-wrapper'},
+      div({ class: 'swoosh-bg'}),
       div({ class: 'swoosh-layers'},
         img({ class: 'swoosh first', src: swooshFirst }),
         img({ class: 'swoosh second', src: swooshSecond })
