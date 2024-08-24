@@ -12,17 +12,13 @@ function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById(Constants.NAV);
     const navSections = nav.querySelector(Constants.NAV_SECTIONS_WITH_SELECTOR);
-    const navSectionExpanded = navSections.querySelector(
-      '[aria-expanded="true"]',
-    );
+    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleAllNavSections(navSections);
-      navSectionExpanded.focus();
-    } else if (!isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleMenu(nav, navSections);
-      nav.querySelector('button').focus();
+      navSections.querySelector('.default-content-wrapper').focus();
     }
   }
 }
@@ -49,7 +45,7 @@ function closesideMenu(leftColumn, rightColumn) {
  */
 function toggleAllNavSections(sections, expanded = false) {
   sections
-    .querySelectorAll('.nav-sections .default-content-wrapper > ul > li')
+    .querySelectorAll('.nav-sections .nav-menu-overlay .nav-menu > div')
     .forEach((section) => {
       section.setAttribute('aria-expanded', expanded);
     });
@@ -122,25 +118,23 @@ function formatNavigationJsonData(navJson) {
       currentLevel1.items.push(item);
     }
   });
-  console.log(structuredData);
   return structuredData;
 }
 
 function showSubMenu(leftColumn, rightColumn, submenuId, submenuTitle, currentIndex) {
   rightColumn.style.display = 'block';
   if (!isDesktop.matches) {
-    const sidemenuBackButton = rightColumn.querySelector(Constants.MENU_OVERLAY_WITH_SELECTOR);
+    const sidemenuBackButton = rightColumn.querySelector(Constants.OVERLAY_BACK_WITH_SELECTOR);
     sidemenuBackButton.style.display = 'block';
-    const currentSubMenu = rightColumn.querySelector(Constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR);
+    const currentSubMenu = rightColumn.querySelector('.submenu-main-title');
     currentSubMenu.textContent = submenuTitle;
-    currentSubMenu.style.display = 'block';
-    // Hide the left column within the menuOverlay on mobile
+    currentSubMenu.style.display = 'flex';
     leftColumn.style.display = 'none';
   }
 
   const submenus = rightColumn.querySelectorAll(Constants.SUBMENU_WITH_SELECTOR);
   submenus.forEach((submenu) => {
-    submenu.style.display = submenu.id === submenuId ? 'block' : 'none';
+    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
   });
 
   // Update the selected state of the menu items in the left column
@@ -153,7 +147,15 @@ function showSubMenu(leftColumn, rightColumn, submenuId, submenuTitle, currentIn
     }
   });
 }
-function createCategories(level0Item, submenu, countrySearchPlaceholder) {
+function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchPlaceholder) {
+  const submenu = ul(
+    {
+      id: submenuId,
+      class: 'submenu',
+      style: isDesktop.matches && index === 0 ? 'display: block;' : 'display: none;',
+    },
+  );
+
   level0Item.categories.forEach((category) => {
     if (category.Type === Constants.DROPDOWN) {
       const searchBarWrapper = li(
@@ -181,6 +183,7 @@ function createCategories(level0Item, submenu, countrySearchPlaceholder) {
       submenu.appendChild(categoryItem);
     }
   });
+  return submenu;
 }
 function createNavMenu(structuredNav, searchByCountryPlaceholder) {
   // Create menu Overlay and divide in two column
@@ -229,20 +232,10 @@ function createNavMenu(structuredNav, searchByCountryPlaceholder) {
     listMainNavTitle.appendChild(level0MenuItem);
 
     // Create right column submenu
-    const submenu = ul(
-      {
-        id: submenuId,
-        class: 'submenu',
-        style: isDesktop.matches && index === 0 ? 'display: block;' : 'display: none;',
-      },
-    );
     // Iterate over level0 Items and create associated category list
-    createCategories(level0Item, submenu, `${searchByCountryPlaceholder}`);
-    menuRightColumn.appendChild(submenu);
+    const subMenu = createCategoriesAndSubMenu(level0Item, submenuId, index, `${searchByCountryPlaceholder}`);
+    menuRightColumn.appendChild(subMenu);
   });
-  // Append columns to the nev menu
-  navMenu.appendChild(menuLeftColumn);
-  navMenu.appendChild(menuRightColumn);
   return menuOverlay;
 }
 /**

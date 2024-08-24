@@ -1,5 +1,5 @@
 // Define and export the constant
-export const NAV_MENU_OVERLAY_BACK_WITH_SELECTOR = '.nav-menu-overlay-back';
+export const OVERLAY_BACK_WITH_SELECTOR = '.nav-menu-overlay-back';
 export const NAV_MENU_OVERLAY_BACK = 'nav-menu-overlay-back';
 export const SUBMENU = 'submenu';
 export const SUBMENU_WITH_SELECTOR = '.submenu';
@@ -13,7 +13,8 @@ export const OPEN = 'open';
 export const KEY_DOWN = 'keydown';
 export const CATEGORY = 'category';
 export const FOOTER = 'footer';
-export const DROPDOWN = 'footer';
+export const DROPDOWN = 'dropdown';
 export const LEVEL_0 = 'level0';
 export const LEVEL_1 = 'level1';
 export const LEVEL_2 = 'level2';
+export const NAV = 'nav';
