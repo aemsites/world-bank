@@ -95,16 +95,32 @@
         "valueType": "string",
         "options": [
           {
-            "name": "default",
+            "name": "Default",
             "value": ""
           },
           {
-            "name": "primary",
+            "name": "Primary (blue)",
             "value": "primary"
           },
           {
-            "name": "secondary",
+            "name": "Secondary (border)",
             "value": "secondary"
+          },
+          {
+            "name": "Primary (white)",
+            "value": "primary-white"
+          },
+          {
+            "name": "Ghost",
+            "value": "ghost"
+          },
+          {
+            "name": "Text (underline - blue)",
+            "value": "text-underline-blue"
+          },
+          {
+            "name": "Text (underline - white)",
+            "value": "text-underline-white"
           }
         ]
       }
@@ -132,6 +148,36 @@
           {
             "name": "feature-card",
             "value": "columns-feature-card"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "type",
+        "value": "",
+        "label": "Columns Layout",
+        "description": "Different column layouts",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "column-33-66",
+            "value": "column-layout-33-66"
+          },
+          {
+            "name": "column-66-33",
+            "value": "column-layout-66-33"
+          },
+          {
+            "name": "column-25-75",
+            "value": "column-layout-25-75"
+          },
+          {
+            "name": "column-75-25",
+            "value": "column-layout-75-25"
           }
         ]
       },
@@ -175,10 +221,10 @@
     "fields": [
       {
         "component": "select",
-        "name": "bottom-spacing",
+        "name": "sec-spacing",
         "value": "",
-        "label": "Section Bottom Spacing",
-        "description": "Section Top spacing will always be 0, bottom spacing can configured, default is 32px.",
+        "label": "Section Spacing (padding)",
+        "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
           {
@@ -224,35 +270,88 @@
           {
             "name": "Spacing 64px",
             "value": "sec-spacing-64"
+          },
+          {
+            "name": "Spacing 80px",
+            "value": "sec-spacing-80"
+          },
+          {
+            "name": "Spacing 96px",
+            "value": "sec-spacing-96"
           }
         ]
       },
       {
         "component": "select",
-        "name": "sec-swish",
+        "name": "sec-swoosh",
         "value": "",
-        "label": "Section Swish",
+        "label": "Section Swoosh",
         "valueType": "string",
         "options": [
           {
-            "name": "No Swish",
-            "value": "sec-swish-none"
+            "name": "No Swoosh",
+            "value": "sec-swoosh-none"
           },
           {
-            "name": "Swish on left",
-            "value": "sec-swish-left"
+            "name": "Swoosh Type 1",
+            "value": "sec-swoosh-type1"
           },
           {
-            "name": "Swish on center",
-            "value": "sec-swish-center"
+            "name": "Swoosh Type 2",
+            "value": "sec-swoosh-type2"
           },
           {
-            "name": "Swish on right",
-            "value": "sec-swish-right"
+            "name": "Swoosh Type 3",
+            "value": "sec-swoosh-type3"
           },
           {
-            "name": "Swish with Primary blue 95",
-            "value": "sec-swish-primary-blue-95"
+            "name": "Swoosh Primary Blue 90 theme",
+            "value": "sec-swoosh-primary-blue-90"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "sec-swoosh-position",
+        "value": "",
+        "label": "Section Swoosh Position",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Left - Top",
+            "value": "swoosh-left-top"
+          },
+          {
+            "name": "Left - Center",
+            "value": "swoosh-left-center"
+          },
+          {
+            "name": "Left - Bottom",
+            "value": "swoosh-left-bottom"
+          },
+          {
+            "name": "Center - Top",
+            "value": "swoosh-center-top"
+          },
+          {
+            "name": "Center - Center",
+            "value": "swoosh-center-center"
+          },
+          {
+            "name": "Bottom - Bottom",
+            "value": "swoosh-center-bottom"
+          },
+          {
+            "name": "Right - Top",
+            "value": "swoosh-right-top"
+          },
+          {
+            "name": "Right - Center",
+            "value": "swoosh-right-center"
+          },
+          {
+            "name": "Right - Bottom",
+            "value": "swoosh-right-bottom"
           }
         ]
       },
@@ -278,6 +377,10 @@
           {
             "name": "Neutrals 10",
             "value": "bg-neutrals-10"
+          },
+          {
+            "name": "Neutrals 20",
+            "value": "bg-neutrals-20"
           }
         ]
       },
@@ -330,7 +433,7 @@
     ]
   },
   {
-    "id": "data-cards",
+    "id": "data-card",
     "fields": [
      {
         "component": "aem-tag",
@@ -422,20 +525,6 @@
         "name": "title",
         "value": "",
         "label": "Title"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "fileReference",
-        "label": "Background Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
-        "label": "Alt Text"
       }
     ]
   },
