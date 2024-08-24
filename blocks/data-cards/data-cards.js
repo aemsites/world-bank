@@ -1,9 +1,11 @@
+import { processTags } from '../../scripts/utils.js';
+
 function processTag(tag) {
-  const prefix = 'world-bank:';
   let tagTxt = tag.innerText;
   if (tagTxt) {
-    tagTxt = tagTxt.replace(prefix, '');
+    tagTxt = processTags(tagTxt);
     tag.classList.add(tagTxt);
+    // TODO: Read it from placeholder
     tag.firstElementChild.innerText = tagTxt;
   }
 }
