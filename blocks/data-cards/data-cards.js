@@ -1,59 +1,82 @@
-export default function decorate(block) {
-  /* change to ul, li */
-  const ul = document.createElement('ul');
-  ul.classList.add('data-cards');
+import { ul, li, hr } from '../../scripts/dom-helpers.js';
+import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+
+export default async function decorate(block) {
+  const ulEl = ul({ class: 'data-cards' });
   const paragraphs = block.querySelectorAll('p');
-  [...block.children].forEach((row) => {
-    const li = document.createElement('li');
-    li.classList.add('data-card');
-    while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div, index) => {
-      if (index === 0) {
-        div.className = 'data-card-tag';
-      } else if (index === 1) {
-        div.className = 'data-card-title';
-      } else if (index === 2) {
-        const hr = document.createElement('hr');
-        hr.style.border = '1px solid lightgrey';
-        div.className = 'data-card-description';
-        div.insertAdjacentElement('afterend', hr);
-      } else if (index === 3) {
-        div.className = 'data-card-disclaimer';
+  let placeholder = {};
+
+  function decorateCard() {
+    [...block.children].forEach((row) => {
+      const liEl = li({ class: 'data-card' });
+
+      while (row.firstElementChild) {
+        liEl.append(row.firstElementChild);
       }
-      paragraphs.forEach((p) => {
-        let text = p.textContent;
-        const prefix = 'world-bank:';
 
-        // Check if the text starts with the prefix and remove it
-        if (text.startsWith(prefix)) {
-          text = text.replace(prefix, ''); // Remove 'world-bank:' from the text
-          text = text.toUpperCase();
-          p.textContent = text;
+      const [tag, title, description, disclaimer] = [...liEl.children];
+      tag.className = 'data-card-tag';
+      title.className = 'data-card-title';
+      description.className = 'data-card-description';
+      disclaimer.className = 'data-card-disclaimer';
+      const hrEl = hr({ style: 'border: 1px solid lightgrey' });
+      description.insertAdjacentElement('afterend', hrEl);
 
-          // Create a new <hr> element
-          const hr = document.createElement('hr');
+      [...liEl.children].forEach(() => {
+        paragraphs.forEach((p) => {
+          let text = p.textContent;
+          const prefix = 'world-bank:';
 
-          // Assign HR color based on the content
-          if (text.includes('PROSPERITY')) {
-            hr.style.borderColor = 'purple';
-          } else if (text.includes('PEOPLE')) {
-            hr.style.borderColor = 'yellow';
-          } else if (text.includes('PLANET')) {
-            hr.style.borderColor = 'green';
-          } else if (text.includes('INFRASTRUCTURE')) {
-            hr.style.borderColor = 'maroon';
-          } else if (text.includes('DIGITAL')) {
-            hr.style.borderColor = 'gray';
-          } else if (text.includes('CROSS-CUTTING AREAS')) {
-            hr.style.borderColor = 'blue';
+          if (text.startsWith(prefix)) {
+            text = text.replace(prefix, ''); // Remove 'world-bank:' from the text
+
+            // check if the text is in placeholder
+            if (placeholder[text]) {
+              text = placeholder[text];
+              p.textContent = placeholder[text];
+            }
+
+            // Create a new <hr> element
+            const hrTag = hr();
+            const placeholderKeys = Object.keys(placeholder);
+
+            // Assign HR color based on the placeholder key
+            if (placeholderKeys.includes(text)) {
+              if (text === 'prosperity') {
+                hrTag.style.borderColor = 'purple';
+              } else if (text === 'people') {
+                hrTag.style.borderColor = 'yellow';
+              } else if (text === 'planet') {
+                hrTag.style.borderColor = 'green';
+              } else if (text === 'infrastructure') {
+                hrTag.style.borderColor = 'maroon';
+              } else if (text === 'digital') {
+                hrTag.style.borderColor = 'gray';
+              } else if (text === 'cross-cutting areas') {
+                hrTag.style.borderColor = 'blue';
+              }
+            } else {
+              hrTag.style.borderColor = 'gray';
+            }
+
+            // Insert the <hr> after the <p> tag
+            p.insertAdjacentElement('afterend', hrTag);
           }
-          // Insert the <hr> after the <p> tag
-          p.insertAdjacentElement('afterend', hr);
-        }
+        });
       });
+
+      ulEl.append(liEl);
     });
-    ul.append(li);
-  });
-  block.textContent = '';
-  block.append(ul);
+    block.textContent = '';
+    block.append(ulEl);
+  }
+
+  try {
+    placeholder = await fetchLanguagePlaceholders();
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error fetching placeholders:', error);
+  } finally {
+    decorateCard();
+  }
 }
