@@ -1,0 +1,104 @@
+.explore-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #073b69;
+  }
+  
+  .development-stories {
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .explore-title {
+    margin-bottom: 20px;
+  }
+  
+  .explore-title p {
+    font-size: 40px;
+    color: white;
+  }
+  
+  .explore-title strong {
+    font-size: 40px;
+    color: white;
+    font-weight: 700;
+  }
+  
+  .stories-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .story-card {
+    position: relative;
+    background: linear-gradient(to bottom, #012740 0%, #012740 100%);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%; /* Ensure the card takes up full height */
+  }
+  
+  .story-card a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 100%; /* Ensure the anchor takes up full height */
+  }
+  
+  .story-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire card */
+    display: block;
+  }
+  
+  .story-content {
+    position: absolute;
+    bottom: 0;  /* Align the content at the bottom */
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); /* Gradient overlay for text visibility */
+    color: white;
+    z-index: 1; /* Ensure the content is above the image */
+  }
+  
+  .story-type p {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #c4e1ff;
+    margin-bottom: 10px;
+  }
+  
+  .story-content h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: white;
+  }
+  
+  @media (min-width: 600px) {
+    .stories-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .story-content h3 {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .explore-title p {
+      font-size: 2rem;
+    }
+  
+    .explore-title strong {
+      font-size: 2rem;
+    }
+  
+    .story-content h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
