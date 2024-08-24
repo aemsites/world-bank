@@ -95,16 +95,32 @@
         "valueType": "string",
         "options": [
           {
-            "name": "default",
+            "name": "Default",
             "value": ""
           },
           {
-            "name": "primary",
+            "name": "Primary (blue)",
             "value": "primary"
           },
           {
-            "name": "secondary",
+            "name": "Secondary (border)",
             "value": "secondary"
+          },
+          {
+            "name": "Primary (white)",
+            "value": "primary-white"
+          },
+          {
+            "name": "Ghost",
+            "value": "ghost"
+          },
+          {
+            "name": "Text (underline - blue)",
+            "value": "text-underline-blue"
+          },
+          {
+            "name": "Text (underline - white)",
+            "value": "text-underline-white"
           }
         ]
       }
