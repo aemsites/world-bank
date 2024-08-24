@@ -116,6 +116,7 @@ function handleEnterKey(event) {
 
 function createSearchBox() {
   const navWrapper = document.querySelector('.nav-wrapper');
+  const headerWrapper = document.querySelector('.header-wrapper');
   const navTools = document.querySelector('.nav-tools p');
   let searchContainer = navWrapper.querySelector('.search-container');
   let cancelContainer = navWrapper.querySelector('.cancel-container');
@@ -171,7 +172,7 @@ function createSearchBox() {
     });
     searchInputBox.addEventListener('keydown', handleEnterKey);
     searchInputContainer.append(searchInputBox, searchIcon);
-    searchContainer.appendChild(searchInputContainer);
+    headerWrapper.appendChild(searchInputContainer);
     navWrapper.appendChild(searchContainer);
   }
 }
