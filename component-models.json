@@ -132,6 +132,10 @@
           {
             "name": "feature-card",
             "value": "columns-feature-card"
+          },
+          {
+            "name": "transform-teaser",
+            "value": "columns-transform-teaser"
           }
         ]
       },

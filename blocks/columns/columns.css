@@ -20,8 +20,11 @@
 }
 
 .bg-primary-blue-90 {
-  position: relative;
   margin: 70px 0;
+}
+
+.bg-primary-blue-90 .columns-2-cols{
+  position: relative;
 }
 
 .bg-primary-blue-90 .columns-2-cols p {
@@ -57,7 +60,7 @@
   }
 
 .bg-primary-blue-90 .columns-2-cols .columns-img-col {
-  position: absolute;
+  position: relative;
   right: 30px;
   top: -60px;
   z-index: 1000;
