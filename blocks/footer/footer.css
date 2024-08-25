@@ -74,9 +74,9 @@ html[dir="rtl"] .ft-social-list:first-child  {
 
 .ft-main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
   justify-content: space-between;
-  padding: 3rem 0rem;
+  padding: 2rem 0rem;
   & .ft-main-item { /* Items (3 x 1)*/
     padding-right: 1.25rem;
     min-width: 25%;
