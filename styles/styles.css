@@ -524,19 +524,19 @@ main .section.bg-neutrals-20[data-bg-inside-container="true"] > div {
 }
 
 main .section[data-sec-spacing="sec-spacing-none"] {
-  padding: var(--spacing-0) 0;
+  padding: var(--none) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-8"] {
-  padding: var(--spacing-8) 0;
+  padding: var(--xxsmall) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-12"] {
-  padding: var(--spacing-12) 0;
+  padding: var(--xsmall) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-16"] {
-  padding: var(--spacing-16) 0;
+  padding: var(--small) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-20"] {
@@ -544,7 +544,7 @@ main .section[data-sec-spacing="sec-spacing-20"] {
 }
 
 main .section[data-sec-spacing="sec-spacing-24"] {
-  padding: var(--spacing-24) 0;
+  padding: var(--regular) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-28"] {
@@ -552,23 +552,23 @@ main .section[data-sec-spacing="sec-spacing-28"] {
 }
 
 main .section[data-sec-spacing="sec-spacing-32"] {
-  padding: var(--spacing-32) 0;
+  padding: var(--medium) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-48"] {
-  padding: var(--spacing-48) 0;
+  padding: var(--xlarge) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-64"] {
-  padding: var(--spacing-64) 0;
+  padding: var(--xxlarge) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-80"] {
-  padding: var(--spacing-80) 0;
+  padding: var(--huge) 0;
 }
 
 main .section[data-sec-spacing="sec-spacing-96"] {
-  padding: var(--spacing-96) 0;
+  padding: var(--xhuge) 0;
 }
 
 /* Section swoosh 
