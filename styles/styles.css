@@ -302,15 +302,26 @@ h6 {
 
 h1 { 
   font-size: var(--heading-font-size-xxl); 
-  line-height: 1.1; 
+  line-height: 1.1;
+  margin-bottom: var(--large);
 }
-h2 { font-size: var(--heading-font-size-xl); }
+
+h2 { 
+  font-size: var(--heading-font-size-xl);
+  margin-bottom: var(--medium);
+}
 
 h3 { 
   font-size: var(--heading-font-size-l); 
-  line-height: 1.1; 
+  line-height: 1.1;
+  margin-bottom: var(--regular);
 }
-h4 { font-size: var(--heading-font-size-m); }
+
+h4 {
+  font-size: var(--heading-font-size-m);
+  margin-bottom: var(--small);
+}
+
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
