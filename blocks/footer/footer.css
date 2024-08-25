@@ -103,7 +103,6 @@ html[dir="rtl"] .ft-social-list:first-child  {
     & p {
       color: var(--color-white);
       text-transform: uppercase;
-      font-size: 1.625rem;
       font-weight: 700;
       line-height: 2.275rem;
       margin-top: 0;
