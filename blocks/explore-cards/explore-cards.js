@@ -1,4 +1,3 @@
-// Removed unused imports
 import { div, img } from '../../scripts/dom-helpers.js';
 
 export default function decorate(block) {
