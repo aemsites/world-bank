@@ -7,6 +7,7 @@
 
 .development-stories {
     width: 100%;
+    padding: 0 10px;
 }
 
 .explore-title {
@@ -14,21 +15,23 @@
 }
 
 .explore-title p {
-    font-size: 28px;
+    font-size:var( --heading-font-size-m);
     line-height: 30.8px;
 }
 
 .stories-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--spacing-20);
+    width: 100vw;
+    overflow-x: scroll;
 }
 
 .story-card {
     position: relative;
-    border-radius: 5px;
-    overflow: hidden;
+    border-radius: 10px;
     height: 400px;
+    min-width: 300px;
 }
 
 .story-card .contenttype-icon {
@@ -65,46 +68,68 @@
     left: 0;
     right: 0;
     padding: var(--spacing-20);
-    ;
     background: linear-gradient(180deg, rgba(1, 39, 64, 0) 39.98%, #012740 78.99%);
     color: var(--color-white);
     z-index: 1;
+}
 
-    .story-heading p {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 24px;
-    }
+.story-heading p {
+    font-size: var(--heading-font-size-xs);
+    font-weight: 700;
+    line-height: 24px;
 }
 
 .story-type p {
-    font-size: 12px;
+    font-size: var(--body-font-size-xs);
     font-weight: 700;
     line-height: 13.2px;
     letter-spacing: 0.06em;
 }
 
 .story-content .story-heading h3 {
-    font-size: 20px;
+    font-size: var(--heading-font-size-xxs);
     font-weight: 700;
     line-height: 24px;
 }
 
 @media (min-width: 768px) {
     .explore-title p {
-        font-size: 32px;
+        font-size: var(--heading-font-size-l);
         line-height: 35.2px;
     }
 
+    .stories-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-20);
+        width: unset;
+        overflow-x: none;
+    }
+    
     .story-card {
+        position: relative;
+        border-radius: 10px;
         height: 350px;
+        min-width: unset;
+    }
+
+    .story-heading p {
+        font-size: var(--heading-font-size-xxs);
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+    .story-content .story-heading h3 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28.8px;
     }
 }
 
 @media (min-width: 1024px) {
 
     .explore-title p {
-        font-size: 40px;
+        font-size: var(--heading-font-size-l);
         line-height: 44px;
     }
 
@@ -117,7 +142,7 @@
     }
 
     .story-heading p {
-        font-size: 24px;
+        font-size: var(--heading-font-size-xs);
         font-weight: 700;
         line-height: 28.8px;
     }
