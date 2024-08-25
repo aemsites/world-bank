@@ -572,5 +572,32 @@
         "label": "Link"
       }
     ]
+  },
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:title",
+        "label": "Page Title",
+        "description": "Sets the title of the page in page meta."
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "hide-swoosh",
+        "label": "Do no show Swoosh on page."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alternate-url",
+        "multi": true,
+        "value": "",
+        "label": "Language URL(s)",
+        "description": "List of other language urls of current page (provide absolute url)."
+      }
+    ]
   }
 ]
