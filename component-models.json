@@ -596,7 +596,7 @@
         "multi": true,
         "value": "",
         "label": "Language URL(s)",
-        "description": "List of other language urls of current page (provide absolute url)."
+        "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
       }
     ]
   }
