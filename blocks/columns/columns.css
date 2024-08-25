@@ -169,7 +169,7 @@
   .columns.columns-feature-card {
     & > div {
       display: grid;
-      grid-template-columns: repeat(3, calc(33.3333% - 49px));
+      grid-template-columns: repeat(3, 1fr);
       column-gap: 98px;
       align-items: flex-start;
 
