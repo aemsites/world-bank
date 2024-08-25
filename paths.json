@@ -27,8 +27,7 @@
     "/content/world-bank/global/ru/data/navigation:/ru/navigation.json",
     "/content/world-bank/global/fr/data/navigation:/fr/navigation.json",
     "/content/world-bank/global/es/data/navigation:/es/navigation.json",
-    "/content/world-bank/global/ar/data/navigation:/ar/navigation.json",
-    "/content/world-bank/global.resource/icons/:/icons/"
+    "/content/world-bank/global/ar/data/navigation:/ar/navigation.json"
   ],
   "includes": ["/content/world-bank/"]
 }
