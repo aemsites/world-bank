@@ -65,6 +65,12 @@
     background-image: url('/icons/swish.svg');
     background-repeat: no-repeat;
     background-position: 0 93px;
+    /* picture::before{
+      content: url(/icons/swish.svg);
+      position: absolute;
+      top: 92px;
+      left: -61px;
+    } */
     
   }
 }
