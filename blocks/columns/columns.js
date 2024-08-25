@@ -32,8 +32,12 @@ export default function decorate(block) {
       description?.classList.add('columns-feature-card-description');
       const cardContent = div({ class: 'columns-feature-card-content' }, description, ...button);
       card.appendChild(cardContent);
-      moveInstrumentation(description, cardContent);
-      moveInstrumentation(...button, cardContent);
+      if (description) moveInstrumentation(description, cardContent);
+      if ([...button].length) {
+        [...button].forEach((btn) => {
+          moveInstrumentation(btn, cardContent);
+        });
+      }
     });
   }
 }
