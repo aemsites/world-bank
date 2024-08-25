@@ -14,6 +14,7 @@ import {
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
+export const TAG_PREFIX = 'world-bank:';
 
 let lang;
 
