@@ -13,6 +13,8 @@ function createFeatureCard(row) {
     featureDescContent,
     featureLink,
   ] = row.children;
+  const featureDiv = div({ class: 'feature-card' });
+  moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = '';
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
@@ -22,14 +24,15 @@ function createFeatureCard(row) {
   );
 
   const pictureElement = featureImageContent.querySelector('picture');
-  return div({ class: 'feature-card' }, pictureElement, featureContentWrapper);
+  featureDiv.append(pictureElement, featureContentWrapper);
+  return featureDiv;
 }
 
 // Processes a row to create a list item
 function processRow(row) {
   const [imageContent, tagContent, headingContent] = row.children;
-
   const liTag = li();
+  moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
   const imageDiv = div({ class: 'curated-cards-card-img' });
   const tagElement = div({ class: 'curated-cards-card-event' });
