@@ -23,12 +23,12 @@ function htmlParser(htmlObj, ul, prepend = '') {
   [...htmlObj].forEach((Contentdata) => {
     const li = document.createElement('li');
     li.appendChild(Contentdata);
-    if (prepend) { 
+    if (prepend) {
       if (Contentdata.textContent.trim()) {
-        ul.prepend(li); 
+        ul.prepend(li);
       }
-    } else { 
-      ul.append(li); 
+    } else {
+      ul.append(li);
     }
   });
 }
