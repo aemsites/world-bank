@@ -206,7 +206,7 @@ outline: none;
   align-items: center;
   justify-content: center;
   position: absolute;
-  z-index: 999;
+  z-index: 10;
   width: 100%;
   margin-top: 35px;
   border-top : 2px solid var(--neutrals-20);
