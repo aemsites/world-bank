@@ -296,7 +296,8 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Custom Data Card",
-                  "filter": "custom-data-card"
+                  "filter": "custom-data-card",
+                  "model": "custom-card"
                 }
               }
             }
