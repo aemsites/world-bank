@@ -176,7 +176,7 @@
             "name": "2 Col Desktop Layout",
             "children": [
               {
-                "name": "50% - 50%",
+                "name": "50% - 50% (default)",
                 "value": "columns-layout-default"
               },
               {
