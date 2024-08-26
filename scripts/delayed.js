@@ -10,6 +10,8 @@ function pageSwoosh() {
   const showSwoosh = getMetadata('show-swoosh');
   if (showSwoosh) {
     document.body.classList.add('page-swoosh');
+  } else {
+    document.body.classList.remove('page-swoosh');
   }
 }
 
