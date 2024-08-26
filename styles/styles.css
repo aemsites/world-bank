@@ -312,7 +312,7 @@ a:hover {
 a.button:any-link,
 button {
   font-family: var(--body-font-family);
-  font-size: 14px;
+  font-size: var(--body-font-size-s);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.25px;
