@@ -117,9 +117,10 @@
         "component": "multiselect",
         "name": "classes",
         "value": "",
-        "label": "Column Variants",
-        "description": "Different column variants",
+        "label": "Column Styles",
+        "description": "Different column styles",
         "valueType": "string",
+        "maxSize": 4,
         "options": [
           {
             "name": "Variations",
