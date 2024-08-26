@@ -312,17 +312,20 @@ a:hover {
 a.button:any-link,
 button {
   font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  text-align: center;
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
-  text-align: center;
+  border: 1px solid transparent;
+  padding: 12px 32px;
   font-style: normal;
-  font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--primary-blue-80);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -331,24 +334,60 @@ button {
 }
 
 a.button:hover,
-a.button:focus,
-button:hover,
-button:focus {
-  background-color: var(--link-hover-color);
+button:hover {
+  background-color: var(--primary-blue-50);
+  color: var(--primary-blue-80);
   cursor: pointer;
 }
 
+a.button:focus,
+button:focus {
+  background-color: var(--primary-blue-100);
+  color: var(--background-color);
+}
+
+a.button.disabled,
+a.button.disabled:hover,
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
+  background-color: var(--neutrals-40);
+  color: rgb(0 41 77 / 42%);
   cursor: unset;
 }
 
 a.button.secondary,
 button.secondary {
   background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  border: 2px solid var(--primary-blue-80);
+  color: var(--primary-blue-80);
+}
+
+a.button.secondary:hover,
+button.secondary:hover {
+  background-color: unset;
+  border: 2px solid var(--primary-blue-50);
+  color: var(--primary-blue-80);
+}
+
+a.button.secondary:focus,
+button.secondary:focus {
+  background-color: var(--primary-blue-20);
+  border: 2px solid var(--primary-blue-80);
+  color: var(--primary-blue-80);
+}
+
+a.button.secondary.disabled,
+a.button.secondary.disabled:hover,
+button.secondary:disabled,
+button.secondary:disabled:hover {
+  background-color: unset;
+  border: 2px solid var(--neutrals-103);
+  color: var(--neutrals-50);
+  cursor: unset;
+}
+
+p.button-container {
+  margin: 0;
 }
 
 main img {
