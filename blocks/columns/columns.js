@@ -10,10 +10,9 @@ export default function decorate(block) {
       if (pic) {
         const picWrapper = pic.closest('div');
         if (picWrapper && picWrapper.children.length === 1) {
-          // picture is only content in column
           picWrapper.classList.add('columns-img-col');
         }
-      }      
+      }
     });
   });
 
