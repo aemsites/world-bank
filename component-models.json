@@ -118,7 +118,6 @@
         "name": "classes",
         "value": "",
         "label": "Column Styles",
-        "description": "Different column styles",
         "valueType": "string",
         "maxSize": 4,
         "options": [
@@ -126,7 +125,7 @@
             "name": "Variations",
             "children": [
               {
-                "name": "Default Variant",
+                "name": "Default",
                 "value": "columns-default-variant"
               },
               {
@@ -136,31 +135,6 @@
               {
                 "name": "Feature Card Variation",
                 "value": "columns-feature-card"
-              }
-            ]
-          },
-          {
-            "name": "Desktop Layout",
-            "children": [
-              {
-                "name": "50% - 50%",
-                "value": "columns-layout-default"
-              },
-              {
-                "name": "33% - 67%",
-                "value": "column-layout-33-66"
-              },
-              {
-                "name": "67% - 33%",
-                "value": "column-layout-66-33"
-              },
-              {
-                "name": "25% - 75%",
-                "value": "column-layout-25-75"
-              },
-              {
-                "name": "75% - 25%",
-                "value": "column-layout-75-25"
               }
             ]
           },
@@ -195,6 +169,31 @@
               {
                 "name": "Right",
                 "value": "halign-right"
+              }
+            ]
+          },
+          {
+            "name": "2 Col Desktop Layout",
+            "children": [
+              {
+                "name": "50% - 50%",
+                "value": "columns-layout-default"
+              },
+              {
+                "name": "33% - 67%",
+                "value": "column-layout-33-66"
+              },
+              {
+                "name": "67% - 33%",
+                "value": "column-layout-66-33"
+              },
+              {
+                "name": "25% - 75%",
+                "value": "column-layout-25-75"
+              },
+              {
+                "name": "75% - 25%",
+                "value": "column-layout-75-25"
               }
             ]
           }
