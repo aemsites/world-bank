@@ -651,5 +651,39 @@
         "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
       }
     ]
+  },
+  {
+    "id": "custom-data-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Thumbnail",
+        "multi": false
+      },
+     {
+        "component": "aem-tag",
+        "name": "tags",
+        "label": "Tags for Card",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/world-bank",
+        "description": "Tags for data card"
+     },
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+     },
+     {
+      "component": "text",
+      "name": "curated-card-link",
+      "value": "",
+      "label": "Link",
+      "valueType": "string"
+    }
+    ]
   }
 ]
