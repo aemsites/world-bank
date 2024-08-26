@@ -653,7 +653,7 @@
     ]
   },
   {
-    "id": "custom-data-cards",
+    "id": "custom-data-card",
     "fields": [
       {
         "component": "reference",
