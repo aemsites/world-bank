@@ -100,7 +100,7 @@
   } 
 }
 
-@media(width <= 767px) {
+@media(width <= 768px) {
   .bg-primary-blue-90{
     height: auto;
       .columns-transform-teaser{
@@ -252,7 +252,7 @@
   }  
 }
 
-@media (min-width: 767px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .columns-transform-teaser .columns-img-col {
     width: 50%;
   }
