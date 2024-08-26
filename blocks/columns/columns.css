@@ -32,7 +32,7 @@
     position: relative;
   }
   
-  p{
+  p {
     margin: 15px 0;
     &:nth-child(1){
       font-size: 40px;
@@ -83,7 +83,6 @@
   }
 }
 
-<<<<<<< HEAD
 @media(width<=1024px) {
   .bg-primary-blue-90{
     position: relative;
@@ -120,11 +119,6 @@
   }
 }
 
-.columns-feature-card {
-  & > .columns-feature-card-list {
-    padding: 0;
-    margin: 0;
-=======
 .columns.columns-layout-33-66 > div > div,
 .columns.columns-layout-66-33 > div > div,
 .columns.columns-layout-25-75 > div > div,
@@ -132,7 +126,11 @@
     flex-basis: 100%;
     flex-direction: column;
 }
->>>>>>> f6b750256febf72f9274f1e4eddcdb606e8f4614
+
+.columns-feature-card {
+  & > .columns-feature-card-list {
+    padding: 0;
+    margin: 0;
 
 .columns.columns-feature-card {
   & > div > div {
