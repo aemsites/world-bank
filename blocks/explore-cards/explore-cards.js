@@ -9,7 +9,7 @@ export default function decorate(block) {
   // Style and append the heading to the main container
   const heading = block.querySelector('.explore-cards > div:first-child');
   heading.classList.add('explore-title');
-  // developmentStories.appendChild(heading);
+  developmentStories.appendChild(heading);
 
   // Create a container for all the cards
   const storiesContainer = div({ class: 'stories-container' });
