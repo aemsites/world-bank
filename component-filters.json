@@ -50,5 +50,11 @@
     "components": [
       "explore-card"
     ]
+  },
+  {
+    "id": "data-cards",
+    "components": [
+      "data-card"
+    ]
   }
 ]
