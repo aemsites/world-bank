@@ -114,7 +114,7 @@
     "id": "columns",
     "fields": [
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
         "value": "",
         "label": "Column Variants",
@@ -122,55 +122,107 @@
         "valueType": "string",
         "options": [
           {
-            "name": "default",
-            "value": ""
+            "name": "Variations",
+            "children": [
+              {
+                "name": "Default Variant",
+                "value": "columns-default-variant"
+              },
+              {
+                "name": "Divider Variant",
+                "value": "columns-divider-variant"
+              },
+              {
+                "name": "Feature Card Variation",
+                "value": "columns-feature-card"
+              }
+            ]
           },
           {
-            "name": "divider-variant",
-            "value": "columns-divider-variant"
+            "name": "Desktop Layout",
+            "children": [
+              {
+                "name": "50% - 50%",
+                "value": "columns-layout-default"
+              },
+              {
+                "name": "33% - 67%",
+                "value": "column-layout-33-66"
+              },
+              {
+                "name": "67% - 33%",
+                "value": "column-layout-66-33"
+              },
+              {
+                "name": "25% - 75%",
+                "value": "column-layout-25-75"
+              },
+              {
+                "name": "75% - 25%",
+                "value": "column-layout-75-25"
+              }
+            ]
           },
           {
-            "name": "feature-card",
-            "value": "columns-feature-card"
+            "name": "Vertical Alignment",
+            "children": [
+              {
+                "name": "Top (default)",
+                "value": "valign-top"
+              },
+              {
+                "name": "Center",
+                "value": "valign-center"
+              },
+              {
+                "name": "Bottom",
+                "value": "valign-bottom"
+              }
+            ]
+          },
+          {
+            "name": "Horizontal Alignment",
+            "children": [
+              {
+                "name": "Left (default)",
+                "value": "halign-default"
+              },
+              {
+                "name": "Center",
+                "value": "halign-center"
+              },
+              {
+                "name": "Right",
+                "value": "halign-right"
+              }
+            ]
           }
         ]
       },
       {
         "component": "select",
-        "name": "type",
-        "value": "",
-        "label": "Columns Layout",
-        "description": "Different column layouts",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "column-33-66",
-            "value": "column-layout-33-66"
-          },
-          {
-            "name": "column-66-33",
-            "value": "column-layout-66-33"
-          },
-          {
-            "name": "column-25-75",
-            "value": "column-layout-25-75"
-          },
-          {
-            "name": "column-75-25",
-            "value": "column-layout-75-25"
-          }
-        ]
-      },
-      {
-        "component": "text",
         "valueType": "number",
         "name": "columns",
-        "value": "",
-        "label": "Columns"
+        "value": "2",
+        "label": "Columns",
+        "options": [
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "5",
+            "value": "5"
+          }
+        ]
       },
       {
         "component": "text",
