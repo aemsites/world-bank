@@ -572,5 +572,39 @@
         "label": "Link"
       }
     ]
+  },
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:title",
+        "label": "Page Title",
+        "description": "Sets the title of the page in page meta."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:description",
+        "label": "Page Description",
+        "description": "Sets the description of the page in page meta."
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-swoosh",
+        "label": "Show Swoosh on page."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alternate-url",
+        "multi": true,
+        "value": "",
+        "label": "Language URL(s)",
+        "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
+      }
+    ]
   }
 ]
