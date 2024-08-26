@@ -593,8 +593,8 @@
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "hide-swoosh",
-        "label": "Do no show Swoosh on page."
+        "name": "show-swoosh",
+        "label": "Show Swoosh on page."
       },
       {
         "component": "text",
