@@ -297,7 +297,7 @@
                 "template": {
                   "name": "Custom Data Card",
                   "filter": "custom-data-card",
-                  "model": "custom-card"
+                  "model": "custom-data-card"
                 }
               }
             }
