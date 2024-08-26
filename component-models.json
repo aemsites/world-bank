@@ -584,6 +584,13 @@
         "description": "Sets the title of the page in page meta."
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:description",
+        "label": "Page Description",
+        "description": "Sets the description of the page in page meta."
+      },
+      {
         "component": "boolean",
         "valueType": "boolean",
         "name": "hide-swoosh",
@@ -597,20 +604,6 @@
         "value": "",
         "label": "Language URL(s)",
         "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "class",
-        "label": "Page Class",
-        "description": "Sets the title of the page in page meta."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "style",
-        "label": "Page Style",
-        "description": "Sets the title of the page in page meta."
       }
     ]
   }
