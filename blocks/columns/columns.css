@@ -67,6 +67,7 @@
       margin: 0;
     }
   }
+
   .columns-img-col {
     position: absolute;
     right: 0;
@@ -177,6 +178,7 @@
       }
     }
 }
+
   .bg-primary-blue-90 .columns-transform-teaser .columns-img-col picture {
     width: 100%;
   } 
@@ -185,6 +187,7 @@
 @media(width <= 768px) {
   .bg-primary-blue-90{
     height: auto;
+    
       .columns-transform-teaser{
         > div{
           grid-template-rows: auto auto;
