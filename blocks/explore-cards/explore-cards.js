@@ -24,12 +24,14 @@ export default function decorate(block) {
   // Iterate through each card and transform it
   cards.forEach((card) => {
     // Extract elements from the card
-    const [imageContainer, altText, contentType, storyType, storyHeading, , link] = card.children;
+    const [imageContainer, altText, contentType, storyType, storyHeading, tags, link] = card.children;
 
     // Set alt attribute for the image
     const imgElement = imageContainer.querySelector('img');
     imgElement.setAttribute('alt', altText.textContent);
 
+    console.log(tags);
+    console.log(tags.textContent.split(',')[0].split(':')[1]);
     // Style the story type and create content container
     storyType.classList.add('story-type');
     const storyContent = div({ class: 'story-content' });
@@ -53,6 +55,15 @@ export default function decorate(block) {
 
     // Create story card and append content
     const storyCard = div({ class: 'story-card' }, anchorTag, storyContent);
+
+    // Add click event listener to the entire card
+    storyCard.addEventListener('click', () => {
+      // Simulate a click on the <a> tag
+      window.location.href = anchorTag.href;
+    });
+
+    storyCard.style.cursor = 'pointer';
+
     storiesContainer.appendChild(storyCard);
   });
 
