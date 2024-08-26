@@ -181,11 +181,11 @@
               },
               {
                 "name": "33% - 67%",
-                "value": "column-layout-33-66"
+                "value": "column-layout-33-67"
               },
               {
                 "name": "67% - 33%",
-                "value": "column-layout-66-33"
+                "value": "column-layout-67-33"
               },
               {
                 "name": "25% - 75%",
@@ -601,13 +601,6 @@
         "name": "title",
         "value": "",
         "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "value": "",
-        "label": "Description",
-        "valueType": "string"
       },
       {
         "component": "aem-tag",
