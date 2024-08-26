@@ -50,14 +50,6 @@
   }
 }
 
-.columns.columns-2-cols.column-layout-33-67 > div > div,
-.columns.columns-2-cols.column-layout-67-33 > div > div,
-.columns.columns-2-cols.column-layout-25-75 > div > div,
-.columns.columns-2-cols.column-layout-75-25 > div > div {
-    flex-basis: 100%;
-    flex-direction: column;
-}
-
 .columns.columns-feature-card {
   & > div > div {
     > p:first-child {
@@ -214,6 +206,14 @@
       }
     }
   }  
+}
+
+.columns.columns-2-cols.column-layout-33-67 > div > div,
+.columns.columns-2-cols.column-layout-67-33 > div > div,
+.columns.columns-2-cols.column-layout-25-75 > div > div,
+.columns.columns-2-cols.column-layout-75-25 > div > div {
+    flex-basis: 100%;
+    flex-direction: column;
 }
 
 @media (width >= 1024px) {
