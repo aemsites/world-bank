@@ -95,32 +95,16 @@
         "valueType": "string",
         "options": [
           {
-            "name": "Default",
+            "name": "default",
             "value": ""
           },
           {
-            "name": "Primary (blue)",
+            "name": "primary",
             "value": "primary"
           },
           {
-            "name": "Secondary (border)",
+            "name": "secondary",
             "value": "secondary"
-          },
-          {
-            "name": "Primary (white)",
-            "value": "primary-white"
-          },
-          {
-            "name": "Ghost",
-            "value": "ghost"
-          },
-          {
-            "name": "Text (underline - blue)",
-            "value": "text-underline-blue"
-          },
-          {
-            "name": "Text (underline - white)",
-            "value": "text-underline-white"
           }
         ]
       }
@@ -130,63 +114,115 @@
     "id": "columns",
     "fields": [
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
         "value": "",
-        "label": "Column Variants",
-        "description": "Different column variants",
+        "label": "Column Styles",
         "valueType": "string",
+        "maxSize": 4,
         "options": [
           {
-            "name": "default",
-            "value": ""
+            "name": "Variations",
+            "children": [
+              {
+                "name": "Default",
+                "value": "columns-default-variant"
+              },
+              {
+                "name": "Divider Variant",
+                "value": "columns-divider-variant"
+              },
+              {
+                "name": "Feature Card Variation",
+                "value": "columns-feature-card"
+              }
+            ]
           },
           {
-            "name": "divider-variant",
-            "value": "columns-divider-variant"
+            "name": "Vertical Alignment",
+            "children": [
+              {
+                "name": "Top (default)",
+                "value": "valign-top"
+              },
+              {
+                "name": "Center",
+                "value": "valign-center"
+              },
+              {
+                "name": "Bottom",
+                "value": "valign-bottom"
+              }
+            ]
           },
           {
-            "name": "feature-card",
-            "value": "columns-feature-card"
+            "name": "Horizontal Alignment",
+            "children": [
+              {
+                "name": "Left (default)",
+                "value": "halign-default"
+              },
+              {
+                "name": "Center",
+                "value": "halign-center"
+              },
+              {
+                "name": "Right",
+                "value": "halign-right"
+              }
+            ]
+          },
+          {
+            "name": "2 Col Desktop Layout",
+            "children": [
+              {
+                "name": "50% - 50% (default)",
+                "value": "columns-layout-default"
+              },
+              {
+                "name": "33% - 67%",
+                "value": "column-layout-33-67"
+              },
+              {
+                "name": "67% - 33%",
+                "value": "column-layout-67-33"
+              },
+              {
+                "name": "25% - 75%",
+                "value": "column-layout-25-75"
+              },
+              {
+                "name": "75% - 25%",
+                "value": "column-layout-75-25"
+              }
+            ]
           }
         ]
       },
       {
         "component": "select",
-        "name": "type",
-        "value": "",
-        "label": "Columns Layout",
-        "description": "Different column layouts",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "column-33-66",
-            "value": "column-layout-33-66"
-          },
-          {
-            "name": "column-66-33",
-            "value": "column-layout-66-33"
-          },
-          {
-            "name": "column-25-75",
-            "value": "column-layout-25-75"
-          },
-          {
-            "name": "column-75-25",
-            "value": "column-layout-75-25"
-          }
-        ]
-      },
-      {
-        "component": "text",
         "valueType": "number",
         "name": "columns",
-        "value": "",
-        "label": "Columns"
+        "value": "2",
+        "label": "Columns",
+        "options": [
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "5",
+            "value": "5"
+          }
+        ]
       },
       {
         "component": "text",
@@ -233,51 +269,51 @@
           },
           {
             "name": "No space / padding",
-            "value": "sec-spacing-none"
+            "value": "section-none"
           },
           {
-            "name": "Spacing 8px",
-            "value": "sec-spacing-8"
+            "name": "Spacing xxsmall",
+            "value": "section-xxsmall"
           },
           {
-            "name": "Spacing 12px",
-            "value": "sec-spacing-12"
+            "name": "Spacing xsmall",
+            "value": "section-xsmall"
           },
           {
-            "name": "Spacing 16px",
-            "value": "sec-spacing-16"
+            "name": "Spacing small",
+            "value": "section-small"
           },
           {
             "name": "Spacing 20px",
             "value": "sec-spacing-20"
           },
           {
-            "name": "Spacing 24px",
-            "value": "sec-spacing-24"
+            "name": "Spacing regular",
+            "value": "section-regular"
           },
           {
             "name": "Spacing 28px",
             "value": "sec-spacing-28"
           },
           {
-            "name": "Spacing 32px",
-            "value": "sec-spacing-32"
+            "name": "Spacing medium",
+            "value": "section-medium"
           },
           {
-            "name": "Spacing 48px",
-            "value": "sec-spacing-48"
+            "name": "Spacing xlarge",
+            "value": "section-xlarge"
           },
           {
-            "name": "Spacing 64px",
-            "value": "sec-spacing-64"
+            "name": "Spacing xxlarge",
+            "value": "section-xxlarge"
           },
           {
-            "name": "Spacing 80px",
-            "value": "sec-spacing-80"
+            "name": "Spacing huge",
+            "value": "section-huge"
           },
           {
-            "name": "Spacing 96px",
-            "value": "sec-spacing-96"
+            "name": "Spacing xhuge",
+            "value": "section-xhuge"
           }
         ]
       },
@@ -472,20 +508,13 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "curated-card-image",
         "label": "Image",
         "multi": false
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
         "component": "aem-tag",
-        "name": "tags",
+        "name": "curated-card-tags",
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank",
@@ -494,7 +523,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
+        "name": "curated-card-title",
         "value": "",
         "label": "Title",
         "description": "Sets the title of the Card"
@@ -502,14 +531,14 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "description",
+        "name": "curated-card-description",
         "value": "",
         "label": "Description",
         "description": "Sets the description of the Card"
       },
       {
         "component": "text",
-        "name": "link",
+        "name": "curated-card-link",
         "value": "",
         "label": "Link",
         "valueType": "string"
@@ -574,13 +603,6 @@
         "label": "Title"
       },
       {
-        "component": "richtext",
-        "name": "description",
-        "value": "",
-        "label": "Description",
-        "valueType": "string"
-      },
-      {
         "component": "aem-tag",
         "name": "tags",
         "label": "Tag",
@@ -593,6 +615,40 @@
         "name": "link",
         "value": "",
         "label": "Link"
+      }
+    ]
+  },
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:title",
+        "label": "Page Title",
+        "description": "Sets the title of the page in page meta."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:description",
+        "label": "Page Description",
+        "description": "Sets the description of the page in page meta."
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show-swoosh",
+        "label": "Show Swoosh on page."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alternate-url",
+        "multi": true,
+        "value": "",
+        "label": "Language URL(s)",
+        "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
       }
     ]
   }
