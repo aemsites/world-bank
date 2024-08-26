@@ -2,7 +2,7 @@
 footer {
   background-color: var(--primary-blue-100);
   color: var(--color-white);
-  padding: 1rem 2rem;
+  padding: 10px 70px;
   
   & a {
     text-decoration: none;
@@ -42,6 +42,12 @@ footer {
   & .ft-social-list  { /* Footer Top : ITEMS (Logo, Brands, Social links) */
     display:inline-block;
     margin: auto 0;
+
+    & a {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21.79px;
+    }
     
     & ul {
         display:flex;
@@ -68,6 +74,11 @@ footer {
     
         & li {
           padding: 0 1.5rem 0 0;
+
+          & span.icon {
+            width: 50px;
+            height: 50px;
+          }
         }
       }
     }
@@ -92,19 +103,22 @@ html[dir="rtl"] .ft-social-list:first-child  {
     min-width: 20%;
     
     & a {
-      font-size: 1rem;
+      display: inline-block;
+      font-size: 16px;
       font-weight: 400;
-      line-height: 1.4rem;
+      line-height: 22.4px;
       padding: .7rem;
+      margin: 1rem 0 0;
       text-decoration: none;
       color: var(--color-white);
     }
 
     & p {
+      font-size: 26px;
       color: var(--color-white);
       text-transform: uppercase;
       font-weight: 700;
-      line-height: 2.275rem;
+      line-height: 36.4px;
       margin-top: 0;
     
       & span {
@@ -126,8 +140,9 @@ html[dir="rtl"] .ft-social-list:first-child  {
 
       & a {
         background-color: var(--color-white);
-        font-size: 1rem;
-        line-height: 1.356rem;
+        font-size: 14px;
+        line-height: 19.7px;
+        font-weight: 700;
         color: var(--primary-blue-103);
         cursor: pointer;
         border-radius: 6.25rem;
@@ -146,6 +161,10 @@ html[dir="rtl"] .ft-main-item:last-child  {
   padding: 0;
 }
 
+html[dir="rtl"] .ft-main-item:not(:last-child) {
+  padding-right: 0;
+}
+
 /* Footer Bottom : Legal */
 
 .ft-legal {
@@ -155,15 +174,16 @@ html[dir="rtl"] .ft-main-item:last-child  {
   border-top: 1px var(--primary-blue-80) solid;
   padding: 1.5rem 0 2rem;
   margin: auto;
-  font-size: 0.875rem;
-  line-height: 1.05rem;
+  font-size: 14px;
+  line-height: 16.8px;
+  font-weight: 400;
   
   .ft-legal-list {
     & p {
       margin: 0;
       padding: 0;
     }
- 
+    
     &:last-child {
       & ul {
         display: flex;
@@ -182,6 +202,10 @@ html[dir="rtl"] .ft-main-item:last-child  {
 /* Tablet */
 
 @media only screen and (width <= 1024px) {
+  footer {
+    padding: 10px 50px;
+  }
+
   /* Footer Top : Parent DIV contains : (Logo, Brands, Social links) */
   .ft-social {
     grid-template-columns: 1fr 2fr;
@@ -286,6 +310,10 @@ html[dir="rtl"] .ft-main-item:last-child  {
 
 /* Mobile */
 @media only screen and (width <= 768px) {
+  footer {
+    padding: 10px 30px
+  }
+
   /* Footer Top : Parent DIV contains : (Logo, Brands, Social links) */
   .ft-social {
     grid-template-columns: 1fr;

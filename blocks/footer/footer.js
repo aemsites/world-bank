@@ -15,14 +15,64 @@ function switchBlock(className, ul) {
 }
 
 /**
+ * Add <img> for icon, prefixed with codeBasePath and optional prefix.
+ * @param {Element} [span] span element with icon classes
+ */
+function addAttributes(span, prefix = '') {
+  const iconName = Array.from(span.classList)
+    .find((c) => c.startsWith('icon-'))
+    .substring(5);
+  const img = document.createElement('img');
+  img.dataset.iconName = iconName;
+  img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
+  img.alt = iconName;
+  img.title = iconName;
+  img.loading = 'lazy';
+  span.append(img);
+}
+
+/**
+ * Images / Icons Handler
+ * @param {Element} [element] Element containing icons
+ */
+function addElementProperties(element) {
+  const icons = [...element.querySelectorAll('span.icon')];
+  icons.forEach((span) => {
+    addAttributes(span);
+    span.removeChild(span.firstElementChild);
+  });
+}
+
+/**
+ * Add anchor tag & properties for logo.
+ * @param {Element} [element] Element containing icons
+*/
+function addAnchorTag(element) {
+  const anchorLink = document.createElement('a');
+  const logoImage = element.querySelector('img');
+  anchorLink.href = '';
+  anchorLink.title = logoImage.alt;
+  anchorLink.appendChild(element);
+  return anchorLink;
+}
+
+/**
  * HTML handler
  * @param {HTML} ClassName The container
  * @param {HTML} ul The content pass in a parent class
  */
 function htmlParser(htmlObj, ul, prepend = '') {
   [...htmlObj].forEach((Contentdata) => {
+    addElementProperties(Contentdata);
+
     const li = document.createElement('li');
-    li.appendChild(Contentdata);
+    if (Contentdata.tagName === 'PICTURE') {
+      const pictureTagHandler = addAnchorTag(Contentdata);
+      li.appendChild(pictureTagHandler);
+    } else {
+      li.appendChild(Contentdata);
+    }
+
     if (prepend) {
       if (Contentdata.textContent.trim()) {
         ul.prepend(li);
