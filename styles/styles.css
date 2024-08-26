@@ -299,8 +299,15 @@ main pre {
 
 /* links */
 a:any-link {
-  color: var(--link-color);
-  text-decoration: none;
+  background: transparent;
+  border-bottom: 2px solid rgb(0 57 107 / 24%);
+  color: var(--primary-blue-80);
+  padding: 12px 0 8px;
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  text-align: left;
 }
 
 a:hover {
@@ -388,6 +395,70 @@ button.secondary:disabled:hover {
 
 p.button-container {
   margin: 0;
+}
+
+.section.bg-primary-blue-90,
+.section.bg-primary-blue-70 {
+  a.button:any-link,
+  button {
+    border: 1px solid transparent;
+    color: var(--primary-blue-80);
+    background-color: var(--background-color);
+  }
+
+  a.button:hover,
+  button:hover {
+    background-color: var(--background-color);
+    color: var(--primary-blue-80);
+    border: 1px solid var(--primary-blue-50);
+  }
+
+  /* TODO: Not available in Figma - add more */
+  a.button:focus,
+  button:focus {
+    background-color: var(--background-color);
+    color: var(--primary-blue-80);
+  }
+
+  /* TODO: To be updated */
+  a.button.disabled,
+  a.button.disabled:hover,
+  button:disabled,
+  button:disabled:hover {
+    background-color: var(--neutrals-40);
+    color: rgb(0 41 77 / 42%);
+  }
+
+  a.button.secondary,
+  button.secondary {
+    background-color: var(--primary-blue-80);
+    border: 1px solid var(--background-color);
+    color: var(--background-color);
+  }
+
+  a.button.secondary:hover,
+  button.secondary:hover {
+    background-color: var(--primary-blue-80);
+    border: 1px solid var(--primary-blue-50);
+    color: var(--background-color);
+  }
+
+  /* TODO: Focus and disabled is not updated in figma */
+  a.button.secondary:focus,
+  button.secondary:focus {
+    background-color: var(--primary-blue-80);
+    border: 1px solid var(--primary-blue-50);
+    color: var(--background-color);
+  }
+
+  a.button.secondary.disabled,
+  a.button.secondary.disabled:hover,
+  button.secondary:disabled,
+  button.secondary:disabled:hover {
+    background-color: unset;
+    border: 1px solid var(--neutrals-103);
+    color: var(--neutrals-50);
+  }
 }
 
 main img {
