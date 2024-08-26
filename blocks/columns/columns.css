@@ -50,6 +50,14 @@
   }
 }
 
+.columns.columns-divider-variant > div > div > p {
+  margin-top: 0;
+}
+
+.columns.columns-divider-variant > div > div:first-child > p {
+  font-size: var(--body-font-size-xl);
+}
+
 .columns.columns-feature-card {
   & > div > div {
     > p:first-child {
@@ -115,6 +123,11 @@
       margin-bottom: 0;
     }
   }
+}
+
+.columns.columns-divider-variant > div > div:last-child {
+  border-left: 2px solid var(--neutrals-20);
+  padding-left: 10px;
 }
 
 @media (width >= 768px) {
@@ -205,72 +218,10 @@
         }
       }
     }
-  }  
-}
+  } 
 
-.columns.columns-divider-variant {
-  /* stylelint-disable-next-line no-descending-specificity */
-  & > div {
-    flex-direction: column;
-  
-    > div:first-child {
-      > p {
-        font-size: var(--body-font-size-xl);
-        text-align: left;
-        color: var(--neutrals-100);
-        margin: 0;
-        line-height: 28px;
-      }
-    }
-  
-    > div:last-child {
-      border-left: 1px solid var(--neutrals-20);
-      padding-left: 10px;
-      font-size: var(--body-font-size-l);
-      line-height: 25px;
-      color: var(--neutrals-100);
-    }
-  }
-}
-
-@media (width >= 768px) {
-  .columns.columns-divider-variant > div {
-    flex-direction: column;
-    gap: 22px;
-
-    > div:last-child {
-      border-left: 1px solid var(--neutrals-20);
-      padding-left: 10px;
-
-      p {
-        font-size: var(--body-font-size);
-        margin: 0;
-      }
-    }
-  }
-}
-
-@media (width > 1024px) {
-  .columns.columns-divider-variant > div {
-    flex-direction: row;
-    
-    > div:first-child {
-      font-size: var(--body-font-size-xl);
-      margin-bottom: 0;
-
-      p {
-        font-size: var(--body-font-size-xl);
-        text-align: left;
-        color: var(--neutrals-100);
-      }
-    }
-
-    > div:last-child {
-      border-left: 1px solid var(--neutrals-20);
-      padding-left: 20px;
-      color: var(--neutrals-100);
-      font-size: var(--body-font-size);
-    }
+  .columns.columns-divider-variant > div > div:last-child {
+    padding-left: 20px;
   }
 }
 

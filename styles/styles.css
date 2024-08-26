@@ -604,21 +604,6 @@ main .section.bg-primary-blue-90[data-bg-inside-container="true"] > div {
   background-color: var(--primary-blue-90);
 }
 
-
-main .section.sub-header-container > div > h2 {
-  color: var(--primary-blue-100);
-  font-weight: 700;
-  font-size: 36px;
-  margin: 0;
-}
-
-main .section.sub-header-container > div > p {
-  color: var(--neutrals-100);
-  font-size: 24px;
-  font-weight: 400;
-  margin: 0.2em 0 1.5em;
-}
-
 main .section.bg-primary-blue-70 {
   background-color: var(--primary-blue-70);
 }
