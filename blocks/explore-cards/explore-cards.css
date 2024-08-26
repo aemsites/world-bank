@@ -102,7 +102,7 @@
         grid-template-columns: 1fr;
         gap: var(--spacing-20);
         width: unset;
-        overflow-x: none;
+        overflow-x: unset;
     }
     
     .story-card {
