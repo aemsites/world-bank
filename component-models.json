@@ -136,6 +136,36 @@
         ]
       },
       {
+        "component": "select",
+        "name": "type",
+        "value": "",
+        "label": "Columns Layout",
+        "description": "Different column layouts",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "column-33-66",
+            "value": "column-layout-33-66"
+          },
+          {
+            "name": "column-66-33",
+            "value": "column-layout-66-33"
+          },
+          {
+            "name": "column-25-75",
+            "value": "column-layout-25-75"
+          },
+          {
+            "name": "column-75-25",
+            "value": "column-layout-75-25"
+          }
+        ]
+      },
+      {
         "component": "text",
         "valueType": "number",
         "name": "columns",
@@ -224,35 +254,88 @@
           {
             "name": "Spacing 64px",
             "value": "sec-spacing-64"
+          },
+          {
+            "name": "Spacing 80px",
+            "value": "sec-spacing-80"
+          },
+          {
+            "name": "Spacing 96px",
+            "value": "sec-spacing-96"
           }
         ]
       },
       {
         "component": "select",
-        "name": "sec-swish",
+        "name": "sec-swoosh",
         "value": "",
-        "label": "Section Swish",
+        "label": "Section Swoosh",
         "valueType": "string",
         "options": [
           {
-            "name": "No Swish",
-            "value": "sec-swish-none"
+            "name": "No Swoosh",
+            "value": "sec-swoosh-none"
           },
           {
-            "name": "Swish on left",
-            "value": "sec-swish-left"
+            "name": "Swoosh Type 1",
+            "value": "sec-swoosh-type1"
           },
           {
-            "name": "Swish on center",
-            "value": "sec-swish-center"
+            "name": "Swoosh Type 2",
+            "value": "sec-swoosh-type2"
           },
           {
-            "name": "Swish on right",
-            "value": "sec-swish-right"
+            "name": "Swoosh Type 3",
+            "value": "sec-swoosh-type3"
           },
           {
-            "name": "Swish with Primary blue 95",
-            "value": "sec-swish-primary-blue-95"
+            "name": "Swoosh Primary Blue 90 theme",
+            "value": "sec-swoosh-primary-blue-90"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "sec-swoosh-position",
+        "value": "",
+        "label": "Section Swoosh Position",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Left - Top",
+            "value": "swoosh-left-top"
+          },
+          {
+            "name": "Left - Center",
+            "value": "swoosh-left-center"
+          },
+          {
+            "name": "Left - Bottom",
+            "value": "swoosh-left-bottom"
+          },
+          {
+            "name": "Center - Top",
+            "value": "swoosh-center-top"
+          },
+          {
+            "name": "Center - Center",
+            "value": "swoosh-center-center"
+          },
+          {
+            "name": "Bottom - Bottom",
+            "value": "swoosh-center-bottom"
+          },
+          {
+            "name": "Right - Top",
+            "value": "swoosh-right-top"
+          },
+          {
+            "name": "Right - Center",
+            "value": "swoosh-right-center"
+          },
+          {
+            "name": "Right - Bottom",
+            "value": "swoosh-right-bottom"
           }
         ]
       },
@@ -334,7 +417,7 @@
     ]
   },
   {
-    "id": "data-cards",
+    "id": "data-card",
     "fields": [
      {
         "component": "aem-tag",
@@ -373,20 +456,13 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "curated-card-image",
         "label": "Image",
         "multi": false
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
         "component": "aem-tag",
-        "name": "tags",
+        "name": "curated-card-tags",
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank",
@@ -395,7 +471,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
+        "name": "curated-card-title",
         "value": "",
         "label": "Title",
         "description": "Sets the title of the Card"
@@ -403,14 +479,14 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "description",
+        "name": "curated-card-description",
         "value": "",
         "label": "Description",
         "description": "Sets the description of the Card"
       },
       {
         "component": "text",
-        "name": "link",
+        "name": "curated-card-link",
         "value": "",
         "label": "Link",
         "valueType": "string"
