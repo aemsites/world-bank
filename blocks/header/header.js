@@ -1,18 +1,63 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { fetchLanguageNavigation, fetchLanguagePlaceholders, getLanguage } from '../../scripts/scripts.js';
+import {
+  fetchLanguageNavigation,
+  fetchLanguagePlaceholders,
+  getLanguage,
+} from '../../scripts/scripts.js';
 import * as Constants from './constants.js';
 import {
-  p, button, div, a, li, ul, input, img, span,
+  p,
+  button,
+  div,
+  a,
+  li,
+  ul,
+  input,
+  img,
+  span,
 } from '../../scripts/dom-helpers.js';
+
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 1024px)');
+function closesideMenu(leftColumn, rightColumn) {
+  leftColumn.style.display = 'flex';
+  if (!isDesktop.matches) {
+    rightColumn.style.display = 'none';
+  } else {
+    rightColumn.style.display = 'flex';
+  }
+  const submenuElements = rightColumn.getElementsByClassName(Constants.SUBMENU);
+  const submenus = Array.from(submenuElements);
+
+  submenus.forEach((submenu, index) => {
+    if (isDesktop.matches) {
+      if (leftColumn.querySelectorAll('li')[index].classList.contains('selected')) {
+        submenu.style.display = 'flex';
+      } else {
+        submenu.style.display = 'none';
+      }
+    } else {
+      submenu.style.display = 'none';
+    }
+  });
+  const sidemenuBackButton = rightColumn.querySelector(
+    '.nav-menu-overlay-back',
+  );
+  sidemenuBackButton.style.display = 'none';
+  const currentSubMenu = rightColumn.querySelector(
+    Constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR,
+  );
+  currentSubMenu.style.display = 'none';
+}
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById(Constants.NAV);
     const navSections = nav.querySelector(Constants.NAV_SECTIONS_WITH_SELECTOR);
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
+    const navSectionExpanded = navSections.querySelector(
+      '[aria-expanded="true"]',
+    );
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
       toggleAllNavSections(navSections);
@@ -23,19 +68,19 @@ function closeOnEscape(e) {
   }
 }
 
-function closesideMenu(leftColumn, rightColumn) {
-  leftColumn.style.display = 'flex';
-  rightColumn.style.display = 'none';
-  const submenuElements = rightColumn.getElementsByClassName(Constants.SUBMENU);
-  const submenus = Array.from(submenuElements);
+function openOnKeydown(e) {
+  const focused = document.activeElement;
+  const isNavDrop = focused.className === 'nav-drop';
+  if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
+    const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
+    // eslint-disable-next-line no-use-before-define
+    toggleAllNavSections(focused.closest('.nav-sections'));
+    focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
+  }
+}
 
-  submenus.forEach((submenu) => {
-    submenu.style.display = 'none';
-  });
-  const sidemenuBackButton = rightColumn.querySelector(Constants.MENU_OVERLAY_WITH_SELECTOR);
-  sidemenuBackButton.style.display = 'none';
-  const currentSubMenu = rightColumn.querySelector(Constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR);
-  currentSubMenu.style.display = 'none';
+function focusNavSection() {
+  document.activeElement.addEventListener('keydown', openOnKeydown);
 }
 
 /**
@@ -45,7 +90,7 @@ function closesideMenu(leftColumn, rightColumn) {
  */
 function toggleAllNavSections(sections, expanded = false) {
   sections
-    .querySelectorAll('.nav-sections .nav-menu-overlay .nav-menu > div')
+    .querySelectorAll('.nav-sections .default-content-wrapper > ul > li')
     .forEach((section) => {
       section.setAttribute('aria-expanded', expanded);
     });
@@ -62,14 +107,44 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     ? !forceExpanded
     : nav.getAttribute('aria-expanded') === 'true';
   const hamButton = nav.querySelector('.nav-hamburger button');
+  document.body.style.overflowY = expanded || isDesktop.matches ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded ? 'false' : 'true');
+  toggleAllNavSections(
+    navSections,
+    expanded || isDesktop.matches ? 'false' : 'true',
+  );
   hamButton.setAttribute(
     'aria-label',
     expanded ? Constants.OPEN_NAVIGATION : Constants.CLOSE_NAVIGATION,
   );
+  // enable nav dropdown keyboard accessibility
+  const navDrops = navSections.querySelectorAll('.nav-drop');
+  if (isDesktop.matches) {
+    navDrops.forEach((drop) => {
+      if (!drop.hasAttribute('tabindex')) {
+        drop.setAttribute('role', 'hamButton');
+        drop.setAttribute('tabindex', 0);
+        drop.addEventListener('focus', focusNavSection);
+      }
+    });
+  } else {
+    navDrops.forEach((drop) => {
+      drop.removeAttribute('role');
+      drop.removeAttribute('tabindex');
+      drop.removeEventListener('focus', focusNavSection);
+    });
+  }
+  // enable menu collapse on escape keypress
+  if (!expanded || isDesktop.matches) {
+    // collapse menu on escape press
+    window.addEventListener('keydown', closeOnEscape);
+  } else {
+    window.removeEventListener('keydown', closeOnEscape);
+  }
 
-  const navMenuOverlay = navSections.querySelector(Constants.NAV_MENU_OVERLAY_WITH_SELECTOR);
+  const navMenuOverlay = navSections.querySelector(
+    Constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
+  );
   if (!expanded) {
     navMenuOverlay.classList.add(Constants.OPEN);
   } else {
@@ -84,13 +159,12 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     window.removeEventListener(Constants.KEY_DOWN, closeOnEscape);
   }
 }
-
 function formatNavigationJsonData(navJson) {
   const structuredData = [];
   let currentLevel0 = null;
   let currentCategory = null;
   let currentLevel1 = null;
-
+  // let Class = '';
   navJson.forEach((item) => {
     if (item.Type === Constants.LEVEL_0) {
       const level0 = {
@@ -99,12 +173,17 @@ function formatNavigationJsonData(navJson) {
       };
       structuredData.push(level0);
       currentLevel0 = level0;
-    } else if (item.Type === Constants.CATEGORY || item.Type === Constants.FOOTER
-      || item.Type === Constants.DROPDOWN) {
+    } else if (
+      item.Type === Constants.CATEGORY
+      || item.Type === Constants.FOOTER
+      || item.Type === Constants.DROPDOWN
+    ) {
       const category = {
         ...item,
         items: [],
       };
+
+      // Class = item.Type === Constants.FOOTER ? 'footer' : '';
       currentLevel0.categories.push(category);
       currentCategory = category;
     } else if (item.Type === Constants.LEVEL_1) {
@@ -114,165 +193,12 @@ function formatNavigationJsonData(navJson) {
       };
       currentCategory.items.push(level1);
       currentLevel1 = level1;
+      // Class = item.Class;
     } else if (item.Type === Constants.LEVEL_2) {
       currentLevel1.items.push(item);
     }
   });
   return structuredData;
-}
-
-function showSubMenu(leftColumn, rightColumn, submenuId, submenuTitle, currentIndex) {
-  rightColumn.style.display = 'block';
-  if (!isDesktop.matches) {
-    const sidemenuBackButton = rightColumn.querySelector(Constants.OVERLAY_BACK_WITH_SELECTOR);
-    sidemenuBackButton.style.display = 'block';
-    const currentSubMenu = rightColumn.querySelector('.submenu-main-title');
-    currentSubMenu.textContent = submenuTitle;
-    currentSubMenu.style.display = 'flex';
-    leftColumn.style.display = 'none';
-  }
-
-  const submenus = rightColumn.querySelectorAll(Constants.SUBMENU_WITH_SELECTOR);
-  submenus.forEach((submenu) => {
-    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
-  });
-
-  // Update the selected state of the menu items in the left column
-  const level0Items = leftColumn.querySelectorAll('li');
-  level0Items.forEach((item, index) => {
-    if (index === currentIndex) {
-      item.classList.add('selected');
-    } else {
-      item.classList.remove('selected');
-    }
-  });
-}
-
-function createListItemWithAnchor(item) {
-  // Create the main list item
-  const listItem = li(
-    a(
-      { href: item.Link },
-      item.Title,
-    ),
-  );
-
-  // If the item has sub-items, recursively create sub-menu
-  if (item.items && item.items.length > 0) {
-    const subList = ul();
-    item.items.forEach((subItem) => {
-      subList.appendChild(createListItemWithAnchor(subItem));
-    });
-    listItem.appendChild(subList);
-  }
-
-  return listItem;
-}
-
-function createCountryDropDown(category, countrySearchPlaceholder) {
-  const countryList = ul(
-    { class: 'countryList' },
-  );
-  const searchBarWrapper = li(
-    {},
-    ul(
-      {
-        class: 'browse-country',
-      },
-      span(category.Title),
-      div(
-        input({ type: 'search', placeholder: countrySearchPlaceholder }),
-        countryList,
-      ),
-    ),
-  );
-  category.items.forEach((country) => {
-    countryList.append(li(
-      country.Title,
-    ));
-  });
-  return searchBarWrapper;
-}
-function createCategoriesAndSubMenu(level0Item, submenuId, index, countrySearchPlaceholder) {
-  const submenu = ul(
-    {
-      id: submenuId,
-      class: 'submenu',
-      style: isDesktop.matches && index === 0 ? 'display: flex;' : 'display: none;',
-    },
-  );
-
-  level0Item.categories.forEach((category) => {
-    if (category.Type === Constants.DROPDOWN) {
-      submenu.appendChild(createCountryDropDown(category, countrySearchPlaceholder));
-    } else {
-      const categoryList = ul();
-      const categoryItem = li(
-        {},
-        category.Title,
-      );
-      category.items.forEach((subItem) => {
-        const subMenuItem = createListItemWithAnchor(subItem);
-        categoryList.appendChild(subMenuItem);
-      });
-      categoryItem.appendChild(categoryList);
-      submenu.appendChild(categoryItem);
-    }
-  });
-  return submenu;
-}
-function createNavMenu(structuredNav, searchByCountryPlaceholder) {
-  // Create menu Overlay and divide in two column
-  const listMainNavTitle = ul();
-  const menuLeftColumn = div(
-    { class: 'nav-menu-column left' },
-    listMainNavTitle,
-  );
-
-  const menuRightColumn = div(
-    { class: 'nav-menu-column right' },
-    button({
-      class: Constants.NAV_MENU_OVERLAY_BACK,
-      onclick: () => closesideMenu(menuLeftColumn, menuRightColumn),
-    }),
-    p({ class: Constants.SUBMENU_MAIN_TITLE }),
-  );
-
-  const navMenu = div(
-    { class: 'nav-menu' },
-    menuLeftColumn,
-    menuRightColumn,
-  );
-
-  const menuOverlay = div(
-    { class: 'nav-menu-overlay' },
-    navMenu,
-  );
-
-  // Iterate Over structured nav data to create left & right menu navigation.
-  structuredNav.forEach((level0Item, index) => {
-    const submenuId = `submenu_${index}`;
-    // create left column menu
-    const level0MenuItem = li(
-      {
-        onclick:
-          () => showSubMenu(menuLeftColumn, menuRightColumn, submenuId, level0Item.title, index),
-      },
-      span({ textContent: '' }), // level0MenuItemArrow
-      level0Item.title,
-    );
-
-    const isSelected = isDesktop.matches && index === 0 ? 'selected' : '';
-    if (isSelected) level0MenuItem.classList.add(isSelected);
-
-    listMainNavTitle.appendChild(level0MenuItem);
-
-    // Create right column submenu
-    // Iterate over level0 Items and create associated category list
-    const subMenu = createCategoriesAndSubMenu(level0Item, submenuId, index, `${searchByCountryPlaceholder}`);
-    menuRightColumn.appendChild(subMenu);
-  });
-  return menuOverlay;
 }
 /**
  * loads and decorates the header, mainly the nav
@@ -288,9 +214,61 @@ function makeImageClickableNSettingAltText() {
     title: logoImage.alt,
   });
   anchor.appendChild(document.querySelector('.nav-brand picture'));
-  document.querySelector('.nav-brand .default-content-wrapper').appendChild(anchor);
+  document
+    .querySelector('.nav-brand .default-content-wrapper')
+    .appendChild(anchor);
 }
 
+function showSubMenu(
+  leftColumn,
+  rightColumn,
+  submenuId,
+  submenuTitle,
+  currentIndex,
+) {
+  rightColumn.style.display = 'block';
+  if (!isDesktop.matches) {
+    const sidemenuBackButton = rightColumn.querySelector(
+      Constants.OVERLAY_BACK_WITH_SELECTOR,
+    );
+    sidemenuBackButton.style.display = 'block';
+    const currentSubMenu = rightColumn.querySelector('.submenu-main-title');
+    currentSubMenu.textContent = submenuTitle;
+    currentSubMenu.style.display = 'flex';
+    leftColumn.style.display = 'none';
+  }
+
+  const submenus = rightColumn.querySelectorAll(
+    Constants.SUBMENU_WITH_SELECTOR,
+  );
+  submenus.forEach((submenu) => {
+    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
+  });
+
+  // Update the selected state of the menu items in the left column
+  const level0Items = leftColumn.querySelectorAll('li');
+  level0Items.forEach((item, index) => {
+    if (index === currentIndex) {
+      item.classList.add('selected');
+    } else {
+      item.classList.remove('selected');
+    }
+  });
+}
+function filterCountry() {
+  const inputBrowseCountry = document.querySelector(".browse-country input[type='text']");
+  const filter = inputBrowseCountry.value.toUpperCase();
+  const divCountryList = document.getElementsByClassName('countryList')[0];
+  const liTag = divCountryList.getElementsByTagName('li');
+  for (let i = 0; i < liTag.length; i += 1) {
+    const txtValue = liTag[i].textContent || liTag[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      liTag[i].style.display = '';
+    } else {
+      liTag[i].style.display = 'none';
+    }
+  }
+}
 function handleEnterKey(event) {
   if (event.key !== 'Enter') return;
   const inputValue = document.querySelector('.search-container input').value;
@@ -300,6 +278,7 @@ function handleEnterKey(event) {
 
 function createSearchBox() {
   const navWrapper = document.querySelector('.nav-wrapper');
+  const headerWrapper = document.querySelector('.header-wrapper');
   const navTools = document.querySelector('.nav-tools p');
   let searchContainer = navWrapper.querySelector('.search-container');
   let cancelContainer = navWrapper.querySelector('.cancel-container');
@@ -340,15 +319,14 @@ function createSearchBox() {
     const searchIcon = img({ class: 'search-icon' });
     searchIcon.src = '../icons/search-white.svg';
     searchIcon.alt = 'search';
-    searchIcon.addEventListener('click', () => {
+    searchIcon.addEventListener('input', () => {
       if (searchInputBox.value) {
-        window.location.href = listOfAllPlaceholdersData.searchRedirectUrl
-          + searchInputBox.value;
+        window.location.href = listOfAllPlaceholdersData.searchRedirectUrl + searchInputBox.value;
       }
     });
 
     Object.assign(searchInputBox, {
-      type: 'text',
+      type: 'search',
       id: 'search-input',
       name: 'myInput',
       placeholder: listOfAllPlaceholdersData.searchVariable,
@@ -359,7 +337,7 @@ function createSearchBox() {
     const searchContainerWrapper = div({ class: 'search-input-wrapper' });
     searchContainerWrapper.append(searchInputContainer);
     searchContainer.appendChild(searchContainerWrapper);
-    navWrapper.appendChild(searchContainer);
+    headerWrapper.appendChild(searchContainer);
   }
 }
 
@@ -380,18 +358,157 @@ async function fetchingPlaceholdersData() {
   settingAltTextForSearchIcon();
 }
 
+function createListItemWithAnchor(item) {
+  // Create the main list item
+  const listItem = li(
+    { class: item.Class !== '' ? item.Class : '' },
+    a({ href: item.Link }, item.Title, span()),
+  );
+
+  // If the item has sub-items, recursively create sub-menu
+  if (item.items && item.items.length > 0) {
+    const subList = ul();
+    item.items.forEach((subItem) => {
+      subList.appendChild(createListItemWithAnchor(subItem));
+    });
+    listItem.appendChild(subList);
+  }
+
+  return listItem;
+}
+
+function createCountryDropDown(category, countrySearchPlaceholder) {
+  const countryList = ul({ class: 'countryList' });
+  const searchBarWrapper = li(
+    {},
+    ul(
+      {
+        class: 'browse-country',
+      },
+      category.Title,
+      div(
+        input({
+          type: 'text',
+          placeholder: countrySearchPlaceholder,
+          oninput: filterCountry,
+        }),
+        countryList,
+      ),
+      p(),
+    ),
+  );
+  category.items.forEach((country) => {
+    countryList.append(li(a({ href: country.Link }, country.Title)));
+  });
+  return searchBarWrapper;
+}
+function createCategoriesAndSubMenu(
+  level0Item,
+  submenuId,
+  index,
+  countrySearchPlaceholder,
+) {
+  const submenu = ul({
+    id: submenuId,
+    class: 'submenu',
+    style:
+      isDesktop.matches && index === 0 ? 'display: flex;' : 'display: none;',
+  });
+
+  level0Item.categories.forEach((category) => {
+    if (category.Type === Constants.DROPDOWN) {
+      submenu.appendChild(
+        createCountryDropDown(category, countrySearchPlaceholder),
+      );
+    } else {
+      const categoryList = ul();
+      const categoryItem = li(
+        { class: category.Type === 'footer' ? category.Type : '' },
+        category.Title,
+      );
+      category.items.forEach((subItem) => {
+        const subMenuItem = createListItemWithAnchor(subItem);
+        categoryList.appendChild(subMenuItem);
+      });
+      categoryItem.appendChild(categoryList);
+      submenu.appendChild(categoryItem);
+    }
+  });
+  return submenu;
+}
+function createNavMenu(structuredNav, searchByCountryPlaceholder) {
+  // Create menu Overlay and divide in two column
+  const listMainNavTitle = ul();
+  const menuLeftColumn = div(
+    { class: 'nav-menu-column left' },
+    listMainNavTitle,
+  );
+
+  const menuRightColumn = div(
+    { class: 'nav-menu-column right' },
+    button({
+      class: Constants.NAV_MENU_OVERLAY_BACK,
+      onclick: () => closesideMenu(menuLeftColumn, menuRightColumn),
+    }),
+    p({ class: Constants.SUBMENU_MAIN_TITLE }),
+  );
+
+  const navMenu = div({ class: 'nav-menu' }, menuLeftColumn, menuRightColumn);
+
+  const menuOverlay = div({ class: 'nav-menu-overlay' }, navMenu);
+
+  // Iterate Over structured nav data to create left & right menu navigation.
+  structuredNav.forEach((level0Item, index) => {
+    const submenuId = `submenu_${index}`;
+    // create left column menu
+    const level0MenuItem = li(
+      {
+        onclick: () => showSubMenu(
+          menuLeftColumn,
+          menuRightColumn,
+          submenuId,
+          level0Item.title,
+          index,
+        ),
+      },
+      span({ textContent: '' }), // level0MenuItemArrow
+      level0Item.title,
+    );
+    const isSelected = isDesktop.matches && index === 0 ? 'selected' : '';
+    if (isSelected) level0MenuItem.classList.add(isSelected);
+
+    listMainNavTitle.appendChild(level0MenuItem);
+
+    // Create right column submenu
+    // Iterate over level0 Items and create associated category list
+    const subMenu = createCategoriesAndSubMenu(
+      level0Item,
+      submenuId,
+      index,
+      `${searchByCountryPlaceholder}`,
+    );
+    menuRightColumn.appendChild(subMenu);
+  });
+
+  return menuOverlay;
+}
+
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const lang = getLanguage();
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : `/${lang}/nav`;
+  const navPath = navMeta
+    ? new URL(navMeta, window.location).pathname
+    : `/${lang}/nav`;
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
   nav.id = 'nav';
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  while (fragment !== null && fragment.firstElementChild) {
+    nav.append(fragment.firstElementChild);
+  }
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
@@ -408,13 +525,16 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    // Navigation Data
     const structuredNav = formatNavigationJsonData(
       await fetchLanguageNavigation(),
     );
     const placeholdersJson = await fetchLanguagePlaceholders();
-    const searchByCountryPlaceholder = placeholdersJson !== undefined ? placeholdersJson.navMenuSearchByCountryName : 'Search By Country';
-    navSections.append(createNavMenu(structuredNav, searchByCountryPlaceholder));
+    const searchByCountryPlaceholder = placeholdersJson !== undefined
+      ? placeholdersJson.navMenuSearchByCountryName
+      : 'Search By Country';
+    navSections.append(
+      createNavMenu(structuredNav, searchByCountryPlaceholder),
+    );
 
     navSections
       .querySelectorAll(':scope .default-content-wrapper > ul > li')
@@ -433,21 +553,27 @@ export default async function decorate(block) {
       });
   }
 
+  // hamburger for mobile
+
   const hamburger = div(
     { class: 'nav-hamburger', onclick: () => toggleMenu(nav, navSections) },
     button(
-      { type: 'button', 'aria-controls': 'nav', 'aria-label': Constants.OPEN_NAVIGATION },
-      span(
-        { class: 'nav-hamburger-icon' },
-      ),
+      {
+        type: 'button',
+        'aria-controls': 'nav',
+        'aria-label': Constants.OPEN_NAVIGATION,
+      },
+      span({ class: 'nav-hamburger-icon' }),
     ),
   );
+  const rightColumn = nav.querySelector('.nav-menu-column.right');
+  const leftColumn = nav.querySelector('.nav-menu-column.left');
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
   // prevent mobile nav behavior on window resize
   // toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
-
+  isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
