@@ -97,21 +97,6 @@
           }
         },
         {
-          "title": "Column",
-          "id": "column",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Column",
-                  "model": "column"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Hero",
           "id": "hero",
           "plugins": {
