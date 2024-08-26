@@ -229,6 +229,12 @@
   }  
 }
 
+@media (min-width: 767px) and (max-width: 1024px) {
+  .columns-transform-teaser .columns-img-col {
+    width: 50%;
+  }
+}
+
 @media (width >= 1024px) {
   /* TODO: Move to main styles after confirmation from Maria */
   main .section[data-sec-spacing="sec-spacing-64"] {
