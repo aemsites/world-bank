@@ -57,5 +57,11 @@
     "components": [
       "data-card"
     ]
+  },
+  {
+    "id": "custom-data-cards",
+    "components": [
+      "custom-data-card"
+    ]
   }
 ]
