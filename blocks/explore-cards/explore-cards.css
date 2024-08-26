@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: var(--spacing-20);
 }
 
 .development-stories {
     width: 100%;
+    padding: var(--spacing-48) 0 var(--spacing-64) 0;
 }
 
 .explore-title {
@@ -92,6 +92,10 @@
 }
 
 @media (width >= 768px) {
+    .development-stories {
+        padding: var(--spacing-64) 0 var(--spacing-80) 0;
+    }
+    
     .explore-title p {
         font-size: var(--heading-font-size-l);
         line-height: 35.2px;
@@ -126,6 +130,10 @@
 }
 
 @media (width >= 1024px) {
+    .development-stories {
+        padding: var(--spacing-80) 0 var(--spacing-96) 0;
+    }
+
     .explore-title p {
         font-size: var(--heading-font-size-l);
         line-height: 44px;
