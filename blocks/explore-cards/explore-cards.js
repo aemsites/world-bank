@@ -29,7 +29,17 @@ export default function decorate(block) {
     const imgElement = imageContainer.querySelector('img');
     imgElement.setAttribute('alt', altText.textContent);
 
-    const storyTypeText = storyTags.textContent.split(',')[0].split(':')[1] || '';
+    const textContent = storyTags.textContent.split(',')[0];
+    let lastPart;
+
+    if (textContent.includes('/')) {
+      lastPart = textContent.split('/').pop();
+    } else {
+      lastPart = textContent.split(':').pop();
+    }
+
+    const storyTypeText = lastPart.replace(/-/g, ' ').toUpperCase();
+
     // Style the story type and create content container
     const storyType = div({ class: 'story-type' }, p(storyTypeText));
     storyType.classList.add('story-type');
