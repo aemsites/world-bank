@@ -1,16 +1,15 @@
-import { div, img } from '../../scripts/dom-helpers.js';
+import { div, p, img } from '../../scripts/dom-helpers.js';
 
 export default function decorate(block) {
   // Select all cards except the first child (heading)
   const cards = block.querySelectorAll('.explore-cards > div:nth-child(n+2)');
-
   // Create and style the main container
   const developmentStories = div({ class: 'development-stories' });
 
   // Style and append the heading to the main container
   const heading = block.querySelector('.explore-cards > div:first-child');
   heading.classList.add('explore-title');
-  developmentStories.appendChild(heading);
+  // developmentStories.appendChild(heading);
 
   // Create a container for all the cards
   const storiesContainer = div({ class: 'stories-container' });
@@ -24,15 +23,15 @@ export default function decorate(block) {
   // Iterate through each card and transform it
   cards.forEach((card) => {
     // Extract elements from the card
-    const [imageContainer, altText, contentType, storyType, storyHeading, tags, link] = card.children;
+    const [imageContainer, altText, contentType, storyDescription, storyTags, link] = card.children;
 
     // Set alt attribute for the image
     const imgElement = imageContainer.querySelector('img');
     imgElement.setAttribute('alt', altText.textContent);
 
-    console.log(tags);
-    console.log(tags.textContent.split(',')[0].split(':')[1]);
+    const storyTypeText = storyTags.textContent.split(',')[0].split(':')[1] || '';
     // Style the story type and create content container
+    const storyType = div({ class: 'story-type' }, p(storyTypeText));
     storyType.classList.add('story-type');
     const storyContent = div({ class: 'story-content' });
 
@@ -49,9 +48,9 @@ export default function decorate(block) {
     anchorTag.appendChild(imageContainer);
 
     // Append story type and heading to the story content
-    storyHeading.classList.add('story-heading');
+    storyDescription.classList.add('story-heading');
     storyContent.appendChild(storyType);
-    storyContent.appendChild(storyHeading);
+    storyContent.appendChild(storyDescription);
 
     // Create story card and append content
     const storyCard = div({ class: 'story-card' }, anchorTag, storyContent);
