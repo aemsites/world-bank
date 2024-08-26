@@ -1,6 +1,8 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  align-items: start;
+  text-align: left;
 }
 
 .columns img {
@@ -19,10 +21,26 @@
   order: 1;
 }
 
+/* Column alignment */
+.columns.valign-center > div {
+  align-items: center;
+}
+
+.columns.valign-bottom > div {
+  align-items: end;
+}
+
+.columns.halign-center > div {
+  text-align: center;
+}
+
+.columns.halign-bottom > div {
+  text-align: right;
+}
+
 @media (width >= 1024px) {
   .columns > div {
-    align-items: start;
-    flex-direction: row;
+    flex-direction: unset;
     gap: 32px;
   }
   
@@ -32,7 +50,7 @@
   }
 }
 
-.columns-divider-variant > div {
+.columns.columns-divider-variant > div {
   flex-direction: column;
 
   > div:first-child {
@@ -95,34 +113,19 @@
   }
 }
 
-.columns-feature-card {
-  & > .columns-feature-card-list {
-    padding: 0;
-    margin: 0;
+.columns.columns-feature-card {
+  & > div > div {
+    > p:first-child {
+      font-family: var(--heading-font-family);
+      font-size: 28px;
+      line-height: 31px;
+      margin-top: 0;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
 
-    & .columns-feature-card-item {
-      list-style: none;
-
-      > p:first-child {
-        font-family: var(--heading-font-family);
-        font-size: 28px;
-        line-height: 31px;
-        margin-top: 0;
-        margin-bottom: 24px;
-        text-transform: uppercase;
-      }
-
-      .columns-feature-card-description {
-        font-family: var(--heading-font-family);
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 25px;
-        text-align: left;
-        margin: 0;
-        margin-bottom: 4px;
-      }
-
-      picture {
+    .columns-feature-card-thumbnail {
+      > picture {
         display: block;
         box-sizing: border-box;
         overflow: hidden;
@@ -134,36 +137,45 @@
           aspect-ratio: 3/2;
         }
       }
+    }
 
-      /* TODO: Temporary - to be handled in button component */
-      .button-container {
+    .columns-feature-card-description {
+      font-family: var(--heading-font-family);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: left;
+      margin: 0;
+      margin-bottom: 4px;
+    }
+
+    .button-container {
+      margin: 0;
+      display: flex;
+
+      a.button {
+        background-color: transparent;
+        border: 0 none;
+        border-radius: 0;
+        padding: 0;
+        padding-top: 12px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid rgb(255 255 255 / 24%);
         margin: 0;
-        display: flex;
-
-        a.button {
-          background-color: transparent;
-          border: 0 none;
-          border-radius: 0;
-          padding: 0;
-          padding-top: 12px;
-          padding-bottom: 8px;
-          border-bottom: 2px solid rgb(255 255 255 / 24%);
-          margin: 0;
-          font-size: 14px;
-          line-height: 24px;
-          font-weight: 700;
-        }
-      }
-
-      .button-container:last-child {
-        margin-bottom: 40px;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
       }
     }
 
-    & .columns-feature-card-item:last-child {
-      .button-container {
-        margin-bottom: 0;
-      }
+    .columns-feature-card-content:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  & > div > div:last-child {
+    .button-container {
+      margin-bottom: 0;
     }
   }
 }
@@ -174,31 +186,47 @@
     padding: var(--spacing-80) 0;
   }
 
-  .columns-feature-card {
-    & > .columns-feature-card-list {
-      & .columns-feature-card-item {
+  .columns.columns-feature-card {
+    & > div {
+      & > div {
+        display: grid;
+        grid-template-columns: 228px 1fr;
+        grid-template-areas:
+            "title title"
+            "thumbnail description";
+          position: relative;
+          gap: 24px;
+        
         > p:first-child {
           font-size: 32px;
           line-height: 35px;
+          grid-area: title;
         }
 
+        .columns-feature-card-thumbnail {
+          grid-area: thumbnail;
+          margin: 0;
+        }
+
+        .columns-feature-card-content {
+          grid-area: description;
+        }
+  
         .columns-feature-card-description {
           font-size: 16px;
           line-height: 22px;
           margin-bottom: 8px;
         }
-
+  
         .button-container {
           a.button {
             font-size: 14px;
             line-height: 24px;
           }
         }
-
-        .columns-feature-card-group {
-          display: grid;
-          grid-template-columns: 228px 1fr;
-          gap: 24px;
+    
+        .button-container:last-child {
+          margin-bottom: 40px;
         }
       }
     }
@@ -211,13 +239,16 @@
     padding: var(--spacing-96) 0;
   }
 
-  .columns-feature-card {
-    & > .columns-feature-card-list {
+  .columns.columns-feature-card {
+    & > div {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       column-gap: 98px;
+      align-items: flex-start;
 
-      & .columns-feature-card-item {
+      & > div {
+        display: block;
+
         > p:first-child {
           font-size: 40px;
           line-height: 44px;
@@ -235,12 +266,46 @@
             line-height: 24px;
           }
         }
-
-        .columns-feature-card-group {
-          display: unset;
-        }
       }
     }
   }  
 }
+
+.columns.columns-2-cols.column-layout-33-67 > div > div,
+.columns.columns-2-cols.column-layout-67-33 > div > div,
+.columns.columns-2-cols.column-layout-25-75 > div > div,
+.columns.columns-2-cols.column-layout-75-25 > div > div {
+    flex-basis: 100%;
+    flex-direction: column;
+}
+
+@media (width >= 1024px) {
+    .columns.columns-2-cols.column-layout-33-67 > div,
+    .columns.columns-2-cols.column-layout-67-33 > div,
+    .columns.columns-2-cols.column-layout-25-75 > div,
+    .columns.columns-2-cols.column-layout-75-25 > div {
+        flex-direction: row;
+  }
+
+  .columns.columns-2-cols.column-layout-33-67 > div > div:first-child,
+  .columns.columns-2-cols.column-layout-67-33 > div > div:last-child {
+    flex-basis: 33%;
+  }
+
+  .columns.columns-2-cols.column-layout-33-67 > div > div:last-child,
+  .columns.columns-2-cols.column-layout-67-33 > div > div:first-child {
+    flex-basis: 67%;
+  }
+
+  .columns.columns-2-cols.column-layout-25-75 > div > div:first-child,
+  .columns.columns-2-cols.column-layout-75-25 > div > div:last-child {
+    flex-basis: 25%;
+  }
+
+  .columns.columns-2-cols.column-layout-25-75 > div > div:last-child,
+  .columns.columns-2-cols.column-layout-75-25 > div > div:first-child {
+    flex-basis: 75%;
+  }
+}
+
 
