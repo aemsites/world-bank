@@ -288,15 +288,15 @@
           }
         },
         {
-          "title": "Custom Data Cards",
-          "id": "custom-data-cards",
+          "title": "Custom Data Card",
+          "id": "custom-data-card",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Custom Data Cards",
-                  "filter": "custom-data-cards"
+                  "name": "Custom Data Card",
+                  "filter": "custom-data-card"
                 }
               }
             }
