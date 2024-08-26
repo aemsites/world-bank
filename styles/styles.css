@@ -299,15 +299,8 @@ main pre {
 
 /* links */
 a:any-link {
-  background: transparent;
-  border-bottom: 2px solid rgb(0 57 107 / 24%);
   color: var(--primary-blue-80);
-  padding: 12px 0 8px;
-  font-size: var(--body-font-size-s);
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: 0.25px;
-  text-align: left;
+  text-decoration: none;
 }
 
 a:hover {
