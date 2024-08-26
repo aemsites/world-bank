@@ -8,7 +8,7 @@ import {
  */
 function pageSwoosh() {
   const showSwoosh = getMetadata('show-swoosh');
-  if (showSwoosh) {
+  if (showSwoosh === 'true') {
     document.body.classList.add('page-swoosh');
   } else {
     document.body.classList.remove('page-swoosh');
