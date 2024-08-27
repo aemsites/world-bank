@@ -184,13 +184,12 @@ export async function fetchLanguagePlaceholders() {
  * Return the placeholder file specific to language
  * @returns
  */
-export async function fetchLanguageNavigation() {
-  const langCode = getLanguage() || 'default';
+export async function fetchLanguageNavigation(langCode) {
   window.navigationData = window.navigationData || {};
 
   if (!window.navigationData[langCode]) {
     window.navigationData[langCode] = new Promise((resolve) => {
-      fetch(`${langCode === 'default' ? '' : langCode}/navigation.json`)
+      fetch(`${langCode}/navigation.json`)
         .then((resp) => (resp.ok ? resp.json() : {}))
         .then((json) => {
           window.navigationData[langCode] = json.data;

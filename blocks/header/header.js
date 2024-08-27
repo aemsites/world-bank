@@ -255,18 +255,21 @@ function showSubMenu(
     }
   });
 }
-function filterCountry() {
-  const inputBrowseCountry = document.querySelector(".browse-country input[type='text']");
-  const filter = inputBrowseCountry.value.toUpperCase();
-  const divCountryList = document.getElementsByClassName('countryList')[0];
-  const liTag = divCountryList.getElementsByTagName('li');
-  for (let i = 0; i < liTag.length; i += 1) {
-    const txtValue = liTag[i].textContent || liTag[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      liTag[i].style.display = '';
-    } else {
-      liTag[i].style.display = 'none';
-    }
+function filterCountry(e) {
+  const inputBrowseCountry = e.currentTarget;
+  if (undefined !== inputBrowseCountry) {
+    const filter = inputBrowseCountry.value.toUpperCase();
+    const countryList = inputBrowseCountry.nextElementSibling;
+    const listItems = countryList.children;
+    const listItemsArray = Array.from(listItems);
+    // Iterate through the list items
+    listItemsArray.forEach((item) => {
+      if (item.textContent.toUpperCase().indexOf(filter) > -1) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
   }
 }
 function handleEnterKey(event) {
@@ -390,7 +393,7 @@ function createCountryDropDown(category, countrySearchPlaceholder) {
         input({
           type: 'text',
           placeholder: countrySearchPlaceholder,
-          oninput: filterCountry,
+          oninput: (e) => filterCountry(e),
         }),
         countryList,
       ),
@@ -496,10 +499,10 @@ function createNavMenu(structuredNav, searchByCountryPlaceholder) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const lang = getLanguage();
+  const langCode = getLanguage() || 'en';
   const navPath = navMeta
     ? new URL(navMeta, window.location).pathname
-    : `/${lang}/nav`;
+    : `/${langCode}/nav`;
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -526,7 +529,7 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     const structuredNav = formatNavigationJsonData(
-      await fetchLanguageNavigation(),
+      await fetchLanguageNavigation(`/${langCode}`),
     );
     const placeholdersJson = await fetchLanguagePlaceholders();
     const searchByCountryPlaceholder = placeholdersJson !== undefined
