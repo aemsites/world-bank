@@ -156,6 +156,7 @@ main .section.bg-primary-blue-90 {
 
       a.button {
         background-color: transparent;
+        color: var(--background-color);
         border: 0 none;
         border-radius: 0;
         padding: 0;
@@ -166,6 +167,10 @@ main .section.bg-primary-blue-90 {
         font-size: 14px;
         line-height: 24px;
         font-weight: 700;
+      }
+      
+      a.button:hover {
+        color: var(--background-color);
       }
     }
 
