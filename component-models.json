@@ -565,7 +565,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "fileReference",
-        "label": "Thumbnail",
+        "label": "Card Image",
         "required": true,
         "multi": false,
         "rootPath": "/content/dam/world-bank"
@@ -575,7 +575,7 @@
         "valueType": "string",
         "name": "alt",
         "value": "Default alt",
-        "label": "Alt Text"
+        "label": "Alt text"
       },
       {
         "component": "text",
