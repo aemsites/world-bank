@@ -598,7 +598,7 @@
         "label": "Content Type",
         "valueType": "string",
         "required": true,
-        "rootPath": "/content/cq:tags/world-bank"
+        "rootPath": "/content/cq:tags/world-bank/content-type"
       },
       {
         "component": "aem-tag",
@@ -606,7 +606,7 @@
         "label": "Story Type",
         "valueType": "string",
         "required": true,
-        "rootPath": "/content/cq:tags/world-bank"
+        "rootPath": "/content/cq:tags/world-bank/story-type"
       }
     ]
   },
