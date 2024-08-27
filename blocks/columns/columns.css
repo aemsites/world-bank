@@ -28,7 +28,6 @@ main .section.bg-primary-blue-90 {
 .columns.columns-transform-teaser > div {
   display: grid;
   grid-template-columns: 45% 55%;
-  gap: 20px;
   padding: 72px 0;
   position: relative;
 
@@ -77,7 +76,7 @@ main .section.bg-primary-blue-90 {
 .columns.columns-transform-teaser .columns-img-col {
   position: absolute;
   right: 0;
-  top: -125px;
+  top: -110px;
   z-index: 11;
 }
 
@@ -265,8 +264,9 @@ main .section.bg-primary-blue-90 {
 }
 
 @media (768px <= width <= 1024px) {
-  .columns-transform-teaser .columns-img-col {
+  .columns.columns-transform-teaser .columns-img-col {
     width: 50%;
+    right: -65px;
   }
 }
 
