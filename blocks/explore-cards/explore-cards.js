@@ -7,8 +7,8 @@ async function fetchingPlaceholdersData(block) {
   const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
   const storyTypeDivs = block.querySelectorAll('.story-type');
 
-  storyTypeDivs.forEach((div) => {
-    const sTypeKey = toCamelCase(`tag-story-type-${div.textContent}`);
+  storyTypeDivs.forEach((storyTypeDiv) => {
+    const sTypeKey = toCamelCase(`tag-story-type-${storyTypeDiv.textContent}`);
     // Check if there's enough data to update the div
     if (listOfAllPlaceholdersData[sTypeKey]) {
       div.innerText = listOfAllPlaceholdersData[sTypeKey];
