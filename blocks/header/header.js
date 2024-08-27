@@ -278,6 +278,7 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
+    const languageMap = fetchLanguageSelector();
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
     const langSelector = div(
       {
