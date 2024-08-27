@@ -87,6 +87,10 @@ header .nav-menu-overlay .nav-menu a{
  text-decoration: none;
 }
 
+header .nav-menu-overlay .nav-menu a:visited{
+  color: #bdccdb;;
+ }
+
 
 
 
