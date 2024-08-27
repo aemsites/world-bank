@@ -553,7 +553,7 @@
         "valueType": "string",
         "name": "title",
         "value": "",
-        "label": "Title",
+        "label": "Main heading",
         "required": true
       }
     ]

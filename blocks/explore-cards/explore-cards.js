@@ -37,11 +37,14 @@ export default function decorate(block) {
     }
 
     // Story type
-    const sType = processTags(storyType.innerText, 'story-type');
+    const STORY_TYPE = 'story-type';
+    const sType = processTags(storyType.innerText, STORY_TYPE);
     if (sType) {
       // TODO: Read sType localized value from placeholder
+      const sTypeKey = `tag-${STORY_TYPE}-${sType}`;
+      console.log(sTypeKey);
       storyType.innerText = sType;
-      storyType.className = 'story-type';
+      storyType.className = STORY_TYPE;
       cardContent.append(storyType);
     }
     cardContent.append(title);
