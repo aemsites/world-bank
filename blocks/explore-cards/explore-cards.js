@@ -20,12 +20,20 @@ export default function decorate(block) {
     // Extract elements from the card
     const [imageContainer, altText, title, link, contentType, storyType] = card.children;
     card.classList.add('explore-card');
-    cardsContainer.append(card);
 
     // Set alt attribute for the image
     const imgElement = imageContainer.querySelector('img');
     imgElement.setAttribute('alt', altText.textContent);
     imageContainer.className = 'card-img';
+    altText.remove();
+    const anchorTag = link.querySelector('a');
+    anchorTag.textContent = '';
+    anchorTag.appendChild(imageContainer);
+
+    const cardContent = div({ class: 'card-content' }, title, contentType, storyType);
+    card.textContent = '';
+    card.appendChild(anchorTag);
+    card.appendChild(cardContent);
     /*
     const textContent = storyTags.textContent.split(',')[0];
     let lastPart;
@@ -51,9 +59,7 @@ export default function decorate(block) {
     }
 
     // Clear the anchor tag's text content and append the image container
-    const anchorTag = link.querySelector('a');
-    anchorTag.textContent = '';
-    anchorTag.appendChild(imageContainer);
+    
 
     // Append story type and heading to the story content
     storyDescription.classList.add('story-heading');
@@ -73,6 +79,8 @@ export default function decorate(block) {
 
     storiesContainer.appendChild(storyCard);
     */
+
+    cardsContainer.append(card);
   });
 
   /*
