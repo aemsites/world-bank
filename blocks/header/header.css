@@ -252,3 +252,90 @@ outline: none;
   width: 100%;
   top: 0;
 }
+
+/** Lanaguge Selector CSS **/
+.language-container {
+  position: relative;
+  display: inline-block;
+  max-width: 67.49px;
+  height: 26px;
+  padding: 0 0 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.79px;
+  text-align: left;
+
+  /* background: #004370; */
+
+  /* color: #004370; */
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Dropdown Text */
+.language-toggle {
+  padding-right: 6px;
+  /* width: 53px; */
+  height: 22px;
+  line-height: 26px;
+  color: #004370;
+}
+
+/* Dropdown Arrow */
+.language-toggle::after {
+  right: -11px;
+  top: 16px;
+  display: flex;
+  width: 6px;
+  height: 6px;
+  margin-top: -8px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  /* transform-origin: 59% 94%;
+  transition: transform 0.1s; */
+  content: "";
+  box-sizing: content-box;
+  transform: rotateZ(45deg);
+  position: absolute;
+}
+
+.language-toggle[aria-expanded="true"]::after {
+  transform: rotateZ(-135deg);
+  right: -11px;
+  top: 20px;
+}
+
+/* Dropdown Menu */
+.language-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+  z-index: 1;
+}
+
+.lang-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.lang-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.header .nav-item-content-expanded {
+  padding: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  z-index: 10;
+  left: 0;
+  top: 100%;
+  min-width: 100%;
+  width: min-content;
+  background: #fafafa;
+}

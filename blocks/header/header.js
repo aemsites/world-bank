@@ -2,7 +2,10 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import { fetchLanguagePlaceholders, getLanguage } from '../../scripts/scripts.js';
 import {
-  div, img,
+  div, img, a,
+  button,
+  ul,
+  li,
 } from '../../scripts/dom-helpers.js';
 
 // media query match that indicates mobile/tablet width
@@ -160,7 +163,7 @@ function createSearchBox() {
     searchIcon.addEventListener('click', () => {
       if (searchInputBox.value) {
         window.location.href = listOfAllPlaceholdersData.searchRedirectUrl
-        + searchInputBox.value;
+          + searchInputBox.value;
       }
     });
 
@@ -196,7 +199,43 @@ async function fetchingPlaceholdersData() {
   makeImageClickableNSettingAltText();
   settingAltTextForSearchIcon();
 }
-
+const toggleExpandLanguageSelector = (e) => {
+  const toggleContainer = e.currentTarget;
+  let toggler = null;
+  let toggleContent = null;
+  if (undefined !== toggleContainer) {
+    if (e.type === 'mouseenter') {
+      toggleContainer.classList.add('nav-item-expanded-active');
+      toggler = toggleContainer.querySelector('div.language-toggle');
+      toggleContent = toggleContainer.querySelector('div.language-content');
+      toggler.setAttribute('aria-expanded', true);
+      toggleContent.classList.add('nav-item-content-expanded');
+    } else if (e.type === 'mouseleave') {
+      toggleContainer.classList.remove('nav-item-expanded-active');
+      toggler = toggleContainer.querySelector('div.language-toggle');
+      toggleContent = toggleContainer.querySelector('div.language-content');
+      toggler.setAttribute('aria-expanded', false);
+      toggleContent.classList.remove('nav-item-content-expanded');
+    }
+  }
+};
+const fetchLanguageSelector = () => {
+  const alternateMetaLang = document.querySelector("meta[name='aleternate-url']");
+  const map = {};
+  if (undefined !== alternateMetaLang) {
+    const metaLangContent = alternateMetaLang.getAttribute('content');
+    if (undefined !== metaLangContent && metaLangContent.split('|').length > 0) {
+      const langPairs = metaLangContent.split('|');
+      langPairs.forEach((pair) => {
+        // Split each pair by the pipe character to separate the language and URL
+        const [language, url] = pair.split('|');
+        // Add to the map object with the language as the key and URL as the value
+        map[language] = url;
+      });
+    }
+  }
+  return map;
+};
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -235,6 +274,49 @@ export default async function decorate(block) {
         }
       });
     });
+  }
+
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
+    const langSelector = div(
+      {
+        class: 'language-container',
+        onmouseenter: (e) => toggleExpandLanguageSelector(e),
+        onmouseleave: (e) => toggleExpandLanguageSelector(e),
+      },
+      div(
+        {
+          class: 'language-toggle',
+          'aria-expanded': 'false',
+        },
+        'English',
+      ),
+      div(
+        { class: 'language-content' },
+        ul(
+          li(
+            a(
+              { href: '#' },
+              'English',
+            ),
+          ),
+          li(
+            a(
+              { href: '#' },
+              'German',
+            ),
+          ),
+          li(
+            a(
+              { href: '#' },
+              'Hindi',
+            ),
+          ),
+        ),
+      ),
+    );
+    contentWrapper.prepend(langSelector);
   }
 
   // hamburger for mobile
