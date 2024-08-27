@@ -10,7 +10,7 @@ export default function decorate(block) {
   const cards = block.querySelectorAll('.explore-cards > div:nth-child(n+2)');
   const cardsContainer = div({ class: 'explore-card-container' });
 
-  // Iterate through each card and transform it
+  // Iterate through each card
   cards.forEach((card) => {
     // Extract elements from the card
     const [imageContainer, altText, title, link, contentType, storyType] = card.children;
