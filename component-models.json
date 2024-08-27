@@ -333,65 +333,20 @@
             "value": "sec-swoosh-none"
           },
           {
-            "name": "Swoosh Type 1",
+            "name": "Left Center Swoosh",
             "value": "sec-swoosh-type1"
           },
           {
-            "name": "Swoosh Type 2",
-            "value": "sec-swoosh-type2"
-          },
-          {
-            "name": "Swoosh Type 3",
+            "name": "Left Top Swoosh",
             "value": "sec-swoosh-type3"
           },
           {
-            "name": "Swoosh Primary Blue 90 theme",
+            "name": "Right Top Swoosh",
+            "value": "sec-swoosh-type2"
+          },
+          {
+            "name": "Primary Blue 90 theme Swoosh",
             "value": "sec-swoosh-primary-blue-90"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "sec-swoosh-position",
-        "value": "",
-        "label": "Section Swoosh Position",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Left - Top",
-            "value": "swoosh-left-top"
-          },
-          {
-            "name": "Left - Center",
-            "value": "swoosh-left-center"
-          },
-          {
-            "name": "Left - Bottom",
-            "value": "swoosh-left-bottom"
-          },
-          {
-            "name": "Center - Top",
-            "value": "swoosh-center-top"
-          },
-          {
-            "name": "Center - Center",
-            "value": "swoosh-center-center"
-          },
-          {
-            "name": "Bottom - Bottom",
-            "value": "swoosh-center-bottom"
-          },
-          {
-            "name": "Right - Top",
-            "value": "swoosh-right-top"
-          },
-          {
-            "name": "Right - Center",
-            "value": "swoosh-right-center"
-          },
-          {
-            "name": "Right - Bottom",
-            "value": "swoosh-right-bottom"
           }
         ]
       },
