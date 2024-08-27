@@ -1,14 +1,12 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  align-items: start;
+  text-align: left;
 }
 
 .columns img {
   width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
 }
 
 .columns > div > .columns-img-col {
@@ -17,6 +15,10 @@
 
 .columns > div > .columns-img-col img {
   display: block;
+}
+
+.columns > div > div > {
+  order: 1;
 }
 
 main .section.bg-primary-blue-90 {
@@ -77,25 +79,41 @@ main .section.bg-primary-blue-90 {
   }
 }
 
+/* Column alignment */
+.columns.valign-center > div {
+  align-items: center;
+}
+
+.columns.valign-bottom > div {
+  align-items: end;
+}
+
+.columns.halign-center > div {
+  text-align: center;
+}
+
+.columns.halign-bottom > div {
+  text-align: right;
+}
+
 @media (width >= 1024px) {
   .columns > div {
-    align-items: center;
     flex-direction: unset;
     gap: 32px;
   }
-
+  
   .columns > div > div {
     flex: 1;
     order: unset;
   }
 }
 
-.columns.columns-layout-33-66 > div > div,
-.columns.columns-layout-66-33 > div > div,
-.columns.columns-layout-25-75 > div > div,
-.columns.columns-layout-75-25 > div > div {
-    flex-basis: 100%;
-    flex-direction: column;
+.columns.columns-divider-variant > div > div > p {
+  margin-top: 0;
+}
+
+.columns.columns-divider-variant > div > div:first-child > p {
+  font-size: var(--body-font-size-xl);
 }
 
 .columns.columns-feature-card {
@@ -165,6 +183,11 @@ main .section.bg-primary-blue-90 {
   }
 }
 
+.columns.columns-divider-variant > div > div:last-child {
+  border-left: 2px solid var(--neutrals-20);
+  padding-left: 10px;
+}
+
 @media(width<=1024px) {
   .bg-primary-blue-90{
     position: relative;
@@ -183,27 +206,6 @@ main .section.bg-primary-blue-90 {
   .bg-primary-blue-90 .columns-transform-teaser .columns-img-col picture {
     width: 100%;
   } 
-}
-
-@media(width <= 768px) {
-  .bg-primary-blue-90{
-    height: auto;
-    
-      .columns-transform-teaser{
-        > div{
-          grid-template-rows: auto auto;
-          grid-template-columns: 1fr;
-        }
-
-      .columns-img-col{
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        margin-top: -120px;
-      }
-    }
-  }
 }
 
 @media (width >= 768px) {
@@ -300,40 +302,48 @@ main .section.bg-primary-blue-90 {
         }
       }
     }
-  }  
+  } 
+
+  .columns.columns-divider-variant > div > div:last-child {
+    padding-left: 20px;
+  }
+}
+
+.columns.columns-2-cols.column-layout-33-67 > div > div,
+.columns.columns-2-cols.column-layout-67-33 > div > div,
+.columns.columns-2-cols.column-layout-25-75 > div > div,
+.columns.columns-2-cols.column-layout-75-25 > div > div {
+    flex-basis: 100%;
+    flex-direction: column;
 }
 
 @media (width >= 1024px) {
-    .columns-layout-33-66 > div,
-    .columns-layout-66-33 > div,
-    .columns-layout-25-75 > div,
-    .columns-layout-75-25 > div {
+    .columns.columns-2-cols.column-layout-33-67 > div,
+    .columns.columns-2-cols.column-layout-67-33 > div,
+    .columns.columns-2-cols.column-layout-25-75 > div,
+    .columns.columns-2-cols.column-layout-75-25 > div {
         flex-direction: row;
   }
 
-    .columns-layout-33-66 > div > div:first-child,
-    .columns-layout-66-33 > div > div:last-child,
-    .columns-layout-25-75 > div > div:first-child,
-    .columns-layout-75-25 > div > div:last-child {
-        flex-basis: 33%;
-    }
+  .columns.columns-2-cols.column-layout-33-67 > div > div:first-child,
+  .columns.columns-2-cols.column-layout-67-33 > div > div:last-child {
+    flex-basis: 33%;
+  }
 
-    .columns-layout-33-66 > div > div:last-child,
-    .columns-layout-66-33 > div > div:first-child,
-    .columns-layout-25-75 > div > div:last-child,
-    .columns-layout-75-25 > div > div:first-child {
-        flex-basis: 66%;
-    }
+  .columns.columns-2-cols.column-layout-33-67 > div > div:last-child,
+  .columns.columns-2-cols.column-layout-67-33 > div > div:first-child {
+    flex-basis: 67%;
+  }
 
-    .columns-layout-25-75 > div > div:first-child,
-    .columns-layout-75-25 > div > div:last-child {
-        flex-basis: 25%;
-    }
+  .columns.columns-2-cols.column-layout-25-75 > div > div:first-child,
+  .columns.columns-2-cols.column-layout-75-25 > div > div:last-child {
+    flex-basis: 25%;
+  }
 
-    .columns-layout-25-75 > div > div:last-child,
-    .columns-layout-75-25 > div > div:first-child {
-        flex-basis: 75%;
-    }
+  .columns.columns-2-cols.column-layout-25-75 > div > div:last-child,
+  .columns.columns-2-cols.column-layout-75-25 > div > div:first-child {
+    flex-basis: 75%;
+  }
 }
 
 
