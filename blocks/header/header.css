@@ -1,3 +1,4 @@
+/* stylelint-disable selector-id-pattern */
 header {
   --hamburger-right-space: 20px;
   --logo-width: 170px;
@@ -66,16 +67,13 @@ header .nav-menu-overlay.open {
 
 header .nav-menu-overlay .nav-menu {
   background-color: rgb(1 39 64);
-  height: 100rem;
+  height: 100vh;
   width: 100%;
   background-image: url('../../icons/swoosh/type4/default-m.svg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: top left;
   background-size: 90%;
-  overflow: visible scroll;
-  padding: 100px 30px;
-  max-width: 1456px;
   color: #bdccdb;
 }
 
@@ -326,7 +324,6 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
 header .nav-menu-overlay .nav-menu-column.right {
   flex-direction: column;
   display: none;
-  width: 90%;
 }
 
 header .nav-menu-overlay .nav-menu-column.right>.submenu>li > ul {
@@ -862,26 +859,26 @@ header
   header .nav-menu-overlay .nav-menu {
     display: flex;
     min-width: 100%;
-    height: 100vh;    
+    height: 80vh;    
     background-image: url('../../icons/swoosh/type4/default-d.svg');
     flex-direction: row;
     background-size: 50% 100%;
-    padding: 100px 0 100px 60px!important;
+    padding: 100px 0 100px 60px;
   }
 
   header .nav-menu-overlay .nav-menu-column.left {
-    display: flex !important;
-    max-width: 341px;
+    display: flex;
     min-height: 600px;
+    flex-basis: 25%;
   }
   
   header .nav-menu-overlay .nav-menu-column.right {
     display: flex;
     padding-left: 20px;
-      position: relative;
-
-    /* width: ?600px; */
-    height: 400px;
+    position: relative;
+    flex-wrap: wrap;
+    flex-basis: 75%;
+    flex-shrink: 1;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
@@ -958,6 +955,16 @@ header
     gap: 40px 80px;
     flex-flow: column wrap;
   }
+ 
+  header .nav-menu-overlay .nav-menu-column.right >#submenu_0 {
+    display: grid !important; /* update relevant JS file to use grid and then remove important */
+    gap: 40px 80px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "about acc"
+        "experts acc"
+        "footer footer";
+  }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu:first-child {
    display: flex;
@@ -994,6 +1001,22 @@ header
     flex-direction: row;
     align-items: center;
     bottom: 20px;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right > #submenu_0 > li:nth-child(1) {
+    grid-area: about;
+  }
+  
+  header .nav-menu-overlay .nav-menu-column.right > #submenu_0 > li:nth-child(2) {
+    grid-area: experts;
+  }
+  
+  header .nav-menu-overlay .nav-menu-column.right > #submenu_0 > li:nth-child(3) {
+    grid-area: acc;
+  }
+  
+  header .nav-menu-overlay .nav-menu-column.right > #submenu_0 > li:nth-child(4) {
+    grid-area: footer;
   }
 
   header
@@ -1144,8 +1167,7 @@ header
   }
 
   header .nav-menu-overlay.open .nav-menu {
-    overflow: visible hidden;
-  
+    /* overflow: visible hidden; */
   }
  
   header .nav-wrapper {
@@ -1167,9 +1189,8 @@ header
     bottom: -200px;
     left: 60px;
     width: 100%;
-    padding-top: 20px;
     margin-top: 40px;
-    position: absolute;
+    position: static;
     display: flex;
     border-top: 1px solid #004370;
     flex-direction: row;
