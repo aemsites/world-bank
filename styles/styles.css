@@ -369,9 +369,26 @@ a:any-link {
   text-align: left;
 }
 
-a:hover {
+a:any-link:hover {
   text-decoration: underline;
   text-decoration-color: var(--primary-blue-50);
+}
+
+a:any-link:focus,
+a:any-link:active {
+  text-decoration: none;
+  text-decoration-color: var(--primary-blue-100);
+}
+
+a:any-link:visited {
+  text-decoration: none;
+  color: var(--purple-60);
+}
+
+a:any-link.disabled {
+  text-decoration: none;
+  color: rgb(0 41 77 / 42%);
+  cursor: unset;
 }
 
 /* buttons */
