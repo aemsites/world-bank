@@ -19,10 +19,18 @@ header {
 /* header and nav layout */
 header .nav-wrapper {
   z-index: 2;
+  position: relative;
   margin: auto;
   max-width: var(--screen-width);
   height: var(--nav-height);
   padding: 0 var(--section-gutter-space);
+
+  /* position: relative; */
+}
+
+header:has(.nav-menu-overlay.open)
+{
+  padding: 0;
 }
 
 header nav {
@@ -46,8 +54,9 @@ header .nav-menu-overlay {
   top: 0;
   z-index: 1;
   width: 100vw;
+  overflow: hidden scroll;
   left: 0;
-  min-height: 100vh;
+  min-height: 100rem;
   display: none;
 }
 
@@ -57,7 +66,8 @@ header .nav-menu-overlay.open {
 
 header .nav-menu-overlay .nav-menu {
   background-color: rgb(1 39 64);
-  height: 100vh;
+  height: 100rem;
+  width: 100%;
   background-image: url('../../icons/swoosh/type4/default-m.svg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -65,7 +75,7 @@ header .nav-menu-overlay .nav-menu {
   background-size: 90%;
   overflow: visible scroll;
   padding: 100px 30px;
-  max-width: 100%;
+  max-width: 1456px;
   color: #bdccdb;
 }
 
@@ -84,6 +94,10 @@ header .nav-menu-overlay ul li{
   list-style-type: none;
 }
 
+header .nav-menu-overlay .nav-menu-column.left > ul {
+  padding: 0;
+}
+
 header .nav-menu-overlay .nav-menu-column.left ul {
   font-family: var(--body-font-family);
   font-size: 24px;
@@ -94,10 +108,6 @@ header .nav-menu-overlay .nav-menu-column.left ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-header .nav-menu-overlay .nav-menu-overlay-back{
-  display: none !important;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
@@ -111,7 +121,7 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
   height: 44px;
   width: 44px;
   border-radius: 50%;
-  display: none;
+  
 }
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a{
@@ -188,7 +198,7 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country{
-  width: 400px;
+  width: 90%;
   display: flex;
   flex-direction: row;
 position: relative;
@@ -197,12 +207,11 @@ position: relative;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list{
-  width: 415px;
-  left: 10px;
-  top: 0;
+  width: 280px;
+  top: 40px;
+  left: -160px;
   z-index: 2;
   background-color:  #001C2D;
-
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list:has(a:hover){
@@ -298,10 +307,6 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::after {
   border: 3px;
 }
 
-header .nav-menu-overlay .submenu-main-title{
-  display: none !important;
-}
-
 header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
   position: absolute;
   margin: 0 auto;
@@ -321,6 +326,7 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
 header .nav-menu-overlay .nav-menu-column.right {
   flex-direction: column;
   display: none;
+  width: 90%;
 }
 
 header .nav-menu-overlay .nav-menu-column.right>.submenu>li > ul {
@@ -485,6 +491,14 @@ header nav .nav-brand img {
 }
 
 /* sections */
+.nav-sections .default-content-wrapper,
+.nav-tools .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
 header nav .nav-sections .default-content-wrapper{
   display: none !important;
 
@@ -498,13 +512,7 @@ header nav .nav-sections .default-content-wrapper{
     visibility: visible;
   }
 
-  .nav-sections .default-content-wrapper,
-  .nav-tools .default-content-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-  }
+
 
   header nav .nav-sections .default-content-wrapper{
     display: flex !important;
@@ -518,9 +526,6 @@ header nav .nav-sections .default-content-wrapper{
 header nav .nav-tools {
   margin-left: auto;
 }
-
-
-
 
 .section.nav-sections .default-content-wrapper h6 {
   margin: 0;
@@ -657,6 +662,7 @@ header .nav-menu-overlay .nav-menu-column.right {
   justify-content: flex-start;
   max-height: 500px;
   max-width: 100%;
+  gap: 28px;
 
   /* gap: 30px; */
 }
@@ -671,14 +677,14 @@ header .nav-menu-overlay .nav-menu-column.left li {
 }
 
 header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
-  width: 95%;
+  width: 90%;
   
 }
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu {
   max-width: 744px;
   flex-flow: column wrap;
-  gap: 10px 80px;
+  gap: 10px 20px;
   padding-left:20px;
 
   /* display: flex; */
@@ -747,7 +753,7 @@ header
 .nav-menu-column.right
 .submenu li:has(ul.browse-country){
   padding-top: 20px;
-  min-width: 100%;
+  min-width: 90%;
   position: absolute;
 
   /* width: 95%; */
@@ -783,6 +789,15 @@ header
     border-radius: 40px;
     min-width: 430px;
     margin-top: -20px;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list{
+    width: 415px;
+    left: 10px;
+    top: 0;
+    z-index: 2;
+    background-color:  #001C2D;
+  
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"]:focus + .country-list{
@@ -846,7 +861,8 @@ header
 
   header .nav-menu-overlay .nav-menu {
     display: flex;
-    width: 100vw;
+    min-width: 100%;
+    height: 100vh;    
     background-image: url('../../icons/swoosh/type4/default-d.svg');
     flex-direction: row;
     background-size: 50% 100%;
@@ -1129,11 +1145,12 @@ header
 
   header .nav-menu-overlay.open .nav-menu {
     overflow: visible hidden;
-    padding: 100px 40px;
+  
   }
-
+ 
   header .nav-wrapper {
     overflow-y: visible;
+
   }
 
 
@@ -1181,16 +1198,14 @@ header
     top: 0;
     z-index: 2;
     background-color:  #001C2D;
-  
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list a{
     font-family: var(--body-font-family);
-font-size: var(--body-font-size-m);
-font-weight: 400;
-line-height: 22.4px;
-text-align: left;
-  
+    font-size: var(--body-font-size-m);
+    font-weight: 400;
+    line-height: 22.4px;
+    text-align: left;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"]:focus + .country-list{
@@ -1229,15 +1244,9 @@ text-align: left;
     font-size: 16px;
   }
 
-
-
   header .nav-menu-overlay .nav-menu-column.right .browse-country {
     border: none;
  position: static;
   }
-
-
-
- 
   
 }

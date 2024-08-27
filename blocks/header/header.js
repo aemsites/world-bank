@@ -107,7 +107,6 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     ? !forceExpanded
     : nav.getAttribute('aria-expanded') === 'true';
   const hamButton = nav.querySelector('.nav-hamburger button');
-  document.body.style.overflowY = expanded || isDesktop.matches ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(
     navSections,
