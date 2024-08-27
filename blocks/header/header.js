@@ -22,6 +22,7 @@ import {
 const isDesktop = window.matchMedia('(min-width: 1024px)');
 function closesideMenu(leftColumn, rightColumn) {
   leftColumn.style.display = 'flex';
+  leftColumn.style.display = 'flex';
   if (!isDesktop.matches) {
     rightColumn.style.display = 'none';
   } else {
@@ -29,14 +30,13 @@ function closesideMenu(leftColumn, rightColumn) {
   }
   const submenuElements = rightColumn.getElementsByClassName(Constants.SUBMENU);
   const submenus = Array.from(submenuElements);
-
+  leftColumn.querySelectorAll('li').forEach((leftColumnItem, index) => {
+    leftColumnItem.classList.remove('selected');
+    if (index === 0) leftColumnItem.classList.add('selected');
+  });
   submenus.forEach((submenu, index) => {
-    if (isDesktop.matches) {
-      if (leftColumn.querySelectorAll('li')[index].classList.contains('selected')) {
-        submenu.style.display = 'flex';
-      } else {
-        submenu.style.display = 'none';
-      }
+    if (isDesktop.matches && index === 0) {
+      submenu.style.display = 'flex';
     } else {
       submenu.style.display = 'none';
     }
@@ -381,7 +381,7 @@ function createListItemWithAnchor(item) {
 }
 
 function createCountryDropDown(category, countrySearchPlaceholder) {
-  const countryList = ul({ class: 'countryList' });
+  const countryList = ul({ class: 'country-list' });
   const searchBarWrapper = li(
     {},
     ul(
@@ -556,10 +556,11 @@ export default async function decorate(block) {
       });
   }
 
+  const rightColumn = nav.querySelector('.nav-menu-column.right');
+  const leftColumn = nav.querySelector('.nav-menu-column.left');
   // hamburger for mobile
-
   const hamburger = div(
-    { class: 'nav-hamburger', onclick: () => toggleMenu(nav, navSections) },
+    { class: 'nav-hamburger', onclick: () => { toggleMenu(nav, navSections); closesideMenu(leftColumn, rightColumn); } },
     button(
       {
         type: 'button',
@@ -569,8 +570,6 @@ export default async function decorate(block) {
       span({ class: 'nav-hamburger-icon' }),
     ),
   );
-  const rightColumn = nav.querySelector('.nav-menu-column.right');
-  const leftColumn = nav.querySelector('.nav-menu-column.left');
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
   // prevent mobile nav behavior on window resize
