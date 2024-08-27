@@ -565,6 +565,7 @@
         "valueType": "string",
         "name": "fileReference",
         "label": "Thumbnail",
+        "required": true,
         "multi": false
       },
       {
@@ -575,46 +576,36 @@
         "label": "Alt Text"
       },
       {
-        "component": "select",
-        "name": "type",
-        "value": "",
-        "label": "Content type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Podcast / Audio",
-            "value": "podcast-audio"
-          },
-          {
-            "name": "Video",
-            "value": "video"
-          },
-          {
-            "name": "Text",
-            "value": "text"
-          }
-        ]
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",
+        "required": true,
         "label": "Title"
-      },
-      {
-        "component": "aem-tag",
-        "name": "tags",
-        "label": "Tag",
-        "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "link",
         "value": "",
-        "label": "Link"
+        "label": "Link",
+        "required": true
+      },
+      {
+        "component": "aem-tag",
+        "name": "content-type",
+        "label": "Content Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/story-type"
+      },
+      {
+        "component": "aem-tag",
+        "name": "story-type",
+        "label": "Story Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/story-type"
       }
     ]
   },
