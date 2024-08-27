@@ -11,7 +11,7 @@ async function fetchingPlaceholdersData(block) {
     const sTypeKey = toCamelCase(`tag-story-type-${storyTypeDiv.textContent}`);
     // Check if there's enough data to update the div
     if (listOfAllPlaceholdersData[sTypeKey]) {
-      div.innerText = listOfAllPlaceholdersData[sTypeKey];
+      storyTypeDiv.innerText = listOfAllPlaceholdersData[sTypeKey];
     }
   });
 }
