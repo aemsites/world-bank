@@ -23,60 +23,62 @@
 
 main .section.bg-primary-blue-90 {
   margin: 100px 0;
-
-  /* height: 414px; */
 }
 
-.columns.columns-transform-teaser {
-  > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    position: relative;
+.columns.columns-transform-teaser > div {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 20px;
+  padding: 72px 0;
+  position: relative;
 
-    p {
-      margin: 15px 0;
+}
 
-      &:nth-child(1) {
-        font-size: 40px;
-        text-transform: uppercase;
-        margin-top: 40px;
-        line-height: 44px;
-      }
+.columns.columns-transform-teaser > div p {
+  margin: 15px 0;
+}
 
-      &:nth-child(3) {
-        display: inline-flex;
-      }
+.columns.columns-divider-variant > div > div > p {
+  margin-top: 0;
+}
 
-      &:nth-child(4) {
-        display: inline-flex;
-      }
+.columns.columns-transform-teaser > div p:nth-child(1) {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-top: 40px;
+  line-height: 44px;
+}
 
-      &:nth-child(3) a {
-        background-color: var(--color-white);
-        color: var(--primary-blue-100);
-        font-size: 16px;
-        margin: 0;
-      }
+.columns.columns-transform-teaser > div p:nth-child(3) {
+  display: inline-flex;
+}
 
-      &:nth-child(4) a {
-        background-color: var(--transparent);
-        color: var(--color-white);
-        font-size: 16px;
-        border-bottom: 2px solid #FFFFFF4D;
-        border-radius: 0;
-        padding: 0;
-        margin: 0;
-      }
-    }
+.columns.columns-transform-teaser > div p:nth-child(4) {
+  display: inline-flex;
+}
 
-    .columns-img-col {
-      position: absolute;
-      right: 0;
-      top: -125px;
-      z-index: 11;
-    }
-  }
+.columns.columns-transform-teaser > div p:nth-child(3) a {
+  background-color: var(--color-white);
+  color: var(--primary-blue-100);
+  font-size: 16px;
+  margin: 0;
+}
+
+.columns.columns-transform-teaser > div p:nth-child(4) a[title="Search More Courses"] {
+  background-color: var(--transparent);
+  color: var(--color-white);
+  font-size: 16px;
+  border-bottom: 2px solid #FFFFFF4D;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.columns.columns-transform-teaser .columns-img-col {
+  position: absolute;
+  right: 0;
+  top: -125px;
+  z-index: 11;
 }
 
 /* Column alignment */
@@ -101,15 +103,11 @@ main .section.bg-primary-blue-90 {
     flex-direction: unset;
     gap: 32px;
   }
-  
+
   .columns > div > div {
     flex: 1;
     order: unset;
   }
-}
-
-.columns.columns-divider-variant > div > div > p {
-  margin-top: 0;
 }
 
 .columns.columns-divider-variant > div > div:first-child > p {
@@ -134,7 +132,7 @@ main .section.bg-primary-blue-90 {
         overflow: hidden;
         aspect-ratio: 3 / 2;
         margin-bottom: 24px;
-        
+
         img {
           border-radius: 5px;
           aspect-ratio: 3/2;
@@ -203,9 +201,9 @@ main .section.bg-primary-blue-90 {
     }
 }
 
-  .bg-primary-blue-90 .columns-transform-teaser .columns-img-col picture {
+  /* .bg-primary-blue-90 .columns-transform-teaser .columns-img-col {
     width: 100%;
-  } 
+  }  */
 }
 
 @media (width >= 768px) {
@@ -224,7 +222,7 @@ main .section.bg-primary-blue-90 {
             "thumbnail description";
           position: relative;
           gap: 24px;
-        
+
         > p:first-child {
           font-size: 32px;
           line-height: 35px;
@@ -239,20 +237,20 @@ main .section.bg-primary-blue-90 {
         .columns-feature-card-content {
           grid-area: description;
         }
-  
+
         .columns-feature-card-description {
           font-size: 16px;
           line-height: 22px;
           margin-bottom: 8px;
         }
-  
+
         .button-container {
           a.button {
             font-size: 14px;
             line-height: 24px;
           }
         }
-    
+
         .button-container:last-child {
           margin-bottom: 40px;
         }
@@ -265,6 +263,35 @@ main .section.bg-primary-blue-90 {
   .columns-transform-teaser .columns-img-col {
     width: 50%;
   }
+}
+
+@media (width < 768px) {
+  main .section.bg-primary-blue-90{
+    margin: 150px 0;
+  }
+
+
+  .columns.columns-transform-teaser > div{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      padding: 0;
+
+        div:nth-child(1){
+          grid-row:2;
+
+           p:nth-child(4){
+            display: block;
+           }
+        }
+
+      .columns-img-col {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: -160px;
+      }
+    }
+  
 }
 
 @media (width >= 1024px) {
@@ -345,5 +372,3 @@ main .section.bg-primary-blue-90 {
     flex-basis: 75%;
   }
 }
-
-
