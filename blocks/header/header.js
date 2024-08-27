@@ -220,21 +220,30 @@ const toggleExpandLanguageSelector = (e) => {
   }
 };
 const fetchLanguageSelector = () => {
-  const alternateMetaLang = document.querySelector("meta[name='aleternate-url']");
+  const ulElement = ul();
+  const alternateMetaLang = document.querySelector("meta[name='alternate-url']");
   const map = {};
   if (undefined !== alternateMetaLang) {
     const metaLangContent = alternateMetaLang.getAttribute('content');
     if (undefined !== metaLangContent && metaLangContent.split('|').length > 0) {
-      const langPairs = metaLangContent.split('|');
+      const langPairs = metaLangContent.split(',');
       langPairs.forEach((pair) => {
-        // Split each pair by the pipe character to separate the language and URL
         const [language, url] = pair.split('|');
+        ulElement.append(
+          li(
+            a(
+              { href: `${url}` },
+              `${language}`,
+            ),
+          ),
+        );
+        // Split each pair by the pipe character to separate the language and URL
         // Add to the map object with the language as the key and URL as the value
         map[language] = url;
       });
     }
   }
-  return map;
+  return ulElement;
 };
 export default async function decorate(block) {
   // load nav as fragment
@@ -278,6 +287,7 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
+    const languageMap = fetchLanguageSelector();
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
     const langSelector = div(
       {
@@ -294,6 +304,7 @@ export default async function decorate(block) {
       ),
       div(
         { class: 'language-content' },
+        languageMap,
         ul(
           li(
             a(
