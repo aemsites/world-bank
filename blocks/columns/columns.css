@@ -27,6 +27,58 @@ main .section.bg-primary-blue-90 {
   /* height: 414px; */
 }
 
+.columns.columns-transform-teaser {
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+
+    p {
+      margin: 15px 0;
+
+      &:nth-child(1) {
+        font-size: 40px;
+        text-transform: uppercase;
+        margin-top: 40px;
+        line-height: 44px;
+      }
+
+      &:nth-child(3) {
+        display: inline-flex;
+      }
+
+      &:nth-child(4) {
+        display: inline-flex;
+      }
+
+      &:nth-child(3) a {
+        background-color: var(--color-white);
+        color: var(--primary-blue-100);
+        font-size: 16px;
+        margin: 0;
+      }
+
+      &:nth-child(4) a {
+        background-color: var(--transparent);
+        color: var(--color-white);
+        font-size: 16px;
+        border-bottom: 2px solid #FFFFFF4D;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .columns-img-col {
+      position: absolute;
+      right: 0;
+      top: -125px;
+      z-index: 11;
+    }
+  }
+}
+
 /* Column alignment */
 .columns.valign-center > div {
   align-items: center;
@@ -134,58 +186,6 @@ main .section.bg-primary-blue-90 {
 .columns.columns-divider-variant > div > div:last-child {
   border-left: 2px solid var(--neutrals-20);
   padding-left: 10px;
-}
-
-.columns.columns-transform-teaser {
-  > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    position: relative;
-
-    p {
-      margin: 15px 0;
-
-      &:nth-child(1) {
-        font-size: 40px;
-        text-transform: uppercase;
-        margin-top: 40px;
-        line-height: 44px;
-      }
-
-      &:nth-child(3) {
-        display: inline-flex;
-      }
-
-      &:nth-child(4) {
-        display: inline-flex;
-      }
-
-      &:nth-child(3) a {
-        background-color: var(--color-white);
-        color: var(--primary-blue-100);
-        font-size: 16px;
-        margin: 0;
-      }
-
-      &:nth-child(4) a {
-        background-color: var(--transparent);
-        color: var(--color-white);
-        font-size: 16px;
-        border-bottom: 2px solid #FFFFFF4D;
-        border-radius: 0;
-        padding: 0;
-        margin: 0;
-      }
-    }
-
-    .columns-img-col {
-      position: absolute;
-      right: 0;
-      top: -125px;
-      z-index: 11;
-    }
-  }
 }
 
 @media(width<=1024px) {
