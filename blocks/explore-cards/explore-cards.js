@@ -1,5 +1,20 @@
 import { div } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
+import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { toCamelCase } from '../../scripts/aem.js';
+
+async function fetchingPlaceholdersData(block) {
+  const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
+  const storyTypeDivs = block.querySelectorAll('.story-type');
+
+  storyTypeDivs.forEach((div) => {
+    const sTypeKey = toCamelCase(`tag-story-type-${div.textContent}`);
+    // Check if there's enough data to update the div
+    if (listOfAllPlaceholdersData[sTypeKey]) {
+      div.innerText = listOfAllPlaceholdersData[sTypeKey];
+    }
+  });
+}
 
 export default function decorate(block) {
   // Style and append the heading to the main container
@@ -40,9 +55,6 @@ export default function decorate(block) {
     const STORY_TYPE = 'story-type';
     const sType = processTags(storyType.innerText, STORY_TYPE);
     if (sType) {
-      // TODO: Read sType localized value from placeholder
-      const sTypeKey = `tag-${STORY_TYPE}-${sType}`;
-      console.log(sTypeKey);
       storyType.innerText = sType;
       storyType.className = STORY_TYPE;
       cardContent.append(storyType);
@@ -54,4 +66,5 @@ export default function decorate(block) {
     cardsContainer.append(card);
   });
   block.appendChild(cardsContainer);
+  fetchingPlaceholdersData(block);
 }

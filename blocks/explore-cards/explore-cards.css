@@ -14,11 +14,11 @@
 }
 
 .heading p {
-    font-size:var( --heading-font-size-m);
+    font-size: var(--heading-font-size-m);
     line-height: 30.8px;
 }
 
-.explore-cards-container {
+.explore-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: var(--spacing-20);
@@ -33,14 +33,32 @@
     min-width: 300px;
 }
 
-.explore-card .card-icon {
+.card-icon.icon-video {
     width: 72px;
     height: 72px;
-    background: var(--background-color);
+    background-color: var(--background-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px 0;
+    background-image: url("/icons/playbutton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-icon.icon-audio {
+    width: 72px;
+    height: 72px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    background-image: url("/icons/podcast.svg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .explore-card a {
@@ -98,24 +116,24 @@
     line-height: 24px;
 }
 
-@media (width >= 768px) {
+@media (width >=768px) {
     .explore-cards {
         padding: var(--spacing-64) 0 var(--spacing-80) 0;
     }
-    
+
     .heading p {
         font-size: var(--heading-font-size-l);
         line-height: 35.2px;
     }
 
-    .explore-cards-container {
+    .explore-card-container {
         display: grid;
         grid-template-columns: 1fr;
         gap: var(--spacing-20);
         width: unset;
         overflow-x: unset;
     }
-    
+
     .explore-card {
         position: relative;
         border-radius: 10px;
@@ -136,7 +154,7 @@
     }
 }
 
-@media (width >= 1024px) {
+@media (width >=1024px) {
     .explore-cards {
         padding: var(--spacing-80) 0 var(--spacing-96) 0;
     }
@@ -149,8 +167,8 @@
     .explore-card {
         height: 500px;
     }
-	
-	.story-type {
+
+    .story-type {
         letter-spacing: 0.05em;
     }
 
