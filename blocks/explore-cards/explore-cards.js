@@ -30,7 +30,8 @@ export default function decorate(block) {
 
     const cardContent = div({ class: 'card-content' });
     // Content type
-    const cType = processTags(contentType.innerText, 'content-type');
+   // const cType = processTags(contentType.innerText, 'content-type');
+    const cType =  'content-type';
     if (cType) {
       const cTypeIcon = div({ class: `card-icon icon-${cType}` });
       cardContent.append(cTypeIcon);
@@ -38,7 +39,8 @@ export default function decorate(block) {
 
     // Story type
     const STORY_TYPE = 'story-type';
-    const sType = processTags(storyType.innerText, STORY_TYPE);
+   // const sType = processTags(storyType.innerText, STORY_TYPE);
+    const sType =  'story-type';
     if (sType) {
       // TODO: Read sType localized value from placeholder
       const sTypeKey = `tag-${STORY_TYPE}-${sType}`;
