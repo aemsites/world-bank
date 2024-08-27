@@ -735,15 +735,10 @@ main .section[data-sec-swoosh^="sec-swoosh"]::before {
   top: 0;
 }
 
-main .section[data-sec-swoosh-position="swoosh-left-top"]::before { background-position: left top; }
-main .section[data-sec-swoosh-position="swoosh-left-center"]::before { background-position: left center; }
-main .section[data-sec-swoosh-position="swoosh-left-bottom"]::before { background-position: left bottom; }
-main .section[data-sec-swoosh-position="swoosh-center-top"]::before { background-position: center top; }
-main .section[data-sec-swoosh-position="swoosh-center-center"]::before { background-position: center center; }
-main .section[data-sec-swoosh-position="swoosh-center-bottom"]::before { background-position: center bottom; }
-main .section[data-sec-swoosh-position="swoosh-right-top"]::before { background-position: right top; }
-main .section[data-sec-swoosh-position="swoosh-right-center"]::before { background-position: right center; }
-main .section[data-sec-swoosh-position="swoosh-right-bottom"]::before { background-position: right bottom; }
+main .section[data-sec-swoosh="sec-swoosh-type1"]::before { background-position: left center; }
+main .section[data-sec-swoosh="sec-swoosh-type2"]::before { background-position: right top; }
+main .section[data-sec-swoosh="sec-swoosh-type3"]::before { background-position: left top; }
+main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-position: center center; }
 
 @media (width < 768px) {
   body.page-swoosh::before {
@@ -803,7 +798,6 @@ main .section[data-sec-swoosh-position="swoosh-right-bottom"]::before { backgrou
 
   main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before {
     background-image: url('../icons/swoosh/primary-blue-90/mobile.svg');
-    background-position: center center;
   }
 }
 
@@ -865,7 +859,6 @@ main .section[data-sec-swoosh-position="swoosh-right-bottom"]::before { backgrou
 
   main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before {
     background-image: url('../icons/swoosh/primary-blue-90/tab.svg');
-    background-position: center center;
   }
 }
 
@@ -928,7 +921,6 @@ main .section[data-sec-swoosh-position="swoosh-right-bottom"]::before { backgrou
 
   main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before {
     background-image: url('../icons/swoosh/primary-blue-90/desktop.svg');
-    background-position: center center;
   }
 }
 
