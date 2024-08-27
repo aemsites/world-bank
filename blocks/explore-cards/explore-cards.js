@@ -8,7 +8,7 @@ export default function decorate(block) {
 
   // Select all cards except the first child (heading)
   const cards = block.querySelectorAll('.explore-cards > div:nth-child(n+2)');
-  const cardsContainer = div({ class: 'explore-cards-container' });
+  const cardsContainer = div({ class: 'explore-card-container' });
 
   // Iterate through each card and transform it
   cards.forEach((card) => {

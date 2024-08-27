@@ -170,7 +170,7 @@
         line-height: 28.8px;
     }
 
-    .explore-cards-container {
+    .explore-card-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
