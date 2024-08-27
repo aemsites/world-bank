@@ -566,7 +566,8 @@
         "name": "fileReference",
         "label": "Thumbnail",
         "required": true,
-        "multi": false
+        "multi": false,
+        "rootPath": "/content/dam/world-bank"
       },
       {
         "component": "text",
@@ -597,7 +598,7 @@
         "label": "Content Type",
         "valueType": "string",
         "required": true,
-        "rootPath": "/content/cq:tags/world-bank/story-type"
+        "rootPath": "/content/cq:tags/world-bank"
       },
       {
         "component": "aem-tag",
@@ -605,7 +606,7 @@
         "label": "Story Type",
         "valueType": "string",
         "required": true,
-        "rootPath": "/content/cq:tags/world-bank/story-type"
+        "rootPath": "/content/cq:tags/world-bank"
       }
     ]
   },
