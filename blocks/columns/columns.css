@@ -22,7 +22,7 @@
 }
 
 main .section.bg-primary-blue-90 {
-  margin: 100px 0;
+  margin: 150px 0;
 }
 
 .columns.columns-transform-teaser > div {
@@ -308,7 +308,7 @@ main .section.bg-primary-blue-90 {
 
       .columns-img-col {
         position: relative;
-        top: 45px;
+        top: 0;
         right: 0;
         margin-top: -160px;
       }
