@@ -135,6 +135,14 @@
               {
                 "name": "Feature Card Variation",
                 "value": "columns-feature-card"
+              },
+              {
+                "name": "Image Right Variation",
+                "value": "columns-image-right"
+              },
+              {
+                "name": "Image Left Variation",
+                "value": "columns-image-left"
               }
             ]
           },
@@ -508,7 +516,8 @@
         "valueType": "string",
         "name": "title",
         "value": "",
-        "label": "Title"
+        "label": "Main heading",
+        "required": true
       }
     ]
   },
@@ -519,7 +528,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "fileReference",
-        "label": "Thumbnail",
+        "label": "Card Image",
         "required": true,
         "multi": false,
         "rootPath": "/content/dam/world-bank"
@@ -529,7 +538,7 @@
         "valueType": "string",
         "name": "alt",
         "value": "Default alt",
-        "label": "Alt Text"
+        "label": "Alt text"
       },
       {
         "component": "text",

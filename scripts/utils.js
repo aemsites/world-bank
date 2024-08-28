@@ -1,13 +1,13 @@
-import { TAG_PREFIX } from './scripts.js';
+import { TAG_ROOT } from './scripts.js';
 
 /**
  * Remove prefix from tag
  * @param {*} tag
  * @returns
  */
-export function processTags(tag) {
+export function processTags(tag, prefix = '') {
   if (tag) {
-    return tag.replace(TAG_PREFIX, '');
+    return tag.replace(TAG_ROOT, '').replace(`${prefix}/`, '');
   }
   return null;
 }
