@@ -192,10 +192,10 @@ function settingAltTextForSearchIcon() {
   searchImage.setAttribute('title', listOfAllPlaceholdersData.searchAltText);
 }
 
-async function fetchingPlaceholdersData() {
+async function fetchingPlaceholdersData(placeholdersData) {
   listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
   const hamburger = document.querySelector('.nav-hamburger');
-  hamburger.setAttribute('title', listOfAllPlaceholdersData.hamburgerAltText);
+  hamburger.setAttribute('title', placeholdersData.hamburgerAltText);
   makeImageClickableNSettingAltText();
   settingAltTextForSearchIcon();
 }
@@ -251,6 +251,7 @@ export default async function decorate(block) {
   const lang = getLanguage();
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : `/${lang}/nav`;
   const fragment = await loadFragment(navPath);
+  const placeholdersData = await fetchLanguagePlaceholders();
 
   // decorate nav DOM
   block.textContent = '';
@@ -305,26 +306,6 @@ export default async function decorate(block) {
       div(
         { class: 'language-content' },
         languageMap,
-        ul(
-          li(
-            a(
-              { href: '#' },
-              'English',
-            ),
-          ),
-          li(
-            a(
-              { href: '#' },
-              'German',
-            ),
-          ),
-          li(
-            a(
-              { href: '#' },
-              'Hindi',
-            ),
-          ),
-        ),
       ),
     );
     contentWrapper.prepend(langSelector);
@@ -347,5 +328,5 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
-  fetchingPlaceholdersData(block);
+  fetchingPlaceholdersData(placeholdersData);
 }
