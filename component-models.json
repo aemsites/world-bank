@@ -600,7 +600,19 @@
     ]
   },
   {
-    "id": "custom-data-card",
+    "id": "empowering-data-cards",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+      }
+    ]
+  },
+  {
+    "id": "empowering-data-card",
     "fields": [
       {
         "component": "reference",

@@ -31,7 +31,7 @@
       "data-cards",
       "curated-cards",
       "explore-cards",
-      "custom-data-cards"
+      "empowering-data-cards"
     ]
   },
   {
@@ -59,9 +59,9 @@
     ]
   },
   {
-    "id": "custom-data-cards",
+    "id": "empowering-data-cards",
     "components": [
-      "custom-data-card"
+      "empowering-data-card"
     ]
   }
 ]
