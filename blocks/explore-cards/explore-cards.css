@@ -6,7 +6,6 @@
 
 .explore-cards {
     width: 100%;
-    padding: var(--spacing-48) 0 var(--spacing-64) 0;
 }
 
 .story-type p {
@@ -60,11 +59,11 @@
 }
 
 .card-icon.icon-video {
-    background-image: url("/icons/playbutton.svg");
+    background-image: url("../../icons/playbutton.svg");
 }
 
 .card-icon.icon-audio {
-    background-image: url("/icons/podcast.svg");
+    background-image: url("../../icons/podcast.svg");
 }
 
 .explore-card a {
@@ -104,10 +103,6 @@
 }
 
 @media (width >=768px) {
-    .explore-cards {
-        padding: var(--spacing-64) 0 var(--spacing-80) 0;
-    }
-
     .heading p {
         font-size: var(--heading-font-size-l);
         line-height: 35.2px;
@@ -132,10 +127,6 @@
 }
 
 @media (width >=1024px) {
-    .explore-cards {
-        padding: var(--spacing-80) 0 var(--spacing-96) 0;
-    }
-
     .heading p {
         font-size: var(--heading-font-size-l);
         line-height: 44px;
