@@ -286,6 +286,7 @@ function createSearchBox() {
   let cancelContainer = navWrapper.querySelector('.cancel-container');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
+  const hamBurgerIcon = navWrapper.querySelector('.nav-hamburger');
   document.body.classList.add('no-scroll');
   if (searchContainer) {
     const isVisible = searchContainer.style.display !== 'none';
@@ -297,6 +298,7 @@ function createSearchBox() {
 
     searchImage.style.display = isVisible ? 'block' : 'none';
   } else {
+    hamBurgerIcon.style.pointerEvents = 'none';
     cancelContainer = div({ class: 'cancel-container' });
     const cancelImg = img({ class: 'cancel-image' });
     cancelImg.src = '../icons/cancel.svg';
@@ -307,6 +309,7 @@ function createSearchBox() {
       cancelContainer.style.display = 'none';
       searchImage.style.display = 'block'; // Show search icon again
       overlay.style.display = 'none';
+      hamBurgerIcon.style.pointerEvents = 'all';
       document.body.classList.remove('no-scroll');
     });
     cancelContainer.appendChild(cancelImg);
