@@ -47,6 +47,9 @@ export default function decorate(block) {
     const cType = processTags(contentType.innerText, 'content-type');
     if (cType) {
       const cTypeIcon = div({ class: `card-icon icon-${cType}` });
+      if (cType !== 'video' && cType !== 'audio') {
+        cTypeIcon.classList.remove('card-icon');
+      }
       cardContent.append(cTypeIcon);
     }
 
@@ -60,8 +63,16 @@ export default function decorate(block) {
     }
     cardContent.append(title);
     card.textContent = '';
+
+     anchorTag.appendChild(cardContent)
+    // Add click event listener to the entire card
+   // card.addEventListener('click', () => {
+     // window.location.href = anchorTag.href;
+   // });
+
+    //card.style.cursor = 'pointer';
     card.appendChild(anchorTag);
-    card.appendChild(cardContent);
+    //card.appendChild(cardContent);
     cardsContainer.append(card);
   });
   block.appendChild(cardsContainer);
