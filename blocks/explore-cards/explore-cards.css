@@ -146,8 +146,6 @@
 
     .card-title p {
         font-size: var(--heading-font-size-xs);
-        font-weight: 700;
-        line-height: 28.8px;
     }
 
     .explore-card-container {
