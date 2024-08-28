@@ -331,7 +331,7 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
 header .nav-menu-overlay .nav-menu-column.right {
   flex-direction: column;
   display: none;
-  min-width: 90%;
+  min-width: max-content;
 }
 
 header .nav-menu-overlay .nav-menu-column.right>.submenu>li > ul {
@@ -964,7 +964,7 @@ header
   }
 
   header .nav-menu-overlay .nav-menu-column.right>.submenu>li {
-    width:500px;
+    width:fit-content;
     display: flex;
     flex-direction: column;
   }
@@ -1159,7 +1159,7 @@ header
   header .nav-menu-overlay .nav-menu-column.right>.submenu .footer{
     bottom: -200px;
     left: 60px;
-    min-width: 1100px;
+    min-width: 100%;
     padding-top: 20px;
     margin-top: 40px;
     position: absolute;
@@ -1185,7 +1185,7 @@ header
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list{
-    width: 41vw;
+    width: 42vw;
     max-width: 530px;
     left: 10px;
     top: 0;
