@@ -203,7 +203,18 @@ const toggleExpandLanguageSelector = (e) => {
   if (toggleContainer) {
     const toggler = toggleContainer.querySelector('div.language-toggle');
     const toggleContent = toggleContainer.querySelector('div.language-content');
-    if (e.type === 'mouseenter' && toggleContent) {
+    if (e.type === 'click' && toggleContent) {
+      e.preventDefault();
+      if (toggleContainer.classList.contains('nav-item-expanded-active')) {
+        toggleContainer.classList.remove('nav-item-expanded-active');
+        toggler.setAttribute('aria-expanded', false);
+        toggleContent.classList.remove('nav-item-content-expanded');
+      } else {
+        toggleContainer.classList.add('nav-item-expanded-active');
+        toggler.setAttribute('aria-expanded', true);
+        toggleContent.classList.add('nav-item-content-expanded');
+      }
+    } else if (e.type === 'mouseenter' && isDesktop.matches && toggleContent) {
       toggleContainer.classList.add('nav-item-expanded-active');
       toggler.setAttribute('aria-expanded', true);
       toggleContent.classList.add('nav-item-content-expanded');
@@ -291,6 +302,7 @@ export default async function decorate(block) {
         class: 'language-container',
         onmouseenter: (e) => toggleExpandLanguageSelector(e),
         onmouseleave: (e) => toggleExpandLanguageSelector(e),
+        onclick: (e) => toggleExpandLanguageSelector(e),
       },
       div(
         {
