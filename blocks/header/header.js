@@ -203,7 +203,7 @@ const toggleExpandLanguageSelector = (e) => {
   const toggleContainer = e.currentTarget;
   let toggler = null;
   let toggleContent = null;
-  if (undefined !== toggleContainer) {
+  if (toggleContainer) {
     if (e.type === 'mouseenter') {
       toggleContainer.classList.add('nav-item-expanded-active');
       toggler = toggleContainer.querySelector('div.language-toggle');
@@ -222,12 +222,12 @@ const toggleExpandLanguageSelector = (e) => {
 const fetchLanguageSelector = (placeholdersData) => {
   const ulElement = ul();
   const alternateMetaLang = document.querySelector("meta[name='alternate-url']");
-  if (undefined !== alternateMetaLang) {
+  if (alternateMetaLang) {
     const metaLangContent = alternateMetaLang.getAttribute('content');
-    if (undefined !== metaLangContent && metaLangContent.split('|').length > 0) {
+    if (metaLangContent && metaLangContent.split(',').length > 0) {
       const langPairs = metaLangContent.split(',');
       langPairs.forEach((pair) => {
-        const [language, url] = pair.split('|');
+        const [language, url] = pair.split('|').map((part) => part.trim());
         const languageDisplayText = placeholdersData[language] || language;
         ulElement.append(
           li(
@@ -245,7 +245,7 @@ const fetchLanguageSelector = (placeholdersData) => {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const lang = getLanguage();
+  const lang = getLanguage() || 'en';
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : `/${lang}/nav`;
   const fragment = await loadFragment(navPath);
   const placeholdersData = await fetchLanguagePlaceholders();
@@ -298,7 +298,7 @@ export default async function decorate(block) {
           class: 'language-toggle',
           'aria-expanded': 'false',
         },
-        'English',
+        window.screen.width >= 768 ? placeholdersData[lang] : lang,
       ),
       div(
         { class: 'language-content' },
