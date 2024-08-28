@@ -30,14 +30,15 @@ export default function decorate(block) {
       const [_title, thumbnail, description, ...button] = [...card.children];
       thumbnail?.classList.add('columns-feature-card-thumbnail');
       description?.classList.add('columns-feature-card-description');
+
+      if (!description || ![...button].length) return;
       const cardContent = div({ class: 'columns-feature-card-content' }, description, ...button);
+
       card.appendChild(cardContent);
-      if (description) moveInstrumentation(description, cardContent);
-      if ([...button].length) {
-        [...button].forEach((btn) => {
-          moveInstrumentation(btn, cardContent);
-        });
-      }
+      moveInstrumentation(description, cardContent);
+      [...button].forEach((btn) => {
+        moveInstrumentation(btn, cardContent);
+      });
     });
   }
 }
