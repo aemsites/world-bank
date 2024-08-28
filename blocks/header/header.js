@@ -219,27 +219,24 @@ const toggleExpandLanguageSelector = (e) => {
     }
   }
 };
-const fetchLanguageSelector = () => {
+const fetchLanguageSelector = (placeholdersData) => {
   const ulElement = ul();
   const alternateMetaLang = document.querySelector("meta[name='alternate-url']");
-  const map = {};
   if (undefined !== alternateMetaLang) {
     const metaLangContent = alternateMetaLang.getAttribute('content');
     if (undefined !== metaLangContent && metaLangContent.split('|').length > 0) {
       const langPairs = metaLangContent.split(',');
       langPairs.forEach((pair) => {
         const [language, url] = pair.split('|');
+        const languageDisplayText = placeholdersData[language] || language;
         ulElement.append(
           li(
             a(
               { href: `${url}` },
-              `${language}`,
+              `${languageDisplayText}`,
             ),
           ),
         );
-        // Split each pair by the pipe character to separate the language and URL
-        // Add to the map object with the language as the key and URL as the value
-        map[language] = url;
       });
     }
   }
@@ -288,7 +285,7 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
-    const languageMap = fetchLanguageSelector();
+    const languageMap = fetchLanguageSelector(placeholdersData);
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
     const langSelector = div(
       {
