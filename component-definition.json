@@ -280,7 +280,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "empowering-data-cards",
+                  "name": "Empowering Data Cards",
                   "filter": "empowering-data-cards"
                 }
               }
@@ -288,16 +288,16 @@
           }
         },
         {
-          "title": "Custom Data Card",
-          "id": "custom-data-card",
+          "title": "EMpowering Data Card",
+          "id": "empowering-data-card",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Custom Data Card",
-                  "filter": "custom-data-card",
-                  "model": "custom-data-card"
+                  "name": "Empowering Data Card",
+                  "filter": "empowering-data-card",
+                  "model": "empowering-data-card"
                 }
               }
             }
