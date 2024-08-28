@@ -3,7 +3,6 @@ import { loadFragment } from '../fragment/fragment.js';
 import { fetchLanguagePlaceholders, getLanguage } from '../../scripts/scripts.js';
 import {
   div, img, a,
-  button,
   ul,
   li,
 } from '../../scripts/dom-helpers.js';
@@ -201,27 +200,22 @@ async function fetchingPlaceholdersData(placeholdersData) {
 }
 const toggleExpandLanguageSelector = (e) => {
   const toggleContainer = e.currentTarget;
-  let toggler = null;
-  let toggleContent = null;
   if (toggleContainer) {
-    if (e.type === 'mouseenter') {
+    const toggler = toggleContainer.querySelector('div.language-toggle');
+    const toggleContent = toggleContainer.querySelector('div.language-content');
+    if (e.type === 'mouseenter' && toggleContent) {
       toggleContainer.classList.add('nav-item-expanded-active');
-      toggler = toggleContainer.querySelector('div.language-toggle');
-      toggleContent = toggleContainer.querySelector('div.language-content');
       toggler.setAttribute('aria-expanded', true);
       toggleContent.classList.add('nav-item-content-expanded');
-    } else if (e.type === 'mouseleave') {
+    } else if (e.type === 'mouseleave' && toggleContent) {
       toggleContainer.classList.remove('nav-item-expanded-active');
-      toggler = toggleContainer.querySelector('div.language-toggle');
-      toggleContent = toggleContainer.querySelector('div.language-content');
       toggler.setAttribute('aria-expanded', false);
       toggleContent.classList.remove('nav-item-content-expanded');
     }
   }
 };
-const fetchLanguageSelector = (placeholdersData) => {
+const fetchLanguageSelector = (placeholdersData, alternateMetaLang) => {
   const ulElement = ul();
-  const alternateMetaLang = document.querySelector("meta[name='alternate-url']");
   if (alternateMetaLang) {
     const metaLangContent = alternateMetaLang.getAttribute('content');
     if (metaLangContent && metaLangContent.split(',').length > 0) {
@@ -285,8 +279,13 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
-    const languageMap = fetchLanguageSelector(placeholdersData);
+    const alternateMetaLang = document.querySelector("meta[name='alternate-url']");
+    const languageMap = fetchLanguageSelector(placeholdersData, alternateMetaLang);
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
+    const languageSelectorContent = div(
+      { class: 'language-content' },
+      languageMap,
+    );
     const langSelector = div(
       {
         class: 'language-container',
@@ -295,16 +294,15 @@ export default async function decorate(block) {
       },
       div(
         {
-          class: 'language-toggle',
+          class: alternateMetaLang ? 'language-toggle' : 'language-text',
           'aria-expanded': 'false',
         },
         window.screen.width >= 768 ? placeholdersData[lang] : lang,
       ),
-      div(
-        { class: 'language-content' },
-        languageMap,
-      ),
     );
+    if (alternateMetaLang) {
+      langSelector.append(languageSelectorContent);
+    }
     contentWrapper.prepend(langSelector);
   }
 
