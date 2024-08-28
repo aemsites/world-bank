@@ -1,6 +1,7 @@
 .teaser-wrapper {
     .teaser-container {
         display: flex;
+        flex-direction: row-reverse;
         width: 100%;
         height: 538px;
         position: relative;
@@ -147,7 +148,7 @@
     .teaser-swoosh-wrapper {
         width: 595px;
         height: 595px;
-        left: 57.55%;
+        margin-right: 32px;
         position: relative;
         display: flex;
         align-items: center;
@@ -197,7 +198,7 @@
 @media (width <=1024px) {
     .teaser-wrapper {
         .teaser-swoosh-wrapper {
-            left: 32%;
+            margin-right: 16px;
         }
         .teaser-title {
             padding: 19% 12% 0 12%;
@@ -225,7 +226,7 @@
             visibility: hidden;
         }
         .teaser-swoosh-wrapper {
-            left: unset;
+            margin-right: unset;
         }
 
     }
