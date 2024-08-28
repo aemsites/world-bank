@@ -219,7 +219,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list{
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list:has(a:hover){
-display: block !important;
+display: block ;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country div{
@@ -267,17 +267,17 @@ header .nav-menu-overlay .nav-menu-column.right>ul>li>ul {
   display: flex;
   flex-direction: column;
   gap: 13px;
-  font-weight: normal !important;
+  font-weight: normal ;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country div ul{
  position: absolute;
- padding-top: 30px !important;
- padding-bottom: 15px !important;
+ padding-top: 30px ;
+ padding-bottom: 15px ;
  top: 10px;
  left: 10px;
  border-radius: 20px;
- display: none !important;
+ display: none ;
  max-height: 200px;
  overflow-y: scroll;
   
@@ -362,7 +362,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"]:focus + .country-list{
-  display: block !important;
+  display: block ;
 }
 
 .section.nav-sections .default-content-wrapper p {
@@ -406,7 +406,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text
 /* hamburger */
 header nav .nav-hamburger {
   width: 20px;
-  padding-right: var(--hamburger-right-space) !important;
+  padding-right: var(--hamburger-right-space) ;
 }
 
 header nav .nav-hamburger button {
@@ -505,7 +505,7 @@ header nav .nav-brand img {
 }
 
 header nav .nav-sections .default-content-wrapper{
-  display: none !important;
+  display: none ;
 
   /* visibility: hidden; */
 }
@@ -520,7 +520,7 @@ header nav .nav-sections .default-content-wrapper{
 
 
   header nav .nav-sections .default-content-wrapper{
-    display: flex !important;
+    display: flex ;
   
     /* visibility: hidden; */
   }
@@ -659,7 +659,7 @@ header .nav-menu-overlay .nav-menu {
 }
 
 header .nav-menu-overlay .nav-menu-column.right {
-  flex-wrap: wrap !important;
+  flex-wrap: wrap ;
   justify-content: flex-start;
   max-height: 500px;
   max-width: 100%;
@@ -768,7 +768,7 @@ header
 header
   .nav-menu-overlay
   .nav-menu-column.right
-  .submenu li:has(ul.browse-country)
+  .submenu li:has(ul.browse-country) >
   ul {
   border: none;
   display: flex;
@@ -797,11 +797,10 @@ header
     top: 0;
     z-index: 2;
     background-color:  #001C2D;
-  
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"]:focus + .country-list{
-    display: block !important;
+    display: block ;
   }
 
 
@@ -866,11 +865,11 @@ header
     background-image: url('../../icons/swoosh/type4/default-d.svg');
     flex-direction: row;
     background-size: 50% 100%;
-    padding: 100px 0 100px 60px!important;
+    padding: 100px 0 100px 60px;
   }
 
   header .nav-menu-overlay .nav-menu-column.left {
-    display: flex !important;
+    display: flex ;
     max-width: 341px;
     min-height: 600px;
   }
@@ -984,7 +983,7 @@ header
     .nav-menu-overlay
     .nav-menu-column.right
     .submenu li:has(ul.browse-country) {
-    padding-top: 40px !important;
+    padding-top: 40px ;
     margin-top: 40px ;
     position: absolute;
     min-width: 88%;
@@ -1179,7 +1178,7 @@ header
     z-index: 3;
     padding: 17px 10px 17px 35px;
     border-radius: 40px;
-    max-width: 500px !important;
+    max-width: 500px ;
     width: 40vw;
     margin-top: -20px;
   }
@@ -1202,7 +1201,7 @@ header
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"]:focus + .country-list{
-    display: block !important;
+    display: block ;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p{
