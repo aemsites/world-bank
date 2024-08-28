@@ -26,7 +26,6 @@
   grid-template-columns: 45% 55%;
   padding: 72px 0;
   position: relative;
-
 }
 
 .columns.columns-transform-teaser > div p {
@@ -194,12 +193,12 @@
     .columns.columns-transform-teaser  p{
     &:nth-child(1){
       font-size: 32px;
-      line-height: 35.2px;
+      line-height: 35px;
     }
 
     &:nth-child(2){
       font-size: 18px;
-      line-height: 25.2px;
+      line-height: 25px;
     }
 
     &:nth-child(3) a{
@@ -289,7 +288,7 @@
           p{
             &:nth-child(1){
               font-size: 28px;
-              line-height:30.8px;
+              line-height:30px;
             }
 
             &:nth-child(4){
