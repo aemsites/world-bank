@@ -50,7 +50,7 @@ function addElementProperties(element) {
 function addAnchorTag(element) {
   const anchorLink = document.createElement('a');
   const logoImage = element.querySelector('img');
-  anchorLink.href = '';
+  anchorLink.href = '/';
   anchorLink.title = logoImage.alt;
   anchorLink.appendChild(element);
   return anchorLink;
@@ -62,19 +62,19 @@ function addAnchorTag(element) {
  * @param {HTML} ul The content pass in a parent class
  */
 function htmlParser(htmlObj, ul, prepend = '') {
-  [...htmlObj].forEach((Contentdata) => {
-    addElementProperties(Contentdata);
+  [...htmlObj].forEach((contentValue) => {
+    addElementProperties(contentValue);
 
     const li = document.createElement('li');
-    if (Contentdata.tagName === 'PICTURE') {
-      const pictureTagHandler = addAnchorTag(Contentdata);
+    if (contentValue.tagName === 'PICTURE') {
+      const pictureTagHandler = addAnchorTag(contentValue);
       li.appendChild(pictureTagHandler);
     } else {
-      li.appendChild(Contentdata);
+      li.appendChild(contentValue);
     }
 
     if (prepend) {
-      if (Contentdata.textContent.trim()) {
+      if (contentValue.textContent.trim()) {
         ul.prepend(li);
       }
     } else {
@@ -84,50 +84,51 @@ function htmlParser(htmlObj, ul, prepend = '') {
 }
 
 export default async function decorate(block) {
-  // load nav as fragment
+  // load footer as fragment
   const footerMeta = getMetadata('footer');
   const lang = getLanguage();
   const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : `/${lang}/footer`;
   const fragment = await loadFragment(footerPath);
 
-  // decorate nav DOM
+  // decorate footer DOM
   block.textContent = '';
   const section = document.createElement('section');
+  section.className = 'default-content-wrapper';
 
-  const Rows = fragment.firstElementChild.querySelectorAll('.columns-wrapper');
-  const Classes = ['ft-social', 'ft-main', 'ft-legal'];
-  [...Rows].forEach((Rowsdata, iRows) => {
-    Rowsdata.className = Classes[iRows];
-    const Columns = Rowsdata.querySelectorAll('[data-block-name="columns"] > div > div');
-    [...Columns].forEach((Columnsdata) => {
+  const rows = fragment.firstElementChild.querySelectorAll('.columns-wrapper');
+  const classes = ['ft-social', 'ft-main', 'ft-legal'];
+  [...rows].forEach((rowValue, rowIndex) => {
+    rowValue.className = classes[rowIndex];
+    const columns = rowValue.querySelectorAll('.columns > div > div');
+    [...columns].forEach((columnValue) => {
       // Handling "a" tag.
       const ul = document.createElement('ul');
-      const anchorTagContent = Columnsdata.querySelectorAll('div > p > a');
-      htmlParser(anchorTagContent, ul);
+      const anchorTag = columnValue.querySelectorAll('div > p > a');
+      htmlParser(anchorTag, ul);
 
       // Handling "picture" tag.
-      const pictureTagContent = Columnsdata.querySelectorAll('div > picture');
-      htmlParser(pictureTagContent, ul);
+      const pictureTag = columnValue.querySelectorAll('div > picture');
+      htmlParser(pictureTag, ul);
 
       // Handline "p" tag.
-      const pTagContent = Columnsdata.querySelectorAll('div > p');
-      htmlParser(pTagContent, ul, 'prepend');
+      const pTag = columnValue.querySelectorAll('div > p');
+      htmlParser(pTag, ul, 'prepend');
 
-      switch (Rowsdata.className) {
+      switch (rowValue.className) {
         case 'ft-social':
-          Rowsdata.append(switchBlock('ft-social-list', ul));
+          rowValue.append(switchBlock('ft-social-list', ul));
           break;
         case 'ft-main':
-          Rowsdata.append(switchBlock('ft-main-item', ul));
+          rowValue.append(switchBlock('ft-main-item', ul));
           break;
         case 'ft-legal':
-          Rowsdata.append(switchBlock('ft-legal-list', ul));
+          rowValue.append(switchBlock('ft-legal-list', ul));
           break;
         default:
       }
     });
-    Rowsdata.removeChild(Rowsdata.firstElementChild);
-    section.append(Rowsdata);
+    rowValue.removeChild(rowValue.firstElementChild);
+    section.append(rowValue);
   });
   block.append(section);
 }
