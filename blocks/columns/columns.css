@@ -385,3 +385,119 @@
     flex-basis: 75%;
   }
 }
+
+/* CSS starts for Image left and image right variation */
+
+.columns.columns-image-left,
+.columns.columns-image-right {
+  /* stylelint-disable-next-line no-descending-specificity */
+  & > div {
+  align-items: flex-start;
+  /* stylelint-disable-next-line no-descending-specificity */
+  img {
+    border-radius: 8px;
+  }
+}
+}
+
+.columns.columns-image-right>div>div:nth-child(1),
+.columns.columns-image-left>div>div:nth-child(2) {
+  p:nth-child(1) {
+    font-size: var(--body-font-size-s);
+    line-height: 110%;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--neutrals-70);
+    font-weight: 800;
+  }
+
+  p:nth-child(2) {
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: var(--heading-font-size-s);
+    line-height: 31px;
+    text-transform: uppercase;
+    color: var(--primary-blue-80);
+
+    strong {
+      font-weight: 400;
+    }
+  }
+}
+
+.columns.columns-image-right>div>div:nth-child(2),
+.columns.columns-image-left>div>div:nth-child(1) {
+  p:nth-child(1) {
+    margin-bottom: 3px;
+  }
+
+  p:nth-child(2) {
+    font-size: var(--body-font-size-s);
+    font-weight: 400;
+    line-height: 16.8px;
+    margin-top: 0;
+  }
+}
+
+.columns.columns-image-left {
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &>div {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (width >=768px) {
+  .columns.columns-image-right,
+  .columns.columns-image-left {
+    &>div {
+      align-items: center;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+}
+
+@media (width >=1024px) {
+  .columns.columns-image-right, .columns.columns-image-left{
+    &>div {
+      gap: 80px;
+
+    }
+  }
+
+  .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
+  .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
+    font-size: var(--heading-font-size-l);
+    line-height: 44px;
+  }
+
+}
+
+@media (width >=768px) {
+  .columns.columns-image-right,
+  .columns.columns-image-left {
+    &>div {
+      align-items: center;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+@media (width >=1024px) {
+  .columns.columns-image-right, .columns.columns-image-left{
+    &>div {
+      gap: 80px;
+      
+    }
+  }
+  
+  .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
+  .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
+        font-size: var(--heading-font-size-l);
+        line-height: 44px;
+  }
+
+}
+}
