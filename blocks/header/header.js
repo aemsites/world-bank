@@ -297,7 +297,7 @@ export default async function decorate(block) {
           class: alternateMetaLang ? 'language-toggle' : 'language-text',
           'aria-expanded': 'false',
         },
-        window.screen.width >= 768 ? placeholdersData[lang] : lang,
+        window.screen.width >= 768 && placeholdersData[lang] ? placeholdersData[lang] : lang,
       ),
     );
     if (alternateMetaLang) {
