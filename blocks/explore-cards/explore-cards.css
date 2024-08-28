@@ -1,1 +1,157 @@
-/* TBD */
+.explore-cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.explore-cards {
+    width: 100%;
+}
+
+.story-type p {
+    font-size: var(--body-font-size-xs);
+    font-weight: 700;
+    line-height: 13.2px;
+    letter-spacing: 0.06em;
+}
+
+.card-title p {
+    font-size: var(--heading-font-size-xs);
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.explore-cards .heading {
+    margin-bottom: var(--spacing-20);
+}
+
+.explore-cards  .heading p {
+    font-size: var(--heading-font-size-m);
+    line-height: 30.8px;
+}
+
+.explore-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--spacing-20);
+    width: calc(100vw - 68px);
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.explore-card {
+    position: relative;
+    border-radius: 10px;
+    height: 400px;
+    min-width: 300px;
+}
+
+.card-icon {
+    width: 72px;
+    height: 72px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-icon.icon-video {
+    background-image: url("../../icons/playbutton.svg");
+}
+
+.card-icon.icon-audio {
+    background-image: url("../../icons/podcast.svg");
+}
+
+.explore-card a {
+    text-decoration: none;
+    color: var(--color-white);
+    display: block;
+    height: 100%;
+
+    .card-img {
+        height: 100%;
+    }
+}
+
+.explore-card picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.explore-card .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-20);
+    background: linear-gradient(180deg, rgb(1 39 64 / 0%) 39.98%, #012740 78.99%);
+    color: var(--color-white);
+    z-index: 1;
+}
+
+.story-type {
+    font-size: var(--body-font-size-xs);
+    font-weight: 700;
+    line-height: 13.2px;
+    letter-spacing: 0.06em;
+}
+
+@media (width >=768px) {
+    .heading p {
+        font-size: var(--heading-font-size-l);
+        line-height: 35.2px;
+    }
+
+    .explore-card-container {
+        grid-template-columns: 1fr;
+        width: unset;
+        overflow-x: unset;
+    }
+
+    .explore-card {
+        position: relative;
+        border-radius: 10px;
+        height: 350px;
+        min-width: unset;
+    }
+
+    .card-title p {
+        font-size: var(--heading-font-size-xxs);
+    }
+}
+
+@media (width >=1024px) {
+    .heading p {
+        font-size: var(--heading-font-size-l);
+        line-height: 44px;
+    }
+
+    .explore-card {
+        height: 500px;
+    }
+
+    .story-type {
+        letter-spacing: 0.05em;
+    }
+
+    .story-type p {
+        letter-spacing: 0.05em;
+    }
+
+    .card-title p {
+        font-size: var(--heading-font-size-xs);
+        font-weight: 700;
+        line-height: 28.8px;
+    }
+
+    .explore-card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
