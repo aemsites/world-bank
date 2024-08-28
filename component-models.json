@@ -181,11 +181,11 @@
               },
               {
                 "name": "33% - 67%",
-                "value": "column-layout-33-66"
+                "value": "column-layout-33-67"
               },
               {
                 "name": "67% - 33%",
-                "value": "column-layout-66-33"
+                "value": "column-layout-67-33"
               },
               {
                 "name": "25% - 75%",
@@ -269,51 +269,51 @@
           },
           {
             "name": "No space / padding",
-            "value": "sec-spacing-none"
+            "value": "section-none"
           },
           {
-            "name": "Spacing 8px",
-            "value": "sec-spacing-8"
+            "name": "Spacing xxsmall",
+            "value": "section-xxsmall"
           },
           {
-            "name": "Spacing 12px",
-            "value": "sec-spacing-12"
+            "name": "Spacing xsmall",
+            "value": "section-xsmall"
           },
           {
-            "name": "Spacing 16px",
-            "value": "sec-spacing-16"
+            "name": "Spacing small",
+            "value": "section-small"
           },
           {
             "name": "Spacing 20px",
             "value": "sec-spacing-20"
           },
           {
-            "name": "Spacing 24px",
-            "value": "sec-spacing-24"
+            "name": "Spacing regular",
+            "value": "section-regular"
           },
           {
             "name": "Spacing 28px",
             "value": "sec-spacing-28"
           },
           {
-            "name": "Spacing 32px",
-            "value": "sec-spacing-32"
+            "name": "Spacing medium",
+            "value": "section-medium"
           },
           {
-            "name": "Spacing 48px",
-            "value": "sec-spacing-48"
+            "name": "Spacing xlarge",
+            "value": "section-xlarge"
           },
           {
-            "name": "Spacing 64px",
-            "value": "sec-spacing-64"
+            "name": "Spacing xxlarge",
+            "value": "section-xxlarge"
           },
           {
-            "name": "Spacing 80px",
-            "value": "sec-spacing-80"
+            "name": "Spacing huge",
+            "value": "section-huge"
           },
           {
-            "name": "Spacing 96px",
-            "value": "sec-spacing-96"
+            "name": "Spacing xhuge",
+            "value": "section-xhuge"
           }
         ]
       },
@@ -329,65 +329,20 @@
             "value": "sec-swoosh-none"
           },
           {
-            "name": "Swoosh Type 1",
+            "name": "Left Center Swoosh",
             "value": "sec-swoosh-type1"
           },
           {
-            "name": "Swoosh Type 2",
-            "value": "sec-swoosh-type2"
-          },
-          {
-            "name": "Swoosh Type 3",
+            "name": "Left Top Swoosh",
             "value": "sec-swoosh-type3"
           },
           {
-            "name": "Swoosh Primary Blue 90 theme",
+            "name": "Right Top Swoosh",
+            "value": "sec-swoosh-type2"
+          },
+          {
+            "name": "Primary Blue 90 theme Swoosh",
             "value": "sec-swoosh-primary-blue-90"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "sec-swoosh-position",
-        "value": "",
-        "label": "Section Swoosh Position",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Left - Top",
-            "value": "swoosh-left-top"
-          },
-          {
-            "name": "Left - Center",
-            "value": "swoosh-left-center"
-          },
-          {
-            "name": "Left - Bottom",
-            "value": "swoosh-left-bottom"
-          },
-          {
-            "name": "Center - Top",
-            "value": "swoosh-center-top"
-          },
-          {
-            "name": "Center - Center",
-            "value": "swoosh-center-center"
-          },
-          {
-            "name": "Bottom - Bottom",
-            "value": "swoosh-center-bottom"
-          },
-          {
-            "name": "Right - Top",
-            "value": "swoosh-right-top"
-          },
-          {
-            "name": "Right - Center",
-            "value": "swoosh-right-center"
-          },
-          {
-            "name": "Right - Bottom",
-            "value": "swoosh-right-bottom"
           }
         ]
       },
@@ -565,7 +520,9 @@
         "valueType": "string",
         "name": "fileReference",
         "label": "Thumbnail",
-        "multi": false
+        "required": true,
+        "multi": false,
+        "rootPath": "/content/dam/world-bank"
       },
       {
         "component": "text",
@@ -575,46 +532,36 @@
         "label": "Alt Text"
       },
       {
-        "component": "select",
-        "name": "type",
-        "value": "",
-        "label": "Content type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Podcast / Audio",
-            "value": "podcast-audio"
-          },
-          {
-            "name": "Video",
-            "value": "video"
-          },
-          {
-            "name": "Text",
-            "value": "text"
-          }
-        ]
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",
+        "required": true,
         "label": "Title"
-      },
-      {
-        "component": "aem-tag",
-        "name": "tags",
-        "label": "Tag",
-        "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "link",
         "value": "",
-        "label": "Link"
+        "label": "Link",
+        "required": true
+      },
+      {
+        "component": "aem-tag",
+        "name": "content-type",
+        "label": "Content Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/content-type"
+      },
+      {
+        "component": "aem-tag",
+        "name": "story-type",
+        "label": "Story Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/story-type"
       }
     ]
   },
