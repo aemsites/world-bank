@@ -36,6 +36,7 @@
     gap: var(--spacing-20);
     width: calc(100vw - 68px);
     overflow-x: scroll;
+    scrollbar-width: none;
 }
 
 .explore-card {
@@ -146,6 +147,8 @@
 
     .card-title p {
         font-size: var(--heading-font-size-xs);
+        font-weight: 700;
+        line-height: 28.8px;
     }
 
     .explore-card-container {
