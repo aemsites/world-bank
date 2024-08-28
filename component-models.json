@@ -610,45 +610,53 @@
             "name": "imageReference",
             "label": "Image",
             "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "alt",
+            "value": "Default alt",
+            "label": "Alt Text"
           }
         ]
       },
       {
-        "component": "text",
+        "component": "container",
+        "label": "Button Properties",
+        "name": "buttonProperties",
         "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
-        "label": "Alt Text"
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "btn-style",
-        "value": "",
-        "label": "Button Style",
-        "options": [
-          { "name": "Dark Background", "value": "darkBG" },
-          { "name": "Dark Background - Underline", "value": "darkBG-ul" },
-          { "name": "Light Background - Primary", "value": "lightBG-1" },
-          { "name": "Light Background - Secondary", "value": "lightBG-2" },
-          { "name": "Light Background - Underline", "value": "lightBG-ul" }
+        "fields": [
+          {
+            "component": "select",
+            "valueType": "string",
+            "name": "btn-style",
+            "value": "",
+            "label": "Button Style",
+            "options": [
+              { "name": "Dark Background", "value": "darkBG" },
+              { "name": "Dark Background - Underline", "value": "darkBG-ul" },
+              { "name": "Light Background - Primary", "value": "lightBG-1" },
+              { "name": "Light Background - Secondary", "value": "lightBG-2" },
+              { "name": "Light Background - Underline", "value": "lightBG-ul" }
+            ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "btn-text",
+            "value": "Button text",
+            "label": "Button Text"
+          },
+          {
+            "component": "aem-content",
+            "name": "btn-link",
+            "label": "Button Link",
+            "valueType": "string",
+            "rootPath": "",
+            "description": "Path to linked AEM content"
+          }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "btn-text",
-        "value": "Button text",
-        "label": "Button Text"
-      },
-      {
-        "component": "aem-content",
-        "name": "btn-link",
-        "label": "Button Link",
-        "valueType": "string",
-        "rootPath": "",
-        "description": "Path to linked AEM content"
-     }
+      }
     ]
   }
 ]

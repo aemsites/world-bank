@@ -51,8 +51,8 @@ function observeVideo(block, autoplay) {
           playButton.classList.add('inactive');
           playButton.removeAttribute('tabindex');
           pauseButton.classList.remove('inactive');
-          pauseButton.setAttribute('tabindex', 0);  // hide 'play' button and show 'pause' button
-          videoPlayerEl.play(); // Play the video when it enters the viewport, unless user 'prefers reduced motion'
+          pauseButton.setAttribute('tabindex', 0); // hide 'play' button
+          videoPlayerEl.play(); // Play the video when it enters the viewport
         }
       } else {
         videoPlayerEl.pause(); // Pause the video when it leaves the viewport
@@ -68,7 +68,7 @@ function attachListeners() {
   const pauseButton = document.getElementById('pauseButton');
 
   // Play the video when the play button is clicked or a keyboard button pressed
-  ['click', 'keydown'].forEach(eventType => {
+  ['click', 'keydown'].forEach((eventType) => {
     playButton.addEventListener(eventType, (event) => {
       if (eventType === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
       playButton.classList.add('inactive');
@@ -81,7 +81,7 @@ function attachListeners() {
     });
   });
 
-  ['click', 'keydown'].forEach(eventType => {
+  ['click', 'keydown'].forEach((eventType) => {
     pauseButton.addEventListener(eventType, (event) => {
       if (eventType === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
       playButton.classList.remove('inactive');
