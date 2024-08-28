@@ -137,7 +137,7 @@ function createSearchBox() {
   } else {
     cancelContainer = div({ class: 'cancel-container' });
     const cancelImg = img({ class: 'cancel-image' });
-    cancelImg.src = '../icons/cancel.svg';
+    cancelImg.src = `${window.hlx.codeBasePath}/icons/cancel.svg`;
     cancelImg.alt = 'cancel';
     cancelImg.style.cssText = 'display: flex; cursor: pointer;';
     cancelContainer.addEventListener('click', () => {
@@ -157,7 +157,7 @@ function createSearchBox() {
     const searchInputContainer = div({ class: 'search-input-container' });
     const searchInputBox = document.createElement('input');
     const searchIcon = img({ class: 'search-icon' });
-    searchIcon.src = '../icons/search-white.svg';
+    searchIcon.src = `${window.hlx.codeBasePath}/icons/search-white.svg`;
     searchIcon.alt = 'search';
     searchIcon.addEventListener('click', () => {
       if (searchInputBox.value) {
