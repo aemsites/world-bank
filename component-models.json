@@ -616,7 +616,7 @@
     "id": "research-publications-cards",
     "fields": [
        {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "title",
         "value": "",
