@@ -688,5 +688,8 @@
         "required": true
       }
     ]
+  },
+  {
+    "id": "signup"
   }
 ]
