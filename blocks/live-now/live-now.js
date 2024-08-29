@@ -1,8 +1,10 @@
 export default async function decorate(block) {
   console.log('live now');
+  queryEventData();
 }
 
 window.addEventListener('load', () => {
+    console.log('window load');
     queryEventData();
 })
 
@@ -38,6 +40,7 @@ async function queryEventData() {
     console.log(response);
 }
 
+/*
 function decorateExampleModals(main) {
     const simpleModalButton = main.querySelector('a.button[href="http://modal-demo.simple"]');
     const customModalButton = main.querySelector('a.button[href="http://modal-demo.custom"]');
@@ -65,3 +68,4 @@ function decorateExampleModals(main) {
       customModal.showModal();
     });
   }
+    */
