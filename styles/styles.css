@@ -137,7 +137,12 @@
   --text-color: var(--neutrals-100);
   --color-white: #FFF;
   --color-black: #000;
+
+  /* Navigation Menu */
   --input-background-color:#002337;
+  --nav-menu-placeholder-color:#FFFFFF76;
+  --search-input-container-border: #004972;
+  --nav-menu-footer-color: #99b6C7;
 
   /* body sizes */
   --body-font-size-xl: 20px;
@@ -167,6 +172,7 @@
   --screen-width: 1456px;
   --nav-height: 34px;
   --nav-padding: 25px;
+  --nav-menu-overlay-height: 961px;
 
   /* shadows & elevations */
   --section-shadow: 0 2px 4px rgba(0 0 0 10%);
@@ -574,40 +580,40 @@ main .section > div {
   }
 }
 
-main .section.bg-primary-blue-90,
-main .section.bg-primary-blue-70,
-main .section.bg-primary-blue-90 h1,
-main .section.bg-primary-blue-90 h2,
-main .section.bg-primary-blue-90 h3,
-main .section.bg-primary-blue-90 h4,
-main .section.bg-primary-blue-90 h5,
-main .section.bg-primary-blue-90 h6,
-main .section.bg-primary-blue-70 h1,
-main .section.bg-primary-blue-70 h2,
-main .section.bg-primary-blue-70 h3,
-main .section.bg-primary-blue-70 h4,
-main .section.bg-primary-blue-70 h5,
-main .section.bg-primary-blue-70 h6 {
+.section.bg-primary-blue-90,
+.section.bg-primary-blue-70,
+.section.bg-primary-blue-90 h1,
+.section.bg-primary-blue-90 h2,
+.section.bg-primary-blue-90 h3,
+.section.bg-primary-blue-90 h4,
+.section.bg-primary-blue-90 h5,
+.section.bg-primary-blue-90 h6,
+.section.bg-primary-blue-70 h1,
+.section.bg-primary-blue-70 h2,
+.section.bg-primary-blue-70 h3,
+.section.bg-primary-blue-70 h4,
+.section.bg-primary-blue-70 h5,
+.section.bg-primary-blue-70 h6 {
   color: var(--color-white);
 }
 
-main .section.bg-neutrals-10,
-main .section.bg-neutrals-20 {
+.section.bg-neutrals-10,
+.section.bg-neutrals-20 {
   color: var(--neutrals-100);
 }
 
-main .section.bg-neutrals-10 h1,
-main .section.bg-neutrals-10 h2,
-main .section.bg-neutrals-10 h3,
-main .section.bg-neutrals-10 h4,
-main .section.bg-neutrals-10 h5,
-main .section.bg-neutrals-10 h6,
-main .section.bg-neutrals-20 h1,
-main .section.bg-neutrals-20 h2,
-main .section.bg-neutrals-20 h3,
-main .section.bg-neutrals-20 h4,
-main .section.bg-neutrals-20 h5,
-main .section.bg-neutrals-20 h6 {
+.section.bg-neutrals-10 h1,
+.section.bg-neutrals-10 h2,
+.section.bg-neutrals-10 h3,
+.section.bg-neutrals-10 h4,
+.section.bg-neutrals-10 h5,
+.section.bg-neutrals-10 h6,
+.section.bg-neutrals-20 h1,
+.section.bg-neutrals-20 h2,
+.section.bg-neutrals-20 h3,
+.section.bg-neutrals-20 h4,
+.section.bg-neutrals-20 h5,
+.section.bg-neutrals-20 h6 {
   color: var(--primary-blue-100);
 }
 
