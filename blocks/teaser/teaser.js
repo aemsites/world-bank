@@ -33,8 +33,8 @@ function createVideoPlayer(videoSrc) {
 function createBackgroundImage(properties) {
   let missingSrc;
   if (!(properties.imageReference)) missingSrc = true;
-  const imgSrc = missingSrc ? properties.imageReference : "";
-  const imgAlt = properties.alt ? properties.imageAlt : "";
+  const imgSrc = missingSrc ? properties.imageReference : '';
+  const imgAlt = properties.alt ? properties.imageAlt : '';
   const imgBackground = div({ class: 'background-image' },
     img({ class: 'teaser-background', src: imgSrc, alt: imgAlt }),
   );
