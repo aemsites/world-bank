@@ -4,40 +4,41 @@ export default async function decorate(block) {
 }
 
 window.addEventListener('load', () => {
-    console.log('window load');
-    queryEventData();
+  console.log('window load');
+  queryEventData();
 })
 
 async function queryEventData() {
-    const endpoint = 'https://webapi.worldbank.org/aemsite/wblive/global/search';
-    const subkey = 'a02440fa123c4740a83ed288591eafe4';
-    const requestMethod = 'POST';
-    const contentType = 'application/json';
-    const payload = {
-        search: '*',
-        facets: [
-            'topics,count:1000'
-        ],
-        filter: `hideOnSearch ne 'true' and languageCode eq 'en' and (eventStartDate gt ${myDateHere} or (eventStartDate lt ${myDateHere} and eventEndDate gt ${myDateHere})) and searchType eq 'event'`,
-        count: true,
-        searchFields: '*',
-        top: 10,
-        skip: 0,
-        orderby: 'eventStartDate ac'
-    }
+  const endpoint = 'https://webapi.worldbank.org/aemsite/wblive/global/search';
+  const subkey = 'a02440fa123c4740a83ed288591eafe4';
+  const requestMethod = 'POST';
+  const contentType = 'application/json';
+  const myDateHere = '2024-09-04T09:32:00Z'; // an event should be running here
+  const payload = {
+    search: '*',
+    facets: [
+      'topics,count:1000'
+    ],
+    filter: `hideOnSearch ne 'true' and languageCode eq 'en' and (eventStartDate gt ${myDateHere} or (eventStartDate lt ${myDateHere} and eventEndDate gt ${myDateHere})) and searchType eq 'event'`,
+    count: true,
+    searchFields: '*',
+    top: 10,
+    skip: 0,
+    orderby: 'eventStartDate ac'
+  }
 
-    const response = await fetch(endpoint, {
-        method: requestMethod,
-        headers: {
-            'Accept': '*/*',
-            'Access-Control-Allow-Origin': '',
-            'Content Type': contentType,
-            'ocp-apim-subscription-key': subkey
-        },
-        body: JSON.stringify(payload),
-    });
+  const response = await fetch(endpoint, {
+    method: requestMethod,
+    headers: {
+      'Accept': '*/*',
+      'Access-Control-Allow-Origin': '',
+      'Content Type': contentType,
+      'ocp-apim-subscription-key': subkey
+    },
+    body: JSON.stringify(payload),
+  });
 
-    console.log(response);
+  console.log(response);
 }
 
 /*
