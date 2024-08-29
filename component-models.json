@@ -695,11 +695,11 @@
             "value": "",
             "label": "Button Style",
             "options": [
-              { "name": "Dark Background", "value": "darkBG" },
-              { "name": "Dark Background - Underline", "value": "darkBG-ul" },
-              { "name": "Light Background - Primary", "value": "lightBG-1" },
-              { "name": "Light Background - Secondary", "value": "lightBG-2" },
-              { "name": "Light Background - Underline", "value": "lightBG-ul" }
+              { "name": "Dark Background", "value": "dark-bg" },
+              { "name": "Dark Background - Underline", "value": "dark-bg-ul" },
+              { "name": "Light Background - Primary", "value": "light-bg-1" },
+              { "name": "Light Background - Secondary", "value": "light-bg-2" },
+              { "name": "Light Background - Underline", "value": "light-bg-ul" }
             ]
           },
           {
