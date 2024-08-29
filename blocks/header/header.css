@@ -200,8 +200,12 @@ header .nav-menu-overlay .nav-menu a:visited {
     text-transform: uppercase;
   }
 
+  .nav-item-content-expanded > ul > li {
+    text-transform: uppercase;
+  }
+
   .header .nav-item-content-expanded {
-    left: -21px;
+    left: 10px;
   }
 }
 

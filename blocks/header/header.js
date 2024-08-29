@@ -382,35 +382,66 @@ const toggleExpandLanguageSelector = (e) => {
     toggleContent.classList.remove('nav-item-content-expanded');
   }
 };
+
+// Get Language Selector Display Text based on screen size
+const getLanguageDisplayText = (placeholdersData, lang) => ((window.screen.width >= 768
+  && placeholdersData[lang])
+  ? placeholdersData[lang]
+  : lang);
+
+// Language toggle based on screen width
+const updateLanguageTextContent = (domElement, placeholdersData, lang) => {
+  domElement.textContent = getLanguageDisplayText(placeholdersData, lang);
+};
+
+const handleResize = (entries, placeholdersData, language) => {
+  entries.forEach((entry) => {
+    if (entry.target) {
+      const aElement = entry.target.querySelector('a');
+      if (aElement) {
+        updateLanguageTextContent(aElement, placeholdersData, language);
+      }
+    }
+  });
+};
+
+// Create a ResizeObserver instance with a callback
+const createResizeObserver = (placeholdersData, language) => new ResizeObserver((entries) => {
+  handleResize(entries, placeholdersData, language);
+});
+
+// create language selector domElement
 const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCode) => {
   const ulElement = ul();
   if (metaLangContent && metaLangContent.split(',').length > 0) {
     const langPairs = metaLangContent.split(',');
     langPairs.forEach((pair) => {
       const [language, url] = pair.split('|').map((part) => part.trim());
-      const languageDisplayText = placeholdersData[language] || language;
-      ulElement.append(
-        li(
-          { class: `${langCode === language ? 'show-selected' : ''}` },
-          a(
-            { href: `${url}` },
-            `${languageDisplayText}`,
-          ),
+      const liElement = li(
+        { class: `${langCode === language ? 'show-selected' : ''}` },
+        a(
+          { href: `${url}` },
+          getLanguageDisplayText(placeholdersData, language),
         ),
       );
+      ulElement.append(liElement);
+      // ResizeObserver for the liElement to show language code for mobile
+      const resizeObserver = createResizeObserver(placeholdersData, language);
+      resizeObserver.observe(liElement);
     });
   } else {
-    ulElement.append(
-      li(
-        { class: 'show-selected' },
-        a(
-          { href: window.location.href },
-          `${placeholdersData[langCode] || langCode}`,
-        ),
+    const liElement = li(
+      { class: 'show-selected' },
+      a(
+        { href: window.location.href },
+        getLanguageDisplayText(placeholdersData, langCode),
       ),
     );
+    ulElement.append(liElement);
+    // ResizeObserver for the liElement to show language code for mobile
+    const resizeObserver = createResizeObserver(placeholdersData, langCode);
+    resizeObserver.observe(liElement);
   }
-
   return ulElement;
 };
 
@@ -557,22 +588,30 @@ const getLanguageSelector = (placeholdersData, lang) => {
     { class: 'language-content' },
     languageMap,
   );
+
+  const languageToggle = div(
+    {
+      class: 'language-toggle',
+      'aria-expanded': 'false',
+    },
+  );
+
   const langSelector = div(
     {
       class: 'language-container',
-      onmouseenter: (e) => toggleExpandLanguageSelector(e),
-      onmouseleave: (e) => toggleExpandLanguageSelector(e),
       onclick: (e) => toggleExpandLanguageSelector(e),
     },
-    div(
-      {
-        class: 'language-toggle',
-        'aria-expanded': 'false',
-      },
-      window.screen.width >= 768 && placeholdersData[lang] ? placeholdersData[lang] : lang,
-    ),
+    languageToggle,
   );
   langSelector.append(languageSelectorContent);
+
+  // Show Language code in Mobile
+  const resizeObserver = new ResizeObserver(() => {
+    updateLanguageTextContent(languageToggle, placeholdersData, lang);
+  });
+
+  resizeObserver.observe(langSelector);
+
   return langSelector;
 };
 export default async function decorate(block) {
