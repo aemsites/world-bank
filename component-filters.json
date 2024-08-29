@@ -2,8 +2,7 @@
   {
     "id": "main",
     "components": [
-      "section",
-      "live-now"
+      "section"
     ]
   },
   {

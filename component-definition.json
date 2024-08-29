@@ -334,14 +334,14 @@
           }
         },
         {
-          "title": "Modal: Live Now",
+          "title": "Live Now",
           "id": "live-now",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Modal: Live Now",
+                  "name": "Live Now",
                   "model": "live-now",
                   "filter": "live-now"
                 }
