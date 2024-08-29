@@ -204,7 +204,6 @@ const toggleExpandLanguageSelector = (e) => {
     const toggler = toggleContainer.querySelector('div.language-toggle');
     const toggleContent = toggleContainer.querySelector('div.language-content');
     if (e.type === 'click' && toggleContent) {
-      e.preventDefault();
       if (toggleContainer.classList.contains('nav-item-expanded-active')) {
         toggleContainer.classList.remove('nav-item-expanded-active');
         toggler.setAttribute('aria-expanded', false);
@@ -225,10 +224,9 @@ const toggleExpandLanguageSelector = (e) => {
     }
   }
 };
-const fetchLanguageSelector = (placeholdersData, alternateMetaLang) => {
+const fetchLanguageSelectorContent = (placeholdersData, metaLangContent) => {
   const ulElement = ul();
-  if (alternateMetaLang) {
-    const metaLangContent = alternateMetaLang.getAttribute('content');
+  if (metaLangContent) {
     if (metaLangContent && metaLangContent.split(',').length > 0) {
       const langPairs = metaLangContent.split(',');
       langPairs.forEach((pair) => {
@@ -247,10 +245,39 @@ const fetchLanguageSelector = (placeholdersData, alternateMetaLang) => {
   }
   return ulElement;
 };
+
+const getLanguageSelector = (placeholdersData, lang) => {
+  const metaLangContent = getMetadata('alternate-url');
+  const languageMap = fetchLanguageSelectorContent(placeholdersData, metaLangContent);
+
+  const languageSelectorContent = div(
+    { class: 'language-content' },
+    languageMap,
+  );
+  const langSelector = div(
+    {
+      class: 'language-container',
+      onmouseenter: (e) => toggleExpandLanguageSelector(e),
+      onmouseleave: (e) => toggleExpandLanguageSelector(e),
+      onclick: (e) => toggleExpandLanguageSelector(e),
+    },
+    div(
+      {
+        class: metaLangContent ? 'language-toggle' : 'language-text',
+        'aria-expanded': 'false',
+      },
+      window.screen.width >= 768 && placeholdersData[lang] ? placeholdersData[lang] : lang,
+    ),
+  );
+  if (metaLangContent) {
+    langSelector.append(languageSelectorContent);
+  }
+  return langSelector;
+};
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const lang = getLanguage() || 'en';
+  const lang = getLanguage();
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : `/${lang}/nav`;
   const fragment = await loadFragment(navPath);
   const placeholdersData = await fetchLanguagePlaceholders();
@@ -290,32 +317,9 @@ export default async function decorate(block) {
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
-    const alternateMetaLang = document.querySelector("meta[name='alternate-url']");
-    const languageMap = fetchLanguageSelector(placeholdersData, alternateMetaLang);
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
-    const languageSelectorContent = div(
-      { class: 'language-content' },
-      languageMap,
-    );
-    const langSelector = div(
-      {
-        class: 'language-container',
-        onmouseenter: (e) => toggleExpandLanguageSelector(e),
-        onmouseleave: (e) => toggleExpandLanguageSelector(e),
-        onclick: (e) => toggleExpandLanguageSelector(e),
-      },
-      div(
-        {
-          class: alternateMetaLang ? 'language-toggle' : 'language-text',
-          'aria-expanded': 'false',
-        },
-        window.screen.width >= 768 && placeholdersData[lang] ? placeholdersData[lang] : lang,
-      ),
-    );
-    if (alternateMetaLang) {
-      langSelector.append(languageSelectorContent);
-    }
-    contentWrapper.prepend(langSelector);
+    const languageSelector = getLanguageSelector(placeholdersData, lang);
+    contentWrapper.prepend(languageSelector);
   }
 
   // hamburger for mobile
