@@ -31,7 +31,7 @@
       "data-cards",
       "curated-cards",
       "explore-cards",
-      "research-publications-card"
+      "research-publications-cards"
     ]
   },
   {
@@ -56,6 +56,12 @@
     "id": "data-cards",
     "components": [
       "data-card"
+    ]
+  },
+  {
+    "id": "research-publications-cards",
+    "components": [
+      "research-publications-card"
     ]
   }
 ]
