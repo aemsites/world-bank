@@ -8,6 +8,11 @@
         align-items: center;
     }
 
+    .inactive {
+        display: none;
+        visibility: hidden;
+    }
+
     .background-image, .video-container {
         width: 100%;
         position: absolute;
@@ -31,11 +36,6 @@
 
             &:hover {
                 border: 1px solid white;
-            }
-
-            &.inactive {
-                display: none;
-                visibility: hidden;
             }
 
             .controls {
@@ -215,7 +215,7 @@
 
     .swoosh-bg {
         border-radius: 50%;
-        background-color: #004370;
+        background-color: var(--primary-blue-80);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -245,8 +245,36 @@
     .teaser-wrapper {
         margin-top: 20px;
 
+        .teaser-swoosh-wrapper {
+            margin-right: unset;
+            width: 90vw;
+            height: 90vw;
+        }
+
+        .swoosh-layers {
+            height: 100%;
+        }
+
+        .swoosh.first {
+            width: 90vw;
+            height: auto;
+        }
+
+        .swoosh.second {
+            display: none;
+            visibility: hidden;
+        }
+
         .teaser-container {
             justify-content: center;
+        }
+
+        .teaser-title-wrapper {
+            margin-top: 1.5%;
+        }
+
+        .teaser-title {
+            font-size: 5vw;
         }
 
         .video-container {
@@ -259,13 +287,12 @@
             visibility: hidden;
         }
 
-        .swoosh.second {
-            display: none;
-            visibility: hidden;
+        .button {
+            width: 100%;
         }
 
-        .teaser-swoosh-wrapper {
-            margin-right: unset;
+        .button-text {
+            font-size: 3.5vw;
         }
 
     }

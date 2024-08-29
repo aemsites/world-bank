@@ -5,8 +5,8 @@ import {
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function createVideoPlayer(videoSrc) {
-  const pauseIcon = `${window.hlx.codeBasePath}/icons/SM-Icon_Pause.svg`;
-  const playIcon = `${window.hlx.codeBasePath}/icons/MD-Icon_Video.svg`;
+  const pauseIcon = `${window.hlx.codeBasePath}/icons/video-pause.svg`;
+  const playIcon = `${window.hlx.codeBasePath}/icons/video-play.svg`;
 
   // adding newlines after paren makes this harder to read
   /* eslint-disable function-paren-newline */
@@ -31,11 +31,15 @@ function createVideoPlayer(videoSrc) {
 }
 
 function createBackgroundImage(properties) {
-  const imgSrc = properties.imageReference;
-  const imgAlt = properties.alt;
+  let missingSrc;
+  if (!(properties.imageReference)) missingSrc = true;
+  const imgSrc = missingSrc ? properties.imageReference : "";
+  const imgAlt = properties.alt ? properties.imageAlt : "";
   const imgBackground = div({ class: 'background-image' },
     img({ class: 'teaser-background', src: imgSrc, alt: imgAlt }),
   );
+
+  if (missingSrc) imgBackground.classList.add('inactive'); // hide img bg on initial authoring
 
   return imgBackground;
 }
@@ -121,6 +125,8 @@ export default function decorate(block) {
   });
 
   const isVideo = (properties.teaserStyle === 'video');
+  const buttonText = properties['btn-text'] ? properties['btn-text'] : 'Button';
+  const buttonStyle = properties['btn-style'] ? properties['btn-style'] : 'dark-bg';
   const teaser = div({ class: 'teaser-container' },
     isVideo ? createVideoPlayer(properties.videoReference) : createBackgroundImage(properties),
     div({ class: 'teaser-swoosh-wrapper' },
@@ -132,19 +138,19 @@ export default function decorate(block) {
       div({ class: 'teaser-title-wrapper' },
         div({ class: 'teaser-title' }),
         div({ class: 'button-container' },
-          a({ id: 'button', href: properties.link, class: `button ${properties['btn-style']}` },
-            span({ class: 'button-text' }, properties['btn-text']),
+          a({ id: 'button', href: properties.link, class: `button ${buttonStyle}` },
+            span({ class: 'button-text' }, buttonText),
           ),
         ),
       ),
     ),
   );
 
-  teaser.querySelector('.teaser-title').innerHTML = properties.teaserBlurb;
+  teaser.querySelector('.teaser-title').innerHTML = properties.teaserBlurb ? properties.teaserBlurb : 'Authorable RTE text';
   block.innerHTML = '';
   block.appendChild(teaser);
 
-  // add observer for video
+  // add observer for video and listeners for play/pause
   if (isVideo) observeVideo(block);
-  attachListeners();
+  if (isVideo) attachListeners();
 }

@@ -618,6 +618,7 @@
       {
         "component": "richtext",
         "valueType": "string",
+        "value": "Your text will show here.",
         "name": "teaserBlurb",
         "label": "Title"
       },
@@ -706,7 +707,7 @@
             "component": "text",
             "valueType": "string",
             "name": "btn-text",
-            "value": "Button text",
+            "value": "Button",
             "label": "Button Text"
           },
           {
