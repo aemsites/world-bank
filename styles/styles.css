@@ -137,7 +137,12 @@
   --text-color: var(--neutrals-100);
   --color-white: #FFF;
   --color-black: #000;
+
+  /* Navigation Menu */
   --input-background-color:#002337;
+  --nav-menu-placeholder-color:#FFFFFF76;
+  --search-input-container-border: #004972;
+  --nav-menu-footer-color: #99b6C7;
 
   /* body sizes */
   --body-font-size-xl: 20px;
@@ -167,6 +172,7 @@
   --screen-width: 1456px;
   --nav-height: 34px;
   --nav-padding: 25px;
+  --nav-menu-overlay-height: 961px;
 
   /* shadows & elevations */
   --section-shadow: 0 2px 4px rgba(0 0 0 10%);

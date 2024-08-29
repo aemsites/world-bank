@@ -181,6 +181,31 @@ export async function fetchLanguagePlaceholders() {
 }
 
 /**
+ * Return the placeholder file specific to language
+ * @returns
+ */
+export async function fetchLanguageNavigation(langCode) {
+  window.navigationData = window.navigationData || {};
+
+  if (!window.navigationData[langCode]) {
+    window.navigationData[langCode] = new Promise((resolve) => {
+      fetch(`${langCode}/navigation.json`)
+        .then((resp) => (resp.ok ? resp.json() : {}))
+        .then((json) => {
+          window.navigationData[langCode] = json.data;
+          resolve(window.navigationData[langCode]);
+        })
+        .catch(() => {
+          window.navigationData[langCode] = {};
+          resolve(window.navigationData[langCode]);
+        });
+    });
+  }
+  const navJsonData = await window.navigationData[langCode];
+  return navJsonData;
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
