@@ -628,7 +628,7 @@
         "label": "Card Type",
         "valueType": "string",
         "required": true,
-        "rootPath": "/content/cq:tags/world-bank",
+        "rootPath": "/content/cq:tags/world-bank/content-type",
         "multi": false
       },
       {
@@ -636,39 +636,37 @@
         "valueType": "string",
         "name": "mini-card-title",
         "value": "",
-        "label": "Title",
-        "description": "Sets the title of the Card"
+        "label": "Title", 
+        "required": true
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "mini-card-date",
         "value": "",
-        "label": "Date",
-        "description": "Sets the description of the Card"
+        "label": "Date"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "mini-card-time",
         "value": "",
-        "label": "Time",
-        "description": "Sets the Time of the Card"
+        "label": "Time"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "mini-card-location",
         "value": "",
-        "label": "Location",
-        "description": "Sets the description of the Card"
+        "label": "Location"
       },
       {
         "component": "text",
         "name": "curated-card-link",
         "value": "",
         "label": "Link",
-        "valueType": "string"
+        "valueType": "string",
+        "required": true
       }
     ]
   }
