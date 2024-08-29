@@ -105,7 +105,7 @@
                 "resourceType": "core/franklin/components/columns/v1/item",
                 "template": {
                   "name": "Column",
-                  "filter": "column"
+                  "model": "column"
                 }
               }
             }
