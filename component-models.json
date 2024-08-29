@@ -384,6 +384,10 @@
           {
             "name": "Neutrals 20",
             "value": "bg-neutrals-20"
+          },
+          {
+            "name": "Neutrals 40 with gradient",
+            "value": "bg-neutrals-20-gradient"
           }
         ]
       },
@@ -596,10 +600,25 @@
         "description": "Sets the description of the page in page meta."
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "show-swoosh",
-        "label": "Show Swoosh on page."
+        "component": "select",
+        "name": "page-swoosh",
+        "value": "",
+        "label": "Page Swoosh",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Swoosh",
+            "value": "page-swoosh-no"
+          },
+          {
+            "name": "Big Curve Swoosh",
+            "value": "page-swoosh-big-curve"
+          },
+          {
+            "name": "Half Curve Swoosh",
+            "value": "page-swoosh-half-curve"
+          }
+        ]
       },
       {
         "component": "text",
