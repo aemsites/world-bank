@@ -27,6 +27,7 @@ module.exports = {
         'explore-card': 7,
         section: 7,
         'mini-card': 7,
+        'research-publications-card': 7,
       },
     ],
   },
