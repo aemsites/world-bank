@@ -18,3 +18,18 @@ export const LEVEL_0 = 'level0';
 export const LEVEL_1 = 'level1';
 export const LEVEL_2 = 'level2';
 export const NAV = 'nav';
+
+/* Language Selector Constants */
+export const LANAGUAGE_TOGGLE_CLASS = 'language-toggle';
+export const LANGUAGE_SELECTOR_META_NAME = 'alternate-url';
+export const LANGUAGE_CONTENT_CLASS = 'language-content';
+export const LANGUAGE_CONTAINER_CLASS = 'language-container';
+export const SHOW_SELECTED_CLASS = 'show-selected';
+export const COMMA_SEPARATOR = ',';
+export const PIPE_SEPARATOR = '|';
+export const TYPE_CLICK = 'click';
+export const LANGUAGE_CONTENT_SELECTOR = 'div.language-content';
+export const LANGUAGE_TOGGLE_SELECTOR = 'div.language-toggle';
+export const ATTR_ARIA_EXPANDED = 'aria-expanded';
+export const CONTENT_EXPANDED = 'nav-item-content-expanded';
+export const CONTENT_EXPANDED_ACTIVE = 'nav-item-expanded-active';
