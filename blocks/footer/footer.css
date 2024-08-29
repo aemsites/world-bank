@@ -1,7 +1,6 @@
 /* Global Footer  */
 footer {
   background-color: var(--primary-blue-100);
-  color: var(--color-white);
   
   .block {
     max-width: var(--screen-width);
@@ -10,36 +9,19 @@ footer {
   }
 
   & a {
-    text-decoration: none;
-    color: var(--color-white);
-    
     &:any-link {
-      text-decoration: none;
       color: var(--color-white);
       font-size: 14px;
       line-height: 17px;
-      font-weight: 400;
       white-space: nowrap;
       padding-left: 24px;
-    }
-
-    &:hover {
-      text-decoration: underline;
-      color: var(--link-hover-color);
     }
   }
 
   & ul { 
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    padding-left: 0;
-    padding-right: 0;
-    
-    & li {
-      list-style: none;
-      padding-left: 0;
-    }
   }
 }
 
@@ -48,27 +30,13 @@ footer {
   display: grid;
   border-bottom: 1px var(--primary-blue-80) solid;
   padding: 44px 0 42px;
-  
-  &  ul li { 
-    & a {
-      text-decoration: none;
-      color: var(--color-white);
-    }
-  }
 
   & a:any-link {
-    white-space: wrap;
     padding-left: 12px;
-  }
-
-  & a:hover {
-    text-decoration: underline;
-    color: var(--link-hover-color);
   }
 
   & .ft-social-list  { /* Footer Top : ITEMS (Logo, Brands, Social links) */
     display:inline-block;
-    margin: auto 0;
 
     & a {
       font-size: 16px;
@@ -80,7 +48,6 @@ footer {
         display:flex;
         flex-wrap: nowrap;
         justify-content: space-between;
-        margin: 0;
     }
 
     &:first-child  { /* Footer Top : Logo */
@@ -98,7 +65,6 @@ footer {
     }
     
     &:last-child { /* Footer Top : Social Links */
-    
       & ul {
         display:flex;
         flex-wrap: nowrap;
@@ -112,7 +78,6 @@ footer {
           max-width: 50px;
           width: 100%;
           height: auto;
-
         }
       }
     }
@@ -139,7 +104,6 @@ html[dir="rtl"] .ft-social-list:first-child  {
 }
 
 /* Footer Main */
-
 .ft-main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -150,32 +114,19 @@ html[dir="rtl"] .ft-social-list:first-child  {
     padding-right: 28px;
     min-width: 20%;
     
-    & a {
+    & a:not(.button) {
       display: inline-block;
       font-size: 16px;
-      font-weight: 400;
       line-height: 22.4px;
       padding: 0 0 20px;
-      text-decoration: none;
-      color: var(--color-white);
-
-      &:hover {
-        text-decoration: underline;
-        color: var(--link-hover-color);
-      }
     }
 
     & p {
       font-size: 26px;
-      color: var(--color-white);
       text-transform: uppercase;
       font-weight: 700;
       line-height: 36.4px;
       margin: 0 0 20px; 
-    
-      & span {
-        font-weight: 400;
-      }
     }
 
     &:nth-child(3)  {
@@ -184,35 +135,9 @@ html[dir="rtl"] .ft-social-list:first-child  {
 
     &:last-child  { /* Footer Main : Newsletter  */ 
       border-left: 1px solid var(--primary-blue-80);
-      border-right: 0;    
       margin: 0;
       min-width: 40%;
       padding: 0 0 0 48px;
-      
-      & ul {
-        padding: 0;
-        margin: 0;
-      }
-
-      & a {
-        background-color: var(--color-white);
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 700;
-        color: var(--input-background-color);
-        cursor: pointer;
-        border-radius: 100px;
-        border: 1px solid var(--color-white);
-        padding: 15px 32px 18px;
-        margin: 0;
-
-        &:hover {
-          text-decoration: none;
-          background-color: var(--background-color);
-          color: var(--primary-blue-80);
-          border: 1px solid var(--primary-blue-50);
-        }
-      }
     }
   }
 }
@@ -227,7 +152,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
 }
 
 /* Footer Bottom : Legal */
-
 .ft-legal {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -237,7 +161,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   margin: auto;
   font-size: 14px;
   line-height: 17px;
-  font-weight: 400;
   
   .ft-legal-list {
     & p {
@@ -256,7 +179,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
 }
 
 /* Tablet */
-
 @media only screen and (width < 1024px) {
   /* Footer Top : Parent DIV contains : (Logo, Brands, Social links) */
   .ft-social {
@@ -264,11 +186,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     grid-template-rows: 1fr;
     grid-gap: 1.5rem;
     padding: 40px 0 32px;
-
-    & a:hover {
-      text-decoration: underline;
-      color: var(--link-hover-color);
-    }
     
     & .ft-social-list  { /* Footer Top : ITEMS (Logo, Brands, Social links) */
       &:first-child {
@@ -295,11 +212,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     grid-gap: 0 1.5rem;
     padding:  32px 0;
     
-    & a:hover {
-      text-decoration: underline;
-      color: var(--link-hover-color);
-    } 
-
     & .ft-main-item {
       padding-bottom: 32px;
       
@@ -324,7 +236,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
       }
 
       & a {
-        padding: 0 0 20px;
+        margin: 0;
       }
     }
   }
@@ -347,29 +259,19 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    justify-content: space-between;
     grid-row-gap: 0;
     padding:  34px 0 60px;
     
-    & ul li {
-      margin: 0 1rem;
-    }
-
     & .ft-legal-list {
       &:first-child {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
         padding: 0 0 32px;
+        text-align: center;
       } 
 
       &:last-child {
         & ul {
-          display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          margin: 0;
-          padding: 0;
 
           & li {
             padding: .5rem 0;
@@ -391,7 +293,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     padding: 28px 0 32px;
     
     & .ft-social-list  { /* Footer Top : ITEMS (Logo, Brands, Social links) */
-      
       &:first-child  { /* Footer Top : Logo */
           border-right: 0;
           border-left: 0;
@@ -489,8 +390,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
         width: 100%;
         
         & ul {
-          display: flex;
-          justify-content: space-between;
           flex-direction: column;
           align-items: center;
         }

@@ -93,7 +93,7 @@ export default async function decorate(block) {
   // decorate footer DOM
   block.textContent = '';
   const section = document.createElement('section');
-  section.className = 'default-content-wrapper';
+  section.className = 'default-content-wrapper section bg-primary-blue-90';
 
   const rows = fragment.firstElementChild.querySelectorAll('.columns-wrapper');
   const classes = ['ft-social', 'ft-main', 'ft-legal'];
