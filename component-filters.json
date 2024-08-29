@@ -30,8 +30,9 @@
       "columns",
       "data-cards",
       "curated-cards",
-      "explore-cards",
-      "mini-cards"
+      "explore-cards",     
+      "mini-cards",
+      "research-publications-cards"
     ]
   },
   {
@@ -62,6 +63,12 @@
     "id": "mini-cards",
     "components": [
       "mini-card"
+    ]
+  },
+  {
+    "id": "research-publications-cards",
+    "components": [
+      "research-publications-card"
     ]
   }
 ]
