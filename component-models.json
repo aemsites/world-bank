@@ -611,5 +611,63 @@
         "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
       }
     ]
+  },
+  {
+    "id": "mini-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mini-card-image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "aem-tag",
+        "name": "mini-card-tag",
+        "label": "Card Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/content-type",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-title",
+        "value": "",
+        "label": "Title", 
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-date",
+        "value": "",
+        "label": "Date"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-time",
+        "value": "",
+        "label": "Time"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-location",
+        "value": "",
+        "label": "Location"
+      },
+      {
+        "component": "text",
+        "name": "curated-card-link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string",
+        "required": true
+      }
+    ]
   }
 ]
