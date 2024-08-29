@@ -611,5 +611,72 @@
         "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
       }
     ]
+  },
+  {
+    "id": "research-publications-card",
+    "fields": [
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+     },
+     {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+     },
+     {
+      "id": "button",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "href",
+          "value": "",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "text",
+          "value": "",
+          "label": "Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "value": "",
+          "label": "Title"
+        },
+        {
+          "component": "select",
+          "name": "type",
+          "value": "",
+          "label": "Type",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "primary",
+              "value": "primary"
+            },
+            {
+              "name": "secondary",
+              "value": "secondary"
+            }
+          ]
+        }
+      ]
+    }
+     
+    ]
   }
 ]
