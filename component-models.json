@@ -133,8 +133,20 @@
                 "value": "columns-divider-variant"
               },
               {
+                "name": "Transform Teaser",
+                "value": "columns-transform-teaser"
+              },
+              {
                 "name": "Feature Card Variation",
                 "value": "columns-feature-card"
+              },
+              {
+                "name": "Image Right Variation",
+                "value": "columns-image-right"
+              },
+              {
+                "name": "Image Left Variation",
+                "value": "columns-image-left"
               }
             ]
           },
