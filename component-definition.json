@@ -281,6 +281,7 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Research Publications Cards",
+                  "model": "research-publications-cards",
                   "filter": "research-publications-cards"
                 }
               }
