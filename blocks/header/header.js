@@ -364,28 +364,22 @@ async function fetchingPlaceholdersData(placeholdersData) {
 }
 const toggleExpandLanguageSelector = (e) => {
   const toggleContainer = e.currentTarget;
-  if (toggleContainer) {
-    const toggler = toggleContainer.querySelector('div.language-toggle');
-    const toggleContent = toggleContainer.querySelector('div.language-content');
-    if (e.type === 'click' && toggleContent) {
-      if (toggleContainer.classList.contains('nav-item-expanded-active')) {
-        toggleContainer.classList.remove('nav-item-expanded-active');
-        toggler.setAttribute('aria-expanded', false);
-        toggleContent.classList.remove('nav-item-content-expanded');
-      } else {
-        toggleContainer.classList.add('nav-item-expanded-active');
-        toggler.setAttribute('aria-expanded', true);
-        toggleContent.classList.add('nav-item-content-expanded');
-      }
-    } else if (e.type === 'mouseenter' && isDesktop.matches && toggleContent) {
-      toggleContainer.classList.add('nav-item-expanded-active');
-      toggler.setAttribute('aria-expanded', true);
-      toggleContent.classList.add('nav-item-content-expanded');
-    } else if (e.type === 'mouseleave' && toggleContent) {
-      toggleContainer.classList.remove('nav-item-expanded-active');
-      toggler.setAttribute('aria-expanded', false);
-      toggleContent.classList.remove('nav-item-content-expanded');
-    }
+  const toggleContent = toggleContainer.querySelector('div.language-content');
+  if (!toggleContainer || !toggleContent) return;
+  const toggler = toggleContainer.querySelector('div.language-toggle');
+  const isExpanded = toggleContainer.classList.contains('nav-item-expanded-active');
+  if (e.type === 'click') {
+    toggleContainer.classList.toggle('nav-item-expanded-active');
+    toggler.setAttribute('aria-expanded', !isExpanded);
+    toggleContent.classList.toggle('nav-item-content-expanded');
+  } else if (e.type === 'mouseenter' && isDesktop.matches) {
+    toggleContainer.classList.add('nav-item-expanded-active');
+    toggler.setAttribute('aria-expanded', true);
+    toggleContent.classList.add('nav-item-content-expanded');
+  } else if (e.type === 'mouseleave') {
+    toggleContainer.classList.remove('nav-item-expanded-active');
+    toggler.setAttribute('aria-expanded', false);
+    toggleContent.classList.remove('nav-item-content-expanded');
   }
 };
 const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCode) => {
