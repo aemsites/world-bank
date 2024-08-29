@@ -6,10 +6,7 @@ footer {
   .block {
     max-width: var(--screen-width);
     margin: auto;
-  
-    & section {
-        padding: 0 var(--section-gutter-space);
-    }
+    padding: 0 var(--section-gutter-space);
   }
 
   & a {
@@ -90,6 +87,10 @@ footer {
       padding-right: 20px;
       border-right: 1px solid var(--primary-blue-80);
       border-left: 0;
+
+      a {
+        padding: 0;
+      }
     }
 
     &:nth-child(2)  { /* Footer Top : Brands */
