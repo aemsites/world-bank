@@ -173,6 +173,11 @@ header .nav-menu-overlay .nav-menu a:visited {
   border-radius: 4px;
 }
 
+.language-content .show-selected{
+  background: var(--neutrals-40);
+  border-radius: 4px;
+}
+
 .header .nav-item-content-expanded > ul{
   list-style: none;
   padding-left: inherit;

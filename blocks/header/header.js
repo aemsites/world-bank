@@ -388,25 +388,35 @@ const toggleExpandLanguageSelector = (e) => {
     }
   }
 };
-const fetchLanguageSelectorContent = (placeholdersData, metaLangContent) => {
+const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCode) => {
   const ulElement = ul();
-  if (metaLangContent) {
-    if (metaLangContent && metaLangContent.split(',').length > 0) {
-      const langPairs = metaLangContent.split(',');
-      langPairs.forEach((pair) => {
-        const [language, url] = pair.split('|').map((part) => part.trim());
-        const languageDisplayText = placeholdersData[language] || language;
-        ulElement.append(
-          li(
-            a(
-              { href: `${url}` },
-              `${languageDisplayText}`,
-            ),
+  if (metaLangContent && metaLangContent.split(',').length > 0) {
+    const langPairs = metaLangContent.split(',');
+    langPairs.forEach((pair) => {
+      const [language, url] = pair.split('|').map((part) => part.trim());
+      const languageDisplayText = placeholdersData[language] || language;
+      ulElement.append(
+        li(
+          { class: `${langCode === language ? 'show-selected' : ''}` },
+          a(
+            { href: `${url}` },
+            `${languageDisplayText}`,
           ),
-        );
-      });
-    }
+        ),
+      );
+    });
+  } else {
+    ulElement.append(
+      li(
+        { class: 'show-selected' },
+        a(
+          { href: window.location.href },
+          `${placeholdersData[langCode] || langCode}`,
+        ),
+      ),
+    );
   }
+
   return ulElement;
 };
 
@@ -547,7 +557,7 @@ function createNavMenu(structuredNav, searchByCountryPlaceholder) {
 
 const getLanguageSelector = (placeholdersData, lang) => {
   const metaLangContent = getMetadata('alternate-url');
-  const languageMap = fetchLanguageSelectorContent(placeholdersData, metaLangContent);
+  const languageMap = fetchLanguageSelectorContent(placeholdersData, metaLangContent, lang);
 
   const languageSelectorContent = div(
     { class: 'language-content' },
@@ -562,15 +572,13 @@ const getLanguageSelector = (placeholdersData, lang) => {
     },
     div(
       {
-        class: metaLangContent ? 'language-toggle' : 'language-text',
+        class: 'language-toggle',
         'aria-expanded': 'false',
       },
       window.screen.width >= 768 && placeholdersData[lang] ? placeholdersData[lang] : lang,
     ),
   );
-  if (metaLangContent) {
-    langSelector.append(languageSelectorContent);
-  }
+  langSelector.append(languageSelectorContent);
   return langSelector;
 };
 export default async function decorate(block) {
