@@ -1,3 +1,7 @@
+export default async function decorate(block) {
+  console.log('live now');
+}
+
 window.addEventListener('load', () => {
     queryEventData();
 })
