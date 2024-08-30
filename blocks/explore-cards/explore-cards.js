@@ -4,8 +4,6 @@ import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import { toCamelCase } from '../../scripts/aem.js';
 
 async function fetchingPlaceholdersData(block) {
-  if (!block) return;
-
   const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
   if (!listOfAllPlaceholdersData) return;
 
@@ -21,8 +19,6 @@ async function fetchingPlaceholdersData(block) {
 }
 
 export default function decorate(block) {
-  if (!block) return;
-
   // Style and append the heading to the main container
   const heading = block.querySelector('.explore-cards > div:first-child');
   if (heading) {
