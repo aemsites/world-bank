@@ -1,1 +1,173 @@
-/* Todo */
+/* Base Styles */
+.signup-wrapper {
+    background-color: #f4f6f9; /* Light grey background */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .signup-content {
+    margin-bottom: 20px;
+  }
+  
+  .signup-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a2b4c; /* Dark blue color */
+  }
+  
+  .signup-heading strong {
+    color: #00457c; /* Darker blue for emphasis */
+  }
+  
+  .signup-description {
+    font-size: 1rem;
+    color: #3d4b66; /* Greyish blue */
+    margin-bottom: 20px;
+  }
+  
+  input[type="email"], 
+  input[type="text"] {
+    width: calc(50% - 10px); /* Equal width for email and first name inputs */
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #d1d9e6;
+    font-size: 1rem;
+  }
+  
+  input[type="email"]:last-child, 
+  input[type="text"]:last-child {
+    margin-right: 0;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .checkbox-group label {
+    font-size: 0.9rem;
+    color: #3d4b66;
+  }
+  
+  button#signup-btn {
+    background-color: #00457c; /* Blue button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button#signup-btn .icon {
+    margin-right: 10px; /* Adjust as per the icon's size */
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  /* Desktop Styles */
+  @media (width >= 992px) {
+    .signup-wrapper {
+      padding: 40px;
+    }
+  
+    .signup-heading {
+      font-size: 2rem;
+    }
+  
+    .signup-description {
+      font-size: 1.125rem;
+      margin-bottom: 30px;
+    }
+  
+    input[type="email"], 
+    input[type="text"] {
+      width: calc(50% - 15px);
+      padding: 15px;
+      font-size: 1.125rem;
+    }
+  
+    button#signup-btn {
+      padding: 15px 30px;
+      font-size: 1.125rem;
+    }
+  }
+  
+  /* Tablet Styles */
+  @media (width >= 768px) and (width <= 991px) {
+    .signup-wrapper {
+      padding: 30px;
+    }
+  
+    .signup-heading {
+      font-size: 1.75rem;
+    }
+  
+    .signup-description {
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+  
+    input[type="email"], 
+    input[type="text"] {
+      width: calc(50% - 10px);
+      padding: 12px;
+      font-size: 1rem;
+    }
+  
+    button#signup-btn {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Mobile Styles */
+  @media (width <= 767px) {
+    .signup-wrapper {
+      padding: 20px;
+    }
+  
+    .signup-content {
+      text-align: center;
+    }
+  
+    .signup-heading {
+      font-size: 1.5rem;
+    }
+  
+    .signup-description {
+      font-size: 0.875rem;
+      margin-bottom: 20px;
+    }
+  
+    .input-group {
+      flex-direction: column;
+    }
+  
+    input[type="email"], 
+    input[type="text"] {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  
+    button#signup-btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      width: 100%;
+    }
+  
+    .checkbox-group {
+      text-align: left;
+      font-size: 0.875rem;
+    }
+  }
+  
