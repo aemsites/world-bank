@@ -24,7 +24,7 @@ async function queryEventData() {
     searchFields: '*',
     top: 10,
     skip: 0,
-    orderby: 'eventStartDate ac'
+    orderby: 'eventStartDate asc'
   }
 
   const response = await fetch(endpoint, {
