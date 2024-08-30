@@ -321,7 +321,7 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
   z-index: 1;
   word-wrap: break-word;
   color: var(--color-white);
-  font-size: 20px;
+  font-size: var(--body-large);
   font-weight: 700;
   text-align: center;
   top: 40px;
@@ -374,7 +374,7 @@ header
 }
 
 .section.nav-sections .default-content-wrapper p {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   color: var(--primary-blue-80);
   text-decoration: underline;
 }
@@ -539,13 +539,13 @@ header nav .nav-tools {
 
 .section.nav-sections .default-content-wrapper h6 {
   margin: 0;
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   padding: 2.5px 14px 2.5px 0;
   border-right: 2px solid var(--primary-blue-50);
 }
 
 .section.nav-tools .default-content-wrapper h6 {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   color: var(--primary-blue-80);
   margin: 0;
   font-weight: normal;
@@ -662,7 +662,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
-    font-size: 40px;
+    font-size: var(--h2-base);
     font-weight: 700;
     line-height: 54.47px;
     text-align: left;
@@ -885,7 +885,7 @@ header nav .nav-tools {
     display: flex;
     gap: 2em;
     margin: 0;
-    font-size: var(--body-font-size-xs);
+    font-size: var(--body-tiny);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -1177,7 +1177,7 @@ header nav .nav-tools {
     .country-list
     a {
     font-family: var(--body-font-family);
-    font-size: var(--body-font-size-m);
+    font-size: var(--body-medium);
     font-weight: 400;
     line-height: 22.4px;
     text-align: left;

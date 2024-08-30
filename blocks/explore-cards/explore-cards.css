@@ -9,14 +9,14 @@
 }
 
 .story-type p {
-    font-size: var(--body-font-size-xs);
+    font-size: var(--body-tiny);
     font-weight: 700;
     line-height: 13.2px;
     letter-spacing: 0.06em;
 }
 
 .card-title p {
-    font-size: var(--heading-font-size-l);
+    font-size: var(--body-large);
     font-weight: 700;
     line-height: 24px;
 }
@@ -26,7 +26,7 @@
 }
 
 .explore-cards  .heading p {
-    font-size: var(--heading-font-size-m);
+    font-size: var(--h2-base);
     line-height: 30.8px;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .story-type {
-    font-size: var(--body-font-size-xs);
+    font-size: var(--body-tiny);
     font-weight: 700;
     line-height: 13.2px;
     letter-spacing: 0.06em;
@@ -105,7 +105,6 @@
 
 @media (width >=768px) {
     .heading p {
-        font-size: var(--heading-font-size-xxl);
         line-height: 35.2px;
     }
 
@@ -121,15 +120,10 @@
         height: 350px;
         min-width: unset;
     }
-
-    .card-title p {
-        font-size: var(--heading-font-size-m);
-    }
 }
 
 @media (width >=1024px) {
     .heading p {
-        font-size: var(--heading-font-size-xxl);
         line-height: 44px;
     }
 
@@ -146,7 +140,6 @@
     }
 
     .card-title p {
-        font-size: var(--heading-font-size-l);
         font-weight: 700;
         line-height: 28.8px;
     }
