@@ -415,7 +415,7 @@
   p:nth-child(2) {
     margin: 15px 0;
     font-weight: 700;
-    font-size: var(--heading-font-size-s);
+    font-size: var(--heading-font-size-xl);
     line-height: 31px;
     text-transform: uppercase;
     color: var(--primary-blue-80);
@@ -469,7 +469,7 @@
 
   .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
   .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
-    font-size: var(--heading-font-size-l);
+    font-size: var(--heading-font-size-xxl);
     line-height: 44px;
   }
 
@@ -495,9 +495,8 @@
   
   .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
   .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
-        font-size: var(--heading-font-size-l);
+        font-size: var(--heading-font-size-xxl);
         line-height: 44px;
   }
-
 }
 }

@@ -16,7 +16,7 @@
 }
 
 .card-title p {
-    font-size: var(--heading-font-size-xs);
+    font-size: var(--heading-font-size-l);
     font-weight: 700;
     line-height: 24px;
 }
@@ -105,7 +105,7 @@
 
 @media (width >=768px) {
     .heading p {
-        font-size: var(--heading-font-size-l);
+        font-size: var(--heading-font-size-xxl);
         line-height: 35.2px;
     }
 
@@ -123,13 +123,13 @@
     }
 
     .card-title p {
-        font-size: var(--heading-font-size-xxs);
+        font-size: var(--heading-font-size-m);
     }
 }
 
 @media (width >=1024px) {
     .heading p {
-        font-size: var(--heading-font-size-l);
+        font-size: var(--heading-font-size-xxl);
         line-height: 44px;
     }
 
@@ -146,7 +146,7 @@
     }
 
     .card-title p {
-        font-size: var(--heading-font-size-xs);
+        font-size: var(--heading-font-size-l);
         font-weight: 700;
         line-height: 28.8px;
     }
