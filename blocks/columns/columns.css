@@ -1,14 +1,12 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  align-items: start;
+  text-align: left;
 }
 
 .columns img {
   width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
 }
 
 .columns > div > .columns-img-col {
@@ -19,9 +17,86 @@
   display: block;
 }
 
-@media (width >= 900px) {
+.columns > div > div > {
+  order: 1;
+}
+
+.columns.columns-transform-teaser > div {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  padding: 72px 0;
+  position: relative;
+}
+
+.columns.columns-transform-teaser > div p {
+  margin: 15px 0;
+}
+
+.columns.columns-divider-variant > div > div > p {
+  margin-top: 0;
+}
+
+.columns.columns-transform-teaser > div p:nth-child(1) {
+  font-size: var(--h2-base);
+  text-transform: uppercase;
+  margin-top: 40px;
+  line-height: 44px;
+}
+
+.columns.columns-transform-teaser > div p:nth-child(3) {
+  display: inline-flex;
+  margin-right: 30px;
+}
+
+.columns.columns-transform-teaser > div p:nth-child(4) {
+  display: inline-flex;
+}
+
+.section.bg-primary-blue-90 .columns.columns-transform-teaser {
+  p:nth-child(3) a{
+    background-color: var(--color-white);
+    color: var(--primary-blue-100);
+    font-size: 16px;
+    margin: 0;
+  }
+
+  p:nth-child(4) a{
+    background-color: var(--transparent);
+    color: var(--color-white);
+    font-size: 16px;
+    border-bottom: 2px solid #FFFFFF4D;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.columns.columns-transform-teaser .columns-img-col {
+  position: absolute;
+  right: 0;
+  top: -110px;
+  z-index: 11;
+}
+
+/* Column alignment */
+.columns.valign-center > div {
+  align-items: center;
+}
+
+.columns.valign-bottom > div {
+  align-items: end;
+}
+
+.columns.halign-center > div {
+  text-align: center;
+}
+
+.columns.halign-bottom > div {
+  text-align: right;
+}
+
+@media (width >= 1024px) {
   .columns > div {
-    align-items: center;
     flex-direction: unset;
     gap: 32px;
   }
@@ -30,4 +105,393 @@
     flex: 1;
     order: unset;
   }
+}
+
+.columns.columns-divider-variant > div > div:first-child > p {
+  font-size: var(--body-huge);
+}
+
+.columns.columns-feature-card {
+  & > div > div {
+    > p:first-child {
+      font-family: var(--heading-font-family);
+      font-size: 28px;
+      line-height: 31px;
+      margin-top: 0;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    .columns-feature-card-thumbnail {
+      > picture {
+        display: block;
+        box-sizing: border-box;
+        overflow: hidden;
+        aspect-ratio: 3 / 2;
+        margin-bottom: 24px;
+
+        img {
+          border-radius: 5px;
+          aspect-ratio: 3/2;
+        }
+      }
+    }
+
+    .columns-feature-card-description {
+      font-family: var(--heading-font-family);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: left;
+      margin: 0;
+      margin-bottom: 4px;
+    }
+
+    .button-container {
+      margin: 0;
+      display: flex;
+
+      a.button {
+        background-color: transparent;
+        color: var(--background-color);
+        border: 0 none;
+        border-radius: 0;
+        padding: 0;
+        padding-top: 12px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid rgb(255 255 255 / 24%);
+        margin: 0;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 700;
+      }
+      
+      a.button:hover {
+        color: var(--background-color);
+      }
+    }
+
+    .columns-feature-card-content:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  & > div > div:last-child {
+    .button-container {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.columns.columns-divider-variant > div > div:last-child {
+  border-left: 2px solid var(--neutrals-20);
+  padding-left: 10px;
+}
+
+@media(width<=1024px) {
+  .bg-primary-blue-90{
+    .columns.columns-transform-teaser  p{
+    &:nth-child(1){
+      font-size: 32px;
+      line-height: 35px;
+    }
+
+    &:nth-child(2){
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    &:nth-child(3) a{
+      display: block;
+      font-size: 14px;
+    }
+
+    &:nth-child(4){
+      display: block;
+    }
+  }
+}
+}
+
+@media (width >= 768px) {
+  /* TODO: Move to main styles after confirmation from Maria */
+  main .section[data-sec-spacing="sec-spacing-64"] {
+    padding: var(--spacing-80) 0;
+  }
+
+  .columns.columns-feature-card {
+    & > div {
+      & > div {
+        display: grid;
+        grid-template-columns: 228px 1fr;
+        grid-template-areas:
+            "title title"
+            "thumbnail description";
+          position: relative;
+          gap: 24px;
+
+        > p:first-child {
+          font-size: 32px;
+          line-height: 35px;
+          grid-area: title;
+        }
+
+        .columns-feature-card-thumbnail {
+          grid-area: thumbnail;
+          margin: 0;
+        }
+
+        .columns-feature-card-content {
+          grid-area: description;
+        }
+
+        .columns-feature-card-description {
+          font-size: 16px;
+          line-height: 22px;
+          margin-bottom: 8px;
+        }
+
+        .button-container {
+          a.button {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+
+        .button-container:last-child {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }  
+}
+
+@media (768px <= width <= 1024px) {
+  .columns.columns-transform-teaser .columns-img-col {
+    width: 50%;
+    right: -65px;
+  }
+}
+
+@media (width < 768px) {
+  .bg-primary-blue-90{
+    margin: 150px 0;
+  
+    .columns.columns-transform-teaser > div{
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      padding: 0;
+
+        div:nth-child(1){
+          grid-row:2;
+          
+          p{
+            &:nth-child(1){
+              font-size: 28px;
+              line-height:30px;
+            }
+
+            &:nth-child(4){
+              display: block;
+            }
+          }
+        }
+
+      .columns-img-col {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: -160px;
+      }
+    }
+  }
+}
+
+@media (width >= 1024px) {
+  .columns.columns-feature-card {
+    & > div {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 98px;
+      align-items: flex-start;
+
+      & > div {
+        display: block;
+
+        > p:first-child {
+          font-size: var(--h2-base);
+          line-height: 44px;
+          min-height: 132px;
+        }
+
+        .columns-feature-card-description {
+          font-size: var(--body-large);
+          line-height: 28px;
+        }
+
+        .button-container {
+          a.button {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  } 
+
+  .columns.columns-divider-variant > div > div:last-child {
+    padding-left: 20px;
+  }
+}
+
+.columns.columns-2-cols.column-layout-33-67 > div > div,
+.columns.columns-2-cols.column-layout-67-33 > div > div,
+.columns.columns-2-cols.column-layout-25-75 > div > div,
+.columns.columns-2-cols.column-layout-75-25 > div > div {
+    flex-basis: 100%;
+    flex-direction: column;
+}
+
+@media (width >= 1024px) {
+    .columns.columns-2-cols.column-layout-33-67 > div,
+    .columns.columns-2-cols.column-layout-67-33 > div,
+    .columns.columns-2-cols.column-layout-25-75 > div,
+    .columns.columns-2-cols.column-layout-75-25 > div {
+        flex-direction: row;
+  }
+
+  .columns.columns-2-cols.column-layout-33-67 > div > div:first-child,
+  .columns.columns-2-cols.column-layout-67-33 > div > div:last-child {
+    flex-basis: 33%;
+  }
+
+  .columns.columns-2-cols.column-layout-33-67 > div > div:last-child,
+  .columns.columns-2-cols.column-layout-67-33 > div > div:first-child {
+    flex-basis: 67%;
+  }
+
+  .columns.columns-2-cols.column-layout-25-75 > div > div:first-child,
+  .columns.columns-2-cols.column-layout-75-25 > div > div:last-child {
+    flex-basis: 25%;
+  }
+
+  .columns.columns-2-cols.column-layout-25-75 > div > div:last-child,
+  .columns.columns-2-cols.column-layout-75-25 > div > div:first-child {
+    flex-basis: 75%;
+  }
+}
+
+/* CSS starts for Image left and image right variation */
+
+.columns.columns-image-left,
+.columns.columns-image-right {
+  /* stylelint-disable-next-line no-descending-specificity */
+  & > div {
+  align-items: flex-start;
+  /* stylelint-disable-next-line no-descending-specificity */
+  img {
+    border-radius: 8px;
+  }
+}
+}
+
+.columns.columns-image-right>div>div:nth-child(1),
+.columns.columns-image-left>div>div:nth-child(2) {
+  p:nth-child(1) {
+    font-size: var(--body-small);
+    line-height: 110%;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--neutrals-70);
+    font-weight: 800;
+  }
+
+  p:nth-child(2) {
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: var(--h2-base);
+    line-height: 31px;
+    text-transform: uppercase;
+    color: var(--primary-blue-80);
+
+    strong {
+      font-weight: 400;
+    }
+  }
+}
+
+.columns.columns-image-right>div>div:nth-child(2),
+.columns.columns-image-left>div>div:nth-child(1) {
+  p:nth-child(1) {
+    margin-bottom: 3px;
+  }
+
+  p:nth-child(2) {
+    font-size: var(--body-small);
+    font-weight: 400;
+    line-height: 16.8px;
+    margin-top: 0;
+  }
+}
+
+.columns.columns-image-left {
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &>div {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (width >=768px) {
+  .columns.columns-image-right,
+  .columns.columns-image-left {
+    &>div {
+      align-items: center;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+}
+
+@media (width >=1024px) {
+  .columns.columns-image-right, .columns.columns-image-left{
+    &>div {
+      gap: 80px;
+
+    }
+  }
+
+  .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
+  .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
+    font-size: var(--h2-base);
+    line-height: 44px;
+  }
+
+}
+
+@media (width >=768px) {
+  .columns.columns-image-right,
+  .columns.columns-image-left {
+    &>div {
+      align-items: center;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+@media (width >=1024px) {
+  .columns.columns-image-right, .columns.columns-image-left{
+    &>div {
+      gap: 80px;
+      
+    }
+  }
+  
+  .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
+  .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
+        font-size: var(--h2-base);
+        line-height: 44px;
+  }
+}
 }

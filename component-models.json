@@ -114,33 +114,127 @@
     "id": "columns",
     "fields": [
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
         "value": "",
-        "label": "Column Variants",
-        "description": "Different column variants",
+        "label": "Column Styles",
         "valueType": "string",
+        "maxSize": 4,
         "options": [
           {
-            "name": "default",
-            "value": ""
+            "name": "Variations",
+            "children": [
+              {
+                "name": "Default",
+                "value": "columns-default-variant"
+              },
+              {
+                "name": "Divider Variant",
+                "value": "columns-divider-variant"
+              },
+              {
+                "name": "Transform Teaser",
+                "value": "columns-transform-teaser"
+              },
+              {
+                "name": "Feature Card Variation",
+                "value": "columns-feature-card"
+              },
+              {
+                "name": "Image Right Variation",
+                "value": "columns-image-right"
+              },
+              {
+                "name": "Image Left Variation",
+                "value": "columns-image-left"
+              }
+            ]
           },
           {
-            "name": "divider-variant",
-            "value": "columns-divider-variant"
+            "name": "Vertical Alignment",
+            "children": [
+              {
+                "name": "Top (default)",
+                "value": "valign-top"
+              },
+              {
+                "name": "Center",
+                "value": "valign-center"
+              },
+              {
+                "name": "Bottom",
+                "value": "valign-bottom"
+              }
+            ]
           },
           {
-            "name": "feature-card",
-            "value": "columns-feature-card"
+            "name": "Horizontal Alignment",
+            "children": [
+              {
+                "name": "Left (default)",
+                "value": "halign-default"
+              },
+              {
+                "name": "Center",
+                "value": "halign-center"
+              },
+              {
+                "name": "Right",
+                "value": "halign-right"
+              }
+            ]
+          },
+          {
+            "name": "2 Col Desktop Layout",
+            "children": [
+              {
+                "name": "50% - 50% (default)",
+                "value": "columns-layout-default"
+              },
+              {
+                "name": "33% - 67%",
+                "value": "column-layout-33-67"
+              },
+              {
+                "name": "67% - 33%",
+                "value": "column-layout-67-33"
+              },
+              {
+                "name": "25% - 75%",
+                "value": "column-layout-25-75"
+              },
+              {
+                "name": "75% - 25%",
+                "value": "column-layout-75-25"
+              }
+            ]
           }
         ]
       },
       {
-        "component": "text",
+        "component": "select",
         "valueType": "number",
         "name": "columns",
-        "value": "",
-        "label": "Columns"
+        "value": "2",
+        "label": "Columns",
+        "options": [
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "5",
+            "value": "5"
+          }
+        ]
       },
       {
         "component": "text",
@@ -174,43 +268,134 @@
     "id": "section",
     "fields": [
       {
-        "component": "multiselect",
-        "name": "style",
+        "component": "select",
+        "name": "sec-spacing",
         "value": "",
-        "label": "Section style",
+        "label": "Section Spacing (padding)",
+        "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
           {
-            "name": "Primary Background",
-            "value": "bg-primary"
+            "name": "Default spacing",
+            "value": "sec-spacing-default"
           },
           {
-            "name": "Secondary Background",
-            "value": "bg-secondary"
+            "name": "No space / padding",
+            "value": "section-none"
           },
           {
-            "name": "Primary Blue Background",
-            "value": "bg-primary-blue"
+            "name": "Spacing tiny",
+            "value": "section-tiny"
           },
           {
-            "name": "-----",
-            "value": "--"
+            "name": "Spacing xxsmall",
+            "value": "section-xxsmall"
           },
           {
-            "name": "Swish - Left",
-            "value": "swish-left"
+            "name": "Spacing xsmall",
+            "value": "section-xsmall"
           },
           {
-            "name": "Swish - Right",
-            "value": "swish-right"
+            "name": "Spacing regular",
+            "value": "section-regular"
+          },
+          {
+            "name": "Spacing small",
+            "value": "section-small"
+          },
+          {
+            "name": "Spacing medium",
+            "value": "section-medium"
+          },
+          {
+            "name": "Spacing large",
+            "value": "section-large"
+          },
+          {
+            "name": "Spacing xlarge",
+            "value": "section-xlarge"
+          },
+          {
+            "name": "Spacing xxlarge",
+            "value": "section-xxlarge"
+          },
+          {
+            "name": "Spacing huge",
+            "value": "section-huge"
+          },
+          {
+            "name": "Spacing xhuge",
+            "value": "section-xhuge"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "sec-swoosh",
+        "value": "",
+        "label": "Section Swoosh",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Swoosh",
+            "value": "sec-swoosh-none"
+          },
+          {
+            "name": "Left Center Swoosh",
+            "value": "sec-swoosh-type1"
+          },
+          {
+            "name": "Left Top Swoosh",
+            "value": "sec-swoosh-type3"
+          },
+          {
+            "name": "Right Top Swoosh",
+            "value": "sec-swoosh-type2"
+          },
+          {
+            "name": "Primary Blue 90 theme Swoosh",
+            "value": "sec-swoosh-primary-blue-90"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "style",
+        "value": "",
+        "label": "Section Background color",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Transparent / White / Default",
+            "value": "bg-default"
+          },
+          {
+            "name": "Primary Blue 90",
+            "value": "bg-primary-blue-90"
+          },
+          {
+            "name": "Primary Blue 70",
+            "value": "bg-primary-blue-70"
+          },
+          {
+            "name": "Neutrals 10",
+            "value": "bg-neutrals-10"
+          },
+          {
+            "name": "Neutrals 20",
+            "value": "bg-neutrals-20"
+          },
+          {
+            "name": "Neutrals 40 with gradient",
+            "value": "bg-neutrals-40-gradient"
           }
         ]
       },
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "fullwidth",
-        "label": "Show as full width container"
+        "name": "bg-inside-container",
+        "label": "Show background color inside container."
       }
     ]
   },
@@ -255,7 +440,7 @@
     ]
   },
   {
-    "id": "data-cards",
+    "id": "data-card",
     "fields": [
      {
         "component": "aem-tag",
@@ -294,20 +479,13 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "curated-card-image",
         "label": "Image",
         "multi": false
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
         "component": "aem-tag",
-        "name": "tags",
+        "name": "curated-card-tags",
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank",
@@ -316,7 +494,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
+        "name": "curated-card-title",
         "value": "",
         "label": "Title",
         "description": "Sets the title of the Card"
@@ -324,14 +502,14 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "description",
+        "name": "curated-card-description",
         "value": "",
         "label": "Description",
         "description": "Sets the description of the Card"
       },
       {
         "component": "text",
-        "name": "link",
+        "name": "curated-card-link",
         "value": "",
         "label": "Link",
         "valueType": "string"
@@ -346,21 +524,8 @@
         "valueType": "string",
         "name": "title",
         "value": "",
-        "label": "Title"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "fileReference",
-        "label": "Background Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
-        "label": "Alt Text"
+        "label": "Main heading",
+        "required": true
       }
     ]
   },
@@ -371,65 +536,246 @@
         "component": "reference",
         "valueType": "string",
         "name": "fileReference",
-        "label": "Thumbnail",
-        "multi": false
+        "label": "Card Image",
+        "required": true,
+        "multi": false,
+        "rootPath": "/content/dam/world-bank"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "alt",
         "value": "Default alt",
-        "label": "Alt Text"
-      },
-      {
-        "component": "select",
-        "name": "type",
-        "value": "",
-        "label": "Content type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Podcast / Audio",
-            "value": "podcast-audio"
-          },
-          {
-            "name": "Video",
-            "value": "video"
-          },
-          {
-            "name": "Text",
-            "value": "text"
-          }
-        ]
+        "label": "Alt text"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",
+        "required": true,
         "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "value": "",
-        "label": "Description",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-tag",
-        "name": "tags",
-        "label": "Tag",
-        "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "link",
         "value": "",
-        "label": "Link"
+        "label": "Link",
+        "required": true
+      },
+      {
+        "component": "aem-tag",
+        "name": "content-type",
+        "label": "Content Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/content-type"
+      },
+      {
+        "component": "aem-tag",
+        "name": "story-type",
+        "label": "Story Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/story-type"
       }
+    ]
+  },
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:title",
+        "label": "Page Title",
+        "description": "Sets the title of the page in page meta."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:description",
+        "label": "Page Description",
+        "description": "Sets the description of the page in page meta."
+      },
+      {
+        "component": "select",
+        "name": "page-swoosh",
+        "value": "",
+        "label": "Page Swoosh",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Swoosh",
+            "value": "page-swoosh-no"
+          },
+          {
+            "name": "Big Curve Swoosh",
+            "value": "page-swoosh-big-curve"
+          },
+          {
+            "name": "Half Curve Swoosh",
+            "value": "page-swoosh-half-curve"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alternate-url",
+        "multi": true,
+        "value": "",
+        "label": "Language URL(s)",
+        "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
+      }
+    ]
+  },
+  {
+    "id": "mini-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mini-card-image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "aem-tag",
+        "name": "mini-card-tag",
+        "label": "Card Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/content-type",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-title",
+        "value": "",
+        "label": "Title", 
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-date",
+        "value": "",
+        "label": "Date"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-time",
+        "value": "",
+        "label": "Time"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-location",
+        "value": "",
+        "label": "Location"
+      },
+      {
+        "component": "text",
+        "name": "curated-card-link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "research-publications-cards",
+    "fields": [
+      {
+      "component": "richtext",
+      "valueType": "string",
+      "name": "title",
+      "value": "",
+      "label": "Title",
+      "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttontext",
+        "label": "Button Text",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttonlink",
+        "label": "Button Link",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "research-publications-card",
+    "fields": [   
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Thumbnail Alt Text",
+        "required": true
+      },
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "required": true
+     },
+     {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "required": true
+     },
+     {
+      "component": "text",
+      "valueType": "string",
+      "name": "href",
+      "value": "",
+      "label": "Title Link",
+      "required": true
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "buttontext",
+      "label": "Button Text",
+      "value": "",
+      "required": true
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "buttonlink",
+      "label": "Button Link",
+      "value": "",
+      "required": true
+    }
     ]
   }
 ]

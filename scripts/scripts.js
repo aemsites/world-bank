@@ -14,6 +14,7 @@ import {
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
+export const TAG_ROOT = 'world-bank:';
 
 let lang;
 
@@ -177,6 +178,31 @@ export async function fetchLanguagePlaceholders() {
     }
   }
   return {}; // default to empty object
+}
+
+/**
+ * Return the placeholder file specific to language
+ * @returns
+ */
+export async function fetchLanguageNavigation(langCode) {
+  window.navigationData = window.navigationData || {};
+
+  if (!window.navigationData[langCode]) {
+    window.navigationData[langCode] = new Promise((resolve) => {
+      fetch(`${langCode}/navigation.json`)
+        .then((resp) => (resp.ok ? resp.json() : {}))
+        .then((json) => {
+          window.navigationData[langCode] = json.data;
+          resolve(window.navigationData[langCode]);
+        })
+        .catch(() => {
+          window.navigationData[langCode] = {};
+          resolve(window.navigationData[langCode]);
+        });
+    });
+  }
+  const navJsonData = await window.navigationData[langCode];
+  return navJsonData;
 }
 
 /**
