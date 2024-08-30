@@ -252,69 +252,39 @@
                   "name": "Explore Cards",
                   "model": "explore-cards",
                   "filter": "explore-cards",
-<<<<<<< HEAD
-=======
                   "title": "<p>Explore Development Stories <strong>From Around the World</strong></p>",
->>>>>>> b5a42417e95118af04e0cefe5e48949c66053590
                   "item1": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Explore Card",
                     "model": "explore-card",
-<<<<<<< HEAD
-                    "fileReference": "/content/dam/world-bank/sample/3000x2400.svg",
-                    "alt": "image alt",
-                    "title": "Green Jobs. Learn What They Are. And Why We’re Invested.",
-                    "link": "/content/world-bank/global/en",
-                    "content-type": "/content/cq:tags/world-bank/content-type/audio",
-                    "story-type": "/content/cq:tags/world-bank/story-type/the-development-podcast"
-=======
                     "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
                     "alt": "Alt text",
                     "title": "Green Jobs. Learn What They Are. And Why We’re Invested.",
                     "link": "/content/world-bank/global/en",
                     "content-type": "world-bank:content-type/audio",
                     "story-type": "world-bank:story-type/immersive-stories"
->>>>>>> b5a42417e95118af04e0cefe5e48949c66053590
                   },
                   "item2": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Explore Card",
                     "model": "explore-card",
-<<<<<<< HEAD
-                    "fileReference": "/content/dam/world-bank/sample/3000x2400.svg",
-                    "alt": "image alt",
-                    "title": "Inside Somalia: Signs of Hope on the Road to Recovery.",
-                    "link": "/content/world-bank/global/en",
-                    "content-type": "/content/cq:tags/world-bank/content-type/blog",
-                    "story-type": "/content/cq:tags/world-bank/story-type/immersive-stories"
-=======
                     "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
                     "alt": "Alt text",
                     "title": "Inside Somalia: Signs of Hope on the Road to Recovery.",
                     "link": "/content/world-bank/global/en",
                     "content-type": "world-bank:content-type/article",
                     "story-type": "world-bank:story-type/the-development-podcast"
->>>>>>> b5a42417e95118af04e0cefe5e48949c66053590
                   },
                   "item3": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Explore Card",
                     "model": "explore-card",
-<<<<<<< HEAD
-                    "fileReference": "/content/dam/world-bank/sample/3000x2400.svg",
-                    "alt": "image alt",
-                    "title": "Explore Card Title",
-                    "link": "/content/world-bank/global/en",
-                    "content-type": "/content/cq:tags/world-bank/content-type/video",
-                    "story-type": "/content/cq:tags/world-bank/story-type/expert-answers"
-=======
                     "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
                     "alt": "Alt text",
                     "title": "Discover the Link Between Plastic Pollution and Poverty.",
                     "link": "/content/world-bank/global/en",
                     "content-type": "world-bank:content-type/video",
                     "story-type": "world-bank:story-type/expert-answers"
->>>>>>> b5a42417e95118af04e0cefe5e48949c66053590
                   }
                 }
               }
