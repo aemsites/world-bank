@@ -42,7 +42,7 @@
     }
 
     .data-card-description {
-      font-size: 20px;
+      font-size: var(--body-large);
       font-weight: 400;
       line-height: 28px;
       text-align: left;

@@ -76,16 +76,150 @@ header .nav-menu-overlay .nav-menu {
   color: var(--neutrals-40);
 }
 
-header .nav-menu-overlay .nav-menu::-webkit-scrollbar {
+
+/** Lanaguge Selector CSS **/
+.language-container {
+  position: relative;
+  display: inline-block;
+  max-width: 68px;
+  height: 26px;
+  padding: 0 0 4px;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 22px;
+  text-align: left;
+  opacity: 1;
+}
+
+/* Dropdown Text */
+.language-toggle {
+  padding-right: 6px;
+  height: 22px;
+  line-height: 26px;
+  color: var(--primary-blue-80);
+  cursor: pointer;
+}
+
+.language-text{
+  height: 22px;
+  line-height: 26px;
+  color: var(--primary-blue-80);
+  cursor: default;
+  position: absolute;
+}
+
+/* Dropdown Arrow */
+.language-toggle::after {
+  right: -8px;
+  top: 16px;
+  display: flex;
+  width: 6px;
+  height: 6px;
+  margin-top: -8px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  content: "";
+  box-sizing: content-box;
+  transform: rotateZ(45deg);
+  position: absolute;
+}
+
+.language-toggle[aria-expanded="true"]::after {
+  transform: rotateZ(-135deg);
+  right: -8px;
+  top: 20px;
+}
+
+/* Dropdown Menu */
+.language-content {
   display: none;
+  box-shadow: 0 8px 16px 0 var(--color-black);
 }
 
 header .nav-menu-overlay .nav-menu a {
   text-decoration: none;
 }
 
+.header .nav-item-content-expanded > ul > li a {
+  color: var(--primary-blue-80);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.header .nav-item-content-expanded {
+  padding: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  z-index: 11;
+  left: 0;
+  top: 100%;
+  min-width: 100%;
+  width: min-content;
+  background: var(--neutrals-10);
+  list-style: none;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
 header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
+}
+
+.header .nav-item-content-expanded > ul > li a:hover {
+  background: var(--neutrals-40);
+  border-radius: 4px;
+}
+
+.language-content .show-selected{
+  background: var(--neutrals-40);
+  border-radius: 4px;
+}
+
+.header .nav-item-content-expanded > ul{
+  list-style: none;
+  padding-left: inherit;
+}
+
+@media (width < 768px) {
+  .language-container {
+    max-width: 35.49px;
+    height: 26px;
+  }
+
+  .language-toggle {
+    width: 21px;
+    text-transform: uppercase;
+    margin-left: 12px;
+  }
+
+  .language-text {
+    width: 21px;
+    text-transform: uppercase;
+  }
+
+  .nav-item-content-expanded > ul > li {
+    text-transform: uppercase;
+  }
+
+  .header .nav-item-content-expanded {
+    left: 10px;
+  }
+}
+
+@media (width >=768px) {
+  .language-text {
+    right: 0;
+  }
+}
+
+/* End of language selector styles */
+
+
+header .nav-menu-overlay .nav-menu::-webkit-scrollbar {
+  display: none;
 }
 
 header .nav-menu-overlay ul li {
@@ -99,7 +233,7 @@ header .nav-menu-overlay .nav-menu-column.left > ul {
 
 header .nav-menu-overlay .nav-menu-column.left ul {
   font-family: var(--body-font-family);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 38.13px;
   margin: 0;
@@ -321,7 +455,7 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
   z-index: 1;
   word-wrap: break-word;
   color: var(--color-white);
-  font-size: 20px;
+  font-size: var(--body-large);
   font-weight: 700;
   text-align: center;
   top: 40px;
@@ -374,7 +508,7 @@ header
 }
 
 .section.nav-sections .default-content-wrapper p {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   color: var(--primary-blue-80);
   text-decoration: underline;
 }
@@ -512,7 +646,7 @@ header nav .nav-brand img {
 .nav-tools .default-content-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
 }
 
@@ -539,13 +673,13 @@ header nav .nav-tools {
 
 .section.nav-sections .default-content-wrapper h6 {
   margin: 0;
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   padding: 2.5px 14px 2.5px 0;
   border-right: 2px solid var(--primary-blue-50);
 }
 
 .section.nav-tools .default-content-wrapper h6 {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   color: var(--primary-blue-80);
   margin: 0;
   font-weight: normal;
@@ -586,7 +720,7 @@ header nav .nav-tools {
   align-items: center;
   justify-content: center;
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   margin-top: 35px;
   border-top: 2px solid var(--neutrals-20);
@@ -885,7 +1019,7 @@ header nav .nav-tools {
     display: flex;
     gap: 2em;
     margin: 0;
-    font-size: var(--body-font-size-xs);
+    font-size: var(--body-tiny);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -1177,7 +1311,7 @@ header nav .nav-tools {
     .country-list
     a {
     font-family: var(--body-font-family);
-    font-size: var(--body-font-size-m);
+    font-size: var(--body-medium);
     font-weight: 400;
     line-height: 22.4px;
     text-align: left;

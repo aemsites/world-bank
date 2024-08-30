@@ -284,6 +284,10 @@
             "value": "section-none"
           },
           {
+            "name": "Spacing tiny",
+            "value": "section-tiny"
+          },
+          {
             "name": "Spacing xxsmall",
             "value": "section-xxsmall"
           },
@@ -292,24 +296,20 @@
             "value": "section-xsmall"
           },
           {
-            "name": "Spacing small",
-            "value": "section-small"
-          },
-          {
-            "name": "Spacing 20px",
-            "value": "sec-spacing-20"
-          },
-          {
             "name": "Spacing regular",
             "value": "section-regular"
           },
           {
-            "name": "Spacing 28px",
-            "value": "sec-spacing-28"
+            "name": "Spacing small",
+            "value": "section-small"
           },
           {
             "name": "Spacing medium",
             "value": "section-medium"
+          },
+          {
+            "name": "Spacing large",
+            "value": "section-large"
           },
           {
             "name": "Spacing xlarge",
@@ -387,7 +387,7 @@
           },
           {
             "name": "Neutrals 40 with gradient",
-            "value": "bg-neutrals-20-gradient"
+            "value": "bg-neutrals-40-gradient"
           }
         ]
       },
@@ -687,6 +687,95 @@
         "valueType": "string",
         "required": true
       }
+    ]
+  },
+  {
+    "id": "research-publications-cards",
+    "fields": [
+      {
+      "component": "richtext",
+      "valueType": "string",
+      "name": "title",
+      "value": "",
+      "label": "Title",
+      "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttontext",
+        "label": "Button Text",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttonlink",
+        "label": "Button Link",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "research-publications-card",
+    "fields": [   
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Thumbnail Alt Text",
+        "required": true
+      },
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "required": true
+     },
+     {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "required": true
+     },
+     {
+      "component": "text",
+      "valueType": "string",
+      "name": "href",
+      "value": "",
+      "label": "Title Link",
+      "required": true
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "buttontext",
+      "label": "Button Text",
+      "value": "",
+      "required": true
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "buttonlink",
+      "label": "Button Link",
+      "value": "",
+      "required": true
+    }
     ]
   }
 ]
