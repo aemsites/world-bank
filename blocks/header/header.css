@@ -233,9 +233,9 @@ header .nav-menu-overlay .nav-menu-column.left > ul {
 
 header .nav-menu-overlay .nav-menu-column.left ul {
   font-family: var(--body-font-family);
-  font-size: 24px;
+  font-size: var(--size-28);
   font-weight: 700;
-  line-height: 38.13px;
+  line-height: 38px;
   margin: 0;
   text-align: left;
   display: flex;
@@ -372,7 +372,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country span {
 }
 
 header .nav-menu-overlay .nav-menu-column.right > ul {
-  font-size: 16px;
+  font-size: var(--size-16);
   color: var(--color-white);
   line-height: 22px;
   letter-spacing: 0.06em;
@@ -384,7 +384,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
 }
 
 header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
-  font-size: 16px;
+  font-size: var(--size-16);
   color: var(--neutrals-40);
   margin-top: 10px;
   font-family: var(--body-font-family);
@@ -476,7 +476,7 @@ header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li > ul {
   display: flex;
   flex-direction: column;
   gap: 13px;
-  font-size: 16px;
+  font-size: var(--size-16);
   padding-left: 20px;
   margin-top: 10px;
 }
@@ -546,7 +546,7 @@ header
   input[type="text"]::placeholder {
   color: var(--nav-menu-placeholder-color);
   font-family: var(--body-font-family);
-  font-size: 16px;
+  font-size: var(--size-16);
 }
 
 /* hamburger */
@@ -796,7 +796,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
-    font-size: var(--h2-base);
+    font-size: var(--size-40);
     font-weight: 700;
     line-height: 54.47px;
     text-align: left;
@@ -959,7 +959,7 @@ header nav .nav-tools {
     input[type="text"]::placeholder {
     color: var(nav-menu-placeholder-color);
     font-family: var(--body-font-family);
-    font-size: 16px;
+    font-size: var(--size-16);
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country div {
@@ -1359,7 +1359,7 @@ header nav .nav-tools {
     input[type="text"]::placeholder {
     color: var(--nav-menu-placeholder-color);
     font-family: var(--body-font-family);
-    font-size: 16px;
+    font-size: var(--size-16);
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country {
