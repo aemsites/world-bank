@@ -252,7 +252,7 @@
                   "name": "Explore Cards",
                   "model": "explore-cards",
                   "filter": "explore-cards",
-                  "title": "Explore Development Stories &lt;strong&gt;From Around the World&lt;/strong&gt;",
+                  "title": "Explore Development Stories &#60;strong&#62;From Around the World&#60;/strong&#62;",
                   "item1": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Explore Card",
