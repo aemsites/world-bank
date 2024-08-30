@@ -90,7 +90,7 @@
   --purple-80: #410179;
   --purple-90: #260147;
 
-  /* spacing (Padding & Margins) (Todo: open questions, values subject to change) */
+  /* spacing (Padding & Margins) */
   --spacing-0: 0;
   --spacing-2: 2px;
   --spacing-4: 4px;
@@ -108,20 +108,54 @@
   --spacing-80: 80px;
   --spacing-96: 96px;
 
+  /* Typography spacing */
+  --size-72: 72px;
+  --size-60: 60px;
+  --size-48: 48px;
+  --size-40: 40px;
+  --size-36: 36px;
+  --size-28: 28px;
+  --size-24: 24px;
+  --size-20: 20px;
+  --size-16: 16px;
+  --size-14: 14px;
+  --size-12: 12px;
+
+  /* Heading variables */
+  --h1-huge: var(--size-44);
+  --h1-large: var(--size-36);
+  --h1-base: var(--size-24);
+  --h2-large: var(--size-28);
+  --h2-base: var(--size-28);
+  --h3-large: var(--size-24);
+  --h3-base: var(--size-24);
+  --heading-label-large: var(--size-36);
+  --heading-label-base: var(--size-28);
+  --heading-label-small: var(--size-28);
+  --heading-label-tiny: var(--size-24);
+
+  /* Body variables */
+  --default: var(--size-20);
+  --body-huge: var(--size-20);
+  --body-large: var(--size-18);
+  --body-medium: var(--size-16);
+  --body-small: var(--size-14);
+  --body-tiny: var(--size-12);
+
   /* Spacing - mobile */
   --none: var(--spacing-0);
   --xtiny: var(--spacing-2);
-  --tiny: var(--spacing-2);
+  --tiny: var(--spacing-4);
   --xxsmall: var(--spacing-4);
-  --xsmall: var(--spacing-8);
-  --small: var(--spacing-12);
+  --xsmall: var(--spacing-4);
+  --small: var(--spacing-8);
   --regular: var(--spacing-16);
   --medium: var(--spacing-20);
   --large: var(--spacing-24);
-  --xlarge: var(--spacing-32);
-  --xxlarge: var(--spacing-40);
-  --huge: var(--spacing-48);
-  --xhuge: var(--spacing-56);
+  --xlarge: var(--spacing-28);
+  --xxlarge: var(--spacing-32);
+  --huge: var(--spacing-40);
+  --xhuge: var(--spacing-48);
 
   /* fonts */
   --body-font-family: 'Open Sans', roboto, roboto-fallback;
@@ -145,28 +179,13 @@
   --nav-menu-footer-color: #99b6C7;
 
   /* body sizes */
-  --body-font-size-xl: 20px;
-  --body-font-size-l: 18px;
-  --body-font-size-m: 16px;
-  --body-font-size-s: 14px;
-  --body-font-size-xs: 12px;
+  --body-font-size: var(--default);
   --body-font-size-citation: 12px;
-  --body-font-size: 18px;
 
   /* eyebrow styles */
   --eyebrow-font-size-l: 14px;
   --eyebrow-font-size-m: 14px;
   --eyebrow-font-size-s: 12px;
-
-  /* heading sizes - as per interactive strategies */
-  --heading-font-size-xxl: 44px;
-  --heading-font-size-xl: 36px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 28px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 20px;
-  --heading-font-size-xxs: 18px;
-  --heading-font-size-xxxs: 14px;
 
   /* Screen variables */
   --screen-width: 1456px;
@@ -194,21 +213,29 @@
 */
 @media (width >= 768px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 40px;
-    --heading-font-size-m: 36px;
-    --heading-font-size-s: 28px;
-    --heading-font-size-xs: 24px;
-    --heading-font-size-xxs: 20px;
-    --heading-font-size-xxxs: 16px;
-  
+    /* typography specific - h1..h6, body ..etc */
+    --h1-huge: var(--size-60);
+    --h1-large: var(--size-44);
+    --h1-base: var(--size-36);
+    --h2-large: var(--size-32);
+    --h2-base: var(--size-32);
+    --h3-large: var(--size-28);
+    --h3-base: var(--size-28);
+    --heading-label-large: var(--size-36);
+    --heading-label-base: var(--size-28);
+    --heading-label-small: var(--size-28);
+    --heading-label-tiny: var(--size-24);
+
+    /* Body variables */
+    --default: var(--size-20);
+    --body-huge: var(--size-20);
+    --body-large: var(--size-18);
+    --body-medium: var(--size-14);
+    --body-small: var(--size-14);
+    --body-tiny: var(--size-12);
+
     /* body styles */
-    --body-font-size-xl: 24px;
-    --body-font-size-l: 20px;
-    --body-font-size-m: 16px;
-    --body-font-size-s: 14px;
-    --body-font-size-xs: 12px;
+    --body-font-size: var(--default);
     --body-font-size-citation: 12px;
     
     /* eyebrow styles */
@@ -222,27 +249,49 @@
     /* Screen variables */
     --nav-height: 44px;
   
-    /* Spacing - tablet (TODO: This may change - discussion ongoing) */
+    /* Spacing - tablet */
     --none: var(--spacing-0);
     --xtiny: var(--spacing-2);
-    --tiny: var(--spacing-2);
+    --tiny: var(--spacing-4);
     --xxsmall: var(--spacing-4);
     --xsmall: var(--spacing-8);
     --small: var(--spacing-12);
-    --regular: var(--spacing-16);
-    --medium: var(--spacing-20);
-    --large: var(--spacing-24);
+    --regular: var(--spacing-20);
+    --medium: var(--spacing-24);
+    --large: var(--spacing-28);
     --xlarge: var(--spacing-32);
     --xxlarge: var(--spacing-40);
-    --huge: var(--spacing-48);
-    --xhuge: var(--spacing-56);
+    --huge: var(--spacing-56);
+    --xhuge: var(--spacing-64);
   }
 }
 
 @media (width >= 1024px) {
   :root {
-    --body-font-size: 20px;
-  
+    /* typography specific - h1..h6, body ..etc */
+    --h1-huge: var(--size-72);
+    --h1-large: var(--size-60);
+    --h1-base: var(--size-48);
+    --h2-large: var(--size-40);
+    --h2-base: var(--size-40);
+    --h3-large: var(--size-32);
+    --h3-base: var(--size-32);
+    --heading-label-large: var(--size-48);
+    --heading-label-base: var(--size-40);
+    --heading-label-small: var(--size-36);
+    --heading-label-tiny: var(--size-28);
+
+    /* Body variables */
+    --default: var(--size-20);
+    --body-huge: var(--size-24);
+    --body-large: var(--size-20);
+    --body-medium: var(--size-16);
+    --body-small: var(--size-14);
+    --body-tiny: var(--size-12);
+    
+    /* body styles */
+    --body-font-size: var(--default);
+
     /* Gutter space */
     --section-gutter-space: 72px;
   
@@ -309,29 +358,30 @@ h6 {
 }
 
 h1 { 
-  font-size: var(--heading-font-size-xxl); 
+  font-size: var(--h1-base); 
   line-height: 1.1;
   margin-bottom: var(--large);
 }
 
 h2 { 
-  font-size: var(--heading-font-size-xl);
+  font-size: var(--h2-base);
   margin-bottom: var(--medium);
 }
 
 h3 { 
-  font-size: var(--heading-font-size-l); 
+  font-size: var(--h3-base);
   line-height: 1.1;
   margin-bottom: var(--regular);
 }
 
 h4 {
-  font-size: var(--heading-font-size-m);
+  font-size: var(--heading-label-tiny);
   margin-bottom: var(--small);
 }
 
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+/* TODO: Check with Maria */
+h5 { font-size: var(--heading-label-tiny); }
+h6 { font-size: var(--heading-label-tiny); }
 
 p,
 dl,
@@ -346,7 +396,7 @@ blockquote {
 code,
 pre {
   font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-small);
 }
 
 code {
@@ -402,7 +452,7 @@ a:any-link.disabled {
 a.button:any-link,
 button {
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-small);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.25px;
@@ -626,13 +676,14 @@ main .section[class*='bg-'][data-bg-inside-container="true"] {
 }
 
 main .section[data-sec-spacing="section-none"] { padding: var(--none) 0; }
+main .section[data-sec-spacing="section-xtiny"] { padding: var(--xtiny) 0; }
+main .section[data-sec-spacing="section-tiny"] { padding: var(--tiny) 0; }
 main .section[data-sec-spacing="section-xxsmall"] { padding: var(--xxsmall) 0; }
 main .section[data-sec-spacing="section-xsmall"] { padding: var(--xsmall) 0; }
-main .section[data-sec-spacing="section-small"] { padding: var(--small) 0; }
-main .section[data-sec-spacing="sec-spacing-20"] { padding: var(--spacing-20) 0; }
 main .section[data-sec-spacing="section-regular"] { padding: var(--regular) 0; }
-main .section[data-sec-spacing="sec-spacing-28"] { padding: var(--spacing-28) 0; }
+main .section[data-sec-spacing="section-small"] { padding: var(--small) 0; }
 main .section[data-sec-spacing="section-medium"] { padding: var(--medium) 0; }
+main .section[data-sec-spacing="section-large"] { padding: var(--large) 0; }
 main .section[data-sec-spacing="section-xlarge"] { padding: var(--xlarge) 0; }
 main .section[data-sec-spacing="section-xxlarge"] { padding: var(--xxlarge) 0; }
 main .section[data-sec-spacing="section-huge"] { padding: var(--huge) 0; }
