@@ -398,10 +398,29 @@ function createCountryDropDown(category, countrySearchPlaceholder) {
           type: 'text',
           placeholder: countrySearchPlaceholder,
           oninput: (e) => filterCountry(e),
+          onclick: () => {
+            const target = document.querySelector('.country-list');
+            target.style.display = 'block';
+            const dropdownButton = document.querySelector('.browse-country p');
+            dropdownButton.style.transform = 'rotate(-180deg)';
+          },
         }),
         countryList,
       ),
-      p(),
+      p(
+        {
+          onclick: (e) => {
+            const target = document.querySelector('.country-list');
+            if (target.style.display === 'block') {
+              target.style.display = 'none';
+              e.currentTarget.style.transform = 'rotate(0deg)';
+            } else {
+              target.style.display = 'block';
+              e.currentTarget.style.transform = 'rotate(-180deg)';
+            }
+          },
+        },
+      ),
     ),
   );
   category.items.forEach((country) => {
