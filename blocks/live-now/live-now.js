@@ -1,7 +1,8 @@
-export default async function decorate(block) {
-  console.log('live now');
-  queryEventData();
-}
+// we should not need the default decorate block
+//export default async function decorate(block) {
+  //console.log('live now');
+  //queryEventData();
+//}
 
 window.addEventListener('load', () => {
   console.log('window load');
@@ -31,7 +32,7 @@ async function queryEventData() {
     method: requestMethod,
     headers: {
       'Accept': '*/*',
-      'Access-Control-Allow-Origin': '',
+      'Access-Control-Allow-Origin': '*',
       'Content-Type': contentType,
       'ocp-apim-subscription-key': subkey
     },
@@ -39,6 +40,15 @@ async function queryEventData() {
   });
 
   console.log(response);
+  console.log(response.value);
+}
+
+function processResponse() {
+
+}
+
+function buildModal() {
+
 }
 
 /*
