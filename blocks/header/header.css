@@ -233,7 +233,7 @@ header .nav-menu-overlay .nav-menu-column.left > ul {
 
 header .nav-menu-overlay .nav-menu-column.left ul {
   font-family: var(--body-font-family);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 38.13px;
   margin: 0;
@@ -796,7 +796,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
-    font-size: var(--h2-base);
+    font-size: 40px;
     font-weight: 700;
     line-height: 54.47px;
     text-align: left;
