@@ -284,6 +284,10 @@
             "value": "section-none"
           },
           {
+            "name": "Spacing tiny",
+            "value": "section-tiny"
+          },
+          {
             "name": "Spacing xxsmall",
             "value": "section-xxsmall"
           },
@@ -292,24 +296,20 @@
             "value": "section-xsmall"
           },
           {
-            "name": "Spacing small",
-            "value": "section-small"
-          },
-          {
-            "name": "Spacing 20px",
-            "value": "sec-spacing-20"
-          },
-          {
             "name": "Spacing regular",
             "value": "section-regular"
           },
           {
-            "name": "Spacing 28px",
-            "value": "sec-spacing-28"
+            "name": "Spacing small",
+            "value": "section-small"
           },
           {
             "name": "Spacing medium",
             "value": "section-medium"
+          },
+          {
+            "name": "Spacing large",
+            "value": "section-large"
           },
           {
             "name": "Spacing xlarge",
