@@ -33,3 +33,4 @@ export const LANGUAGE_TOGGLE_SELECTOR = 'div.language-toggle';
 export const ATTR_ARIA_EXPANDED = 'aria-expanded';
 export const CONTENT_EXPANDED = 'nav-item-content-expanded';
 export const CONTENT_EXPANDED_ACTIVE = 'nav-item-expanded-active';
+export const LANG_PREFIX = 'lang';

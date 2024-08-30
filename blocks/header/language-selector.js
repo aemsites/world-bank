@@ -4,10 +4,14 @@ import {
 import { getMetadata } from '../../scripts/aem.js';
 import * as Constants from './constants.js';
 
+function capitalizeFirstLetter(str) {
+  if (!str) return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 // Get Language Selector Display Text based on screen size
 const getLanguageDisplayText = (placeholdersData, lang) => ((window.screen.width >= 768
-    && placeholdersData[lang])
-  ? placeholdersData[lang]
+    && placeholdersData[`${Constants.LANG_PREFIX}${capitalizeFirstLetter(lang)}`])
+  ? placeholdersData[`${Constants.LANG_PREFIX}${capitalizeFirstLetter(lang)}`]
   : lang);
 
 // Language toggle based on screen width
