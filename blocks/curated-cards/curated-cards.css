@@ -26,7 +26,7 @@
       box-sizing: border-box;
 
       .feature-card-content-heading {
-        font-size: var(--heading-font-size-xl);
+        font-size: var(--h1-base);
         margin: 0 0 10px;
         line-height: 58px;
         font-weight: 700;
@@ -37,7 +37,7 @@
         right: 20px;
         bottom: 20px;
         padding: 10px 20px;
-        font-size: var(--body-font-size-m);
+        font-size: var(--body-medium);
         width: 182px;
         height: 55px;
         background: var(--color-white);
@@ -100,14 +100,14 @@
           p {
             margin: 0;
             font-weight: 700;
-            font-size: var(--body-font-size-m);
+            font-size: var(--body-medium);
             line-height: 140%;
             color: var(--color-white);
           }
 
           .curated-cards-card-event {
             font-weight: 700;
-            font-size: var(--body-font-size-xs);
+            font-size: var(--body-tiny);
             letter-spacing: 0.06em;
             text-transform: uppercase;
             color: var(--neutrals-50);
