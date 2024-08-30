@@ -76,7 +76,7 @@
 
     .teaser-title {
         font-family: var(--body-font-family);
-        font-size: var(--heading-font-size-l);
+        font-size: var(--h2-base);
         color: white;
         text-align: center;
         padding-top: 15%;
@@ -93,7 +93,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            font-size: var(--body-font-size-m);
+            font-size: var(--body-medium);
 
             &.dark-bg {
                 background-color: var(--color-white);
