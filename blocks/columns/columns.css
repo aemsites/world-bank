@@ -78,6 +78,19 @@
   z-index: 11;
 }
 
+.columns.columns-transform-teaser .columns-img-col::before{
+    content: '';
+    position: absolute;
+    right: -18px;
+    top: 24px;
+    z-index: 10;
+    background: url('../../icons/swoosh-desktop.svg');
+    width: 623px;
+    height: 592px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /* Column alignment */
 .columns.valign-center > div {
   align-items: center;
@@ -210,6 +223,24 @@
       display: block;
     }
   }
+
+  .columns.columns-transform-teaser .columns-img-col img{
+    width: 371px;
+    height: 408px;
+  }
+
+  .columns.columns-transform-teaser .columns-img-col::before{
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 55px;
+    z-index: 10;
+    background: url('../../icons/swoosh-tablet.svg');
+    width: 438px;
+    height: 448px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 }
 }
 
@@ -268,7 +299,6 @@
 
 @media (768px <= width <= 1024px) {
   .columns.columns-transform-teaser .columns-img-col {
-    width: 50%;
     right: -65px;
   }
 }
