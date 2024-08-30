@@ -32,7 +32,7 @@ async function queryEventData() {
     headers: {
       'Accept': '*/*',
       'Access-Control-Allow-Origin': '',
-      'Content Type': contentType,
+      'Content-Type': contentType,
       'ocp-apim-subscription-key': subkey
     },
     body: JSON.stringify(payload),
