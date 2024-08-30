@@ -17,6 +17,15 @@ footer {
       padding-left: 24px;
       text-decoration: none;
     }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  a:any-link:visited,
+  .section.bg-primary-blue-90 a:any-link:visited {
+    color: var(--color-white);
   }
 
   & ul { 
