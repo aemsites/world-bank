@@ -31,21 +31,25 @@ function createFeatureCard(row) {
     p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
     a({ href: featureLink.textContent }, button({ type: 'button' }, 'Read the Story')), // TODO button label approach
   );
-
   const pictureElement = featureImageContent.querySelector('picture');
-  featureDiv.append(pictureElement, featureContentWrapper);
+  if (pictureElement) {
+    featureDiv.append(pictureElement);
+  }
+  featureDiv.append(featureContentWrapper);
   return featureDiv;
 }
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent] = row.children;
+  const [imageContent, tagContent, headingContent, linkDiv] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
   const imageDiv = div({ class: 'curated-cards-card-img' });
   const tagElement = div({ class: 'curated-cards-card-event' });
   const heading = p();
+  const link = linkDiv.textContent ? linkDiv.textContent : '';
+  linkDiv.remove();
 
   if (tagContent) {
     processTag(tagElement, tagContent);
@@ -59,7 +63,7 @@ function processRow(row) {
     heading.textContent = headingContent.textContent;
   }
 
-  textWrapper.append(heading, tagElement);
+  textWrapper.append(a({ href: link }, heading), tagElement);
   liTag.append(imageDiv, textWrapper);
 
   row.innerHTML = '';
