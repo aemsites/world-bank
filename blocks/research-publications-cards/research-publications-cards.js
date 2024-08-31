@@ -15,11 +15,9 @@ function createCard(cardData) {
   const imgElement = imageContainer.querySelector('img');
   imgElement.setAttribute('alt', imageAltText.textContent);
   imageContainer.className = 'card-img';
-  title.className = 'title';
   desc.className = 'desc';
-  btn.className = 'card-btn';
 
-  const txtContainer = div({ class: 'text-content' }, a({ href: titlelink.textContent }, title), desc, a({ href: btnLink.textContent }, btn));
+  const txtContainer = div({ class: 'text-content' }, a({ href: titlelink.textContent, class: 'title' }, title), desc, a({ href: btnLink.textContent, class: 'card-btn' }, btn));
   cardData.append(txtContainer);
   cardData.className = 'rp-card';
 
