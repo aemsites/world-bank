@@ -94,7 +94,7 @@ header .nav-menu-overlay .nav-menu {
 }
 
 .nav-item-expanded-active{
-  border: 1px solid #DAE3EB;
+  border: 1px solid var(--neutrals-30);
   border-radius: 5px;
   background: var(--color-white);
 }
@@ -185,12 +185,6 @@ header .nav-menu-overlay .nav-menu a:visited {
 
   .language-text {
     text-transform: uppercase;
-  }
-}
-
-@media (width >=768px) and (width<= 1023px) {
-  .nav-item-expanded-active{
-    border: 1px solid #00396B;
   }
 }
 
