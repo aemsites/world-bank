@@ -2,18 +2,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
 
     .title{
         text-transform: uppercase;
-        font-size: 28px;
+        font-size: var(--size-28);
+        line-height: 31px;
+
+        p{
+            margin: 0;
+        }
     }
     
     a.title-button{
-        background: #004370;
+        background: var(--primary-blue-80);
         padding: 15px 20px;
         border-radius: 50px;
-        font-size: 16px;
-        color: #fff;
+        font-size: var(--size-16);
+        color: var(--color-white);
         text-decoration: none;
         
         p{
@@ -22,37 +28,62 @@
     }
 }
 
+.button-wrapper{
+    display: block;
+    margin-top: 50px;
+
+    a{
+        background: var(--primary-blue-80);
+        padding: 15px 20px;
+        border-radius: 50px;
+        font-size: var(--size-16);
+        color: var(--color-white);
+        text-decoration: none;
+
+        &:visited{
+            color: var(--color-white);
+        }
+        
+    }
+}
+
 .cards-container{
     display: grid;
-    gap:30px;
+    gap:40px;
 
     .rp-card{
-        display: flex;
-        gap: 30px;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 40px;
 
         .text-content{
             .title{
-                font-size: 18px;
+                font-size: var(--size-18);
                 line-height: 22px;
                 color: #004370;
                 font-weight: 700;
-                margin-bottom: 30px;
+
+                p{
+                    margin: 0;
+                }
             }
 
             .desc{
-                font-size: 16px;
+                font-size: var(--size-16);
                 line-height: 22px;
+                padding: 5px 0 15px;
                 border-top: 1px solid #E7EDF3;
+                margin-top: 40px;
             }
 
             a{
-                font-size: 16px;
-                line-height: 22px;
-                color: #004370;
-                font-weight: 700;
                 text-decoration: none;
 
                 .card-btn{
+                    font-size: var(--size-16);
+                    line-height: 22px;
+                    color: var(--primary-blue-80);
+                    font-weight: 700;
                     width: fit-content;
                     border-bottom: 2px solid #0049724D;
 
@@ -67,10 +98,15 @@
 
 @media(width >= 1024px){
     .cards-container{
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 180px;
+
         
         .rp-card{
             .text-content{
+                padding: 30px 0;
+
                 .title{
                     font-size: 24px;
                     line-height: 29px;
@@ -94,7 +130,22 @@
             font-size: 32px;
             line-height: 35px;
         }
+    }    
+
+    .button-wrapper{
+        display: none;
     }
+
+    .text-content{
+        padding: 30px 0;
+    }
+
+    .cards-container .rp-card .text-content .title{
+        font-size: var(--size-24);
+        line-height: 29px;
+
+    }
+            
 }
 
 @media(width >=900){

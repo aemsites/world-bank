@@ -1,5 +1,5 @@
 import {
-    div,p,a,button
+    div,a
   } from '../../scripts/dom-helpers.js';
 
 function createCard(cardData){
@@ -20,36 +20,31 @@ titlelink.remove();
 btnLink.remove();
 imageAltText.remove();
   if(!cardsContainer){
-   
    cardsContainer = div({class: 'cards-container'},RPCard);    
   }
   else{
     cardsContainer.append(RPCard)
   }
   document.querySelector('.research-publications-cards').append(cardsContainer)
-
-
 }
 
 export default async function decorate(block) {
-      const [title, button,link, rpFirstCard,rpSecondCard] = [...block.children];    
-      title.className= 'title'
-        const titleButtonWrapper = div(
-            { class: 'title-button-wrapper' },
-            title,
-            a({ href: link.textContent ,class:"title-button"}, button)
-      );
-      block.append(titleButtonWrapper)
-const cardsArray =[rpFirstCard,rpSecondCard];
-cardsArray.forEach((cardData)=>{
+  const [title, button,link, rpFirstCard,rpSecondCard] = [...block.children];    
+  title.className= 'title'
+    const titleButtonWrapper = div(
+        { class: 'title-button-wrapper' },
+        title,
+        a({ href: link.textContent ,class:"title-button"}, button)
+  );
+  const buttonWrapper = div(
+    { class: 'button-wrapper' },
+    a({ href: link.textContent ,class:"title-button"}, button.textContent)
+);
+  block.append(titleButtonWrapper)
+  const cardsArray =[rpFirstCard,rpSecondCard];
+  cardsArray.forEach((cardData)=>{
   createCard(cardData);
-
-})
-      
-// title.remove();
-// button.remove();
-link.remove();
-// rpFirstCard.remove();
-// rpSecondCard.remove();
-
-    }
+  })
+  block.append(buttonWrapper);
+  link.remove();
+}
