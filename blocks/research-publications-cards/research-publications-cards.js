@@ -26,26 +26,25 @@ function createCard(cardData) {
   titlelink.remove();
   btnLink.remove();
   imageAltText.remove();
-/*  if (!cardsContainer) {
-    cardsContainer = div({ class: 'cards-container' }, RPCard);
-  } else {
-    cardsContainer.append(RPCard);
-  }*/
 }
 
 export default async function decorate(block) {
   const [title, linkText, link, ...cards] = [...block.children];
 
   title.className = 'main-heading';
+  const linkTag = link.getElementsByTagName('a')[0];
+  linkTag.innerHTML = linkText.textContent;
+  linkTag.className = 'button primary';
   const titleButtonWrapper = div(
     { class: 'heading-wrapper' },
     title,
-    a({ href: link.textContent, class: 'button primary' }, linkText.textContent),
+    link,
   );
   const buttonWrapper = div(
     { class: 'button-wrapper' },
     a({ href: link.textContent, class: 'button primary' }, linkText.textContent),
   );
+  linkText.remove();
   block.prepend(titleButtonWrapper);
   const cardsContainer = div({ class: 'cards-container' });
   cards.forEach((card) => {
@@ -54,5 +53,4 @@ export default async function decorate(block) {
   });
   block.append(cardsContainer);
   block.append(buttonWrapper);
-  link.remove();
 }
