@@ -82,14 +82,13 @@ header .nav-menu-overlay .nav-menu {
   position: absolute;
   display: block;
   min-width: 125px;
-  padding: 18px;
+  padding: 10px;
   font-family: var(--body-font-family);
-  font-size: 14px;
   font-weight: 400;
   line-height: 22px;
   text-align: right;
   opacity: 1;
-  right: 48px;
+  right: 36px;
   top: -10px;
   border: 1px solid transparent;
 }
@@ -98,39 +97,24 @@ header .nav-menu-overlay .nav-menu {
   border: 1px solid #00396B29;
   border-radius: 5px;
   background: #FFFFFF;
-  cursor: pointer;
-
 }
+  
 
 /* Dropdown Text */
 .language-toggle {
   padding-bottom: 14px;
   color: var(--primary-blue-80);
   font-size: 16px;
-  border-bottom: 1px solid #D9D9D9;
   display: inline-flex;
   justify-content: flex-end;
   width: 100%;
+  cursor: pointer;
 }
 
-.language-container .expand {
-  position: absolute;
-  width: 100px;
-  height: 1px;
-  background: #D9D9D9;
-  opacity: 1;
-  display: flex;
-  gap: 6px;
-  top: 45px;
-  right: 16px;
-}
-
-.language-text{
-  height: 22px;
-  line-height: 26px;
+.language-text {
   color: var(--primary-blue-80);
-  cursor: default;
-  position: absolute;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 /* Dropdown Arrow */
@@ -142,6 +126,10 @@ header .nav-menu-overlay .nav-menu {
   content: "";
   transform: rotateZ(45deg);
   margin-left: 14px;
+}
+
+.language-toggle-border {
+  border-bottom: 1px solid #D9D9D9;
 }
 
 .language-toggle[aria-expanded="false"]::after {
@@ -157,6 +145,7 @@ header .nav-menu-overlay .nav-menu {
 .language-content {
   display: none;
   position: relative;
+  margin-left: 5px;
 }
 
 header .nav-menu-overlay .nav-menu a {
@@ -179,16 +168,6 @@ header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
 }
 
-/* .header .nav-item-content-expanded > ul > li a:hover {
-  background: var(--neutrals-40);
-  border-radius: 4px;
-} */
-
-/* .language-content .show-selected{
-  background: var(--neutrals-40);
-  border-radius: 4px;
-} */
-
 .header .nav-item-content-expanded > ul{
   list-style: none;
   display: flex;
@@ -199,34 +178,12 @@ header .nav-menu-overlay .nav-menu a:visited {
 }
 
 @media (width < 768px) {
-  .language-container {
-    max-width: 35.49px;
-    height: 26px;
-  }
-
   .language-toggle {
-    width: 21px;
     text-transform: uppercase;
-    margin-left: 12px;
   }
 
   .language-text {
-    width: 21px;
     text-transform: uppercase;
-  }
-
-  .nav-item-content-expanded > ul > li {
-    text-transform: uppercase;
-  }
-
-  .header .nav-item-content-expanded {
-    left: 10px;
-  }
-}
-
-@media (width >=768px) {
-  .language-text {
-    right: 0;
   }
 }
 
