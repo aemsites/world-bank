@@ -763,7 +763,7 @@
       "valueType": "string",
       "name": "title",
       "value": "",
-      "label": "Title",
+      "label": "Heading",
       "required": true
       },
       {
@@ -779,7 +779,8 @@
         "valueType": "string",
         "name": "buttonlink",
         "label": "Button Link",
-        "value": ""
+        "value": "",
+        "required": true
       }
     ]
   },
