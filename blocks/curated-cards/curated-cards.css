@@ -120,7 +120,7 @@
   margin-top: 15px;
 }
 
-@media (width <=1024px) {
+@media (width < 1024px) {
   .curated-cards .feature-card picture img {
     max-height: 443px;
   }
@@ -148,7 +148,7 @@
   }
 }
 
-@media (width <=768px) {
+@media (width < 768px) {
   .curated-cards .feature-card picture img {
     max-height: 411px;
   }
