@@ -34,3 +34,6 @@ export const ATTR_ARIA_EXPANDED = 'aria-expanded';
 export const CONTENT_EXPANDED = 'nav-item-content-expanded';
 export const CONTENT_EXPANDED_ACTIVE = 'nav-item-expanded-active';
 export const LANG_PREFIX = 'lang';
+export const HORIZONTAL_LINE_CLASS = 'horizontal-line';
+export const HORIZONTAL_LINE_CLASS_SELECTOR = 'div.horizontal-line';
+export const HORIZONTAL_LINE_EXPAND_CLASS = 'expand';

@@ -42,11 +42,13 @@ const toggleExpandLanguageSelector = (e) => {
   const toggleContent = toggleContainer.querySelector(Constants.LANGUAGE_CONTENT_SELECTOR);
   if (!toggleContainer || !toggleContent) return;
   const toggler = toggleContainer.querySelector(Constants.LANGUAGE_TOGGLE_SELECTOR);
+  const horizontalLine = toggleContainer.querySelector(Constants.HORIZONTAL_LINE_CLASS_SELECTOR);
   const isExpanded = toggleContainer.classList.contains(Constants.CONTENT_EXPANDED_ACTIVE);
   if (e.type === Constants.TYPE_CLICK) {
     toggleContainer.classList.toggle(Constants.CONTENT_EXPANDED_ACTIVE);
     toggler.setAttribute(Constants.ATTR_ARIA_EXPANDED, !isExpanded);
     toggleContent.classList.toggle(Constants.CONTENT_EXPANDED);
+    horizontalLine.classList.toggle(Constants.HORIZONTAL_LINE_EXPAND_CLASS);
   }
 };
 
@@ -107,6 +109,7 @@ const getLanguageSelector = (placeholdersData, lang) => {
       onclick: (e) => toggleExpandLanguageSelector(e),
     },
     languageToggle,
+    div({ class: Constants.HORIZONTAL_LINE_CLASS }),
   );
   langSelector.append(languageSelectorContent);
 

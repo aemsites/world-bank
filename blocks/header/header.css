@@ -79,26 +79,54 @@ header .nav-menu-overlay .nav-menu {
 
 /** Lanaguge Selector CSS **/
 .language-container {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  max-width: 68px;
-  height: 26px;
-  padding: 0 0 4px;
+  max-width: 115px;
+  max-height: 212px;
+  height: 212px;
+  width: 125px;
+  /* padding: 0 0 4px; */
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: 14px;
   font-weight: 400;
   line-height: 22px;
-  text-align: left;
+  text-align: right;
   opacity: 1;
+  right: 48px;
+  padding: 10px;
+  top: -10px;
+}
+
+.nav-item-expanded-active{
+  border: 1px solid #00396B29;
+  border-radius: 5px;
+  background: #FFFFFF;
+  cursor: pointer;
+
 }
 
 /* Dropdown Text */
 .language-toggle {
-  padding-right: 6px;
+  padding: 0 6px 4px 0;
   height: 22px;
   line-height: 26px;
   color: var(--primary-blue-80);
-  cursor: pointer;
+  /* cursor: pointer; */
+  position: absolute;
+  right: 27px;
+  font-size: 16px;
+}
+
+.language-container .expand {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: #D9D9D9;
+  opacity: 1;
+  display: flex;
+  gap: 6px;
+  top: 45px;
+  right: 16px;
 }
 
 .language-text{
@@ -134,7 +162,7 @@ header .nav-menu-overlay .nav-menu {
 /* Dropdown Menu */
 .language-content {
   display: none;
-  box-shadow: 0 8px 16px 0 var(--color-black);
+  position: relative;
 }
 
 header .nav-menu-overlay .nav-menu a {
@@ -143,9 +171,10 @@ header .nav-menu-overlay .nav-menu a {
 
 .header .nav-item-content-expanded > ul > li a {
   color: var(--primary-blue-80);
-  padding: 12px 16px;
-  text-decoration: none;
+  /* padding: 12px 16px; */
+  text-decoration: underline;
   display: block;
+  font-size: 14px;
 }
 
 .header .nav-item-content-expanded {
@@ -155,32 +184,35 @@ header .nav-menu-overlay .nav-menu a {
   flex-direction: row;
   z-index: 11;
   left: 0;
-  top: 100%;
   min-width: 100%;
   width: min-content;
-  background: var(--neutrals-10);
+  /* background: var(--neutrals-10); */
   list-style: none;
   align-items: flex-start;
   box-sizing: border-box;
+  top: 25px;
 }
 
 header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
 }
 
-.header .nav-item-content-expanded > ul > li a:hover {
+/* .header .nav-item-content-expanded > ul > li a:hover {
   background: var(--neutrals-40);
   border-radius: 4px;
-}
+} */
 
-.language-content .show-selected{
+/* .language-content .show-selected{
   background: var(--neutrals-40);
   border-radius: 4px;
-}
+} */
 
 .header .nav-item-content-expanded > ul{
   list-style: none;
-  padding-left: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 15px;
 }
 
 @media (width < 768px) {
@@ -644,10 +676,11 @@ header nav .nav-brand img {
 /* sections */
 .nav-sections .default-content-wrapper,
 .nav-tools .default-content-wrapper {
-  display: flex;
+  display: inline-block;
   align-items: center;
   gap: 16px;
   justify-content: center;
+  position: relative;
 }
 
 header nav .nav-sections .default-content-wrapper {
