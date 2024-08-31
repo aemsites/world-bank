@@ -80,12 +80,9 @@ header .nav-menu-overlay .nav-menu {
 /** Lanaguge Selector CSS **/
 .language-container {
   position: absolute;
-  display: inline-block;
-  max-width: 115px;
-  max-height: 212px;
-  height: 212px;
-  width: 125px;
-  /* padding: 0 0 4px; */
+  display: block;
+  min-width: 125px;
+  padding: 18px;
   font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 400;
@@ -93,8 +90,8 @@ header .nav-menu-overlay .nav-menu {
   text-align: right;
   opacity: 1;
   right: 48px;
-  padding: 10px;
   top: -10px;
+  border: 1px solid transparent;
 }
 
 .nav-item-expanded-active{
@@ -107,14 +104,13 @@ header .nav-menu-overlay .nav-menu {
 
 /* Dropdown Text */
 .language-toggle {
-  padding: 0 6px 4px 0;
-  height: 22px;
-  line-height: 26px;
+  padding-bottom: 14px;
   color: var(--primary-blue-80);
-  /* cursor: pointer; */
-  position: absolute;
-  right: 27px;
   font-size: 16px;
+  border-bottom: 1px solid #D9D9D9;
+  display: inline-flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .language-container .expand {
@@ -139,24 +135,22 @@ header .nav-menu-overlay .nav-menu {
 
 /* Dropdown Arrow */
 .language-toggle::after {
-  right: -8px;
-  top: 16px;
-  display: flex;
   width: 6px;
   height: 6px;
-  margin-top: -8px;
   border-width: 0 2px 2px 0;
   border-style: solid;
   content: "";
-  box-sizing: content-box;
   transform: rotateZ(45deg);
-  position: absolute;
+  margin-left: 14px;
+}
+
+.language-toggle[aria-expanded="false"]::after {
+  margin-top: 6px;
 }
 
 .language-toggle[aria-expanded="true"]::after {
   transform: rotateZ(-135deg);
-  right: -8px;
-  top: 20px;
+  margin-top: 9px;
 }
 
 /* Dropdown Menu */
@@ -171,26 +165,14 @@ header .nav-menu-overlay .nav-menu a {
 
 .header .nav-item-content-expanded > ul > li a {
   color: var(--primary-blue-80);
-  /* padding: 12px 16px; */
   text-decoration: underline;
   display: block;
   font-size: 14px;
 }
 
 .header .nav-item-content-expanded {
-  padding: 0;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  z-index: 11;
-  left: 0;
-  min-width: 100%;
-  width: min-content;
-  /* background: var(--neutrals-10); */
-  list-style: none;
-  align-items: flex-start;
-  box-sizing: border-box;
-  top: 25px;
+  display: block;
+  padding-top: 10px;
 }
 
 header .nav-menu-overlay .nav-menu a:visited {
@@ -212,7 +194,8 @@ header .nav-menu-overlay .nav-menu a:visited {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 15px;
+  margin: 0;
+  padding: 0;
 }
 
 @media (width < 768px) {
