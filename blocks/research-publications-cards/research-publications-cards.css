@@ -54,7 +54,7 @@
 
 .cards-container .rp-card {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1.5fr;
   gap: 40px;
 }
 
@@ -96,9 +96,8 @@
 
 @media (width >= 1024px) {
   .cards-container {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 180px;
+    gap: 60px;
   }
 
   .cards-container .rp-card .text-content {
@@ -108,6 +107,10 @@
   .cards-container .rp-card .text-content .title {
     font-size: var(--heading-label-tiny);
     line-height: 29px;
+  }
+
+  .button-wrapper {
+    display: none;
   }
 }
 
@@ -121,10 +124,6 @@
   .heading-wrapper .main-heading {
     font-size: var(--h2-large);
     line-height: 35px;
-  }
-
-  .button-wrapper {
-    display: none;
   }
 
   .text-content {

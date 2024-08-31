@@ -8,7 +8,8 @@ import {
  */
 function pageSwoosh() {
   const pSwoosh = getMetadata('page-swoosh');
-  if (pSwoosh && pSwoosh !== 'page-swoosh-no') {
+  if (!pageSwoosh || pageSwoosh.length < 1) return;
+  if (pSwoosh !== 'page-swoosh-no') {
     document.body.classList.add(pSwoosh);
   } else {
     document.body.classList.remove(pSwoosh);

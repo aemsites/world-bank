@@ -28,11 +28,12 @@ export default async function decorate(block) {
   title.className = 'main-heading';
   const linkTag = link.getElementsByTagName('a')[0];
   linkTag.innerHTML = linkText.textContent;
+  linkTag.title = linkText.textContent;
   linkTag.className = 'button primary';
   const titleButtonWrapper = div({ class: 'heading-wrapper' }, title, link);
   const buttonWrapper = div(
     { class: 'button-wrapper' },
-    a({ href: link.textContent, class: 'button primary' }, linkText.textContent),
+    linkTag.cloneNode(true),
   );
   linkText.remove();
   block.prepend(titleButtonWrapper);
