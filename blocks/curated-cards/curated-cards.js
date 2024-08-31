@@ -3,6 +3,15 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 import {
   p, button, div, a, li, ul,
 } from '../../scripts/dom-helpers.js';
+import { processTags } from '../../scripts/utils.js';
+
+function processTag(tagdiv, tagAuthored) {
+  let tagValue = tagAuthored.innerText;
+  if (tagValue) {
+    tagValue = processTags(tagValue, 'content-type');
+    tagdiv.textContent = tagValue;
+  }
+}
 
 // Creates a feature card element with its content
 function createFeatureCard(row) {
@@ -39,7 +48,7 @@ function processRow(row) {
   const heading = p();
 
   if (tagContent) {
-    tagElement.textContent = tagContent.textContent.substring(11).trim();
+    processTag(tagElement, tagContent);
   }
 
   if (imageContent) {
