@@ -33,8 +33,11 @@ function createCard(cardData) {
 }
 
 export default async function decorate(block) {
-  const [title, button, link, rpFirstCard, rpSecondCard] = [...block.children];
-  title.className = 'title';
+  const [title, button, link, ...cards] = [...block.children];
+  console.log(cards);
+  console.log(`${title} / ${button} / ${link}`);
+
+  /*title.className = 'title';
   const titleButtonWrapper = div(
     { class: 'title-button-wrapper' },
     title,
@@ -50,5 +53,5 @@ export default async function decorate(block) {
     createCard(cardData);
   });
   block.append(buttonWrapper);
-  link.remove();
+  link.remove();*/
 }
