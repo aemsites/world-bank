@@ -1,52 +1,52 @@
-import {
-  div, a,
-} from '../../scripts/dom-helpers.js';
+import { div, a } from "../../scripts/dom-helpers.js";
 
 function createCard(cardData) {
-  let cardsContainer = document.querySelector('.cards-container');
-  const [
-    imageContainer,
-    imageAltText,
-    title,
-    desc,
-    titlelink,
-    btn,
-    btnLink,
-  ] = [...cardData.children];
-  const imgElement = imageContainer.querySelector('img');
-  imgElement.setAttribute('alt', imageAltText.textContent);
-  imageContainer.className = 'card-img';
-  title.className = 'title';
-  desc.className = 'desc';
-  btn.className = 'card-btn';
+  let cardsContainer = document.querySelector(".cards-container");
+  const [imageContainer, imageAltText, title, desc, titlelink, btn, btnLink] = [
+    ...cardData.children,
+  ];
+  const imgElement = imageContainer.querySelector("img");
+  imgElement.setAttribute("alt", imageAltText.textContent);
+  imageContainer.className = "card-img";
+  title.className = "title";
+  desc.className = "desc";
+  btn.className = "card-btn";
 
-  const RPCard = div({ class: 'rp-card' }, imageContainer, div({ class: 'text-content' }, a({ href: titlelink.textContent }, title), desc, a({ href: btnLink.textContent }, btn)));
+  const rpCard = div(
+    { class: "rp-card" },
+    imageContainer,
+    div(
+      { class: "text-content" },
+      a({ href: titlelink.textContent }, title),
+      desc,
+      a({ href: btnLink.textContent }, btn)
+    )
+  );
   titlelink.remove();
   btnLink.remove();
   imageAltText.remove();
   if (!cardsContainer) {
-    cardsContainer = div({ class: 'cards-container' }, RPCard);
+    cardsContainer = div({ class: "cards-container" }, rpCard);
   } else {
-    cardsContainer.append(RPCard);
+    cardsContainer.append(rpCard);
   }
-  document.querySelector('.research-publications-cards').append(cardsContainer);
+  document.querySelector(".research-publications-cards").append(cardsContainer);
 }
 
 export default async function decorate(block) {
-  const [title, button, link, rpFirstCard, rpSecondCard] = [...block.children];
-  title.className = 'title';
+  const [title, button, link, ...rpCards] = [...block.children];
+  title.className = "title";
   const titleButtonWrapper = div(
-    { class: 'title-button-wrapper' },
+    { class: "title-button-wrapper" },
     title,
-    a({ href: link.textContent, class: 'title-button' }, button),
+    a({ href: link.textContent, class: "title-button" }, button)
   );
   const buttonWrapper = div(
-    { class: 'button-wrapper' },
-    a({ href: link.textContent, class: 'title-button' }, button.textContent),
+    { class: "button-wrapper" },
+    a({ href: link.textContent, class: "title-button" }, button.textContent)
   );
   block.append(titleButtonWrapper);
-  const cardsArray = [rpFirstCard, rpSecondCard];
-  cardsArray.forEach((cardData) => {
+  rpCards.forEach((cardData) => {
     createCard(cardData);
   });
   block.append(buttonWrapper);
