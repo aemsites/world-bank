@@ -438,7 +438,7 @@
                   "name": "Research Publications Cards",
                   "model": "research-publications-cards",
                   "filter": "research-publications-cards",
-                  "title": "<p> <strong>Research</strong> & Publications</p>",
+                  "title": "<p>&nbsp;<strong>Research</strong> & Publications</p>",
                   "buttontext": "More Research & Publications",
                   "buttonlink": "https://www.worldbank.org",
                   "item1": {
