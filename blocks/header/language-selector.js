@@ -9,14 +9,15 @@ function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 // Get Language Selector Display Text based on screen size
-const getLanguageDisplayText = (placeholdersData, lang) => ((window.screen.width >= 768
+const getLanguageDisplayText = (placeholdersData, lang, isConsiderResize) => ((
+  (window.screen.width >= 768 || !isConsiderResize)
   && placeholdersData[`${Constants.LANG_PREFIX}${capitalizeFirstLetter(lang)}`])
   ? placeholdersData[`${Constants.LANG_PREFIX}${capitalizeFirstLetter(lang)}`]
   : lang);
 
 // Language toggle based on screen width
 const updateLanguageTextContent = (domElement, placeholdersData, lang) => {
-  domElement.textContent = getLanguageDisplayText(placeholdersData, lang);
+  domElement.textContent = getLanguageDisplayText(placeholdersData, lang, true);
 };
 
 // Show/hide Language Selector content on click
