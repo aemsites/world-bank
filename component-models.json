@@ -488,7 +488,7 @@
         "name": "curated-card-tags",
         "label": "Tags for Card",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank",
+        "rootPath": "/content/cq:tags/world-bank/content-type",
         "description": "Tags for the curated card"
       },
       {
@@ -632,6 +632,19 @@
     ]
   },
   {
+    "id": "mini-cards",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "mini-cards-heading",
+        "value": "",
+        "label": "Mini Cards Heading",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "mini-card",
     "fields": [
       {
@@ -681,7 +694,7 @@
       },
       {
         "component": "text",
-        "name": "curated-card-link",
+        "name": "mini-card-link",
         "value": "",
         "label": "Link",
         "valueType": "string",
