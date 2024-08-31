@@ -11,8 +11,8 @@ function capitalizeFirstLetter(str) {
 // Get Language Selector Display Text based on screen size
 const getLanguageDisplayText = (placeholdersData, lang, isConsiderResize) => ((
   (window.screen.width >= 768 || !isConsiderResize)
-  && placeholdersData[`${Constants.LANG_PREFIX}${capitalizeFirstLetter(lang)}`])
-  ? placeholdersData[`${Constants.LANG_PREFIX}${capitalizeFirstLetter(lang)}`]
+  && placeholdersData[`${Constants.langPrefix}${capitalizeFirstLetter(lang)}`])
+  ? placeholdersData[`${Constants.langPrefix}${capitalizeFirstLetter(lang)}`]
   : lang);
 
 // Language toggle based on screen width
@@ -23,24 +23,24 @@ const updateLanguageTextContent = (domElement, placeholdersData, lang) => {
 // Show/hide Language Selector content on click
 const toggleExpandLanguageSelector = (e) => {
   const toggleContainer = e.currentTarget;
-  const toggleContent = toggleContainer.querySelector(Constants.LANGUAGE_CONTENT_SELECTOR);
+  const toggleContent = toggleContainer.querySelector(Constants.languageContentSelector);
   if (!toggleContainer || !toggleContent) return;
-  const toggler = toggleContainer.querySelector(Constants.LANGUAGE_TOGGLE_SELECTOR);
-  const isExpanded = toggleContainer.classList.contains(Constants.CONTENT_EXPANDED_ACTIVE);
-  if (e.type === Constants.TYPE_CLICK) {
-    toggleContainer.classList.toggle(Constants.CONTENT_EXPANDED_ACTIVE);
-    toggler.setAttribute(Constants.ATTR_ARIA_EXPANDED, !isExpanded);
-    toggler.classList.toggle(Constants.LANGUAGE_TOGGLE_BORDER_CLASS);
-    toggleContent.classList.toggle(Constants.CONTENT_EXPANDED);
+  const toggler = toggleContainer.querySelector(Constants.languageToggleSelector);
+  const isExpanded = toggleContainer.classList.contains(Constants.contentExpandedActive);
+  if (e.type === Constants.typeClick) {
+    toggleContainer.classList.toggle(Constants.contentExpandedActive);
+    toggler.setAttribute(Constants.attrAriaExpanded, !isExpanded);
+    toggler.classList.toggle(Constants.languageToggleBorderClass);
+    toggleContent.classList.toggle(Constants.contentExpanded);
   }
 };
 
 const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCode) => {
   const ulElement = ul();
-  if (metaLangContent && metaLangContent.split(Constants.COMMA_SEPARATOR).length > 0) {
-    const langPairs = metaLangContent.split(Constants.COMMA_SEPARATOR);
+  if (metaLangContent && metaLangContent.split(Constants.commaSeparator).length > 0) {
+    const langPairs = metaLangContent.split(Constants.commaSeparator);
     langPairs.forEach((pair) => {
-      const [language, url] = pair.split(Constants.PIPE_SEPARATOR).map((part) => part.trim());
+      const [language, url] = pair.split(Constants.pipeSeparator).map((part) => part.trim());
       if (langCode === language) return;
       const liElement = li(
         a(
@@ -56,22 +56,22 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
 
 // Create and return Language Selector DOM Element
 const getLanguageSelector = (placeholdersData, lang) => {
-  const metaLangContent = getMetadata(Constants.LANGUAGE_SELECTOR_META_NAME);
+  const metaLangContent = getMetadata(Constants.languageSelectorMetaName);
 
   const languageToggle = div({ 'aria-expanded': 'false' });
-  const langSelector = div({ class: Constants.LANGUAGE_CONTAINER_CLASS }, languageToggle);
+  const langSelector = div({ class: Constants.languageContainerClass }, languageToggle);
 
   // Show only Current Language when no meta content authored
   if (!metaLangContent) {
     updateLanguageTextContent(languageToggle, placeholdersData, lang);
-    languageToggle.classList.add(Constants.LANGUAGE_TEXT_CLASS);
+    languageToggle.classList.add(Constants.languageTextClass);
   } else {
     const languageMap = fetchLanguageSelectorContent(placeholdersData, metaLangContent, lang);
     const languageSelectorContent = div(
-      { class: Constants.LANGUAGE_CONTENT_CLASS },
+      { class: Constants.languageContentClass },
       languageMap,
     );
-    languageToggle.classList.add(Constants.LANAGUAGE_TOGGLE_CLASS);
+    languageToggle.classList.add(Constants.languageToggleClass);
     langSelector.addEventListener('click', toggleExpandLanguageSelector);
     langSelector.append(languageSelectorContent);
   }
@@ -79,7 +79,12 @@ const getLanguageSelector = (placeholdersData, lang) => {
   const resizeObserver = new ResizeObserver(() => {
     updateLanguageTextContent(languageToggle, placeholdersData, lang);
   });
-  resizeObserver.observe(document.body);
+
+  setTimeout(() => {
+    if (langSelector) {
+      resizeObserver.observe(langSelector.parentElement.parentElement.parentElement);
+    }
+  }, 0);
 
   return langSelector;
 };
