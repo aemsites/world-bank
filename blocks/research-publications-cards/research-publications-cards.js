@@ -3,7 +3,6 @@ import {
 } from '../../scripts/dom-helpers.js';
 
 function createCard(cardData) {
-  let cardsContainer = document.querySelector('.cards-container');
   const [
     imageContainer,
     imageAltText,
@@ -20,38 +19,40 @@ function createCard(cardData) {
   desc.className = 'desc';
   btn.className = 'card-btn';
 
-  const RPCard = div({ class: 'rp-card' }, imageContainer, div({ class: 'text-content' }, a({ href: titlelink.textContent }, title), desc, a({ href: btnLink.textContent }, btn)));
+  const txtContainer = div({ class: 'text-content' }, a({ href: titlelink.textContent }, title), desc, a({ href: btnLink.textContent }, btn));
+  cardData.append(txtContainer);
+  cardData.className = 'rp-card';
+
   titlelink.remove();
   btnLink.remove();
   imageAltText.remove();
-  if (!cardsContainer) {
+/*  if (!cardsContainer) {
     cardsContainer = div({ class: 'cards-container' }, RPCard);
   } else {
     cardsContainer.append(RPCard);
-  }
-  document.querySelector('.research-publications-cards').append(cardsContainer);
+  }*/
 }
 
 export default async function decorate(block) {
-  const [title, button, link, ...cards] = [...block.children];
-  console.log(cards);
-  console.log(`${title} / ${button} / ${link}`);
+  const [title, linkText, link, ...cards] = [...block.children];
 
-  /*title.className = 'title';
+  title.className = 'main-heading';
   const titleButtonWrapper = div(
-    { class: 'title-button-wrapper' },
+    { class: 'heading-wrapper' },
     title,
-    a({ href: link.textContent, class: 'title-button' }, button),
+    a({ href: link.textContent, class: 'button primary' }, linkText.textContent),
   );
   const buttonWrapper = div(
     { class: 'button-wrapper' },
-    a({ href: link.textContent, class: 'title-button' }, button.textContent),
+    a({ href: link.textContent, class: 'button primary' }, linkText.textContent),
   );
-  block.append(titleButtonWrapper);
-  const cardsArray = [rpFirstCard, rpSecondCard];
-  cardsArray.forEach((cardData) => {
-    createCard(cardData);
+  block.prepend(titleButtonWrapper);
+  const cardsContainer = div({ class: 'cards-container' });
+  cards.forEach((card) => {
+    createCard(card);
+    cardsContainer.append(card);
   });
+  block.append(cardsContainer);
   block.append(buttonWrapper);
-  link.remove();*/
+  link.remove();
 }
