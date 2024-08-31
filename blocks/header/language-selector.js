@@ -83,6 +83,8 @@ const getLanguageSelector = (placeholdersData, lang) => {
   setTimeout(() => {
     if (langSelector) {
       resizeObserver.observe(langSelector.parentElement.parentElement.parentElement);
+    } else {
+      resizeObserver.observe(document.body);
     }
   }, 0);
 
