@@ -466,9 +466,9 @@
      {
        "component": "select",
        "valueType": "string",
-       "name": "variation",
+       "name": "classes",
        "value": "",
-       "label": "Variation",
+       "label": "Classes",
        "options": [
          {
            "name": "Data Card",
