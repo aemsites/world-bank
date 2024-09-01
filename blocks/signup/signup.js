@@ -3,6 +3,7 @@ import {
 } from '../../scripts/dom-helpers.js';
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import { CONSTANTS } from './constants.js';
+import { getMetadata } from '../../scripts/aem.js';
 
 async function callApi(url, data, errorMessage) {
   try {
