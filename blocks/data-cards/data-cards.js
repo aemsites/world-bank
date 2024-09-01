@@ -14,6 +14,13 @@ function processTag(tag) {
 export default async function decorate(block) {
   // eslint-disable-next-line no-unused-vars
   const [rte1, rte2, rte3, ...cards] = [...block.children];
+  const rteContainer = div({ class: 'rte-container' });
+  if (rte1 && rte2 && rte3) {
+    rteContainer.append(rte1);
+    rteContainer.append(rte2);
+    rteContainer.append(rte3);
+    block.append(rteContainer);
+  }
 
   const dataCardsContainer = div({ class: 'data-cards-container' });
   if (cards.length) {
