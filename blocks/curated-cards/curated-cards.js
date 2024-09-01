@@ -31,7 +31,7 @@ function createFeatureCard(row, placeHolders) {
     { class: 'feature-card-content' },
     p({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent),
     p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
-    a({ href: featureLink.textContent }, button({ type: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')), // TODO button label approach
+    a({ href: featureLink.textContent }, button({ type: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
@@ -43,7 +43,7 @@ function createFeatureCard(row, placeHolders) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent, linkDiv] = row.children;
+  const [imageContent, tagContent, headingContent, decsDiv, linkDiv] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -52,6 +52,7 @@ function processRow(row) {
   const heading = p();
   const link = linkDiv.textContent ? linkDiv.textContent : '';
   linkDiv.remove();
+  decsDiv.remove();
 
   if (tagContent) {
     processTag(tagElement, tagContent);
