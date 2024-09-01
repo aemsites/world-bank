@@ -878,7 +878,7 @@
       {
         "component": "select",
         "name": "teaserStyle",
-        "value": "",
+        "value": "image",
         "label": "Style",
         "valueType": "string",
         "options": [
@@ -894,16 +894,17 @@
         "condition": { "===": [{"var" : "teaserStyle"}, "video"] },
         "fields": [
           {
-            "component": "reference",
+            "component": "text",
             "valueType": "string",
             "name": "videoReference",
-            "label": "Video",
-            "multi": false
+            "label": "Video Reference",
+            "multi": false,
+            "description": "Provide a URL for the video background."
           },
           {
             "component": "select",
             "name": "videoBehavior",
-            "value": "",
+            "value": "autoplay",
             "label": "Video Behavior (on load)",
             "valueType": "string",
             "options": [
@@ -923,7 +924,7 @@
           {
             "component": "reference",
             "valueType": "string",
-            "name": "imageReference",
+            "name": "imageRef",
             "label": "Image",
             "multi": false
           },
