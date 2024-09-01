@@ -462,6 +462,23 @@
         "value": "",
         "label": "Additional Text",
         "valueType": "string"
+     },
+     {
+       "component": "select",
+       "valueType": "string",
+       "name": "classes",
+       "value": "",
+       "label": "Classes",
+       "options": [
+         {
+           "name": "Data Card",
+           "value": "data-card-variation"
+         },
+         {
+           "name": "News Card",
+           "value": "news-card-variation"
+         }
+       ]
      }
     ]
   },
@@ -473,7 +490,7 @@
         "name": "tags",
         "label": "Tags for Card",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank",
+        "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for data card"
      },
      {
