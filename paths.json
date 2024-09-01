@@ -27,7 +27,15 @@
     "/content/world-bank/global/ru/data/navigation:/ru/navigation.json",
     "/content/world-bank/global/fr/data/navigation:/fr/navigation.json",
     "/content/world-bank/global/es/data/navigation:/es/navigation.json",
-    "/content/world-bank/global/ar/data/navigation:/ar/navigation.json"
+    "/content/world-bank/global/ar/data/navigation:/ar/navigation.json",
+    "/content/world-bank/global/en/data/trending-data:/en/trending-data.json",
+    "/content/world-bank/global/en/data/trending-data:/zh/trending-data.json",
+    "/content/world-bank/global/en/data/trending-data:/ru/trending-data.json",
+    "/content/world-bank/global/en/data/trending-data:/fr/trending-data.json",
+    "/content/world-bank/global/en/data/trending-data:/es/trending-data.json",
+    "/content/world-bank/global/en/data/trending-data:/ar/trending-data.json",
+    
+
   ],
   "includes": ["/content/world-bank/"]
 }
