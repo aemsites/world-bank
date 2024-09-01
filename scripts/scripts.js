@@ -205,7 +205,30 @@ export async function fetchLanguageNavigation(langCode) {
   const navJsonData = await window.navigationData[langCode];
   return navJsonData;
 }
+/**
+ * Return the trending data placeholder file specific to language
+ * @returns
+ */
+export async function fetchLanguageTrendingData(langCode) {
+  window.trendingData = window.trendingData || {};
 
+  if (!window.trendingData[langCode]) {
+    window.trendingData[langCode] = new Promise((resolve) => {
+      fetch(`${langCode}/trending.json`)
+        .then((resp) => (resp.ok ? resp.json() : {}))
+        .then((json) => {
+          window.trendingData[langCode] = json.data;
+          resolve(window.trendingData[langCode]);
+        })
+        .catch(() => {
+          window.trendingData[langCode] = {};
+          resolve(window.trendingData[langCode]);
+        });
+    });
+  }
+  const trendingDataList = await window.trendingData[langCode];
+  return trendingDataList;
+}
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element

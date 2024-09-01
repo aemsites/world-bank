@@ -5,6 +5,7 @@ import getLanguageSelector from './language-selector.js';
 import {
   fetchLanguageNavigation,
   fetchLanguagePlaceholders,
+  fetchLanguageTrendingData,
   getLanguage,
 } from '../../scripts/scripts.js';
 import * as Constants from './constants.js';
@@ -500,6 +501,12 @@ function createNavMenu(structuredNav, searchByCountryPlaceholder) {
   return menuOverlay;
 }
 
+async function changeTrendingdata(tdElement, langCode) {
+  const trendingDataJson = await fetchLanguageTrendingData(langCode);
+  const randomTd = trendingDataJson[Math.floor(Math.random() * trendingDataJson.length)];
+  tdElement.textContent = randomTd.Text;
+  return a({ href: randomTd.Link, target: '_blank' }, tdElement);
+}
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -560,6 +567,9 @@ export default async function decorate(block) {
         });
       });
   }
+  const tendingDataWrapper = navSections.querySelector('.default-content-wrapper');
+  const tendingDataDiv = await changeTrendingdata(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'), `/${langCode}`);
+  tendingDataWrapper.append(tendingDataDiv);
 
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
@@ -590,4 +600,5 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
   fetchingPlaceholdersData(placeholdersData);
+  // fetchLanguageTrendingData(`/${langCode}`);
 }
