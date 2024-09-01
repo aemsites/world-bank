@@ -275,8 +275,6 @@
 
 @media (width < 768px) {
   .bg-primary-blue-90{
-    margin: 150px 0;
-  
     .columns.columns-transform-teaser > div{
       grid-template-columns: 1fr;
       grid-template-rows: auto auto;

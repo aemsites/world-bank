@@ -112,11 +112,14 @@
   --size-72: 72px;
   --size-60: 60px;
   --size-48: 48px;
+  --size-44: 44px;
   --size-40: 40px;
   --size-36: 36px;
+  --size-32: 32px;
   --size-28: 28px;
   --size-24: 24px;
   --size-20: 20px;
+  --size-18: 18px;
   --size-16: 16px;
   --size-14: 14px;
   --size-12: 12px;
@@ -427,23 +430,22 @@ a:any-link {
 }
 
 a:any-link:hover {
-  text-decoration: underline;
+  color: rgb(0 13 26 / 96%);
   text-decoration-color: var(--primary-blue-50);
 }
 
 a:any-link:focus,
 a:any-link:active {
-  text-decoration: none;
+  color: var(--primary-blue-100);
   text-decoration-color: var(--primary-blue-100);
 }
 
 a:any-link:visited {
-  text-decoration: none;
-  color: var(--purple-60);
+  color: var(--purple-70);
+  text-decoration-color: var(--purple-70);
 }
 
 a:any-link.disabled {
-  text-decoration: none;
   color: rgb(0 41 77 / 42%);
   cursor: unset;
 }
@@ -530,8 +532,36 @@ p.button-container {
   margin: 0;
 }
 
+/* Links and buttons in dark theme */
 .section.bg-primary-blue-90,
 .section.bg-primary-blue-70 {
+  a:any-link {
+    color: var(--color-white);
+    text-decoration-color: var(--color-white);
+  }
+
+  a:any-link:hover {
+    color: var(--color-white);
+    text-decoration-color: var(--primary-blue-50);
+  }
+
+  a:any-link:focus,
+  a:any-link:active {
+    color: var(--color-white);
+    text-decoration-color: var(--color-white);
+  }
+
+  a:any-link:visited {
+    color: var(--purple-40);
+    text-decoration-color: var(--purple-40);
+  }
+
+  a:any-link.disabled {
+    color: rgb(255 255 255 / 48%);
+    text-decoration-color: rgb(255 255 255 / 48%);
+    cursor: unset;
+  }
+
   a.button:any-link,
   button {
     border: 1px solid transparent;
