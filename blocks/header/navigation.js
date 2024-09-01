@@ -280,4 +280,5 @@ const formatNavigationJsonData = (navJson) => {
 export {
   getNavigationMenu,
   formatNavigationJsonData,
+  closesideMenu,
 };
