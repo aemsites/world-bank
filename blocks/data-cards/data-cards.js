@@ -41,4 +41,34 @@ export default async function decorate(block) {
       }
     });
   }
+
+  const isNewsCardVariation = block.classList.contains('news-card-variation');
+  if (isNewsCardVariation) {
+    const [rte1, rte2, rte3, ...cards] = [...block.children];
+    const rteContainer = div({ class: 'rte-container' });
+    if (rte1 && rte2 && rte3) {
+      rteContainer.append(rte1);
+      rteContainer.append(rte2);
+      rteContainer.append(rte3);
+      block.append(rteContainer);
+    }
+
+    const newsCardItems = div({ class: 'news-card-items' });
+    if (cards.length) {
+      newsCardItems.append(...cards);
+      block.append(newsCardItems);
+    }
+
+    cards.forEach((row) => {
+      row.className = 'news-card';
+      const [tag, title, image] = [...row.children];
+      tag.className = 'news-card-tag';
+      title.className = 'news-card-title';
+      image.className = 'news-card-image';
+
+      if (tag) {
+        processTag(tag);
+      }
+    });
+  }
 }

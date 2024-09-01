@@ -50,6 +50,10 @@
   text-transform: uppercase;
 }
 
+.data-cards .news-card .news-card-tag > p {
+  margin: 0;
+}
+
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p {
   /* refactor */
   display: inline-block;
@@ -126,6 +130,54 @@
 
 .data-cards.data-card-variation .data-card-tag.planet {
   border-bottom-color: #07AB50;
+}
+
+
+.data-cards.news-card-variation .rte-container > div:first-child {
+  /* refactor */
+  font-size: 28px;
+  line-height: 31px;
+  text-transform: uppercase;
+  color: #002337;
+}
+
+.data-cards.news-card-variation .rte-container > div:nth-child(2) {
+  /* refactor */
+  border-bottom: 2px solid #E7EDF3;
+}
+
+.data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
+  /* refactor */
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 120%;
+  color: #181F25;
+}
+
+.data-cards.news-card-variation .news-card-items .news-card {
+  display: grid;
+}
+
+.data-cards .news-card .news-card-tag {
+  order: 1;
+  border-left: 2px solid #07AB50;
+  padding-left: 18px;
+}
+
+.data-cards .news-card .news-card-title {
+  order: 2;
+  border-left: 2px solid #07AB50;
+  padding-left: 18px;
+}
+
+.data-cards .news-card .news-card-image {
+  order: 0;
+}
+
+.data-cards .news-card .news-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (width >= 768px) {
