@@ -12,31 +12,33 @@ function processTag(tag) {
 }
 
 export default async function decorate(block) {
-  // eslint-disable-next-line no-unused-vars
-  const [rte1, rte2, rte3, ...cards] = [...block.children];
-  const rteContainer = div({ class: 'rte-container' });
-  if (rte1 && rte2 && rte3) {
-    rteContainer.append(rte1);
-    rteContainer.append(rte2);
-    rteContainer.append(rte3);
-    block.append(rteContainer);
-  }
-
-  const dataCardsContainer = div({ class: 'data-cards-container' });
-  if (cards.length) {
-    dataCardsContainer.append(...cards);
-    block.append(dataCardsContainer);
-  }
-  cards.forEach((row) => {
-    row.className = 'data-card';
-    const [tag, title, description, disclaimer] = [...row.children];
-    tag.className = 'data-card-tag';
-    title.className = 'data-card-title';
-    description.className = 'data-card-description';
-    disclaimer.className = 'data-card-disclaimer';
-
-    if (tag) {
-      processTag(tag);
+  const isDataCardVariation = block.classList.contains('data-card-variation');
+  if (isDataCardVariation) {
+    const [rte1, rte2, rte3, ...cards] = [...block.children];
+    const rteContainer = div({ class: 'rte-container' });
+    if (rte1 && rte2 && rte3) {
+      rteContainer.append(rte1);
+      rteContainer.append(rte2);
+      rteContainer.append(rte3);
+      block.append(rteContainer);
     }
-  });
+
+    const dataCardItems = div({ class: 'data-card-items' });
+    if (cards.length) {
+      dataCardItems.append(...cards);
+      block.append(dataCardItems);
+    }
+    cards.forEach((row) => {
+      row.className = 'data-card';
+      const [tag, title, description, disclaimer] = [...row.children];
+      tag.className = 'data-card-tag';
+      title.className = 'data-card-title';
+      description.className = 'data-card-description';
+      disclaimer.className = 'data-card-disclaimer';
+
+      if (tag) {
+        processTag(tag);
+      }
+    });
+  }
 }
