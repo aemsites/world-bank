@@ -3,6 +3,15 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 import {
   p, button, div, a, li, ul,
 } from '../../scripts/dom-helpers.js';
+import { processTags } from '../../scripts/utils.js';
+
+function processTag(tagdiv, tagAuthored) {
+  let tagValue = tagAuthored.innerText;
+  if (tagValue) {
+    tagValue = processTags(tagValue, 'content-type');
+    tagdiv.textContent = tagValue;
+  }
+}
 
 // Creates a feature card element with its content
 function createFeatureCard(row) {
@@ -13,6 +22,8 @@ function createFeatureCard(row) {
     featureDescContent,
     featureLink,
   ] = row.children;
+  const featureDiv = div({ class: 'feature-card' });
+  moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = '';
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
@@ -20,23 +31,28 @@ function createFeatureCard(row) {
     p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
     a({ href: featureLink.textContent }, button({ type: 'button' }, 'Read the Story')), // TODO button label approach
   );
-
   const pictureElement = featureImageContent.querySelector('picture');
-  return div({ class: 'feature-card' }, pictureElement, featureContentWrapper);
+  if (pictureElement) {
+    featureDiv.append(pictureElement);
+  }
+  featureDiv.append(featureContentWrapper);
+  return featureDiv;
 }
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent] = row.children;
-
+  const [imageContent, tagContent, headingContent, linkDiv] = row.children;
   const liTag = li();
+  moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
   const imageDiv = div({ class: 'curated-cards-card-img' });
   const tagElement = div({ class: 'curated-cards-card-event' });
   const heading = p();
+  const link = linkDiv.textContent ? linkDiv.textContent : '';
+  linkDiv.remove();
 
   if (tagContent) {
-    tagElement.textContent = tagContent.textContent.substring(11).trim();
+    processTag(tagElement, tagContent);
   }
 
   if (imageContent) {
@@ -47,7 +63,7 @@ function processRow(row) {
     heading.textContent = headingContent.textContent;
   }
 
-  textWrapper.append(heading, tagElement);
+  textWrapper.append(a({ href: link }, heading), tagElement);
   liTag.append(imageDiv, textWrapper);
 
   row.innerHTML = '';

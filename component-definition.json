@@ -142,19 +142,59 @@
           }
         },
         {
-          "title": "Data Cards",
-          "id": "data-cards",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Data Cards",
-                  "filter": "data-cards"
+            "title": "Data Cards",
+            "id": "data-cards",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/franklin/components/block/v1/block",
+                        "template": {
+                            "name": "Data Cards",
+                            "model": "data-cards",
+                            "filter": "data-cards",
+                            "title": "<p><strong>Data</strong> for Development</p>",
+                            "description": "<p>Essential data to guide decisions, monitor progress, and evaluate impacts</p>",
+                            "additional-text": "<p>Explore by focus area</p>",
+                            "item1": {
+                                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                                "name": "Data Card",
+                                "model": "data-card",
+                                "data-card-tags": "/content/cq:tags/world-bank/category/prosperity",
+                                "curated-card-title": "Data Card Title",
+                                "curated-card-description": "Data Card Description",
+                                "data-card-disclaimer": "Data Card Disclaimer"
+                            },
+                            "item2": {
+                                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                                "name": "Data Card",
+                                "model": "data-card",
+                                "data-card-tags": "/content/cq:tags/world-bank/category/prosperity",
+                                "curated-card-title": "Data Card Title",
+                                "curated-card-description": "Data Card Description",
+                                "data-card-disclaimer": "Data Card Disclaimer"
+                            },
+                            "item3": {
+                                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                                "name": "Data Card",
+                                "model": "data-card",
+                                "data-card-tags": "/content/cq:tags/world-bank/category/prosperity",
+                                "curated-card-title": "Data Card Title",
+                                "curated-card-description": "Data Card Description",
+                                "data-card-disclaimer": "Data Card Disclaimer"
+                            },
+                            "item4": {
+                                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                                "name": "Data Card",
+                                "model": "data-card",
+                                "data-card-tags": "/content/cq:tags/world-bank/category/prosperity",
+                                "curated-card-title": "Data Card Title",
+                                "curated-card-description": "Data Card Description",
+                                "data-card-disclaimer": "Data Card Disclaimer"
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         },
         {
           "title": "Data Card",
@@ -172,6 +212,21 @@
           }
         },
         {
+            "title": "News Card",
+            "id": "news-card",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/franklin/components/block/v1/block/item",
+                        "template": {
+                            "name": "News Card",
+                            "model": "news-card"
+                        }
+                    }
+                }
+            }
+        },
+        {
           "title": "Curated Cards",
           "id": "curated-cards",
           "plugins": {
@@ -180,7 +235,47 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Curated Cards",
-                  "filter": "curated-cards"
+                  "filter": "curated-cards",
+                  "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Curated Card",
+                    "model": "curated-card",
+                    "curated-card-image": "/content/dam/world-bank/sample/3000x2400.svg",
+                    "curated-card-tags": "world-bank:content-type/event",
+                    "curated-card-title": "Curated Card Title",
+                    "curated-card-description": "Card Description",
+                    "curated-card-link": "/content/world-bank/global/en"
+                  },
+                  "item2": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Curated Card",
+                    "model": "curated-card",
+                    "curated-card-image": "/content/dam/world-bank/sample/799x533.svg",
+                    "curated-card-tags": "world-bank:content-type/event",
+                    "curated-card-title": "Curated Card Title",
+                    "curated-card-description": "Card Description",
+                    "curated-card-link": "/content/world-bank/global/en"
+                  },
+                  "item3": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Curated Card",
+                    "model": "curated-card",
+                    "curated-card-image": "/content/dam/world-bank/sample/799x533.svg",
+                    "curated-card-tags": "world-bank:content-type/feature-story",
+                    "curated-card-title": "Curated Card Title",
+                    "curated-card-description": "Card Description",
+                    "curated-card-link": "/content/world-bank/global/en"
+                  },
+                  "item4": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "curated-card-name": "Curated Card",
+                    "model": "curated-card",
+                    "curated-card-image": "/content/dam/world-bank/sample/799x533.svg",
+                    "curated-card-tags": "evworld-bank:content-type/event",
+                    "curated-card-title": "Curated Card Title",
+                    "curated-card-description": "Card Description",
+                    "curated-card-link": "/content/world-bank/global/en"
+                  }
                 }
               }
             }
@@ -209,9 +304,43 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "explore-cards",
+                  "name": "Explore Cards",
                   "model": "explore-cards",
-                  "filter": "explore-cards"
+                  "filter": "explore-cards",
+                  "title": "<p>Explore Development Stories <strong>From Around the World</strong></p>",
+                  "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Explore Card",
+                    "model": "explore-card",
+                    "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "alt": "Alt text",
+                    "title": "Green Jobs. Learn What They Are. And Why We’re Invested.",
+                    "link": "/content/world-bank/global/en",
+                    "content-type": "world-bank:content-type/audio",
+                    "story-type": "world-bank:story-type/immersive-stories"
+                  },
+                  "item2": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Explore Card",
+                    "model": "explore-card",
+                    "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "alt": "Alt text",
+                    "title": "Inside Somalia: Signs of Hope on the Road to Recovery.",
+                    "link": "/content/world-bank/global/en",
+                    "content-type": "world-bank:content-type/article",
+                    "story-type": "world-bank:story-type/the-development-podcast"
+                  },
+                  "item3": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Explore Card",
+                    "model": "explore-card",
+                    "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "alt": "Alt text",
+                    "title": "Discover the Link Between Plastic Pollution and Poverty.",
+                    "link": "/content/world-bank/global/en",
+                    "content-type": "world-bank:content-type/video",
+                    "story-type": "world-bank:story-type/expert-answers"
+                  }
                 }
               }
             }
@@ -225,8 +354,132 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "explore-card",
+                  "name": "Explore Card",
                   "model": "explore-card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Mini Cards",
+          "id": "mini-cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Mini Cards",
+                  "filter": "mini-cards",
+                  "model": "mini-cards",
+                  "mini-cards-heading": "<p>The Heading for <strong>Mini Cards Block</strong></p>",
+                  "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Mini Card",
+                    "model": "mini-card",
+                    "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "mini-card-tag": "world-bank:content-type/event",
+                    "mini-card-title": "Mini Card Title",
+                    "mini-card-date": "July 18",
+                    "mini-card-time": "8:30 AM",
+                    "mini-card-link": "/content/world-bank/global/en",
+                    "mini-card-location": "city, country"
+                  },
+                  "item2": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Mini Card",
+                    "model": "mini-card",
+                    "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "mini-card-tag": "world-bank:content-type/event",
+                    "mini-card-title": "Mini Card Title",
+                    "mini-card-date": "July 18",
+                    "mini-card-time": "",
+                    "mini-card-link": "/content/world-bank/global/en"
+                  },
+                  "item3": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Mini Card",
+                    "model": "mini-card",
+                    "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "mini-card-tag": "world-bank:content-type/event",
+                    "mini-card-title": "Mini Card Title",
+                    "mini-card-date": "July 18",
+                    "mini-card-time": "",
+                    "mini-card-link": "/content/world-bank/global/en"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Mini Card",
+          "id": "mini-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Mini Card",
+                  "model": "mini-card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Research Publications Cards",
+          "id": "research-publications-cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Research Publications Cards",
+                  "model": "research-publications-cards",
+                  "filter": "research-publications-cards",
+                  "title": "<p>&nbsp;<strong>Research</strong> & Publications</p>",
+                  "buttontext": "More Research & Publications",
+                  "buttonlink": "https://www.worldbank.org",
+                  "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Research Publications Card",
+                    "model": "research-publications-card",
+                    "image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "alt": "Global Economy Set for Weakest Showing in 30 Years",
+                    "title": "Global Economy Set for Weakest Showing in 30 Years",
+                    "description": "Find global economic outlook, regional outlooks and special topics in this twice-a-year flagship publication.",
+                    "href": "https://www.worldbank.org",
+                    "buttontext": "Read Full Report",
+                    "buttonlink": "https://www.worldbank.org"
+                  },
+                  "item2": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Research Publications Card",
+                    "model": "research-publications-card",
+                    "image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "alt": "Bend the Emissions Curve",
+                    "title": "Bend the Emissions Curve",
+                    "description": "State and Trends of Carbon Pricing 2024 helps inform, influence and incentivize better policies for a warming world.",
+                    "href": "https://www.worldbank.org",
+                    "buttontext": "Read Full Report",
+                    "buttonlink": "https://www.worldbank.org"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Research Publications Card",
+          "id": "research-publications-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Research Publications Card",
+                  "model": "research-publications-card"
                 }
               }
             }
