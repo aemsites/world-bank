@@ -33,6 +33,7 @@ export const LANGUAGE_TOGGLE_CLASS = 'language-toggle';
 export const LANGUAGE_SELECTOR_META_NAME = 'alternate-url';
 export const LANGUAGE_CONTENT_CLASS = 'language-content';
 export const LANGUAGE_CONTAINER_CLASS = 'language-container';
+export const LANGUAGE_CONTAINER_CLASS_SELECTOR = '.language-container';
 export const SHOW_SELECTED_CLASS = 'show-selected';
 export const COMMA_SEPARATOR = ',';
 export const PIPE_SEPARATOR = '|';
