@@ -7,11 +7,12 @@ import {
  * Swoosh on page
  */
 function pageSwoosh() {
-  const showSwoosh = getMetadata('show-swoosh');
-  if (showSwoosh === 'true') {
-    document.body.classList.add('page-swoosh');
+  const pSwoosh = getMetadata('page-swoosh');
+  if (!pageSwoosh || pageSwoosh.length < 1) return;
+  if (pSwoosh !== 'page-swoosh-no') {
+    document.body.classList.add(pSwoosh);
   } else {
-    document.body.classList.remove('page-swoosh');
+    document.body.classList.remove(pSwoosh);
   }
 }
 

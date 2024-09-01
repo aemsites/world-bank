@@ -284,6 +284,10 @@
             "value": "section-none"
           },
           {
+            "name": "Spacing tiny",
+            "value": "section-tiny"
+          },
+          {
             "name": "Spacing xxsmall",
             "value": "section-xxsmall"
           },
@@ -292,24 +296,20 @@
             "value": "section-xsmall"
           },
           {
-            "name": "Spacing small",
-            "value": "section-small"
-          },
-          {
-            "name": "Spacing 20px",
-            "value": "sec-spacing-20"
-          },
-          {
             "name": "Spacing regular",
             "value": "section-regular"
           },
           {
-            "name": "Spacing 28px",
-            "value": "sec-spacing-28"
+            "name": "Spacing small",
+            "value": "section-small"
           },
           {
             "name": "Spacing medium",
             "value": "section-medium"
+          },
+          {
+            "name": "Spacing large",
+            "value": "section-large"
           },
           {
             "name": "Spacing xlarge",
@@ -384,6 +384,10 @@
           {
             "name": "Neutrals 20",
             "value": "bg-neutrals-20"
+          },
+          {
+            "name": "Neutrals 40 with gradient",
+            "value": "bg-neutrals-40-gradient"
           }
         ]
       },
@@ -436,6 +440,32 @@
     ]
   },
   {
+    "id": "data-cards",
+    "fields": [
+     {
+        "component": "richtext",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+     },
+     {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+     },
+     {
+        "component": "richtext",
+        "name": "additional-text",
+        "value": "",
+        "label": "Additional Text",
+        "valueType": "string"
+     }
+    ]
+  },
+  {
     "id": "data-card",
     "fields": [
      {
@@ -470,6 +500,33 @@
     ]
   },
   {
+    "id": "news-card",
+    "fields": [
+     {
+        "component": "aem-tag",
+        "name": "news-card-tags",
+        "label": "Tags for Card",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/world-bank/category",
+        "description": "Tags for news card"
+     },
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "news-card-title",
+        "value": "",
+        "label": "Title"
+     },
+     {
+        "component": "reference",
+        "valueType": "string",
+        "name": "news-card-image",
+        "label": "Image",
+        "multi": false
+     }
+    ]
+  },
+  {
     "id": "curated-card",
     "fields": [
       {
@@ -484,7 +541,7 @@
         "name": "curated-card-tags",
         "label": "Tags for Card",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank",
+        "rootPath": "/content/cq:tags/world-bank/content-type",
         "description": "Tags for the curated card"
       },
       {
@@ -596,10 +653,25 @@
         "description": "Sets the description of the page in page meta."
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "show-swoosh",
-        "label": "Show Swoosh on page."
+        "component": "select",
+        "name": "page-swoosh",
+        "value": "",
+        "label": "Page Swoosh",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Swoosh",
+            "value": "page-swoosh-no"
+          },
+          {
+            "name": "Big Curve Swoosh",
+            "value": "page-swoosh-big-curve"
+          },
+          {
+            "name": "Half Curve Swoosh",
+            "value": "page-swoosh-half-curve"
+          }
+        ]
       },
       {
         "component": "text",
@@ -610,6 +682,167 @@
         "label": "Language URL(s)",
         "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
       }
+    ]
+  },
+  {
+    "id": "mini-cards",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "mini-cards-heading",
+        "value": "",
+        "label": "Mini Cards Heading",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "mini-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mini-card-image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "aem-tag",
+        "name": "mini-card-tag",
+        "label": "Card Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/content-type",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-title",
+        "value": "",
+        "label": "Title", 
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-date",
+        "value": "",
+        "label": "Date"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-time",
+        "value": "",
+        "label": "Time"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mini-card-location",
+        "value": "",
+        "label": "Location"
+      },
+      {
+        "component": "text",
+        "name": "mini-card-link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "research-publications-cards",
+    "fields": [
+      {
+      "component": "richtext",
+      "valueType": "string",
+      "name": "title",
+      "value": "",
+      "label": "Heading",
+      "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttontext",
+        "label": "Button Text",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttonlink",
+        "label": "Button Link",
+        "value": "",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "research-publications-card",
+    "fields": [   
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Thumbnail Alt Text",
+        "required": true
+      },
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "required": true
+     },
+     {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string",
+        "required": true
+     },
+     {
+      "component": "text",
+      "valueType": "string",
+      "name": "href",
+      "value": "",
+      "label": "Title Link",
+      "required": true
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "buttontext",
+      "label": "Button Text",
+      "value": "",
+      "required": true
+    },
+    {
+      "component": "text",
+      "valueType": "string",
+      "name": "buttonlink",
+      "label": "Button Link",
+      "value": "",
+      "required": true
+    }
     ]
   },
   {
