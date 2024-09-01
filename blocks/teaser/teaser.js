@@ -5,11 +5,9 @@ import { readBlockConfig } from '../../scripts/aem.js';
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-function createVideoPlayer(video) {
+function createVideoPlayer(videoSrc) {
   const pauseIcon = `${window.hlx.codeBasePath}/icons/video-pause.svg`;
   const playIcon = `${window.hlx.codeBasePath}/icons/video-play.svg`;
-  const sampleVideo = 'https://publish-p136806-e1403562.adobeaemcloud.com/content/dam/wb-md/wb-sample.mp4';
-  const videoSrc = video ? video : sampleVideo;
 
   // adding newlines after paren makes this harder to read
   /* eslint-disable function-paren-newline */
@@ -107,6 +105,7 @@ export default function decorate(block) {
     .find((el) => el.textContent.trim() === 'teaserBlurb');
   const rteElement = rteElementTag.parentElement.nextElementSibling;
   const rteContent = rteElement.querySelector('p').innerHTML;
+  const sampleVideo = 'https://publish-p136806-e1403562.adobeaemcloud.com/content/dam/wb-md/wb-sample.mp4';
 
   const properties = readBlockConfig(block);
   const swooshFirst = `${window.hlx.codeBasePath}/icons/teaser_innerswoosh.svg`;
@@ -116,7 +115,7 @@ export default function decorate(block) {
   const buttonText = (properties['btn-text']) ? properties['btn-text'] : 'Button';
   const buttonStyle = (properties['btn-style']) ? properties['btn-style'] : 'dark-bg';
   const buttonLink = (properties['btn-link']) ? properties['btn-link'] : '';
-  const videoReference = isVideo ? properties.videoref : '';
+  const videoReference = isVideo ? properties.videoref : sampleVideo;
   const teaser = div({ class: 'teaser-container' },
     isVideo ? createVideoPlayer(videoReference) : createBackgroundImage(properties),
     div({ class: 'teaser-swoosh-wrapper' },
