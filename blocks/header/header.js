@@ -326,7 +326,7 @@ function createSearchBox() {
     const searchIcon = img({ class: 'search-icon' });
     searchIcon.src = `${window.hlx.codeBasePath}/icons/search-white.svg`;
     searchIcon.alt = 'search';
-    searchIcon.addEventListener('input', () => {
+    searchIcon.addEventListener('click', () => {
       if (searchInputBox.value) {
         window.location.href = listOfAllPlaceholdersData.searchRedirectUrl + searchInputBox.value;
       }
