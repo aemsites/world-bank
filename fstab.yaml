@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p136806-e1403562.adobeaemcloud.com/bin/franklin.delivery/aemsites/world-bank/main"
+    url: "https://author-p136806-e1403562.adobeaemcloud.com/bin/franklin.delivery/aemsites/world-bank/trending-data"
     type: "markup"
     suffix: ".html"
