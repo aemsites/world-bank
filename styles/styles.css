@@ -674,18 +674,19 @@ main .section > div {
 
 .section[class*='bg-primary-blue'] {
   color: var(--color-white);
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--color-white);
-  }
+}
+
+.section[class*='bg-primary-blue'] h1,
+.section[class*='bg-primary-blue'] h2,
+.section[class*='bg-primary-blue'] h3,
+.section[class*='bg-primary-blue'] h4,
+.section[class*='bg-primary-blue'] h5,
+.section[class*='bg-primary-blue'] h6 {
+  color: var(--color-white);
 }
 
 .section[class*='bg-neutrals'] {
-  color: var(--neutrals-100); 
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--primary-blue-100);
-  }
+  color: var(--neutrals-100);
 }
 
 main .section.bg-primary-blue-90,
@@ -834,4 +835,3 @@ body.no-scroll {
   text-transform: uppercase;
   margin: var(--main-heading-spacing);
 }
-
