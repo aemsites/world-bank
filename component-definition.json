@@ -374,38 +374,38 @@
                   "model": "mini-cards",
                   "mini-cards-heading": "<p>The Heading for <strong>Mini Cards Block</strong></p>",
                   "item1": {
-                  "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                  "name": "Mini Card",
-                  "model": "mini-card",
-                  "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
-                  "mini-card-tag": "world-bank:content-type/event",
-                  "mini-card-title": "Mini Card Title",
-                  "mini-card-date": "July 18",
-                  "mini-card-time": "8:30 AM",
-                  "mini-card-link": "/content/world-bank/global/en",
-                  "mini-card-location": "city, country"
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Mini Card",
+                    "model": "mini-card",
+                    "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "mini-card-tag": "world-bank:content-type/event",
+                    "mini-card-title": "Mini Card Title",
+                    "mini-card-date": "July 18",
+                    "mini-card-time": "8:30 AM",
+                    "mini-card-link": "/content/world-bank/global/en",
+                    "mini-card-location": "city, country"
                   },
                   "item2": {
-                  "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                  "name": "Mini Card",
-                  "model": "mini-card",
-                  "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
-                  "mini-card-tag": "world-bank:content-type/event",
-                  "mini-card-title": "Mini Card Title",
-                  "mini-card-date": "July 18",
-                  "mini-card-time": "",
-                  "mini-card-link": "/content/world-bank/global/en"
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Mini Card",
+                    "model": "mini-card",
+                    "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "mini-card-tag": "world-bank:content-type/event",
+                    "mini-card-title": "Mini Card Title",
+                    "mini-card-date": "July 18",
+                    "mini-card-time": "",
+                    "mini-card-link": "/content/world-bank/global/en"
                   },
                   "item3": {
-                  "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                  "name": "Mini Card",
-                  "model": "mini-card",
-                  "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
-                  "mini-card-tag": "world-bank:content-type/event",
-                  "mini-card-title": "Mini Card Title",
-                  "mini-card-date": "July 18",
-                  "mini-card-time": "",
-                  "mini-card-link": "/content/world-bank/global/en"
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Mini Card",
+                    "model": "mini-card",
+                    "mini-card-image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "mini-card-tag": "world-bank:content-type/event",
+                    "mini-card-title": "Mini Card Title",
+                    "mini-card-date": "July 18",
+                    "mini-card-time": "",
+                    "mini-card-link": "/content/world-bank/global/en"
                   }
                 }
               }
@@ -437,7 +437,34 @@
                 "template": {
                   "name": "Research Publications Cards",
                   "model": "research-publications-cards",
-                  "filter": "research-publications-cards"
+                  "filter": "research-publications-cards",
+                  "title": "<p>&nbsp;<strong>Research</strong> & Publications</p>",
+                  "buttontext": "More Research & Publications",
+                  "buttonlink": "https://www.worldbank.org",
+                  "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Research Publications Card",
+                    "model": "research-publications-card",
+                    "image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "alt": "Global Economy Set for Weakest Showing in 30 Years",
+                    "title": "Global Economy Set for Weakest Showing in 30 Years",
+                    "description": "Find global economic outlook, regional outlooks and special topics in this twice-a-year flagship publication.",
+                    "href": "https://www.worldbank.org",
+                    "buttontext": "Read Full Report",
+                    "buttonlink": "https://www.worldbank.org"
+                  },
+                  "item2": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Research Publications Card",
+                    "model": "research-publications-card",
+                    "image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "alt": "Bend the Emissions Curve",
+                    "title": "Bend the Emissions Curve",
+                    "description": "State and Trends of Carbon Pricing 2024 helps inform, influence and incentivize better policies for a warming world.",
+                    "href": "https://www.worldbank.org",
+                    "buttontext": "Read Full Report",
+                    "buttonlink": "https://www.worldbank.org"
+                  }
                 }
               }
             }
