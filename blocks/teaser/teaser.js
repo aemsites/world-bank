@@ -115,7 +115,7 @@ export default function decorate(block) {
   const buttonText = (properties['btn-text']) ? properties['btn-text'] : 'Button';
   const buttonStyle = (properties['btn-style']) ? properties['btn-style'] : 'dark-bg';
   const buttonLink = (properties['btn-link']) ? properties['btn-link'] : '';
-  const videoReference = isVideo ? properties.videoref : sampleVideo;
+  const videoReference = isVideo ? properties.videoreference : sampleVideo;
   const teaser = div({ class: 'teaser-container' },
     isVideo ? createVideoPlayer(videoReference) : createBackgroundImage(properties),
     div({ class: 'teaser-swoosh-wrapper' },
