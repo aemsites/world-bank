@@ -747,9 +747,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "subscriptionType",
+        "name": "subscription-type",
         "label": "Subscription Type",
-        "description": "Sets the Subscription Type"
+        "description": "Sets the Subscription Type."
       }
     ]
   },
