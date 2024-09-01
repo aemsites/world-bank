@@ -104,6 +104,8 @@ export default function decorate(block) {
   const swooshFirst = `${window.hlx.codeBasePath}/icons/teaser_innerswoosh.svg`;
   const swooshSecond = `${window.hlx.codeBasePath}/icons/teaser_outerswoosh.svg`;
 
+  console.log(block);
+
   [...block.children].forEach((row) => {
     const propEl = row.querySelector('p');
     if (propEl) {
@@ -147,7 +149,7 @@ export default function decorate(block) {
   );
 
   teaser.querySelector('.teaser-title').innerHTML = properties.teaserBlurb ? properties.teaserBlurb : 'Authorable RTE text';
-  block.innerHTML = '';
+  //block.innerHTML = '';
   block.appendChild(teaser);
 
   // add observer for video and listeners for play/pause
