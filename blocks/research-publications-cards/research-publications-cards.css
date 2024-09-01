@@ -1,50 +1,21 @@
+.research-publications-cards a.button {
+  margin: 0;
+}
+
 .heading-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-}
-
-.heading-wrapper a.title-button {
-  background: var(--primary-blue-80);
-  padding: 15px 20px;
-  border-radius: 50px;
-  font-size: var(--size-16);
-  color: var(--color-white);
-  text-decoration: none;
+  margin: var(--main-heading-spacing);
 }
 
 .heading-wrapper p {
   margin: 0;
 }
 
-.heading-wrapper a.title-button p {
-  margin: 0;
-  font-weight: 700;
-}
-
-.heading-wrapper .main-heading {
-  text-transform: uppercase;
-  font-size: var(--heading-label-small);
-  line-height: 31px;
-}
-
 .button-wrapper {
   display: block;
   margin-top: 50px;
-}
-
-.button-wrapper a {
-  background: var(--primary-blue-80);
-  padding: 15px 20px;
-  border-radius: 50px;
-  font-size: var(--size-16);
-  color: var(--color-white);
-  text-decoration: none;
-}
-
-.button-wrapper a:visited {
-  color: var(--color-white);
 }
 
 .cards-container {
@@ -122,11 +93,6 @@
 }
 
 @media (width >= 768px) {
-  .heading-wrapper .main-heading {
-    font-size: var(--h2-large);
-    line-height: 35px;
-  }
-
   .cards-container .rp-card {
     align-items: center;
   }  

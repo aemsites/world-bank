@@ -21,15 +21,6 @@
     line-height: 24px;
 }
 
-.explore-cards .heading {
-    margin-bottom: var(--spacing-20);
-}
-
-.explore-cards  .heading p {
-    font-size: var(--h2-base);
-    line-height: 30.8px;
-}
-
 .explore-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -72,10 +63,10 @@
     color: var(--color-white);
     display: block;
     height: 100%;
+}
 
-    .card-img {
-        height: 100%;
-    }
+.explore-card a .card-img {
+    height: 100%;
 }
 
 .explore-card picture img {
@@ -104,10 +95,6 @@
 }
 
 @media (width >=768px) {
-    .heading p {
-        line-height: 35.2px;
-    }
-
     .explore-card-container {
         grid-template-columns: 1fr;
         width: unset;
@@ -123,10 +110,6 @@
 }
 
 @media (width >=1024px) {
-    .heading p {
-        line-height: 44px;
-    }
-
     .explore-card {
         height: 500px;
     }
