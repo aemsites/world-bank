@@ -93,7 +93,7 @@ const createCategoriesAndSubMenu = (level0Item, submenuId, index, countrySearchP
     id: submenuId,
     class: constants.SUBMENU,
     style:
-            isDesktop.matches && index === 0 ? 'display: flex;' : 'display: none;',
+            isDesktop.matches && index === 0 ? 'display: grid;' : 'display: none;',
   });
 
   level0Item.categories.forEach((category) => {
@@ -128,7 +128,7 @@ const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIn
     sidemenuBackButton.style.display = 'block';
     const currentSubMenu = rightColumn.querySelector(constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR);
     currentSubMenu.textContent = submenuTitle;
-    currentSubMenu.style.display = 'flex';
+    currentSubMenu.style.display = 'grid';
     leftColumn.style.display = 'none';
   }
 
@@ -136,7 +136,7 @@ const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIn
     constants.SUBMENU_WITH_SELECTOR,
   );
   submenus.forEach((submenu) => {
-    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
+    submenu.style.display = submenu.id === submenuId ? 'grid' : 'none';
   });
 
   // Update the selected state of the menu items in the left column
@@ -166,7 +166,7 @@ const closesideMenu = (leftColumn, rightColumn) => {
   });
   submenus.forEach((submenu, index) => {
     if (isDesktop.matches && index === 0) {
-      submenu.style.display = 'flex';
+      submenu.style.display = 'grid';
     } else {
       submenu.style.display = 'none';
     }
