@@ -1,6 +1,6 @@
 import { div } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
-import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { fetchLanguagePlaceholders, CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 import { toCamelCase } from '../../scripts/aem.js';
 
 async function fetchingPlaceholdersData(block) {
@@ -20,17 +20,13 @@ async function fetchingPlaceholdersData(block) {
 
 export default function decorate(block) {
   // Style and append the heading to the main container
-  const heading = block.querySelector('.explore-cards > div:first-child');
+  const [heading, ...cards] = [...block.children];
+  if (!cards || !cards.length) return;
   if (heading) {
-    heading.classList.add('heading');
+    heading.classList.add(CLASS_MAIN_HEADING);
   }
 
-  // Select all cards except the first child (heading)
-  const cards = block.querySelectorAll('.explore-cards > div:nth-child(n+2)');
-  if (!cards || !cards.length) return;
-
   const cardsContainer = div({ class: 'explore-card-container' });
-
   // Iterate through each card
   cards.forEach((card) => {
     if (!card) return;
