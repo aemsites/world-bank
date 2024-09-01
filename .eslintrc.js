@@ -28,6 +28,7 @@ module.exports = {
         section: 7,
         'mini-card': 8,
         'research-publications-card': 7,
+        'page-metadata':7,
       },
     ],
   },
