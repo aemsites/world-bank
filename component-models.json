@@ -706,29 +706,15 @@
         "component": "text",
         "valueType": "string",
         "name": "consent-api-url",
-        "label": "Consent API endpoint",
-        "description": "Sets the consent api endpoint."
+        "label": "Consent API Endpoint",
+        "description": "Sets the Consent API Endpoint."
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "ocp-apim-subscription-key",
-        "label": "OCP API subscription Key",
-        "description": "Sets the ocp-apim-subscription-key."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "consent-name",
-        "label": "Name",
-        "description": "Sets the name of consent api"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "consent-occupation",
-        "label": "Occupation",
-        "description": "Sets the occupation of consent api"
+        "label": "OCP API Subscription Key",
+        "description": "Sets the OCP API Subscription Key."
       },
       {
         "component": "text",
@@ -747,21 +733,21 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "event-sub-list",
+        "name": "eventSubList",
         "label": "Event Sub List",
         "description": "Sets the Event Sub List"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "event-sub-update-list",
+        "name": "eventSubUpdateList",
         "label": "Event Sub Update List",
         "description": "Sets the Event Sub Update List"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "subscriptiontype",
+        "name": "subscriptionType",
         "label": "Subscription Type",
         "description": "Sets the Subscription Type"
       }

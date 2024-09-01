@@ -57,32 +57,32 @@ function attachFormValidation() {
       // Call the Consent API
       const consentData = {
         dsDataElements: {
-          Name: firstName || "N/A",
-          Occupation: ""
+          Name: firstName || 'N/A',
+          Occupation: '',
         },
-        identifier: email
+        identifier: email,
       };
 
       await callApi(
         'https://webapi.worldbank.org/api/aem/campaign/consent',
         consentData,
-        'Failed to send consent data'
+        'Failed to send consent data',
       );
 
       // Call the Subscription API
       const subscriptionData = {
         email,
         firstName,
-        cusWbg_subscription_list: "World Bank in China:@Purnw0I-i4j3sxYUHKXmmngLM2fEKqUbg8EBD6liWZBFDJYtct9fjZ9-cyVWwRwXRIabgDXU5FnxMPuj6GrFJqgZu5VHGH01lAJPDjiq6Asmtbtz",
-        eventSubList: "EVTRTEVTWbgNlRewampConf",
-        eventSubUpdateList: "EVTExtNlUpdNotify",
-        subscriptionType: "country"
+        cusWbg_subscription_list: 'World Bank in China:@Purnw0I-i4j3sxYUHKXmmngLM2fEKqUbg8EBD6liWZBFDJYtct9fjZ9-cyVWwRwXRIabgDXU5FnxMPuj6GrFJqgZu5VHGH01lAJPDjiq6Asmtbtz',
+        eventSubList: 'EVTRTEVTWbgNlRewampConf',
+        eventSubUpdateList: 'EVTExtNlUpdNotify',
+        subscriptionType: 'country',
       };
 
       await callApi(
         'https://webapi.worldbank.org/api/aem/campaign/subscribe',
         subscriptionData,
-        'Failed to send subscription data'
+        'Failed to send subscription data',
       );
 
       alert('Form submitted successfully!');
@@ -155,7 +155,7 @@ async function fetchingPlaceholdersData(block) {
         { selector: '#email', key: CONSTANTS.SIGNUP_EMAIL_PLACEHOLDER, attribute: 'placeholder' },
         { selector: '#firstname', key: CONSTANTS.SIGNUP_NAME_PLACEHOLDER, attribute: 'placeholder' },
         { selector: '#signup-btn', key: CONSTANTS.SIGNUP_BUTTON_TEXT, attribute: 'innerText' },
-        { selector: '#agree + label', key: CONSTANTS.SIGNUP_TERMS, attribute: 'innerHTML' }
+        { selector: '#agree + label', key: CONSTANTS.SIGNUP_TERMS, attribute: 'innerHTML' },
       ];
 
       elementsToUpdate.forEach(({ selector, key, attribute = 'innerHTML' }) => {
