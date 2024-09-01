@@ -108,6 +108,7 @@ export default function decorate(block) {
 
   [...block.children].forEach((row) => {
     const propEl = row.querySelector('p');
+    console.log(propEl);
     if (propEl) {
       const key = propEl.dataset.aueProp;
       if (propEl.children.length === 0) {
@@ -120,6 +121,7 @@ export default function decorate(block) {
       }
     } else {
       const picEl = row.querySelector('picture > img');
+      console.log(picEl);
       if (picEl) {
         properties[picEl.dataset.aueProp] = picEl.src;
       }
