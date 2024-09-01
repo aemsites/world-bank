@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { moveInstrumentation, CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 import { a, div } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
 
@@ -14,12 +14,10 @@ function processTag(tag) {
 }
 
 export default function decorate(block) {
-  // Style and append the heading to the main container
-  const heading = block.querySelector('.mini-cards > div:first-child');
-  heading.classList.add('heading');
-
-  // Select all cards except the first child (heading)
-  const cards = block.querySelectorAll('.mini-cards > div:nth-child(n+2)');
+  const [heading, ...cards] = [...block.children];
+  if (heading) {
+    heading.classList.add(CLASS_MAIN_HEADING);
+  }
   const miniCardsContainer = div({ class: 'mini-card-container' });
   cards.forEach((row) => {
     row.className = 'mini-card';

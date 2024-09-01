@@ -462,6 +462,23 @@
         "value": "",
         "label": "Additional Text",
         "valueType": "string"
+     },
+     {
+       "component": "select",
+       "valueType": "string",
+       "name": "classes",
+       "value": "",
+       "label": "Classes",
+       "options": [
+         {
+           "name": "Data Card",
+           "value": "data-card-variation"
+         },
+         {
+           "name": "News Card",
+           "value": "news-card-variation"
+         }
+       ]
      }
     ]
   },
@@ -473,7 +490,7 @@
         "name": "tags",
         "label": "Tags for Card",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank",
+        "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for data card"
      },
      {
@@ -534,7 +551,8 @@
         "valueType": "string",
         "name": "curated-card-image",
         "label": "Image",
-        "multi": false
+        "multi": false,
+        "required": true
       },
       {
         "component": "aem-tag",
@@ -542,7 +560,8 @@
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank/content-type",
-        "description": "Tags for the curated card"
+        "description": "Tags for the curated card",
+        "required": true
       },
       {
         "component": "text",
@@ -550,7 +569,8 @@
         "name": "curated-card-title",
         "value": "",
         "label": "Title",
-        "description": "Sets the title of the Card"
+        "description": "Sets the title of the Card",
+        "required": true
       },
       {
         "component": "text",
