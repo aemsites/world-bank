@@ -5,10 +5,11 @@ import { readBlockConfig } from '../../scripts/aem.js';
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-function createVideoPlayer(videoSrc) {
+function createVideoPlayer(video) {
   const pauseIcon = `${window.hlx.codeBasePath}/icons/video-pause.svg`;
   const playIcon = `${window.hlx.codeBasePath}/icons/video-play.svg`;
   const sampleVideo = 'https://publish-p136806-e1403562.adobeaemcloud.com/content/dam/wb-md/wb-sample.mp4';
+  const videoSrc = video ? video : sampleVideo;
 
   // adding newlines after paren makes this harder to read
   /* eslint-disable function-paren-newline */
@@ -20,7 +21,7 @@ function createVideoPlayer(videoSrc) {
       img({ class: 'pause-icon controls', src: pauseIcon }),
     ),
     video({ id: 'videoPlayer' },
-      source({ src: videoSrc ? videoSrc : sampleVideo, type: 'video/mp4' }, 'Your browser does not support the video tag.'),
+      source({ src: videoSrc, type: 'video/mp4' }, 'Your browser does not support the video tag.'),
     ),
   );
 
@@ -103,7 +104,7 @@ function attachListeners() {
 
 export default function decorate(block) {
   const rteElementTag = Array.from(block.querySelectorAll('p'))
-    .find(el => el.textContent.trim() === 'teaserBlurb');
+    .find((el) => el.textContent.trim() === 'teaserBlurb');
   const rteElement = rteElementTag.parentElement.nextElementSibling;
   const rteContent = rteElement.querySelector('p').innerHTML;
 
@@ -111,7 +112,7 @@ export default function decorate(block) {
   const swooshFirst = `${window.hlx.codeBasePath}/icons/teaser_innerswoosh.svg`;
   const swooshSecond = `${window.hlx.codeBasePath}/icons/teaser_outerswoosh.svg`;
   const isVideo = (properties.teaserstyle && properties.teaserstyle === 'video');
-  const videoAutoplay = (properties.videobehavior && properties.videobehavior === 'autoplay') ? true : false;
+  const videoAutoplay = (properties.videobehavior && properties.videobehavior === 'autoplay');
   const buttonText = (properties['btn-text']) ? properties['btn-text'] : 'Button';
   const buttonStyle = (properties['btn-style']) ? properties['btn-style'] : 'dark-bg';
   const buttonLink = (properties['btn-link']) ? properties['btn-link'] : '';
