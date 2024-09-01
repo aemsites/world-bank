@@ -19,6 +19,15 @@ export const LEVEL_1 = 'level1';
 export const LEVEL_2 = 'level2';
 export const NAV = 'nav';
 
+export const SEARCH_BY_COUNTRY = 'Search By Country';
+export const NAV_MENU_COLUMN_RIGHT = 'nav-menu-column right';
+export const NAV_MENU_COLUMN_LEFT = 'nav-menu-column left';
+export const NAV_MENU = 'nav-menu';
+export const NAV_MENU_OVERLAY = 'nav-menu-overlay';
+export const SELECTED = 'selected';
+export const COUNTRY_LIST = 'country-list';
+export const COUNTRY_LIST_WITH_SELECTOR = '.country-list';
+
 /* Language Selector Constants */
 export const LANGUAGE_TOGGLE_CLASS = 'language-toggle';
 export const LANGUAGE_SELECTOR_META_NAME = 'alternate-url';

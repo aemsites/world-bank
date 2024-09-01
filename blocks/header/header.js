@@ -1,6 +1,7 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import getLanguageSelector from './language-selector.js';
+import { getNavigationMenu, formatNavigationJsonData } from './navigation.js';
 
 import {
   fetchLanguageNavigation,
@@ -9,13 +10,8 @@ import {
 } from '../../scripts/scripts.js';
 import * as Constants from './constants.js';
 import {
-  p,
   button,
   div,
-  a,
-  li,
-  ul,
-  input,
   img,
   span,
 } from '../../scripts/dom-helpers.js';
@@ -160,47 +156,6 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     window.removeEventListener(Constants.KEY_DOWN, closeOnEscape);
   }
 }
-function formatNavigationJsonData(navJson) {
-  const structuredData = [];
-  let currentLevel0 = null;
-  let currentCategory = null;
-  let currentLevel1 = null;
-  // let Class = '';
-  navJson.forEach((item) => {
-    if (item.Type === Constants.LEVEL_0) {
-      const level0 = {
-        title: item.Title,
-        categories: [],
-      };
-      structuredData.push(level0);
-      currentLevel0 = level0;
-    } else if (
-      item.Type === Constants.CATEGORY
-      || item.Type === Constants.FOOTER
-      || item.Type === Constants.DROPDOWN
-    ) {
-      const category = {
-        ...item,
-        items: [],
-      };
-
-      // Class = item.Type === Constants.FOOTER ? 'footer' : '';
-      currentLevel0.categories.push(category);
-      currentCategory = category;
-    } else if (item.Type === Constants.LEVEL_1) {
-      const level1 = {
-        ...item,
-        items: [],
-      };
-      currentCategory.items.push(level1);
-      currentLevel1 = level1;
-      // Class = item.Class;
-    } else if (item.Type === Constants.LEVEL_2) {
-      currentLevel1.items.push(item);
-    }
-  });
-  return structuredData;
-}
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -220,59 +175,6 @@ function makeImageClickableNSettingAltText() {
     .appendChild(anchor);
 }
 
-function showSubMenu(
-  leftColumn,
-  rightColumn,
-  submenuId,
-  submenuTitle,
-  currentIndex,
-) {
-  rightColumn.style.display = 'block';
-  if (!isDesktop.matches) {
-    const sidemenuBackButton = rightColumn.querySelector(
-      Constants.OVERLAY_BACK_WITH_SELECTOR,
-    );
-    sidemenuBackButton.style.display = 'block';
-    const currentSubMenu = rightColumn.querySelector('.submenu-main-title');
-    currentSubMenu.textContent = submenuTitle;
-    currentSubMenu.style.display = 'flex';
-    leftColumn.style.display = 'none';
-  }
-
-  const submenus = rightColumn.querySelectorAll(
-    Constants.SUBMENU_WITH_SELECTOR,
-  );
-  submenus.forEach((submenu) => {
-    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
-  });
-
-  // Update the selected state of the menu items in the left column
-  const level0Items = leftColumn.querySelectorAll('li');
-  level0Items.forEach((item, index) => {
-    if (index === currentIndex) {
-      item.classList.add('selected');
-    } else {
-      item.classList.remove('selected');
-    }
-  });
-}
-function filterCountry(e) {
-  const inputBrowseCountry = e.currentTarget;
-  if (undefined !== inputBrowseCountry) {
-    const filter = inputBrowseCountry.value.toUpperCase();
-    const countryList = inputBrowseCountry.nextElementSibling;
-    const listItems = countryList.children;
-    const listItemsArray = Array.from(listItems);
-    // Iterate through the list items
-    listItemsArray.forEach((item) => {
-      if (item.textContent.toUpperCase().indexOf(filter) > -1) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-}
 function handleEnterKey(event) {
   if (event.key !== 'Enter') return;
   const inputValue = document.querySelector('.search-container input').value;
@@ -365,160 +267,6 @@ async function fetchingPlaceholdersData(placeholdersData) {
   settingAltTextForSearchIcon();
 }
 
-function createListItemWithAnchor(item) {
-  // Create the main list item
-  const listItem = li(
-    { class: item.Class !== '' ? item.Class : '' },
-    a({ href: item.Link }, item.Title, span()),
-  );
-
-  // If the item has sub-items, recursively create sub-menu
-  if (item.items && item.items.length > 0) {
-    const subList = ul();
-    item.items.forEach((subItem) => {
-      subList.appendChild(createListItemWithAnchor(subItem));
-    });
-    listItem.appendChild(subList);
-  }
-
-  return listItem;
-}
-
-function createCountryDropDown(category, countrySearchPlaceholder) {
-  const countryList = ul({ class: 'country-list' });
-  const searchBarWrapper = li(
-    {},
-    ul(
-      {
-        class: 'browse-country',
-      },
-      category.Title,
-      div(
-        input({
-          type: 'text',
-          placeholder: countrySearchPlaceholder,
-          oninput: (e) => filterCountry(e),
-          onclick: () => {
-            const target = document.querySelector('.country-list');
-            target.style.display = 'block';
-            const dropdownButton = document.querySelector('.browse-country p');
-            dropdownButton.style.transform = 'rotate(-180deg)';
-          },
-        }),
-        countryList,
-      ),
-      p(
-        {
-          onclick: (e) => {
-            const target = document.querySelector('.country-list');
-            if (target.style.display === 'block') {
-              target.style.display = 'none';
-              e.currentTarget.style.transform = 'rotate(0deg)';
-            } else {
-              target.style.display = 'block';
-              e.currentTarget.style.transform = 'rotate(-180deg)';
-            }
-          },
-        },
-      ),
-    ),
-  );
-  category.items.forEach((country) => {
-    countryList.append(li(a({ href: country.Link }, country.Title)));
-  });
-  return searchBarWrapper;
-}
-function createCategoriesAndSubMenu(
-  level0Item,
-  submenuId,
-  index,
-  countrySearchPlaceholder,
-) {
-  const submenu = ul({
-    id: submenuId,
-    class: 'submenu',
-    style:
-      isDesktop.matches && index === 0 ? 'display: flex;' : 'display: none;',
-  });
-
-  level0Item.categories.forEach((category) => {
-    if (category.Type === Constants.DROPDOWN) {
-      submenu.appendChild(
-        createCountryDropDown(category, countrySearchPlaceholder),
-      );
-    } else {
-      const categoryList = ul();
-      const categoryItem = li(
-        { class: category.Type === 'footer' ? category.Type : '' },
-        category.Title,
-      );
-      category.items.forEach((subItem) => {
-        const subMenuItem = createListItemWithAnchor(subItem);
-        categoryList.appendChild(subMenuItem);
-      });
-      categoryItem.appendChild(categoryList);
-      submenu.appendChild(categoryItem);
-    }
-  });
-  return submenu;
-}
-function createNavMenu(structuredNav, searchByCountryPlaceholder) {
-  // Create menu Overlay and divide in two column
-  const listMainNavTitle = ul();
-  const menuLeftColumn = div(
-    { class: 'nav-menu-column left' },
-    listMainNavTitle,
-  );
-
-  const menuRightColumn = div(
-    { class: 'nav-menu-column right' },
-    button({
-      class: Constants.NAV_MENU_OVERLAY_BACK,
-      onclick: () => closesideMenu(menuLeftColumn, menuRightColumn),
-    }),
-    p({ class: Constants.SUBMENU_MAIN_TITLE }),
-  );
-
-  const navMenu = div({ class: 'nav-menu' }, menuLeftColumn, menuRightColumn);
-
-  const menuOverlay = div({ class: 'nav-menu-overlay' }, navMenu);
-
-  // Iterate Over structured nav data to create left & right menu navigation.
-  structuredNav.forEach((level0Item, index) => {
-    const submenuId = `submenu_${index}`;
-    // create left column menu
-    const level0MenuItem = li(
-      {
-        onclick: () => showSubMenu(
-          menuLeftColumn,
-          menuRightColumn,
-          submenuId,
-          level0Item.title,
-          index,
-        ),
-      },
-      span({ textContent: '' }), // level0MenuItemArrow
-      level0Item.title,
-    );
-    const isSelected = isDesktop.matches && index === 0 ? 'selected' : '';
-    if (isSelected) level0MenuItem.classList.add(isSelected);
-
-    listMainNavTitle.appendChild(level0MenuItem);
-
-    // Create right column submenu
-    // Iterate over level0 Items and create associated category list
-    const subMenu = createCategoriesAndSubMenu(
-      level0Item,
-      submenuId,
-      index,
-      `${searchByCountryPlaceholder}`,
-    );
-    menuRightColumn.appendChild(subMenu);
-  });
-
-  return menuOverlay;
-}
-
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -555,13 +303,8 @@ export default async function decorate(block) {
     const structuredNav = formatNavigationJsonData(
       await fetchLanguageNavigation(`/${langCode}`),
     );
-    const placeholdersJson = await fetchLanguagePlaceholders();
-    const searchByCountryPlaceholder = placeholdersJson !== undefined
-      ? placeholdersJson.navMenuSearchByCountryName
-      : 'Search By Country';
-    navSections.append(
-      createNavMenu(structuredNav, searchByCountryPlaceholder),
-    );
+    // Add navigation menu to header
+    navSections.append(getNavigationMenu(structuredNav, placeholdersData));
 
     navSections
       .querySelectorAll(':scope .default-content-wrapper > ul > li')
