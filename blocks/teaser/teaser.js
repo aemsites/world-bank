@@ -1,12 +1,14 @@
 import {
   div, a, span, img, video, source,
 } from '../../scripts/dom-helpers.js';
+import { readBlockConfig } from '../../scripts/aem.js';
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function createVideoPlayer(videoSrc) {
   const pauseIcon = `${window.hlx.codeBasePath}/icons/video-pause.svg`;
   const playIcon = `${window.hlx.codeBasePath}/icons/video-play.svg`;
+  const sampleVideo = 'https://drive.google.com/file/d/1_bEUCKBzap8Xn2HjK02GAUvm1eyHaYNT/view?usp=drive_link';
 
   // adding newlines after paren makes this harder to read
   /* eslint-disable function-paren-newline */
@@ -18,7 +20,7 @@ function createVideoPlayer(videoSrc) {
       img({ class: 'pause-icon controls', src: pauseIcon }),
     ),
     video({ id: 'videoPlayer' },
-      source({ src: videoSrc, type: 'video/mp4' }, 'Your browser does not support the video tag.'),
+      source({ src: videoSrc ? videoSrc : sampleVideo, type: 'video/mp4' }, 'Your browser does not support the video tag.'),
     ),
   );
 
@@ -32,9 +34,9 @@ function createVideoPlayer(videoSrc) {
 
 function createBackgroundImage(properties) {
   let missingSrc;
-  if (!(properties.imageReference)) missingSrc = true;
-  const imgSrc = missingSrc ? properties.imageReference : '';
-  const imgAlt = properties.alt ? properties.imageAlt : '';
+  if (!properties.imageref) missingSrc = true;
+  const imgSrc = (!missingSrc) ? properties.imageref : '';
+  const imgAlt = (properties.imagealt) ? properties.imagealt : '';
   const imgBackground = div({ class: 'background-image' },
     img({ class: 'teaser-background', src: imgSrc, alt: imgAlt }),
   );
@@ -100,46 +102,23 @@ function attachListeners() {
 }
 
 export default function decorate(block) {
-  //const properties = {};
-  const properties = [];
+  console.log(block);
+  const rteElementTag = Array.from(block.querySelectorAll('p'))
+    .find(el => el.textContent.trim() === 'teaserBlurb');
+  const rteElement = rteElementTag.parentElement.nextElementSibling;
+  const rteContent = rteElement.querySelector('p').innerHTML;
+
+  const properties = readBlockConfig(block);
   const swooshFirst = `${window.hlx.codeBasePath}/icons/teaser_innerswoosh.svg`;
   const swooshSecond = `${window.hlx.codeBasePath}/icons/teaser_outerswoosh.svg`;
-
-  console.log(block);
-
-  [...block.children].forEach((row) => {
-    const propEl = row.querySelector('p');
-    console.log(propEl);
-    if (propEl) {
-      //const key = propEl.dataset.aueProp;
-      if (propEl.children.length === 0) {
-        //properties[key] = propEl.textContent;
-        properties.push(propEl.textContent);
-      } else if (propEl.classList.contains('button-container')) {
-        const link = propEl.querySelector('a').href;
-        //properties[link.includes('html') ? 'link' : 'videoReference'] = link;
-        properties.push(link);
-      } else {
-        //properties.teaserBlurb = propEl.innerHTML;
-        properties.push[propEl.innerHTML];
-      }
-    } else {
-      const picEl = row.querySelector('picture > img');
-      //console.log(picEl);
-      if (picEl) {
-        //properties[picEl.dataset.aueProp] = picEl.src;
-        properties.push(picEl.src);
-      }
-    }
-  });
-
-  console.log(properties);
-
-  const isVideo = (properties.teaserStyle === 'video');
-  const buttonText = properties['btn-text'] ? properties['btn-text'] : 'Button';
-  const buttonStyle = properties['btn-style'] ? properties['btn-style'] : 'dark-bg';
+  const isVideo = (properties.teaserstyle && properties.teaserstyle === 'video');
+  const videoAutoplay = (properties.videobehavior && properties.videobehavior === 'autoplay') ? true : false;
+  const buttonText = (properties['btn-text']) ? properties['btn-text'] : 'Button';
+  const buttonStyle = (properties['btn-style']) ? properties['btn-style'] : 'dark-bg';
+  const buttonLink = (properties['btn-link']) ? properties['btn-link'] : '';
+  const videoReference = isVideo ? properties.videoref : '';
   const teaser = div({ class: 'teaser-container' },
-    isVideo ? createVideoPlayer(properties.videoReference) : createBackgroundImage(properties),
+    isVideo ? createVideoPlayer(videoReference) : createBackgroundImage(properties),
     div({ class: 'teaser-swoosh-wrapper' },
       div({ class: 'swoosh-bg' }),
       div({ class: 'swoosh-layers' },
@@ -149,7 +128,7 @@ export default function decorate(block) {
       div({ class: 'teaser-title-wrapper' },
         div({ class: 'teaser-title' }),
         div({ class: 'button-container' },
-          a({ id: 'button', href: properties.link, class: `button ${buttonStyle}` },
+          a({ id: 'button', href: buttonLink, class: `button ${buttonStyle}` },
             span({ class: 'button-text' }, buttonText),
           ),
         ),
@@ -157,11 +136,11 @@ export default function decorate(block) {
     ),
   );
 
-  teaser.querySelector('.teaser-title').innerHTML = properties.teaserBlurb ? properties.teaserBlurb : 'Authorable RTE text';
+  teaser.querySelector('.teaser-title').innerHTML = properties.teaserblurb ? rteContent : 'Authorable RTE text';
   //block.innerHTML = '';
   block.appendChild(teaser);
 
   // add observer for video and listeners for play/pause
-  if (isVideo) observeVideo(block);
+  if (isVideo) observeVideo(block, videoAutoplay);
   if (isVideo) attachListeners();
 }
