@@ -100,7 +100,8 @@ function attachListeners() {
 }
 
 export default function decorate(block) {
-  const properties = {};
+  //const properties = {};
+  const properties = [];
   const swooshFirst = `${window.hlx.codeBasePath}/icons/teaser_innerswoosh.svg`;
   const swooshSecond = `${window.hlx.codeBasePath}/icons/teaser_outerswoosh.svg`;
 
@@ -110,23 +111,29 @@ export default function decorate(block) {
     const propEl = row.querySelector('p');
     console.log(propEl);
     if (propEl) {
-      const key = propEl.dataset.aueProp;
+      //const key = propEl.dataset.aueProp;
       if (propEl.children.length === 0) {
-        properties[key] = propEl.textContent;
+        //properties[key] = propEl.textContent;
+        properties.push(propEl.textContent);
       } else if (propEl.classList.contains('button-container')) {
         const link = propEl.querySelector('a').href;
-        properties[link.includes('html') ? 'link' : 'videoReference'] = link;
+        //properties[link.includes('html') ? 'link' : 'videoReference'] = link;
+        properties.push(link);
       } else {
-        properties.teaserBlurb = propEl.innerHTML;
+        //properties.teaserBlurb = propEl.innerHTML;
+        properties.push[propEl.innerHTML];
       }
     } else {
       const picEl = row.querySelector('picture > img');
-      console.log(picEl);
+      //console.log(picEl);
       if (picEl) {
-        properties[picEl.dataset.aueProp] = picEl.src;
+        //properties[picEl.dataset.aueProp] = picEl.src;
+        properties.push(picEl.src);
       }
     }
   });
+
+  console.log(properties);
 
   const isVideo = (properties.teaserStyle === 'video');
   const buttonText = properties['btn-text'] ? properties['btn-text'] : 'Button';
