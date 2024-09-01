@@ -8,7 +8,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 function createVideoPlayer(videoSrc) {
   const pauseIcon = `${window.hlx.codeBasePath}/icons/video-pause.svg`;
   const playIcon = `${window.hlx.codeBasePath}/icons/video-play.svg`;
-  const sampleVideo = 'https://drive.google.com/file/d/1_bEUCKBzap8Xn2HjK02GAUvm1eyHaYNT/view?usp=drive_link';
+  const sampleVideo = 'https://publish-p136806-e1403562.adobeaemcloud.com/content/dam/wb-md/wb-sample.mp4';
 
   // adding newlines after paren makes this harder to read
   /* eslint-disable function-paren-newline */
@@ -102,7 +102,6 @@ function attachListeners() {
 }
 
 export default function decorate(block) {
-  console.log(block);
   const rteElementTag = Array.from(block.querySelectorAll('p'))
     .find(el => el.textContent.trim() === 'teaserBlurb');
   const rteElement = rteElementTag.parentElement.nextElementSibling;
@@ -137,7 +136,7 @@ export default function decorate(block) {
   );
 
   teaser.querySelector('.teaser-title').innerHTML = properties.teaserblurb ? rteContent : 'Authorable RTE text';
-  //block.innerHTML = '';
+  block.innerHTML = '';
   block.appendChild(teaser);
 
   // add observer for video and listeners for play/pause
