@@ -57,7 +57,8 @@
   {
     "id": "data-cards",
     "components": [
-      "data-card"
+      "data-card",
+      "news-card"
     ]
   },
   {

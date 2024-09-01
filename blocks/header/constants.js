@@ -20,7 +20,7 @@ export const LEVEL_2 = 'level2';
 export const NAV = 'nav';
 
 /* Language Selector Constants */
-export const LANAGUAGE_TOGGLE_CLASS = 'language-toggle';
+export const LANGUAGE_TOGGLE_CLASS = 'language-toggle';
 export const LANGUAGE_SELECTOR_META_NAME = 'alternate-url';
 export const LANGUAGE_CONTENT_CLASS = 'language-content';
 export const LANGUAGE_CONTAINER_CLASS = 'language-container';
@@ -34,3 +34,5 @@ export const ATTR_ARIA_EXPANDED = 'aria-expanded';
 export const CONTENT_EXPANDED = 'nav-item-content-expanded';
 export const CONTENT_EXPANDED_ACTIVE = 'nav-item-expanded-active';
 export const LANG_PREFIX = 'lang';
+export const LANGUAGE_TOGGLE_BORDER_CLASS = 'language-toggle-border';
+export const LANGUAGE_TEXT_CLASS = 'language-text';
