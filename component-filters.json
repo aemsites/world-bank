@@ -15,7 +15,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "teaser"
     ]
   },
   {
@@ -33,7 +34,8 @@
       "explore-cards",     
       "mini-cards",
       "research-publications-cards",
-      "signup"
+      "signup",
+      "teaser"
     ]
   },
   {

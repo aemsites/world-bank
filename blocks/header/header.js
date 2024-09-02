@@ -284,7 +284,7 @@ function createSearchBox() {
   const navWrapper = document.querySelector('.nav-wrapper');
   const headerWrapper = document.querySelector('.header-wrapper');
   const navTools = document.querySelector('.nav-tools p');
-  let searchContainer = navWrapper.querySelector('.search-container');
+  let searchContainer = headerWrapper.querySelector('.search-container');
   let cancelContainer = navWrapper.querySelector('.cancel-container');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
