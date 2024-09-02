@@ -8,6 +8,9 @@ function createCard(cardData) {
   imgElement.setAttribute('alt', imageAltText.textContent);
   imageContainer.className = 'card-img';
   desc.className = 'desc';
+  imgElement.addEventListener('click', () => {
+    window.location.href = titlelink.textContent;
+  })
 
   const txtContainer = div(
     { class: 'text-content' },

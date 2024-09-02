@@ -58,6 +58,10 @@
   gap: 40px;
 }
 
+.cards-container .rp-card .card-img{
+  cursor: pointer;
+}
+
 .cards-container .rp-card .text-content .title {
   font-size: var(--body-large);
   line-height: 22px;
