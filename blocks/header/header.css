@@ -34,7 +34,6 @@ header nav {
   display: flex;
   align-items: center;
   padding: 0 0 calc(var(--nav-padding) - 2px);
-  border-bottom: 2px solid var(--neutrals-20);
 }
 
 header nav p {
@@ -635,10 +634,6 @@ header nav .nav-sections .default-content-wrapper {
 
   header nav .nav-sections .default-content-wrapper {
     display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 13px;
   }
 }
 

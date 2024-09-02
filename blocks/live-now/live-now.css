@@ -1,0 +1,293 @@
+/* hide the block completely */
+.live-now-container {
+  display: none;
+  visibility: hidden;
+}
+
+dialog.livenow-modal::backdrop {
+  background-color: rgba(0 28 45 / 50%)
+}
+
+dialog.livenow-modal:modal {
+  max-width: 1208px;
+  width: 90%;
+  height: 504px;
+  padding: unset;
+  overflow: visible;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--body-font-family);
+  font-weight: 700;
+
+  .modal-content-wrapper {
+      display: flex;
+      flex-direction: row;
+      margin: var(--spacing-48);
+  }
+
+  button[name="close"] {
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    background-color: var(--primary-blue-50);
+    border-radius: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    top: -40px;
+    right: 24px;
+    padding: unset;
+    border: none;
+
+    &:hover {
+      background-color: var(--primary-blue-40);
+      border: 2px solid var(--primary-blue-50);
+    }
+
+    &:focus {
+      border: unset;
+      border: 2px solid var(--primary-blue-70);
+    }
+  }
+
+  .close-x {
+    height: 14px;
+  }
+
+  .modal-title {
+    display: flex;
+    border-bottom: 2px solid var(--neutrals-20);
+    padding-bottom: var(--spacing-40);
+
+    img {
+      height: 33px;
+      width: 52px;
+      margin-right: 8px;
+    }
+
+    .modal-title-txt {
+      font-size: 28px;
+      line-height: 33.6px;
+      color: var(--red-50);
+    }
+  }
+
+  .event-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--spacing-40);
+
+    .wblive-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--spacing-16);
+
+      img {
+        margin-right: var(--spacing-8);
+        width: 26px;
+        height: 33px;
+      }
+    }
+
+    .wblive-header-txt {
+      font-size: 14px;
+      line-height: 15.4px;
+      font-weight: 800;
+      color: var(--neutrals-100);
+      margin-bottom: var(--spacing-8);
+    }
+
+    .event-title-txt {
+      color: var(--primary-blue-70);
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  .modal-column-left {
+    height: 312px;
+    width: 417px;
+    margin-right: var(--spacing-48);
+  }
+
+  .modal-column-right {
+    width: 100%;
+    max-width: 580px;
+    height: 336px;
+    position: relative;
+    
+    img.event-thumbnail {
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .join-event-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 70px;
+      border-radius: 100px;
+      background-color: var(--color-white);
+      text-decoration: none;
+
+      &:hover {
+        border: 2px solid var(--primary-blue-50);
+      }
+
+      &:focus {
+        border: 1px solid var(--primary-blue-70);
+        background-color: var(--primary-blue-20);
+      }
+
+      .event-play {
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        background-color: var(--red-50);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-right: 24px;
+
+        img {
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(200%) contrast(100%);
+          height: 16px;
+          margin-left: 2px;
+        }
+      }
+
+      .join-btn-txt {
+        color: var(--primary-blue-70);
+        font-family: var(--heading-font-family);
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    height: 24px; /* Adds 24px of space above the dialog */
+    width: 100%;
+    position: absolute;
+    top: -24px;
+    left: 0;
+    background: transparent; /* Keeps it invisible */
+  }
+}
+
+@media (width <=1024px) {
+  dialog.livenow-modal:modal {
+    max-width: 648px;
+    max-height: 674px;
+    height: 85%;
+
+    .modal-content-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .modal-column-left {
+      max-height: 220px;
+      height: 40%;
+      width: 100%;
+      margin-right: unset;
+      margin-bottom: 24px;
+    }
+
+    .modal-column-right {
+      max-height: 306px;
+      height: 60%;
+      width: 100%;
+
+      .join-event-btn {
+        height: 64px;
+        width: 182px;
+      }
+    }
+
+    .modal-title {
+      padding-bottom: var(--spacing-24);
+
+      .modal-title-txt {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+
+    .event-title {
+      margin-top: var(--spacing-24);
+
+      .event-title-txt {
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+@media (width <=768px) {
+  dialog.livenow-modal:modal {
+    max-width: 334px;
+    max-height: 536px;
+
+    .modal-content-wrapper {
+        flex-direction: column;
+        width: 100%;
+        height: 90%;
+        margin: var(--spacing-32);
+    }
+
+    .modal-column-left {
+      max-height: 288px;
+      height: 60%;
+      width: 100%;
+      margin-right: unset;
+      margin-bottom: 12px;
+    }
+
+    .modal-column-right {
+      max-height: 157px;
+      height: 40%;
+      width: 100%;
+
+      .join-event-btn {
+        height: 56px;
+        width: 174px;
+      }
+    }
+
+    .modal-title {
+      padding-bottom: var(--spacing-32);
+
+      .modal-title-txt {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+
+    .event-title {
+      margin-top: var(--spacing-32);
+      max-height: 189px;
+      width: 100%;
+
+      .event-title-txt {
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+  }
+}
