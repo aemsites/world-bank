@@ -72,10 +72,14 @@ function attachFormValidation(block, placeholders) {
     const errorMessage = block.querySelector('#error-message');
     errorMessage.textContent = '';
 
+    const termErrorMessage = block.querySelector('#term-error-message');
+    termErrorMessage.textContent = '';
+
     const emailInput = block.querySelector('#email');
     const email = emailInput.value;
     const firstName = block.querySelector('#firstname').value || '';
-    const agree = block.querySelector('#agree').checked;
+    const agreeInput = block.querySelector('#agree');
+    const agree = agreeInput.checked;
 
     function validateEmail(emailId) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -86,13 +90,15 @@ function attachFormValidation(block, placeholders) {
     emailInput.classList.remove('input-error');
 
     if (!validateEmail(email)) {
-      errorMessage.textContent = 'Please enter a valid email address.';
-      emailInput.classList.add('input-error'); // Add error class
+      errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_EMAIL_VALIDATION_MESSAGE] || 'Please enter a valid email.';
+      emailInput.classList.add('input-error'); 
       return;
     }
 
     if (!agree) {
-      errorMessage.textContent = 'Please agree with the terms of the privacy notice.';
+      termErrorMessage.textContent = placeholders[CONSTANTS.SIGNUP_TERMS_VALIDATION] || 
+      'Please agree with the terms.';
+      agreeInput.classList.add('input-error'); 
       return;
     }
 
@@ -148,13 +154,13 @@ function createSignupModule(block, placeholders) {
       input({
         type: 'checkbox',
         id: 'agree',
-        required: true,
       }),
       label({
         htmlFor: 'agree',
       }, placeholders[CONSTANTS.SIGNUP_TERMS] || 'I agree with the terms of the Privacy Notice and consent to my personal data being processed, to the extent necessary, to subscribe to the selected updates.'),
     ),
     button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
+    div({ class: 'error-message', id: 'term-error-message' }),
   );
 
   formelement.querySelector('label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];

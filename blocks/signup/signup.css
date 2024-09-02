@@ -109,7 +109,12 @@ button#signup-btn-desktop {
 }
 
 
-.input-error {
+input[type="email"].input-error {
+  border: 1px solid red;
+  background-color: #FDF2F2;
+}
+
+[type="checkbox"]:not(:checked).input-error {
   border: 1px solid red;
   background-color: #FDF2F2;
 }
