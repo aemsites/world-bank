@@ -1,7 +1,7 @@
 import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
-  p, button, div, a, li, ul,
+  p, button, div, a, li, ul, picture, img,
 } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
 
@@ -36,6 +36,8 @@ function createFeatureCard(row, placeHolders) {
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
     featureDiv.append(pictureElement);
+  } else {
+    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Imgae cannot be empty' })));
   }
   featureDiv.append(featureContentWrapper);
   return featureDiv;
@@ -89,10 +91,10 @@ export default async function decorate(block) {
     }
 
     // Optimize images
-    ulElement.querySelectorAll('picture > img').forEach((img) => {
-      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-      moveInstrumentation(img, optimizedPic.querySelector('img'));
-      img.closest('picture').replaceWith(optimizedPic);
+    ulElement.querySelectorAll('picture > img').forEach((imgVar) => {
+      const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '750' }]);
+      moveInstrumentation(imgVar, optimizedPic.querySelector('img'));
+      imgVar.closest('picture').replaceWith(optimizedPic);
     });
 
     block.innerHTML = ''; // Clear all content
