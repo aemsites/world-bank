@@ -88,3 +88,4 @@ export function option(...items) { return domEl('option', ...items); }
 export function video(...items) { return domEl('video', ...items); }
 export function source(...items) { return domEl('source', ...items); }
 export function hr(...items) { return domEl('hr', ...items); }
+export function picture(...items) { return domEl('picture', ...items); }

@@ -1024,5 +1024,28 @@
         ]
       }
     ]
+  },
+  {
+    "id": "live-now",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Mode",
+        "description": "Normal mode or test mode. Test mode bypasses the 'current event' time check.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Test",
+            "value": "test-mode"
+          },
+          {
+            "name": "Normal",
+            "value": "normal-mode"
+          }
+        ]
+      }
+    ]
   }
 ]

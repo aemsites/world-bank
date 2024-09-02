@@ -611,6 +611,10 @@ header nav .nav-brand img {
   gap: 25px;
 }
 
+header nav .nav-sections{
+  display: none;
+}
+
 /* sections */
 .nav-sections .default-content-wrapper,
 .nav-tools .default-content-wrapper {
@@ -633,7 +637,7 @@ header nav .nav-sections .default-content-wrapper {
   }
 
   header nav .nav-sections .default-content-wrapper {
-    display: flex;
+    display: none;
   }
 }
 
