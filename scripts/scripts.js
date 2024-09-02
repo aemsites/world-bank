@@ -15,7 +15,7 @@ import {
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 export const CLASS_MAIN_HEADING = 'main-heading';
-export const TAG_ROOT = 'world-bank:';
+export const TAG_ROOT = 'world-bank:category/';
 
 let lang;
 

@@ -1,6 +1,7 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import getLanguageSelector from './language-selector.js';
+import { getNavigationMenu, formatNavigationJsonData, closesideMenu } from './navigation.js';
 
 import {
   fetchLanguageNavigation,
@@ -8,66 +9,23 @@ import {
   fetchLangPlaceholderbyFileName,
   getLanguage,
 } from '../../scripts/scripts.js';
-import * as Constants from './constants.js';
+import * as constants from './constants.js';
 import {
-  p,
   button,
   div,
-  a,
-  li,
-  ul,
-  input,
   img,
   span,
 } from '../../scripts/dom-helpers.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 1024px)');
-function closesideMenu(leftColumn, rightColumn) {
-  leftColumn.style.display = 'flex';
-  leftColumn.style.display = 'flex';
-  if (!isDesktop.matches) {
-    rightColumn.style.display = 'none';
-  } else {
-    rightColumn.style.display = 'flex';
-  }
-  const submenuElements = rightColumn.getElementsByClassName(Constants.SUBMENU);
-  const submenus = Array.from(submenuElements);
-  leftColumn.querySelectorAll('li').forEach((leftColumnItem, index) => {
-    leftColumnItem.classList.remove('selected');
-    if (index === 0) leftColumnItem.classList.add('selected');
-  });
-  submenus.forEach((submenu, index) => {
-    if (isDesktop.matches && index === 0) {
-      submenu.style.display = 'flex';
-    } else {
-      submenu.style.display = 'none';
-    }
-  });
-  const sidemenuBackButton = rightColumn.querySelector(
-    '.nav-menu-overlay-back',
-  );
-  sidemenuBackButton.style.display = 'none';
-  const currentSubMenu = rightColumn.querySelector(
-    Constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR,
-  );
-  currentSubMenu.style.display = 'none';
-}
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
-    const nav = document.getElementById(Constants.NAV);
-    const navSections = nav.querySelector(Constants.NAV_SECTIONS_WITH_SELECTOR);
-    const navSectionExpanded = navSections.querySelector(
-      '[aria-expanded="true"]',
-    );
-    if (navSectionExpanded && isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleAllNavSections(navSections);
-      // eslint-disable-next-line no-use-before-define
-      toggleMenu(nav, navSections);
-      navSections.querySelector('.default-content-wrapper').focus();
-    }
+    const nav = document.getElementById(constants.NAV);
+    const navSections = nav.querySelector(constants.NAV_SECTIONS_WITH_SELECTOR);
+    // eslint-disable-next-line no-use-before-define
+    toggleMenu(nav, navSections);
   }
 }
 
@@ -117,7 +75,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   );
   hamButton.setAttribute(
     'aria-label',
-    expanded ? Constants.OPEN_NAVIGATION : Constants.CLOSE_NAVIGATION,
+    expanded ? constants.OPEN_NAVIGATION : constants.CLOSE_NAVIGATION,
   );
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
@@ -136,71 +94,23 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
       drop.removeEventListener('focus', focusNavSection);
     });
   }
-  // enable menu collapse on escape keypress
-  if (!expanded || isDesktop.matches) {
-    // collapse menu on escape press
-    window.addEventListener('keydown', closeOnEscape);
-  } else {
-    window.removeEventListener('keydown', closeOnEscape);
-  }
 
   const navMenuOverlay = navSections.querySelector(
-    Constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
+    constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
   );
   if (!expanded) {
-    navMenuOverlay.classList.add(Constants.OPEN);
+    navMenuOverlay.classList.add(constants.OPEN);
   } else {
-    navMenuOverlay.classList.remove(Constants.OPEN);
+    navMenuOverlay.classList.remove(constants.OPEN);
   }
 
   // enable menu collapse on escape keypress
   if (!expanded || isDesktop.matches) {
     // collapse menu on escape press
-    window.addEventListener(Constants.KEY_DOWN, closeOnEscape);
+    window.addEventListener(constants.KEY_DOWN, closeOnEscape);
   } else {
-    window.removeEventListener(Constants.KEY_DOWN, closeOnEscape);
+    window.removeEventListener(constants.KEY_DOWN, closeOnEscape);
   }
-}
-function formatNavigationJsonData(navJson) {
-  const structuredData = [];
-  let currentLevel0 = null;
-  let currentCategory = null;
-  let currentLevel1 = null;
-  // let Class = '';
-  navJson.forEach((item) => {
-    if (item.Type === Constants.LEVEL_0) {
-      const level0 = {
-        title: item.Title,
-        categories: [],
-      };
-      structuredData.push(level0);
-      currentLevel0 = level0;
-    } else if (
-      item.Type === Constants.CATEGORY
-      || item.Type === Constants.FOOTER
-      || item.Type === Constants.DROPDOWN
-    ) {
-      const category = {
-        ...item,
-        items: [],
-      };
-
-      // Class = item.Type === Constants.FOOTER ? 'footer' : '';
-      currentLevel0.categories.push(category);
-      currentCategory = category;
-    } else if (item.Type === Constants.LEVEL_1) {
-      const level1 = {
-        ...item,
-        items: [],
-      };
-      currentCategory.items.push(level1);
-      currentLevel1 = level1;
-      // Class = item.Class;
-    } else if (item.Type === Constants.LEVEL_2) {
-      currentLevel1.items.push(item);
-    }
-  });
-  return structuredData;
 }
 /**
  * loads and decorates the header, mainly the nav
@@ -221,59 +131,6 @@ function makeImageClickableNSettingAltText() {
     .appendChild(anchor);
 }
 
-function showSubMenu(
-  leftColumn,
-  rightColumn,
-  submenuId,
-  submenuTitle,
-  currentIndex,
-) {
-  rightColumn.style.display = 'block';
-  if (!isDesktop.matches) {
-    const sidemenuBackButton = rightColumn.querySelector(
-      Constants.OVERLAY_BACK_WITH_SELECTOR,
-    );
-    sidemenuBackButton.style.display = 'block';
-    const currentSubMenu = rightColumn.querySelector('.submenu-main-title');
-    currentSubMenu.textContent = submenuTitle;
-    currentSubMenu.style.display = 'flex';
-    leftColumn.style.display = 'none';
-  }
-
-  const submenus = rightColumn.querySelectorAll(
-    Constants.SUBMENU_WITH_SELECTOR,
-  );
-  submenus.forEach((submenu) => {
-    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
-  });
-
-  // Update the selected state of the menu items in the left column
-  const level0Items = leftColumn.querySelectorAll('li');
-  level0Items.forEach((item, index) => {
-    if (index === currentIndex) {
-      item.classList.add('selected');
-    } else {
-      item.classList.remove('selected');
-    }
-  });
-}
-function filterCountry(e) {
-  const inputBrowseCountry = e.currentTarget;
-  if (undefined !== inputBrowseCountry) {
-    const filter = inputBrowseCountry.value.toUpperCase();
-    const countryList = inputBrowseCountry.nextElementSibling;
-    const listItems = countryList.children;
-    const listItemsArray = Array.from(listItems);
-    // Iterate through the list items
-    listItemsArray.forEach((item) => {
-      if (item.textContent.toUpperCase().indexOf(filter) > -1) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-}
 function handleEnterKey(event) {
   if (event.key !== 'Enter') return;
   const inputValue = document.querySelector('.search-container input').value;
@@ -549,13 +406,8 @@ export default async function decorate(block) {
     const structuredNav = formatNavigationJsonData(
       await fetchLanguageNavigation(`/${langCode}`),
     );
-    const placeholdersJson = await fetchLanguagePlaceholders();
-    const searchByCountryPlaceholder = placeholdersJson !== undefined
-      ? placeholdersJson.navMenuSearchByCountryName
-      : 'Search By Country';
-    navSections.append(
-      createNavMenu(structuredNav, searchByCountryPlaceholder),
-    );
+    // Add navigation menu to header
+    navSections.append(getNavigationMenu(structuredNav, placeholdersData));
 
     navSections
       .querySelectorAll(':scope .default-content-wrapper > ul > li')
@@ -589,7 +441,7 @@ export default async function decorate(block) {
       {
         type: 'button',
         'aria-controls': 'nav',
-        'aria-label': Constants.OPEN_NAVIGATION,
+        'aria-label': constants.OPEN_NAVIGATION,
       },
       span({ class: 'nav-hamburger-icon' }),
     ),
