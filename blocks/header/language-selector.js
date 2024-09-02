@@ -61,7 +61,7 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
 const getLanguageSelector = (placeholdersData, lang) => {
   const metaLangContent = getMetadata(constants.LANGUAGE_SELECTOR_META_NAME);
 
-  const languageToggle = div({ 'aria-expanded': 'false' });
+  const languageToggle = div({ role: 'button', 'aria-expanded': 'false' });
   const langSelector = div({ class: constants.LANGUAGE_CONTAINER_CLASS }, languageToggle);
 
   // Show only Current Language when no meta content authored
