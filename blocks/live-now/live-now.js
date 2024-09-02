@@ -65,7 +65,7 @@ async function queryEventData(dateTime) {
   const reader = response.body.getReader();
   const decoder = new TextDecoder('utf-8');
   let result = '';
-  for (;;) {
+  while (true) {
     const { done, value } = reader.read();
     if (done) {
       break;
