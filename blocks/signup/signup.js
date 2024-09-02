@@ -8,7 +8,7 @@ async function callConsentAPI(email, firstName) {
   const consentData = {
     dsDataElements: {
       Name: firstName,
-      Occupation: ""
+      Occupation: '',
     },
     identifier: email,
   };
@@ -46,7 +46,7 @@ async function callSubscriptionAPI(email, firstName) {
   });
 
   const result = await response.json();
-  return result.Status; 
+  return result.Status;
 }
 
 function showConfirmationMessage(formElement, message) {
@@ -118,7 +118,7 @@ function createSignupModule(block, placeholders) {
 
   const content = div(
     { class: 'signup-content' },
-   // p({ class: 'signup-heading' }, placeholders[CONSTANTS.SIGNUP_HEADING]),
+    // p({ class: 'signup-heading' }, placeholders[CONSTANTS.SIGNUP_HEADING]),
     p({ class: 'signup-heading' }),
     p({ class: 'signup-description' }, placeholders[CONSTANTS.SIGNUP_DESCRIPTION]),
   );
@@ -139,8 +139,10 @@ function createSignupModule(block, placeholders) {
         type: 'text',
         id: 'firstname',
         placeholder: placeholders[CONSTANTS.SIGNUP_NAME_PLACEHOLDER] || 'Your first name',
-      }),button({ type: 'submit', id: 'signup-btn-desktop' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up')
+      }),
+      button({ type: 'submit', id: 'signup-btn-desktop' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
     ),
+    div({ class: 'error-message', id: 'error-message' }),
     div(
       { class: 'input-group checkbox-group' },
       input({
@@ -149,11 +151,10 @@ function createSignupModule(block, placeholders) {
         required: true,
       }),
       label({
-        htmlFor: 'agree'
+        htmlFor: 'agree',
       }, placeholders[CONSTANTS.SIGNUP_TERMS] || 'I agree with the terms of the Privacy Notice and consent to my personal data being processed, to the extent necessary, to subscribe to the selected updates.'),
     ),
     button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
-    div({ class: 'error-message', id: 'error-message' }),
   );
 
   formelement.querySelector('label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];

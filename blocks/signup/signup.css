@@ -19,26 +19,24 @@
 
 input[type="email"],
 input[type="text"] {
-  /* width: calc(50% - 10px); Equal width for email and first name inputs */
-  padding: 10px 0 10px 10px;
+  padding: 17px 0 17px 10px;
   margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #4C809C;
   font-size: var(--body-small);
   width: 100%;
-  color:#000D1AB2
+  color: #000D1AB2
 }
+
 .checkbox-group {
   display: flex;
   gap: 8px;
   margin-top: 10px;
   align-items: start;
-  margin-top: 5px;
   font-size: var(--body-tiny);
 }
 
 input[type="checkbox"] {
-  margin-right: 10px;
   border: 1.5px solid #00396B3D;
   height: 20px;
   width: 20px;
@@ -50,19 +48,17 @@ input::placeholder {
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  font-size: 16px;
-  color: #999;
   pointer-events: none;
-  color: #000D1A91; 
+  color: #000D1A91;
   font-size: var(--body-medium);
 }
 
 input:focus::placeholder,
- input:not(:placeholder-shown)::placeholder {
-    transform: translateY(-150%);
-    font-size: 12px;
-    color: #999;
-    padding-left: 10px;
+input:not(:placeholder-shown)::placeholder {
+  transform: translateY(-150%);
+  font-size: 12px;
+  color: #999;
+  padding-left: 10px;
 }
 
 .checkbox-group label p {
@@ -73,18 +69,14 @@ input:focus::placeholder,
   font-size: var(--body-tiny);
 }
 
-input[type='checkbox'] {
+/* input[type='checkbox'] {
   margin-top: 7px;
-}
+} */
 
 
 button#signup-btn,
 button#signup-btn-desktop {
-  background-color: #004370;
-  /* Blue button */
-  color: white;
-  border: none;
-  font-size: 1rem;
+  font-size: var(--body-medium);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -92,7 +84,6 @@ button#signup-btn-desktop {
   width: 100%;
   height: 52px;
   gap: 12px;
-  border-radius: 100px;
   justify-content: center;
 }
 
@@ -100,7 +91,7 @@ button#signup-btn .icon,
 button#signup-btn-desktop .icon {
   background-image: url('../../icons/subscribe.png');
   background-repeat: no-repeat;
-    background-position: center;
+  background-position: center;
 }
 
 button#signup-btn-desktop {
@@ -109,8 +100,12 @@ button#signup-btn-desktop {
 
 .error-message {
   color: red;
-  font-size:12px;
+  font-size: var(--body-tiny);
   margin-top: 10px;
+  background-image: url("../../icons/exclamation.png");
+  background-repeat: no-repeat;
+  padding-left: 14px;
+  
 }
 
 
@@ -120,8 +115,8 @@ button#signup-btn-desktop {
 }
 
 
-/* Desktop Styles */
-@media (width >=1024px) {
+/* Tablet Styles */
+@media (width >=768px) {
   .signup-wrapper {
     padding: 40px;
   }
@@ -139,9 +134,8 @@ button#signup-btn-desktop {
 
   input[type="email"],
   input[type="text"] {
-    max-height: 25px;
-    padding: 20px;
-    font-size: var(--body-small);
+    padding: 16px;
+    font-size: var(--eyebrow-font-size-l);
     border: 1px solid #00396B3D;
     margin-right: 0;
   }
@@ -151,13 +145,12 @@ button#signup-btn-desktop {
   }
 
   button#signup-btn-desktop {
-    display: block;
-  }
-
-  .email-signup-container {
     display: flex;
-    gap: 30px;
-    align-items: baseline;
+    font-size: var(--eyebrow-font-size-l);
+    margin: 0;
+    overflow: visible;
+    border-radius: 0 50px 50px 0;
+    text-align: center;
   }
 
   .input-group {
@@ -169,38 +162,27 @@ button#signup-btn-desktop {
   }
 
   input[type="text"] {
-    border-radius: 0px;
+    border-radius: 0;
   }
 
-  button#signup-btn-desktop {
-    margin: 0;
-    overflow: visible;
-    border-radius: 0 50px 50px 0;
-    text-align: center;
+  input[type='checkbox'] {
+    margin-top: 4px;
+  }
+
+  .checkbox-group label p {
+    font-size: var(--body-medium);
+  }
+
+  .checkbox-group label p a {
+    font-size: var(--body-medium);
   }
 }
 
-/* Tablet Styles */
-@media (width >=768px) and (width <=1024px) {
-  .signup-wrapper {
-    padding: 30px;
+@media (width >=1024px) {
+  .signup-heading {
+    font-size: var(--heading-label-small);
+    line-height: 43.2px;
+    margin-bottom: 16px;
   }
-
-  .signup-description {
-    margin-bottom: 25px;
-  }
-
-  input[type="email"],
-  input[type="text"] {
-    width: calc(50% - 10px);
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-
-}
-
-/* Mobile Styles */
-@media (width <=767px) {
 
 }
