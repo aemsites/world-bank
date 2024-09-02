@@ -81,14 +81,14 @@ button#signup-btn-desktop {
 
 .error-message {
   color: red;
-  font-size: 0.9rem;
+  font-size:12px;
   margin-top: 10px;
 }
 
 
 .input-error {
   border: 1px solid red;
-  background-color: #ffe6e6;
+  background-color: #FDF2F2;
 }
 
 
