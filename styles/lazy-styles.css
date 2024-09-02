@@ -1,1 +1,122 @@
 /* add global styles that can be loaded post LCP here */
+
+/* Cookie Pop Up Styles */
+.cookie-tooltip {
+    float: left;
+    background: rgb(0 0 0 / 87%);
+    padding: 16px;
+    position: fixed;
+    z-index: 9999;
+    color: var(--color-white);
+    left: auto;
+    right: 0;
+    bottom: 0;
+}
+
+.cookie-tooltip, .cookie-tooltip .close, .cookie-tooltip p {
+    animation-duration: .6s;
+    animation-name: slideUp;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.cookie-tooltip p {
+    width: 80%;
+    text-align: left;
+    line-height: 18px;
+    margin: 0 auto;
+    font-size: var(--body-small);
+}
+
+.cookie-tooltip p > a{
+    font-size: var(--body-small);
+    color: var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+    text-decoration: none;
+    padding: 0;
+}
+
+.cookie-tooltip p > a:visited{
+    color: var(--color-white);
+    text-decoration-color: var(--color-white);
+}
+
+.cookie-tooltip .close {
+    height: 32px;
+    width: 32px;
+    color: var(--color-white);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.cookie-tooltip .close span, .cookie-tooltip .close:hover, .cookie-tooltip .close:focus {
+    color: var(--color-white)   #fff;
+}
+
+.cookie-tooltip > .container > button > span {
+    font-size: var(--body-font-size);
+}
+
+
+@media (width < 768px) {
+    .cookie-tooltip p {
+        width: 90%;
+    }
+}
+
+@media (width >= 1200px) {
+    .container {
+        width: 1170px;
+        padding: 0;
+    }
+}
+
+@media (width >= 1024px) {
+    .cookie-tooltip {
+        width: 100%;
+    }
+
+    /* .container::after {
+        clear: both;
+    }
+    
+    .container::before, .container::after {
+        content: "";
+        display: table;
+    } */
+}
+
+@media (width < 1024px) {
+    .cookie-tooltip p {
+        font-size: var(--body-small);
+    }
+
+    .cookie-tooltip p > a{
+        font-size: var(--body-small);
+        line-height: 14px;
+    }
+
+    .cookie-tooltip > .container > button > span {
+        font-size: var(--body-small);
+    }
+
+    .cookie-tooltip {
+        left: 8px;
+        bottom: 8px;
+        right: 8px;
+    }
+}
+
+/* End of Cookie Pop Up Styles */
