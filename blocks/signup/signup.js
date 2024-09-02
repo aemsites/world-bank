@@ -158,9 +158,8 @@ function createSignupModule(block, placeholders) {
       label({
         htmlFor: 'agree',
       }, placeholders[CONSTANTS.SIGNUP_TERMS] || 'I agree with the terms of the Privacy Notice and consent to my personal data being processed, to the extent necessary, to subscribe to the selected updates.'),
-    ),
+    ),div({ class: 'error-message', id: 'term-error-message' }),
     button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
-    div({ class: 'error-message', id: 'term-error-message' }),
   );
 
   formelement.querySelector('label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];
