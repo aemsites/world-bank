@@ -91,14 +91,14 @@ function attachFormValidation(block, placeholders) {
 
     if (!validateEmail(email)) {
       errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_EMAIL_VALIDATION_MESSAGE] || 'Please enter a valid email.';
-      emailInput.classList.add('input-error'); 
+      emailInput.classList.add('input-error');
       return;
     }
 
     if (!agree) {
-      termErrorMessage.textContent = placeholders[CONSTANTS.SIGNUP_TERMS_VALIDATION] || 
-      'Please agree with the terms.';
-      agreeInput.classList.add('input-error'); 
+      termErrorMessage.textContent = placeholders[CONSTANTS.SIGNUP_TERMS_VALIDATION]
+      || 'Please agree with the terms.';
+      agreeInput.classList.add('input-error');
       return;
     }
 
@@ -124,7 +124,6 @@ function createSignupModule(block, placeholders) {
 
   const content = div(
     { class: 'signup-content' },
-    // p({ class: 'signup-heading' }, placeholders[CONSTANTS.SIGNUP_HEADING]),
     p({ class: 'signup-heading' }),
     p({ class: 'signup-description' }, placeholders[CONSTANTS.SIGNUP_DESCRIPTION]),
   );
@@ -158,7 +157,8 @@ function createSignupModule(block, placeholders) {
       label({
         htmlFor: 'agree',
       }, placeholders[CONSTANTS.SIGNUP_TERMS] || 'I agree with the terms of the Privacy Notice and consent to my personal data being processed, to the extent necessary, to subscribe to the selected updates.'),
-    ),div({ class: 'error-message', id: 'term-error-message' }),
+    ),
+    div({ class: 'error-message', id: 'term-error-message' }),
     button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
   );
 
@@ -177,7 +177,6 @@ async function fetchingPlaceholdersData(block) {
     const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
     if (!listOfAllPlaceholdersData) return;
 
-    console.log(listOfAllPlaceholdersData);
     createSignupModule(block, listOfAllPlaceholdersData);
   } catch (error) {
     console.error('Error fetching placeholders data:', error);
