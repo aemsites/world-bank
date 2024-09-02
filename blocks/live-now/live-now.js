@@ -186,10 +186,7 @@ function dismissOnClick(modal, event) {
 
 // retrieve needed data
 export default async function decorate(block) {
-  console.log(block);
-  console.log(block.classList.contains('test-mode'));
-  const testEl = block.querySelector('p[data-aue-prop="testmode"]');
-  const testMode = (testEl && (testEl.textContent === 'true'));
+  const testMode = (block.classList.contains('test-mode'));
   const sessionCookieName = 'wbEventGuid';
   const currentDateTime = new Date();
   const eventData = await queryEventData(currentDateTime);
