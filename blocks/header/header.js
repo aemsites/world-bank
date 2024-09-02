@@ -511,6 +511,7 @@ async function changeTrendingData(navSections) {
   const tendingDataWrapper = navSections.querySelector('.default-content-wrapper');
   const tendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
   tendingDataWrapper.append(tendingDataDiv);
+  tendingDataWrapper.style.display = 'flex';
 }
 export default async function decorate(block) {
   // load nav as fragment
@@ -600,6 +601,6 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
-  await changeTrendingData(navSections);
+  if (isDesktop.matches) await changeTrendingData(navSections);
   fetchingPlaceholdersData(placeholdersData);
 }
