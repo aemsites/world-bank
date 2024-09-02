@@ -10,7 +10,7 @@ function createCard(cardData) {
   desc.className = 'desc';
   imgElement.addEventListener('click', () => {
     window.location.href = titlelink.textContent;
-  })
+  });
 
   const txtContainer = div(
     { class: 'text-content' },
