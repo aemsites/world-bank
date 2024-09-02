@@ -14,7 +14,8 @@ import {
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
-export const TAG_ROOT = 'world-bank:';
+export const CLASS_MAIN_HEADING = 'main-heading';
+export const TAG_ROOT = 'world-bank:category/';
 
 let lang;
 
@@ -179,6 +180,48 @@ export async function fetchLanguagePlaceholders() {
   }
   return {}; // default to empty object
 }
+
+/**
+ * Return the placeholder file specific to language
+ * @returns
+ */
+export async function fetchLanguageNavigation(langCode) {
+  window.navigationData = window.navigationData || {};
+
+  if (!window.navigationData[langCode]) {
+    window.navigationData[langCode] = new Promise((resolve) => {
+      fetch(`${langCode}/navigation.json`)
+        .then((resp) => (resp.ok ? resp.json() : {}))
+        .then((json) => {
+          window.navigationData[langCode] = json.data;
+          resolve(window.navigationData[langCode]);
+        })
+        .catch(() => {
+          window.navigationData[langCode] = {};
+          resolve(window.navigationData[langCode]);
+        });
+    });
+  }
+  const navJsonData = await window.navigationData[langCode];
+  return navJsonData;
+}
+/**
+ * Return the json for any placeholder file specific to language using filename as argument
+ * @returns
+ */
+export const fetchLangPlaceholderbyFileName = async (fileName) => {
+  const langCode = getLanguage();
+  try {
+    const response = await fetch(`${langCode}/${fileName}.json`);
+    if (!response.ok) {
+      throw new Error('Failed to load data');
+    }
+    const json = await response.json();
+    return json.data || [];
+  } catch (error) {
+    return [];
+  }
+};
 
 /**
  * Loads everything that doesn't need to be delayed.
