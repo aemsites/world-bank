@@ -343,7 +343,8 @@
                 "template": {
                   "name": "Live Now",
                   "model": "live-now",
-                  "filter": "live-now"
+                  "filter": "live-now",
+                  "key-value": true
                 }
               }
             }

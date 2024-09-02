@@ -1,7 +1,10 @@
+
+// set session cookie
 function setSessionCookie(name, value) {
   document.cookie = `${name}=${value}; path=/`;
 }
 
+// get existing session cookie
 function getSessionCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
@@ -9,6 +12,7 @@ function getSessionCookie(name) {
   return null;
 }
 
+// check cookie for event guid
 function hasModalBeenDisplayed(cookieName, guid) {
   const eventCookie = getSessionCookie(cookieName);
   if (!eventCookie) return false; // no cookie found, modal for event hasn't been seen
@@ -17,6 +21,7 @@ function hasModalBeenDisplayed(cookieName, guid) {
   return eventList.includes(guid); // check if the event GUID is in the array
 }
 
+// record event guid if modal displays
 function addGuidToCookie(cookieName, guid) {
   let eventCookie = getSessionCookie(cookieName);
   if (eventCookie) {
@@ -27,6 +32,7 @@ function addGuidToCookie(cookieName, guid) {
   setSessionCookie(cookieName, eventCookie); // create or update the cookie
 }
 
+// retrieve event data from API
 async function queryEventData(dateTime) {
   const endpoint = 'https://webapi.worldbank.org/aemsite/wblive/global/search';
   const subkey = 'a02440fa123c4740a83ed288591eafe4';
@@ -110,6 +116,7 @@ function getModal(modalId, createContent, addEventListeners) {
   return dialogElement;
 }
 
+// build the 'live now' modal
 function buildModal(title, thumbnailPath, url) {
   const broadcastSvg = `${window.hlx.codeBasePath}/icons/broadcast.svg`;
   const discussionSvg = `${window.hlx.codeBasePath}/icons/discussion.svg`;
@@ -174,6 +181,7 @@ function dismissOnClick(modal, event) {
   }
 }
 
+// retrieve needed data
 export default async function decorate(block) {
   const testEl = block.querySelector('p[data-aue-prop="testmode"]');
   const testMode = (testEl && (testEl.textContent === 'true'));
