@@ -23,7 +23,7 @@
 
 .columns.columns-transform-teaser > div {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 40% 55%;
   padding: 72px 0;
   position: relative;
 }
@@ -334,6 +334,15 @@
         margin-top: -160px;
       }
     }
+  }
+
+  .bg-primary-blue-90 .columns.columns-transform-teaser .columns-img-col img{
+    width: 100%;
+  }
+
+  .bg-primary-blue-90 .columns.columns-transform-teaser .columns-img-col::before{
+    width: 100%;
+    right: 55px;
   }
 }
 
