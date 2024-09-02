@@ -633,7 +633,11 @@ header nav .nav-sections .default-content-wrapper {
   }
 
   header nav .nav-sections .default-content-wrapper {
-    display: flex;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 13px;
   }
 }
 

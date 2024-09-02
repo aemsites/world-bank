@@ -205,6 +205,23 @@ export async function fetchLanguageNavigation(langCode) {
   const navJsonData = await window.navigationData[langCode];
   return navJsonData;
 }
+/**
+ * Return the json for any placeholder file specific to language using filename as argument
+ * @returns
+ */
+export const fetchLangPlaceholderbyFileName = async (fileName) => {
+  const langCode = getLanguage();
+  try {
+    const response = await fetch(`${langCode}/${fileName}.json`);
+    if (!response.ok) {
+      throw new Error('Failed to load data');
+    }
+    const json = await response.json();
+    return json.data || [];
+  } catch (error) {
+    return [];
+  }
+};
 
 /**
  * Loads everything that doesn't need to be delayed.
