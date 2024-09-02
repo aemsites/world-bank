@@ -1,4 +1,3 @@
-
 // set session cookie
 function setSessionCookie(name, value) {
   document.cookie = `${name}=${value}; path=/`;
@@ -66,8 +65,10 @@ async function queryEventData(dateTime) {
   const decoder = new TextDecoder('utf-8');
   let result = '';
 
-  if (!reader) { throw new Error('Stream reader is null or invalid.') };
+  if (!reader) { throw new Error('Stream reader is null or invalid.'); }
+  /* eslint-disable-next-line no-constant-condition */
   while (true) {
+    /* eslint-disable-next-line no-await-in-loop */
     const { done, value } = await reader.read();
     if (done || value == null) {
       break;
