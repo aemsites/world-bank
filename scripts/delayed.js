@@ -32,10 +32,12 @@ const setConsentCookie = (name, value, daysToExpire, cookieSection) => {
 
 const cookiePopUp = () => {
   const cookieSection = section({ class: 'cookie-tooltip' });
+  const hasCookieText = `${window.placeholdersData && window.placeholdersData.cookiePopUpText}`;
+  if (!hasCookieText) return null;
   const cookieContainer = div(
     { class: 'container' },
     p(
-      `${window.placeholdersData && window.placeholdersData.cookiePopUpText ? window.placeholdersData.cookiePopUpText : 'Alternate Cookie Text'}`,
+      `${hasCookieText ? window.placeholdersData.cookiePopUpText : 'Alternate Cookie Text'}`,
       a(
         { href: `${window.placeholdersData && window.placeholdersData.cookiePopUpLearnMoreLink ? window.placeholdersData.cookiePopUpLearnMoreLink : '#'}` },
         `${window.placeholdersData && window.placeholdersData.cookiePopUpLearnMoreLinkLabel ? window.placeholdersData.cookiePopUpLearnMoreLinkLabel : 'Click Here'}`,
@@ -72,7 +74,7 @@ const isDisplayCookiePop = (cookieSection) => {
 function loadDelayed() {
   pageSwoosh();
   const cookieSection = cookiePopUp();
-  isDisplayCookiePop(cookieSection);
+  if (cookieSection) isDisplayCookiePop(cookieSection);
 }
 
 loadDelayed();
