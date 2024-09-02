@@ -11,16 +11,18 @@ function processTag(tag) {
   }
 }
 
+function createRTEContainer(rteElements) {
+  const rteContainer = div({ class: 'rte-container' });
+  rteElements.forEach((rte) => rteContainer.append(rte));
+  return rteContainer;
+}
+
 export default async function decorate(block) {
   const isDataCardVariation = block.classList.contains('data-card-variation');
   if (isDataCardVariation) {
     const [rte1, rte2, rte3, ...cards] = [...block.children];
-    const rteContainer = div({ class: 'rte-container' });
     if (rte1 && rte2 && rte3) {
-      rteContainer.append(rte1);
-      rteContainer.append(rte2);
-      rteContainer.append(rte3);
-      block.append(rteContainer);
+      block.append(createRTEContainer([rte1, rte2, rte3]));
     }
 
     if (!cards.length) return;
@@ -46,12 +48,8 @@ export default async function decorate(block) {
   const isNewsCardVariation = block.classList.contains('news-card-variation');
   if (isNewsCardVariation) {
     const [rte1, rte2, rte3, ...cards] = [...block.children];
-    const rteContainer = div({ class: 'rte-container' });
     if (rte1 && rte2 && rte3) {
-      rteContainer.append(rte1);
-      rteContainer.append(rte2);
-      rteContainer.append(rte3);
-      block.append(rteContainer);
+      block.append(createRTEContainer([rte1, rte2, rte3]));
     }
 
     if (!cards.length) return;
