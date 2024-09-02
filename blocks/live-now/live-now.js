@@ -169,6 +169,7 @@ function buildModal(title, thumbnailPath, url) {
 
 // Function to close the dialog if clicked outside of it
 function dismissOnClick(modal, event) {
+  if (!modal) return;
   const rect = modal.getBoundingClientRect();
   const isInDialog = (
     event.clientX >= rect.left
