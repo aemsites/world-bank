@@ -139,7 +139,7 @@ function createSignupModule(block, placeholders) {
         type: 'text',
         id: 'firstname',
         placeholder: placeholders[CONSTANTS.SIGNUP_NAME_PLACEHOLDER] || 'Your first name',
-      }),
+      }),button({ type: 'submit', id: 'signup-btn-desktop' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up')
     ),
     div(
       { class: 'input-group checkbox-group' },
