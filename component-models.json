@@ -470,10 +470,14 @@
        "value": "",
        "label": "Variation",
        "options": [
-         {
-           "name": "Data Card",
-           "value": "data-card-variation"
-         }
+          {
+            "name": "Data Card",
+            "value": "data-card-variation"
+          },
+          {
+            "name": "News Card",
+            "value": "news-card-variation"
+          }
        ]
      }
     ]
