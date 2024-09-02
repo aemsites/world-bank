@@ -79,7 +79,7 @@
   line-height: 150%;
   letter-spacing: 0.25px;
   color: var(--primary-blue-80);
-  border-bottom: 2px solid rgb(0 57 107 / 24%);
+  border-bottom: 2px solid var(--neutrals-a-50);
   padding: 16px 0 8px;
   text-decoration: none;
 }
@@ -152,7 +152,7 @@
   font-size: 28px;
   line-height: 31px;
   text-transform: uppercase;
-  color: #002337;
+  color: var(--input-background-color);
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(2) {
@@ -185,7 +185,7 @@
   line-height: 110%;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgb(0 13 26 / 57%);
+  color: var(--neutrals-a-70);
 }
 
 .data-cards .news-card .news-card-title {
@@ -194,7 +194,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 120%;
-  color: #004370;
+  color: var(--primary-blue-80);
   margin-bottom: 30px;
 }
 
@@ -232,7 +232,7 @@
 
 .data-cards .news-card .news-card-image {
   order: 0;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-20);
 }
 
 .data-cards .news-card .news-card-image img {
@@ -261,7 +261,7 @@
   }
 
   .data-cards.news-card-variation .rte-container > div:nth-child(2) {
-    padding-bottom: 48px;
+    padding-bottom: var(--spacing-48);
   }
 
   .data-cards.data-card-variation .data-card-items {
@@ -323,7 +323,7 @@
   }
 
   .data-cards.news-card-variation .rte-container > div:nth-child(2) {
-    padding-bottom: 64px;
+    padding-bottom: var(--spacing-64);
   }
 
   .data-cards.news-card-variation .rte-container > div:first-child {
