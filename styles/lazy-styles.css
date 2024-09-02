@@ -62,7 +62,7 @@
 }
 
 .cookie-tooltip .close span, .cookie-tooltip .close:hover, .cookie-tooltip .close:focus {
-    color: var(--color-white)   #fff;
+    color: var(--color-white);
 }
 
 .cookie-tooltip > .container > button > span {
@@ -87,15 +87,6 @@
     .cookie-tooltip {
         width: 100%;
     }
-
-    /* .container::after {
-        clear: both;
-    }
-    
-    .container::before, .container::after {
-        content: "";
-        display: table;
-    } */
 }
 
 @media (width < 1024px) {
