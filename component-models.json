@@ -975,5 +975,24 @@
         ]
       }
     ]
+  },
+  {
+    "id": "carousel",
+    "fields": [
+       {
+         "component": "richtext",
+         "name": "title",
+         "value": "",
+         "label": "Title",
+         "valueType": "string"
+       },
+       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      }
+     ]
   }
 ]
