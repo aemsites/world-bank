@@ -5,7 +5,7 @@ import getLanguageSelector from './language-selector.js';
 import {
   fetchLanguageNavigation,
   fetchLanguagePlaceholders,
-  fetchLanguageTrendingData,
+  fetchLangPlaceholderbyFileName,
   getLanguage,
 } from '../../scripts/scripts.js';
 import * as Constants from './constants.js';
@@ -501,11 +501,16 @@ function createNavMenu(structuredNav, searchByCountryPlaceholder) {
   return menuOverlay;
 }
 
-async function changeTrendingdata(tdElement, langCode) {
-  const trendingDataJson = await fetchLanguageTrendingData(langCode);
+async function setTrendingDataAsUrl(tdElement) {
+  const trendingDataJson = await fetchLangPlaceholderbyFileName(Constants.TRENDING_DATA_FILENAME);
   const randomTd = trendingDataJson[Math.floor(Math.random() * trendingDataJson.length)];
   tdElement.textContent = randomTd.Text;
   return a({ href: randomTd.Link, target: '_blank' }, tdElement);
+}
+async function changeTrendingData(navSections) {
+  const tendingDataWrapper = navSections.querySelector('.default-content-wrapper');
+  const tendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
+  tendingDataWrapper.append(tendingDataDiv);
 }
 export default async function decorate(block) {
   // load nav as fragment
@@ -567,10 +572,6 @@ export default async function decorate(block) {
         });
       });
   }
-  const tendingDataWrapper = navSections.querySelector('.default-content-wrapper');
-  const tendingDataDiv = await changeTrendingdata(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'), `/${langCode}`);
-  tendingDataWrapper.append(tendingDataDiv);
-
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
@@ -599,6 +600,6 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  await changeTrendingData(navSections);
   fetchingPlaceholdersData(placeholdersData);
-  // fetchLanguageTrendingData(`/${langCode}`);
 }

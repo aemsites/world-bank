@@ -206,29 +206,23 @@ export async function fetchLanguageNavigation(langCode) {
   return navJsonData;
 }
 /**
- * Return the trending data placeholder file specific to language
+ * Return the json for any placeholder file specific to language using filename as argument
  * @returns
  */
-export async function fetchLanguageTrendingData(langCode) {
-  window.trendingData = window.trendingData || {};
-
-  if (!window.trendingData[langCode]) {
-    window.trendingData[langCode] = new Promise((resolve) => {
-      fetch(`${langCode}/trending.json`)
-        .then((resp) => (resp.ok ? resp.json() : {}))
-        .then((json) => {
-          window.trendingData[langCode] = json.data;
-          resolve(window.trendingData[langCode]);
-        })
-        .catch(() => {
-          window.trendingData[langCode] = {};
-          resolve(window.trendingData[langCode]);
-        });
-    });
+export const fetchLangPlaceholderbyFileName = async (fileName) => {
+  const langCode = getLanguage();
+  try {
+    const response = await fetch(`${langCode}/${fileName}.json`);
+    if (!response.ok) {
+      throw new Error('Failed to load data');
+    }
+    const json = await response.json();
+    return json.data || [];
+  } catch (error) {
+    return [];
   }
-  const trendingDataList = await window.trendingData[langCode];
-  return trendingDataList;
-}
+};
+
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element

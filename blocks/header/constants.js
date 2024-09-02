@@ -18,6 +18,7 @@ export const LEVEL_0 = 'level0';
 export const LEVEL_1 = 'level1';
 export const LEVEL_2 = 'level2';
 export const NAV = 'nav';
+export const TRENDING_DATA_FILENAME = 'trending';
 
 /* Language Selector Constants */
 export const LANGUAGE_TOGGLE_CLASS = 'language-toggle';
