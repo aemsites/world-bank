@@ -6,6 +6,7 @@ import { getNavigationMenu, formatNavigationJsonData, closesideMenu } from './na
 import {
   fetchLanguageNavigation,
   fetchLanguagePlaceholders,
+  fetchLangPlaceholderbyFileName,
   getLanguage,
 } from '../../scripts/scripts.js';
 import * as constants from './constants.js';
@@ -14,8 +15,8 @@ import {
   div,
   img,
   span,
+  a,
 } from '../../scripts/dom-helpers.js';
-
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 1024px)');
 
@@ -222,6 +223,20 @@ async function fetchingPlaceholdersData(placeholdersData) {
   settingAltTextForSearchIcon();
 }
 
+async function setTrendingDataAsUrl(tdElement) {
+  const trendingDataJson = await fetchLangPlaceholderbyFileName(constants.TRENDING_DATA_FILENAME);
+  const randomTd = trendingDataJson[Math.floor(Math.random() * trendingDataJson.length)];
+  tdElement.textContent = randomTd.Text;
+  return a({ href: randomTd.Link, target: '_blank' }, tdElement);
+}
+
+async function changeTrendingData(navSections) {
+  const trendingDataWrapper = navSections.querySelector('.default-content-wrapper');
+  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
+  trendingDataWrapper.append(trendingDataDiv);
+  trendingDataWrapper.style.display = 'flex';
+}
+
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -306,5 +321,6 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  if (isDesktop.matches) await changeTrendingData(navSections);
   fetchingPlaceholdersData(placeholdersData);
 }
