@@ -23,11 +23,12 @@ export default async function decorate(block) {
       block.append(rteContainer);
     }
 
+    if (!cards.length) return;
+
     const dataCardItems = div({ class: 'data-card-items' });
-    if (cards.length) {
-      dataCardItems.append(...cards);
-      block.append(dataCardItems);
-    }
+    dataCardItems.append(...cards);
+    block.append(dataCardItems);
+
     cards.forEach((row) => {
       row.className = 'data-card';
       const [tag, title, description, disclaimer] = [...row.children];
@@ -53,11 +54,11 @@ export default async function decorate(block) {
       block.append(rteContainer);
     }
 
+    if (!cards.length) return;
+
     const newsCardItems = div({ class: 'news-card-items' });
-    if (cards.length) {
-      newsCardItems.append(...cards);
-      block.append(newsCardItems);
-    }
+    newsCardItems.append(...cards);
+    block.append(newsCardItems);
 
     cards.forEach((row) => {
       row.className = 'news-card';
