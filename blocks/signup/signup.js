@@ -2,7 +2,7 @@ import {
   div, p, form, input, label, button, span,
 } from '../../scripts/dom-helpers.js';
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
-import { CONSTANTS } from './constants.js';
+import CONSTANTS from './constants.js';
 
 async function callConsentAPI(email, firstName, placeholders) {
   const consentData = {
