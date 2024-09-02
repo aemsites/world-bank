@@ -975,41 +975,5 @@
         ]
       }
     ]
-  },
-  {
-    "id": "carousel",
-    "fields": [
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "alt",
-          "value": "Default alt",
-          "label": "Thumbnail Alt Text",
-          "required": true
-        },
-        {
-          "component": "richtext",
-          "name": "description",
-          "value": "",
-          "label": "Description",
-          "valueType": "string",
-          "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "href",
-        "value": "",
-        "label": "Title Link",
-        "required": true
-      }
-    ]
   }
 ]
