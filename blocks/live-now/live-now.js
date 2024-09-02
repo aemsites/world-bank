@@ -68,7 +68,7 @@ async function queryEventData(dateTime) {
 
   if (!reader) { throw new Error('Stream reader is null or invalid.') };
   while (true) {
-    const { done, value } = reader.read();
+    const { done, value } = await reader.read();
     if (done || value == null) {
       break;
     }
