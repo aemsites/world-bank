@@ -696,11 +696,7 @@ header nav .nav-tools {
   align-items: center;
   justify-content: center;
   position: absolute;
-<<<<<<< HEAD
-  z-index: 10;
-=======
   z-index: 1;
->>>>>>> 11c857474c2838e5e3771d4d70c7da4305202878
   width: 100%;
   margin-top: 35px;
   border-top: 2px solid var(--neutrals-20);
