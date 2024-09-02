@@ -147,6 +147,10 @@
   border-bottom-color: #07AB50;
 }
 
+.data-cards.data-card-variation .data-card-tag.infrastructure {
+  border-bottom-color: #91302F;
+}
+
 
 .data-cards.news-card-variation .rte-container > div:first-child {
   font-size: 28px;
