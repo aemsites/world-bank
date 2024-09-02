@@ -119,6 +119,7 @@ dialog.livenow-modal:modal {
     max-width: 580px;
     height: 336px;
     position: relative;
+    
     img.event-thumbnail {
       height: 100%;
       width: 100%;

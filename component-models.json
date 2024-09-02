@@ -782,13 +782,6 @@
     "id": "live-now",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "cidcode",
-        "label": "CID Code",
-        "value": ""
-      },
-      {
         "component": "boolean",
         "label": "Test Mode",
         "name": "testmode",
