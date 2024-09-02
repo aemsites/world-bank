@@ -80,17 +80,17 @@ button#signup-btn-desktop {
   .signup-wrapper {
     padding: 40px;
   }
-
-
   .signup-description {
     margin-bottom: 30px;
   }
 
   input[type="email"],
   input[type="text"] {
-    width: calc(50% - 15px);
+    max-height: 25px;
     padding: 15px;
     font-size: 1.125rem;
+    border: 1px solid #00396B3D;
+    margin-right: 0;
   }
 
   button#signup-btn {
@@ -99,6 +99,25 @@ button#signup-btn-desktop {
 
   button#signup-btn-desktop {
     display: block;
+  }
+
+  .email-signup-container {
+    display: flex;
+    gap:30px;
+    align-items: baseline;
+  }
+  .input-group {
+    display: flex;
+  }
+  input[type="email"] {
+    border-radius: 50px 0 0 50px;
+  }
+  input[type="text"] {
+    border-radius: 0px;
+  }
+  button#signup-btn-desktop {
+    margin: 0;
+    overflow: visible;
   }
 }
 
