@@ -786,14 +786,17 @@
         "label": "Test Mode",
         "name": "testmode",
         "valueType": "boolean",
-        "description": "Put the component into test mode so that it will always appear."
+        "value": false,
+        "description": "Put the component into test mode so that it will always appear.",
+        "required": true
       },
       {
         "component": "text",
         "label": "Test Property",
         "name": "test",
         "valueType": "string",
-        "description": "Testing"
+        "description": "Testing",
+        "value": ""
       }
     ]
   }
