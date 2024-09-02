@@ -101,9 +101,9 @@ function attachFormValidation(block, placeholders) {
       const subscriptionStatus = await callSubscriptionAPI(email, firstName);
 
       if (consentSuccess && subscriptionStatus === 'Profile Created') {
-        showThankYouMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.THANK_YOU_MESSAGE]);
+        showThankYouMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_THANK_YOU_MESSAGE]);
       } else if (consentSuccess && subscriptionStatus === 'Not Subscribed') {
-        showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.CONFIRMATION_MESSAGE]);
+        showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_CONFIRMATION_MESSAGE]);
       } else {
         errorMessage.textContent = 'An error occurred while processing your request. Please try again later.';
       }
@@ -172,6 +172,7 @@ async function fetchingPlaceholdersData(block) {
     const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
     if (!listOfAllPlaceholdersData) return;
 
+    console.log(listOfAllPlaceholdersData);
     createSignupModule(block, listOfAllPlaceholdersData);
   } catch (error) {
     console.error('Error fetching placeholders data:', error);

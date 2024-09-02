@@ -16,6 +16,7 @@ export const CONSTANTS = {
     SIGNUP_SUCCESS_MESSAGE_PROFILE_UPDATE: "signupSuccessMessageProfileUpdate",
     SIGNUP_ERROR_MESSAGE_EALERT: "signupErrorMessageEalert",
     SIGNUP_DESCRIPTION: "signupDescription",
-    CURATED_BANNER_BUTTON_LABEL: "curatedBannerButtonLabel"
+    SIGNUP_THANK_YOU_MESSAGE: 'signupSuccessMessageProfileUpdate',
+    SIGNUP_CONFIRMATION_MESSAGE: 'signupSuccessMessage',
   };
   
