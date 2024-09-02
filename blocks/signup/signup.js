@@ -3,48 +3,91 @@ import {
 } from '../../scripts/dom-helpers.js';
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import { CONSTANTS } from './constants.js';
-import { getMetadata } from '../../scripts/aem.js';
 
-async function callApi(url, data, errorMessage) {
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Ocp-Apim-Subscription-Key': 'a02440fa123c4740a83ed288591eafe4',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
+async function callConsentAPI(email, firstName) {
+  const consentData = {
+    dsDataElements: {
+      Name: firstName,
+      Occupation: ""
+    },
+    identifier: email,
+  };
 
-    if (!response.ok) {
-      throw new Error(`API call failed: ${response.statusText}`);
-    }
+  const response = await fetch('https://webapi.worldbank.org/api/aem/campaign/consent', {
+    method: 'POST',
+    headers: {
+      'Ocp-Apim-Subscription-Key': 'a02440fa123c4740a83ed288591eafe4',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(consentData),
+  });
 
-    return await response.json();
-  } catch (error) {
-    console.error(errorMessage, error);
-    throw error;
-  }
+  const result = await response.json();
+  return result.consent === 'success';
 }
 
-function attachFormValidation() {
+async function callSubscriptionAPI(email, firstName) {
+  const subscriptionData = {
+    email,
+    firstName,
+    cusWbg_subscription_list: 'World Bank in China:@Purnw0I-i4j3sxYUHKXmmngLM2fEKqUbg8EBD6liWZBFDJYtct9fjZ9-cyVWwRwXRIabgDXU5FnxMPuj6GrFJqgZu5VHGH01lAJPDjiq6Asmtbtz',
+    eventSubList: 'EVTRTEVTWbgNlRewampConf',
+    eventSubUpdateList: 'EVTExtNlUpdNotify',
+    subscriptionType: 'country',
+  };
+
+  const response = await fetch('https://webapi.worldbank.org/api/aem/campaign/subscribe', {
+    method: 'POST',
+    headers: {
+      'Ocp-Apim-Subscription-Key': 'a02440fa123c4740a83ed288591eafe4',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(subscriptionData),
+  });
+
+  const result = await response.json();
+  return result.Status; 
+}
+
+function showConfirmationMessage(formElement, message) {
+  formElement.innerHTML = `
+    <div class="confirmation-message">
+      <p>${message}</p>
+    </div>
+  `;
+}
+
+function showThankYouMessage(formElement, message) {
+  formElement.innerHTML = `
+    <div class="thank-you-message">
+      <p>${message}</p>
+    </div>
+  `;
+}
+
+function attachFormValidation(block, placeholders) {
   document.getElementById('signup-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const errorMessage = document.getElementById('error-message');
+    const errorMessage = block.querySelector('#error-message');
     errorMessage.textContent = '';
 
-    const email = document.getElementById('email').value;
-    const firstName = document.getElementById('firstname').value;
-    const agree = document.getElementById('agree').checked;
+    const emailInput = block.querySelector('#email');
+    const email = emailInput.value;
+    const firstName = block.querySelector('#firstname').value || '';
+    const agree = block.querySelector('#agree').checked;
 
     function validateEmail(emailId) {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(String(emailId).toLowerCase());
     }
 
+    // Reset previous styles
+    emailInput.classList.remove('input-error');
+
     if (!validateEmail(email)) {
       errorMessage.textContent = 'Please enter a valid email address.';
+      emailInput.classList.add('input-error'); // Add error class
       return;
     }
 
@@ -54,52 +97,33 @@ function attachFormValidation() {
     }
 
     try {
-      // Call the Consent API
-      const consentData = {
-        dsDataElements: {
-          Name: firstName || 'N/A',
-          Occupation: '',
-        },
-        identifier: email,
-      };
+      const consentSuccess = await callConsentAPI(email, firstName);
+      const subscriptionStatus = await callSubscriptionAPI(email, firstName);
 
-      await callApi(
-        'https://webapi.worldbank.org/api/aem/campaign/consent',
-        consentData,
-        'Failed to send consent data',
-      );
-
-      // Call the Subscription API
-      const subscriptionData = {
-        email,
-        firstName,
-        cusWbg_subscription_list: 'World Bank in China:@Purnw0I-i4j3sxYUHKXmmngLM2fEKqUbg8EBD6liWZBFDJYtct9fjZ9-cyVWwRwXRIabgDXU5FnxMPuj6GrFJqgZu5VHGH01lAJPDjiq6Asmtbtz',
-        eventSubList: 'EVTRTEVTWbgNlRewampConf',
-        eventSubUpdateList: 'EVTExtNlUpdNotify',
-        subscriptionType: 'country',
-      };
-
-      await callApi(
-        'https://webapi.worldbank.org/api/aem/campaign/subscribe',
-        subscriptionData,
-        'Failed to send subscription data',
-      );
-
-      alert('Form submitted successfully!');
+      if (consentSuccess && subscriptionStatus === 'Profile Created') {
+        showThankYouMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.THANK_YOU_MESSAGE]);
+      } else if (consentSuccess && subscriptionStatus === 'Not Subscribed') {
+        showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.CONFIRMATION_MESSAGE]);
+      } else {
+        errorMessage.textContent = 'An error occurred while processing your request. Please try again later.';
+      }
     } catch (error) {
-      errorMessage.textContent = 'An error occurred while submitting the form. Please try again later.';
+      errorMessage.textContent = 'An unexpected error occurred. Please try again later.';
     }
   });
 }
 
-function createSignupModule(block) {
+function createSignupModule(block, placeholders) {
   const container = div({ class: 'email-signup-container' });
 
   const content = div(
     { class: 'signup-content' },
-    p({ class: 'signup-heading' }, 'Stay current with our latest '),
-    p({ class: 'signup-description' }, 'News, stories, and updates on international development straight to your inbox from the World Bank Group.'),
+   // p({ class: 'signup-heading' }, placeholders[CONSTANTS.SIGNUP_HEADING]),
+    p({ class: 'signup-heading' }),
+    p({ class: 'signup-description' }, placeholders[CONSTANTS.SIGNUP_DESCRIPTION]),
   );
+
+  content.querySelector('.signup-heading').innerHTML = placeholders[CONSTANTS.SIGNUP_HEADING];
 
   const formelement = form(
     { id: 'signup-form' },
@@ -108,13 +132,13 @@ function createSignupModule(block) {
       input({
         type: 'email',
         id: 'email',
-        placeholder: '* Your email',
+        placeholder: placeholders[CONSTANTS.SIGNUP_EMAIL_PLACEHOLDER] || '* Your email',
         required: true,
       }),
       input({
         type: 'text',
         id: 'firstname',
-        placeholder: 'Your first name',
+        placeholder: placeholders[CONSTANTS.SIGNUP_NAME_PLACEHOLDER] || 'Your first name',
       }),
     ),
     div(
@@ -125,19 +149,21 @@ function createSignupModule(block) {
         required: true,
       }),
       label({
-        htmlFor: 'agree',
-      }, 'I agree with the terms of the Privacy Notice and consent to my personal data being processed, to the extent necessary, to subscribe to the selected updates.'),
+        htmlFor: 'agree'
+      }, placeholders[CONSTANTS.SIGNUP_TERMS] || 'I agree with the terms of the Privacy Notice and consent to my personal data being processed, to the extent necessary, to subscribe to the selected updates.'),
     ),
-    button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), 'Sign up'),
+    button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
     div({ class: 'error-message', id: 'error-message' }),
   );
+
+  formelement.querySelector('label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];
 
   container.appendChild(content);
   container.appendChild(formelement);
 
   block.appendChild(container);
 
-  attachFormValidation();
+  attachFormValidation(block, placeholders);
 }
 
 async function fetchingPlaceholdersData(block) {
@@ -145,34 +171,12 @@ async function fetchingPlaceholdersData(block) {
     const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
     if (!listOfAllPlaceholdersData) return;
 
-    const signupDivs = block.querySelectorAll('.email-signup-container');
-    if (!signupDivs.length) return;
-
-    signupDivs.forEach((signupDiv) => {
-      const elementsToUpdate = [
-        { selector: '.signup-heading', key: CONSTANTS.SIGNUP_HEADING },
-        { selector: '.signup-description', key: CONSTANTS.SIGNUP_DESCRIPTION },
-        { selector: '#email', key: CONSTANTS.SIGNUP_EMAIL_PLACEHOLDER, attribute: 'placeholder' },
-        { selector: '#firstname', key: CONSTANTS.SIGNUP_NAME_PLACEHOLDER, attribute: 'placeholder' },
-        { selector: '#signup-btn', key: CONSTANTS.SIGNUP_BUTTON_TEXT, attribute: 'innerText' },
-        { selector: '#agree + label', key: CONSTANTS.SIGNUP_TERMS, attribute: 'innerHTML' },
-      ];
-
-      elementsToUpdate.forEach(({ selector, key, attribute = 'innerHTML' }) => {
-        const element = signupDiv.querySelector(selector);
-        if (element) {
-          element[attribute] = listOfAllPlaceholdersData[key];
-        } else {
-          console.error(`${selector} element not found.`);
-        }
-      });
-    });
+    createSignupModule(block, listOfAllPlaceholdersData);
   } catch (error) {
     console.error('Error fetching placeholders data:', error);
   }
 }
 
 export default function decorate(block) {
-  createSignupModule(block);
   fetchingPlaceholdersData(block);
 }

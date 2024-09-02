@@ -74,6 +74,13 @@
     margin-top: 10px;
   }
   
+
+  .input-error {
+    border: 1px solid red;
+    background-color: #ffe6e6;
+  }
+
+  
   /* Desktop Styles */
   @media (width >= 992px) {
     .signup-wrapper {
