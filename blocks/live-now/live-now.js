@@ -65,9 +65,11 @@ async function queryEventData(dateTime) {
   const reader = response.body.getReader();
   const decoder = new TextDecoder('utf-8');
   let result = '';
+
+  if (!reader) { throw new Error('Stream reader is null or invalid.') };
   while (true) {
     const { done, value } = reader.read();
-    if (done) {
+    if (done || value == null) {
       break;
     }
 
