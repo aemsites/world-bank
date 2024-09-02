@@ -24,12 +24,37 @@ input[type="text"] {
   margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #4C809C;
-  font-size: var(--body-medium);
+  font-size: var(--body-small);
   width: 100%;
+  color:#000D1AB2
 }
 
 input[type="checkbox"] {
   margin-right: 10px;
+  border: 1.5px solid #00396B3D;
+  height: 20px;
+  width: 20px;
+}
+
+input::placeholder {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #999;
+  pointer-events: none;
+  color: #000D1A91; 
+  font-size: var(--body-medium);
+}
+
+input:focus::placeholder,
+ input:not(:placeholder-shown)::placeholder {
+    transform: translateY(-150%);
+    font-size: 12px;
+    color: #999;
+    padding-left: 10px;
 }
 
 .checkbox-group label {
@@ -84,11 +109,18 @@ button#signup-btn-desktop {
     margin-bottom: 30px;
   }
 
+  .signup-heading {
+    font-size: var(--heading-label-base);
+    line-height: 44.8px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
   input[type="email"],
   input[type="text"] {
     max-height: 25px;
-    padding: 15px;
-    font-size: 1.125rem;
+    padding: 20px;
+    font-size: var(--body-small);
     border: 1px solid #00396B3D;
     margin-right: 0;
   }
@@ -118,6 +150,8 @@ button#signup-btn-desktop {
   button#signup-btn-desktop {
     margin: 0;
     overflow: visible;
+    border-radius: 0 50px 50px 0;
+    text-align: center;
   }
 }
 
