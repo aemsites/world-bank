@@ -1,18 +1,18 @@
-.signup-heading {
+.email-signup-container .signup-heading {
   font-size: var(--heading-label-base);
   line-height: 30.8px;
   text-align: left;
 }
 
-.signup-description {
+.email-signup-container .signup-description {
   font-size: var(--body-medium);
   line-height: 22.4px;
   text-align: left;
   letter-spacing: -0.02em;
 }
 
-input[type="email"],
-input[type="text"] {
+.email-signup-container input[type="email"],
+.email-signup-container input[type="text"] {
   padding: 17px 0 17px 10px;
   margin-right: 10px;
   border-radius: 5px;
@@ -22,7 +22,7 @@ input[type="text"] {
   color: #000D1AB2
 }
 
-.checkbox-group {
+.email-signup-container .checkbox-group {
   display: flex;
   gap: 8px;
   margin-top: 10px;
@@ -30,13 +30,13 @@ input[type="text"] {
   font-size: var(--body-tiny);
 }
 
-input[type="checkbox"] {
+.email-signup-container input[type="checkbox"] {
   border: 1.5px solid #00396B3D;
   height: 20px;
   width: 20px;
 }
 
-input::placeholder {
+.email-signup-container input::placeholder {
   transition: all 0.2s ease-in-out;
   position: absolute;
   top: 50%;
@@ -47,24 +47,24 @@ input::placeholder {
   font-size: var(--body-medium);
 }
 
-input:focus::placeholder,
-input:not(:placeholder-shown)::placeholder {
+.email-signup-container input:focus::placeholder,
+.email-signup-container input:not(:placeholder-shown)::placeholder {
   transform: translateY(-150%);
   font-size: 12px;
   color: #999;
   padding-left: 10px;
 }
 
-.checkbox-group label p {
+.email-signup-container .checkbox-group label p {
   margin: 0;
 }
 
-.checkbox-group label p a {
+.email-signup-container .checkbox-group label p a {
   font-size: var(--body-tiny);
 }
 
-button#signup-btn,
-button#signup-btn-desktop {
+.email-signup-container button#signup-btn,
+.email-signup-container button#signup-btn-desktop {
   font-size: var(--body-medium);
   display: flex;
   align-items: center;
@@ -76,18 +76,18 @@ button#signup-btn-desktop {
   justify-content: center;
 }
 
-button#signup-btn .icon,
-button#signup-btn-desktop .icon {
+.email-signup-container button#signup-btn .icon,
+.email-signup-container button#signup-btn-desktop .icon {
   background-image: url('../../icons/subscribe.png');
   background-repeat: no-repeat;
   background-position: center;
 }
 
-button#signup-btn-desktop {
+.email-signup-container button#signup-btn-desktop {
   display: none;
 }
 
-.error-message {
+.email-signup-container .error-message {
   color: red;
   font-size: var(--body-tiny);
   margin-top: 10px;
@@ -98,7 +98,8 @@ button#signup-btn-desktop {
 }
 
 
-input[type="email"].input-error, [type="checkbox"]:not(:checked).input-error {
+.email-signup-container input[type="email"].input-error, 
+.email-signup-container [type="checkbox"]:not(:checked).input-error {
   border: 1px solid red;
   background-color: #FDF2F2;
 }
@@ -106,30 +107,30 @@ input[type="email"].input-error, [type="checkbox"]:not(:checked).input-error {
 
 /* Tablet Styles */
 @media (width >=768px) {
-  .signup-description {
+  .email-signup-container .signup-description {
     margin-bottom: 30px;
   }
 
-  .signup-heading {
+  .email-signup-container .signup-heading {
     font-size: var(--heading-label-base);
     line-height: 44.8px;
     text-align: left;
     margin-bottom: 10px;
   }
 
-  input[type="email"],
-  input[type="text"] {
+  .email-signup-container input[type="email"],
+  .email-signup-container input[type="text"] {
     padding: 16px;
     font-size: var(--eyebrow-font-size-l);
     border: 1px solid #00396B3D;
     margin-right: 0;
   }
 
-  button#signup-btn {
+  .email-signup-container button#signup-btn {
     display: none;
   }
 
-  button#signup-btn-desktop {
+  .email-signup-container button#signup-btn-desktop {
     display: flex;
     font-size: var(--eyebrow-font-size-l);
     margin: 0;
@@ -138,33 +139,33 @@ input[type="email"].input-error, [type="checkbox"]:not(:checked).input-error {
     text-align: center;
   }
 
-  .input-group {
+  .email-signup-container .input-group {
     display: flex;
   }
 
-  input[type="email"] {
+  .email-signup-container input[type="email"] {
     border-radius: 50px 0 0 50px;
   }
 
-  input[type="text"] {
+  .email-signup-container input[type="text"] {
     border-radius: 0;
   }
 
-  input[type='checkbox'] {
+  .email-signup-container input[type='checkbox'] {
     margin-top: 4px;
   }
 
-  .checkbox-group label p {
+  .email-signup-container .checkbox-group label p {
     font-size: var(--body-medium);
   }
 
-  .checkbox-group label p a {
+  .email-signup-container .checkbox-group label p a {
     font-size: var(--body-medium);
   }
 }
 
 @media (width >=1024px) {
-  .signup-heading {
+  .email-signup-container .signup-heading {
     font-size: var(--heading-label-small);
     line-height: 43.2px;
     margin-bottom: 16px;
