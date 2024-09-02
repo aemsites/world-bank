@@ -4,7 +4,7 @@ import {
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import { CONSTANTS } from './constants.js';
 
-async function callConsentAPI(email, firstName) {
+async function callConsentAPI(email, firstName, placeholders) {
   const consentData = {
     dsDataElements: {
       Name: firstName,
@@ -12,11 +12,10 @@ async function callConsentAPI(email, firstName) {
     },
     identifier: email,
   };
-
-  const response = await fetch('https://webapi.worldbank.org/api/aem/campaign/consent', {
+  const response = await fetch(placeholders[CONSTANTS.SIGNUP_CONSENT_API_URL], {
     method: 'POST',
     headers: {
-      'Ocp-Apim-Subscription-Key': 'a02440fa123c4740a83ed288591eafe4',
+      'Ocp-Apim-Subscription-Key': placeholders[CONSTANTS.SIGNUP_OCP_APIM_SUBSCRIPTION_KEY],
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(consentData),
@@ -26,20 +25,20 @@ async function callConsentAPI(email, firstName) {
   return result.consent === 'success';
 }
 
-async function callSubscriptionAPI(email, firstName) {
+async function callSubscriptionAPI(email, firstName, placeholders) {
   const subscriptionData = {
     email,
     firstName,
-    cusWbg_subscription_list: 'World Bank in China:@Purnw0I-i4j3sxYUHKXmmngLM2fEKqUbg8EBD6liWZBFDJYtct9fjZ9-cyVWwRwXRIabgDXU5FnxMPuj6GrFJqgZu5VHGH01lAJPDjiq6Asmtbtz',
-    eventSubList: 'EVTRTEVTWbgNlRewampConf',
-    eventSubUpdateList: 'EVTExtNlUpdNotify',
-    subscriptionType: 'country',
+    cusWbg_subscription_list: placeholders[CONSTANTS.SIGNUP_CUSWBG_SUBSCRIPTION_LIST],
+    eventSubList: placeholders[CONSTANTS.SIGNUP_EVENT_SUB_LIST],
+    eventSubUpdateList: placeholders[CONSTANTS.SIGNUP_EVENT_SUB_UPDATE_LIST],
+    subscriptionType: placeholders[CONSTANTS.SIGNUP_SUBSCRIPTION_TYPE],
   };
 
-  const response = await fetch('https://webapi.worldbank.org/api/aem/campaign/subscribe', {
+  const response = await fetch(placeholders[CONSTANTS.SIGNUP_SUBSCRIBE_API_URL], {
     method: 'POST',
     headers: {
-      'Ocp-Apim-Subscription-Key': 'a02440fa123c4740a83ed288591eafe4',
+      'Ocp-Apim-Subscription-Key': placeholders[CONSTANTS.SIGNUP_OCP_APIM_SUBSCRIPTION_KEY],
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(subscriptionData),
@@ -103,8 +102,8 @@ function attachFormValidation(block, placeholders) {
     }
 
     try {
-      const consentSuccess = await callConsentAPI(email, firstName);
-      const subscriptionStatus = await callSubscriptionAPI(email, firstName);
+      const consentSuccess = await callConsentAPI(email, firstName, placeholders);
+      const subscriptionStatus = await callSubscriptionAPI(email, firstName, placeholders);
 
       if (consentSuccess && subscriptionStatus === 'Profile Created') {
         showThankYouMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_THANK_YOU_MESSAGE]);
@@ -177,6 +176,7 @@ async function fetchingPlaceholdersData(block) {
     const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
     if (!listOfAllPlaceholdersData) return;
 
+    // console.log(listOfAllPlaceholdersData);
     createSignupModule(block, listOfAllPlaceholdersData);
   } catch (error) {
     console.error('Error fetching placeholders data:', error);

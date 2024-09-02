@@ -18,5 +18,12 @@ export const CONSTANTS = {
     SIGNUP_DESCRIPTION: "signupDescription",
     SIGNUP_THANK_YOU_MESSAGE: 'signupSuccessMessageProfileUpdate',
     SIGNUP_CONFIRMATION_MESSAGE: 'signupSuccessMessage',
+    SIGNUP_CONSENT_API_URL: "signupConsentApiUrl",
+    SIGNUP_OCP_APIM_SUBSCRIPTION_KEY: "signupOcpApimSubscriptionKey",
+    SIGNUP_SUBSCRIBE_API_URL: "signupSubscribeApiUrl",
+    SIGNUP_CUSWBG_SUBSCRIPTION_LIST: "signupCuswbgSubscriptionList",
+    SIGNUP_EVENT_SUB_LIST: "signupEventSubList",
+    SIGNUP_EVENT_SUB_UPDATE_LIST: "signupEventSubUpdateList",
+    SIGNUP_SUBSCRIPTION_TYPE: "signupSubscriptionType",
   };
   
