@@ -1,5 +1,3 @@
-// constants.js
-
 const CONSTANTS = {
   SIGNUP_HEADING: 'signupHeading',
   SIGNUP_NEWSLETTER_CHECKBOX: 'signupNewsletterCheckbox',
