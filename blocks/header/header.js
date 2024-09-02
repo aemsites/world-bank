@@ -1,5 +1,7 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+import getLanguageSelector from './language-selector.js';
+
 import {
   fetchLanguageNavigation,
   fetchLanguagePlaceholders,
@@ -282,7 +284,7 @@ function createSearchBox() {
   const navWrapper = document.querySelector('.nav-wrapper');
   const headerWrapper = document.querySelector('.header-wrapper');
   const navTools = document.querySelector('.nav-tools p');
-  let searchContainer = navWrapper.querySelector('.search-container');
+  let searchContainer = headerWrapper.querySelector('.search-container');
   let cancelContainer = navWrapper.querySelector('.cancel-container');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
@@ -324,7 +326,7 @@ function createSearchBox() {
     const searchIcon = img({ class: 'search-icon' });
     searchIcon.src = `${window.hlx.codeBasePath}/icons/search-white.svg`;
     searchIcon.alt = 'search';
-    searchIcon.addEventListener('input', () => {
+    searchIcon.addEventListener('click', () => {
       if (searchInputBox.value) {
         window.location.href = listOfAllPlaceholdersData.searchRedirectUrl + searchInputBox.value;
       }
@@ -355,10 +357,10 @@ function settingAltTextForSearchIcon() {
   searchImage.setAttribute('title', listOfAllPlaceholdersData.searchAltText);
 }
 
-async function fetchingPlaceholdersData() {
+async function fetchingPlaceholdersData(placeholdersData) {
   listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
   const hamburger = document.querySelector('.nav-hamburger');
-  hamburger.setAttribute('title', listOfAllPlaceholdersData.hamburgerAltText);
+  hamburger.setAttribute('title', placeholdersData.hamburgerAltText);
   makeImageClickableNSettingAltText();
   settingAltTextForSearchIcon();
 }
@@ -501,11 +503,12 @@ function createNavMenu(structuredNav, searchByCountryPlaceholder) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const langCode = getLanguage() || 'en';
+  const langCode = getLanguage();
   const navPath = navMeta
     ? new URL(navMeta, window.location).pathname
     : `/${langCode}/nav`;
   const fragment = await loadFragment(navPath);
+  const placeholdersData = await fetchLanguagePlaceholders();
 
   // decorate nav DOM
   block.textContent = '';
@@ -558,6 +561,13 @@ export default async function decorate(block) {
       });
   }
 
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
+    const languageSelector = getLanguageSelector(placeholdersData, langCode);
+    contentWrapper.prepend(languageSelector);
+  }
+
   const rightColumn = nav.querySelector('.nav-menu-column.right');
   const leftColumn = nav.querySelector('.nav-menu-column.left');
   // hamburger for mobile
@@ -579,5 +589,5 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
-  fetchingPlaceholdersData(block);
+  fetchingPlaceholdersData(placeholdersData);
 }

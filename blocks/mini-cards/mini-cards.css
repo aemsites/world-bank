@@ -1,0 +1,83 @@
+.mini-card-container {
+  display: grid;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  grid-template-columns: 1fr;
+}
+
+.mini-card {
+  display: flex;
+  gap: 28px;
+  border-top: 2px solid var(--neutrals-20);
+  padding-block-start: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mini-card-image img {
+  min-width: 100px;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.mc-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 12px;
+}
+
+.mc-text-wrapper  a {
+  text-decoration: none;
+}
+
+.mc-text-wrapper p {
+  margin: 0;
+  size: 10px;
+}
+
+.mini-card-tag {
+  font-weight: 700;
+  font-size: var(--body-tiny);
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--neutrals-70);
+}
+
+.mini-card-title {
+  font-weight: 700;
+  font-size: var(--body-large);
+  line-height: 120%;
+  color: var(--primary-blue-80);
+}
+
+.date-time-info, .mini-card-location {
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--body-small);
+  line-height: 150%;
+  color: var(--neutrals-100);  
+}
+
+.date-time-info {
+  display: flex;
+  gap: 6px;
+}
+
+.mini-card-time {
+  border-left: 2px solid var(--neutrals-20);
+  padding-left: 4px;
+} 
+
+@media (width >=1024px) {
+  .mini-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mini-card .mc-text-wrapper {
+    flex-basis: 285px;
+  }
+}

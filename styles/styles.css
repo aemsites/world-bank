@@ -90,7 +90,7 @@
   --purple-80: #410179;
   --purple-90: #260147;
 
-  /* spacing (Padding & Margins) (Todo: open questions, values subject to change) */
+  /* spacing (Padding & Margins) */
   --spacing-0: 0;
   --spacing-2: 2px;
   --spacing-4: 4px;
@@ -101,6 +101,7 @@
   --spacing-24: 24px;
   --spacing-28: 28px;
   --spacing-32: 32px;
+  --spacing-36: 36px;
   --spacing-40: 40px;
   --spacing-48: 48px;
   --spacing-56: 56px;
@@ -108,20 +109,57 @@
   --spacing-80: 80px;
   --spacing-96: 96px;
 
+  /* Typography spacing */
+  --size-72: 72px;
+  --size-60: 60px;
+  --size-48: 48px;
+  --size-44: 44px;
+  --size-40: 40px;
+  --size-36: 36px;
+  --size-32: 32px;
+  --size-28: 28px;
+  --size-24: 24px;
+  --size-20: 20px;
+  --size-18: 18px;
+  --size-16: 16px;
+  --size-14: 14px;
+  --size-12: 12px;
+
+  /* Heading variables */
+  --h1-huge: var(--size-44);
+  --h1-large: var(--size-36);
+  --h1-base: var(--size-24);
+  --h2-large: var(--size-28);
+  --h2-base: var(--size-28);
+  --h3-large: var(--size-24);
+  --h3-base: var(--size-24);
+  --heading-label-large: var(--size-36);
+  --heading-label-base: var(--size-28);
+  --heading-label-small: var(--size-28);
+  --heading-label-tiny: var(--size-24);
+
+  /* Body variables */
+  --default: var(--size-20);
+  --body-huge: var(--size-20);
+  --body-large: var(--size-18);
+  --body-medium: var(--size-16);
+  --body-small: var(--size-14);
+  --body-tiny: var(--size-12);
+
   /* Spacing - mobile */
   --none: var(--spacing-0);
   --xtiny: var(--spacing-2);
-  --tiny: var(--spacing-2);
+  --tiny: var(--spacing-4);
   --xxsmall: var(--spacing-4);
-  --xsmall: var(--spacing-8);
-  --small: var(--spacing-12);
+  --xsmall: var(--spacing-4);
+  --small: var(--spacing-8);
   --regular: var(--spacing-16);
   --medium: var(--spacing-20);
   --large: var(--spacing-24);
-  --xlarge: var(--spacing-32);
-  --xxlarge: var(--spacing-40);
-  --huge: var(--spacing-48);
-  --xhuge: var(--spacing-56);
+  --xlarge: var(--spacing-28);
+  --xxlarge: var(--spacing-32);
+  --huge: var(--spacing-40);
+  --xhuge: var(--spacing-48);
 
   /* fonts */
   --body-font-family: 'Open Sans', roboto, roboto-fallback;
@@ -145,28 +183,17 @@
   --nav-menu-footer-color: #99b6C7;
 
   /* body sizes */
-  --body-font-size-xl: 20px;
-  --body-font-size-l: 18px;
-  --body-font-size-m: 16px;
-  --body-font-size-s: 14px;
-  --body-font-size-xs: 12px;
+  --body-font-size: var(--default);
   --body-font-size-citation: 12px;
-  --body-font-size: 18px;
+
+  /* main-heading styles */
+  --main-heading-font-size: var(--size-28);
+  --main-heading-spacing: 0 0 var(--spacing-36);
 
   /* eyebrow styles */
   --eyebrow-font-size-l: 14px;
   --eyebrow-font-size-m: 14px;
   --eyebrow-font-size-s: 12px;
-
-  /* heading sizes - as per interactive strategies */
-  --heading-font-size-xxl: 44px;
-  --heading-font-size-xl: 36px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 28px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 20px;
-  --heading-font-size-xxs: 18px;
-  --heading-font-size-xxxs: 14px;
 
   /* Screen variables */
   --screen-width: 1456px;
@@ -194,22 +221,33 @@
 */
 @media (width >= 768px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 40px;
-    --heading-font-size-m: 36px;
-    --heading-font-size-s: 28px;
-    --heading-font-size-xs: 24px;
-    --heading-font-size-xxs: 20px;
-    --heading-font-size-xxxs: 16px;
-  
+    /* typography specific - h1..h6, body ..etc */
+    --h1-huge: var(--size-60);
+    --h1-large: var(--size-44);
+    --h1-base: var(--size-36);
+    --h2-large: var(--size-32);
+    --h2-base: var(--size-32);
+    --h3-large: var(--size-28);
+    --h3-base: var(--size-28);
+    --heading-label-large: var(--size-36);
+    --heading-label-base: var(--size-28);
+    --heading-label-small: var(--size-28);
+    --heading-label-tiny: var(--size-24);
+
+    /* Body variables */
+    --default: var(--size-20);
+    --body-huge: var(--size-20);
+    --body-large: var(--size-18);
+    --body-medium: var(--size-14);
+    --body-small: var(--size-14);
+    --body-tiny: var(--size-12);
+
     /* body styles */
-    --body-font-size-xl: 24px;
-    --body-font-size-l: 20px;
-    --body-font-size-m: 16px;
-    --body-font-size-s: 14px;
-    --body-font-size-xs: 12px;
+    --body-font-size: var(--default);
     --body-font-size-citation: 12px;
+
+    /* main-heading styles */
+    --main-heading-font-size: var(--size-32);
     
     /* eyebrow styles */
     --eyebrow-font-size-l: 16px;
@@ -222,27 +260,49 @@
     /* Screen variables */
     --nav-height: 44px;
   
-    /* Spacing - tablet (TODO: This may change - discussion ongoing) */
+    /* Spacing - tablet */
     --none: var(--spacing-0);
     --xtiny: var(--spacing-2);
-    --tiny: var(--spacing-2);
+    --tiny: var(--spacing-4);
     --xxsmall: var(--spacing-4);
     --xsmall: var(--spacing-8);
     --small: var(--spacing-12);
-    --regular: var(--spacing-16);
-    --medium: var(--spacing-20);
-    --large: var(--spacing-24);
+    --regular: var(--spacing-20);
+    --medium: var(--spacing-24);
+    --large: var(--spacing-28);
     --xlarge: var(--spacing-32);
     --xxlarge: var(--spacing-40);
-    --huge: var(--spacing-48);
-    --xhuge: var(--spacing-56);
+    --huge: var(--spacing-56);
+    --xhuge: var(--spacing-64);
   }
 }
 
 @media (width >= 1024px) {
   :root {
-    --body-font-size: 20px;
-  
+    /* typography specific - h1..h6, body ..etc */
+    --h1-huge: var(--size-72);
+    --h1-large: var(--size-60);
+    --h1-base: var(--size-48);
+    --h2-large: var(--size-40);
+    --h2-base: var(--size-40);
+    --h3-large: var(--size-32);
+    --h3-base: var(--size-32);
+    --heading-label-large: var(--size-48);
+    --heading-label-base: var(--size-40);
+    --heading-label-small: var(--size-36);
+    --heading-label-tiny: var(--size-28);
+
+    /* Body variables */
+    --default: var(--size-20);
+    --body-huge: var(--size-24);
+    --body-large: var(--size-20);
+    --body-medium: var(--size-16);
+    --body-small: var(--size-14);
+    --body-tiny: var(--size-12);
+    
+    /* body styles */
+    --body-font-size: var(--default);
+
     /* Gutter space */
     --section-gutter-space: 72px;
   
@@ -264,6 +324,10 @@
     --xxlarge: var(--spacing-64);
     --huge: var(--spacing-80);
     --xhuge: var(--spacing-96);
+
+    /* main-heading styles */
+    --main-heading-font-size: var(--size-40);
+    --main-heading-spacing: 0 0 var(--spacing-48);
   }
 }
 
@@ -309,29 +373,30 @@ h6 {
 }
 
 h1 { 
-  font-size: var(--heading-font-size-xxl); 
+  font-size: var(--h1-base); 
   line-height: 1.1;
   margin-bottom: var(--large);
 }
 
 h2 { 
-  font-size: var(--heading-font-size-xl);
+  font-size: var(--h2-base);
   margin-bottom: var(--medium);
 }
 
 h3 { 
-  font-size: var(--heading-font-size-l); 
+  font-size: var(--h3-base);
   line-height: 1.1;
   margin-bottom: var(--regular);
 }
 
 h4 {
-  font-size: var(--heading-font-size-m);
+  font-size: var(--heading-label-tiny);
   margin-bottom: var(--small);
 }
 
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+/* TODO: Check with Maria */
+h5 { font-size: var(--heading-label-tiny); }
+h6 { font-size: var(--heading-label-tiny); }
 
 p,
 dl,
@@ -346,7 +411,7 @@ blockquote {
 code,
 pre {
   font-family: var(--fixed-font-family);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-small);
 }
 
 code {
@@ -377,23 +442,22 @@ a:any-link {
 }
 
 a:any-link:hover {
-  text-decoration: underline;
+  color: rgb(0 13 26 / 96%);
   text-decoration-color: var(--primary-blue-50);
 }
 
 a:any-link:focus,
 a:any-link:active {
-  text-decoration: none;
+  color: var(--primary-blue-100);
   text-decoration-color: var(--primary-blue-100);
 }
 
 a:any-link:visited {
-  text-decoration: none;
-  color: var(--purple-60);
+  color: var(--purple-70);
+  text-decoration-color: var(--purple-70);
 }
 
 a:any-link.disabled {
-  text-decoration: none;
   color: rgb(0 41 77 / 42%);
   cursor: unset;
 }
@@ -402,7 +466,7 @@ a:any-link.disabled {
 a.button:any-link,
 button {
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-small);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.25px;
@@ -480,8 +544,36 @@ p.button-container {
   margin: 0;
 }
 
+/* Links and buttons in dark theme */
 .section.bg-primary-blue-90,
 .section.bg-primary-blue-70 {
+  a:any-link {
+    color: var(--color-white);
+    text-decoration-color: var(--color-white);
+  }
+
+  a:any-link:hover {
+    color: var(--color-white);
+    text-decoration-color: var(--primary-blue-50);
+  }
+
+  a:any-link:focus,
+  a:any-link:active {
+    color: var(--color-white);
+    text-decoration-color: var(--color-white);
+  }
+
+  a:any-link:visited {
+    color: var(--purple-40);
+    text-decoration-color: var(--purple-40);
+  }
+
+  a:any-link.disabled {
+    color: rgb(255 255 255 / 48%);
+    text-decoration-color: rgb(255 255 255 / 48%);
+    cursor: unset;
+  }
+
   a.button:any-link,
   button {
     border: 1px solid transparent;
@@ -582,18 +674,19 @@ main .section > div {
 
 .section[class*='bg-primary-blue'] {
   color: var(--color-white);
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--color-white);
-  }
+}
+
+.section[class*='bg-primary-blue'] h1,
+.section[class*='bg-primary-blue'] h2,
+.section[class*='bg-primary-blue'] h3,
+.section[class*='bg-primary-blue'] h4,
+.section[class*='bg-primary-blue'] h5,
+.section[class*='bg-primary-blue'] h6 {
+  color: var(--color-white);
 }
 
 .section[class*='bg-neutrals'] {
-  color: var(--neutrals-100); 
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--primary-blue-100);
-  }
+  color: var(--neutrals-100);
 }
 
 main .section.bg-primary-blue-90,
@@ -626,13 +719,14 @@ main .section[class*='bg-'][data-bg-inside-container="true"] {
 }
 
 main .section[data-sec-spacing="section-none"] { padding: var(--none) 0; }
+main .section[data-sec-spacing="section-xtiny"] { padding: var(--xtiny) 0; }
+main .section[data-sec-spacing="section-tiny"] { padding: var(--tiny) 0; }
 main .section[data-sec-spacing="section-xxsmall"] { padding: var(--xxsmall) 0; }
 main .section[data-sec-spacing="section-xsmall"] { padding: var(--xsmall) 0; }
-main .section[data-sec-spacing="section-small"] { padding: var(--small) 0; }
-main .section[data-sec-spacing="sec-spacing-20"] { padding: var(--spacing-20) 0; }
 main .section[data-sec-spacing="section-regular"] { padding: var(--regular) 0; }
-main .section[data-sec-spacing="sec-spacing-28"] { padding: var(--spacing-28) 0; }
+main .section[data-sec-spacing="section-small"] { padding: var(--small) 0; }
 main .section[data-sec-spacing="section-medium"] { padding: var(--medium) 0; }
+main .section[data-sec-spacing="section-large"] { padding: var(--large) 0; }
 main .section[data-sec-spacing="section-xlarge"] { padding: var(--xlarge) 0; }
 main .section[data-sec-spacing="section-xxlarge"] { padding: var(--xxlarge) 0; }
 main .section[data-sec-spacing="section-huge"] { padding: var(--huge) 0; }
@@ -645,7 +739,7 @@ main .section[data-sec-spacing="section-xhuge"] { padding: var(--xhuge) 0; }
   bg-neutrals-20: #FFF
   bg-neutrals-10: #FFF
 */
-body.page-swoosh::before,
+body[class*='page-swoosh-']::before,
 main .section[data-sec-swoosh^="sec-swoosh"]::before {
   background-repeat: no-repeat;
   content: '';
@@ -656,15 +750,26 @@ main .section[data-sec-swoosh^="sec-swoosh"]::before {
   top: 0;
 }
 
-body.page-swoosh::before { background-position: center top; }
+body.page-swoosh-big-curve::before { background-image: url('../icons/swoosh/page/big-curve.svg'); }
+body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/page/half-curve.svg'); }
+
+body[class*='page-swoosh-']::before { 
+  background-position: left top; 
+  background-size: 60%;
+}
+
+@media (width >= 1024px) {
+  body[class*='page-swoosh-']::before { 
+    background-size: 40%;
+  }
+}
+
 main .section[data-sec-swoosh="sec-swoosh-type1"]::before { background-position: left center; }
 main .section[data-sec-swoosh="sec-swoosh-type2"]::before { background-position: right top; }
 main .section[data-sec-swoosh="sec-swoosh-type3"]::before { background-position: left top; }
 main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-position: center center; }
 
 @media (width < 768px) {
-  body.page-swoosh::before { background-image: url('../icons/swoosh/type3/default-m.svg'); }
-
   main .section.bg-default[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/default-m.svg'); }
   main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary90-m.svg'); }
   main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary70-m.svg'); }
@@ -684,8 +789,6 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
 }
 
 @media (width >= 768px) and (width < 1024px) {
-  body.page-swoosh::before { background-image: url('../icons/swoosh/type3/default-tab.svg'); }
-
   main .section.bg-default[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/default-tab.svg'); }
   main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary90-tab.svg'); }
   main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary70-tab.svg'); }
@@ -704,12 +807,7 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
   main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-image: url('../icons/swoosh/primary-blue-90/tab.svg'); }
 }
 
-@media (width >= 1024px) {
-  body.page-swoosh::before {
-    background-position: left top;
-    background-image: url('../icons/swoosh/type3/default-d.svg');
-  }
-  
+@media (width >= 1024px) {  
   main .section.bg-default[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/default-d.svg'); }
   main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary90-d.svg'); }
   main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary70-d.svg'); }
@@ -730,4 +828,10 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
 
 body.no-scroll {
   overflow-y: hidden; /* Prevent scrolling */
+}
+
+.main-heading p {
+  font-size: var(--main-heading-font-size);
+  text-transform: uppercase;
+  margin: var(--main-heading-spacing);
 }

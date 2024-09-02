@@ -76,16 +76,123 @@ header .nav-menu-overlay .nav-menu {
   color: var(--neutrals-40);
 }
 
-header .nav-menu-overlay .nav-menu::-webkit-scrollbar {
+
+/** Lanaguge Selector CSS **/
+.language-container {
+  position: absolute;
+  display: block;
+  min-width: 125px;
+  padding: 10px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  line-height: 22px;
+  text-align: right;
+  opacity: 1;
+  right: 36px;
+  top: -10px;
+  border: 1px solid transparent;
+}
+
+.nav-item-expanded-active{
+  border: 1px solid var(--neutrals-30);
+  border-radius: 5px;
+  background: var(--color-white);
+}
+  
+
+/* Dropdown Text */
+.language-toggle {
+  padding-bottom: 14px;
+  color: var(--primary-blue-80);
+  font-size: 16px;
+  display: inline-flex;
+  justify-content: flex-end;
+  width: 100%;
+  cursor: pointer;
+}
+
+.language-text {
+  color: var(--primary-blue-80);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+/* Dropdown Arrow */
+.language-toggle::after {
+  width: 6px;
+  height: 6px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  content: "";
+  transform: rotateZ(45deg);
+  margin-left: 14px;
+}
+
+.language-toggle-border {
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.language-toggle[aria-expanded="false"]::after {
+  margin-top: 6px;
+}
+
+.language-toggle[aria-expanded="true"]::after {
+  transform: rotateZ(-135deg);
+  margin-top: 9px;
+}
+
+/* Dropdown Menu */
+.language-content {
   display: none;
+  position: relative;
+  margin-left: 5px;
 }
 
 header .nav-menu-overlay .nav-menu a {
   text-decoration: none;
 }
 
+.header .nav-item-content-expanded > ul > li a {
+  color: var(--primary-blue-80);
+  text-decoration: underline;
+  display: block;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.header .nav-item-content-expanded {
+  display: block;
+  padding-top: 10px;
+}
+
 header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
+}
+
+.header .nav-item-content-expanded > ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (width < 768px) {
+  .language-toggle {
+    text-transform: uppercase;
+  }
+
+  .language-text {
+    text-transform: uppercase;
+  }
+}
+
+/* End of language selector styles */
+
+
+header .nav-menu-overlay .nav-menu::-webkit-scrollbar {
+  display: none;
 }
 
 header .nav-menu-overlay ul li {
@@ -99,7 +206,7 @@ header .nav-menu-overlay .nav-menu-column.left > ul {
 
 header .nav-menu-overlay .nav-menu-column.left ul {
   font-family: var(--body-font-family);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 38.13px;
   margin: 0;
@@ -321,7 +428,7 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
   z-index: 1;
   word-wrap: break-word;
   color: var(--color-white);
-  font-size: 20px;
+  font-size: var(--body-large);
   font-weight: 700;
   text-align: center;
   top: 40px;
@@ -374,7 +481,7 @@ header
 }
 
 .section.nav-sections .default-content-wrapper p {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   color: var(--primary-blue-80);
   text-decoration: underline;
 }
@@ -510,10 +617,11 @@ header nav .nav-brand img {
 /* sections */
 .nav-sections .default-content-wrapper,
 .nav-tools .default-content-wrapper {
-  display: flex;
+  display: inline-block;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
+  position: relative;
 }
 
 header nav .nav-sections .default-content-wrapper {
@@ -539,13 +647,13 @@ header nav .nav-tools {
 
 .section.nav-sections .default-content-wrapper h6 {
   margin: 0;
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   padding: 2.5px 14px 2.5px 0;
   border-right: 2px solid var(--primary-blue-50);
 }
 
 .section.nav-tools .default-content-wrapper h6 {
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-medium);
   color: var(--primary-blue-80);
   margin: 0;
   font-weight: normal;
@@ -586,7 +694,7 @@ header nav .nav-tools {
   align-items: center;
   justify-content: center;
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   margin-top: 35px;
   border-top: 2px solid var(--neutrals-20);
@@ -885,7 +993,7 @@ header nav .nav-tools {
     display: flex;
     gap: 2em;
     margin: 0;
-    font-size: var(--body-font-size-xs);
+    font-size: var(--body-tiny);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -1177,7 +1285,7 @@ header nav .nav-tools {
     .country-list
     a {
     font-family: var(--body-font-family);
-    font-size: var(--body-font-size-m);
+    font-size: var(--body-medium);
     font-weight: 400;
     line-height: 22.4px;
     text-align: left;

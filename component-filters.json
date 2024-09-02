@@ -15,7 +15,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "teaser"
     ]
   },
   {
@@ -33,7 +34,8 @@
       "explore-cards",     
       "mini-cards",
       "research-publications-cards",
-      "live-now"
+      "live-now",
+      "teaser"
     ]
   },
   {
@@ -57,7 +59,8 @@
   {
     "id": "data-cards",
     "components": [
-      "data-card"
+      "data-card",
+      "news-card"
     ]
   },
   {

@@ -284,6 +284,10 @@
             "value": "section-none"
           },
           {
+            "name": "Spacing tiny",
+            "value": "section-tiny"
+          },
+          {
             "name": "Spacing xxsmall",
             "value": "section-xxsmall"
           },
@@ -292,24 +296,20 @@
             "value": "section-xsmall"
           },
           {
-            "name": "Spacing small",
-            "value": "section-small"
-          },
-          {
-            "name": "Spacing 20px",
-            "value": "sec-spacing-20"
-          },
-          {
             "name": "Spacing regular",
             "value": "section-regular"
           },
           {
-            "name": "Spacing 28px",
-            "value": "sec-spacing-28"
+            "name": "Spacing small",
+            "value": "section-small"
           },
           {
             "name": "Spacing medium",
             "value": "section-medium"
+          },
+          {
+            "name": "Spacing large",
+            "value": "section-large"
           },
           {
             "name": "Spacing xlarge",
@@ -387,7 +387,7 @@
           },
           {
             "name": "Neutrals 40 with gradient",
-            "value": "bg-neutrals-20-gradient"
+            "value": "bg-neutrals-40-gradient"
           }
         ]
       },
@@ -440,6 +440,49 @@
     ]
   },
   {
+    "id": "data-cards",
+    "fields": [
+     {
+        "component": "richtext",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+     },
+     {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+     },
+     {
+        "component": "richtext",
+        "name": "additional-text",
+        "value": "",
+        "label": "Additional Text",
+        "valueType": "string"
+     },
+     {
+       "component": "select",
+       "valueType": "string",
+       "name": "classes",
+       "value": "",
+       "label": "Classes",
+       "options": [
+         {
+           "name": "Data Card",
+           "value": "data-card-variation"
+         },
+         {
+           "name": "News Card",
+           "value": "news-card-variation"
+         }
+       ]
+     }
+    ]
+  },
+  {
     "id": "data-card",
     "fields": [
      {
@@ -447,7 +490,7 @@
         "name": "tags",
         "label": "Tags for Card",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank",
+        "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for data card"
      },
      {
@@ -474,6 +517,33 @@
     ]
   },
   {
+    "id": "news-card",
+    "fields": [
+     {
+        "component": "aem-tag",
+        "name": "news-card-tags",
+        "label": "Tags for Card",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/world-bank/category",
+        "description": "Tags for news card"
+     },
+     {
+        "component": "text",
+        "valueType": "string",
+        "name": "news-card-title",
+        "value": "",
+        "label": "Title"
+     },
+     {
+        "component": "reference",
+        "valueType": "string",
+        "name": "news-card-image",
+        "label": "Image",
+        "multi": false
+     }
+    ]
+  },
+  {
     "id": "curated-card",
     "fields": [
       {
@@ -481,15 +551,17 @@
         "valueType": "string",
         "name": "curated-card-image",
         "label": "Image",
-        "multi": false
+        "multi": false,
+        "required": true
       },
       {
         "component": "aem-tag",
         "name": "curated-card-tags",
         "label": "Tags for Card",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank",
-        "description": "Tags for the curated card"
+        "rootPath": "/content/cq:tags/world-bank/content-type",
+        "description": "Tags for the curated card",
+        "required": true
       },
       {
         "component": "text",
@@ -497,7 +569,8 @@
         "name": "curated-card-title",
         "value": "",
         "label": "Title",
-        "description": "Sets the title of the Card"
+        "description": "Sets the title of the Card",
+        "required": true
       },
       {
         "component": "text",
@@ -632,6 +705,19 @@
     ]
   },
   {
+    "id": "mini-cards",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "mini-cards-heading",
+        "value": "",
+        "label": "Mini Cards Heading",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "mini-card",
     "fields": [
       {
@@ -681,7 +767,7 @@
       },
       {
         "component": "text",
-        "name": "curated-card-link",
+        "name": "mini-card-link",
         "value": "",
         "label": "Link",
         "valueType": "string",
@@ -697,7 +783,7 @@
       "valueType": "string",
       "name": "title",
       "value": "",
-      "label": "Title",
+      "label": "Heading",
       "required": true
       },
       {
@@ -713,7 +799,8 @@
         "valueType": "string",
         "name": "buttonlink",
         "label": "Button Link",
-        "value": ""
+        "value": "",
+        "required": true
       }
     ]
   },
@@ -776,6 +863,117 @@
       "value": "",
       "required": true
     }
+    ]
+  },
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "value": "Your text will show here.",
+        "name": "teaserBlurb",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "teaserStyle",
+        "value": "image",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          { "name": "Video", "value": "video" },
+          { "name": "Image", "value": "image" }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Video Properties",
+        "name": "videoProperties",
+        "valueType": "string",
+        "condition": { "===": [{"var" : "teaserStyle"}, "video"] },
+        "fields": [
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "videoReference",
+            "label": "Video Reference",
+            "multi": false,
+            "description": "Provide a URL for the video background."
+          },
+          {
+            "component": "select",
+            "name": "videoBehavior",
+            "value": "autoplay",
+            "label": "Video Behavior (on load)",
+            "valueType": "string",
+            "options": [
+              { "name": "Autoplay", "value": "autoplay" },
+              { "name": "Pause", "value": "pause" }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Image Properties",
+        "name": "imageProperties",
+        "valueType": "string",
+        "condition": { "===": [{"var" : "teaserStyle"}, "image"] },
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "imageRef",
+            "label": "Image",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "alt",
+            "value": "Default alt",
+            "label": "Alt Text"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Button Properties",
+        "name": "buttonProperties",
+        "valueType": "string",
+        "fields": [
+          {
+            "component": "select",
+            "valueType": "string",
+            "name": "btn-style",
+            "value": "",
+            "label": "Button Style",
+            "options": [
+              { "name": "Dark Background", "value": "dark-bg" },
+              { "name": "Dark Background - Underline", "value": "dark-bg-ul" },
+              { "name": "Light Background - Primary", "value": "light-bg-1" },
+              { "name": "Light Background - Secondary", "value": "light-bg-2" },
+              { "name": "Light Background - Underline", "value": "light-bg-ul" }
+            ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "btn-text",
+            "value": "Button",
+            "label": "Button Text"
+          },
+          {
+            "component": "aem-content",
+            "name": "btn-link",
+            "label": "Button Link",
+            "valueType": "string",
+            "rootPath": "",
+            "description": "Path to linked AEM content"
+          }
+        ]
+      }
     ]
   },
   {
