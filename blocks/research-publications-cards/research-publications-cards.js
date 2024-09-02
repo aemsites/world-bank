@@ -1,12 +1,16 @@
 import { div, a } from '../../scripts/dom-helpers.js';
+import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 
 function createCard(cardData) {
   const [imageContainer, imageAltText, title, desc, titlelink, btn, btnLink] = [
     ...cardData.children,
   ];
-  const imgElement = imageContainer.querySelector('img');
-  imgElement.setAttribute('alt', imageAltText.textContent);
-  imageContainer.className = 'card-img';
+  const imgElement = imageContainer?.querySelector('img');
+  if (imgElement && imageAltText) {
+    imgElement.setAttribute('alt', imageAltText.textContent);
+    imageContainer.className = 'card-img';
+    imageAltText.remove();
+  }
   desc.className = 'desc';
   imgElement.addEventListener('click', () => {
     window.location.href = titlelink.textContent;
@@ -23,19 +27,19 @@ function createCard(cardData) {
 
   titlelink.remove();
   btnLink.remove();
-  imageAltText.remove();
 }
 
 export default async function decorate(block) {
   const [title, linkText, link, ...cards] = [...block.children];
-  title.className = 'main-heading';
+  title.className = CLASS_MAIN_HEADING;
   const linkTag = link.getElementsByTagName('a')[0];
   linkTag.innerHTML = linkText.textContent;
+  linkTag.title = linkText.textContent;
   linkTag.className = 'button primary';
   const titleButtonWrapper = div({ class: 'heading-wrapper' }, title, link);
   const buttonWrapper = div(
     { class: 'button-wrapper' },
-    a({ href: link.textContent, class: 'button primary' }, linkText.textContent),
+    linkTag.cloneNode(true),
   );
   linkText.remove();
   block.prepend(titleButtonWrapper);
