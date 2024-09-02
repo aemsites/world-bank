@@ -1321,7 +1321,7 @@ header nav .nav-tools {
     .nav-menu-column.right
     .submenu
     li:has(ul.browse-country) {
-    grid-column-start: 1/2;
+    grid-column: 1/2;
   }
 
   header
