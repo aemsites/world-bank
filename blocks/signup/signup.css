@@ -28,34 +28,51 @@ input[type="text"] {
   width: 100%;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
+.checkbox-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: start;
+  margin-top: 5px;
+  font-size: var(--body-tiny);
 }
 
-.checkbox-group label {
-  font-size: 0.9rem;
-  color: #3d4b66;
+.checkbox-group label p {
+  margin: 0;
 }
+
+.checkbox-group label p a {
+  font-size: var(--body-tiny);
+}
+
+input[type='checkbox'] {
+  margin-top: 7px;
+}
+
 
 button#signup-btn,
 button#signup-btn-desktop {
-  background-color: #00457c;
+  background-color: #004370;
   /* Blue button */
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
   font-size: 1rem;
   display: flex;
   align-items: center;
   cursor: pointer;
   margin-top: 20px;
+  width: 100%;
+  height: 52px;
+  gap: 12px;
+  border-radius: 100px;
+  justify-content: center;
 }
 
 button#signup-btn .icon,
 button#signup-btn-desktop .icon {
-  margin-right: 10px;
-  /* Adjust as per the icon's size */
+  background-image: url('../../icons/subscribe.png');
+  background-repeat: no-repeat;
+    background-position: center;
 }
 
 button#signup-btn-desktop {
@@ -80,6 +97,7 @@ button#signup-btn-desktop {
   .signup-wrapper {
     padding: 40px;
   }
+
   .signup-description {
     margin-bottom: 30px;
   }
@@ -103,18 +121,22 @@ button#signup-btn-desktop {
 
   .email-signup-container {
     display: flex;
-    gap:30px;
+    gap: 30px;
     align-items: baseline;
   }
+
   .input-group {
     display: flex;
   }
+
   input[type="email"] {
     border-radius: 50px 0 0 50px;
   }
+
   input[type="text"] {
     border-radius: 0px;
   }
+
   button#signup-btn-desktop {
     margin: 0;
     overflow: visible;
@@ -138,28 +160,10 @@ button#signup-btn-desktop {
     font-size: 1rem;
   }
 
-  button#signup-btn {
-    padding: 12px 25px;
-    font-size: 1rem;
-  }
+
 }
 
 /* Mobile Styles */
 @media (width <=767px) {
 
-  .input-group {
-    flex-direction: column;
-  }
-
-
-  button#signup-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    width: 100%;
-  }
-
-  .checkbox-group {
-    text-align: left;
-    font-size: 0.875rem;
-  }
 }
