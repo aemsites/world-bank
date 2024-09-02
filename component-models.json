@@ -551,7 +551,8 @@
         "valueType": "string",
         "name": "curated-card-image",
         "label": "Image",
-        "multi": false
+        "multi": false,
+        "required": true
       },
       {
         "component": "aem-tag",
@@ -559,7 +560,8 @@
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank/content-type",
-        "description": "Tags for the curated card"
+        "description": "Tags for the curated card",
+        "required": true
       },
       {
         "component": "text",
@@ -567,7 +569,8 @@
         "name": "curated-card-title",
         "value": "",
         "label": "Title",
-        "description": "Sets the title of the Card"
+        "description": "Sets the title of the Card",
+        "required": true
       },
       {
         "component": "text",
@@ -860,6 +863,117 @@
       "value": "",
       "required": true
     }
+    ]
+  },
+  {
+    "id": "teaser",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "value": "Your text will show here.",
+        "name": "teaserBlurb",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "teaserStyle",
+        "value": "image",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          { "name": "Video", "value": "video" },
+          { "name": "Image", "value": "image" }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Video Properties",
+        "name": "videoProperties",
+        "valueType": "string",
+        "condition": { "===": [{"var" : "teaserStyle"}, "video"] },
+        "fields": [
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "videoReference",
+            "label": "Video Reference",
+            "multi": false,
+            "description": "Provide a URL for the video background."
+          },
+          {
+            "component": "select",
+            "name": "videoBehavior",
+            "value": "autoplay",
+            "label": "Video Behavior (on load)",
+            "valueType": "string",
+            "options": [
+              { "name": "Autoplay", "value": "autoplay" },
+              { "name": "Pause", "value": "pause" }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Image Properties",
+        "name": "imageProperties",
+        "valueType": "string",
+        "condition": { "===": [{"var" : "teaserStyle"}, "image"] },
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "imageRef",
+            "label": "Image",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "alt",
+            "value": "Default alt",
+            "label": "Alt Text"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Button Properties",
+        "name": "buttonProperties",
+        "valueType": "string",
+        "fields": [
+          {
+            "component": "select",
+            "valueType": "string",
+            "name": "btn-style",
+            "value": "",
+            "label": "Button Style",
+            "options": [
+              { "name": "Dark Background", "value": "dark-bg" },
+              { "name": "Dark Background - Underline", "value": "dark-bg-ul" },
+              { "name": "Light Background - Primary", "value": "light-bg-1" },
+              { "name": "Light Background - Secondary", "value": "light-bg-2" },
+              { "name": "Light Background - Underline", "value": "light-bg-ul" }
+            ]
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "btn-text",
+            "value": "Button",
+            "label": "Button Text"
+          },
+          {
+            "component": "aem-content",
+            "name": "btn-link",
+            "label": "Button Link",
+            "valueType": "string",
+            "rootPath": "",
+            "description": "Path to linked AEM content"
+          }
+        ]
+      }
     ]
   }
 ]

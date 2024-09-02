@@ -1,9 +1,11 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
+import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
   p, button, div, a, li, ul,
 } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
+
+const FEATURE_BTN_LABEL = 'curated-banner-button-label';
 
 function processTag(tagdiv, tagAuthored) {
   let tagValue = tagAuthored.innerText;
@@ -14,7 +16,7 @@ function processTag(tagdiv, tagAuthored) {
 }
 
 // Creates a feature card element with its content
-function createFeatureCard(row) {
+function createFeatureCard(row, placeHolders) {
   const [
     featureImageContent,
     featureTagContent,
@@ -29,7 +31,7 @@ function createFeatureCard(row) {
     { class: 'feature-card-content' },
     p({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent),
     p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
-    a({ href: featureLink.textContent }, button({ type: 'button' }, 'Read the Story')), // TODO button label approach
+    a({ href: featureLink.textContent }, button({ type: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
@@ -41,7 +43,7 @@ function createFeatureCard(row) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent, linkDiv] = row.children;
+  const [imageContent, tagContent, headingContent, decsDiv, linkDiv] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -50,6 +52,7 @@ function processRow(row) {
   const heading = p();
   const link = linkDiv.textContent ? linkDiv.textContent : '';
   linkDiv.remove();
+  decsDiv.remove();
 
   if (tagContent) {
     processTag(tagElement, tagContent);
@@ -71,12 +74,13 @@ function processRow(row) {
 }
 
 // Main function to decorate the block
-export default function decorate(block) {
+export default async function decorate(block) {
   const ulElement = ul();
   const curatedCardsInputList = Array.from(block.children);
+  const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
   if (curatedCardsInputList.length > 0) {
-    const featureCard = createFeatureCard(curatedCardsInputList[0]);
+    const featureCard = createFeatureCard(curatedCardsInputList[0], listOfAllPlaceholdersData);
 
     for (let index = 1; index < curatedCardsInputList.length; index += 1) {
       const row = curatedCardsInputList[index];
