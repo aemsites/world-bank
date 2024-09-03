@@ -6,6 +6,9 @@ import {
   div, p, section, a, button,
   span,
 } from './dom-helpers.js';
+import {
+  fetchLanguagePlaceholders
+} from './scripts.js';
 /**
  * Swoosh on page
  */
@@ -30,24 +33,30 @@ const setConsentCookie = (name, value, daysToExpire, cookieSection) => {
   cookieSection.style.display = 'none';
 };
 
-const cookiePopUp = () => {
+async function cookiePopUp() {
+  const consentCookie = document.cookie.replace(/(?:(?:^|.*;\s*)consent_cookie\s*=\s*([^;]*).*$)|^.*$/, '$1');
+  if (consentCookie.indexOf('1') >= 0) {
+    return;
+  }
+
   const cookieSection = section({ class: 'cookie-tooltip' });
-  const hasCookieText = `${window.placeholdersData && window.placeholdersData.cookiePopUpText}`;
-  if (!hasCookieText) return null;
+  const placeholders = await fetchLanguagePlaceholders();
+  const hasCookieText = `${placeholders && placeholders.cookiePopUpText}`;
+  if (!hasCookieText) return;
   const cookieContainer = div(
     { class: 'container' },
     p(
-      `${hasCookieText ? window.placeholdersData.cookiePopUpText : 'Alternate Cookie Text'}`,
+      `${hasCookieText ? placeholders.cookiePopUpText : 'Alternate Cookie Text'}`,
       a(
-        { href: `${window.placeholdersData && window.placeholdersData.cookiePopUpLearnMoreLink ? window.placeholdersData.cookiePopUpLearnMoreLink : '#'}` },
-        `${window.placeholdersData && window.placeholdersData.cookiePopUpLearnMoreLinkLabel ? window.placeholdersData.cookiePopUpLearnMoreLinkLabel : 'Click Here'}`,
+        { href: `${placeholders.cookiePopUpLearnMoreLink || '#'}` },
+        `${placeholders.cookiePopUpLearnMoreLinkLabel || 'Click Here'}`,
       ),
     ),
     button(
       {
         type: 'button',
         class: 'close accept-consent',
-        'aria-label': `${window.placeholdersData && window.placeholdersData.cookiePopUpCloseAriaLabel ? window.placeholdersData.cookiePopUpCloseAriaLabel : 'Close Cookie Notification'}`,
+        'aria-label': `${placeholders.cookiePopUpCloseAriaLabel || 'Close Cookie Notification'}`,
         onclick: () => setConsentCookie('consent_cookie', '1', 365, cookieSection),
       },
       span(
@@ -60,21 +69,11 @@ const cookiePopUp = () => {
   cookieSection.append(cookieContainer);
   const footerTag = document.querySelector('footer');
   footerTag.append(cookieSection);
-  return cookieSection;
-};
+}
 
-const isDisplayCookiePop = (cookieSection) => {
-  const consentCookie = document.cookie.replace(/(?:(?:^|.*;\s*)consent_cookie\s*=\s*([^;]*).*$)|^.*$/, '$1');
-  if (consentCookie.indexOf('1') < 0) {
-    cookieSection.style.display = 'block';
-  } else {
-    cookieSection.style.display = 'none';
-  }
-};
 function loadDelayed() {
   pageSwoosh();
-  const cookieSection = cookiePopUp();
-  if (cookieSection) isDisplayCookiePop(cookieSection);
+  cookiePopUp();
 }
 
 loadDelayed();

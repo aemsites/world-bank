@@ -33,7 +33,7 @@
     font-size: var(--body-small);
 }
 
-.cookie-tooltip p > a{
+.cookie-tooltip p > a {
     font-size: var(--body-small);
     color: var(--color-white);
     border-bottom: 1px solid var(--color-white);
@@ -69,29 +69,21 @@
     font-size: var(--body-font-size);
 }
 
-
-@media (width < 768px) {
-    .cookie-tooltip p {
-        width: 90%;
+@media (width >= 768px) {
+    .cookie-tooltip {
+        width: 100%;
     }
-}
 
-@media (width >= 1200px) {
-    .container {
-        width: 1170px;
+    .cookie-tooltip .container {
+        max-width: 1170px;
         padding: 0;
     }
 }
 
-@media (width >= 1024px) {
-    .cookie-tooltip {
-        width: 100%;
-    }
-}
-
-@media (width < 1024px) {
+@media (width < 768px) {
     .cookie-tooltip p {
         font-size: var(--body-small);
+        width: 90%;
     }
 
     .cookie-tooltip p > a{
@@ -109,5 +101,4 @@
         right: 8px;
     }
 }
-
 /* End of Cookie Pop Up Styles */

@@ -217,7 +217,6 @@ function settingAltTextForSearchIcon() {
 
 async function fetchingPlaceholdersData(placeholdersData) {
   listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
-  window.placeholdersData = listOfAllPlaceholdersData || {};
   const hamburger = document.querySelector('.nav-hamburger');
   hamburger.setAttribute('title', placeholdersData.hamburgerAltText);
   makeImageClickableNSettingAltText();
