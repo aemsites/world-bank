@@ -19,11 +19,11 @@ header {
 /* header and nav layout */
 header .nav-wrapper {
   z-index: 2;
-  position: relative;
   margin: auto;
   max-width: var(--screen-width);
   height: var(--nav-height);
   padding: 0 var(--section-gutter-space);
+  position: relative;
 }
 
 header:has(.nav-menu-overlay.open) {
@@ -35,6 +35,7 @@ header nav {
   align-items: center;
   padding: 0 0 calc(var(--nav-padding) - 2px);
   gap: 20px;
+  position: relative;
 }
 
 header nav p {
@@ -83,8 +84,8 @@ header .nav-menu-overlay .nav-menu {
   line-height: 22px;
   text-align: right;
   opacity: 1;
-  right: 36px;
-  top: -11px;
+  right: 42px;
+  top: 1px;
   border: 1px solid transparent;
   position: absolute;
   min-width: 125px;
@@ -180,6 +181,10 @@ header .nav-menu-overlay .nav-menu a:visited {
 }
 
 @media (width < 768px) {
+  .language-container{
+    top: -3px;
+  }
+  
   .language-toggle {
     text-transform: uppercase;
   }
@@ -616,7 +621,6 @@ header nav .nav-brand img {
   display: flex;
   gap: 20px;
   justify-content: center;
-  position: relative;
 }
 
 header nav .nav-sections .default-content-wrapper {
