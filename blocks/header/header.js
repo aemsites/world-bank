@@ -236,7 +236,6 @@ async function changeTrendingData(navSections) {
   const trendingDataWrapper = navSections.querySelector('.default-content-wrapper');
   const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
   trendingDataWrapper.append(trendingDataDiv);
-  trendingDataWrapper.style.display = 'flex';
 }
 
 export default async function decorate(block) {
