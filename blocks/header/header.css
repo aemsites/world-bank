@@ -90,6 +90,7 @@ header .nav-menu-overlay .nav-menu {
   position: absolute;
   min-width: 125px;
   padding: 10px;
+  margin-right: 10px;
 }
 
 .nav-item-expanded-active {
@@ -117,13 +118,13 @@ header .nav-menu-overlay .nav-menu {
 
 /* Dropdown Arrow */
 .language-toggle::after {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-width: 0 2px 2px 0;
   border-style: solid;
   content: "";
   transform: rotateZ(45deg);
-  margin-left: 14px;
+  margin-left: 6px;
 }
 
 .language-toggle-border {
@@ -131,7 +132,7 @@ header .nav-menu-overlay .nav-menu {
 }
 
 .language-toggle[aria-expanded="false"]::after {
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .language-toggle[aria-expanded="true"]::after {
@@ -180,9 +181,32 @@ header .nav-menu-overlay .nav-menu a:visited {
   padding: 0;
 }
 
+.cancel-container {
+  background: var(--primary-blue-50);
+  height: 44px;
+  display: flex;
+  width: 44px;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.overlay {
+  background-color: var(--overlay-color);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
 @media (width < 768px) {
+  header nav{
+    gap:10px;
+  }
+  
   .language-container{
-    top: -3px;
+    top: -6px;
     right: 20px;
   }
 
@@ -192,6 +216,11 @@ header .nav-menu-overlay .nav-menu a:visited {
 
   .language-text {
     text-transform: uppercase;
+  }
+
+  .cancel-container{
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -721,25 +750,6 @@ header nav .nav-tools {
   .search-input-container {
     width: 70%;
   }
-}
-
-.cancel-container {
-  background: var(--primary-blue-50);
-  height: 44px;
-  display: flex;
-  width: 44px;
-  border-radius: 50px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.overlay {
-  background-color: var(--overlay-color);
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
 }
 
 @media (width >=768px) and (width<= 1023px) {
@@ -1362,4 +1372,23 @@ header nav .nav-tools {
     left: 38rem;
     top: 80px;
   }
+}
+
+#skip-to-main-content{
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+#skip-to-main-content:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  width: auto;
+  height: auto;
+  word-wrap: normal;
+  z-index: 1000;
 }
