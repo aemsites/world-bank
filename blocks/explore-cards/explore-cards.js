@@ -62,14 +62,13 @@ export default function decorate(block) {
 
     // Content type
     let cType = contentType ? processTags(contentType.innerText, 'content-type') : null;
-    console.log(cType)
     const allowedTypes = ['video', 'audio'];
 
     if (cType) {
       // Split the cType by the colon ':' and get the part after it
       const cTypeParts = cType.split(':');
       cType = cTypeParts.length > 1 ? cTypeParts[1] : cTypeParts[0];
-    
+
       // Check if the processed cType is in the allowedTypes array
       if (allowedTypes.includes(cType)) {
         const cTypeIcon = div({ class: `card-icon icon-${cType}` });
