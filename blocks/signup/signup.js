@@ -122,7 +122,7 @@ function attachFormValidation(block, placeholders) {
 
     if (!agree) {
       termErrorMessage.textContent = placeholders[CONSTANTS.SIGNUP_TERMS_VALIDATION]
-      || 'Please agree with the terms.';
+        || 'Please agree with the terms.';
       agreeInput.classList.add('input-error');
       return;
     }
@@ -149,7 +149,7 @@ function createSignupModule(block, placeholders) {
 
   const content = div(
     { class: 'signup-content' },
-    div({ class: 'main-heading' }, p({ })),
+    div({ class: 'main-heading' }, p({})),
     p({ class: 'signup-description' }, placeholders[CONSTANTS.SIGNUP_DESCRIPTION]),
   );
   content.querySelector('.main-heading p').innerHTML = placeholders[CONSTANTS.SIGNUP_HEADING];
@@ -196,15 +196,10 @@ function createSignupModule(block, placeholders) {
 }
 
 async function fetchingPlaceholdersData(block) {
-  try {
-    const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
-    if (!listOfAllPlaceholdersData) return;
+  const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
+  if (!listOfAllPlaceholdersData) return;
 
-    // console.log(listOfAllPlaceholdersData);
-    createSignupModule(block, listOfAllPlaceholdersData);
-  } catch (error) {
-    console.error('Error fetching placeholders data:', error);
-  }
+  createSignupModule(block, listOfAllPlaceholdersData);
 }
 
 export default function decorate(block) {
