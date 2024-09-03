@@ -89,3 +89,4 @@ export function video(...items) { return domEl('video', ...items); }
 export function source(...items) { return domEl('source', ...items); }
 export function hr(...items) { return domEl('hr', ...items); }
 export function section(...items) { return domEl('section', ...items); }
+export function picture(...items) { return domEl('picture', ...items); }

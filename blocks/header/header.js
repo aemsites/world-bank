@@ -232,10 +232,10 @@ async function setTrendingDataAsUrl(tdElement) {
 }
 
 async function changeTrendingData(navSections) {
-  const tendingDataWrapper = navSections.querySelector('.default-content-wrapper');
-  const tendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
-  tendingDataWrapper.append(tendingDataDiv);
-  tendingDataWrapper.style.display = 'flex';
+  const trendingDataWrapper = navSections.querySelector('.default-content-wrapper');
+  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
+  trendingDataWrapper.append(trendingDataDiv);
+  trendingDataWrapper.style.display = 'flex';
 }
 
 export default async function decorate(block) {

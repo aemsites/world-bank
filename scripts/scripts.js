@@ -212,7 +212,7 @@ export async function fetchLanguageNavigation(langCode) {
 export const fetchLangPlaceholderbyFileName = async (fileName) => {
   const langCode = getLanguage();
   try {
-    const response = await fetch(`${langCode}/${fileName}.json`);
+    const response = await fetch(`/${langCode}/${fileName}.json`);
     if (!response.ok) {
       throw new Error('Failed to load data');
     }

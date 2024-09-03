@@ -611,6 +611,10 @@ header nav .nav-brand img {
   gap: 25px;
 }
 
+header nav .nav-sections{
+  display: none;
+}
+
 /* sections */
 .nav-sections .default-content-wrapper,
 .nav-tools .default-content-wrapper {
@@ -634,10 +638,6 @@ header nav .nav-sections .default-content-wrapper {
 
   header nav .nav-sections .default-content-wrapper {
     display: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 13px;
   }
 }
 
