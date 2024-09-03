@@ -354,7 +354,13 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  padding: var(--nav-padding) 0;
+  padding: var(--nav-padding) 0 calc(var(--nav-padding) - 2px);
+  margin-bottom: 2px;
+}
+
+.homepage header {
+  padding-bottom: var(--nav-padding);
+  margin-bottom: 0;
 }
 
 h1,
