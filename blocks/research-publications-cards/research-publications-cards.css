@@ -2,8 +2,7 @@
   margin: 0;
 }
 
-.research-publications-cards .heading-wrapper p{
-  color: var(--primary-blue-100);
+.research-publications-cards .heading-wrapper p {
   margin: 0;
 }
 
@@ -33,7 +32,6 @@
 
 .cards-container .rp-card .card-img {
     align-self: start;
-    cursor: pointer;
 }
 
 .cards-container .rp-card .text-content .title {
