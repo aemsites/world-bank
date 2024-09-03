@@ -1,0 +1,22 @@
+/* Profile View Styles */
+
+.hero-cards .block > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+    grid-gap: 16px;
+  }
+  
+  
+  .hero-cards .block > ul > li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+    grid-gap: 16px;
+  }
