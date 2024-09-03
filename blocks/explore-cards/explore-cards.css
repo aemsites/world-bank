@@ -16,9 +16,10 @@
 }
 
 .card-title p {
-    font-size: var(--body-large);
+    font-size: var(--body-huge);
     font-weight: 700;
     line-height: 24px;
+    margin-top:12px;
 }
 
 .explore-card-container {
@@ -34,7 +35,7 @@
     position: relative;
     border-radius: 10px;
     height: 400px;
-    min-width: 300px;
+    min-width: 276px;;
 }
 
 .card-icon {
@@ -45,7 +46,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    margin: 24px 0;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -107,6 +108,16 @@
         height: 350px;
         min-width: unset;
     }
+
+    .card-title p {
+        margin-top:16px;
+        font-size: var(--body-huge);
+    }
+
+    .card-icon {
+        margin: 32px 0;
+    }
+
 }
 
 @media (width >=1024px) {
@@ -125,6 +136,7 @@
     .card-title p {
         font-weight: 700;
         line-height: 28.8px;
+        margin-top:16px;
     }
 
     .explore-card-container {
