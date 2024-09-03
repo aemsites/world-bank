@@ -528,7 +528,7 @@
         "description": "Tags for news card"
      },
      {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "news-card-title",
         "value": "",
