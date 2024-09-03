@@ -1056,7 +1056,8 @@
         "valueType": "string",
         "name": "title",
         "value": "",
-        "label": "Heading"
+        "label": "Heading",
+        "required": true
       },
       {
         "component": "richtext",
@@ -1070,6 +1071,7 @@
         "valueType": "string",
         "name": "fragmentRef",
         "label": "Fragment",
+        "rootPath": "/content/dam/world-bank/fragments",
         "multi": false
       }
     ]
