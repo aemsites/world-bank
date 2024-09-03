@@ -850,4 +850,9 @@ body.no-scroll {
   font-size: var(--main-heading-font-size);
   text-transform: uppercase;
   margin: var(--main-heading-spacing);
+  color: var(--primary-blue-100);
+}
+
+.section[class*='bg-primary-blue'] .main-heading p {
+  color: var(--color-white);
 }
