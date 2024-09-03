@@ -1065,6 +1065,13 @@
         "value": "",
         "label": "Body"
       }
+      ,{
+        "component": "reference",
+        "valueType": "string",
+        "name": "fragmentRef",
+        "label": "Fragment",
+        "multi": false
+      }
     ]
   }
 ]
