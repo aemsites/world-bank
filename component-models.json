@@ -1058,20 +1058,13 @@
         "value": "",
         "label": "Heading",
         "required": true
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "content",
-        "value": "",
-        "label": "Body"
       }
       ,{
         "component": "reference",
         "valueType": "string",
         "name": "fragmentRef",
         "label": "Fragment",
-        "rootPath": "/content/dam/world-bank/fragments",
+        "rootPath": "/content/world-bank/global",
         "multi": false
       }
     ]
