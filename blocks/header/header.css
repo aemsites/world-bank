@@ -183,8 +183,9 @@ header .nav-menu-overlay .nav-menu a:visited {
 @media (width < 768px) {
   .language-container{
     top: -3px;
+    right: 20px;
   }
-  
+
   .language-toggle {
     text-transform: uppercase;
   }
