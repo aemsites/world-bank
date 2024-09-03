@@ -34,6 +34,7 @@ header nav {
   display: flex;
   align-items: center;
   padding: 0 0 calc(var(--nav-padding) - 2px);
+  gap: 20px;
 }
 
 header nav p {
@@ -77,10 +78,6 @@ header .nav-menu-overlay .nav-menu {
 
 /** Lanaguge Selector CSS **/
 .language-container {
-  position: absolute;
-  display: block;
-  min-width: 125px;
-  padding: 10px;
   font-family: var(--body-font-family);
   font-weight: 400;
   line-height: 22px;
@@ -99,7 +96,7 @@ header .nav-menu-overlay .nav-menu {
 
 /* Dropdown Text */
 .language-toggle {
-  padding-bottom: 14px;
+  /* padding-bottom: 14px; */
   color: var(--primary-blue-80);
   font-size: 16px;
   display: inline-flex;
@@ -522,7 +519,6 @@ header
 /* hamburger */
 header nav .nav-hamburger {
   width: 20px;
-  padding-right: var(--hamburger-right-space);
 }
 
 header nav .nav-hamburger button {
@@ -611,16 +607,11 @@ header nav .nav-brand img {
   gap: 25px;
 }
 
-header nav .nav-sections{
-  display: none;
-}
-
 /* sections */
 .nav-sections .default-content-wrapper,
 .nav-tools .default-content-wrapper {
-  display: inline-block;
-  align-items: center;
-  gap: 10px;
+  display: flex;
+  gap: 20px;
   justify-content: center;
   position: relative;
 }
@@ -637,7 +628,9 @@ header nav .nav-sections .default-content-wrapper {
   }
 
   header nav .nav-sections .default-content-wrapper {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 }
 
@@ -938,6 +931,7 @@ header nav .nav-tools {
   header nav {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
   }
 
   header .nav-menu-overlay {
