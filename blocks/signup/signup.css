@@ -108,7 +108,6 @@
 
 /* Tablet Styles */
 @media (width >=768px) {
-
   .email-signup-container input[type="email"],
   .email-signup-container input[type="text"] {
     padding: 16px;
@@ -165,12 +164,12 @@
   }
 
   .email-signup-container .signup-content {
-    padding: 0px 60px 0 0px;
+    padding: 0 60px 0 0;
     max-width: 500px;
   }
 
   .email-signup-container #signup-form {
-    margin: 20px 0 20px 0;
+    margin: 20px 0;
   }
 
 }
