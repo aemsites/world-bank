@@ -1,6 +1,6 @@
 /* Profile View Styles */
 
-.hero-cards .block > ul {
+.cards.hero-profile > ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -11,12 +11,17 @@
   }
   
   
-  .hero-cards .block > ul > li{
+  .cards.hero-profile > ul > li{
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
     grid-gap: 16px;
+  }
+
+  .cards.hero-profile  .cards-card-image {
+    width: 464px;
+    height: 420px;
   }
