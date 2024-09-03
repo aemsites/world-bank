@@ -84,8 +84,11 @@ header .nav-menu-overlay .nav-menu {
   text-align: right;
   opacity: 1;
   right: 36px;
-  top: -10px;
+  top: -11px;
   border: 1px solid transparent;
+  position: absolute;
+  min-width: 125px;
+  padding: 10px;
 }
 
 .nav-item-expanded-active {
@@ -96,7 +99,7 @@ header .nav-menu-overlay .nav-menu {
 
 /* Dropdown Text */
 .language-toggle {
-  /* padding-bottom: 14px; */
+  padding-bottom: 14px;
   color: var(--primary-blue-80);
   font-size: 16px;
   display: inline-flex;
