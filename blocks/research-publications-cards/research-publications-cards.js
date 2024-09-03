@@ -2,20 +2,23 @@ import { div, a } from '../../scripts/dom-helpers.js';
 import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 
 function createCard(cardData) {
-  const [imageContainer, imageAltText, title, desc, titlelink, btn, btnLink] = [
+  const [imageContainer, imageAltText, cardTitle, desc, titlelink, btn, btnLink] = [
     ...cardData.children,
   ];
+  const tLink = titlelink.textContent;
   const imgElement = imageContainer?.querySelector('img');
   if (imgElement && imageAltText) {
     imgElement.setAttribute('alt', imageAltText.textContent);
     imageContainer.className = 'card-img';
     imageAltText.remove();
+    const imgLink = a({ href: tLink, title: cardTitle.textContent }, imgElement.parentElement);
+    imageContainer.append(imgLink);
   }
   desc.className = 'desc';
 
   const txtContainer = div(
     { class: 'text-content' },
-    a({ href: titlelink.textContent, class: 'title' }, title),
+    a({ href: tLink, class: 'title' }, cardTitle),
     desc,
     a({ href: btnLink.textContent, class: 'card-btn' }, btn),
   );
