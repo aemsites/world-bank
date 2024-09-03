@@ -36,6 +36,12 @@ header nav {
   padding: 0 0 calc(var(--nav-padding) - 2px);
   gap: 20px;
   position: relative;
+  border-bottom: 2px solid var(--neutrals-20);
+}
+
+.homepage header nav {
+  padding-bottom: var(--nav-padding);
+  border-bottom: none;
 }
 
 header nav p {
