@@ -162,12 +162,12 @@ header .nav-menu-overlay .nav-menu a {
   padding-top: 10px;
 }
 
-header .nav-menu-overlay .nav-menu a:hover {
-  color: var(--color-white);
-}
-
 header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
+}
+
+header .nav-menu-overlay .nav-menu  .submenu a:hover {
+  color: var(--color-white);
 }
 
 .header .nav-item-content-expanded > ul {
