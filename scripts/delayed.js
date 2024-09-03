@@ -7,8 +7,9 @@ import {
   span,
 } from './dom-helpers.js';
 import {
-  fetchLanguagePlaceholders
-} from './scripts.js';
+  getLanguage,
+} from './utils.js';
+
 /**
  * Swoosh on page
  */
@@ -33,14 +34,14 @@ const setConsentCookie = (name, value, daysToExpire, cookieSection) => {
   cookieSection.style.display = 'none';
 };
 
-async function cookiePopUp() {
+function cookiePopUp() {
   const consentCookie = document.cookie.replace(/(?:(?:^|.*;\s*)consent_cookie\s*=\s*([^;]*).*$)|^.*$/, '$1');
   if (consentCookie.indexOf('1') >= 0) {
     return;
   }
 
   const cookieSection = section({ class: 'cookie-tooltip' });
-  const placeholders = await fetchLanguagePlaceholders();
+  const placeholders = window.placeholders[`/${getLanguage()}`] || {};
   const hasCookieText = `${placeholders && placeholders.cookiePopUpText}`;
   if (!hasCookieText) return;
   const cookieContainer = div(

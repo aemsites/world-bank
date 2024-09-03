@@ -7,8 +7,10 @@ import {
   fetchLanguageNavigation,
   fetchLanguagePlaceholders,
   fetchLangPlaceholderbyFileName,
-  getLanguage,
 } from '../../scripts/scripts.js';
+import {
+  getLanguage,
+} from '../../scripts/utils.js';
 import * as constants from './constants.js';
 import {
   button,
