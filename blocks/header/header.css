@@ -163,12 +163,12 @@ header .nav-menu-overlay .nav-menu a {
   padding-top: 10px;
 }
 
-header .nav-menu-overlay .nav-menu a:hover {
-  color: var(--color-white);
-}
-
 header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
+}
+
+header .nav-menu-overlay .nav-menu  .submenu a:hover {
+  color: var(--color-white);
 }
 
 .header .nav-item-content-expanded > ul {
@@ -254,12 +254,32 @@ header .nav-menu-overlay .nav-menu-column.left ul li span::before {
   border: 2px;
 }
 
+header .nav-menu-overlay .nav-menu-column.left ul li span {
+  display: inline-block;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 15px;
+  margin-bottom: -8px;
+  background-color: var(--primary-blue-102);
+}
+
+header .nav-menu-overlay .nav-menu-column.right .browse-country span {
+  margin-top: 20px;
+}
+
+header .nav-menu-overlay .nav-menu-column.right .highlight-link a span{
+  text-align: center;
+  vertical-align: middle;
+}
+
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   content: "";
-  width: 12px;
+  width: 11px;
   display: inline-block;
-  height: 3px;
-  margin-bottom: 3px;
+  height: 2px;
+  margin-bottom: 6px;
   margin-left: 8px;
   border-radius: 10px;
   background-color: var(--neutrals-40);
@@ -268,7 +288,7 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
 
 header .nav-menu-overlay .nav-menu-column.left ul li span::after {
   content: "";
-  width: 7px;
+  width: 8px;
   height: 2px;
   top: 20px;
   left: 15px;
@@ -286,6 +306,7 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   padding: 2px;
   height: 1px;
   display: inline-block;
+  margin-bottom: 3px;
   transform: rotate(225deg);
   border-bottom: 3px solid var(--neutrals-40);
   border-left: 3px solid var(--neutrals-40);
@@ -341,21 +362,6 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country div {
   width: fit-content;
 }
 
-header .nav-menu-overlay .nav-menu-column.left ul li span {
-  display: inline-block;
-  min-width: 36px;
-  min-height: 36px;
-  border-radius: 50%;
-  position: relative;
-  margin-right: 15px;
-  margin-bottom: -8px;
-  background-color: var(--primary-blue-102);
-}
-
-header .nav-menu-overlay .nav-menu-column.right .browse-country span {
-  margin-top: 20px;
-}
-
 header .nav-menu-overlay .nav-menu-column.right > ul {
   font-size: 16px;
   color: var(--color-white);
@@ -395,7 +401,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country div ul {
   border-bottom-left-radius: 20px;
   display: none;
   max-height: 200px;
-  overflow-y: scroll;
+  overflow-y: hidden scroll;
 }
 
 header
@@ -501,6 +507,10 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country p {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+
+header .nav-menu-overlay .nav-menu-column.right .browse-country p:hover {
+  cursor: pointer;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
@@ -944,7 +954,7 @@ header nav .nav-tools {
 
   header .nav-menu-overlay {
     position: absolute;
-    min-height: 75rem;
+    min-height: 100rem;
     width: 100%;
     scroll-behavior: smooth;
     overflow-x: scroll;
@@ -967,7 +977,6 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.left {
     display: flex;
-    max-width: 341px;
     min-height: 600px;
   }
 
