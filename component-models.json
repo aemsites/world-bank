@@ -1009,14 +1009,13 @@
         "value": "",
         "label": "Heading",
         "required": true
-      }
-      ,{
-        "component": "reference",
+      },
+      {
+        "component": "text",
         "valueType": "string",
-        "name": "fragmentRef",
-        "label": "Fragment",
-        "rootPath": "/content/world-bank/global",
-        "multi": false
+        "name": "fragmentPath",
+        "value": "",
+        "label": "Fragment Path"
       }
     ]
   }
