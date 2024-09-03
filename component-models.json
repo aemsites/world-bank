@@ -251,7 +251,7 @@
       {
         "component": "select",
         "name": "view",
-        "value": "",
+        "value": "default",
         "label": "Card View Layout",
         "description": "Profile View Layout to show cards as flex, and each card to have image on left and text on right, default view grid",
         "valueType": "string",
