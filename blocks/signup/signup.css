@@ -1,14 +1,15 @@
-.email-signup-container .signup-heading {
-  font-size: var(--heading-label-base);
-  line-height: 30.8px;
-  text-align: left;
+.signup.block {
+  background-color: var(--neutrals-20);
+  padding: var(--signup-padding);
+  border-radius: 10px;
+}
+
+.email-signup-container .main-heading p {
+  margin-bottom: 12px;
 }
 
 .email-signup-container .signup-description {
   font-size: var(--body-medium);
-  line-height: 22.4px;
-  text-align: left;
-  letter-spacing: -0.02em;
 }
 
 .email-signup-container input[type="email"],
@@ -107,17 +108,6 @@
 
 /* Tablet Styles */
 @media (width >=768px) {
-  .email-signup-container .signup-description {
-    margin-bottom: 30px;
-  }
-
-  .email-signup-container .signup-heading {
-    font-size: var(--heading-label-base);
-    line-height: 44.8px;
-    text-align: left;
-    margin-bottom: 10px;
-  }
-
   .email-signup-container input[type="email"],
   .email-signup-container input[type="text"] {
     padding: 16px;
@@ -165,10 +155,7 @@
 }
 
 @media (width >=1024px) {
-  .email-signup-container .signup-heading {
-    font-size: var(--heading-label-small);
-    line-height: 43.2px;
+  .email-signup-container .main-heading p {
     margin-bottom: 16px;
   }
-
 }

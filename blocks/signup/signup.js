@@ -123,11 +123,10 @@ function createSignupModule(block, placeholders) {
 
   const content = div(
     { class: 'signup-content' },
-    p({ class: 'signup-heading' }),
+    div({ class: 'main-heading' }, p({ })),
     p({ class: 'signup-description' }, placeholders[CONSTANTS.SIGNUP_DESCRIPTION]),
   );
-
-  content.querySelector('.signup-heading').innerHTML = placeholders[CONSTANTS.SIGNUP_HEADING];
+  content.querySelector('.main-heading p').innerHTML = placeholders[CONSTANTS.SIGNUP_HEADING];
 
   const formelement = form(
     { id: 'signup-form' },
