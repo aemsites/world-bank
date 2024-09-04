@@ -1393,22 +1393,3 @@ header nav .nav-tools {
     top: 80px;
   }
 }
-
-#skip-to-main-content{
-  position: absolute !important;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  width: 1px;
-  height: 1px;
-  word-wrap: normal;
-}
-
-#skip-to-main-content:focus {
-  position: static;
-  overflow: visible;
-  clip: auto;
-  width: auto;
-  height: auto;
-  word-wrap: normal;
-  z-index: 1000;
-}
