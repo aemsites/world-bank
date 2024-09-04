@@ -26,7 +26,7 @@
 .explore-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--spacing-20);
+    gap: var(--medium);
     width: calc(100vw - 68px);
     overflow-x: scroll;
     scrollbar-width: none;
@@ -76,6 +76,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 10px;
 }
 
 .explore-card .card-content {
@@ -87,6 +88,7 @@
     background: linear-gradient(180deg, rgb(1 39 64 / 0%) 39.98%, #012740 78.99%);
     color: var(--color-white);
     z-index: 1;
+    border-radius: 0 0 10px 10px;
 }
 
 .story-type {
