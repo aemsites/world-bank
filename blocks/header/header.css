@@ -516,6 +516,7 @@ header
   font-size: var(--body-medium);
   color: var(--primary-blue-80);
   text-decoration: underline;
+  margin-left: 4px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country p {
@@ -657,7 +658,7 @@ header nav .nav-sections .default-content-wrapper {
   display: none;
 }
 
-@media (width >= 1024px) {
+@media (width > 1024px) {
   header nav .nav-sections {
     flex: 1 1 auto;
     display: block;
