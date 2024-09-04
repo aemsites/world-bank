@@ -38,7 +38,7 @@
       "signup",
       "teaser",
       "tabs",
-      "our-priorities-cards"
+      "priority-list"
     ]
   },
   {
@@ -83,7 +83,7 @@
     "components": ["tab"]
   },
   {
-    "id": "our-priorities-cards",
-    "components": ["our-priorities-card"]
+    "id": "priority-list",
+    "components": ["priority-item"]
   }
 ]

@@ -535,31 +535,31 @@
           }
         },
         {
-          "title": "Our Priorities Cards",
-          "id": "our-priorities-cards",
+          "title": "Priority List",
+          "id": "priority-list",
           "plugins": {
               "xwalk": {
                   "page": {
                       "resourceType": "core/franklin/components/block/v1/block",
                       "template": {
-                          "name": "Our Priorities Cards",
-                          "model": "our-priorities-cards",
-                          "filter": "our-priorities-cards"
+                          "name": "Priority List",
+                          "model": "priority-list",
+                          "filter": "priority-list"
                       }
                   }
               }
           }
       },
       {
-        "title": "Our Priorities Card",
-        "id":    "our-priorities-card",
+        "title": "Priority Item",
+        "id":    "priority-item",
         "plugins": {
           "xwalk": {
             "page": {
               "resourceType": "core/franklin/components/block/v1/block/item",
               "template": {
-                "name": "Our Priorities Card",
-                "model": "our-priorities-card"
+                "name": "Priority Item",
+                "model": "priority-item"
               }
             }
           }
