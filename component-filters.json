@@ -34,8 +34,10 @@
       "explore-cards",     
       "mini-cards",
       "research-publications-cards",
+      "live-now",
       "signup",
-      "teaser"
+      "teaser",
+      "tabs"
     ]
   },
   {
@@ -74,5 +76,9 @@
     "components": [
       "research-publications-card"
     ]
+  },
+  {
+    "id": "tabs",
+    "components": ["tab"]
   }
 ]

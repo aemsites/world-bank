@@ -13,53 +13,12 @@ import {
   fetchPlaceholders,
 } from './aem.js';
 
+import {
+  getLanguage,
+} from './utils.js';
+
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 export const CLASS_MAIN_HEADING = 'main-heading';
-export const TAG_ROOT = 'world-bank:category/';
-
-let lang;
-
-/**
- * Process current pathname and return details for use in language switching
- * Considers pathnames like /en/path/to/content and
- * /content/world-bank/global/en/path/to/content.html for both EDS and AEM
- */
-export function getPathDetails() {
-  const { pathname } = window.location;
-  const isContentPath = pathname.startsWith('/content');
-  const parts = pathname.split('/');
-  const safeLangGet = (index) => (parts.length > index ? parts[index] : 'en');
-  /* 4 is the index of the language in the path for AEM content paths like
-     /content/world-bank/global/en/path/to/content.html
-     1 is the index of the language in the path for EDS paths like /en/path/to/content
-    */
-  let langCode = isContentPath ? safeLangGet(4) : safeLangGet(1);
-  // remove suffix from lang if any
-  if (langCode.indexOf('.') > -1) {
-    langCode = langCode.substring(0, langCode.indexOf('.'));
-  }
-  if (!langCode) langCode = 'en'; // default to en
-  // substring before lang
-  const prefix = pathname.substring(0, pathname.indexOf(`/${langCode}`)) || '';
-  const suffix = pathname.substring(pathname.indexOf(`/${langCode}`) + langCode.length + 1) || '';
-  return {
-    prefix,
-    suffix,
-    langCode,
-    isContentPath,
-  };
-}
-
-/**
- * Fetch and return language of current page.
- * @returns language of current page
- */
-export function getLanguage() {
-  if (!lang) {
-    lang = getPathDetails().langCode;
-  }
-  return lang;
-}
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -138,9 +97,24 @@ export function decorateMain(main) {
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
+
+function createSkipToMainNavigationBtn() {
+  const main = document.querySelector('main');
+  main.id = 'main';
+
+  const anchor = document.createElement('a');
+  anchor.tabIndex = 0;
+  anchor.id = 'skip-to-main-content';
+  anchor.className = 'visually-hidden focusable';
+  anchor.href = '#main';
+  anchor.textContent = 'Skip to Main Navigation';
+  document.body.insertBefore(anchor, document.body.firstChild);
+}
+
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  createSkipToMainNavigationBtn();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -212,7 +186,7 @@ export async function fetchLanguageNavigation(langCode) {
 export const fetchLangPlaceholderbyFileName = async (fileName) => {
   const langCode = getLanguage();
   try {
-    const response = await fetch(`${langCode}/${fileName}.json`);
+    const response = await fetch(`/${langCode}/${fileName}.json`);
     if (!response.ok) {
       throw new Error('Failed to load data');
     }

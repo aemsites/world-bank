@@ -7,8 +7,10 @@ import {
   fetchLanguageNavigation,
   fetchLanguagePlaceholders,
   fetchLangPlaceholderbyFileName,
-  getLanguage,
 } from '../../scripts/scripts.js';
+import {
+  getLanguage,
+} from '../../scripts/utils.js';
 import * as constants from './constants.js';
 import {
   button,
@@ -99,8 +101,10 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
   );
   if (!expanded) {
+    document.body.classList.add('no-scroll');
     navMenuOverlay.classList.add(constants.OPEN);
   } else {
+    document.body.classList.remove('no-scroll');
     navMenuOverlay.classList.remove(constants.OPEN);
   }
 
@@ -231,10 +235,9 @@ async function setTrendingDataAsUrl(tdElement) {
 }
 
 async function changeTrendingData(navSections) {
-  const tendingDataWrapper = navSections.querySelector('.default-content-wrapper');
-  const tendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
-  tendingDataWrapper.append(tendingDataDiv);
-  tendingDataWrapper.style.display = 'flex';
+  const trendingDataWrapper = navSections.querySelector('.default-content-wrapper');
+  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
+  trendingDataWrapper.append(trendingDataDiv);
 }
 
 export default async function decorate(block) {

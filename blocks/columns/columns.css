@@ -63,7 +63,7 @@
   color: var(--primary-blue-100);
   font-size: 16px;
   margin: 0;
-  height: 48px;
+  padding: 11px 27px;
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a{
@@ -222,8 +222,8 @@
 
 @media(width<=1024px) {
   .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(1){
-      font-size: 32px;
-      line-height: 35px;
+    font-size: 32px;
+    line-height: 35px;
   }
 
   .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(2){
@@ -240,23 +240,23 @@
     display: block;
   }
 
-.bg-primary-blue-90 .columns.columns-transform-teaser .columns-img-col::before{
-  content: '';
-  position: absolute;
-  right: 16px;
-  top: 55px;
-  z-index: 10;
-  background: url('../../icons/swoosh-tablet.svg');
-  width: 438px;
-  height: 448px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+  .bg-primary-blue-90 .columns.columns-transform-teaser .columns-img-col::before{
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 55px;
+    z-index: 10;
+    background: url('../../icons/swoosh-tablet.svg');
+    width: 438px;
+    height: 448px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-.bg-primary-blue-90 .columns.columns-transform-teaser .columns-img-col img{
-  width: 371px;
-  height: 408px;
-}
+  .bg-primary-blue-90 .columns.columns-transform-teaser .columns-img-col img{
+    width: 371px;
+    height: 408px;
+  }
 }
 
 @media (width >= 768px) {
@@ -433,6 +433,10 @@
 
   .columns.columns-divider-variant > div > div:last-child {
     padding-left: 20px;
+  }
+
+  .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a{
+    padding: 15px 48px;
   }
 }
 
