@@ -149,11 +149,11 @@
 
 
 @media (width <768px) {
-    .section .explore-cards-wrapper {
+    /* .section .explore-cards-wrapper {
         padding-right: 0;
-    }
+    } */
 
     .explore-card-container {
-     width: 100vw;   
+     width: calc(100vw - 28px) ;   
     }
 }
