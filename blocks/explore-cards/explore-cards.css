@@ -147,7 +147,6 @@
 
 }
 
-
 @media (width <768px) {
     .explore-card-container {
         width: calc(100vw - 28px);
