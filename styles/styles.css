@@ -458,6 +458,29 @@ a:any-link {
   text-align: left;
 }
 
+p strong > em > a:any-link {
+  background-color: transparent;
+  color: var(--primary-blue-70);
+  font-family: var(--body-font-family);
+  font-size: var(--body-small);
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 12px 32px;
+  font-style: normal;
+  cursor: pointer;
+  margin: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 30px;
+}
+
 a:any-link:hover {
   color: rgb(0 13 26 / 96%);
   text-decoration-color: var(--primary-blue-50);
@@ -477,6 +500,22 @@ a:any-link:visited {
 a:any-link.disabled {
   color: rgb(0 41 77 / 42%);
   cursor: unset;
+}
+
+p strong > em > a:any-link:hover {
+  background-color: var(--primary-blue-10);
+  color: var(--primary-blue-70);
+}
+
+p strong > em > a:any-link:active,
+p strong > em > a:any-link:focus {
+  background-color: var(--primary-blue-20);
+  color: var(--primary-blue-70);
+}
+
+p strong > em > a:any-link.disabled {
+  background-color: transparent;
+  color: rgb(0 41 77 / 42%);
 }
 
 /* buttons */
@@ -569,6 +608,11 @@ p.button-container {
     text-decoration-color: var(--color-white);
   }
 
+  p strong > em > a:any-link {
+    background-color: transparent;
+    color: var(--background-color);
+  }
+
   a:any-link:hover {
     color: var(--color-white);
     text-decoration-color: var(--primary-blue-50);
@@ -589,6 +633,22 @@ p.button-container {
     color: rgb(255 255 255 / 48%);
     text-decoration-color: rgb(255 255 255 / 48%);
     cursor: unset;
+  }
+
+  p strong > em > a:any-link:hover {
+    background-color: var(--primary-blue-10);
+    color: var(--primary-blue-70);
+  }
+
+  p strong > em > a:any-link:active,
+  p strong > em > a:any-link:focus {
+    background-color: var(--primary-blue-20);
+    color: var(--primary-blue-70);
+  }
+
+  p strong > em > a:any-link.disabled {
+    background-color: transparent;
+    color: rgb(0 41 77 / 42%);
   }
 
   a.button:any-link,
