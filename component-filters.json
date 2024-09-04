@@ -37,7 +37,8 @@
       "live-now",
       "signup",
       "teaser",
-      "tabs"
+      "tabs",
+      "priority-list"
     ]
   },
   {
@@ -80,5 +81,9 @@
   {
     "id": "tabs",
     "components": ["tab"]
+  },
+  {
+    "id": "priority-list",
+    "components": ["priority-item"]
   }
 ]
