@@ -7,8 +7,10 @@ import {
   fetchLanguageNavigation,
   fetchLanguagePlaceholders,
   fetchLangPlaceholderbyFileName,
-  getLanguage,
 } from '../../scripts/scripts.js';
+import {
+  getLanguage,
+} from '../../scripts/utils.js';
 import * as constants from './constants.js';
 import {
   button,
@@ -99,8 +101,10 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
   );
   if (!expanded) {
+    document.body.classList.add('no-scroll');
     navMenuOverlay.classList.add(constants.OPEN);
   } else {
+    document.body.classList.remove('no-scroll');
     navMenuOverlay.classList.remove(constants.OPEN);
   }
 

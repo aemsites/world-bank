@@ -701,55 +701,6 @@
         "value": "",
         "label": "Language URL(s)",
         "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "consent-api-url",
-        "label": "Consent API Endpoint",
-        "description": "Sets the Consent API Endpoint."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "ocp-apim-subscription-key",
-        "label": "OCP API Subscription Key",
-        "description": "Sets the OCP API Subscription Key."
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "subscribe-api-url",
-        "label": "Subscribe Api Endpoint",
-        "description": "Sets the Subscribe Api Endpoint"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "cusWbg_subscription_list",
-        "label": "CUS Subscription List",
-        "description": "Sets the CUS Subscription List"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "eventSubList",
-        "label": "Event Sub List",
-        "description": "Sets the Event Sub List"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "eventSubUpdateList",
-        "label": "Event Sub Update List",
-        "description": "Sets the Event Sub Update List"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "subscription-type",
-        "label": "Subscription Type",
-        "description": "Sets the Subscription Type."
       }
     ]
   },
@@ -1045,6 +996,26 @@
             "value": "normal-mode"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "tab",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Heading",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fragmentPath",
+        "value": "",
+        "label": "Fragment Path"
       }
     ]
   }
