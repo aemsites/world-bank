@@ -96,6 +96,7 @@ header .nav-menu-overlay .nav-menu {
   position: absolute;
   min-width: 125px;
   padding: 10px;
+  margin-right: 10px;
 }
 
 .nav-item-expanded-active {
@@ -123,13 +124,13 @@ header .nav-menu-overlay .nav-menu {
 
 /* Dropdown Arrow */
 .language-toggle::after {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-width: 0 2px 2px 0;
   border-style: solid;
   content: "";
   transform: rotateZ(45deg);
-  margin-left: 14px;
+  margin-left: 6px;
 }
 
 .language-toggle-border {
@@ -137,7 +138,7 @@ header .nav-menu-overlay .nav-menu {
 }
 
 .language-toggle[aria-expanded="false"]::after {
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .language-toggle[aria-expanded="true"]::after {
@@ -186,9 +187,32 @@ header .nav-menu-overlay .nav-menu  .submenu a:hover {
   padding: 0;
 }
 
+.cancel-container {
+  background: var(--primary-blue-50);
+  height: 44px;
+  display: flex;
+  width: 44px;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.overlay {
+  background-color: var(--overlay-color);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
 @media (width < 768px) {
+  header nav{
+    gap:10px;
+  }
+  
   .language-container{
-    top: -3px;
+    top: -6px;
     right: 20px;
   }
 
@@ -198,6 +222,11 @@ header .nav-menu-overlay .nav-menu  .submenu a:hover {
 
   .language-text {
     text-transform: uppercase;
+  }
+
+  .cancel-container{
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -499,6 +528,7 @@ header
   font-size: var(--body-medium);
   color: var(--primary-blue-80);
   text-decoration: underline;
+  margin-left: 4px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country p {
@@ -644,7 +674,7 @@ header nav .nav-sections .default-content-wrapper {
   display: none;
 }
 
-@media (width >= 1024px) {
+@media (width > 1024px) {
   header nav .nav-sections {
     flex: 1 1 auto;
     display: block;
@@ -737,25 +767,6 @@ header nav .nav-tools {
   .search-input-container {
     width: 70%;
   }
-}
-
-.cancel-container {
-  background: var(--primary-blue-50);
-  height: 44px;
-  display: flex;
-  width: 44px;
-  border-radius: 50px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.overlay {
-  background-color: var(--overlay-color);
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
 }
 
 @media (width >=768px) and (width<= 1023px) {
