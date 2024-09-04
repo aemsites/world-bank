@@ -15,7 +15,7 @@ import {
  */
 function pageSwoosh() {
   const pSwoosh = getMetadata('page-swoosh');
-  if (!pageSwoosh || pageSwoosh.length < 1) return;
+  if (!pSwoosh || pSwoosh.length < 1) return;
   if (pSwoosh !== 'page-swoosh-no') {
     document.body.classList.add(pSwoosh);
   } else {
