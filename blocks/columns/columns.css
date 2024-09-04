@@ -40,35 +40,40 @@
   font-size: var(--h2-base);
   text-transform: uppercase;
   margin-top: 40px;
-  line-height: 44px;
+  margin-bottom: 16px;
+  line-height: 35px;
+}
+
+.columns.columns-transform-teaser > div p:nth-child(2) {
+  line-height: 25px;
+  font-size: 18px;
 }
 
 .columns.columns-transform-teaser > div p:nth-child(3) {
   display: inline-flex;
-  margin-right: 30px;
+  margin: 21px 30px 9px 0;
 }
 
 .columns.columns-transform-teaser > div p:nth-child(4) {
   display: inline-flex;
 }
 
-.section.bg-primary-blue-90 .columns.columns-transform-teaser {
-  p:nth-child(3) a{
-    background-color: var(--color-white);
-    color: var(--primary-blue-100);
-    font-size: 16px;
-    margin: 0;
-  }
+.bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a{
+  background-color: var(--color-white);
+  color: var(--primary-blue-100);
+  font-size: 16px;
+  margin: 0;
+  height: 48px;
+}
 
-  p:nth-child(4) a{
-    background-color: var(--transparent);
-    color: var(--color-white);
-    font-size: 16px;
-    border-bottom: 2px solid #FFFFFF4D;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
-  }
+.bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a{
+  background-color: var(--transparent);
+  color: var(--color-white);
+  font-size: 16px;
+  border-bottom: 2px solid #FFFFFF4D;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .columns.columns-transform-teaser .columns-img-col {
@@ -109,6 +114,20 @@
 }
 
 @media (width >= 1024px) {
+  .columns.columns-transform-teaser > div p:nth-child(1) {
+    margin-bottom: 20px;
+    line-height: 44px;
+  }
+
+  .columns.columns-transform-teaser > div p:nth-child(2) {
+    line-height: 28px;
+    font-size: 20px;
+  }
+
+  .columns.columns-transform-teaser > div p:nth-child(3){
+    margin-top: 25px;
+  }
+
   .columns > div {
     flex-direction: unset;
     gap: 32px;
@@ -202,22 +221,22 @@
 }
 
 @media(width<=1024px) {
-  .bg-primary-blue-90 .columns.columns-transform-teaser  p:nth-child(1){
+  .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(1){
       font-size: 32px;
       line-height: 35px;
   }
 
-  .bg-primary-blue-90 .columns.columns-transform-teaser  p:nth-child(2){
+  .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(2){
     font-size: 18px;
     line-height: 25px;
   }
 
-  .bg-primary-blue-90 .columns.columns-transform-teaser  p:nth-child(3) a{
+  .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a{
     display: block;
     font-size: 14px;
   }
 
-  .bg-primary-blue-90 .columns.columns-transform-teaser  p:nth-child(4){
+  .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4){
     display: block;
   }
 
