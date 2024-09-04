@@ -3,7 +3,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   /* change to ul, li */
-  block.classList.add('hero-profile');
+  //block.classList.add('hero-profile');
   // block.classList.remove('cards');
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
