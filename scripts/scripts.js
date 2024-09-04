@@ -97,9 +97,24 @@ export function decorateMain(main) {
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
+
+function createSkipToMainNavigationBtn() {
+  const main = document.querySelector('main');
+  main.id = 'main';
+
+  const anchor = document.createElement('a');
+  anchor.tabIndex = 0;
+  anchor.id = 'skip-to-main-content';
+  anchor.className = 'visually-hidden focusable';
+  anchor.href = '#main';
+  anchor.textContent = 'Skip to Main Navigation';
+  document.body.insertBefore(anchor, document.body.firstChild);
+}
+
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  createSkipToMainNavigationBtn();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
