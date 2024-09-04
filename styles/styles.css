@@ -104,6 +104,7 @@
   --spacing-36: 36px;
   --spacing-40: 40px;
   --spacing-48: 48px;
+  --spacing-52: 52px;
   --spacing-56: 56px;
   --spacing-64: 64px;
   --spacing-80: 80px;
@@ -212,6 +213,9 @@
 
   /* Gutter space */
   --section-gutter-space: 28px;
+
+  /* Block specific */
+  --signup-padding: var(--spacing-28);
 }
 
 /*
@@ -274,6 +278,9 @@
     --xxlarge: var(--spacing-40);
     --huge: var(--spacing-56);
     --xhuge: var(--spacing-64);
+
+    /* Block specific */
+    --signup-padding: var(--spacing-32);
   }
 }
 
@@ -328,6 +335,9 @@
     /* main-heading styles */
     --main-heading-font-size: var(--size-40);
     --main-heading-spacing: 0 0 var(--spacing-48);
+
+    /* Block specific */
+    --signup-padding: var(--spacing-52);
   }
 }
 
@@ -354,7 +364,13 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  padding: var(--nav-padding) 0;
+  padding: var(--nav-padding) 0 calc(var(--nav-padding) - 2px);
+  margin-bottom: 2px;
+}
+
+.homepage header {
+  padding-bottom: var(--nav-padding);
+  margin-bottom: 0;
 }
 
 h1,
@@ -834,4 +850,9 @@ body.no-scroll {
   font-size: var(--main-heading-font-size);
   text-transform: uppercase;
   margin: var(--main-heading-spacing);
+  color: var(--primary-blue-100);
+}
+
+.section[class*='bg-primary-blue'] .main-heading p {
+  color: var(--color-white);
 }

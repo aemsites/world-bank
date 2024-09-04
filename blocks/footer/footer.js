@@ -1,6 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { getLanguage } from '../../scripts/scripts.js';
+import { getLanguage } from '../../scripts/utils.js';
 
 /**
  * Switch block handler
