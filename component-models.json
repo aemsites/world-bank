@@ -1027,8 +1027,7 @@
       "valueType": "string",
       "name": "subtitle",
       "value": "",
-      "label": "Subtitle",
-      "required": true
+      "label": "Subtitle"
       },
       {
         "component": "richtext",
