@@ -19,9 +19,9 @@
   --primary-blue-40: #A3DAFF;
   --primary-blue-50: #169AF3;
   --primary-blue-60: #0071BC;
-  --primary-blue-70: #00538A;
+  --primary-blue-70: #004370;
   --primary-blue-80: #004370;
-  --primary-blue-90: #053657;
+  --primary-blue-90: #012740;
   --primary-blue-100: #012740;
   --primary-blue-101: #002035;
   --primary-blue-102: #001C2D;
@@ -190,6 +190,7 @@
   /* main-heading styles */
   --main-heading-font-size: var(--size-28);
   --main-heading-spacing: 0 0 var(--spacing-36);
+  --main-heading-line-height: 110%;
 
   /* eyebrow styles */
   --eyebrow-font-size-l: 14px;
@@ -851,6 +852,7 @@ body.no-scroll {
   text-transform: uppercase;
   margin: var(--main-heading-spacing);
   color: var(--primary-blue-100);
+  line-height: var(--main-heading-line-height);
 }
 
 .section[class*='bg-primary-blue'] .main-heading p {
