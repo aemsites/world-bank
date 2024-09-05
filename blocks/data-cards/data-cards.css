@@ -329,6 +329,12 @@
     grid-area: image;
   }
 
+  .data-cards.news-card-variation .rte-container {
+    height: fit-content;
+    position: sticky;
+    top: 0;
+  }
+
   .data-cards.news-card-variation .rte-container > div:nth-child(2) {
     padding-bottom: var(--spacing-64);
   }
