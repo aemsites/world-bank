@@ -39,7 +39,8 @@
       "teaser",
       "tabs",
       "priority-list", 
-      "leaders-list"
+      "leaders-list",
+      "org-cards"
     ]
   },
   {
@@ -86,5 +87,11 @@
   {
     "id": "priority-list",
     "components": ["priority-item"]
+  },
+  {
+    "id": "org-cards",
+    "components": [
+      "org-card"
+    ]
   }
 ]

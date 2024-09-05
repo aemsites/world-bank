@@ -579,6 +579,67 @@
             }
           }
         }
+      },
+      {
+        "title": "Organizational Cards",
+        "id": "org-cards",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/block/v1/block",
+              "template": {
+                "name": "Organizational Cards",
+                "model": "org-cards",
+                "filter": "org-cards",
+                "item1": {
+                  "sling:resourceType": "core/franklin/components/block/v1/block/item", 
+                  "name": "Organizational Card",
+                  "model": "org-card",
+                  "org-card-acronym": "",
+                  "org-card-title": "",
+                  "org-card-mission": "Curated Card Title",
+                  "org-card-link": "/content/world-bank/global/en"
+                },
+                "item2": {
+                  "sling:resourceType": "core/franklin/components/block/v1/block/item", 
+                  "name": "Organizational Card",
+                  "model": "org-card",
+                  "org-card-acronym": "",
+                  "org-card-title": "",
+                  "org-card-mission": "Curated Card Title",
+                  "org-card-link": "/content/world-bank/global/en"
+                },
+                "item3": {
+                  "sling:resourceType": "core/franklin/components/block/v1/block/item", 
+                  "name": "Organizational Card",
+                  "model": "org-card",
+                  "org-card-acronym": "",
+                  "org-card-title": "",
+                  "org-card-mission": "Curated Card Title",
+                  "org-card-link": "/content/world-bank/global/en"
+                },
+                "item4": {
+                  "sling:resourceType": "core/franklin/components/block/v1/block/item", 
+                  "name": "Organizational Card",
+                  "model": "org-card",
+                  "org-card-acronym": "",
+                  "org-card-title": "",
+                  "org-card-mission": "Curated Card Title",
+                  "org-card-link": "/content/world-bank/global/en"
+                },
+                "item5": {
+                  "sling:resourceType": "core/franklin/components/block/v1/block/item", 
+                  "name": "Organizational Card",
+                  "model": "org-card",
+                  "org-card-acronym": "",
+                  "org-card-title": "",
+                  "org-card-mission": "Curated Card Title",
+                  "org-card-link": "/content/world-bank/global/en"
+                }
+              }
+            }
+          }
+        }
       }
       ]
     }
