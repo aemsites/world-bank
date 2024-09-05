@@ -1141,7 +1141,7 @@
         "valueType": "string",
         "name": "instagram link",
         "value": "",
-        "label": "instagram link"
+        "label": "Instagram Link"
       },
       {
         "component": "richtext",
