@@ -1183,9 +1183,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "href",
+        "name": "email",
         "value": "",
-        "label": "Link"
+        "label": "Email"
       }
     ]
   },
