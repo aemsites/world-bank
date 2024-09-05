@@ -46,7 +46,6 @@
 }
 
 .hero > ul > li img {
-  /* min-width: 334px; */
   width: 100%;
   min-height: 320px;
   aspect-ratio: 4 / 3;
