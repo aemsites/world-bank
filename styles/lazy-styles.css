@@ -172,6 +172,10 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
     text-decoration-color: var(--color-white);
 }
 
+.cookie-tooltip p > a:hover{
+    color: var(--color-white);
+}
+
 .cookie-tooltip .close {
     height: 32px;
     width: 32px;
