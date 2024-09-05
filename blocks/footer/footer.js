@@ -48,9 +48,10 @@ function addElementProperties(element) {
  * @param {Element} [element] Element containing icons
 */
 function addAnchorTag(element) {
+  const lang = getLanguage();
   const anchorLink = document.createElement('a');
   const logoImage = element.querySelector('img');
-  anchorLink.href = '/';
+  anchorLink.href = `/${lang}`;
   anchorLink.title = logoImage.alt;
   anchorLink.appendChild(element);
   return anchorLink;
