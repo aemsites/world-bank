@@ -31,7 +31,7 @@ module.exports = {
         'mini-card': 8,
         'research-publications-card': 7,
         'page-metadata': 11,
-        'bio-detail': 7,
+        'bio-detail': 8,
       },
     ],
   },
