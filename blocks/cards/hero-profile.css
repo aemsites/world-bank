@@ -1,51 +1,51 @@
 /* Profile View Styles */
 
-.card-profile ul{
+.hero ul{
   list-style: none;
   padding: 0;
 }
 
-.card-profile .cards-card-body {
+.hero .cards-card-body {
   background: var(--neutrals-20);
   padding: var(--xlarge) var(--large);
   border-radius: 0 0 10px 10px;
 }
 
-.card-profile .cards-card-image {
+.hero .cards-card-image {
   line-height: 0;
 }
 
-.card-profile > ul > li {
+.hero > ul > li {
   display: grid;
 }
 
-.card-profile .cards-card-body > p.button-container {
+.hero .cards-card-body > p.button-container {
   margin-top: var(--regular);
 }
 
-.card-profile .cards-card-body > *:first-child {
+.hero .cards-card-body > *:first-child {
   font-size: var(--h1-base);
   line-height: 33px;
   margin-bottom: 20px;
   margin-top: 0;
 }
 
-.card-profile .cards-card-body > *:first-child strong {
+.hero .cards-card-body > *:first-child strong {
   font-weight: 700;
 }
 
-.card-profile .cards-card-body > p {
+.hero .cards-card-body > p {
   font-size: var(--body-large);
   line-height: 22px;
   font-weight: 400;
   margin: 0;
 }
 
-.card-profile .cards-card-body > p > a {
+.hero .cards-card-body > p > a {
   line-height: 19px;
 }
 
-.card-profile > ul > li img {
+.hero > ul > li img {
   /* min-width: 334px; */
   width: 100%;
   min-height: 320px;
@@ -55,23 +55,23 @@
 }
 
 @media (width >= 768px) {
-  .card-profile > ul > li {
+  .hero > ul > li {
     grid-template-columns: 1fr 2fr;
   }
 
-  .card-profile > ul > li img {
+  .hero > ul > li img {
     min-width: 252px;
     min-height: 358px;
     border-radius: 10px 0 0 10px;
   }
 
-  .card-profile .cards-card-body {
+  .hero .cards-card-body {
     border-radius: 0 10px 10px 0;
   }
 }
 
 @media (width > 1024px) {
-  .card-profile > ul > li {
+  .hero > ul > li {
     grid-template-columns: auto auto;
   }
 }
