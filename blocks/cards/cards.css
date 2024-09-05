@@ -1,4 +1,4 @@
-.cards > ul {
+.cards:not(.profile-summary) > ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -7,24 +7,24 @@
   grid-gap: 16px;
 }
 
-.cards > ul > li {
+.cards:not(.profile-summary) > ul > li {
   border: 1px solid var(--dark-color);
   background-color: var(--background-color);
 }
 
-.cards .cards-card-body {
+.cards:not(.profile-summary) .cards-card-body {
   margin: 16px;
 }
 
-.cards .cards-card-image {
+.cards:not(.profile-summary) .cards-card-image {
   line-height: 0;
 }
 
-.cards .cards-card-body > *:first-child {
+.cards:not(.profile-summary) .cards-card-body > *:first-child {
   margin-top: 0;
 }
 
-.cards > ul > li img {
+.cards:not(.profile-summary) > ul > li img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -34,7 +34,7 @@
   padding: 0;
 }
 
-.cards {
+.cards:not(.profile-summary) {
   padding: var(--large) var(--xlarge) 0;
 }
 
