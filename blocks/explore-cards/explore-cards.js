@@ -61,11 +61,19 @@ export default function decorate(block) {
     const cardContent = div({ class: 'card-content' });
 
     // Content type
-    const cType = contentType ? processTags(contentType.innerText, 'content-type') : null;
+    let cType = contentType ? processTags(contentType.innerText, 'content-type') : null;
     const allowedTypes = ['video', 'audio'];
-    if (cType && allowedTypes.includes(cType)) {
-      const cTypeIcon = div({ class: `card-icon icon-${cType}` });
-      cardContent.append(cTypeIcon);
+
+    if (cType) {
+      // Split the cType by the colon ':' and get the part after it
+      const cTypeParts = cType.split(':');
+      cType = cTypeParts.length > 1 ? cTypeParts[1] : cTypeParts[0];
+
+      // Check if the processed cType is in the allowedTypes array
+      if (allowedTypes.includes(cType)) {
+        const cTypeIcon = div({ class: `card-icon icon-${cType}` });
+        cardContent.append(cTypeIcon);
+      }
     }
 
     // Story type

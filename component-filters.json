@@ -36,7 +36,10 @@
       "research-publications-cards",
       "live-now",
       "signup",
-      "teaser"
+      "teaser",
+      "tabs",
+      "priority-list", 
+      "leaders-list"
     ]
   },
   {
@@ -75,5 +78,13 @@
     "components": [
       "research-publications-card"
     ]
+  },
+  {
+    "id": "tabs",
+    "components": ["tab"]
+  },
+  {
+    "id": "priority-list",
+    "components": ["priority-item"]
   }
 ]
