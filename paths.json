@@ -33,8 +33,31 @@
     "/content/world-bank/global/ru/data/trending:/ru/trending.json",
     "/content/world-bank/global/fr/data/trending:/fr/trending.json",
     "/content/world-bank/global/es/data/trending:/es/trending.json",
-    "/content/world-bank/global/ar/data/trending:/ar/trending.json"
-    
+    "/content/world-bank/global/ar/data/trending:/ar/trending.json",
+    "/content/world-bank/global/en/data/leadership/ibrd:/en/ibrd.json",
+    "/content/world-bank/global/zh/data/leadership/ibrd:/zh/ibrd.json",
+    "/content/world-bank/global/ru/data/leadership/ibrd:/ru/ibrd.json",
+    "/content/world-bank/global/fr/data/leadership/ibrd:/fr/ibrd.json",
+    "/content/world-bank/global/es/data/leadership/ibrd:/es/ibrd.json",
+    "/content/world-bank/global/ar/data/leadership/ibrd:/ar/ibrd.json",
+    "/content/world-bank/global/en/data/leadership/ifc:/en/ifc.json",
+    "/content/world-bank/global/zh/data/leadership/ifc:/zh/ifc.json",
+    "/content/world-bank/global/ru/data/leadership/ifc:/ru/ifc.json",
+    "/content/world-bank/global/fr/data/leadership/ifc:/fr/ifc.json",
+    "/content/world-bank/global/es/data/leadership/ifc:/es/ifc.json",
+    "/content/world-bank/global/ar/data/leadership/ifc:/ar/ifc.json",
+    "/content/world-bank/global/en/data/leadership/miga:/en/miga.json",
+    "/content/world-bank/global/zh/data/leadership/miga:/zh/miga.json",
+    "/content/world-bank/global/ru/data/leadership/miga:/ru/miga.json",
+    "/content/world-bank/global/fr/data/leadership/miga:/fr/miga.json",
+    "/content/world-bank/global/es/data/leadership/miga:/es/miga.json",
+    "/content/world-bank/global/ar/data/leadership/miga:/ar/miga.json",
+    "/content/world-bank/global/en/data/leadership/icsid:/en/icsid.json",
+    "/content/world-bank/global/zh/data/leadership/icsid:/zh/icsid.json",
+    "/content/world-bank/global/ru/data/leadership/icsid:/ru/icsid.json",
+    "/content/world-bank/global/fr/data/leadership/icsid:/fr/icsid.json",
+    "/content/world-bank/global/es/data/leadership/icsid:/es/icsid.json",
+    "/content/world-bank/global/ar/data/leadership/icsid:/ar/icsid.json"
 
   ],
   "includes": ["/content/world-bank/"]
