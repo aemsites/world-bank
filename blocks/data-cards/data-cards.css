@@ -24,13 +24,14 @@
   line-height: 110%;
   text-transform: uppercase;
   color: var(--primary-blue-100);
-  margin-bottom: 0;
+  margin-bottom: 12px;
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(2) {
   font-size: 18px;
   line-height: 140%;
   color: var(--neutrals-100);
+  margin-bottom: 40px;
 }
 
 .data-cards.data-card-variation .data-card-disclaimer > p {
@@ -96,6 +97,7 @@
   border-bottom: 2px solid var(--neutrals-a-50);
   padding: 16px 0 8px;
   text-decoration: none;
+  border-radius: 0px;
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
@@ -316,6 +318,7 @@
 
   .data-cards.data-card-variation .data-card-items {
     flex-basis: 60%;
+    margin-left: 156px;
   }
 
   .data-cards .news-card:not(:first-child) {

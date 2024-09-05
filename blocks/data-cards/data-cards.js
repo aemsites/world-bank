@@ -34,13 +34,13 @@ export default async function decorate(block) {
 
     cards.forEach((row) => {
       row.className = 'data-card';
-      const [tag, title, description, disclaimer] = [...row.children];
+      const [tag, title, description, link, disclaimer] = [...row.children];
       tag.className = 'data-card-tag';
       title.className = 'data-card-title';
       description.className = 'data-card-description';
       disclaimer.className = 'data-card-disclaimer';      
 
-      const anchor =  a({class: 'anchor-tag', href: "link.textContent"});
+      const anchor =  a({class: 'anchor-tag', href: link.textContent});
       anchor.append(title);
       anchor.append(description);
       row.append(anchor);
@@ -68,12 +68,12 @@ export default async function decorate(block) {
 
     cards.forEach((row) => {
       row.className = 'news-card';
-      const [tag, title, image] = [...row.children];
+      const [tag, title, link, image] = [...row.children];
       tag.className = 'news-card-tag';
       title.className = 'news-card-title';
       image.className = 'news-card-image';
 
-      const anchor = a({class: 'anchor-tag', href: "link.textContent"});
+      const anchor = a({class: 'anchor-tag', href: link.textContent});
       anchor.append(title.querySelector('p'));
       title.append(anchor);
 
