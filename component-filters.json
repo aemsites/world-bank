@@ -71,7 +71,7 @@
     "components": ["priority-item"]
   },
   {
-    "id": "bio",
+    "id": "bio-detail",
     "components": ["bio", "resources", "media-inquiries"]
   }
 ]
