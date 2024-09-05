@@ -1103,5 +1103,19 @@
         "multi": false
       }
     ]
+  },
+  {
+    "id": "leaders-list",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "listFragmentPath",
+        "label": "List Fragment Path",
+        "description": "Root path of the page rendering list of Leaders using spreadsheet",
+        "value": "",
+        "required": true
+      }
+    ]
   }
 ]
