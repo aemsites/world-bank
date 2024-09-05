@@ -462,7 +462,7 @@ p strong > em > a:any-link {
   background-color: transparent;
   color: var(--primary-blue-70);
   font-family: var(--body-font-family);
-  font-size: var(--body-small);
+  font-size: var(--body-medium);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.25px;
@@ -527,7 +527,7 @@ p strong > em > a:any-link:visited {
 a.button:any-link,
 button {
   font-family: var(--body-font-family);
-  font-size: var(--body-small);
+  font-size: var(--body-medium);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.25px;
