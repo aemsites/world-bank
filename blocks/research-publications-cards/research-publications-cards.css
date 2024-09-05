@@ -41,6 +41,10 @@
   font-weight: 700;
 }
 
+.text-content .title div{
+  height: 65px;
+}
+
 .cards-container .rp-card .text-content .title p {
   margin: 0;
 }
@@ -75,6 +79,10 @@
     font-size: var(--body-medium);
   }
 
+  .cards-container .rp-card .text-content .desc{
+    margin-top: 52px;
+  }
+  
   .cards-container {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
