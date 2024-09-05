@@ -604,7 +604,7 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
-                  "name": "Bio",
+                  "name": "",
                   "model": "bio"
                 }
               }
@@ -620,7 +620,7 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Media Inquiries",
-                  "model": "media-inquries"
+                  "model": "media-inquiries"
                 }
               }
             }
