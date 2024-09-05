@@ -442,34 +442,34 @@
   {
     "id": "data-cards",
     "fields": [
-     {
+      {
         "component": "richtext",
         "name": "title",
         "value": "",
         "label": "Title",
         "valueType": "string"
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "description",
         "value": "",
         "label": "Description",
         "valueType": "string"
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "additional-text",
         "value": "",
         "label": "Additional Text",
         "valueType": "string"
-     },
-     {
-       "component": "select",
-       "valueType": "string",
-       "name": "classes",
-       "value": "",
-       "label": "Classes",
-       "options": [
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "value": "",
+        "label": "Classes",
+        "options": [
           {
             "name": "Data Card",
             "value": "data-card-variation"
@@ -478,69 +478,69 @@
             "name": "News Card",
             "value": "news-card-variation"
           }
-       ]
-     }
+        ]
+      }
     ]
   },
   {
     "id": "data-card",
     "fields": [
-     {
+      {
         "component": "aem-tag",
         "name": "tags",
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for data card"
-     },
-     {
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",
         "label": "Title"
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "description",
         "value": "",
         "label": "Description",
         "valueType": "string"
-     },
-     {
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "disclaimer",
         "value": "",
         "label": "Disclaimer Text"
-     }
+      }
     ]
   },
   {
     "id": "news-card",
     "fields": [
-     {
+      {
         "component": "aem-tag",
         "name": "news-card-tags",
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for news card"
-     },
-     {
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "news-card-title",
         "value": "",
         "label": "Title"
-     },
-     {
+      },
+      {
         "component": "reference",
         "valueType": "string",
         "name": "news-card-image",
         "label": "Image",
         "multi": false
-     }
+      }
     ]
   },
   {
@@ -741,7 +741,7 @@
         "valueType": "string",
         "name": "mini-card-title",
         "value": "",
-        "label": "Title", 
+        "label": "Title",
         "required": true
       },
       {
@@ -779,12 +779,12 @@
     "id": "research-publications-cards",
     "fields": [
       {
-      "component": "richtext",
-      "valueType": "string",
-      "name": "title",
-      "value": "",
-      "label": "Heading",
-      "required": true
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Heading",
+        "required": true
       },
       {
         "component": "text",
@@ -806,7 +806,7 @@
   },
   {
     "id": "research-publications-card",
-    "fields": [   
+    "fields": [
       {
         "component": "reference",
         "valueType": "string",
@@ -823,46 +823,46 @@
         "label": "Thumbnail Alt Text",
         "required": true
       },
-     {
+      {
         "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",
         "label": "Title",
         "required": true
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "description",
         "value": "",
         "label": "Description",
         "valueType": "string",
         "required": true
-     },
-     {
-      "component": "text",
-      "valueType": "string",
-      "name": "href",
-      "value": "",
-      "label": "Title Link",
-      "required": true
-    },
-    {
-      "component": "text",
-      "valueType": "string",
-      "name": "buttontext",
-      "label": "Button Text",
-      "value": "",
-      "required": true
-    },
-    {
-      "component": "text",
-      "valueType": "string",
-      "name": "buttonlink",
-      "label": "Button Link",
-      "value": "",
-      "required": true
-    }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
+        "label": "Title Link",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttontext",
+        "label": "Button Text",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttonlink",
+        "label": "Button Link",
+        "value": "",
+        "required": true
+      }
     ]
   },
   {
@@ -891,7 +891,7 @@
         "label": "Video Properties",
         "name": "videoProperties",
         "valueType": "string",
-        "condition": { "===": [{"var" : "teaserStyle"}, "video"] },
+        "condition": { "===": [{ "var": "teaserStyle" }, "video"] },
         "fields": [
           {
             "component": "text",
@@ -919,7 +919,7 @@
         "label": "Image Properties",
         "name": "imageProperties",
         "valueType": "string",
-        "condition": { "===": [{"var" : "teaserStyle"}, "image"] },
+        "condition": { "===": [{ "var": "teaserStyle" }, "image"] },
         "fields": [
           {
             "component": "reference",
@@ -1023,11 +1023,11 @@
     "id": "priority-list",
     "fields": [
       {
-      "component": "text",
-      "valueType": "string",
-      "name": "subtitle",
-      "value": "",
-      "label": "Subtitle"
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "value": "",
+        "label": "Subtitle"
       },
       {
         "component": "richtext",
@@ -1065,7 +1065,7 @@
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for priority card"
-     },
+      },
       {
         "component": "richtext",
         "name": "cardbodytext",
@@ -1093,6 +1093,116 @@
         "description": "Root path of the page rendering list of Leaders using spreadsheet",
         "value": "",
         "required": true
+      }
+    ]
+  },
+  { "id": "bio-detail", "fields": [] },
+  {
+    "id": "bio",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "value": "",
+        "label": "name",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "Job title",
+        "value": "",
+        "label": "Job Title",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "Organization",
+        "value": "",
+        "label": "Organization",
+        "required": true
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "social media icon",
+        "label": "social media icon",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "social media Alt Text",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "social media link",
+        "value": "",
+        "label": "social media link",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "media-inquiries",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "value": "",
+        "label": "name",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "Job title",
+        "value": "",
+        "label": "Job Title",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "Telephone Number",
+        "value": "",
+        "label": "Telephone Number",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
+        "label": "Link"
+      }
+    ]
+  },
+  {
+    "id": "resources",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "name",
+        "value": "",
+        "label": "name",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
+        "label": "Link"
       }
     ]
   }
