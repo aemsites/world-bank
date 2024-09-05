@@ -544,7 +544,8 @@
                       "template": {
                           "name": "Priority List",
                           "model": "priority-list",
-                          "filter": "priority-list"
+                          "filter": "priority-list",
+                          "title": "<p><strong>Tackling Complex, Intertwined CHALLENGES<strong> with knowledge, experience, and innovation</p>"
                       }
                   }
               }
