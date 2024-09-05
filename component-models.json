@@ -1097,17 +1097,7 @@
     ]
   },
   {
-    "id": "bio-detail",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "name",
-        "value": "",
-        "label": "name",
-        "required": true
-      }
-    ]
+    "id": "bio-detail"
   },
   {
     "id": "bio",
