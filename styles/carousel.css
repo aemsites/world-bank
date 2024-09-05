@@ -1,0 +1,146 @@
+
+.cards-container {
+  display: flex;
+  padding: 0 72px;
+  background-color: #fff;
+  box-shadow: none;
+ }
+
+ .cards-container > .default-content-wrapper {
+  flex: 1;
+  padding: 20px;
+ }
+
+ .cards-container > .default-content-wrapper > div:first-child {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 15.4px;
+  color: #4B5E71;
+ }
+
+ .cards-container > .default-content-wrapper > div:nth-child(2) {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 44px;
+  color: #002337;
+ }
+
+ .cards-container > .default-content-wrapper > p {
+  padding: 15px 32px 18px;
+  background-color: #004370;
+  border-radius: 100px;
+  width: 210px;
+ }
+
+ .cards-container > .default-content-wrapper > p > a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.79px;
+  color: #FFF;
+}
+
+ .cards-wrapper {
+  flex: 2;
+  overflow: hidden;
+  position: relative;
+ }
+
+ .cards > ul {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 90%);
+  grid-template-rows: 1fr;
+  gap: 0 32px;
+  overflow: scroll hidden;
+  scroll-snap-type: both mandatory;
+  scroll-padding: 0;
+  scrollbar-width: none;
+ }
+
+ .cards > ul > li {
+    scroll-snap-align: start;
+    display: inline-block;
+    border: 0;
+    width: auto;
+    height: auto;
+ }
+
+ .cards > ul > li > .cards-card-image {
+   background-color: #FCFCFC;
+   border-radius: 10px;
+   aspect-ratio: auto;
+   flex-direction: column;
+   display: flex;
+   justify-content: center;
+  }
+
+  /* Next & previous buttons */
+  .cards > .prev, .cards > .next {
+   right: 90px;
+   cursor: pointer;
+   position: absolute;
+   top: 40%;
+   color: white;
+   font-weight: bold;
+   border-radius: 3px 0 0 3px;
+ }
+
+ /* Position the "next button" to the right */
+ .cards > .next {
+    margin: 25px 0 0;
+ }
+
+ .cards > .prev {
+   margin: -25px 0 0;
+  }
+
+ /* On hover, add a black background color with a little bit see-through */
+ .cards > .prev:hover, .cards > .next:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+ }
+
+ /* Container for image text */
+ .cards .cards-card-body {
+    font-size: 14px;
+    line-height: 16.8px;
+    color: #181F25;
+    padding: 24px 0 0;
+    margin: 0;
+ }
+
+ .cards > ul > li.active {
+    opacity: 1;
+    scroll-snap-type: x;
+  }
+
+  .cards > ul > li.opacity { 
+    opacity: .2;
+  }
+
+  /* Tablet */
+  @media only screen and (width <= 1024px) {
+   .cards > .prev, .cards > .next {
+      right: 60px;
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      color: white;
+      font-weight: bold;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  /* Mobile */
+  @media only screen and (width <= 768px) {
+   .cards > .prev, .cards > .next {
+      right: 30px;
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      color: white;
+      font-weight: bold;
+      border-radius: 3px 0 0 3px;
+    }
+  }
