@@ -1,7 +1,8 @@
 /* Global Footer  */
 footer {
   background-color: var(--primary-blue-100);
-}  
+}
+  
 footer .block {
   max-width: var(--screen-width);
   margin: auto;
