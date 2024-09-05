@@ -1098,10 +1098,6 @@
   },
   {
     "id": "bio-detail",
-    "fields": []
-  },
-  {
-    "id": "bio",
     "fields": [
       {
         "component": "text",
@@ -1112,7 +1108,7 @@
         "required": true
       },
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "Job title",
         "value": "",
@@ -1122,91 +1118,40 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "Organization",
+        "name": "X link",
         "value": "",
-        "label": "Organization",
-        "required": true
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "social media icon",
-        "label": "social media icon",
-        "multi": false,
-        "required": true
+        "label": "X link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
-        "label": "social media Alt Text",
-        "required": true
+        "name": "linkedin link",
+        "value": "",
+        "label": "linkedin link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "social media link",
+        "name": "instagram link",
         "value": "",
-        "label": "social media link",
+        "label": "instagram link"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "Media Inquiries",
+        "value": "",
+        "label": "Media Inquiries",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "Resources",
+        "value": "",
+        "label": "Resources",
         "required": true
       }
     ]
-  },
-  {
-    "id": "media-inquiries",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "name",
-        "value": "",
-        "label": "name",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "Job title",
-        "value": "",
-        "label": "Job Title",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "Telephone Number",
-        "value": "",
-        "label": "Telephone Number",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "email",
-        "value": "",
-        "label": "Email"
-      }
-    ]
-  },
-  {
-    "id": "resources",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "name",
-        "value": "",
-        "label": "name",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "href",
-        "value": "",
-        "label": "Link"
-      }
-    ]
-  }
+  } 
 ]

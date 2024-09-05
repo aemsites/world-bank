@@ -66,9 +66,5 @@
   {
     "id": "priority-list",
     "components": ["priority-item"]
-  },
-  {
-    "id": "bio-detail",
-    "components": ["bio", "resources", "media-inquiries"]
   }
 ]
