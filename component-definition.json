@@ -581,7 +581,7 @@
           }
         },
         {
-          "title": "Bio Detail",
+          "title": "Bio Detail1",
           "id": "bio-detail",
           "plugins": {
             "xwalk": {
