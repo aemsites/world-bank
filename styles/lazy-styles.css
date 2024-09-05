@@ -164,6 +164,7 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
     border-bottom: 1px solid var(--color-white);
     text-decoration: none;
     padding: 0;
+    text-wrap: wrap;
 }
 
 .cookie-tooltip p > a:visited{
@@ -208,7 +209,7 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
 @media (width < 768px) {
     .cookie-tooltip p {
         font-size: var(--body-small);
-        width: 90%;
+        width: 100%;
     }
 
     .cookie-tooltip p > a{
