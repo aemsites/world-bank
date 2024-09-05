@@ -122,6 +122,7 @@
                   "name": "Cards",
                   "filter": "cards",
                   "model": "cards",
+                  "classes": "hero-profile",
                   "item1": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Card",
