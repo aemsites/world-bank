@@ -1110,7 +1110,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "name",
+        "name": "Name",
         "value": "",
         "label": "Name",
         "required": true
