@@ -1,5 +1,3 @@
-@import url('hero-profile.css');
-
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -38,4 +36,81 @@
 
 .cards {
   padding: var(--large) var(--xlarge) 0;
+}
+
+/* Profile View Styles */
+
+.cards.profile-summary ul{
+  list-style: none;
+  padding: 0;
+}
+
+.cards.profile-summary .cards-card-body {
+  background: var(--neutrals-20);
+  padding: var(--xlarge) var(--large);
+  border-radius: 0 0 10px 10px;
+}
+
+.cards.profile-summary .cards-card-image {
+  line-height: 0;
+}
+
+.cards.profile-summary > ul > li {
+  display: grid;
+}
+
+.cards.profile-summary .cards-card-body > p.button-container {
+  margin-top: var(--regular);
+}
+
+.cards.profile-summary .cards-card-body > *:first-child {
+  font-size: var(--h1-base);
+  line-height: 33px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.cards.profile-summary .cards-card-body > *:first-child strong {
+  font-weight: 700;
+}
+
+.cards.profile-summary .cards-card-body > p {
+  font-size: var(--body-large);
+  line-height: 22px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cards.profile-summary .cards-card-body > p > a {
+  line-height: 19px;
+}
+
+.cards.profile-summary > ul > li img {
+  width: 100%;
+  min-height: 320px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+@media (width >= 768px) {
+  .cards.profile-summary > ul > li {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .cards.profile-summary > ul > li img {
+    min-width: 252px;
+    min-height: 358px;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .cards.profile-summary .cards-card-body {
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+@media (width >= 1024px) {
+  .cards.profile-summary > ul > li {
+    grid-template-columns: auto auto;
+  }
 }
