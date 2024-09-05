@@ -121,7 +121,7 @@
                 "template": {
                   "name": "Cards",
                   "model": "cards",
-                  "classes": "hero",
+                  "classes": "cards",
                   "item1": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Card",
