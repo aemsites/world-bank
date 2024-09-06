@@ -246,6 +246,28 @@
     ]
   },
   {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Card View Layout",
+        "valueType": "string",
+        "value": "",
+        "options": [
+          {
+            "name": "Default View",
+            "value": ""
+          },
+          {
+            "name": "Profile - Summary view",
+            "value": "profile-summary"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
