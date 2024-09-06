@@ -1097,7 +1097,7 @@
     ]
   },
   {
-    "id": "org-cards",
+    "id": "organizational-cards",
     "fields": [
       {
         "component": "text",
@@ -1116,7 +1116,7 @@
     ]
   },
   {
-    "id": "org-card",
+    "id": "organizational-card",
     "fields":[
       {
         "component": "text",

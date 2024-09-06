@@ -89,9 +89,9 @@
     "components": ["priority-item"]
   },
   {
-    "id": "org-cards",
+    "id": "organizational-cards",
     "components": [
-      "org-card"
+      "organizational-card"
     ]
   }
 ]
