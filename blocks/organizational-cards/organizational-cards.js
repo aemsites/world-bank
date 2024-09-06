@@ -13,7 +13,7 @@ export default async function decorate(block) {
         }
     })
     */
-    [picEl, ...cards] = block.children;
+    const [picEl, ...cards] = block.children;
     const bgImg = picEl.querySelector('picture');
     // optimize image
     [...cards].forEach((card) => {
