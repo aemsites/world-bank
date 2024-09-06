@@ -1,5 +1,4 @@
 .signup.block {
-  background-color: var(--neutrals-20);
   padding: var(--signup-padding);
   border-radius: 10px;
 }
