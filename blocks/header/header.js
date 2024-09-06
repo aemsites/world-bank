@@ -127,12 +127,12 @@ function makeImageClickableNSettingAltText() {
   const anchor = document.createElement('a');
   Object.assign(anchor, {
     href: listOfAllPlaceholdersData.logoUrl,
-    title: logoImage.alt,
+    title: logoImage?.alt,
   });
-  anchor.appendChild(document.querySelector('.nav-brand picture'));
-  document
-    .querySelector('.nav-brand .default-content-wrapper')
-    .appendChild(anchor);
+  const picture = document.querySelector('.nav-brand picture');
+  if (picture) anchor.appendChild(picture);
+  const targetElement = document.querySelector('.nav-brand .default-content-wrapper');
+  targetElement?.appendChild(anchor);
 }
 
 function handleEnterKey(event) {
@@ -235,6 +235,7 @@ async function setTrendingDataAsUrl(tdElement) {
 }
 
 async function changeTrendingData(navSections) {
+  if (!navSections) return;
   const trendingDataWrapper = navSections.querySelector('.default-content-wrapper');
   const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
   trendingDataWrapper.append(trendingDataDiv);
@@ -265,7 +266,7 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
+  const brandLink = navBrand?.querySelector('.button');
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
