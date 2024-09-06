@@ -10,6 +10,7 @@
 .email-signup-container .signup-description {
   font-size: var(--body-medium);
   margin-bottom: var(--large);
+  margin-top: 0;
 }
 
 .email-signup-container input[type="email"],
