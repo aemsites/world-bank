@@ -414,6 +414,13 @@
         ]
       },
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
         "component": "boolean",
         "valueType": "boolean",
         "name": "bg-inside-container",
