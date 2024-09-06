@@ -91,25 +91,39 @@ function showThankYouMessage(formElement, message) {
 }
 
 function attachFormValidation(block, placeholders) {
+  const emailInput = block.querySelector('#email');
+  const errorMessage = block.querySelector('#error-message');
+
+  // Custom Email Validation Function
+  function validateEmail(emailId) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(emailId).toLowerCase());
+  }
+
+  emailInput.addEventListener('blur', () => {
+    errorMessage.textContent = ''; // Reset error message
+    if (!validateEmail(emailInput.value)) {
+      emailInput.classList.add('input-error');
+      errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_EMAIL_VALIDATION_MESSAGE] || 'Please enter a valid email.';
+    } else {
+      emailInput.classList.remove('input-error');
+    }
+  });
+
   document.getElementById('signup-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const errorMessage = block.querySelector('#error-message');
+    // const errorMessage = block.querySelector('#error-message');
     errorMessage.textContent = '';
 
     const termErrorMessage = block.querySelector('#term-error-message');
     termErrorMessage.textContent = '';
 
-    const emailInput = block.querySelector('#email');
+    // const emailInput = block.querySelector('#email');
     const email = emailInput.value;
     const firstName = block.querySelector('#firstname').value || '';
     const agreeInput = block.querySelector('#agree');
     const agree = agreeInput.checked;
-
-    function validateEmail(emailId) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(String(emailId).toLowerCase());
-    }
 
     // Reset previous styles
     emailInput.classList.remove('input-error');
