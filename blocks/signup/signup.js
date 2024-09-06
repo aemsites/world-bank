@@ -158,16 +158,26 @@ function createSignupModule(block, placeholders) {
     { id: 'signup-form' },
     div(
       { class: 'input-group' },
-      input({
-        type: 'email',
-        id: 'email',
-        placeholder: placeholders[CONSTANTS.SIGNUP_EMAIL_PLACEHOLDER] || '* Your email',
-      }),
-      input({
-        type: 'text',
-        id: 'firstname',
-        placeholder: placeholders[CONSTANTS.SIGNUP_NAME_PLACEHOLDER] || 'Your first name',
-      }),
+      div({ class: 'input-container' },
+        input({
+          type: 'email',
+          id: 'email',
+          placeholder: ' ',
+        }),  label({
+          for: 'email',
+          class: 'floating-placeholder'
+        }, placeholders[CONSTANTS.SIGNUP_EMAIL_PLACEHOLDER] || '* Your email'),
+      ), div(
+        { class: 'input-container' },
+        input({
+          type: 'text',
+          id: 'firstname',
+          placeholder: ' ',
+        }), label({
+          for: 'firstname',
+          class: 'floating-placeholder'
+        }, placeholders[CONSTANTS.SIGNUP_NAME_PLACEHOLDER] || 'Your first name'),
+      ),
       button({ type: 'submit', id: 'signup-btn-desktop' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
     ),
     div({ class: 'error-message', id: 'error-message' }),
@@ -185,7 +195,7 @@ function createSignupModule(block, placeholders) {
     button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
   );
 
-  formelement.querySelector('label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];
+  formelement.querySelector('.checkbox-group label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];
 
   container.appendChild(content);
   container.appendChild(formelement);

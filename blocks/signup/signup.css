@@ -15,7 +15,7 @@
 
 .email-signup-container input[type="email"],
 .email-signup-container input[type="text"] {
-  padding: 17px 0 17px 10px;
+  padding: 22px 0 10px 10px;
   margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #4C809C;
@@ -38,23 +38,25 @@
   width: 20px;
 }
 
-.email-signup-container input::placeholder {
-  transition: all 0.2s ease-in-out;
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: #000D1A91;
-  font-size: var(--body-medium);
+.email-signup-container .input-container {
+  position:relative;
 }
 
-.email-signup-container input:focus::placeholder,
-.email-signup-container input:not(:placeholder-shown)::placeholder {
-  transform: translateY(-150%);
+.input-group .floating-placeholder {
+  position: absolute;
+  color: #000D1A91;
+  font-size: var(--body-medium);
+  top:13px;
+  left: 10px;
+  white-space: nowrap;
+}
+
+input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-placeholder {
+  transition: all 0.2s ease-in-out;
+  transform: translateY(-70%);
   font-size: 12px;
   color: #999;
-  padding-left: 10px;
+  line-height: 12px;
 }
 
 .email-signup-container .checkbox-group label p {
@@ -73,9 +75,9 @@
   cursor: pointer;
   margin-top: 20px;
   width: 100%;
-  height: 52px;
   gap: 12px;
   justify-content: center;
+  z-index: 999;
 }
 
 .email-signup-container button#signup-btn .icon,
@@ -109,14 +111,22 @@
 
 /* Tablet Styles */
 @media (width >=768px) {
+
+  .email-signup-container .input-container {
+    width: 40%;
+  }
+
+  input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-placeholder { 
+    padding-left: 10px;
+  }
   .email-signup-container .signup-description {
     margin-bottom: var(--xlarge);
   }
 
   .email-signup-container input[type="email"],
   .email-signup-container input[type="text"] {
-    padding: 16px;
-    font-size: var(--eyebrow-font-size-l);
+    padding: 22px 0 10px 19px;
+    font-size: 14px;
     border: 1px solid #00396B3D;
     margin-right: 0;
   }
