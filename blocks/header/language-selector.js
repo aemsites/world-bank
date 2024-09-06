@@ -20,19 +20,22 @@ const updateLanguageTextContent = (domElement, placeholdersData, lang) => {
   domElement.textContent = getLanguageDisplayText(placeholdersData, lang, true);
 };
 
-// Show/hide Language Selector content on click
-const toggleExpandLanguageSelector = (e) => {
-  const toggleContainer = e.currentTarget;
+const toggleLangContent = (toggleContainer) => {
   const toggleContent = toggleContainer.querySelector(constants.LANGUAGE_CONTENT_SELECTOR);
   if (!toggleContainer || !toggleContent) return;
   const toggler = toggleContainer.querySelector(constants.LANGUAGE_TOGGLE_SELECTOR);
   const isExpanded = toggleContainer.classList.contains(constants.CONTENT_EXPANDED_ACTIVE);
-  if (e.type === constants.TYPE_CLICK) {
-    toggleContainer.classList.toggle(constants.CONTENT_EXPANDED_ACTIVE);
-    toggler.setAttribute(constants.ATTR_ARIA_EXPANDED, !isExpanded);
-    toggler.classList.toggle(constants.LANGUAGE_TOGGLE_BORDER_CLASS);
-    toggleContent.classList.toggle(constants.CONTENT_EXPANDED);
-  }
+  toggleContainer.classList.toggle(constants.CONTENT_EXPANDED_ACTIVE);
+  toggler.setAttribute(constants.ATTR_ARIA_EXPANDED, !isExpanded);
+  toggler.classList.toggle(constants.LANGUAGE_TOGGLE_BORDER_CLASS);
+  toggleContent.classList.toggle(constants.CONTENT_EXPANDED);
+};
+
+// Show/hide Language Selector content on click
+const toggleExpandLanguageSelector = (e) => {
+  e.stopPropagation();
+  const toggleContainer = e.currentTarget;
+  toggleLangContent(toggleContainer);
 };
 
 const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCode) => {
@@ -58,7 +61,7 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
 const getLanguageSelector = (placeholdersData, lang) => {
   const metaLangContent = getMetadata(constants.LANGUAGE_SELECTOR_META_NAME);
 
-  const languageToggle = div({ 'aria-expanded': 'false' });
+  const languageToggle = div({ role: 'button', 'aria-expanded': 'false' });
   const langSelector = div({ class: constants.LANGUAGE_CONTAINER_CLASS }, languageToggle);
 
   // Show only Current Language when no meta content authored
@@ -88,5 +91,15 @@ const getLanguageSelector = (placeholdersData, lang) => {
   }
   return langSelector;
 };
+
+// Close Language Selector if clicked outside it's container
+document.addEventListener('click', (event) => {
+  const languageContainer = event.currentTarget
+    .querySelector(constants.LANGUAGE_CONTAINER_CLASS_SELECTOR);
+  if (languageContainer
+    && languageContainer.classList.contains(constants.CONTENT_EXPANDED_ACTIVE)) {
+    toggleLangContent(languageContainer);
+  }
+});
 
 export default getLanguageSelector;

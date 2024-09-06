@@ -120,7 +120,15 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Cards",
-                  "filter": "cards"
+                  "model": "cards",
+                  "filter": "cards",
+                  "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Card",
+                    "model": "card",
+                    "image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "text": "<h3>Lorem Ipsum</h3><p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p><p class = 'button-container'><a href='#'>Read Bio</a></p>"
+                  }
                 }
               }
             }
@@ -142,59 +150,23 @@
           }
         },
         {
-            "title": "Data Cards",
-            "id": "data-cards",
-            "plugins": {
-                "xwalk": {
-                    "page": {
-                        "resourceType": "core/franklin/components/block/v1/block",
-                        "template": {
-                            "name": "Data Cards",
-                            "model": "data-cards",
-                            "filter": "data-cards",
-                            "title": "<p><strong>Data</strong> for Development</p>",
-                            "description": "<p>Essential data to guide decisions, monitor progress, and evaluate impacts</p>",
-                            "additional-text": "<p>Explore by focus area</p>",
-                            "item1": {
-                                "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                                "name": "Data Card",
-                                "model": "data-card",
-                                "data-card-tags": "/content/cq:tags/world-bank/category/prosperity",
-                                "curated-card-title": "Data Card Title",
-                                "curated-card-description": "Data Card Description",
-                                "data-card-disclaimer": "Data Card Disclaimer"
-                            },
-                            "item2": {
-                                "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                                "name": "Data Card",
-                                "model": "data-card",
-                                "data-card-tags": "/content/cq:tags/world-bank/category/prosperity",
-                                "curated-card-title": "Data Card Title",
-                                "curated-card-description": "Data Card Description",
-                                "data-card-disclaimer": "Data Card Disclaimer"
-                            },
-                            "item3": {
-                                "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                                "name": "Data Card",
-                                "model": "data-card",
-                                "data-card-tags": "/content/cq:tags/world-bank/category/prosperity",
-                                "curated-card-title": "Data Card Title",
-                                "curated-card-description": "Data Card Description",
-                                "data-card-disclaimer": "Data Card Disclaimer"
-                            },
-                            "item4": {
-                                "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                                "name": "Data Card",
-                                "model": "data-card",
-                                "data-card-tags": "/content/cq:tags/world-bank/category/prosperity",
-                                "curated-card-title": "Data Card Title",
-                                "curated-card-description": "Data Card Description",
-                                "data-card-disclaimer": "Data Card Disclaimer"
-                            }
-                        }
-                    }
+          "title": "Data Cards",
+          "id": "data-cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Data Cards",
+                  "model": "data-cards",
+                  "filter": "data-cards",
+                  "title": "<p><strong>Data</strong> for Development</p>",
+                  "description": "<p>Essential data to guide decisions, monitor progress, and evaluate impacts</p>",
+                  "additional-text": "<p>Explore by focus area</p>"
                 }
+              }
             }
+          }
         },
         {
           "title": "Data Card",
@@ -212,19 +184,19 @@
           }
         },
         {
-            "title": "News Card",
-            "id": "news-card",
-            "plugins": {
-                "xwalk": {
-                    "page": {
-                        "resourceType": "core/franklin/components/block/v1/block/item",
-                        "template": {
-                            "name": "News Card",
-                            "model": "news-card"
-                        }
-                    }
+          "title": "News Card",
+          "id": "news-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "News Card",
+                  "model": "news-card"
                 }
+              }
             }
+          }
         },
         {
           "title": "Curated Cards",
@@ -486,6 +458,21 @@
           }
         },
         {
+          "title": "Signup",
+          "id": "signup",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Signup",
+                  "filter": "signup"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Teaser",
           "id": "teaser",
           "plugins": {
@@ -500,7 +487,122 @@
               }
             }
           }
-        }
+        },
+        {
+          "title": "Live Now",
+          "id": "live-now",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "live-now",
+                  "model": "live-now",
+                  "key-value": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tabs",
+          "id": "tabs",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Tabs",
+                  "model": "tabs",
+                  "filter": "tab",
+                  "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Tab",
+                    "model": "tab",
+                    "title": "Tab"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tab",
+          "id": "tab",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Tab",
+                  "model": "tab",
+                  "title": "Tab"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Priority List",
+          "id": "priority-list",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Priority List",
+                  "model": "priority-list",
+                  "filter": "priority-list"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Priority Item",
+          "id": "priority-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Priority Item",
+                  "model": "priority-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Leaders List",
+          "id": "leaders-list",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Leaders List",
+                  "model": "leaders-list"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Bio Detail",
+          "id": "bio-detail",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "model": "bio-detail",
+                  "name": "Bio Detail"
+                }
+              }
+            }
+          }
+        }     
       ]
     }
   ]
