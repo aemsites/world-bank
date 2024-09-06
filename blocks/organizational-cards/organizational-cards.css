@@ -1,5 +1,5 @@
 .organizational-cards.block {
-    height: 836px;
+    height: 560px;
     width: 1600px;
     display: flex;
     overflow: hidden;
@@ -16,14 +16,20 @@
 }
 
 .organizational-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     width: 18.2%;
     z-index: 3;
+    background: linear-gradient(1.27deg, var(--primary-blue-100) 5.95%, #0127400f 52.78%);
 }
 
-.organizationl-card:not(last-child) {
-    margin-right: 1%;
-}
-
-.organizational-card:not(first-child) {
-    margin-left: 1%;
+.organizational-card .card-link {
+    height: 24px;
+    line-height: var(--size-24);
+    font-size: var(--size-14);
+    color: var(--color-white);
+    text-decoration: underline rgba(0 73 114 30%);
+    border-radius: unset;
+    background-color: unset;
 }

@@ -11,7 +11,10 @@ export default async function decorate(block) {
         card.children[1].classList.add('card-title');
         card.children[2].classList.add('card-mission');
         
-        //const learnMoreEl = card.children[3];
+        const anchorEl = card.children[3].querySelector('a');
+        anchorEl.classList.add('card-link');
+        //const href = anchorEl.href;
+        //const linkText = anchorEl.linkText;
         //const href = learnMoreEl.querySelector('a').href;
         //const linkText = learnMoreEl.children[1].textContent;
 
