@@ -26,12 +26,12 @@ export default async function decorate(block) {
     const collapseBtn = document.createElement('div');
     collapseBtn.classList.add('collapse-btn');
     const minusIcon = document.createElement('img');
-    minusIcon.src = `${window.hlx.codeBasePath}/icons/icon-minus.svg`;
+    minusIcon.src = `${window.hlx.codeBasePath}/icons/icon-minus.png`;
     collapseBtn.appendChild(minusIcon);
     const expandBtn = document.createElement('div');
     expandBtn.classList.add('expand-btn');
     const plusIcon = document.createElement('img');
-    plusIcon.src = `${window.hlx.codeBasePath}/icons/icon-plus.svg`;
+    plusIcon.src = `${window.hlx.codeBasePath}/icons/icon-plus.png`;
     expandBtn.appendChild(plusIcon);
     acronymEl.appendChild(expandBtn);
     acronymEl.appendChild(collapseBtn);
