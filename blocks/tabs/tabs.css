@@ -60,9 +60,3 @@
   position: relative;
   margin-top: 0;
 }
-
-@media (width >= 1024px) { 
- .tabs{
-  padding: 0 320px;
- }
-}
