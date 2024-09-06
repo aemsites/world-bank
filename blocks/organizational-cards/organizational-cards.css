@@ -1,0 +1,17 @@
+.organizational-cards.block {
+    height: 836px;
+    width: 1600px;
+    display: flex;
+}
+
+.organizational-card {
+    width: 18.2%;
+}
+
+.organizationl-card:not(last-child) {
+    margin-right: 1%;
+}
+
+.organizational-card:not(first-child) {
+    margin-left: 1%;
+}

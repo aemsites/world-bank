@@ -598,7 +598,8 @@
                   "org-card-acronym": "IBRD",
                   "org-card-title": "International Bank for Reconstruction and Development",
                   "org-card-mission": "Placeholder",
-                  "org-card-link": "/content/world-bank/global/en"
+                  "org-card-btn_cta": "/content/world-bank/global/en",
+                  "org-card-btn_text": "Learn More"
                 },
                 "item2": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
@@ -607,7 +608,8 @@
                   "org-card-acronym": "IDA",
                   "org-card-title": "International Development Association",
                   "org-card-mission": "IDA provides grants and interest-free loans to the world's poorest nations to help them grow equitably and sustainably.",
-                  "org-card-link": "/content/world-bank/global/en"
+                  "org-card-btn_cta": "/content/world-bank/global/en",
+                  "org-card-btn_text": "Learn More"
                 },
                 "item3": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
@@ -616,8 +618,8 @@
                   "org-card-acronym": "IFC",
                   "org-card-title": "International Finance Corporation",
                   "org-card-mission": "Placeholder",
-                  "org-card-link": "/content/world-bank/global/en"
-                },
+                  "org-card-btn_cta": "/content/world-bank/global/en",
+                  "org-card-btn_text": "Learn More"                },
                 "item4": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
                   "name": "Organizational Card",
@@ -625,7 +627,8 @@
                   "org-card-acronym": "MIGA",
                   "org-card-title": "Multilateral Investment Guarantee Agency",
                   "org-card-mission": "Placeholder",
-                  "org-card-link": "/content/world-bank/global/en"
+                  "org-card-btn_cta": "/content/world-bank/global/en",
+                  "org-card-btn_text": "Learn More"
                 },
                 "item5": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
@@ -634,7 +637,8 @@
                   "org-card-acronym": "ICSID",
                   "org-card-title": "International Centre for Settlement of Investment Disputes",
                   "org-card-mission": "Placeholder",
-                  "org-card-link": "/content/world-bank/global/en"
+                  "org-card-btn_cta": "/content/world-bank/global/en",
+                  "org-card-btn_text": "Learn More"
                 }
               }
             }

@@ -1145,8 +1145,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "org-card-link",
+        "name": "org-card-btn_cta",
         "label": "Link",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "org-card-btn_text",
+        "label": "Link Text",
         "multi": false,
         "required": true
       }
