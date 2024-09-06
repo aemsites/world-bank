@@ -1037,7 +1037,6 @@
         "name": "title",
         "value": "",
         "label": "Tab Name",
-        "label": "Tab Name",
         "required": true
       },
       {
