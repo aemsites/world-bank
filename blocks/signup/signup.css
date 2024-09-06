@@ -74,7 +74,7 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
   cursor: pointer;
   margin-top: 20px;
   width: 100%;
-  gap: 12px;
+  gap: 4px;
   justify-content: center;
   z-index: 999;
 }
