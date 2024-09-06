@@ -1,18 +1,7 @@
 export default async function decorate(block) {
     console.log('loaded org cards js');
-    //const backgroundImg = block.querySelector('picture');
     console.log(block.children);
-    /*
-    [...block.children].forEach((row) => {
-        const picEl = row.querySelector('picture');
-        if (picEl) {
-            // optimize image
-        } else {
-            row.classList.add('organizational-card');
-            // reorganize link
-        }
-    })
-    */
+
     const [picEl, ...cards] = block.children;
     const bgImg = picEl.querySelector('picture');
     // optimize image
@@ -22,6 +11,10 @@ export default async function decorate(block) {
         card.children[1].classList.add('card-title');
         card.children[2].classList.add('card-mission');
         
-        const learnMore = card.children[3];
+        //const learnMoreEl = card.children[3];
+        //const href = learnMoreEl.querySelector('a').href;
+        //const linkText = learnMoreEl.children[1].textContent;
+
+        // process the button
     })
 }
