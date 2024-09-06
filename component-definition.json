@@ -581,19 +581,19 @@
         }
       },
       {
-        "title": "Organizational Cards",
+        "title": "Org Cards",
         "id": "org-cards",
         "plugins": {
           "xwalk": {
             "page": {
               "resourceType": "core/franklin/components/block/v1/block",
               "template": {
-                "name": "Organizational Cards",
+                "name": "Org Cards",
                 "model": "org-cards",
                 "filter": "org-cards",
                 "item1": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
-                  "name": "Organizational Card",
+                  "name": "Org Card",
                   "model": "org-card",
                   "org-card-acronym": "IBRD",
                   "org-card-title": "International Bank for Reconstruction and Development",
