@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.organizational-cards.block picture {
+.organizational-cards.block .bg-wrapper {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -19,9 +19,21 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 18.2%;
+    align-items: center;
+    width: 450px;
     z-index: 3;
-    background: linear-gradient(1.27deg, var(--primary-blue-100) 5.95%, #0127400f 52.78%);
+    background: linear-gradient(178.99deg, rgba(1, 39, 64, 0) 13.68%, #012740 79.86%);
+}
+
+.organizational-card.collapsed {
+    padding: 340px var(--xlarge) 80px var(--xlarge);
+    background: linear-gradient(178.99deg, rgba(1, 39, 64, 0) 13.68%, #012740 79.86%);
+    width: 252px;
+}
+
+.organizational-card.collapsed > .card-mission, .card-link-wrapper {
+    display: none;
+    visibility: none;
 }
 
 .organizational-card .card-link {
