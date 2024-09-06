@@ -158,24 +158,28 @@ function createSignupModule(block, placeholders) {
     { id: 'signup-form' },
     div(
       { class: 'input-group' },
-      div({ class: 'input-container' },
+      div(
+        { class: 'input-container' },
         input({
           type: 'email',
           id: 'email',
           placeholder: ' ',
-        }),  label({
+        }),
+        label({
           for: 'email',
-          class: 'floating-placeholder'
+          class: 'floating-placeholder',
         }, placeholders[CONSTANTS.SIGNUP_EMAIL_PLACEHOLDER] || '* Your email'),
-      ), div(
+      ),
+      div(
         { class: 'input-container' },
         input({
           type: 'text',
           id: 'firstname',
           placeholder: ' ',
-        }), label({
+        }),
+        label({
           for: 'firstname',
-          class: 'floating-placeholder'
+          class: 'floating-placeholder',
         }, placeholders[CONSTANTS.SIGNUP_NAME_PLACEHOLDER] || 'Your first name'),
       ),
       button({ type: 'submit', id: 'signup-btn-desktop' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),

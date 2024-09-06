@@ -111,7 +111,6 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
 
 /* Tablet Styles */
 @media (width >=768px) {
-
   .email-signup-container .input-container {
     width: 40%;
   }
@@ -119,6 +118,7 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
   input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-placeholder { 
     padding-left: 10px;
   }
+
   .email-signup-container .signup-description {
     margin-bottom: var(--xlarge);
   }
