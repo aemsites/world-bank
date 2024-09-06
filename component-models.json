@@ -1100,13 +1100,6 @@
     "id": "organizational-cards",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "test",
-        "description": "placeholder",
-        "value": ""
-      },
-      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -1123,40 +1116,35 @@
         "valueType": "string",
         "name": "org-card-acronym",
         "label": "Acronym",
-        "multi": false,
-        "required": true
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "org-card-title",
         "label": "Title",
-        "multi": false,
-        "required": true
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "org-card-mission",
         "label": "Mission",
-        "multi": false,
-        "required": true
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "org-card-btn_cta",
         "label": "Link",
-        "multi": false,
-        "required": true
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "org-card-btn_text",
         "label": "Link Text",
-        "multi": false,
-        "required": true
+        "multi": false
       }
     ]
   }
