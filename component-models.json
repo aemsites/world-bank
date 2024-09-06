@@ -1114,35 +1114,35 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "org-card-acronym",
+        "name": "acronym",
         "label": "Acronym",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "org-card-title",
+        "name": "title",
         "label": "Title",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "org-card-mission",
+        "name": "mission",
         "label": "Mission",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "org-card-btn_linkCta",
+        "name": "link",
         "label": "Link",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "org-card-btn_linkText",
+        "name": "linkText",
         "label": "Link Text",
         "multi": false
       }

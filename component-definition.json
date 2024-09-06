@@ -595,51 +595,51 @@
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
                   "name": "Organizational Card",
                   "model": "organizational-card",
-                  "org-card-acronym": "IBRD",
-                  "org-card-title": "International Bank for Reconstruction and Development",
-                  "org-card-mission": "Placeholder",
-                  "org-card-btn_linkCta": "/content/world-bank/global/en",
-                  "org-card-btn_linkText": "Learn More"
+                  "acronym": "IBRD",
+                  "title": "International Bank for Reconstruction and Development",
+                  "mission": "Placeholder",
+                  "link": "/content/world-bank/global/en",
+                  "linkText": "Learn More"
                 },
                 "item2": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
                   "name": "Organizational Card",
                   "model": "organizational-card",
-                  "org-card-acronym": "IDA",
-                  "org-card-title": "International Development Association",
-                  "org-card-mission": "IDA provides grants and interest-free loans to the world's poorest nations to help them grow equitably and sustainably.",
-                  "org-card-btn_linkCta": "/content/world-bank/global/en",
-                  "org-card-btn_linkText": "Learn More"
+                  "acronym": "IDA",
+                  "title": "International Development Association",
+                  "mission": "IDA provides grants and interest-free loans to the world's poorest nations to help them grow equitably and sustainably.",
+                  "link": "/content/world-bank/global/en",
+                  "linkText": "Learn More"
                 },
                 "item3": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
                   "name": "Organizational Card",
                   "model": "organizational-card",
-                  "org-card-acronym": "IFC",
-                  "org-card-title": "International Finance Corporation",
-                  "org-card-mission": "Placeholder",
-                  "org-card-btn_linkCta": "/content/world-bank/global/en",
-                  "org-card-btn_linkText": "Learn More"
+                  "acronym": "IFC",
+                  "title": "International Finance Corporation",
+                  "mission": "Placeholder",
+                  "link": "/content/world-bank/global/en",
+                  "linkText": "Learn More"
                 },
                 "item4": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
                   "name": "Organizational Card",
                   "model": "organizational-card",
-                  "org-card-acronym": "MIGA",
-                  "org-card-title": "Multilateral Investment Guarantee Agency",
-                  "org-card-mission": "Placeholder",
-                  "org-card-btn_linkCta": "/content/world-bank/global/en",
-                  "org-card-btn_linkText": "Learn More"
+                  "acronym": "MIGA",
+                  "title": "Multilateral Investment Guarantee Agency",
+                  "mission": "Placeholder",
+                  "link": "/content/world-bank/global/en",
+                  "linkText": "Learn More"
                 },
                 "item5": {
                   "sling:resourceType": "core/franklin/components/block/v1/block/item", 
                   "name": "Organizational Card",
                   "model": "organizational-card",
-                  "org-card-acronym": "ICSID",
-                  "org-card-title": "International Centre for Settlement of Investment Disputes",
-                  "org-card-mission": "Placeholder",
-                  "org-card-btn_linkCta": "/content/world-bank/global/en",
-                  "org-card-btn_linkText": "Learn More"
+                  "acronym": "ICSID",
+                  "title": "International Centre for Settlement of Investment Disputes",
+                  "mission": "Placeholder",
+                  "link": "/content/world-bank/global/en",
+                  "linkText": "Learn More"
                 }
               }
             }
