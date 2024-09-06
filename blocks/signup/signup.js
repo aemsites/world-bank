@@ -113,13 +113,11 @@ function attachFormValidation(block, placeholders) {
   document.getElementById('signup-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // const errorMessage = block.querySelector('#error-message');
     errorMessage.textContent = '';
 
     const termErrorMessage = block.querySelector('#term-error-message');
     termErrorMessage.textContent = '';
 
-    // const emailInput = block.querySelector('#email');
     const email = emailInput.value;
     const firstName = block.querySelector('#firstname').value || '';
     const agreeInput = block.querySelector('#agree');
