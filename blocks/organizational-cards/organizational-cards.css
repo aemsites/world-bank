@@ -24,7 +24,7 @@
   align-items: center;
   width: 450px;
   height: 100%;
-  padding: 200px var(--xlarge) 80px var(--xlarge);
+  /*padding: 200px var(--xlarge) 80px var(--xlarge);*/
   z-index: 3;
   color: var(--color-white);
   font-weight: 700;
@@ -37,7 +37,7 @@
 }
 
 .organizational-card.collapsed {
-  padding: 340px var(--xlarge) 80px var(--xlarge);
+  /*padding: 340px var(--xlarge) 80px var(--xlarge);*/
   width: 252px;
 }
 
