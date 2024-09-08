@@ -91,25 +91,37 @@ function showThankYouMessage(formElement, message) {
 }
 
 function attachFormValidation(block, placeholders) {
+  const emailInput = block.querySelector('#email');
+  const errorMessage = block.querySelector('#error-message');
+
+  // Custom Email Validation Function
+  function validateEmail(emailId) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(emailId).toLowerCase());
+  }
+
+  emailInput.addEventListener('blur', () => {
+    errorMessage.textContent = ''; // Reset error message
+    if (!validateEmail(emailInput.value)) {
+      emailInput.classList.add('input-error');
+      errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_EMAIL_VALIDATION_MESSAGE] || 'Please enter a valid email.';
+    } else {
+      emailInput.classList.remove('input-error');
+    }
+  });
+
   document.getElementById('signup-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const errorMessage = block.querySelector('#error-message');
     errorMessage.textContent = '';
 
     const termErrorMessage = block.querySelector('#term-error-message');
     termErrorMessage.textContent = '';
 
-    const emailInput = block.querySelector('#email');
     const email = emailInput.value;
     const firstName = block.querySelector('#firstname').value || '';
     const agreeInput = block.querySelector('#agree');
     const agree = agreeInput.checked;
-
-    function validateEmail(emailId) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(String(emailId).toLowerCase());
-    }
 
     // Reset previous styles
     emailInput.classList.remove('input-error');
@@ -158,16 +170,30 @@ function createSignupModule(block, placeholders) {
     { id: 'signup-form' },
     div(
       { class: 'input-group' },
-      input({
-        type: 'email',
-        id: 'email',
-        placeholder: placeholders[CONSTANTS.SIGNUP_EMAIL_PLACEHOLDER] || '* Your email',
-      }),
-      input({
-        type: 'text',
-        id: 'firstname',
-        placeholder: placeholders[CONSTANTS.SIGNUP_NAME_PLACEHOLDER] || 'Your first name',
-      }),
+      div(
+        { class: 'input-container' },
+        input({
+          type: 'email',
+          id: 'email',
+          placeholder: ' ',
+        }),
+        label({
+          for: 'email',
+          class: 'floating-placeholder',
+        }, placeholders[CONSTANTS.SIGNUP_EMAIL_PLACEHOLDER] || '* Your email'),
+      ),
+      div(
+        { class: 'input-container' },
+        input({
+          type: 'text',
+          id: 'firstname',
+          placeholder: ' ',
+        }),
+        label({
+          for: 'firstname',
+          class: 'floating-placeholder',
+        }, placeholders[CONSTANTS.SIGNUP_NAME_PLACEHOLDER] || 'Your first name'),
+      ),
       button({ type: 'submit', id: 'signup-btn-desktop' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
     ),
     div({ class: 'error-message', id: 'error-message' }),
@@ -185,7 +211,7 @@ function createSignupModule(block, placeholders) {
     button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
   );
 
-  formelement.querySelector('label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];
+  formelement.querySelector('.checkbox-group label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];
 
   container.appendChild(content);
   container.appendChild(formelement);
