@@ -280,8 +280,8 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "value": "",
+        "name": "alt",
+        "value": "Alt Text",
         "label": "Alternate Text"
       },
       {
