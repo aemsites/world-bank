@@ -2,10 +2,14 @@ export default async function decorate(block) {
   console.log('loaded org cards js');
   console.log(block.children);
 
+  const gradOverlayEl = document.createElement('div');
+  gradOverlayEl.classList.add('bg-overlay');
   const [picEl, ...cards] = block.children;
   picEl.classList.add('bg-wrapper');
+  picEl.appendChild(gradOverlay);
   //const bgImg = picEl.querySelector('picture');
   // optimize image
+  // todo- move picture element to be a child of bg-wrapper, make empty div the gradient overlay
   [...cards].forEach((card) => {
     card.classList.add('organizational-card', 'collapsed');
     const acronymEl = card.children[0];
