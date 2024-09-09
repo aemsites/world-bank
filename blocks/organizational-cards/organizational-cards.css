@@ -93,11 +93,9 @@
   line-height: var(--size-24);
 }
 
-/*.organizational-card .card-link-wrapper {
-  display: flex;
-  justify-content: flex-start;
+.organizational-card .card-link-wrapper {
   width: 100%;
-}*/
+}
 
 .organizational-card > .card-link-wrapper > .button-container {
   padding-bottom: var(--spacing-64);
@@ -107,10 +105,10 @@
   height: 24px;
   line-height: var(--size-24);
   font-size: var(--size-14);
-  border-bottom: 2px solid rgba(0 73 114 / 30%);
+  border-bottom: 2px solid rgba(0 57 107 / 24%);
   border-radius: unset;
   background-color: unset;
-  padding: 0 0 var(--spacing-12) 0;
+  padding: 0 0 var(--spacing-32) 0;
   margin: unset;
 }
 

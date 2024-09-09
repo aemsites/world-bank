@@ -10,8 +10,8 @@ export default async function decorate(block) {
     const acronymEl = card.children[0];
     acronymEl.classList.add('card-acronym');
     card.children[1].classList.add('card-title');
-    card.children[2].classList.add('card-mission');
-    card.children[3].classList.add('card-link-wrapper');
+    card.children[2].classList.add('card-mission', 'left-justify-content');
+    card.children[3].classList.add('card-link-wrapper', 'left-justify-content');
     
     const anchorEl = card.children[3].querySelector('a');
     anchorEl.classList.add('card-link');
