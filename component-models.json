@@ -273,9 +273,16 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "hero_image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "hero_alt",
+        "value": "",
+        "label": "Alternate Text"
       },
       {
         "component": "richtext",
