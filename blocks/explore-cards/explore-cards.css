@@ -24,7 +24,7 @@
 }
 
 .explore-card-container {
-    display: grid;
+    display: grid; 
     grid-template-columns: 1fr 1fr 1fr;
     gap: var(--medium);
     width: calc(100vw - 68px);
@@ -37,10 +37,7 @@
     border-radius: 10px;
     height: 400px;
     width: 276px;
-}
-
-.explore-card:last-child {
-    padding-right: 20px;
+    flex:none;
 }
 
 .card-icon {
@@ -155,6 +152,15 @@
 
 @media (width <768px) {
     .explore-card-container {
+        display: flex;
         width: calc(100vw - 28px);
+    }
+
+    .explore-card {
+        flex:none;
+    }
+
+    .explore-card:last-child {
+        padding-right: 20px;
     }
 }
