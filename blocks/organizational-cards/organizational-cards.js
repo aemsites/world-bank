@@ -50,6 +50,6 @@ function handleExpandCollapse(event) {
 function closeOpenCards() {
   const openCards = document.querySelectorAll('.organizational-card:not(.collapsed)');
   [...openCards].forEach((card) => {
-    card.classList.remove('collapsed');
+    card.classList.add('collapsed');
   });
 }

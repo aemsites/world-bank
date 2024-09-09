@@ -96,6 +96,7 @@
 .organizational-card .card-link-wrapper {
   display: flex;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .organizational-card a.button.card-link {
