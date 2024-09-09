@@ -29,7 +29,7 @@ export default async function createCarousel(block) {
   block.append(arrow(`${nextBtn}`));
   block.append(arrow(`${prevBtn}`));
 
-// Call function after page load
+  // Call function after page load
   window.setTimeout(() => {
     const carouselItems = document.querySelector('.cards > ul');
     const totalItems = carouselItems.children.length || 1;
