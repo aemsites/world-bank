@@ -2,15 +2,20 @@ import { div, img } from '../../scripts/dom-helpers.js';
 import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 
 function createCard(card) {
-  const [cardtitle, carddesc,,] = card.children;
-  cardtitle.textContent = cardtitle.textContent.replace('world-bank:category/', '');
+  const [cardtitle, carddesc, ,] = card.children;
+  cardtitle.textContent = cardtitle.textContent.replace(
+    'world-bank:category/',
+    '',
+  );
   card.className = cardtitle.textContent;
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
 }
 
 export default async function decorate(block) {
-  const [subtitle, maintitle, buttontext, buttonlink, ...cards] = [...block.children];
+  const [subtitle, maintitle, buttontext, buttonlink, ...cards] = [
+    ...block.children,
+  ];
   subtitle.className = 'subtitle';
   maintitle.className = CLASS_MAIN_HEADING;
   const buttonLink = buttonlink.getElementsByTagName('a')[0];
@@ -40,7 +45,9 @@ export default async function decorate(block) {
   const imgElement = img({ src: cards.at(0).querySelector('img').src });
   imageContainer.append(imgElement);
 
-  imageContainer.style.backgroundImage = `url(${cards.at(0).querySelector('img').src})`;
+  imageContainer.style.backgroundImage = `url(${
+    cards.at(0).querySelector('img').src
+  })`;
   leftColumnContainer.append(imageContainer);
   block.append(leftColumnContainer);
 
@@ -51,7 +58,10 @@ export default async function decorate(block) {
       let prevval;
       cards.forEach((card, index) => {
         const curtop = card.getBoundingClientRect().top;
-        if (image.getBoundingClientRect().top >= card.getBoundingClientRect().top - 400) {
+        if (
+          image.getBoundingClientRect().top
+          >= card.getBoundingClientRect().top - 400
+        ) {
           if (index === 0) {
             prevmin = curtop;
             prevval = index;
