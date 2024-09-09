@@ -514,8 +514,14 @@
                 "template": {
                   "name": "Tabs",
                   "model": "tabs",
-                  "filter": "tab",
+                  "filter": "tabs",
                   "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Tab",
+                    "model": "tab",
+                    "title": "Tab"
+                  },
+                  "item2": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Tab",
                     "model": "tab",

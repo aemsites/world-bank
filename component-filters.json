@@ -62,7 +62,9 @@
   },
   {
     "id": "tabs",
-    "components": ["tab"]
+    "components": [
+      "tab"
+    ]
   },
   {
     "id": "priority-list",
