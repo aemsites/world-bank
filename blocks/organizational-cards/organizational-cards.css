@@ -1,10 +1,12 @@
 .organizational-cards.block {
   height: 560px;
-  width: 1600px;
+  width: 1536px;
   display: flex;
   overflow: hidden;
   position: relative;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .organizational-cards.block .bg-wrapper {
@@ -37,22 +39,18 @@
   color: var(--color-white);
   font-weight: 700;
   text-align: left;
+  transition: width 0.5s linear;
+}
+
+.organizational-card:not(last-child) {
+  margin-right: 6px;
+}
+
+.organizational-card:not(first-child) {
+  margin-left: 6px;
 }
 
 .organizational-card .expand-btn {
-  display: none;
-  visibility: hidden;
-}
-
-.organizational-card.collapsed {
-  /*padding: 340px var(--xlarge) 80px var(--xlarge);*/
-  width: 252px;
-}
-.organizational-card.collapsed > .card-acronym {
-  margin-top: 340px;
-}
-
-.organizational-card.collapsed > .card-mission, .organizational-card.collapsed > .card-link-wrapper {
   display: none;
   visibility: hidden;
 }
@@ -66,16 +64,6 @@
   background: var(--primary-blue-102);
   border: 1px solid var(--primary-blue-50);
   border-radius: 50%;
-}
-
-.organizational-card.collapsed .collapse-btn {
-  display: none;
-  visibility: hidden;
-}
-
-.organizational-card.collapsed .expand-btn {
-  display: flex;
-  visibility: visible;
 }
 
 .organizational-card .card-acronym {
@@ -92,9 +80,9 @@
   font-size: var(--size-14);
   line-height: 17.5px;
   border-bottom: 2px solid var(--primary-blue-50);
-  padding-bottom: var(--spacing-16);
-  margin-bottom: var(--spacing-64); /* might need to make this collapsed only */
-  height: 64px;
+ /*padding-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-64);  might need to make this collapsed only */
+  height: 60px;
   width: 100%;
 }
 
@@ -109,7 +97,38 @@
   line-height: var(--size-24);
   font-size: var(--size-14);
   text-decoration: underline;
-  text-decoration-color: rgba(0 73 114 30%);
+  text-decoration-color: rgba(0 73 114 / 30%);
   border-radius: unset;
   background-color: unset;
+  padding: unset;
+  margin: 0 0 80px 0;
+}
+
+.organizational-card.collapsed {
+  /*padding: 340px var(--xlarge) 80px var(--xlarge);*/
+  width: 252px;
+}
+.organizational-card.collapsed > .card-acronym {
+  margin-top: 340px;
+}
+
+.organizational-card.collapsed > .card-title {
+  height: 64px;
+  padding-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-64);
+}
+
+.organizational-card.collapsed > .card-mission, .organizational-card.collapsed > .card-link-wrapper {
+  display: none;
+  visibility: hidden;
+}
+
+.organizational-card.collapsed .collapse-btn {
+  display: none;
+  visibility: hidden;
+}
+
+.organizational-card.collapsed .expand-btn {
+  display: flex;
+  visibility: visible;
 }
