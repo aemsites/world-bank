@@ -39,6 +39,10 @@
     width: 276px;
 }
 
+.explore-card:last-child {
+    padding-right: 20px;
+}
+
 .card-icon {
     width: 72px;
     height: 72px;
