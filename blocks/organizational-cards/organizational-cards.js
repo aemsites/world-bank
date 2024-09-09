@@ -6,7 +6,7 @@ export default async function decorate(block) {
   gradOverlayEl.classList.add('bg-overlay');
   const [picEl, ...cards] = block.children;
   picEl.classList.add('bg-wrapper');
-  picEl.appendChild(gradOverlay);
+  picEl.appendChild(gradOverlayEl);
   //const bgImg = picEl.querySelector('picture');
   // optimize image
   // todo- move picture element to be a child of bg-wrapper, make empty div the gradient overlay
