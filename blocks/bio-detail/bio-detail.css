@@ -1,0 +1,135 @@
+.resources ul{
+    list-style: none;
+    padding: var(--none);
+}
+
+.resources ul li a{
+    color: var(--primary-blue-70);
+    text-decoration: none;
+    font-size: var(--body-medium);
+}
+
+.download-image{
+    margin-right: var(--xxsmall);
+}
+
+.sections-container{
+    padding: 24px 28px 32px;
+    background: var(--neutrals-20);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+}
+
+.sections-container p{
+    margin: var(--none);
+}
+
+.first-container .name-job-social{
+    display: none;
+}
+
+.second-container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.sections-container .bio-name{
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-blue-90);
+    line-height: 43px;
+}
+
+.sections-container .job-title{
+    font-size: 18px;
+    color: var(--neutrals-100);
+    margin-top: 12px;
+}
+
+.sections-container .name-job-social .social-media{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sections-container .name-job-social .social-media .social-media-link {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+}
+
+.media-resources{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 28px;
+    margin-top: 32px;
+}
+
+.media-inquiries p{
+    font-size: var(--body-medium);
+    line-height: 22px;
+}
+
+.title{
+    border-bottom: 1px solid var(--neutrals-103);
+    margin-bottom: 20px;
+    font-size: var(--body-small);
+    font-weight: bold;
+    padding-bottom: 12px;
+}
+
+@media(width > 768px){
+    .second-container {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .media-resources {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        margin-top: var(--xlarge);
+    }
+
+    .sections-container{
+        padding: 80px 80px 88px;
+    }
+}
+
+@media(width >1024px) {
+    .media-resources{
+        gap: var(--xhug);
+        margin-top: 70px;
+    }
+
+    .sections-container .bio-name {
+        font-size: var(--h1-base);
+        line-height: 58px;
+    }
+
+    .sections-container .job-title {
+        font-size: var(--default);
+    }
+
+    .first-container .name-job-social {
+        display: block;
+    }
+
+    .second-container .name-job-social{
+        display: none;
+    }
+    
+    .sections-container{
+        flex-direction: row;
+    }
+    
+    .second-container{
+        grid-template-columns: auto;
+    }
+}
