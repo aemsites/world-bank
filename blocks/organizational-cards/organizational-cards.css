@@ -95,6 +95,7 @@
   padding-bottom: var(--spacing-16);
   margin-bottom: var(--spacing-64); /* might need to make this collapsed only */
   height: 64px;
+  width: 100%;
 }
 
 .organizational-card .card-mission {
