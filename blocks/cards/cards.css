@@ -112,6 +112,6 @@
   }
 
   .cards.profile-summary > ul > li img {
-    width: 464px;
+    max-width: 464px;
   }
 }
