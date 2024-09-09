@@ -1,5 +1,4 @@
 .signup.block {
-  background-color: var(--neutrals-20);
   padding: var(--signup-padding);
   border-radius: 10px;
 }
@@ -11,6 +10,7 @@
 .email-signup-container .signup-description {
   font-size: var(--body-medium);
   margin-bottom: var(--large);
+  margin-top: 0;
 }
 
 .email-signup-container input[type="email"],
@@ -75,7 +75,7 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
   cursor: pointer;
   margin-top: 20px;
   width: 100%;
-  gap: 12px;
+  gap: 4px;
   justify-content: center;
   z-index: 999;
 }
