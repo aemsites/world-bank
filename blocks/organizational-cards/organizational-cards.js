@@ -1,15 +1,10 @@
 export default async function decorate(block) {
-  console.log('loaded org cards js');
-  console.log(block.children);
-
   const gradOverlayEl = document.createElement('div');
   gradOverlayEl.classList.add('bg-overlay');
   const [picEl, ...cards] = block.children;
   picEl.classList.add('bg-wrapper');
   picEl.appendChild(gradOverlayEl);
-  //const bgImg = picEl.querySelector('picture');
-  // optimize image
-  // todo- move picture element to be a child of bg-wrapper, make empty div the gradient overlay
+
   [...cards].forEach((card) => {
     card.classList.add('organizational-card', 'collapsed');
     const acronymEl = card.children[0];
@@ -20,13 +15,6 @@ export default async function decorate(block) {
     
     const anchorEl = card.children[3].querySelector('a');
     anchorEl.classList.add('card-link');
-    //const href = anchorEl.href;
-    //const linkText = anchorEl.linkText;
-    //const href = learnMoreEl.querySelector('a').href;
-    //const linkText = learnMoreEl.children[1].textContent;
-
-    // process the button
-
     const collapseBtn = document.createElement('div');
     collapseBtn.classList.add('collapse-btn');
     const minusIcon = document.createElement('img');
@@ -46,18 +34,22 @@ export default async function decorate(block) {
       });
       expandBtn.addEventListener(trigger, (event) => {
         if (trigger === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
+        closeOpenCards();
         handleExpandCollapse(event);
       });
     });
   });
 }
 
-function collapseCard() {
-
-}
-
 function handleExpandCollapse(event) {
   const button = event.target;
   const card = button.closest('.organizational-card');
   card.classList.toggle('collapsed');
+}
+
+function closeOpenCards() {
+  const openCards = document.querySelectorAll('.organizational-card:not(.collapsed)');
+  [...openCards].forEach((card) => {
+    card.classList.remove('collapsed');
+  });
 }
