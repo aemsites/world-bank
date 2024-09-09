@@ -59,29 +59,38 @@
   display: grid;
 }
 
-.cards.profile-summary .cards-card-body > p.button-container {
+.cards.profile-summary .cards-card-body p.button-container {
   margin-top: var(--regular);
 }
 
-.cards.profile-summary .cards-card-body > *:first-child {
+/* .cards.profile-summary .cards-card-body > *:first-child {
   font-size: var(--h1-base);
   line-height: 33px;
   margin-bottom: 20px;
   margin-top: 0;
-}
+  font-weight: 700;
+} */
 
-.cards.profile-summary .cards-card-body > *:first-child strong {
+.cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+  font-size: var(--h1-base);
+  line-height: 33px;
+  margin-bottom: 20px;
+  margin-top: 0;
   font-weight: 700;
 }
 
-.cards.profile-summary .cards-card-body > p {
+/* .cards.profile-summary .cards-card-body > *:first-child strong {
+  font-weight: 700;
+} */
+
+.cards.profile-summary .cards-card-body p {
   font-size: var(--body-large);
   line-height: 22px;
   font-weight: 400;
   margin: 0;
 }
 
-.cards.profile-summary .cards-card-body > p > a {
+.cards.profile-summary .cards-card-body p > a {
   line-height: 19px;
 }
 
