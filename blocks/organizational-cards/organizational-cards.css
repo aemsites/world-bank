@@ -14,7 +14,15 @@
   top: 0;
   left: 0;
   z-index: 2;
+}
+
+.organizational-cards.block .bg-wrapper > .bg-overlay {
   background: linear-gradient(178.99deg, rgba(1, 39, 64, 0) 13.68%, #012740 79.86%);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .organizational-card {
@@ -46,6 +54,17 @@
   visibility: hidden;
 }
 
+.organizational-card .expand-btn, .organizational-card .collapse-btn {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-blue-102);
+  border: 1px solid var(--primary-blue-50);
+  border-radius: 50%;
+}
+
 .organizational-card.collapsed .collapse-btn {
   display: none;
   visibility: hidden;
@@ -70,6 +89,8 @@
   font-size: var(--size-14);
   line-height: 17.5px;
   border-bottom: 2px solid var(--primary-blue-50);
+  padding-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-64); /* might need to make this collapsed only */
 }
 
 .organizational-card .card-mission {
