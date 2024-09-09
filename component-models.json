@@ -246,6 +246,28 @@
     ]
   },
   {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Card View Layout",
+        "valueType": "string",
+        "value": "",
+        "options": [
+          {
+            "name": "Default View",
+            "value": ""
+          },
+          {
+            "name": "Profile - Summary view",
+            "value": "profile-summary"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -392,6 +414,13 @@
         ]
       },
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
         "component": "boolean",
         "valueType": "boolean",
         "name": "bg-inside-container",
@@ -442,34 +471,34 @@
   {
     "id": "data-cards",
     "fields": [
-     {
+      {
         "component": "richtext",
         "name": "title",
         "value": "",
         "label": "Title",
         "valueType": "string"
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "description",
         "value": "",
         "label": "Description",
         "valueType": "string"
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "additional-text",
         "value": "",
         "label": "Additional Text",
         "valueType": "string"
-     },
-     {
-       "component": "select",
-       "valueType": "string",
-       "name": "classes",
-       "value": "",
-       "label": "Classes",
-       "options": [
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "value": "",
+        "label": "Classes",
+        "options": [
           {
             "name": "Data Card",
             "value": "data-card-variation"
@@ -478,69 +507,69 @@
             "name": "News Card",
             "value": "news-card-variation"
           }
-       ]
-     }
+        ]
+      }
     ]
   },
   {
     "id": "data-card",
     "fields": [
-     {
+      {
         "component": "aem-tag",
         "name": "tags",
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for data card"
-     },
-     {
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",
         "label": "Title"
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "description",
         "value": "",
         "label": "Description",
         "valueType": "string"
-     },
-     {
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "disclaimer",
         "value": "",
         "label": "Disclaimer Text"
-     }
+      }
     ]
   },
   {
     "id": "news-card",
     "fields": [
-     {
+      {
         "component": "aem-tag",
         "name": "news-card-tags",
         "label": "Tags for Card",
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for news card"
-     },
-     {
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "news-card-title",
         "value": "",
         "label": "Title"
-     },
-     {
+      },
+      {
         "component": "reference",
         "valueType": "string",
         "name": "news-card-image",
         "label": "Image",
         "multi": false
-     }
+      }
     ]
   },
   {
@@ -741,7 +770,7 @@
         "valueType": "string",
         "name": "mini-card-title",
         "value": "",
-        "label": "Title", 
+        "label": "Title",
         "required": true
       },
       {
@@ -779,12 +808,12 @@
     "id": "research-publications-cards",
     "fields": [
       {
-      "component": "richtext",
-      "valueType": "string",
-      "name": "title",
-      "value": "",
-      "label": "Heading",
-      "required": true
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Heading",
+        "required": true
       },
       {
         "component": "text",
@@ -806,7 +835,7 @@
   },
   {
     "id": "research-publications-card",
-    "fields": [   
+    "fields": [
       {
         "component": "reference",
         "valueType": "string",
@@ -823,46 +852,46 @@
         "label": "Thumbnail Alt Text",
         "required": true
       },
-     {
+      {
         "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",
         "label": "Title",
         "required": true
-     },
-     {
+      },
+      {
         "component": "richtext",
         "name": "description",
         "value": "",
         "label": "Description",
         "valueType": "string",
         "required": true
-     },
-     {
-      "component": "text",
-      "valueType": "string",
-      "name": "href",
-      "value": "",
-      "label": "Title Link",
-      "required": true
-    },
-    {
-      "component": "text",
-      "valueType": "string",
-      "name": "buttontext",
-      "label": "Button Text",
-      "value": "",
-      "required": true
-    },
-    {
-      "component": "text",
-      "valueType": "string",
-      "name": "buttonlink",
-      "label": "Button Link",
-      "value": "",
-      "required": true
-    }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "value": "",
+        "label": "Title Link",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttontext",
+        "label": "Button Text",
+        "value": "",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "buttonlink",
+        "label": "Button Link",
+        "value": "",
+        "required": true
+      }
     ]
   },
   {
@@ -891,7 +920,7 @@
         "label": "Video Properties",
         "name": "videoProperties",
         "valueType": "string",
-        "condition": { "===": [{"var" : "teaserStyle"}, "video"] },
+        "condition": { "===": [{ "var": "teaserStyle" }, "video"] },
         "fields": [
           {
             "component": "text",
@@ -919,7 +948,7 @@
         "label": "Image Properties",
         "name": "imageProperties",
         "valueType": "string",
-        "condition": { "===": [{"var" : "teaserStyle"}, "image"] },
+        "condition": { "===": [{ "var": "teaserStyle" }, "image"] },
         "fields": [
           {
             "component": "reference",
@@ -1007,7 +1036,7 @@
         "valueType": "string",
         "name": "title",
         "value": "",
-        "label": "Heading",
+        "label": "Tab Name",
         "required": true
       },
       {
@@ -1023,11 +1052,11 @@
     "id": "priority-list",
     "fields": [
       {
-      "component": "text",
-      "valueType": "string",
-      "name": "subtitle",
-      "value": "",
-      "label": "Subtitle"
+        "component": "text",
+        "valueType": "string",
+        "name": "subtitle",
+        "value": "",
+        "label": "Subtitle"
       },
       {
         "component": "richtext",
@@ -1065,7 +1094,7 @@
         "valueType": "string",
         "rootPath": "/content/cq:tags/world-bank/category",
         "description": "Tags for priority card"
-     },
+      },
       {
         "component": "richtext",
         "name": "cardbodytext",
@@ -1081,5 +1110,103 @@
         "multi": false
       }
     ]
-  }
+  },
+  {
+    "id": "leaders-list",
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "leadership-group-name",
+        "label": "Leadership Group",
+        "description": "Select the Leadership Group",
+        "value": "",
+        "required": true,
+        "options": [
+          {
+            "name": "The World Bank (IBRD & IDA)",
+            "value": "ibrd"
+          },
+          {
+            "name": "International Finance Corporation (IFC)",
+            "value": "ifc"
+          },
+          {
+            "name": "Multilateral Investent Guarantee Agency (MIGA)",
+            "value": "miga"
+          },
+          {
+            "name": "International Center For Settlement Of Investment Disputes (ICSID)",
+            "value": "icsid"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bio-detail",
+    "fields": [
+       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "bio-name",
+        "value": "",
+        "label": "Bio Name",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "Job title",
+        "value": "",
+        "label": "Job Title",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "X link",
+        "value": "",
+        "label": "X link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkedin link",
+        "value": "",
+        "label": "Linkedin Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "instagram link",
+        "value": "",
+        "label": "Instagram Link"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "Media Inquiries",
+        "value": "",
+        "label": "Media Inquiries",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "Resources",
+        "value": "",
+        "label": "Resources",
+        "required": true
+      }
+    ]
+  } 
 ]

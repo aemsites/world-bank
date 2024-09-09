@@ -1,9 +1,7 @@
 [
   {
     "id": "main",
-    "components": [
-      "section"
-    ]
+    "components": ["section"]
   },
   {
     "id": "columns",
@@ -11,13 +9,7 @@
   },
   {
     "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "teaser"
-    ]
+    "components": ["text", "image", "button", "title", "teaser"]
   },
   {
     "id": "section",
@@ -31,56 +23,47 @@
       "columns",
       "data-cards",
       "curated-cards",
-      "explore-cards",     
+      "explore-cards",
       "mini-cards",
       "research-publications-cards",
       "live-now",
       "signup",
       "teaser",
       "tabs",
-      "priority-list"
+      "priority-list",
+      "leaders-list",
+      "bio-detail"
     ]
   },
   {
     "id": "cards",
-    "components": [
-      "card"
-    ]
+    "components": ["card"]
   },
   {
     "id": "curated-cards",
-    "components": [
-      "curated-card"
-    ]
+    "components": ["curated-card"]
   },
   {
     "id": "explore-cards",
-    "components": [
-      "explore-card"
-    ]
+    "components": ["explore-card"]
   },
   {
     "id": "data-cards",
-    "components": [
-      "data-card",
-      "news-card"
-    ]
+    "components": ["data-card", "news-card"]
   },
   {
     "id": "mini-cards",
-    "components": [
-      "mini-card"
-    ]
+    "components": ["mini-card"]
   },
   {
     "id": "research-publications-cards",
-    "components": [
-      "research-publications-card"
-    ]
+    "components": ["research-publications-card"]
   },
   {
     "id": "tabs",
-    "components": ["tab"]
+    "components": [
+      "tab"
+    ]
   },
   {
     "id": "priority-list",
