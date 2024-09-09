@@ -1036,7 +1036,7 @@
         "valueType": "string",
         "name": "title",
         "value": "",
-        "label": "Heading",
+        "label": "Tab Name",
         "required": true
       },
       {
@@ -1115,13 +1115,31 @@
     "id": "leaders-list",
     "fields": [
       {
-        "component": "text",
+        "component": "select",
         "valueType": "string",
-        "name": "listFragmentPath",
-        "label": "List Fragment Path",
-        "description": "Root path of the page rendering list of Leaders using spreadsheet",
+        "name": "leadership-group-name",
+        "label": "Leadership Group",
+        "description": "Select the Leadership Group",
         "value": "",
-        "required": true
+        "required": true,
+        "options": [
+          {
+            "name": "The World Bank (IBRD & IDA)",
+            "value": "ibrd"
+          },
+          {
+            "name": "International Finance Corporation (IFC)",
+            "value": "ifc"
+          },
+          {
+            "name": "Multilateral Investent Guarantee Agency (MIGA)",
+            "value": "miga"
+          },
+          {
+            "name": "International Center For Settlement Of Investment Disputes (ICSID)",
+            "value": "icsid"
+          }
+        ]
       }
     ]
   },
