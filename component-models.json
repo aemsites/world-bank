@@ -1218,7 +1218,7 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "cards",
+        "name": "card",
         "value": ""
       }
     ]

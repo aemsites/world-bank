@@ -70,6 +70,6 @@
   },
   {
     "id": "carousel",
-    "components": ["cards"]
+    "components": ["card"]
   }
 ]
