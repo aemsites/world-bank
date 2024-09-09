@@ -71,7 +71,7 @@
 }
 
 .organizational-card.collapsed .expand-btn {
-  display: block;
+  display: flex;
   visibility: visible;
 }
 
@@ -83,6 +83,7 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  margin-top: 340px;
 }
 
 .organizational-card .card-title {
