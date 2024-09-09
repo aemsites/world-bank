@@ -72,7 +72,6 @@
   letter-spacing: -0.015em;
   text-align: left;
   font-style: normal;
-  /* align-self: stretch; */
 }
 
 .cards.profile-summary .cards-card-body p {
@@ -83,7 +82,6 @@
   letter-spacing: -0.25px;
   text-align: left;
   text-wrap: wrap;
-  /* align-self: stretch; */
   color: var(--neutrals-a-100);
 }
 
@@ -128,16 +126,19 @@
 
 @media (width >= 1024px) {
   .cards.profile-summary > ul > li {
-    display: flex;
+    grid-template-columns: 1fr 2fr;
   }
 
   .cards.profile-summary .cards-card-body {
-    padding: 127px 80px 135px;
+      padding: 0 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
   }
 
   .cards.profile-summary > ul > li img {
-    height: 100%;
     min-width: 465px;
+    height: 465px;
   }
 
   .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
