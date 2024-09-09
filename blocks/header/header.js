@@ -6,7 +6,7 @@ import { getNavigationMenu, formatNavigationJsonData, closesideMenu } from './na
 import {
   fetchLanguageNavigation,
   fetchLanguagePlaceholders,
-  fetchLangPlaceholderbyFileName,
+  fetchLangDatabyFileName,
 } from '../../scripts/scripts.js';
 import {
   getLanguage,
@@ -228,7 +228,7 @@ async function fetchingPlaceholdersData(placeholdersData) {
 }
 
 async function setTrendingDataAsUrl(tdElement) {
-  const trendingDataJson = await fetchLangPlaceholderbyFileName(constants.TRENDING_DATA_FILENAME);
+  const trendingDataJson = await fetchLangDatabyFileName(constants.TRENDING_DATA_FILENAME);
   const randomTd = trendingDataJson[Math.floor(Math.random() * trendingDataJson.length)];
   tdElement.textContent = randomTd.Text;
   return a({ href: randomTd.Link, target: '_blank' }, tdElement);
