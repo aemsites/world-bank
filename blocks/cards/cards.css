@@ -26,7 +26,7 @@
 
 .cards:not(.profile-summary) > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
@@ -47,7 +47,7 @@
 
 .cards.profile-summary .cards-card-body {
   background: var(--neutrals-20);
-  padding: var(--xlarge) var(--large);
+  padding: 28px 40px;
   border-radius: 0 0 10px 10px;
 }
 
@@ -60,58 +60,97 @@
 }
 
 .cards.profile-summary .cards-card-body p.button-container {
-  margin-top: var(--regular);
+  margin-top: 24px;
 }
 
 .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
-  font-size: var(--h1-base);
-  line-height: 33px;
+  font-size: 28px;
+  line-height: 28px;
   margin-bottom: 20px;
   margin-top: 0;
   font-weight: 700;
+  letter-spacing: -0.015em;
+  text-align: left;
+  font-style: normal;
+  align-self: stretch;
 }
 
 .cards.profile-summary .cards-card-body p {
-  font-size: var(--body-large);
+  font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   margin: 0;
+  letter-spacing: -0.25px;
+  text-align: left;
+  align-self: stretch;
+  color: var(--neutrals-a-100);
 }
 
 .cards.profile-summary .cards-card-body p > a {
   line-height: 19px;
+  margin: 0;
 }
 
 .cards.profile-summary > ul > li img {
   width: 100%;
-  min-height: 320px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  min-height: 334px;
+  aspect-ratio: 1 / 1;
   border-radius: 10px 10px 0 0;
 }
 
 @media (width >= 768px) {
   .cards.profile-summary > ul > li {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 252px auto;
   }
 
   .cards.profile-summary > ul > li img {
-    min-width: 252px;
+    width: 100%;
     min-height: 358px;
     border-radius: 10px 0 0 10px;
   }
 
   .cards.profile-summary .cards-card-body {
     border-radius: 0 10px 10px 0;
+    padding: 32px 40px;
+    /* max-height: 358px; */
+  }
+
+  .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+    line-height: 36px;
+    margin-bottom: 24px;
+    font-size: 36px;
+  }
+
+  .cards.profile-summary .cards-card-body p.button-container {
+    margin-top: 28px;
   }
 }
 
 @media (width >= 1024px) {
   .cards.profile-summary > ul > li {
-    grid-template-columns: auto auto;
+    grid-template-columns: 465px auto;
+  }
+
+  .cards.profile-summary .cards-card-body {
+    padding: 127px 80px 135px;
   }
 
   .cards.profile-summary > ul > li img {
-    max-width: 464px;
+    min-height: 465px;
+  }
+
+  .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+    line-height: 48px;
+    margin-bottom: 20px;
+    font-size: 48px;
+  }
+
+  .cards.profile-summary .cards-card-body p {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  
+  .cards.profile-summary .cards-card-body p.button-container {
+    margin-top: 40px;
   }
 }
