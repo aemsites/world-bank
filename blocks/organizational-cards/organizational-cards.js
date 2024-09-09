@@ -39,13 +39,25 @@ export default async function decorate(block) {
     expandBtn.appendChild(plusIcon);
     acronymEl.appendChild(expandBtn);
     acronymEl.appendChild(collapseBtn);
-  })
+    ['click', 'keydown'].forEach((trigger) => {
+      collapseBtn.addEventListener(trigger, (event) => {
+        if (trigger === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
+        handleExpandCollapse(event);
+      });
+      expandBtn.addEventListener(trigger, (event) => {
+        if (trigger === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
+        handleExpandCollapse(event);
+      });
+    });
+  });
 }
 
 function collapseCard() {
 
 }
 
-function expandCard() {
-
+function handleExpandCollapse(event) {
+  const button = event.target;
+  const card = button.closest('.organizational-card');
+  card.classList.toggle('collapsed');
 }
