@@ -63,14 +63,6 @@
   margin-top: var(--regular);
 }
 
-/* .cards.profile-summary .cards-card-body > *:first-child {
-  font-size: var(--h1-base);
-  line-height: 33px;
-  margin-bottom: 20px;
-  margin-top: 0;
-  font-weight: 700;
-} */
-
 .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
   font-size: var(--h1-base);
   line-height: 33px;
@@ -78,10 +70,6 @@
   margin-top: 0;
   font-weight: 700;
 }
-
-/* .cards.profile-summary .cards-card-body > *:first-child strong {
-  font-weight: 700;
-} */
 
 .cards.profile-summary .cards-card-body p {
   font-size: var(--body-large);
