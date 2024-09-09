@@ -40,7 +40,7 @@
   color: var(--color-white);
   font-weight: 700;
   text-align: left;
-  transition: width 0.5s linear;
+  transition: width 0.5s, height 1s linear;
 }
 
 .organizational-card:not(last-child) {
@@ -65,6 +65,12 @@
   background: var(--primary-blue-102);
   border: 1px solid var(--primary-blue-50);
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.organizational-card .expand-btn:hover, .organizational-card .collapse-btn:hover {
+  background: var(--primary-blue-50);
+  border: 1px solid var(--primary-blue-102);
 }
 
 .organizational-card .card-acronym {
@@ -98,14 +104,14 @@
 }
 
 .organizational-card > .card-link-wrapper > .button-container {
-  padding-bottom: var(--spacing-64);
+  padding-bottom: var(--spacing-80);
 }
 
 .organizational-card a.button.card-link {
   height: 24px;
   line-height: var(--size-24);
   font-size: var(--size-14);
-  border-bottom: 2px solid rgba(0 57 107 / 24%);
+  border-bottom: 2px solid rgba(255 255 255 / 24%);
   border-radius: unset;
   background-color: unset;
   padding: 0 0 var(--spacing-32) 0;
