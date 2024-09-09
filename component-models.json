@@ -1208,5 +1208,16 @@
         "required": true
       }
     ]
-  } 
+  },
+  {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "boolean",
+        "label": "Enable Breadcrumb",
+        "name": "enableBreadcrumb",
+        "valueType": "boolean"
+      }
+    ]
+  }
 ]
