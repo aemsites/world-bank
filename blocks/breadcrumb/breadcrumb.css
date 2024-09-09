@@ -1,0 +1,33 @@
+main .breadcrumb-wrapper ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main .breadcrumb-wrapper ol li {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--body-small);
+  color: var(--primary-blue-70);
+}
+
+main .breadcrumb-wrapper li:not(:last-child)::after {
+  content: '|';
+  padding: 0 7px;
+}
+
+main .breadcrumb-wrapper a {
+  font-size: var(--body-small);
+  line-height: 1.4;
+  color: var(--primary-blue-70);
+  text-decoration: none;
+}
+
+main .breadcrumb-wrapper a:visited {
+  color: var(--primary-blue-70);
+  text-decoration: none;
+}
