@@ -22,7 +22,7 @@ export default async function decorate(block) {
     segments += (index !== pathSegments.length - 1) ? `${page}/` : `${page}`;
     const crumb = document.createElement('li');
     crumb.className = 'crumb';
-    if(!page) {
+    if (!page) {
       const homeSvg = `${window.hlx.codeBasePath}/icons/home.svg`;
       const homeLink = `<a href='${segments}' title='Home'><img src='${homeSvg}' alt='Home'>
                                       </img></a>`;
@@ -34,7 +34,7 @@ export default async function decorate(block) {
       anchor.appendChild(anchorText);
       anchor.href = segments;
       anchor.title = label;
-      crumb.append(anchor)
+      crumb.append(anchor);
     }
     list.append(crumb);
   });
