@@ -84,7 +84,7 @@
   .right-column-container
   .cards-container
   > div:not(div:last-child) {
-  border-left: 2px solid rgb(235 230 230 / 81.5%);
+  border-left: 3px solid var(--neutrals-20);
 }
 
 .priority-list-wrapper
