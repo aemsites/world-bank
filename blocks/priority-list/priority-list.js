@@ -53,15 +53,12 @@ export default async function decorate(block) {
 
   window.addEventListener('scroll', () => {
     const image = leftColumnContainer.querySelector('.image-container');
-    if (image.getBoundingClientRect().top >= 0) {
+    if (image.getBoundingClientRect().top === 100) {
       let prevmin;
       let prevval;
       cards.forEach((card, index) => {
         const curtop = card.getBoundingClientRect().top;
-        if (
-          image.getBoundingClientRect().top
-          >= card.getBoundingClientRect().top - 400
-        ) {
+        if (image.getBoundingClientRect().top >= curtop - 150) {
           if (index === 0) {
             prevmin = curtop;
             prevval = index;
@@ -76,12 +73,15 @@ export default async function decorate(block) {
           image.style.backgroundImage = `url(${card.querySelector('img').src})`;
         }
       });
-    } else if (image.getBoundingClientRect().top === 100) {
+    } else if (image.getBoundingClientRect().top >= 0) {
       let prevmin;
       let prevval;
       cards.forEach((card, index) => {
         const curtop = card.getBoundingClientRect().top;
-        if (image.getBoundingClientRect().top >= curtop - 150) {
+        if (
+          image.getBoundingClientRect().top
+          >= card.getBoundingClientRect().top - 400
+        ) {
           if (index === 0) {
             prevmin = curtop;
             prevval = index;
