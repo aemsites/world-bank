@@ -24,7 +24,7 @@
 }
 
 .explore-card-container {
-    display: grid; 
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: var(--medium);
     width: calc(100vw - 68px);
