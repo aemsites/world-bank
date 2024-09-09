@@ -406,8 +406,9 @@
     .carddesc
     ul {
     flex-flow: row wrap;
-    column-gap: 48px;
+    column-gap: 30px;
     padding-bottom: 48px;
+    justify-content: space-between;
   }
 
   .priority-list-wrapper
@@ -418,6 +419,7 @@
     .carddesc
     ul
     li {
-    width: 40%;
+        padding-left: 4px;
+    width: 45%;
   }
 }
