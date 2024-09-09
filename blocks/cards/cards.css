@@ -110,4 +110,8 @@
   .cards.profile-summary > ul > li {
     grid-template-columns: auto auto;
   }
+
+  .cards.profile-summary > ul > li img {
+    width: 464px;
+  }
 }
