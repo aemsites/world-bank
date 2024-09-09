@@ -625,7 +625,7 @@
                     "name": "Card",
                     "model": "card",
                     "image": "/content/dam/world-bank/sample/placeholder-black.png",
-                    "text": "<h3>Lorem Ipsum</h3><p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p><p class = 'button-container'><a href='#'>Read Bio</a></p>"
+                    "text": "<p>Explore History - essential data to learn about the important moments in the history of the World Bank while discovering the gems of the World Bank Group Archives</p>"
                   }
                 }
               }
