@@ -72,7 +72,7 @@
   letter-spacing: -0.015em;
   text-align: left;
   font-style: normal;
-  align-self: stretch;
+  /* align-self: stretch; */
 }
 
 .cards.profile-summary .cards-card-body p {
@@ -82,7 +82,8 @@
   margin: 0;
   letter-spacing: -0.25px;
   text-align: left;
-  align-self: stretch;
+  text-wrap: wrap;
+  /* align-self: stretch; */
   color: var(--neutrals-a-100);
 }
 
@@ -112,7 +113,6 @@
   .cards.profile-summary .cards-card-body {
     border-radius: 0 10px 10px 0;
     padding: 32px 40px;
-    /* max-height: 358px; */
   }
 
   .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
@@ -128,7 +128,7 @@
 
 @media (width >= 1024px) {
   .cards.profile-summary > ul > li {
-    grid-template-columns: 465px auto;
+    display: flex;
   }
 
   .cards.profile-summary .cards-card-body {
@@ -136,7 +136,8 @@
   }
 
   .cards.profile-summary > ul > li img {
-    min-height: 465px;
+    height: 100%;
+    min-width: 465px;
   }
 
   .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
