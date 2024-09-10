@@ -19,7 +19,7 @@
 }
 
 .organizational-cards.block .bg-wrapper > .bg-overlay {
-  background: linear-gradient(178.99deg, rgba(1, 39, 64, 0) 13.68%, #012740 79.86%);
+  background: linear-gradient(178.99deg, rgba(1 39 64 / 0%) 13.68%, #012740 79.86%);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -292,6 +292,8 @@
 
   .organizational-card.collapsed {
     padding: var(--spacing-32) 0 var(--spacing-32) 0;
+    line-height: unset;
+    padding-top: 32px;
   }
 
   .organizational-card.collapsed > .collapse-btn, .organizational-card.collapsed > .expand-btn {
@@ -302,11 +304,6 @@
   .organizational-card:not(.collapsed) {
     min-height: 224px;
     max-height: 224px;
-  }
-
-  .organizational-card.collapsed {
-    line-height: unset;
-    padding-top: 32px;
   }
 
 }
