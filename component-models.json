@@ -57,7 +57,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "fileReferenceAlt",
+        "name": "filereferenceAlt",
         "value": "",
         "label": "Alt Text"
       }
