@@ -262,7 +262,7 @@
 
   .organizational-card .card-title {
     display: inline-block;
-    width: 85%;
+    width: fit-content;
     border-bottom: unset;
     height: fit-content;
     line-height: 19px;
