@@ -33,6 +33,7 @@
       "priority-list",
       "leaders-list",
       "bio-detail",
+      "carousel",
       "organizational-cards"
     ]
   },
@@ -69,6 +70,10 @@
   {
     "id": "priority-list",
     "components": ["priority-item"]
+  },
+  {
+    "id": "carousel",
+    "components": ["card"]
   },
   {
     "id": "organizational-cards",
