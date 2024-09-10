@@ -80,7 +80,7 @@
 
 .organizational-card .collapse-btn {
   position: absolute;
-  top: 250px;
+  top: 200px;
   right: 32px;
 }
 
@@ -113,6 +113,7 @@
   font-size: var(--size-16);
   font-weight: 400;
   line-height: var(--size-24);
+  min-height: 104px;
 }
 
 .organizational-card .card-link-wrapper {

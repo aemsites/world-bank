@@ -19,6 +19,9 @@ export default async function decorate(block) {
   picEl.appendChild(gradOverlayEl);
 
   [...cards].forEach((card) => {
+    const contentWrapper = document.createElement('div');
+    contentWrapper.classList.add('card-content-wrapper');
+
     card.classList.add('organizational-card', 'collapsed');
     const acronymEl = card.children[0];
     acronymEl.classList.add('card-acronym');
@@ -52,5 +55,10 @@ export default async function decorate(block) {
         handleExpandCollapse(event);
       });
     });
+
+    while (card.firstChild) {
+      contentWrapper.appendChild(card.firstChild);
+    }
+
   });
 }
