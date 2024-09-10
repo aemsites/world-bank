@@ -226,6 +226,10 @@
     padding: unset;
   }
 
+  .organizational-card > .card-content-wrapper {
+    max-height: 100%;
+  }
+
   .organizational-card:not(last-child) {
     border-bottom: 1px solid white;
   }
