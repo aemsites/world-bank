@@ -167,7 +167,7 @@
   width: 100%;
 }
 
-@media (width <=1024px) {
+@media (width < 1024px) {
   .organizational-cards.block {
     width: 100%;
     padding: 0 var(--spacing-32) 0 var(--spacing-32);
@@ -271,7 +271,7 @@
 
 }
 
-@media (width <= 768px) {
+@media (width < 768px) {
   .organizational-cards.block {
     width: 100%;
     padding: 0 var(--spacing-32) 0 var(--spacing-32);
