@@ -194,7 +194,7 @@
 
 }
 
-@media (width < 1130) {
+@media (width < 1130px) {
   .organizational-card.collapsed .card-title {
     min-height: 110px;
   }
@@ -264,7 +264,7 @@
     line-height: 19px;
   }
 
-  .organizational-card .expand-btn:hover, .organizational-card .collapse-btn:hover {
+  .organizational-card .card-content-wrapper .expand-btn:hover, .organizational-card .card-content-wrapper .collapse-btn:hover {
     background: var(--primary-blue-50);
     border: 1px solid var(--primary-blue-102);
   }
@@ -339,7 +339,7 @@
   .organizational-card.collapsed .expand-btn {
     top: calc(50% - 16px);
   }
-  
+
   .organizational-card:not(.collapsed) {
     min-height: 224px;
     max-height: 224px;
