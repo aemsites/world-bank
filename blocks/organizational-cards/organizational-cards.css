@@ -1,3 +1,8 @@
+.organizational-cards-wrapper {
+  padding: 0;
+  max-width: 1600px;
+}
+
 .organizational-cards.block {
   height: 560px;
   width: 100%;
@@ -52,6 +57,11 @@
   position: relative;
 }
 
+.organizational-card p {
+  margin: unset;
+  padding: unset;
+}
+
 .organizational-card > .card-content-wrapper {
   height: fit-content;
   position: relative;
@@ -102,6 +112,7 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  margin-bottom: var(--spacing-12);
 }
 
 .organizational-card .card-title {
@@ -110,6 +121,7 @@
   border-bottom: 2px solid var(--primary-blue-50);
   min-height: 70px;
   width: 100%;
+  margin-bottom: var(--spacing-12);
 }
 
 .organizational-card .card-mission {
@@ -117,6 +129,7 @@
   font-weight: 400;
   line-height: var(--size-24);
   min-height: 104px;
+  margin-top: var(--spacing-24);
 }
 
 .organizational-card .card-link-wrapper {
@@ -209,11 +222,6 @@
     flex-direction: column;
   }
   
-  .organizational-cards.block p {
-    margin: unset;
-    padding: unset;
-  }
-  
   .organizational-cards.block .bg-wrapper {
     display: none;
     visibility: hidden;
@@ -247,7 +255,7 @@
     top: 8px;
   }
 
-  .organizational-card .expand-btn {
+  .organizational-card:not(.collapsed) .expand-btn {
     display: none;
     visibility: hidden;
   }
