@@ -1,4 +1,4 @@
-.organizational-cards-wrapper {
+main .section > div.organizational-cards-wrapper {
   padding: 0;
   max-width: 1600px;
 }
