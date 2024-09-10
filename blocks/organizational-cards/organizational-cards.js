@@ -59,6 +59,7 @@ export default async function decorate(block) {
     while (card.firstChild) {
       contentWrapper.appendChild(card.firstChild);
     }
+    card.appendChild(contentWrapper);
 
   });
 }
