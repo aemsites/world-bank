@@ -239,6 +239,10 @@
     margin-right: unset;
   }
 
+  .organizational-card.collapsed:last-child {
+    border-bottom: unset;
+  }
+
   .organizational-card:not(.collapsed) {
     padding-top: 32px;
     min-height: 224px;
