@@ -1047,11 +1047,13 @@
         "required": true
       },
       {
-        "component": "text",
+        "component": "aem-content",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
-        "label": "Fragment Path"
+        "label": "Fragment Path",
+        "rootPath": "",
+        "description": "Path to Fragment"
       }
     ]
   },
