@@ -195,7 +195,7 @@ function createSearchBox() {
     });
 
     Object.assign(searchInputBox, {
-      type: 'search',
+      type: 'text',
       id: 'search-input',
       name: 'myInput',
       placeholder: listOfAllPlaceholdersData.searchVariable,
