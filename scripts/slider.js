@@ -2,7 +2,7 @@ import {
   loadCSS,
 } from './aem.js';
 
-loadCSS(`${window.hlx.codeBasePath}/styles/carousel.css`);
+loadCSS(`${window.hlx.codeBasePath}/styles/slider.css`);
 
 // Handling Next / Previous Arrow Image
 function arrowIcon(props) {
@@ -23,7 +23,7 @@ function arrow(props) {
   return anchor;
 }
 
-export default async function createCarousel(block) {
+export default async function createSlider(block) {
   const nextBtn = 'next';
   const prevBtn = 'prev';
   block.append(arrow(`${nextBtn}`));
@@ -31,12 +31,12 @@ export default async function createCarousel(block) {
 
   // Call function after page load
   window.setTimeout(() => {
-    const carouselItems = document.querySelector('.cards > ul');
+    const carouselItems = document.querySelector('.carousel > ul');
     const totalItems = carouselItems.children.length || 1;
     const moveRightBtn = document.querySelector(`.${nextBtn}`);
     const moveLeftBtn = document.querySelector(`.${prevBtn}`);
     const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10);
-    const itemList = [...document.querySelectorAll('.cards > ul > li')];
+    const itemList = [...document.querySelectorAll('.carousel > ul > li')];
     const observerOptions = {
       rootMargin: '0px',
       threshold: 0.25,
