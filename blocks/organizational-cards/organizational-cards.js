@@ -56,10 +56,10 @@ export default async function decorate(block) {
       });
     });
 
+    // move card children to content wrapper
     while (card.firstChild) {
       contentWrapper.appendChild(card.firstChild);
     }
     card.appendChild(contentWrapper);
-
   });
 }
