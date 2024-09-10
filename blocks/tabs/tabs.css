@@ -11,7 +11,7 @@
   overflow-x: auto;
   align-items: center;
   gap: 30px;
-  border-bottom: 2px solid var(--neutrals-20);
+  border-bottom: 2px solid var(--neutral-solid-10-s);
 }
 
 .tabs .tabs-list::-webkit-scrollbar {
@@ -23,14 +23,14 @@
   background-color: transparent; /* Set background as transparent */
   padding: 0 1px;
   transition: color 0.2s;
-  color: var(--primary-blue-70);
+  color: var(--blue-70);
   border-radius: 0;
   border-bottom: 5px solid transparent;
   margin: 0;
 }
 
 .tabs .tabs-list .tabs-tab[aria-selected="true"]{
-  color: var(--neutrals-101);
+  color: var(--neutral-solid-90-s);
   border-bottom: 5px solid #00ADE4;
   cursor: initial;
   line-height: 140%;

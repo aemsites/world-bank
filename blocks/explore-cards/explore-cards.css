@@ -9,14 +9,14 @@
 }
 
 .story-type p {
-    font-size: var(--body-tiny);
+    font-size: var(--font-size-100);
     font-weight: 700;
     line-height: 13.2px;
     letter-spacing: 0.06em;
 }
 
 .card-title p {
-    font-size: var(--body-huge);
+    font-size: var(--font-size-600);
     font-weight: 700;
     line-height: 24px;
     margin-top: 12px;
@@ -26,7 +26,7 @@
 .explore-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--medium);
+    gap: var(--spacing-medium);
     width: calc(100vw - 68px);
     overflow-x: scroll;
     scrollbar-width: none;
@@ -84,7 +84,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: var(--xlarge);
+    padding: var(--spacing-xlarge);
     background: linear-gradient(180deg, rgb(1 39 64 / 0%) 39.98%, #012740 78.99%);
     color: var(--color-white);
     z-index: 1;
@@ -92,7 +92,7 @@
 }
 
 .story-type {
-    font-size: var(--body-tiny);
+    font-size: var(--font-size-100);
     font-weight: 700;
     line-height: 13.2px;
     letter-spacing: 0.06em;
@@ -114,7 +114,7 @@
 
     .card-title p {
         margin-top: 16px;
-        font-size: var(--body-huge);
+        font-size: var(--font-size-600);
         margin-bottom: 0;
     }
 

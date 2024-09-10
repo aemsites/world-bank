@@ -6,7 +6,7 @@
 
 .curated-cards .feature-card picture {
   display: flex;
-  background: linear-gradient(1.27deg, var(--primary-blue-100) 5.95%, #0127400f 52.78%);
+  background: linear-gradient(1.27deg, var(--blue-90) 5.95%, #0127400f 52.78%);
 }
 
 .curated-cards .feature-card picture img {
@@ -28,7 +28,7 @@
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-heading {
-  font-size: var(--h1-base);
+  font-size: var(--font-size-1100);
   margin: 0 0 10px;
   line-height: 58px;
   font-weight: 700;
@@ -39,16 +39,16 @@
   right: 20px;
   bottom: 20px;
   padding: 10px 20px;
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   width: 182px;
   height: 55px;
   background: var(--color-white);
   border-radius: 100px;
-  color: var(--primary-blue-80);
+  color: var(--blue-70);
 }
 
 .curated-cards.list {
-  background-color: var(--primary-blue-100);
+  background-color: var(--blue-90);
   border-radius: 0 0 10px 10px;
   padding: 25px;
   padding-block-start: 0;
@@ -102,7 +102,7 @@
 .curated-cards.list ul li .curated-cards-card-text-wrapper p {
   margin: 0;
   font-weight: 700;
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   line-height: 140%;
   color: var(--color-white); 
 }
@@ -113,10 +113,10 @@
 
 .curated-cards.list ul li .curated-cards-card-text-wrapper .curated-cards-card-event {
   font-weight: 700;
-  font-size: var(--body-tiny);
+  font-size: var(--font-size-100);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--neutrals-50);
+  color: var(--neutral-solid-40-s);
   margin-top: 15px;
 }
 

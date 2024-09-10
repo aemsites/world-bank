@@ -35,7 +35,7 @@
 }
 
 .cards:not(.profile-summary) {
-  padding: var(--large) var(--xlarge) 0;
+  padding: var(--spacing-large) var(--spacing-xlarge) 0;
 }
 
 /* Profile View Styles */
@@ -46,7 +46,7 @@
 }
 
 .cards.profile-summary .cards-card-body {
-  background: var(--neutrals-20);
+  background: var(--neutral-solid-10-s);
   padding: 28px 40px;
   border-radius: 0 0 10px 10px;
 }
@@ -82,7 +82,7 @@
   letter-spacing: -0.25px;
   text-align: left;
   text-wrap: wrap;
-  color: var(--neutrals-a-100);
+  color: var(--neutral-alpha-95-a);
 }
 
 .cards.profile-summary .cards-card-body p > a {

@@ -42,7 +42,7 @@
 }
 
 .columns.columns-transform-teaser > div p:nth-child(1) {
-  font-size: var(--h2-base);
+  font-size: var(--font-size-1000);
   text-transform: uppercase;
   margin-top: 40px;
   margin-bottom: 16px;
@@ -65,7 +65,7 @@
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a {
   background-color: var(--color-white);
-  color: var(--primary-blue-100);
+  color: var(--blue-90);
   font-size: 16px;
   margin: 0;
   padding: 11px 27px;
@@ -132,12 +132,12 @@
 }
 
 .columns.columns-divider-variant > div > div:first-child > p {
-  font-size: var(--body-huge);
+  font-size: var(--font-size-600);
 }
 
 .columns.columns-feature-card > div > div > p:first-child {
   font-family: var(--heading-font-family);
-  font-size: var(--h2-large);
+  font-size: var(--font-size-1000);
   line-height: 31px;
   margin-top: 0;
   margin-bottom: 24px;
@@ -163,7 +163,7 @@
 
 .columns.columns-feature-card .columns-feature-card-description {
   font-family: var(--heading-font-family);
-  font-size: var(--body-large);
+  font-size: var(--font-size-500);
   line-height: 125%;
   letter-spacing: -0.25px;
   font-weight: 400;
@@ -205,7 +205,7 @@
 }
 
 .columns.columns-divider-variant > div > div:last-child {
-  border-left: 2px solid var(--neutrals-20);
+  border-left: 2px solid var(--neutral-solid-10-s);
   padding-left: 10px;
 }
 
@@ -244,13 +244,13 @@
         "thumbnail description";
     position: relative;
     column-gap: 28px;
-    margin-bottom: var(--xhuge);
+    margin-bottom: var(--spacing-xhuge);
   }
 
   .columns.columns-feature-card > div > div > p:first-child {
     line-height: 112%;
     grid-area: title;
-    margin-bottom: var(--large);
+    margin-bottom: var(--spacing-large);
   }
 
   .columns.columns-feature-card .columns-feature-card-thumbnail {
@@ -371,13 +371,13 @@
   }
 
   .columns.columns-feature-card > div > div > p:first-child {
-    font-size: var(--h2-base);
+    font-size: var(--font-size-1000);
     line-height: 44px;
     min-height: 132px;
   }
 
   .columns.columns-feature-card .columns-feature-card-thumbnail {
-    margin-bottom: var(--large);
+    margin-bottom: var(--spacing-large);
   }
 
   .columns.columns-feature-card .button-container a.button {
@@ -448,22 +448,22 @@
 .columns.columns-image-right>div>div:nth-child(1),
 .columns.columns-image-left>div>div:nth-child(2) {
   p:nth-child(1) {
-    font-size: var(--body-small);
+    font-size: var(--font-size-200);
     line-height: 110%;
     margin: 0;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--neutrals-70);
+    color: var(--neutral-solid-60-s);
     font-weight: 800;
   }
 
   p:nth-child(2) {
     margin: 15px 0;
     font-weight: 700;
-    font-size: var(--h2-base);
+    font-size: var(--font-size-1000);
     line-height: 31px;
     text-transform: uppercase;
-    color: var(--primary-blue-80);
+    color: var(--blue-70);
 
     strong {
       font-weight: 400;
@@ -478,7 +478,7 @@
   }
 
   p:nth-child(2) {
-    font-size: var(--body-small);
+    font-size: var(--font-size-200);
     font-weight: 400;
     line-height: 16.8px;
     margin-top: 0;
@@ -514,7 +514,7 @@
 
   .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
   .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
-    font-size: var(--h2-base);
+    font-size: var(--font-size-1000);
     line-height: 44px;
   }
 
@@ -540,7 +540,7 @@
   
   .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
   .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2) {
-        font-size: var(--h2-base);
+        font-size: var(--font-size-1000);
         line-height: 44px;
   }
 }

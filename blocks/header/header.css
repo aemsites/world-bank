@@ -36,7 +36,7 @@ header nav {
   padding: 0 0 calc(var(--nav-padding) - 2px);
   gap: 20px;
   position: relative;
-  border-bottom: 2px solid var(--neutrals-20);
+  border-bottom: 2px solid var(--neutral-solid-10-s);
 }
 
 .homepage header nav {
@@ -70,7 +70,7 @@ header .nav-menu-overlay.open {
 }
 
 header .nav-menu-overlay .nav-menu {
-  background-color: var(--primary-blue-100);
+  background-color: var(--blue-90);
   min-height: 100%;
   background-image: url("../../icons/swoosh/type4/default-m.svg");
   background-repeat: no-repeat;
@@ -80,7 +80,7 @@ header .nav-menu-overlay .nav-menu {
   overflow: visible scroll;
   padding: 100px 30px;
   max-width: 1456px;
-  color: var(--neutrals-40);
+  color: var(--neutral-solid-30-s);
 }
 
 /** Lanaguge Selector CSS **/
@@ -100,7 +100,7 @@ header .nav-menu-overlay .nav-menu {
 }
 
 .nav-item-expanded-active {
-  border: 1px solid var(--neutrals-30);
+  border: 1px solid var(--neutral-solid-15-s);
   border-radius: 5px;
   background: var(--color-white);
 }
@@ -108,7 +108,7 @@ header .nav-menu-overlay .nav-menu {
 /* Dropdown Text */
 .language-toggle {
   padding-bottom: 14px;
-  color: var(--primary-blue-80);
+  color: var(--blue-70);
   font-size: 16px;
   display: inline-flex;
   justify-content: flex-end;
@@ -117,7 +117,7 @@ header .nav-menu-overlay .nav-menu {
 }
 
 .language-text {
-  color: var(--primary-blue-80);
+  color: var(--blue-70);
   font-size: 16px;
   line-height: 22px;
 }
@@ -158,7 +158,7 @@ header .nav-menu-overlay .nav-menu a {
 }
 
 .header .nav-item-content-expanded > ul > li a {
-  color: var(--primary-blue-80);
+  color: var(--blue-70);
   text-decoration: underline;
   display: block;
   font-size: 14px;
@@ -171,7 +171,7 @@ header .nav-menu-overlay .nav-menu a {
 }
 
 header .nav-menu-overlay .nav-menu a:visited {
-  color: var(--neutrals-40);
+  color: var(--neutral-solid-30-s);
 }
 
 header .nav-menu-overlay .nav-menu  .submenu a:hover {
@@ -188,7 +188,7 @@ header .nav-menu-overlay .nav-menu  .submenu a:hover {
 }
 
 .cancel-container {
-  background: var(--primary-blue-50);
+  background: var(--blue-40);
   height: 44px;
   display: flex;
   width: 44px;
@@ -284,7 +284,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span::before {
   border-radius: 20px;
   position: absolute;
   left: 15px;
-  background-color: var(--primary-blue-50);
+  background-color: var(--blue-40);
   transform: rotate(45deg);
   border: 2px;
 }
@@ -297,7 +297,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span {
   position: relative;
   margin-right: 15px;
   margin-bottom: -8px;
-  background-color: var(--primary-blue-102);
+  background-color: var(--blue-120);
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country span {
@@ -317,7 +317,7 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   margin-bottom: 6px;
   margin-left: 8px;
   border-radius: 10px;
-  background-color: var(--neutrals-40);
+  background-color: var(--neutral-solid-30-s);
   border: 1px;
 }
 
@@ -328,7 +328,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span::after {
   top: 20px;
   left: 15px;
   position: absolute;
-  background-color: var(--primary-blue-50);
+  background-color: var(--blue-40);
   border-radius: 20px;
   transform: rotate(-45deg);
   border: 2px;
@@ -343,8 +343,8 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   display: inline-block;
   margin-bottom: 3px;
   transform: rotate(225deg);
-  border-bottom: 3px solid var(--neutrals-40);
-  border-left: 3px solid var(--neutrals-40);
+  border-bottom: 3px solid var(--neutral-solid-30-s);
+  border-left: 3px solid var(--neutral-solid-30-s);
   border-radius: 1px;
 }
 
@@ -379,9 +379,9 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
   text-transform: capitalize;
   position: absolute;
   left: 0;
-  color: var(--neutrals-40);
+  color: var(--neutral-solid-30-s);
   z-index: 2;
-  background-color: var(--primary-blue-102);
+  background-color: var(--blue-120);
 }
 
 header
@@ -412,13 +412,13 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
 
 header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
   font-size: 16px;
-  color: var(--neutrals-40);
+  color: var(--neutral-solid-30-s);
   margin-top: 10px;
   font-family: var(--body-font-family);
   text-transform: none;
   padding-top: 15px;
   min-width: 100%;
-  border-top: 1px solid var(--primary-blue-80);
+  border-top: 1px solid var(--blue-70);
   line-height: 19.2px;
   display: flex;
   flex-direction: column;
@@ -483,7 +483,7 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
   z-index: 5;
   word-wrap: break-word;
   color: var(--color-white);
-  font-size: var(--body-large);
+  font-size: var(--font-size-500);
   font-weight: 700;
   text-align: center;
   top: 40px;
@@ -514,7 +514,7 @@ header
   .nav-menu-column.right
   .browse-country
   input[type="text"] {
-  background-color: var(--primary-blue-80);
+  background-color: var(--blue-70);
   outline: none;
   border: none;
   position: absolute;
@@ -525,8 +525,8 @@ header
 }
 
 .section.nav-sections .default-content-wrapper p {
-  font-size: var(--body-medium);
-  color: var(--primary-blue-80);
+  font-size: var(--font-size-300);
+  color: var(--blue-70);
   text-decoration: underline;
   margin-left: 4px;
 }
@@ -536,7 +536,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country p {
   width: 30px;
   height: 30px;
   top: 55px;
-  background-color: var(--primary-blue-102);
+  background-color: var(--blue-120);
   left: 60vw;
   z-index: 3;
   display: flex;
@@ -695,14 +695,14 @@ header nav .nav-tools {
 
 .section.nav-sections .default-content-wrapper h6 {
   margin: 0;
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   padding: 2.5px 14px 2.5px 0;
-  border-right: 2px solid var(--primary-blue-50);
+  border-right: 2px solid var(--blue-40);
 }
 
 .section.nav-tools .default-content-wrapper h6 {
-  font-size: var(--body-medium);
-  color: var(--primary-blue-80);
+  font-size: var(--font-size-300);
+  color: var(--blue-70);
   margin: 0;
   font-weight: normal;
 }
@@ -745,7 +745,7 @@ header nav .nav-tools {
   z-index: 1;
   width: 100%;
   margin-top: 35px;
-  border-top: 2px solid var(--neutrals-20);
+  border-top: 2px solid var(--neutral-solid-10-s);
 }
 
 .search-input-wrapper {
@@ -796,7 +796,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
-    font-size: var(--h2-base);
+    font-size: var(--font-size-1000);
     font-weight: 700;
     line-height: 54.47px;
     text-align: left;
@@ -826,7 +826,7 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right > .submenu .footer {
     grid-column: 1 / 3;
     display: flex;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--blue-70);
     flex-direction: row;
     align-items: center;
     padding-top: 40px;
@@ -862,7 +862,7 @@ header nav .nav-tools {
     padding-top: 40px;
     grid-column: 1 / 3;
     display: flex;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--blue-70);
     flex-direction: row;
     align-items: start;
     height: 300px;
@@ -886,7 +886,7 @@ header nav .nav-tools {
     .nav-menu-column.right
     .browse-country
     input[type="text"] {
-    background-color: var(--primary-blue-80);
+    background-color: var(--blue-70);
     outline: none;
     border: none;
     position: absolute;
@@ -908,7 +908,7 @@ header nav .nav-tools {
     left: 0;
     top: -15px;
     z-index: 2;
-    background-color: var(--primary-blue-102);
+    background-color: var(--blue-120);
   }
 
   header
@@ -924,7 +924,7 @@ header nav .nav-tools {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: var(--primary-blue-102);
+    background-color: var(--blue-120);
     left: 78vw;
     z-index: 3;
     display: flex;
@@ -1019,7 +1019,7 @@ header nav .nav-tools {
     display: flex;
     gap: 2em;
     margin: 0;
-    font-size: var(--body-tiny);
+    font-size: var(--font-size-100);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -1028,7 +1028,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul {
-    border-right: 1px solid var(--primary-blue-80);
+    border-right: 1px solid var(--blue-70);
     gap: 5px;
     min-width: 340px;
     font-size: 18px;
@@ -1097,7 +1097,7 @@ header nav .nav-tools {
     position: relative;
     padding-top: 40px;
     grid-column: 1 / 3;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--blue-70);
   }
 
   header
@@ -1242,7 +1242,7 @@ header nav .nav-tools {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--blue-70);
   }
 
   header
@@ -1273,7 +1273,7 @@ header nav .nav-tools {
     left: 50px;
     top: -27px;
     z-index: 2;
-    background-color: var(--primary-blue-102);
+    background-color: var(--blue-120);
   }
 
   header
@@ -1283,7 +1283,7 @@ header nav .nav-tools {
     .country-list
     a {
     font-family: var(--body-font-family);
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
     font-weight: 400;
     line-height: 22.4px;
     text-align: left;
@@ -1294,7 +1294,7 @@ header nav .nav-tools {
     width: 30px;
     height: 30px;
     top: 40px;
-    background-color: var(--primary-blue-102);
+    background-color: var(--blue-120);
     left: 54rem;
     z-index: 3;
     display: flex;

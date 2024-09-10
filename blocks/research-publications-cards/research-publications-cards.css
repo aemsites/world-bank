@@ -35,9 +35,9 @@
 }
 
 .cards-container .rp-card .text-content .title {
-  font-size: var(--body-large);
+  font-size: var(--font-size-500);
   line-height: 22px;
-  color: var(--primary-blue-80);
+  color: var(--blue-70);
   font-weight: 700;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .cards-container .rp-card .text-content .desc {
-  font-size: var(--size-16);
+  font-size: 16px;
   line-height: 22px;
   padding: 5px 0 15px;
   border-top: 1px solid #e7edf3;
@@ -58,9 +58,9 @@
 }
 
 .cards-container .rp-card .text-content .card-btn div {
-  font-size: var(--size-16);
+  font-size: 16px;
   line-height: 22px;
-  color: var(--primary-blue-80);
+  color: var(--blue-70);
   font-weight: 700;
   width: fit-content;
   border-bottom: 2px solid #0049724d;
@@ -72,7 +72,7 @@
 
 @media (width >= 1024px) {
   .research-publications-cards a.button{
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
   }
 
   .cards-container {
@@ -101,7 +101,7 @@
   }  
 
   .cards-container .rp-card .text-content .title {
-    font-size: var(--body-huge);
+    font-size: var(--font-size-600);
     line-height: 29px;
   }
 }

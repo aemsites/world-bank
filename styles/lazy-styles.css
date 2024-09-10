@@ -155,11 +155,11 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
     text-align: left;
     line-height: 18px;
     margin: 0 auto;
-    font-size: var(--body-small);
+    font-size: var(--font-size-200);
 }
 
 .cookie-tooltip p > a {
-    font-size: var(--body-small);
+    font-size: var(--font-size-200);
     color: var(--color-white);
     border-bottom: 1px solid var(--color-white);
     text-decoration: none;
@@ -212,17 +212,17 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
 
 @media (width < 768px) {
     .cookie-tooltip p {
-        font-size: var(--body-small);
+        font-size: var(--font-size-200);
         width: 100%;
     }
 
     .cookie-tooltip p > a{
-        font-size: var(--body-small);
+        font-size: var(--font-size-200);
         line-height: 14px;
     }
 
     .cookie-tooltip > .container > button > span {
-        font-size: var(--body-small);
+        font-size: var(--font-size-200);
     }
 
     .cookie-tooltip {
