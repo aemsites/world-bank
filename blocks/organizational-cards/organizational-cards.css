@@ -48,7 +48,7 @@
   color: var(--color-white);
   font-weight: 700;
   text-align: left;
-  transition: width 0.5s, height 1s linear;
+  transition: width 0.5s linear;
   background: rgba(1 39 64 / 90%);
   position: relative;
 }
@@ -176,9 +176,22 @@
 }
 
 @media (width < 1310px) {
+  .organizational-card {
+    width: 300px;
+  }
+
+  .organizational-card .card-acronym {
+    font-size: var(--heading-label-tiny)
+  }
+
   .organizational-card.collapsed {
     padding: 0 var(--spacing-16) 0 var(--spacing-16);
   }
+
+  .organizational-card.collapsed .expand-btn {
+    right: 16px;
+  }
+
 
   .organizational-card.collapsed > .card-title {
     /*min-height: 136px;*/
