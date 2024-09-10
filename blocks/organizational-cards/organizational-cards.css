@@ -345,10 +345,10 @@
     justify-content: center;
   }
 
-  .organizational-card > .collapse-btn, .organizational-card.collapsed > .expand-btn {
+  .organizational-card .collapse-btn, .organizational-card.collapsed .expand-btn {
     top: calc(50% - 16px);
     transform: translate(50%);
-    right: 16px;
+    /*right: 16px;*/
   }
 
   .organizational-card:not(.collapsed) {
