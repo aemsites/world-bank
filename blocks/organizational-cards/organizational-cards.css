@@ -240,8 +240,7 @@
   }
 
   .organizational-card:not(.collapsed) {
-    padding-top: 32px;
-    min-height: 224px;
+    padding: var(--spacing-32) 0 var(--spacing-32) 0;
   }
 
   .organizational-card .collapse-btn {
@@ -266,6 +265,7 @@
     border-bottom: unset;
     height: fit-content;
     line-height: 19px;
+    min-height: unset;
   }
 
 
@@ -317,8 +317,8 @@
 
   .organizational-card:not(.collapsed) {
     padding: var(--spacing-32) 0 var(--spacing-32) 0;
-    min-height: 224px;
-    max-height: 224px;
+    min-height: unset;
+    max-height: unset;
   }
 
   .organizational-card .card-mission {
