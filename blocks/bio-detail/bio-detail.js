@@ -1,14 +1,14 @@
-import { div, img } from "../../scripts/dom-helpers.js";
+import { div, img } from '../../scripts/dom-helpers.js';
 
-import { fetchLanguagePlaceholders } from "../../scripts/scripts.js";
+import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
 function createStructure(firstContainer, secondContainer) {
   const sectionsContainer = div(
-    { class: "sections-container" },
+    { class: 'sections-container' },
     firstContainer,
-    secondContainer
+    secondContainer,
   );
-  document.querySelector(".bio-detail.block").append(sectionsContainer);
+  document.querySelector('.bio-detail.block').append(sectionsContainer);
 }
 
 function createPersonBio(
@@ -19,48 +19,47 @@ function createPersonBio(
   insta,
   profileImage,
   mediaInquiries,
-  resources
+  resources,
 ) {
-  const firstContainer = div({ class: "first-container" });
-  const nameJobSocial = div({ class: "name-job-social" }, bioName, jobTitle);
+  const firstContainer = div({ class: 'first-container' });
+  const nameJobSocial = div({ class: 'name-job-social' }, bioName, jobTitle);
   const linksList = [x, linkedin, insta];
-  const socialMedias = div({ class: "social-media" });
+  const socialMedias = div({ class: 'social-media' });
   linksList.forEach((linkName, i) => {
-    const anchor = document.createElement("a");
+    const anchor = document.createElement('a');
     Object.assign(anchor, {
       href: linkName.textContent,
       title: linkName.textContent,
     });
-    console.log(linkName.textContent, "textcontent is", linkName, i);
-    if (i === 0 && linkName.textContent !== "") {
-      const linkImage = img({ class: "xlink" });
+    if (i === 0 && linkName.textContent !== '') {
+      const linkImage = img({ class: 'xlink' });
       linkImage.src = `${window.hlx.codeBasePath}/icons/ximage.png`;
       anchor.appendChild(linkImage);
-      socialMedias.append(div({ class: "social-media-link" }, anchor));
+      socialMedias.append(div({ class: 'social-media-link' }, anchor));
     } else if (i === 1 && linkName.textContent) {
-      const linkImage = img({ class: "xlink" });
+      const linkImage = img({ class: 'xlink' });
       linkImage.src = `${window.hlx.codeBasePath}/icons/linkedin.png`;
       anchor.appendChild(linkImage);
-      socialMedias.append(div({ class: "social-media-link" }, anchor));
+      socialMedias.append(div({ class: 'social-media-link' }, anchor));
     } else if (i === 2 && linkName.textContent) {
-      const linkImage = img({ class: "xlink" });
+      const linkImage = img({ class: 'xlink' });
       linkImage.src = `${window.hlx.codeBasePath}/icons/insta.png`;
       anchor.appendChild(linkImage);
-      socialMedias.append(div({ class: "social-media-link" }, anchor));
+      socialMedias.append(div({ class: 'social-media-link' }, anchor));
     }
   });
   nameJobSocial.appendChild(socialMedias);
   const nameJobSocialClone = nameJobSocial.cloneNode(true);
   const secondContainer = div(
-    { class: "second-container" },
+    { class: 'second-container' },
     nameJobSocialClone,
-    profileImage
+    profileImage,
   );
 
   const mediaResources = div(
-    { class: "media-resources" },
+    { class: 'media-resources' },
     mediaInquiries,
-    resources
+    resources,
   );
   firstContainer.append(nameJobSocial, mediaResources);
 
@@ -71,11 +70,11 @@ function createPersonBio(
 }
 
 function createResources() {
-  const listItems = document.querySelectorAll(".resources li a");
+  const listItems = document.querySelectorAll('.resources li a');
   listItems.forEach((link) => {
-    const downloadImg = img({ class: "download-image" });
+    const downloadImg = img({ class: 'download-image' });
     downloadImg.src = `${window.hlx.codeBasePath}/icons/download.png`;
-    downloadImg.alt = "download";
+    downloadImg.alt = 'download';
     link.insertBefore(downloadImg, link.firstChild);
   });
 }
@@ -91,26 +90,26 @@ export default async function decorate(block) {
     resources,
   ] = [...block.children];
 
-  profileImage.className = "profile-image";
-  bioName.className = "bio-name";
-  jobTitle.className = "job-title";
-  xLink.className = "x-link";
-  linkedinLink.className = "linkedin-lLink";
-  instaLink.className = "insta-link";
-  mediaInquiries.className = "media-inquiries";
-  resources.className = "resources";
+  profileImage.className = 'profile-image';
+  bioName.className = 'bio-name';
+  jobTitle.className = 'job-title';
+  xLink.className = 'x-link';
+  linkedinLink.className = 'linkedin-lLink';
+  instaLink.className = 'insta-link';
+  mediaInquiries.className = 'media-inquiries';
+  resources.className = 'resources';
 
-  const mediaTargetDiv = document.querySelector(".media-inquiries");
+  const mediaTargetDiv = document.querySelector('.media-inquiries');
   const placeholderData = await fetchLanguagePlaceholders();
   mediaTargetDiv.insertBefore(
-    div({ class: "title" }, placeholderData.biodetailMediaText),
-    mediaTargetDiv.firstChild
+    div({ class: 'title' }, placeholderData.biodetailMediaText),
+    mediaTargetDiv.firstChild,
   );
 
-  const resourcesTargetDiv = document.querySelector(".resources");
+  const resourcesTargetDiv = document.querySelector('.resources');
   resourcesTargetDiv.insertBefore(
-    div({ class: "title" }, placeholderData.biodetailResourcesText),
-    resourcesTargetDiv.firstChild
+    div({ class: 'title' }, placeholderData.biodetailResourcesText),
+    resourcesTargetDiv.firstChild,
   );
 
   createResources();
@@ -122,6 +121,6 @@ export default async function decorate(block) {
     instaLink,
     profileImage,
     mediaInquiries,
-    resources
+    resources,
   );
 }
