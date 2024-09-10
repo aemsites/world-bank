@@ -278,6 +278,13 @@
         "multi": false
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Alternate Text"
+      },
+      {
         "component": "richtext",
         "name": "text",
         "value": "",

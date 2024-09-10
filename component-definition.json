@@ -127,6 +127,7 @@
                     "name": "Card",
                     "model": "card",
                     "image": "/content/dam/world-bank/sample/placeholder-black.png",
+                    "imageAlt": "Alt Text",
                     "text": "<h3>Lorem Ipsum</h3><p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p><p class = 'button-container'><a href='#'>Read Bio</a></p>"
                   }
                 }
