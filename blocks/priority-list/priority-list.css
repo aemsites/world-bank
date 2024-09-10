@@ -257,7 +257,7 @@
 @media (width >=768px) and (width <= 1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0px;
+    gap: 0;
   }
 
   .priority-list-wrapper
