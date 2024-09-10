@@ -275,11 +275,11 @@
     border: 1px solid var(--primary-blue-102);
   }
 
-  .organizational-card > .card-mission {
+  .organizational-card .card-mission {
     margin-bottom: var(--spacing-32);
   }
 
-  .organizational-card > .card-link-wrapper > .button-container {
+  .organizational-card .card-link-wrapper > .button-container {
     padding: unset;
   }
 
@@ -296,6 +296,7 @@
     margin: unset;
   }
 
+  /*
   .organizational-card.collapsed > .card-acronym {
     margin-top: unset;
   }
@@ -304,8 +305,9 @@
     padding: unset;
     margin: unset;
   }
+    */
 
-  .organizational-card.collapsed > .expand-btn {
+  .organizational-card.collapsed .expand-btn {
     top: calc(50% - 16px);
     right: 0;
   }
@@ -345,10 +347,12 @@
     justify-content: center;
   }
 
-  .organizational-card .collapse-btn, .organizational-card.collapsed .expand-btn {
+  .organizational-card.collapsed .expand-btn {
     top: calc(50% - 16px);
-    transform: translate(50%);
-    /*right: 16px;*/
+  }
+
+  .organizational-card .collapse-btn {
+
   }
 
   .organizational-card:not(.collapsed) {
