@@ -5,7 +5,7 @@ import createSlider from '../../scripts/slider.js';
 export default function decorate(block) {
   let i = 0;
   const slider = document.createElement('ul');
-  const left_content = document.createElement('div');
+  const leftContent = document.createElement('div');
   [...block.children].forEach((row) => {
     if (i > 3) {
       const li = document.createElement('li');
@@ -18,12 +18,12 @@ export default function decorate(block) {
       slider.append(li);
     } else {
       if (row.firstElementChild.firstElementChild) {
-        left_content.append(row.firstElementChild.firstElementChild);
+        leftContent.append(row.firstElementChild.firstElementChild);
       }
       if (row.firstElementChild) {
-        left_content.append(row.firstElementChild.firstElementChild || '');
+        leftContent.append(row.firstElementChild.firstElementChild || '');
       }
-      left_content.className = 'default-content-wrapper';
+      leftContent.className = 'default-content-wrapper';
     }
     i += 1;
   });
@@ -34,7 +34,7 @@ export default function decorate(block) {
     img.closest('picture').replaceWith(optimizedPic);
   });
   block.textContent = '';
-  block.parentNode.parentNode.prepend(left_content);
+  block.parentNode.parentNode.prepend(leftContent);
   block.append(slider);
   createSlider(block);
 }
