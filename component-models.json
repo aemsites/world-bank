@@ -50,15 +50,15 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "fileReference",
+        "name": "image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
+        "name": "imageAlt",
+        "value": "",
         "label": "Alt Text"
       }
     ]
@@ -276,6 +276,13 @@
         "name": "image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Alternate Text"
       },
       {
         "component": "richtext",
@@ -1040,11 +1047,13 @@
         "required": true
       },
       {
-        "component": "text",
+        "component": "aem-content",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
-        "label": "Fragment Path"
+        "label": "Fragment Path",
+        "rootPath": "",
+        "description": "Path to Fragment"
       }
     ]
   },
@@ -1206,6 +1215,90 @@
         "value": "",
         "label": "Resources",
         "required": true
+      }
+    ]
+  },
+  {
+    "id": "carousel",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "button",
+        "value": "",
+        "label": "Additional Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "card",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "organizational-cards",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "organizational-card",
+    "fields":[
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "acronym",
+        "label": "Acronym",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mission",
+        "label": "Mission",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Link Text",
+        "multi": false
       }
     ]
   },

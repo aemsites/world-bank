@@ -45,10 +45,10 @@ export default async function decorate(block) {
 
   block.querySelectorAll('[role=tabpanel] a').forEach(async (link) => {
     const path = link ? link.getAttribute('href') : '';
-
     if (path === '') return;
+    const ablosutePath = path.replace('.html', ''); // for rendering fragment on universal editor
     const tabPanel = link.closest('[role=tabpanel]');
-    const fragment = await loadFragment(path);
+    const fragment = await loadFragment(ablosutePath);
 
     // decorate footer DOM
     const content = div({}, fragment);
