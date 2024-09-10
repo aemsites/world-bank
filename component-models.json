@@ -1118,7 +1118,7 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "Job-title",
+        "name": "job-title",
         "value": "",
         "label": "Job Title",
         "required": true
@@ -1155,7 +1155,7 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "Resources",
+        "name": "resources",
         "value": "",
         "label": "Resources",
         "required": true
