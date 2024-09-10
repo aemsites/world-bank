@@ -308,8 +308,9 @@
     .image-container {
     position: sticky;
     top: 100px;
-    width: 310px;
+    width: 341px;
     height: 322px;
+    background-size: contain;
     transition: background-image 200ms linear;
   }
 
@@ -380,7 +381,7 @@
     top: 30px;
     width: 100%;
     background-size: contain;
-    height: 731px;
+    height: 600px;
     transition: background-image 400ms linear;
   }
 
