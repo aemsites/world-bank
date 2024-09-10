@@ -7,8 +7,9 @@
   overflow: hidden;
   position: relative;
   justify-content: space-around;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 0 var(--spacing-32) var(--spacing-80) var(--spacing 32);
+  /*padding-left: 32px;
+  padding-right: 32px;*/
 }
 
 .organizational-cards.block .bg-wrapper {
@@ -90,7 +91,6 @@
 }
 
 
-
 .organizational-card .expand-btn:hover, .organizational-card .collapse-btn:hover {
   background: var(--primary-blue-50);
   border: 1px solid var(--primary-blue-102);
@@ -110,7 +110,7 @@
   font-size: var(--size-14);
   line-height: 17.5px;
   border-bottom: 2px solid var(--primary-blue-50);
-  height: 60px;
+  min-height: 60px;
   width: 100%;
 }
 
@@ -194,15 +194,12 @@
     padding: 0 var(--spacing-16) 0 var(--spacing-16);
   }
 
-  .organizational-card.collapsed .expand-btn {
-    /*right: 16px;*/
+}
+
+@media (width < 1130) {
+  .organizational-card.collapsed .card-title {
+    min-height: 110px;
   }
-
-
-  .organizational-card.collapsed > .card-title {
-    /*min-height: 136px;*/
-  }
-
 }
 
 @media (width < 1024px) {
@@ -243,7 +240,6 @@
   .organizational-card:not(.collapsed) {
     padding-top: 32px;
     min-height: 224px;
-    max-height: 224px;
   }
 
   .organizational-card .collapse-btn {
@@ -277,6 +273,7 @@
 
   .organizational-card .card-mission {
     margin-bottom: var(--spacing-32);
+    min-height: unset;
   }
 
   .organizational-card .card-link-wrapper > .button-container {
@@ -322,8 +319,13 @@
     flex-direction: column;
   }
 
-  .organizational-card > .card-mission {
+  .organizational-card:not(.collapsed) {
+    padding: var(--spacing-32) 0 var(--spacing-32) 0;
+  }
+
+  .organizational-card .card-mission {
     margin: var(--spacing-8) 0 var(--spacing-8) 0;
+    min-height: unset;
   }
 
   .organizational-card .card-acronym {
