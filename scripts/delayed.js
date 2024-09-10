@@ -42,12 +42,12 @@ function cookiePopUp() {
 
   const cookieSection = section({ class: 'cookie-tooltip' });
   const placeholders = window.placeholders[`/${getLanguage()}`] || {};
-  const hasCookieText = `${placeholders && placeholders.cookiePopUpText}`;
+  const hasCookieText = !!(placeholders && placeholders.cookiePopUpText);
   if (!hasCookieText) return;
   const cookieContainer = div(
     { class: 'container' },
     p(
-      `${hasCookieText ? placeholders.cookiePopUpText : 'Alternate Cookie Text'}`,
+      `${placeholders.cookiePopUpText}`,
       a(
         { href: `${placeholders.cookiePopUpLearnMoreLink || '#'}` },
         `${placeholders.cookiePopUpLearnMoreLinkLabel || 'Click Here'}`,

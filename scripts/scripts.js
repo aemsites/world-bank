@@ -183,7 +183,7 @@ export async function fetchLanguageNavigation(langCode) {
  * Return the json for any placeholder file specific to language using filename as argument
  * @returns
  */
-export const fetchLangPlaceholderbyFileName = async (fileName) => {
+export const fetchLangDatabyFileName = async (fileName) => {
   const langCode = getLanguage();
   try {
     const response = await fetch(`/${langCode}/${fileName}.json`);
