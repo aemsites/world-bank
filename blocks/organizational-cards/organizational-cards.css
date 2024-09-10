@@ -80,7 +80,7 @@
   visibility: hidden;
 }
 
-.organizational-card .expand-btn, .organizational-card .collapse-btn {
+.organizational-card.collapsed .expand-btn, .organizational-card .collapse-btn {
   height: 30px;
   width: 30px;
   display: flex;
