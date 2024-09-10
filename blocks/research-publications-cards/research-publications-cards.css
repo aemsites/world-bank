@@ -41,6 +41,10 @@
   font-weight: 700;
 }
 
+.text-content .title div {
+  height: 65px;
+}
+
 .cards-container .rp-card .text-content .title p {
   margin: 0;
 }
