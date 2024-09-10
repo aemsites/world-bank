@@ -47,6 +47,15 @@
   color: var(--primary-blue-80);
 }
 
+.curated-cards .feature-card .feature-card-content button:hover {
+  border: 1px solid var(--primary-blue-50);
+}
+
+.curated-cards .feature-card .feature-card-content button:focus {
+  background-color: var(--primary-blue-20);
+  border: 1px solid var(--primary-blue-80);
+}
+
 .curated-cards.list {
   background-color: var(--primary-blue-100);
   border-radius: 0 0 10px 10px;
@@ -149,8 +158,12 @@
 }
 
 @media (width < 768px) {
+  .curated-cards .feature-card .feature-card-content{
+    padding: 0;
+  }
+  
   .curated-cards .feature-card picture img {
-    max-height: 411px;
+    min-height: 431px;
   }
 
   .curated-cards .feature-card .feature-card-content .feature-card-content-heading {
