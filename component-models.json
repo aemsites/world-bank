@@ -545,6 +545,13 @@
       },
       {
         "component": "text",
+        "name": "data-card-link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
         "valueType": "string",
         "name": "disclaimer",
         "value": "",
@@ -564,11 +571,18 @@
         "description": "Tags for news card"
       },
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "news-card-title",
         "value": "",
         "label": "Title"
+      },
+      {
+        "component": "text",
+        "name": "news-card-link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string"
       },
       {
         "component": "reference",
