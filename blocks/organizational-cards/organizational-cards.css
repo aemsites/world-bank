@@ -326,6 +326,10 @@
     margin: unset;
   }
 
+  .organizational-card .card-title {
+    min-height: unset;
+  }
+
   .organizational-card.collapsed {
     height: unset;
     padding: var(--spacing-32) 0 var(--spacing-32) 0;
