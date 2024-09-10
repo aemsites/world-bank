@@ -53,6 +53,11 @@
   position: relative;
 }
 
+.organizational-card > .card-content-wrapper {
+  height: fit-content;
+  position: relative;
+}
+
 .organizational-card:not(last-child) {
   margin-right: 6px;
 }
@@ -80,8 +85,8 @@
 
 .organizational-card .collapse-btn {
   position: absolute;
-  top: 200px;
-  right: 32px;
+  top: 8px;
+  right: 0;
 }
 
 
@@ -152,7 +157,7 @@
   margin-bottom: var(--spacing-64);
 }
 
-.organizational-card.collapsed > .card-mission, .organizational-card.collapsed > .card-link-wrapper {
+.organizational-card.collapsed .card-mission, .organizational-card.collapsed .card-link-wrapper {
   display: none;
   visibility: hidden;
 }
@@ -166,8 +171,8 @@
   display: flex;
   visibility: visible;
   position: absolute;
-  top: 360px;
-  right: 32px;
+  top: 8px;
+  right: 0;
 }
 
 .left-justify-content {
@@ -238,12 +243,12 @@
     max-height: 224px;
   }
 
-  .organizational-card > .collapse-btn {
+  .organizational-card .collapse-btn {
     top: 41px;
     right: 6px;
   }
 
-  .organizational-card > .expand-btn {
+  .organizational-card .expand-btn {
     display: none;
     visibility: hidden;
   }
