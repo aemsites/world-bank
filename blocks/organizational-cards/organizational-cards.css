@@ -7,9 +7,7 @@
   overflow: hidden;
   position: relative;
   justify-content: space-around;
-  padding: 0 var(--spacing-32) var(--spacing-80) var(--spacing 32);
-  /*padding-left: 32px;
-  padding-right: 32px;*/
+  padding: 0 var(--spacing-32) var(--spacing-80) var(--spacing-32);
 }
 
 .organizational-cards.block .bg-wrapper {
@@ -293,17 +291,6 @@
     margin: unset;
   }
 
-  /*
-  .organizational-card.collapsed > .card-acronym {
-    margin-top: unset;
-  }
-
-  .organizational-card.collapsed > .card-title {
-    padding: unset;
-    margin: unset;
-  }
-    */
-
   .organizational-card.collapsed .expand-btn {
     top: calc(50% - 16px);
     right: 0;
@@ -352,11 +339,7 @@
   .organizational-card.collapsed .expand-btn {
     top: calc(50% - 16px);
   }
-
-  .organizational-card .collapse-btn {
-
-  }
-
+  
   .organizational-card:not(.collapsed) {
     min-height: 224px;
     max-height: 224px;
