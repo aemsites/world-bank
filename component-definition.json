@@ -234,7 +234,7 @@
                     "name": "Curated Card",
                     "model": "curated-card",
                     "curated-card-image": "/content/dam/world-bank/sample/799x533.svg",
-                    "curated-card-tags": "world-bank:content-type/feature-story",
+                    "curated-card-tags": "world-bank:content-type/feature story",
                     "curated-card-title": "Curated Card Title",
                     "curated-card-description": "Card Description",
                     "curated-card-link": "/content/world-bank/global/en"
