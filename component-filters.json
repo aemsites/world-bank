@@ -32,7 +32,8 @@
       "tabs",
       "priority-list",
       "leaders-list",
-      "bio-detail"
+      "bio-detail",
+      "carousel"
     ]
   },
   {
@@ -61,10 +62,16 @@
   },
   {
     "id": "tabs",
-    "components": ["tab"]
+    "components": [
+      "tab"
+    ]
   },
   {
     "id": "priority-list",
     "components": ["priority-item"]
+  },
+  {
+    "id": "carousel",
+    "components": ["card"]
   }
 ]
