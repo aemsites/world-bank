@@ -264,7 +264,7 @@
     display: inline-block;
     width: fit-content;
     font-size: var(--size-32);
-    margin: 0 var(--spacing-12) var(--spacing-32) 0;
+    margin: 0 var(--spacing-12) 0 0;
   }
 
   .organizational-card .card-title {
@@ -343,6 +343,10 @@
 
   .organizational-card .card-title {
     min-height: unset;
+  }
+
+  .organizational-card .card-link-wrapper {
+    margin-top: var(--spacing-12);
   }
 
   .organizational-card.collapsed {
