@@ -1,24 +1,77 @@
 import { div, img } from '../../scripts/dom-helpers.js';
 import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
+import { TAG_ROOT } from '../../scripts/utils.js';
 
 const desktopConst = 400;
 const tabConst = 150;
 const tabTopPosition = 100;
 function createCard(card) {
   const [cardtitle, carddesc, ,] = card.children;
+  if (!cardtitle || !carddesc) {
+    return;
+  }
   cardtitle.textContent = cardtitle.textContent.replace(
-    'world-bank:category/',
+    `${TAG_ROOT}category/`,
     '',
   );
   card.className = cardtitle.textContent;
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
 }
-
+function handlePriorityListScroll(leftColumnContainer, cards) {
+  const image = leftColumnContainer.querySelector('.image-container');
+  if (image.getBoundingClientRect().top === tabTopPosition) {
+    let prevmin;
+    let prevval;
+    cards.forEach((card, index) => {
+      const curtop = card.getBoundingClientRect().top;
+      if (image.getBoundingClientRect().top >= curtop - tabConst) {
+        if (index === 0) {
+          prevmin = curtop;
+          prevval = index;
+        } else if (prevmin < curtop && prevval !== index) {
+          prevmin = curtop;
+          prevval = index;
+        }
+      }
+    });
+    cards.forEach((card, index) => {
+      if (index === prevval) {
+        image.style.backgroundImage = `url(${card.querySelector('img').src})`;
+      }
+    });
+  } else if (image.getBoundingClientRect().top >= 0) {
+    let prevmin;
+    let prevval;
+    cards.forEach((card, index) => {
+      const curtop = card.getBoundingClientRect().top;
+      if (
+        image.getBoundingClientRect().top
+          >= card.getBoundingClientRect().top - desktopConst
+      ) {
+        if (index === 0) {
+          prevmin = curtop;
+          prevval = index;
+        } else if (prevmin < curtop && prevval !== index) {
+          prevmin = curtop;
+          prevval = index;
+        }
+      }
+    });
+    cards.forEach((card, index) => {
+      if (index === prevval) {
+        image.style.backgroundImage = `url(${card.querySelector('img').src})`;
+      }
+    });
+  }
+}
 export default async function decorate(block) {
   const [subtitle, maintitle, buttontext, buttonlink, ...cards] = [
     ...block.children,
   ];
+  if (!subtitle || !maintitle || !buttontext || !buttonlink || cards.length === 0) {
+    return;
+  }
   subtitle.className = 'subtitle';
   maintitle.className = CLASS_MAIN_HEADING;
   const buttonLink = buttonlink.getElementsByTagName('a')[0];
@@ -54,52 +107,6 @@ export default async function decorate(block) {
   leftColumnContainer.append(imageContainer);
   block.append(leftColumnContainer);
 
-  window.addEventListener('scroll', () => {
-    const image = leftColumnContainer.querySelector('.image-container');
-    if (image.getBoundingClientRect().top === tabTopPosition) {
-      let prevmin;
-      let prevval;
-      cards.forEach((card, index) => {
-        const curtop = card.getBoundingClientRect().top;
-        if (image.getBoundingClientRect().top >= curtop - tabConst) {
-          if (index === 0) {
-            prevmin = curtop;
-            prevval = index;
-          } else if (prevmin < curtop && prevval !== index) {
-            prevmin = curtop;
-            prevval = index;
-          }
-        }
-      });
-      cards.forEach((card, index) => {
-        if (index === prevval) {
-          image.style.backgroundImage = `url(${card.querySelector('img').src})`;
-        }
-      });
-    } else if (image.getBoundingClientRect().top >= 0) {
-      let prevmin;
-      let prevval;
-      cards.forEach((card, index) => {
-        const curtop = card.getBoundingClientRect().top;
-        if (
-          image.getBoundingClientRect().top
-          >= card.getBoundingClientRect().top - desktopConst
-        ) {
-          if (index === 0) {
-            prevmin = curtop;
-            prevval = index;
-          } else if (prevmin < curtop && prevval !== index) {
-            prevmin = curtop;
-            prevval = index;
-          }
-        }
-      });
-      cards.forEach((card, index) => {
-        if (index === prevval) {
-          image.style.backgroundImage = `url(${card.querySelector('img').src})`;
-        }
-      });
-    }
-  });
+  window.addEventListener('scroll', () => handlePriorityListScroll(leftColumnContainer, cards));
   block.append(rightColumnContainer);
 }

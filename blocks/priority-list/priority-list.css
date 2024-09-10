@@ -1,6 +1,6 @@
 .priority-list-wrapper .priority-list {
   display: grid;
-  max-width: 1456px;
+  max-width: var(--screen-width);
   grid-template-rows: max-content 1fr;
   grid-template-columns: 1fr;
   grid-gap: 40px;
