@@ -40,7 +40,7 @@ export default async function decorate(block) {
     plusIcon.src = `${window.hlx.codeBasePath}/icons/icon-plus.png`;
     expandBtn.appendChild(plusIcon);
     acronymEl.after(expandBtn);
-    acronymEl.after(collapseBtn); 
+    acronymEl.after(collapseBtn);
     ['click', 'keydown'].forEach((trigger) => {
       collapseBtn.addEventListener(trigger, (event) => {
         if (trigger === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
