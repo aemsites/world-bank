@@ -1,6 +1,9 @@
 import { div, img } from '../../scripts/dom-helpers.js';
 import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 
+const desktopConst = 400;
+const tabConst = 150;
+const tabTopPosition = 100;
 function createCard(card) {
   const [cardtitle, carddesc, ,] = card.children;
   cardtitle.textContent = cardtitle.textContent.replace(
@@ -53,12 +56,12 @@ export default async function decorate(block) {
 
   window.addEventListener('scroll', () => {
     const image = leftColumnContainer.querySelector('.image-container');
-    if (image.getBoundingClientRect().top === 100) {
+    if (image.getBoundingClientRect().top === tabTopPosition) {
       let prevmin;
       let prevval;
       cards.forEach((card, index) => {
         const curtop = card.getBoundingClientRect().top;
-        if (image.getBoundingClientRect().top >= curtop - 150) {
+        if (image.getBoundingClientRect().top >= curtop - tabConst) {
           if (index === 0) {
             prevmin = curtop;
             prevval = index;
@@ -80,7 +83,7 @@ export default async function decorate(block) {
         const curtop = card.getBoundingClientRect().top;
         if (
           image.getBoundingClientRect().top
-          >= card.getBoundingClientRect().top - 400
+          >= card.getBoundingClientRect().top - desktopConst
         ) {
           if (index === 0) {
             prevmin = curtop;
