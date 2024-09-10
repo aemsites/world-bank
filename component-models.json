@@ -1099,7 +1099,7 @@
   {
     "id": "bio-detail",
     "fields": [
-       {
+      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -1118,7 +1118,7 @@
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "Job title",
+        "name": "Job-title",
         "value": "",
         "label": "Job Title",
         "required": true
@@ -1126,28 +1126,28 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "X link",
+        "name": "x-link",
         "value": "",
         "label": "X link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "linkedin link",
+        "name": "linkedin-link",
         "value": "",
         "label": "Linkedin Link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "instagram link",
+        "name": "instagram-link",
         "value": "",
         "label": "Instagram Link"
       },
       {
         "component": "richtext",
         "valueType": "string",
-        "name": "Media Inquiries",
+        "name": "media-inquiries",
         "value": "",
         "label": "Media Inquiries",
         "required": true
@@ -1161,5 +1161,5 @@
         "required": true
       }
     ]
-  } 
+  }
 ]
