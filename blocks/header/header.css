@@ -174,7 +174,7 @@ header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
 }
 
-header .nav-menu-overlay .nav-menu  .submenu a:hover {
+header .nav-menu-overlay .nav-menu .submenu a:hover {
   color: var(--color-white);
 }
 
@@ -207,11 +207,11 @@ header .nav-menu-overlay .nav-menu  .submenu a:hover {
 }
 
 @media (width < 768px) {
-  header nav{
-    gap:10px;
+  header nav {
+    gap: 10px;
   }
-  
-  .language-container{
+
+  .language-container {
     top: -6px;
     right: 20px;
   }
@@ -224,7 +224,7 @@ header .nav-menu-overlay .nav-menu  .submenu a:hover {
     text-transform: uppercase;
   }
 
-  .cancel-container{
+  .cancel-container {
     width: 30px;
     height: 30px;
   }
@@ -304,7 +304,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country span {
   margin-top: 20px;
 }
 
-header .nav-menu-overlay .nav-menu-column.right .highlight-link a span{
+header .nav-menu-overlay .nav-menu-column.right .highlight-link a span {
   text-align: center;
   vertical-align: middle;
 }
@@ -671,7 +671,7 @@ header nav .nav-brand img {
 }
 
 header nav .nav-sections .default-content-wrapper {
-  display: none;
+display: none;
 }
 
 @media (width > 1024px) {
@@ -744,7 +744,7 @@ header nav .nav-tools {
   position: absolute;
   z-index: 1;
   width: 100%;
-  margin-top: 35px;
+  top: 84px;
   border-top: 2px solid var(--neutrals-20);
 }
 
@@ -764,12 +764,20 @@ header nav .nav-tools {
 }
 
 @media (width >= 1024px) {
+  .search-container {
+    top: 120px;
+  }
+
   .search-input-container {
     width: 70%;
   }
 }
 
 @media (width >=768px) and (width<= 1023px) {
+  .search-container{
+    top: 94px;
+  }
+
   header .nav-wrapper {
     overflow-y: visible;
   }
@@ -1392,4 +1400,8 @@ header nav .nav-tools {
     left: 38rem;
     top: 80px;
   }
+}
+
+input::-webkit-clear-button {
+  display: none;
 }
