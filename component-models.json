@@ -50,14 +50,14 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "fileReference",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
+        "name": "fileReferenceAlt",
         "value": "",
         "label": "Alt Text"
       }
