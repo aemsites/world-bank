@@ -47,8 +47,11 @@
 
 .cards.profile-summary .cards-card-body {
   background: var(--neutrals-20);
-  padding: 28px 40px;
   border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
 }
 
 .cards.profile-summary .cards-card-image {
@@ -112,7 +115,6 @@
 
   .cards.profile-summary .cards-card-body {
     border-radius: 0 10px 10px 0;
-    padding: 32px 40px;
   }
 
   .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
@@ -132,7 +134,7 @@
   }
 
   .cards.profile-summary .cards-card-body {
-      padding: 127px 80px 135px;
+      padding: 80px;
   }
 
   .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
@@ -148,5 +150,9 @@
   
   .cards.profile-summary .cards-card-body p.button-container {
     margin-top: 40px;
+  }
+
+  .cards.profile-summary > ul > li img {
+    border-radius: 8px 0 0 8px;
   }
 }
