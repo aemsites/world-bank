@@ -1196,7 +1196,6 @@
       "component": "checkbox-group",
       "label": "Checkbox Group",
       "name": "checkbox",
-      "valueType": "string[]",
       "options": [
         { "name": "Yes", "value": "yes " },
         { "name": "No", "value": "no" }
