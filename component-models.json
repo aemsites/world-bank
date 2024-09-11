@@ -719,7 +719,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "pageTitle",
+        "name": "jcr:pagetitle",
         "label": "Page Title",
         "required": true
       },
