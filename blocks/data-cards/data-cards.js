@@ -75,7 +75,6 @@ export default async function decorate(block) {
       anchor.append(title.querySelector('p'));
       title.append(anchor);
 
-
       if (tag) {
         processTag(tag);
       }
