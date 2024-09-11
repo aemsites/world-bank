@@ -1,3 +1,7 @@
+.section.priority-list-container{
+    padding-bottom: 0px;
+}
+
 .priority-list-wrapper .priority-list {
   display: grid;
   max-width: var(--screen-width);
@@ -326,7 +330,8 @@
 @media (width >1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
+    column-gap: 80px;
+    row-gap: 0px;
   }
 
   .priority-list-wrapper .priority-list .right-column-container {
@@ -382,7 +387,7 @@
     top: 30px;
     width: 100%;
     background-size: contain;
-    height: 600px;
+    height: 700px;
     transition: background-image 400ms linear;
   }
 
