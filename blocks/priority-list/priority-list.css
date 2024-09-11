@@ -88,6 +88,14 @@
   .priority-list
   .right-column-container
   .cards-container
+  > div:last-child {
+  border-left: 3px solid var(--transparent);
+}
+
+.priority-list-wrapper
+  .priority-list
+  .right-column-container
+  .cards-container
   > div:not(div:last-child) {
   border-left: 3px solid var(--neutrals-20);
 }
@@ -182,7 +190,7 @@
   color: var(--primary-blue-90);
   line-height: 29px;
   font-weight: 700;
-  margin-top: -8px;
+  margin-top: -15px;
 }
 
 .priority-list-wrapper .priority-list .right-column-container .cards-container {
@@ -258,6 +266,17 @@
   font-size: 16px;
   text-transform: capitalize;
 }
+
+.priority-list-wrapper
+  .priority-list
+  .right-column-container
+  .cards-container
+  > div
+  .carddesc
+  ul
+  a:hover {
+    text-decoration-color: var(--primary-blue-50);
+  }
 
 @media (width >=768px) and (width < 1024px) {
   .priority-list-wrapper .priority-list {
