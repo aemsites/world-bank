@@ -15,13 +15,6 @@
   padding: 0;
 }
  
-.carousel-container .button-container button:disabled {
-  opacity: 0.5;
-  background-color: var(--neutrals-40);
-  color: rgb(0 41 77 / 42%);
-  cursor: unset;
-}
-
 .carousel-container .button-container button {
   background-color: var(--color-white);
   border: 2px solid var(--primary-blue-80);
@@ -30,6 +23,13 @@
   cursor: pointer;
   position: absolute;
   top: 40%;
+}
+
+.carousel-container .button-container button:disabled {
+  opacity: 0.5;
+  background-color: var(--neutrals-40);
+  color: rgb(0 41 77 / 42%);
+  cursor: unset;
 }
 
 html[dir="rtl"] .carousel-container .button-container button {
