@@ -102,9 +102,9 @@
   }
 }
 
-@media (width >1024px) {
+@media (width >=1024px) {
   .media-resources {
-    gap: var(--xhug);
+    gap: var(--xhuge);
     margin-top: 70px;
   }
 
