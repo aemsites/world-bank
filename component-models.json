@@ -1172,6 +1172,14 @@
       {
         "component": "text",
         "valueType": "string",
+        "name": "firstname",
+        "value": "",
+        "label": "FirstName",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
         "name": "surname",
         "value": "",
         "label": "Surname",
@@ -1209,6 +1217,7 @@
         "value": "Topics of Expertise",
         "label": "Topics of Expertise",
         "valueType": "string",
+        "multi": true,
         "options": [
           {
             "name": "Agribusiness",
