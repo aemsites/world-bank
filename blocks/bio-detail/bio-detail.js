@@ -2,13 +2,26 @@ import { div, img } from '../../scripts/dom-helpers.js';
 
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
-function createStructure(firstContainer, secondContainer) {
+function createStructure(firstContainer, secondContainer, block) {
   const sectionsContainer = div(
     { class: 'sections-container' },
     firstContainer,
     secondContainer,
   );
-  document.querySelector('.bio-detail.block').append(sectionsContainer);
+  block.append(sectionsContainer);
+}
+
+function createSocialMediaLink(linkName, className, iconPath) {
+  if (linkName && linkName.textContent) {
+    const anchor = document.createElement('a');
+    anchor.href = linkName.textContent;
+    anchor.title = linkName.textContent;
+    const linkImage = img({ class: className });
+    linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
+    anchor.appendChild(linkImage);
+    return div({ class: 'social-media-link' }, anchor);
+  }
+  return null;
 }
 
 function createPersonBio(
@@ -20,32 +33,21 @@ function createPersonBio(
   profileImage,
   mediaInquiries,
   resources,
+  block,
 ) {
   const firstContainer = div({ class: 'first-container' });
   const nameJobSocial = div({ class: 'name-job-social' }, bioName, jobTitle);
-  const linksList = [x, linkedin, insta];
   const socialMedias = div({ class: 'social-media' });
-  linksList.forEach((linkName, i) => {
-    const anchor = document.createElement('a');
-    Object.assign(anchor, {
-      href: linkName.textContent,
-      title: linkName.textContent,
-    });
-    if (i === 0 && linkName.textContent !== '') {
-      const linkImage = img({ class: 'xlink' });
-      linkImage.src = `${window.hlx.codeBasePath}/icons/ximage.png`;
-      anchor.appendChild(linkImage);
-      socialMedias.append(div({ class: 'social-media-link' }, anchor));
-    } else if (i === 1 && linkName.textContent) {
-      const linkImage = img({ class: 'xlink' });
-      linkImage.src = `${window.hlx.codeBasePath}/icons/linkedin.png`;
-      anchor.appendChild(linkImage);
-      socialMedias.append(div({ class: 'social-media-link' }, anchor));
-    } else if (i === 2 && linkName.textContent) {
-      const linkImage = img({ class: 'xlink' });
-      linkImage.src = `${window.hlx.codeBasePath}/icons/insta.png`;
-      anchor.appendChild(linkImage);
-      socialMedias.append(div({ class: 'social-media-link' }, anchor));
+  const socialMediaIcons = [
+    { link: x, icon: 'ximage.png' },
+    { link: linkedin, icon: 'linkedin.png' },
+    { link: insta, icon: 'insta.png' },
+  ];
+
+  socialMediaIcons.forEach(({ link, icon }) => {
+    const socialMediaLink = createSocialMediaLink(link, 'xlink', icon);
+    if (socialMediaLink) {
+      socialMedias.append(socialMediaLink);
     }
   });
   nameJobSocial.appendChild(socialMedias);
@@ -63,7 +65,7 @@ function createPersonBio(
   );
   firstContainer.append(nameJobSocial, mediaResources);
 
-  createStructure(firstContainer, secondContainer);
+  createStructure(firstContainer, secondContainer, block);
   x.remove();
   linkedin.remove();
   insta.remove();
@@ -122,5 +124,6 @@ export default async function decorate(block) {
     profileImage,
     mediaInquiries,
     resources,
+    block,
   );
 }
