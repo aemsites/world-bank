@@ -76,9 +76,10 @@ header .nav-menu-overlay .nav-menu {
   background-attachment: fixed;
   background-position: top left;
   background-size: 90%;
-  overflow: visible scroll;
+  overflow: hidden scroll;
   padding: 100px 30px;
   max-width: 1456px;
+  height:-webkit-fill-available;
   color: var(--neutrals-40);
 }
 
