@@ -15,6 +15,23 @@
   padding: 0;
 }
  
+.carousel-container .button-container button:disabled {
+  opacity: 0.5;
+  background-color: var(--neutrals-40);
+  color: rgb(0 41 77 / 42%);
+  cursor: unset;
+}
+
+.carousel-container .button-container button {
+  background-color: var(--color-white);
+  border: 2px solid var(--primary-blue-80);
+  padding: 13px 16px;
+  right: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+}
+
 html[dir="rtl"] .carousel-container .button-container button {
   background-color: var(--color-white);
   border: 2px solid var(--primary-blue-80);
@@ -53,23 +70,6 @@ html[dir="rtl"] .carousel-container .button-container button {
 
 .carousel-container .button-container a.button:any-link, button {
   margin: 0;
-}
-
-.carousel-container .button-container button:disabled {
-  opacity: 0.5;
-  background-color: var(--neutrals-40);
-  color: rgb(0 41 77 / 42%);
-  cursor: unset;
-}
-
-.carousel-container .button-container button {
-  background-color: var(--color-white);
-  border: 2px solid var(--primary-blue-80);
-  padding: 13px 16px;
-  right: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
 }
   
 .section > div.carousel-wrapper {
