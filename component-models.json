@@ -1186,9 +1186,7 @@
         "required": true
       },
       {
-  "id": "checkbox-group",
-  "fields": [
-    {
+    
       "component": "checkbox-group",
       "label": "Checkbox Group",
       "name": "checkbox",
@@ -1197,12 +1195,9 @@
         { "name": "Yes", "value": "yes " },
         { "name": "No", "value": "no" }
       ]
-    }
-  ]
+    
+  
 },
-{
-  "id": "boolean",
-"fields": [{"component": "boolean","label": "Boolean","name": "boolean","valueType": "boolean"}]},
       {
         "component": "richtext",
         "valueType": "string",
