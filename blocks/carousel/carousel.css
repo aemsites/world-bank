@@ -4,7 +4,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-  grid-gap: 16px;
+  grid-gap: var(--spacing-16);
 }
 
 .carousel > ul > li {
@@ -13,11 +13,15 @@
 }
 
 .carousel .cards-card-body {
-  margin: 16px;
+  margin: var(--spacing-16);
 }
 
 .carousel .cards-card-image {
   line-height: 0;
+}
+
+.carousel .cards-card-body p {
+  margin-bottom: 0;
 }
 
 .carousel .cards-card-body > *:first-child {
@@ -26,6 +30,7 @@
 
 .carousel > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
+  border-radius: 10px;
 }

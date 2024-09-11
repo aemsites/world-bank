@@ -1,7 +1,7 @@
 .carousel-container {
   display: flex;
-  padding: 0 72px;
-  background-color: #fff;
+  padding: 0 var(--section-gutter-space);
+  background-color: var(--color-white);
   box-shadow: none;
 }
 
@@ -17,22 +17,23 @@
   
 .carousel-container > .default-content-wrapper > p:first-child {
   font-weight: 800;
-  font-size: 14px;
-  line-height: 15.4px;
-  padding-bottom: 20px;
-  color: #002337;
+  font-size: var(--size-14);
+  line-height: 15px;
+  padding-bottom: var(--spacing-20);
+  color: var(--input-background-color);
 }
 
 .carousel-container > .default-content-wrapper > p:nth-child(2) {
   font-weight: 400;
-  font-size: 40px;
-  line-height: 44px;
-  padding-bottom: 56px;
-  color: #002337;
+  font-size: var(--size-40);
+  line-height: var(--nav-height);
+  padding-bottom: var(--spacing-56);
+  color: var(--input-background-color);
+  text-transform: uppercase;
 }
   
 .carousel-container > .default-content-wrapper > p:nth-child(2) > strong {
-  color: #012740;
+  color: var(--primary-blue-90);
 }
 
 .default-content-wrapper .button-container a.button:any-link, button {
@@ -44,20 +45,20 @@
   overflow: hidden;
   position: relative;
   padding-right: 0;
-  padding-left: var(--section-gutter-space);
+  padding-left: 108px;
 }
 
 html[dir="rtl"] .section > div.carousel-wrapper {
   padding-left: 0;
-  padding-right: var(--section-gutter-space);
+  padding-right: 108px;
 }
   
 .carousel > ul {
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, 90%);
+  grid-template-columns: repeat(5, 92%);
   grid-template-rows: 1fr;
-  gap: 0 32px;
+  gap: 0 var(--spacing-32);
   overflow: scroll hidden;
   scroll-snap-type: both mandatory;
   scroll-padding: 0;
@@ -83,7 +84,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   
 .carousel > .prev,
 .carousel > .next {
-  right: 90px;
+  right: 0;
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -107,11 +108,11 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 }
   
 .carousel .cards-card-body {
-  font-size: 14px;
-  line-height: 16.8px;
+  font-size: var(--size-14);
+  line-height: 16px;
   font-weight: 400;
-  color: #181f25;
-  padding: 24px 0 0;
+  color: var(--neutrals-100);
+  padding: var(--spacing-24) 0 0;
   margin: 0;
 }
 
@@ -162,36 +163,74 @@ html[dir="rtl"] .section > div.carousel-wrapper {
  
   .carousel-container > .default-content-wrapper > p:nth-child(2) {
     font-weight: 400;
-    font-size: 32px;
-    line-height: 35.2px;
-    color: #012740;
-    padding-bottom: 40px;
+    font-size: var(--size-32);
+    line-height: var(--nav-padding);
+    color: var(--primary-blue-90);
+    padding-bottom: var(--spacing-40);
+    padding-right: var(--spacing-24);
+    padding-left: 0;
+  }
+
+  html[dir="rtl"] .carousel-container > .default-content-wrapper > p:nth-child(2) {
+    padding-left: var(--spacing-24);
+    padding-right: 0;
+  }
+
+  .carousel > ul {
+    grid-template-columns: repeat(5, 80%);
+    gap: 0 var(--spacing-24);
+  }
+
+  .carousel > .prev,
+  .carousel > .next {
+    right: var(--nav-height); 
+  }
+
+  html[dir="rtl"] .carousel > .prev,
+  .carousel > .next {
+    left: var(--nav-height); 
   }
 
   .button-container {
-    padding-bottom: 40px;
+    padding-bottom: var(--spacing-40);
   }
 
   .default-content-wrapper .button-container a.button:any-link, button {
-    font-size: 14px;
+    font-size: var(--size-14);
     font-weight: 700;
-    line-height: 19.07px;
+    line-height: 19px;
     margin: 0;
+  }
+
+  .section > div.carousel-wrapper {
+    padding-right: 0;
+    padding-left: var(--section-gutter-space);
+  }
+
+  html[dir="rtl"] .section > div.carousel-wrapper {
+    padding-right: var(--section-gutter-space);
+    padding-left: 0;
   }
 }
   
 @media only screen and (width < 768px) {
   .carousel > .prev,
   .carousel > .next {
-    right: 30px;
+    right: var(--nav-padding);
+    top: 20%; 
     cursor: pointer;
     position: absolute;
-    top: 40%;
     color: white;
     font-weight: bold;
     border-radius: 3px 0 0 3px;
   }
 
+  html[dir="rtl"] .carousel > .prev,
+  .carousel > .next {
+    left: var(--nav-padding);
+    top: 20%; 
+  }
+  
   .carousel-container {
     flex-direction: column;
   }
@@ -219,18 +258,23 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 
   .carousel-container > .default-content-wrapper > p:nth-child(2) {
     font-weight: 400;
-    font-size: 28px;
-    line-height: 30.8px;
-    color: #012740;
-    padding-bottom: 24px;
+    font-size: var(--size-28);
+    line-height: 30px;
+    color: var(--primary-blue-90);
+    padding-bottom: var(--spacing-24);
   }
 
   .carousel-container > .default-content-wrapper > p.button-container {
-    padding-bottom: 40px;
+    padding-bottom: var(--spacing-40);
   }
 
   .default-content-wrapper .button-container a.button:any-link, button {
     margin: 0;
+  }
+
+  .carousel > ul {
+    grid-template-columns: repeat(5, 80%);
+    gap: 0 var(--spacing-24);
   }
 }
 
@@ -238,7 +282,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   main .section {
     max-width: var(--screen-width);
     margin: auto;
-    padding: var(--xhuge) var(--section-gutter-space);
+    padding: var(--spacing-32) var(--section-gutter-space);
   }
 
   .carousel-container > .default-content-wrapper {
@@ -253,8 +297,8 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .default-content-wrapper .button-container a.button:any-link, button {
-    font-size: 16px;
+    font-size: var(--size-16);
     font-weight: 700;
-    line-height: 21.79px;
+    line-height: 21px;
   }
 }
