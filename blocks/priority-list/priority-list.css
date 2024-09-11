@@ -1,5 +1,5 @@
 .section.priority-list-container{
-    padding-bottom: 0px;
+    padding-bottom: 0;
 }
 
 .priority-list-wrapper .priority-list {
@@ -330,8 +330,7 @@
 @media (width >1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 80px;
-    row-gap: 0px;
+    gap: 0 80px;
   }
 
   .priority-list-wrapper .priority-list .right-column-container {
