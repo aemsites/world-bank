@@ -477,7 +477,7 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
   width: 100%;
   left: 0;
   display: flex;
-  place-content: center center;
+  align-content: center;
   height: 80px;
   z-index: 5;
   word-wrap: break-word;
