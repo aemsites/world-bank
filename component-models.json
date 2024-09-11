@@ -732,13 +732,103 @@
         "description": "Sets the description of the page in page meta."
       },
       {
-        "component": "aem-tag",
+        "component": "select",
         "name": "content_type",
+        "value": "",
         "label": "Content Type",
-        "valueType": "string",
         "required": true,
-        "rootPath": "/content/cq:tags/world-bank/content-type"
-      },
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Brief",
+            "value": "brief"
+          },
+          {
+            "name": "Events",
+            "value": "events"
+          },
+          {
+            "name": "Factsheet",
+            "value": "factsheet"
+          },
+          {
+            "name": "Feature Story",
+            "value": "feature-story"
+          },
+          {
+            "name": "Immersive Story",
+            "value": "immersive-story"
+          },
+          {
+            "name": "Infographic",
+            "value": "infographic"
+          },
+          {
+            "name": "Informational",
+            "value": "informational"
+          },
+          {
+            "name": "Interactive",
+            "value": "interactive"
+          },
+          {
+            "name": "Landing",
+            "value": "landing"
+          },
+          {
+            "name": "Leadership",
+            "value": "leadership"
+          },
+          {
+            "name": "Listing",
+            "value": "listing"
+          },
+          {
+            "name": "Loans & Credits",
+            "value": "loans-&-Credits"
+          },
+          {
+            "name": "Opinion",
+            "value": "opinion"
+          },
+          {
+            "name": "Others",
+            "value": "others"
+          },
+          {
+            "name": "People",
+            "value": "people"
+          },
+          {
+            "name": "Podcast",
+            "value": "podcast"
+          },
+          {
+            "name": "Publication",
+            "value": "publication"
+          },
+          {
+            "name": "Results",
+            "value": "results"
+          },
+          {
+            "name": "Slideshow",
+            "value": "slideshow"
+          },
+          {
+            "name": "Speeches and Transcripts",
+            "value": "speeches-and-transcripts"
+          },
+          {
+            "name": "Statement",
+            "value": "statement"
+          },
+          {
+            "name": "Video",
+            "value": "video"
+          }
+        ]
+        },
       {
         "component": "select",
         "name": "languages",
