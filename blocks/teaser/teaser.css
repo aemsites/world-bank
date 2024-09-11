@@ -310,11 +310,17 @@
     .teaser-wrapper > .teaser.block > .teaser-container > .teaser-swoosh-wrapper {
         height: 100%;
         width: 100%;
+        margin-left: -13.5px;
+    }
+
+    .teaser-wrapper > .teaser.block > .teaser-container > .teaser-swoosh-wrapper > .swoosh-layers {
+        margin-left: -2.5px;
     }
 
     .teaser-wrapper > .teaser.block > .teaser-container > .teaser-swoosh-wrapper > .swoosh-bg {
         height: 95%;
         width: 95%;
+        margin-left: -2.5px;
     }
 
     .teaser-wrapper .swoosh-layers > .swoosh.first {
