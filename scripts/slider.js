@@ -58,6 +58,8 @@ export default async function createSlider(block) {
     // Observer Callback Function
     const callBack = (entries) => {
       const dir = document.documentElement.dir || 'ltr';
+      let disableLeftBtn = false;
+      let disableRightBtn = false;
 
       if (dir === 'rtl') {
         document.querySelector('.next').style.right = 'auto';
@@ -80,8 +82,6 @@ export default async function createSlider(block) {
       });
 
       try {
-        let disableLeftBtn = false, disableRightBtn = false;
-        
         if (entries[0].target.parentElement.children[0].className === 'active') {
           if (dir === 'rtl') {
             disableLeftBtn = false;
@@ -94,13 +94,12 @@ export default async function createSlider(block) {
           if (dir === 'rtl') {
             disableLeftBtn = true;
             disableRightBtn = false;
-        } else {
+          } else {
             disableLeftBtn = false;
             disableRightBtn = true;
           }
         }
-        
-        moveLeftBtn.disabled =  disableLeftBtn;
+        moveLeftBtn.disabled = disableLeftBtn;
         moveRightBtn.disabled = disableRightBtn;
       } catch (e) {
         /* error structure was not as expected */
