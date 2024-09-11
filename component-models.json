@@ -1186,15 +1186,20 @@
         "required": true
       },
       {
-        "component": "checkbox",
-        "label": "Checkbox Group",
-        "name": "checkbox",
-        "valueType": "string[]",
-        "options": [
-          { "name": "Yes", "value": "yes" },
-          { "name": "No", "value": "no" }
-        ]
-      },
+  "id": "checkbox-group",
+  "fields": [
+    {
+      "component": "checkbox-group",
+      "label": "Checkbox Group",
+      "name": "checkbox",
+      "valueType": "string[]",
+      "options": [
+        { "name": "Yes", "value": "yes " },
+        { "name": "No", "value": "no" }
+      ]
+    }
+  ]
+},
       {
         "component": "richtext",
         "valueType": "string",
