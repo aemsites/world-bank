@@ -1191,7 +1191,18 @@
         "name": "bg-inside-container",
         "label": "Show background color inside container."
       },
-
+      {
+    
+      "component": "checkbox-group",
+      "label": "Checkbox Group",
+      "name": "checkbox",
+      "options": [
+        { "name": "Yes", "value": "yes " },
+        { "name": "No", "value": "no" }
+      ]
+    
+  
+},
       {
         "component": "richtext",
         "valueType": "string",
