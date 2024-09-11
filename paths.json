@@ -63,7 +63,7 @@
     "/content/world-bank.resource/ru/query-index.json:/ru/query-index.json",
     "/content/world-bank.resource/fr/query-index.json:/fr/query-index.json",
     "/content/world-bank.resource/es/query-index.json:/es/query-index.json",
-    "/content/world-bank.resource/ar/query-index.json:/ar/query-index.json",
+    "/content/world-bank.resource/ar/query-index.json:/ar/query-index.json"
 
   ],
   "includes": ["/content/world-bank/"]
