@@ -50,15 +50,15 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "fileReference",
+        "name": "image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
+        "name": "imageAlt",
+        "value": "",
         "label": "Alt Text"
       }
     ]
@@ -1061,11 +1061,13 @@
         "required": true
       },
       {
-        "component": "text",
+        "component": "aem-content",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
-        "label": "Fragment Path"
+        "label": "Fragment Path",
+        "rootPath": "",
+        "description": "Path to Fragment"
       }
     ]
   },
@@ -1261,5 +1263,68 @@
         "value": ""
       }
     ]
-  } 
+  },
+  {
+    "id": "organizational-cards",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "organizational-card",
+    "fields":[
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "acronym",
+        "label": "Acronym",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mission",
+        "label": "Mission",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Link Text",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "boolean",
+        "label": "Enable Breadcrumb",
+        "name": "enableBreadcrumb",
+        "valueType": "boolean"
+      }
+    ]
+  }
 ]
