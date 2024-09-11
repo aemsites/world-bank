@@ -1188,21 +1188,10 @@
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "bg-inside-container",
-        "label": "Show background color inside container."
+        "name": "is-leader",
+        "label": "Is Leader"
       },
-      {
-    
-      "component": "checkbox-group",
-      "label": "Checkbox Group",
-      "name": "checkbox",
-      "options": [
-        { "name": "Yes", "value": "yes " },
-        { "name": "No", "value": "no" }
-      ]
-    
-  
-},
+
       {
         "component": "richtext",
         "valueType": "string",
