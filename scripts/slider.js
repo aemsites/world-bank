@@ -16,11 +16,15 @@ function arrowIcon(props) {
 
 // Handling Anchor Tag
 function arrow(props) {
-  const anchor = document.createElement('a');
-  anchor.className = `${props}`;
+  const p = document.createElement('p');
+  p.className = 'button-container';
+  const anchor = document.createElement('button');
+  anchor.className = `button ${props}`;
   anchor.title = `${props}`;
+  anchor.type = 'button';
   anchor.append(arrowIcon(props));
-  return anchor;
+  p.append(anchor);
+  return p;
 }
 
 export default async function createSlider(block) {
@@ -58,8 +62,8 @@ export default async function createSlider(block) {
       if (dir === 'rtl') {
         document.querySelector('.next').style.right = 'auto';
         document.querySelector('.prev').style.right = 'auto';
-        document.querySelector('.next').style.left = '90px';
-        document.querySelector('.prev').style.left = '90px';
+        document.querySelector('.next').style.left = '0';
+        document.querySelector('.prev').style.left = '0';
       }
 
       entries.forEach((entry) => {
@@ -76,16 +80,28 @@ export default async function createSlider(block) {
       });
 
       try {
+        let disableLeftBtn = false, disableRightBtn = false;
+        
         if (entries[0].target.parentElement.children[0].className === 'active') {
-          moveLeftBtn.style.display = dir === 'ltr' ? 'none' : 'block';
-          moveRightBtn.style.display = dir === 'ltr' ? 'block' : 'none';
+          if (dir === 'rtl') {
+            disableLeftBtn = false;
+            disableRightBtn = true;
+          } else {
+            disableLeftBtn = true;
+            disableRightBtn = false;
+          }
         } else if (entries[0].target.parentElement.children[entries[0].target.parentElement.children.length - 1].className === 'active') {
-          moveLeftBtn.style.display = dir === 'ltr' ? 'block' : 'none';
-          moveRightBtn.style.display = dir === 'ltr' ? 'none' : 'block';
+          if (dir === 'rtl') {
+            disableLeftBtn = true;
+            disableRightBtn = false;
         } else {
-          moveLeftBtn.style.display = 'block';
-          moveRightBtn.style.display = 'block';
+            disableLeftBtn = false;
+            disableRightBtn = true;
+          }
         }
+        
+        moveLeftBtn.disabled =  disableLeftBtn;
+        moveRightBtn.disabled = disableRightBtn;
       } catch (e) {
         /* error structure was not as expected */
       }
@@ -98,5 +114,5 @@ export default async function createSlider(block) {
     itemList.forEach((item) => {
       observer.observe(item);
     });
-  }, 100);
+  }, 0);
 }

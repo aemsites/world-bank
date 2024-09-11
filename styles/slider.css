@@ -36,8 +36,43 @@
   color: var(--primary-blue-90);
 }
 
-.default-content-wrapper .button-container a.button:any-link, button {
+.carousel-container .button-container {
+  display: inline;
+}
+
+.carousel-container .button-container a.button:any-link, button {
   margin: 0;
+}
+
+.carousel-container .button-container button:disabled {
+  opacity: 0.5;
+}
+ 
+.carousel-container .button-container button {
+  background-color: var(--color-white);
+  border: 2px solid var(--primary-blue-80);
+  padding: 18px 23px;
+  right: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+}
+
+html[dir="rtl"] .carousel-container .button-container button {
+  background-color: var(--color-white);
+  border: 2px solid var(--primary-blue-80);
+  padding: 18px 23px;
+  right: auto;
+  left: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+}
+
+.carousel-container .button-container button:disabled {
+  background-color: var(--neutrals-40);
+  color: rgb(0 41 77 / 42%);
+  cursor: unset;
 }
   
 .section > div.carousel-wrapper {
@@ -82,27 +117,16 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   justify-content: center;
 }
   
-.carousel > .prev,
-.carousel > .next {
-  right: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  color: white;
-  font-weight: bold;
-  border-radius: 3px 0 0 3px;
-}
-  
-.carousel > .next {
-  margin: 25px 0 0;
+.carousel .button-container .next {
+  margin: 35px 0 0;
 }
 
-.carousel > .prev {
-  margin: -25px 0 0;
+.carousel .button-container .prev {
+  margin: -35px 0 0;
 }
 
-.carousel > .prev:hover,
-.carousel > .next:hover {
+.carousel .button-container .prev:hover,
+.carousel .button-container .next:hover {
   opacity: 0.7;
   transition: 0.2s;
 }
@@ -126,37 +150,34 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 }
 
 @media only screen and (width <=1024px) {
-  main .section {
+  .carousel-container {
     max-width: var(--screen-width);
    margin: auto;
+    flex-direction: column;
   }
 
-  html[dir="rtl"] main .section {
+  html[dir="rtl"] .carousel-container {
     max-width: var(--screen-width);
     margin: auto;
   }
 
-  .carousel-container {
-    flex-direction: column;
-  }
-
- .default-content-wrapper {
+  .carousel-container > .default-content-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
   }
   
-  .default-content-wrapper p:first-child {
+  .carousel-container > .default-content-wrapper p:first-child {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
   }
   
-  .default-content-wrapper p:nth-child(2) {
+  .carousel-container > .default-content-wrapper p:nth-child(2) {
     grid-column: 1 / 1;
     grid-row: 2 / 2;
   }
 
-  .default-content-wrapper p:nth-child(3) {
+  .carousel-container > .default-content-wrapper p:nth-child(3) {
     grid-column: 2 / 2;
     grid-row: 2 / 2;
   }
@@ -164,7 +185,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   .carousel-container > .default-content-wrapper > p:nth-child(2) {
     font-weight: 400;
     font-size: var(--size-32);
-    line-height: var(--nav-padding);
+    line-height: 35px;
     color: var(--primary-blue-90);
     padding-bottom: var(--spacing-40);
     padding-right: var(--spacing-24);
@@ -191,23 +212,27 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     left: var(--nav-height); 
   }
 
-  .button-container {
+  .carousel-container .button-container {
     padding-bottom: var(--spacing-40);
   }
 
-  .default-content-wrapper .button-container a.button:any-link, button {
+  .carousel-container .button-container a.button:any-link, button {
     font-size: var(--size-14);
     font-weight: 700;
     line-height: 19px;
     margin: 0;
   }
 
-  .section > div.carousel-wrapper {
+  .carousel-container .button-container button:disabled {
+    opacity: 0.5;
+  }
+
+  .carousel-container > div.carousel-wrapper {
     padding-right: 0;
     padding-left: var(--section-gutter-space);
   }
 
-  html[dir="rtl"] .section > div.carousel-wrapper {
+  html[dir="rtl"] .carousel-container > div.carousel-wrapper {
     padding-right: var(--section-gutter-space);
     padding-left: 0;
   }
@@ -235,23 +260,23 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     flex-direction: column;
   }
 
-  .default-content-wrapper {
+  .carousel-container > .default-content-wrapper {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
 
-  .default-content-wrapper p:first-child {
+  .carousel-container > .default-content-wrapper p:first-child {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
   }
 
-  .default-content-wrapper p:nth-child(2) {
+  .carousel-container > .default-content-wrapper p:nth-child(2) {
     grid-column: 1 / 2;
     grid-row: 2 / 2;
   }
 
-  .default-content-wrapper p:nth-child(3) {
+  .carousel-container > .default-content-wrapper p:nth-child(3) {
     grid-column: 1 / 2;
     grid-row: 3 / 3;
   }
@@ -264,12 +289,16 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     padding-bottom: var(--spacing-24);
   }
 
-  .carousel-container > .default-content-wrapper > p.button-container {
+  .carousel-container p.button-container {
     padding-bottom: var(--spacing-40);
   }
 
-  .default-content-wrapper .button-container a.button:any-link, button {
+  .carousel-container .button-container a.button:any-link, button {
     margin: 0;
+  }
+
+  .carousel-container .button-container button:disabled {
+    opacity: 0.5;
   }
 
   .carousel > ul {
@@ -279,7 +308,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 }
 
 @media only screen and (width > 1024px) {
-  main .section {
+  main .section.carousel-container {
     max-width: var(--screen-width);
     margin: auto;
     padding: var(--spacing-32) var(--section-gutter-space);
@@ -287,18 +316,27 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 
   .carousel-container > .default-content-wrapper {
     flex: 1;
+  }
+
+  html[dir="rtl"] .carousel-container > .default-content-wrapper {
     padding: 0;
   }
 
-  html[dir="rtl"] main .section {
+  html[dir="rtl"] .carousel-container {
     max-width: var(--screen-width);
     margin: auto;
     padding: 0 var(--section-gutter-space);
   }
 
-  .default-content-wrapper .button-container a.button:any-link, button {
+  .carousel-container .button-container a.button:any-link, button {
     font-size: var(--size-16);
     font-weight: 700;
     line-height: 21px;
+  }
+
+  .carousel-container .button-container button:disabled {
+    background-color: var(--neutrals-40);
+    color: rgb(0 41 77 / 42%);
+    cursor: unset;
   }
 }
