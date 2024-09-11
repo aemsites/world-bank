@@ -1186,6 +1186,12 @@
         "required": true
       },
       {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "bg-inside-container",
+        "label": "Show background color inside container."
+      },
+      {
     
       "component": "checkbox-group",
       "label": "Checkbox Group",
