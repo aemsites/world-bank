@@ -190,7 +190,7 @@
   color: var(--primary-blue-90);
   line-height: 29px;
   font-weight: 700;
-  margin-top: -15px;
+  margin-top: -8px;
 }
 
 .priority-list-wrapper .priority-list .right-column-container .cards-container {
@@ -386,6 +386,7 @@
     .cardtitle {
     line-height: 43px;
     font-size: 36px;
+    margin-top: -15px;
   }
 
   .priority-list-wrapper
