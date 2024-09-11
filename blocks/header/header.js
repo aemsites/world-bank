@@ -119,6 +119,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   if (!expanded) {
     document.body.classList.add('no-scroll');
     navMenuOverlay.classList.add(constants.OPEN);
+    navMenuOverlay.scrollTop = 0;
   } else {
     document.body.classList.remove('no-scroll');
     navMenuOverlay.classList.remove(constants.OPEN);
