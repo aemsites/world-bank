@@ -4,6 +4,13 @@ indices:
   site-en: &base-site
     include:
       - '/en/**'
+    exclude:
+      - '/en/drafts'
+      - '/en/drafts/**'
+      - '/en/fragments'
+      - '/en/fragments/**'
+      - '/en/footer'
+      - '/en/nav'
     target: /en/query-index.json
     properties:
       title:
@@ -26,28 +33,63 @@ indices:
     <<: *base-site
     include:
       - '/zh/**'
+    exclude:
+      - '/zh/drafts'
+      - '/zh/drafts/**'
+      - '/zh/fragments'
+      - '/zh/fragments/**'
+      - '/zh/footer'
+      - '/zh/nav'
     target: /zh/query-index.json
   
   site-ru:
     <<: *base-site
     include:
       - '/ru/**'
+    exclude:
+      - '/ru/drafts'
+      - '/ru/drafts/**'
+      - '/ru/fragments'
+      - '/ru/fragments/**'
+      - '/ru/footer'
+      - '/ru/nav'
     target: /ru/query-index.json
 
   site-fr:
     <<: *base-site
     include:
       - '/fr/**'
+    exclude:
+      - '/fr/drafts'
+      - '/fr/drafts/**'
+      - '/fr/fragments'
+      - '/fr/fragments/**'
+      - '/fr/footer'
+      - '/fr/nav'
     target: /fr/query-index.json
 
   site-es:
     <<: *base-site
     include:
       - '/es/**'
+    exclude:
+      - '/es/drafts'
+      - '/es/drafts/**'
+      - '/es/fragments'
+      - '/es/fragments/**'
+      - '/es/footer'
+      - '/es/nav'
     target: /es/query-index.json
 
   site-ar:
     <<: *base-site
     include:
       - '/ar/**'
+    exclude:
+      - '/ar/drafts'
+      - '/ar/drafts/**'
+      - '/ar/fragments'
+      - '/ar/fragments/**'
+      - '/ar/footer'
+      - '/ar/nav'
     target: /ar/query-index.json
