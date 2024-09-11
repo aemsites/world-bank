@@ -31,6 +31,7 @@
   .main-heading
   p {
   margin: 0;
+  font-weight: 400;
   max-width: 550px;
   word-break: whitespace;
 }
@@ -79,7 +80,7 @@
   flex-direction: column;
   row-gap: 8px;
   position: relative;
-  padding-left: 26px;
+  padding-left: 20px;
   text-align: left;
 }
 
@@ -222,7 +223,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
 }
 
 .priority-list-wrapper .priority-list .left-column-container {
@@ -290,7 +291,19 @@
     .right-column-container
     .cards-container
     > div {
-    padding-left: 60px;
+    padding-left: 20px;
+  }
+
+  .priority-list-wrapper
+    .priority-list
+    .right-column-container
+    .cards-container
+    > div
+    .carddesc
+    ul {
+    margin-bottom: 0;
+    padding-bottom: 48px;
+
   }
 
   .priority-list-wrapper .priority-list .left-column-container {
@@ -416,6 +429,7 @@
     ul {
     flex-flow: row wrap;
     column-gap: 30px;
+    margin-bottom: 0;
     padding-bottom: 48px;
     justify-content: space-between;
   }
