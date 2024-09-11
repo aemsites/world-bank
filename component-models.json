@@ -1170,6 +1170,32 @@
         "required": true
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "surname",
+        "value": "",
+        "label": "Surname",
+        "required": true
+      },
+       {
+        "component": "text",
+        "valueType": "string",
+        "name": "upi-id",
+        "value": "",
+        "label": "UPI id",
+        "required": true
+      },
+      {
+        "component": "checkbox-group",
+        "label": "Checkbox Group",
+        "name": "checkbox",
+        "valueType": "string[]",
+        "options": [
+          { "name": "Yes", "value": "yes" },
+          { "name": "No", "value": "no" }
+        ]
+      },
+      {
         "component": "richtext",
         "valueType": "string",
         "name": "job-title",
