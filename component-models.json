@@ -1164,9 +1164,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "bio-name",
+        "name": "display-name",
         "value": "",
-        "label": "Bio Name",
+        "label": "Display Name",
         "required": true
       },
       {
