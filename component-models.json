@@ -698,34 +698,324 @@
         "component": "text",
         "valueType": "string",
         "name": "jcr:title",
-        "label": "Page Title",
+        "label": "Title",
+        "required": true,
         "description": "Sets the title of the page in page meta."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:pageTitle",
+        "label": "Page Title",
+        "required": true
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "jcr:description",
         "label": "Page Description",
+        "required": true,
         "description": "Sets the description of the page in page meta."
       },
       {
+        "component": "aem-tag",
+        "name": "content_type",
+        "label": "Content Type",
+        "valueType": "string",
+        "required": true,
+        "rootPath": "/content/cq:tags/world-bank/content-type"
+      },
+      {
         "component": "select",
-        "name": "page-swoosh",
+        "name": "languages",
         "value": "",
-        "label": "Page Swoosh",
+        "label": "Language",
         "valueType": "string",
         "options": [
           {
-            "name": "No Swoosh",
-            "value": "page-swoosh-no"
+            "name": "English, ENG",
+            "value": "English, ENG"
           },
           {
-            "name": "Big Curve Swoosh",
-            "value": "page-swoosh-big-curve"
+            "name": "Spanish, SPA",
+            "value": "Spanish, SPA"
           },
           {
-            "name": "Half Curve Swoosh",
-            "value": "page-swoosh-half-curve"
+            "name": "French, FRE",
+            "value": "French, FRE"
+          },
+          {
+            "name": "Arabic, ARA",
+            "value": "Arabic, ARA"
+          },
+          {
+            "name": "Russian, RUS",
+            "value": "Russian, RUS"
+          },
+          {
+            "name": "Chinese, CHI",
+            "value": "Chinese, CHI"
+          },
+          {
+            "name": "Chinese (Shanghai), CHS",
+            "value": "Chinese (Shanghai), CHS"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "originating_unit",
+        "value": "",
+        "label": "Unit",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Accountability Mechanism (AMIPN)",
+            "value": "Accountability Mechanism (AMIPN), AMIPN"
+          },
+          {
+            "name": "Accountability Mechanism (AMSEC)",
+            "value": "Accountability Mechanism (AMSEC), AMSEC"
+          },
+          {
+            "name": "Africa",
+            "value": "Africa, AFR"
+          },
+          {
+            "name": "Agriculture",
+            "value": "Agriculture, AGR"
+          },
+          {
+            "name": "Budget, Performance Review and Strategic Planning",
+            "value": "Budget Performance Review and Strategic Planning, BPS"
+          },
+          {
+            "name": "Climate Change",
+            "value": "Climate Change, GCC"
+          },
+          {
+            "name": "Corporate Secretariat",
+            "value": "Corporate Secretariat, SEC"
+          },
+          {
+            "name": "Development Economics",
+            "value": "Development Economics, DEC"
+          },
+          {
+            "name": "Development Finance",
+            "value": "Development Finance, DFI"
+          },
+          {
+            "name": "Digital Development",
+            "value": "Digital Development, DD"
+          },
+          {
+            "name": "East Asia and Pacific",
+            "value": "East Asia and Pacific, EAP"
+          },
+          {
+            "name": "Education",
+            "value": "Education, EDU"
+          },
+          {
+            "name": "Energy and Extractives",
+            "value": "Energy and Extractives, EEX"
+          },
+          {
+            "name": "Environment & Natural Resources",
+            "value": "Environment & Natural Resources, ENV"
+          },
+          {
+            "name": "Equitable Growth, Finance and Institutions",
+            "value": "Equitable Growth Finance and Institutions, EFI"
+          },
+          {
+            "name": "Europe and Central Asia",
+            "value": "Europe and Central Asia, ECA"
+          },
+          {
+            "name": "Executive Directors",
+            "value": "Executive Directors, EDS"
+          },
+          {
+            "name": "External and Corporate Relations",
+            "value": "External and Corporate Relations, ECR"
+          },
+          {
+            "name": "External and Corporate Relations - Corporate Communications",
+            "value": "External and Corporate Relations - Corporate Communications, ECRCC"
+          },
+          {
+            "name": "Finance, Competitiveness & Innovation",
+            "value": "Finance Competitiveness & Innovation, FCI"
+          },
+          {
+            "name": "Fragility, Conflict and Violence",
+            "value": "Fragility Conflict and Violence, GCF"
+          },
+          {
+            "name": "Gender",
+            "value": "Gender, GEN"
+          },
+          {
+            "name": "Global Corporate Solutions",
+            "value": "Global Corporate Solutions, GCS"
+          },
+          {
+            "name": "Governance",
+            "value": "Governance, GOV"
+          },
+          {
+            "name": "Health, Nutrition and Population",
+            "value": "Health Nutrition and Population, HNP"
+          },
+          {
+            "name": "Human Resources",
+            "value": "Human Resources, HRD"
+          },
+          {
+            "name": "Independent Evaluation Group",
+            "value": "Independent Evaluation Group, IEG"
+          },
+          {
+            "name": "Information and Technology Solutions",
+            "value": "Information and Technology Solutions, ITS"
+          },
+          {
+            "name": "Infrastructure Finance, PPPs and Guarantees",
+            "value": "Infrastructure Finance PPPs and Guarantees, IPG"
+          },
+          {
+            "name": "Inspection Panel",
+            "value": "Inspection Panel, IPN"
+          },
+          {
+            "name": "Integrity Vice Presidency",
+            "value": "Integrity Vice Presidency, INT"
+          },
+          {
+            "name": "Internal Audit",
+            "value": "Internal Audit, IAD"
+          },
+          {
+            "name": "Jobs",
+            "value": "Jobs, JOB"
+          },
+          {
+            "name": "Knowledge Management",
+            "value": "Knowledge Management, DECKM"
+          },
+          {
+            "name": "Latin America & Caribbean",
+            "value": "Latin America & Caribbean, LCR"
+          },
+          {
+            "name": "Legal",
+            "value": "Legal, LEG"
+          },
+          {
+            "name": "Macroeconomics, Trade and Investment",
+            "value": "Macroeconomics Trade and Investment, MTI"
+          },
+          {
+            "name": "Middle East and North Africa",
+            "value": "Middle East and North Africa, MNA"
+          },
+          {
+            "name": "Office of the President",
+            "value": "Office of the President, EXC"
+          },
+          {
+            "name": "Operations Policy and Country Services VP",
+            "value": "Operations Policy and Country Services VP, OPCS"
+          },
+          {
+            "name": "Poverty and Equity",
+            "value": "Poverty and Equity, POV"
+          },
+          {
+            "name": "Sanctions Board Secretariat",
+            "value": "Sanctions Board Secretariat, wbgsbs"
+          },
+          {
+            "name": "Social Development",
+            "value": "Social Development, SDN"
+          },
+          {
+            "name": "Social Protection and Jobs",
+            "value": "Social Protection and Jobs, SPJ"
+          },
+          {
+            "name": "South Asia",
+            "value": "South Asia, SAR"
+          },
+          {
+            "name": "Strategy, Performance and Administration",
+            "value": "Strategy Performance and Administration, SPA"
+          },
+          {
+            "name": "Transport",
+            "value": "Transport, TRA"
+          },
+          {
+            "name": "Treasury",
+            "value": "Treasury, TRE"
+          },
+          {
+            "name": "Urban, DRM, Resilience and Land",
+            "value": "Urban DRM Resilience and Land, GPURL"
+          },
+          {
+            "name": "WBG Finance and Accounting",
+            "value": "WBG Finance and Accounting, WFA"
+          },
+          {
+            "name": "Water",
+            "value": "Water, WAT"
+          }
+        ]
+      },
+      {
+        "component": "aem-tag",
+        "name": "cq:tags",
+        "label": "Tags",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/world-bank"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author"
+      },
+      {
+        "component": "date-time",
+        "valueType": "date",
+        "name": "content_date",
+        "label": "Date Of Content"
+      },
+      {
+        "component": "select",
+        "name": "information_classification",
+        "value": "",
+        "label": "Information Classification",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Confidential",
+            "value": "CON_AI"
+          },
+          {
+            "name": "Official Use Only",
+            "value": "OUO_AI"
+          },
+          {
+            "name": "Public",
+            "value": "PUB_AI"
+          },
+          {
+            "name": "Strictly Confidential",
+            "value": "STC_AI"
           }
         ]
       },
