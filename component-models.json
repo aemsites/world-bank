@@ -1200,6 +1200,9 @@
     }
   ]
 },
+{
+  "id": "boolean",
+"fields": [{"component": "boolean","label": "Boolean","name": "boolean","valueType": "boolean"}]},
       {
         "component": "richtext",
         "valueType": "string",
