@@ -33,7 +33,7 @@ module.exports = {
         'mini-card': 8,
         'research-publications-card': 7,
         'page-metadata': 11,
-        'bio-detail': 8,
+        'bio-detail': 15,
       },
     ],
   },
