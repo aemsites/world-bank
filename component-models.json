@@ -50,15 +50,15 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
+        "name": "fileReference",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "value": "",
+        "name": "alt",
+        "value": "Default alt",
         "label": "Alt Text"
       }
     ]
@@ -1047,13 +1047,11 @@
         "required": true
       },
       {
-        "component": "aem-content",
+        "component": "text",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
-        "label": "Fragment Path",
-        "rootPath": "",
-        "description": "Path to Fragment"
+        "label": "Fragment Path"
       }
     ]
   },
@@ -1188,7 +1186,7 @@
         "required": true
       },
       {
-        "component": "checkbox-group",
+        "component": "checkbox",
         "label": "Checkbox Group",
         "name": "checkbox",
         "valueType": "string[]",
