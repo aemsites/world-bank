@@ -1,3 +1,7 @@
+.section.priority-list-container{
+    padding-bottom: 0;
+}
+
 .priority-list-wrapper .priority-list {
   display: grid;
   max-width: var(--screen-width);
@@ -254,7 +258,7 @@
   text-transform: capitalize;
 }
 
-@media (width >=768px) and (width <= 1024px) {
+@media (width >=768px) and (width < 1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 0;
@@ -323,10 +327,10 @@
   }
 }
 
-@media (width >1024px) {
+@media (width >= 1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
+    gap: 0 80px;
   }
 
   .priority-list-wrapper .priority-list .right-column-container {
