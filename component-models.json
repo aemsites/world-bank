@@ -1034,6 +1034,27 @@
         ]
       },
       {
+        "component": "select",
+        "name": "page-swoosh",
+        "value": "",
+        "label": "Page Swoosh",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Swoosh",
+            "value": "page-swoosh-no"
+          },
+          {
+            "name": "Big Curve Swoosh",
+            "value": "page-swoosh-big-curve"
+          },
+          {
+            "name": "Half Curve Swoosh",
+            "value": "page-swoosh-half-curve"
+          }
+        ]
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "alternate-url",
