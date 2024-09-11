@@ -14,7 +14,18 @@
   margin: 0;
   padding: 0;
 }
-  
+ 
+html[dir="rtl"] .carousel-container .button-container button {
+  background-color: var(--color-white);
+  border: 2px solid var(--primary-blue-80);
+  padding: 13px 16px;
+  right: auto;
+  left: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+}
+
 .carousel-container > .default-content-wrapper > p:first-child {
   font-weight: 800;
   font-size: var(--size-14);
@@ -46,8 +57,11 @@
 
 .carousel-container .button-container button:disabled {
   opacity: 0.5;
+  background-color: var(--neutrals-40);
+  color: rgb(0 41 77 / 42%);
+  cursor: unset;
 }
- 
+
 .carousel-container .button-container button {
   background-color: var(--color-white);
   border: 2px solid var(--primary-blue-80);
@@ -56,23 +70,6 @@
   cursor: pointer;
   position: absolute;
   top: 40%;
-}
-
-html[dir="rtl"] .carousel-container .button-container button {
-  background-color: var(--color-white);
-  border: 2px solid var(--primary-blue-80);
-  padding: 13px 16px;
-  right: auto;
-  left: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-}
-
-.carousel-container .button-container button:disabled {
-  background-color: var(--neutrals-40);
-  color: rgb(0 41 77 / 42%);
-  cursor: unset;
 }
   
 .section > div.carousel-wrapper {
