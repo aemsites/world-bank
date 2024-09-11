@@ -120,6 +120,7 @@ const createCategoriesAndSubMenu = (level0Item, submenuId, index, countrySearchP
 
 // Method to show SubMenu related to Level0 items.
 const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIndex) => {
+  document.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR).scrollTop = 0;
   rightColumn.style.display = 'block';
   if (!isDesktop.matches) {
     const sidemenuBackButton = rightColumn.querySelector(
@@ -151,6 +152,7 @@ const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIn
 };
 
 const closesideMenu = (leftColumn, rightColumn) => {
+  document.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR).scrollTop = 0;
   leftColumn.style.display = 'flex';
   leftColumn.style.display = 'flex';
   if (!isDesktop.matches) {
