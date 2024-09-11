@@ -1212,12 +1212,11 @@
         "label": "Is Sr. Manager"
       },
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "type of expertise",
         "value": "Topics of Expertise",
         "label": "Topics of Expertise",
         "valueType": "string",
-        "multi": true,
         "options": [
           {
             "name": "Agribusiness",
