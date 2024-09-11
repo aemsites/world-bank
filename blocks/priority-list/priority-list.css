@@ -1,3 +1,7 @@
+.section.priority-list-container{
+    padding-bottom: 0;
+}
+
 .priority-list-wrapper .priority-list {
   display: grid;
   max-width: var(--screen-width);
@@ -326,7 +330,7 @@
 @media (width >1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
+    gap: 0 80px;
   }
 
   .priority-list-wrapper .priority-list .right-column-container {
@@ -348,6 +352,7 @@
     .cards-container
     > div
     .cardtitle {
+    line-height: 43px;
     font-size: 36px;
   }
 
@@ -365,7 +370,7 @@
     .right-column-container
     .cards-container
     > div {
-    padding-left: 60px;
+    padding-left: 40px;
     gap: 20px;
   }
 

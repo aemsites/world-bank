@@ -545,6 +545,13 @@
       },
       {
         "component": "text",
+        "name": "data-card-link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
         "valueType": "string",
         "name": "disclaimer",
         "value": "",
@@ -569,6 +576,13 @@
         "name": "news-card-title",
         "value": "",
         "label": "Title"
+      },
+      {
+        "component": "text",
+        "name": "news-card-link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string"
       },
       {
         "component": "reference",
@@ -1925,6 +1939,81 @@
         "valueType": "string",
         "name": "card",
         "value": ""
+      }
+    ]
+  },
+  {
+    "id": "organizational-cards",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "organizational-card",
+    "fields":[
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "acronym",
+        "label": "Acronym",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mission",
+        "label": "Mission",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkText",
+        "label": "Link Text",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "boolean",
+        "label": "Enable Breadcrumb",
+        "name": "enableBreadcrumb",
+        "valueType": "boolean"
+      }
+    ]
+  },
+  {
+    "id": "block-quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "block-quote",
+        "value": "",
+        "label": "Block Quote Text"
       }
     ]
   }
