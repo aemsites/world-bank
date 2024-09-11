@@ -44,6 +44,7 @@ export default async function decorate(block) {
       anchor.append(description);
       row.append(anchor);
       row.append(disclaimer);
+      link.remove();
 
       if (tag) {
         processTag(tag);
@@ -74,6 +75,7 @@ export default async function decorate(block) {
       const anchor = a({ class: 'anchor-tag', href: link.textContent });
       anchor.append(title.querySelector('p'));
       title.append(anchor);
+      link.remove();
 
       if (tag) {
         processTag(tag);
