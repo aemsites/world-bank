@@ -348,6 +348,7 @@
     .cards-container
     > div
     .cardtitle {
+    line-height: 43px;
     font-size: 36px;
   }
 
@@ -365,7 +366,7 @@
     .right-column-container
     .cards-container
     > div {
-    padding-left: 60px;
+    padding-left: 40px;
     gap: 20px;
   }
 
