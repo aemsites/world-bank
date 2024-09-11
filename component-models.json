@@ -50,15 +50,15 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "fileReference",
+        "name": "image",
         "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
+        "name": "imageAlt",
+        "value": "",
         "label": "Alt Text"
       }
     ]
@@ -1047,11 +1047,13 @@
         "required": true
       },
       {
-        "component": "text",
+        "component": "aem-content",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
-        "label": "Fragment Path"
+        "label": "Fragment Path",
+        "rootPath": "",
+        "description": "Path to Fragment"
       }
     ]
   },
