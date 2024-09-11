@@ -1312,5 +1312,17 @@
         "valueType": "boolean"
       }
     ]
+  },
+  {
+    "id": "block-quote",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "block-quote",
+        "value": "",
+        "label": "Block Quote Text"
+      }
+    ]
   }
 ]
