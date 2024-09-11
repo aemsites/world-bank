@@ -1,0 +1,53 @@
+version: 1
+
+indices:
+  site-en: &base-site
+    include:
+      - '/en/**'
+    target: /en/query-index.json
+    properties:
+      title:
+        select: main h1
+        value: textContent(el)
+      navTitle:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: match(attribute(el, "content"), "^(https?:\/\/.*?(danaher.com))+(.*)|^(.*)")
+      publishDate:
+        select: head > meta[name="published-time"]
+        value: parseTimestamp(attribute(el, "content"), "ddd, DD MMM YYYY hh:mm:ss GMT")
+
+  site-zh:
+    <<: *base-site
+    include:
+      - '/zh/**'
+    target: /zh/query-index.json
+  
+  site-ru:
+    <<: *base-site
+    include:
+      - '/ru/**'
+    target: /ru/query-index.json
+
+  site-fr:
+    <<: *base-site
+    include:
+      - '/fr/**'
+    target: /fr/query-index.json
+
+  site-es:
+    <<: *base-site
+    include:
+      - '/es/**'
+    target: /es/query-index.json
+
+  site-ar:
+    <<: *base-site
+    include:
+      - '/ar/**'
+    target: /ar/query-index.json
