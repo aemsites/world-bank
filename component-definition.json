@@ -606,13 +606,13 @@
                   "model": "bio-detail",
                   "name": "Bio Detail",
                   "image": "/content/dam/world-bank/sample/placeholder-black.png",
-                  "bio-name": "Axel van Trotsenburg",
+                  "display-name": "Axel van Trotsenburg",
                   "job-title": "Senior Managing Director World Bank Group",
                   "x-link": "www.xlink.com",
                   "linkedin-link": "www.linkedin.com",
                   "instagram-link": "www.instagram.com",
-                  "media-inquiries": "<p>&nbsp;<strong>Kimberly Versak</strong><br />Senior External Affairs Officer <br /> Tel: 202-458-8881 <br/ > kversak@worldbank.org",
-                  "resources": "<ul><li><a href='www.fullbio.com'>Full Bio</a></li><li><a href='www.highres.com'>High-Res Photo</a></li><li><a href='www.otherdownload.com'>Other Download</a></li></ul>"
+                  "media-inquiries": "<p>&nbsp;<strong>Kimberly Versak</strong><br />Senior External Affairs Officer <br /> <strong><em><a href='tel:2024588881' title='Tel: 202-458-8881'>Tel: 202-458-8881</a></em></strong> <br/ > <strong><em><a href='kversak@worldbank.org' title='kversak@worldbank.org'>kversak@worldbank.org</a></em></strong>",
+                  "resources": "<strong><em><a href='#' title='Full Bio'>Full Bio</a></em></strong><br /> <strong><em><a href='#' title='#'>High-Res Photo</a></em></strong> <br /> <strong><em><a href='#' title='Other Download'>Other Download</a></em></strong>"
                 }
               }
             }

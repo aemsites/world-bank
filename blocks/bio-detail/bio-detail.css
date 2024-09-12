@@ -1,12 +1,24 @@
-.bio-detail .resources ul {
-  list-style: none;
-  padding: var(--none);
+.bio-detail .resources p a {
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  padding: 4px 0;
+  font-weight: 400;
 }
 
-.bio-detail .resources ul li a {
-  color: var(--primary-blue-70);
-  text-decoration: none;
-  font-size: var(--body-medium);
+.bio-detail .media-inquiries p a {
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  color: #000D1A;
+}
+
+.bio-detail .media-inquiries p a:hover {
+  color: #000D1A;
+}
+
+.bio-detail .resources p, .bio-detail .resources p em {
+  display: flex;
+  align-items: center;
 }
 
 .bio-detail .download-image {
@@ -20,6 +32,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
+  gap: 30px;
 }
 
 .bio-detail .sections-container p {
@@ -35,7 +48,7 @@
   flex-direction: column-reverse;
 }
 
-.bio-detail .sections-container .bio-name {
+.bio-detail .sections-container .display-name {
   font-size: 36px;
   font-weight: bold;
   color: var(--primary-blue-90);
@@ -62,6 +75,12 @@
   justify-content: center;
   align-items: center;
   background-color: var(--color-white);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.bio-detail .sections-container .name-job-social .social-media .social-media-link:hover {
+  border: 2px solid var(--primary-blue-50);
 }
 
 .bio-detail .media-resources {
@@ -77,7 +96,7 @@
 }
 
 .bio-detail .title {
-  border-bottom: 1px solid var(--neutrals-103);
+  border-bottom: 2px solid var(--neutrals-103);
   margin-bottom: 20px;
   font-size: var(--body-small);
   font-weight: bold;
@@ -108,7 +127,22 @@
     margin-top: 70px;
   }
 
-  .bio-detail .sections-container .bio-name {
+  .bio-detail .second-container .profile-image {
+    width: 90%;
+    height: 460px;
+  }
+
+  .bio-detail .second-container .profile-image div {
+    height: 100%;
+  }
+
+  .bio-detail .second-container .profile-image div img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .bio-detail .sections-container .display-name {
     font-size: var(--h1-base);
     line-height: 58px;
   }
@@ -131,5 +165,6 @@
 
   .bio-detail .second-container {
     grid-template-columns: auto;
+    justify-items: end;
   }
 }
