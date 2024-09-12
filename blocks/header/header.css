@@ -531,6 +531,10 @@ header
   color: var(--primary-blue-80);
   text-decoration: underline;
   margin-left: 4px;
+  max-width: 40vw;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country p {
@@ -687,19 +691,13 @@ display: none;
     display: flex;
     align-items: center;
     gap: 10px;
+    width: 86%;
   }
 }
 
 /* tools */
 header nav .nav-tools {
   margin-left: auto;
-}
-
-.section.nav-sections .default-content-wrapper h6 {
-  margin: 0;
-  font-size: var(--body-medium);
-  padding: 2.5px 14px 2.5px 0;
-  border-right: 2px solid var(--primary-blue-50);
 }
 
 .section.nav-tools .default-content-wrapper h6 {
