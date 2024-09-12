@@ -177,11 +177,11 @@
 }
 
 .cards.senior-leadership .cards-card-body {
-  margin: 1rem 0 0;
+  margin: 16px 0 0;
 }
 
 .cards.senior-leadership .cards-card-body h4 {
-  margin-bottom: 0.6rem;
+  margin-bottom: 10px;
   line-height: 10px;
 }
 
@@ -196,7 +196,7 @@
   margin: 0;
 }
 
-@media (width >= 768px) and (width < 1024px) {
+@media (width >= 768px) {
   .cards.senior-leadership > ul {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -204,7 +204,7 @@
 
 @media (width >= 1024px) {
   .cards.senior-leadership > ul {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
   }
 
   .cards.senior-leadership .cards-card-body h4 a {
