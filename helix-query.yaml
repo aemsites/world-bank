@@ -4,6 +4,15 @@ indices:
   site-en: &base-site
     include:
       - '/en/**'
+    exclude:
+      - '/en/drafts'
+      - '/en/drafts/**'
+      - '/en/fragments'
+      - '/en/fragments/**'
+      - '/en/footer'
+      - '/en/nav'
+      - '/en/data'
+      - '/en/data/**'
     target: /en/query-index.json
     properties:
       title:
@@ -21,33 +30,93 @@ indices:
       publishDate:
         select: head > meta[name="published-time"]
         value: parseTimestamp(attribute(el, "content"), "ddd, DD MMM YYYY hh:mm:ss GMT")
+      contentType:
+        select: head > meta[name="content_type"]
+        value: attribute(el, "content")
+      languages:
+        select: head > meta[name="languages"]
+        value: attribute(el, "content")
+      originating_unit:
+        select: head > meta[name="originating_unit"]
+        value: attribute(el, "content")
+      author:
+        select: head > meta[name="author"]
+        value: attribute(el, "content")
+      information_classification:
+        select: head > meta[name="information_classification"]
+        value: attribute(el, "content")
 
   site-zh:
     <<: *base-site
     include:
       - '/zh/**'
+    exclude:
+      - '/zh/drafts'
+      - '/zh/drafts/**'
+      - '/zh/fragments'
+      - '/zh/fragments/**'
+      - '/zh/footer'
+      - '/zh/nav'
+      - '/zh/data'
+      - '/zh/data/**'
     target: /zh/query-index.json
   
   site-ru:
     <<: *base-site
     include:
       - '/ru/**'
+    exclude:
+      - '/ru/drafts'
+      - '/ru/drafts/**'
+      - '/ru/fragments'
+      - '/ru/fragments/**'
+      - '/ru/footer'
+      - '/ru/nav'
+      - '/ru/data'
+      - '/ru/data/**'
     target: /ru/query-index.json
 
   site-fr:
     <<: *base-site
     include:
       - '/fr/**'
+    exclude:
+      - '/fr/drafts'
+      - '/fr/drafts/**'
+      - '/fr/fragments'
+      - '/fr/fragments/**'
+      - '/fr/footer'
+      - '/fr/nav'
+      - '/fr/data'
+      - '/fr/data/**'
     target: /fr/query-index.json
 
   site-es:
     <<: *base-site
     include:
       - '/es/**'
+    exclude:
+      - '/es/drafts'
+      - '/es/drafts/**'
+      - '/es/fragments'
+      - '/es/fragments/**'
+      - '/es/footer'
+      - '/es/nav'
+      - '/es/data'
+      - '/es/data/**'
     target: /es/query-index.json
 
   site-ar:
     <<: *base-site
     include:
       - '/ar/**'
+    exclude:
+      - '/ar/drafts'
+      - '/ar/drafts/**'
+      - '/ar/fragments'
+      - '/ar/fragments/**'
+      - '/ar/footer'
+      - '/ar/nav'
+      - '/ar/data'
+      - '/ar/data/**'
     target: /ar/query-index.json
