@@ -737,6 +737,69 @@
               }
             }
           }
+        },
+        {
+          "title": "Measuring Impact Cards",
+          "id": "impact-cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Impact Cards",
+                  "filter": "impact-cards",
+                  "item1": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Impact Card",
+                    "model": "impact-card",
+                    "image": "/content/dam/world-bank/impact-icons/INCLUSIVE-AND-EQUITABLE-WATER-AND-SANITATION-SERVICES.svg",
+                    "imageAlt": "Water and Sanitation",
+                    "indicator":"inclusiveNEuitableWaterNSanitationServices-planet",
+                    "title": "49 million",
+                    "description": "people with better water, sanitation and hygiene",
+                    "link": "https://scorecard.worldbank.org/en/scorecard/inclusive-and-equitable-water-and-sanitation-services"
+                  },
+                  "item2": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Impact Card",
+                    "model": "impact-card",
+                    "image": "/content/dam/world-bank/impact-icons/AFFORDABLE-RELIABLE-SUSTAINABLE-ENERGY-FOR-ALL.svg",
+                    "imageAlt": "Sustainable Energy",
+                    "indicator":"affordableNReliableEnergyForAll-infrastructure",
+                    "title": "230 Gigawatts",
+                    "description": "of new renewable energy",
+                    "link": "https://scorecard.worldbank.org/en/scorecard/affordable-reliable-and-sustainable-energy"
+                  },
+                  "item3": {
+                    "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                    "name": "Impact Card",
+                    "model": "impact-card",
+                    "image": "/content/dam/world-bank/impact-icons/DIGITAL-CONNECTIVITY.svg",
+                    "imageAlt": "Digital Connectivity",
+                    "indicator":"digitalConnectivity-digital",
+                    "title": "59 million",
+                    "description": "people with internet access",
+                    "link": "https://scorecard.worldbank.org/en/scorecard/digital-connectivity"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Impact Card",
+          "id": "impact-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Impact Card",
+                  "model": "impact-card"
+                }
+              }
+            }
+          }
         }
       ]
     }
