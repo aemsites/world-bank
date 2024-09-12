@@ -32,7 +32,7 @@ module.exports = {
         teaser: 9,
         'mini-card': 8,
         'research-publications-card': 7,
-        'page-metadata': 11,
+        'page-metadata': 22,
         'bio-detail': 15,
         'impact-card': 6,
       },
