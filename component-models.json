@@ -722,8 +722,7 @@
         "valueType": "string",
         "name": "jcr:title",
         "label": "Title",
-        "required": true,
-        "description": "Sets the title of the page in page meta."
+        "required": true
       },
       {
         "component": "text",
@@ -736,9 +735,51 @@
         "component": "text",
         "valueType": "string",
         "name": "jcr:description",
-        "label": "Page Description",
-        "required": true,
-        "description": "Sets the description of the page in page meta."
+        "label": "Description",
+        "required": true
+      },
+      {
+        "component": "aem-tag",
+        "name": "cq:tags",
+        "label": "Tags",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/world-bank"
+      },
+      {
+        "component": "date-time",
+        "valueType": "date",
+        "name": "content_date",
+        "label": "Date Of Content"
+      },
+      {
+        "component": "select",
+        "name": "page-swoosh",
+        "value": "",
+        "label": "Page Swoosh",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Swoosh",
+            "value": "page-swoosh-no"
+          },
+          {
+            "name": "Big Curve Swoosh",
+            "value": "page-swoosh-big-curve"
+          },
+          {
+            "name": "Half Curve Swoosh",
+            "value": "page-swoosh-half-curve"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alternate-url",
+        "multi": true,
+        "value": "",
+        "label": "Language URL(s)",
+        "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
       },
       {
         "component": "tab",
@@ -1082,23 +1123,10 @@
         ]
       },
       {
-        "component": "aem-tag",
-        "name": "cq:tags",
-        "label": "Tags",
-        "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank"
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "author",
         "label": "Author"
-      },
-      {
-        "component": "date-time",
-        "valueType": "date",
-        "name": "content_date",
-        "label": "Date Of Content"
       },
       {
         "component": "select",
@@ -1129,36 +1157,6 @@
         "component": "tab",
         "label": "Profile",
         "name": "tab-profile"
-      },
-      {
-        "component": "select",
-        "name": "page-swoosh",
-        "value": "",
-        "label": "Page Swoosh",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "No Swoosh",
-            "value": "page-swoosh-no"
-          },
-          {
-            "name": "Big Curve Swoosh",
-            "value": "page-swoosh-big-curve"
-          },
-          {
-            "name": "Half Curve Swoosh",
-            "value": "page-swoosh-half-curve"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "alternate-url",
-        "multi": true,
-        "value": "",
-        "label": "Language URL(s)",
-        "description": "List of other language urls of current page (provide absolute url). Use pattern 'es|https://www.worldbank.com/es'"
       }
     ]
   },
