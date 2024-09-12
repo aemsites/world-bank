@@ -535,13 +535,6 @@
       },
       {
         "component": "text",
-        "name": "data-card-tag-link",
-        "value": "",
-        "label": "Tag Link",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
         "valueType": "string",
         "name": "title",
         "value": "",

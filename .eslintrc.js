@@ -24,7 +24,7 @@ module.exports = {
       {
         '*': 4,
         'curated-card': 7,
-        'data-card': 6,
+        'data-card': 5,
         'news-card': 5,
         hero: 5,
         'explore-card': 7,

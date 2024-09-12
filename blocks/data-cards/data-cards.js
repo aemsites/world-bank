@@ -40,15 +40,14 @@ export default async function decorate(block) {
       description.className = 'data-card-description';
       disclaimer.className = 'data-card-disclaimer';
       const anchor = a({ class: 'anchor-tag', href: link.textContent });
-      anchor.append(title);
-      anchor.append(description);
-      row.append(anchor);
-      row.append(disclaimer);
       link.remove();
 
       if (tag) {
         processTag(tag);
       }
+
+      row.parentNode.insertBefore(anchor, row);
+      anchor.appendChild(row);
     });
   }
 
@@ -73,13 +72,13 @@ export default async function decorate(block) {
       title.className = 'news-card-title';
       image.className = 'news-card-image';
       const anchor = a({ class: 'anchor-tag', href: link.textContent });
-      anchor.append(title.querySelector('p'));
-      title.append(anchor);
       link.remove();
 
       if (tag) {
         processTag(tag);
       }
+      row.parentNode.insertBefore(anchor, row);
+      anchor.appendChild(row);
     });
   }
 }
