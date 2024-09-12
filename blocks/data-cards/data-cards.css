@@ -20,7 +20,6 @@
 }
 
 .data-cards.data-card-variation .rte-container > div:first-child {
-  font-weight: 700;
   font-size: var(--h2-base);
   line-height: 112%;
   text-transform: uppercase;
@@ -48,6 +47,7 @@
 
 .data-cards.data-card-variation .anchor-tag{
     text-decoration: none;
+    color: unset;
 }
 
 .data-cards.data-card-variation .data-card-description > p {
