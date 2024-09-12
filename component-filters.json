@@ -36,7 +36,8 @@
       "carousel",
       "organizational-cards",
       "breadcrumb",
-      "block-quote"
+      "block-quote",
+      "impact-cards"
     ]
   },
   {
@@ -82,5 +83,9 @@
     "components": [
       "organizational-card"
     ]
+  },
+  {
+    "id": "impact-cards",
+    "components": ["impact-card"]
   }
 ]
