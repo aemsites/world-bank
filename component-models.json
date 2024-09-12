@@ -1122,7 +1122,13 @@
         "valueType": "string",
         "name": "email",
         "value": "",
-        "label": "Email"
+        "label": "Email",
+        "validation": {
+          "minLength": 6,
+          "maxLength": 30,
+          "regExp": "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$/",
+          "customErrorMsg": "Please enter valid email id."
+        }
       },
       {
         "component": "text",
