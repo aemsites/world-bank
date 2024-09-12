@@ -26,7 +26,7 @@
 
 .cards:not(.profile-summary) > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
@@ -47,8 +47,11 @@
 
 .cards.profile-summary .cards-card-body {
   background: var(--neutrals-20);
-  padding: var(--xlarge) var(--large);
   border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
 }
 
 .cards.profile-summary .cards-card-image {
@@ -59,43 +62,49 @@
   display: grid;
 }
 
-.cards.profile-summary .cards-card-body > p.button-container {
-  margin-top: var(--regular);
+.cards.profile-summary .cards-card-body p.button-container {
+  margin-top: 24px;
 }
 
-.cards.profile-summary .cards-card-body > *:first-child {
-  font-size: var(--h1-base);
-  line-height: 33px;
+.cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+  font-size: 28px;
+  line-height: 28px;
   margin-bottom: 20px;
   margin-top: 0;
-}
-
-.cards.profile-summary .cards-card-body > *:first-child strong {
   font-weight: 700;
+  letter-spacing: -0.015em;
+  text-align: left;
+  font-style: normal;
 }
 
-.cards.profile-summary .cards-card-body > p {
-  font-size: var(--body-large);
+.cards.profile-summary .cards-card-body p {
+  font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   margin: 0;
+  letter-spacing: -0.25px;
+  text-align: left;
+  text-wrap: wrap;
+  color: var(--neutrals-a-100);
 }
 
-.cards.profile-summary .cards-card-body > p > a {
+.cards.profile-summary .cards-card-body p > a {
   line-height: 19px;
+  margin: 0;
 }
 
 .cards.profile-summary > ul > li img {
   width: 100%;
-  min-height: 320px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  aspect-ratio: 1 / 1;
   border-radius: 10px 10px 0 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 @media (width >= 768px) {
   .cards.profile-summary > ul > li {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 252px auto;
   }
 
   .cards.profile-summary > ul > li img {
@@ -107,10 +116,43 @@
   .cards.profile-summary .cards-card-body {
     border-radius: 0 10px 10px 0;
   }
+
+  .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+    line-height: 36px;
+    margin-bottom: 24px;
+    font-size: 36px;
+  }
+
+  .cards.profile-summary .cards-card-body p.button-container {
+    margin-top: 28px;
+  }
 }
 
 @media (width >= 1024px) {
   .cards.profile-summary > ul > li {
-    grid-template-columns: auto auto;
+    grid-template-columns: 465px 2fr;
+  }
+
+  .cards.profile-summary .cards-card-body {
+      padding: 80px;
+  }
+
+  .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+    line-height: 48px;
+    margin-bottom: 20px;
+    font-size: 48px;
+  }
+
+  .cards.profile-summary .cards-card-body p {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  
+  .cards.profile-summary .cards-card-body p.button-container {
+    margin-top: 40px;
+  }
+
+  .cards.profile-summary > ul > li img {
+    border-radius: 8px 0 0 8px;
   }
 }

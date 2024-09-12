@@ -71,13 +71,17 @@
   padding: 11px 27px;
 }
 
+.bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) em{
+  display: flex;
+}
+
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a {
   background-color: var(--transparent);
   color: var(--color-white);
   font-size: 16px;
   border-bottom: 2px solid #FFFFFF4D;
   border-radius: 0;
-  padding: 0;
+  padding: 5px 0;
   margin: 0;
 }
 

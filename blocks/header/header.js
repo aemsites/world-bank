@@ -65,6 +65,22 @@ function toggleAllNavSections(sections, expanded = false) {
  * @param {Element} navSections The nav sections within the container element
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
  */
+
+function closeSearchBox() {
+  const navWrapper = document.querySelector('.nav-wrapper');
+  const headerWrapper = document.querySelector('.header-wrapper');
+  const searchContainer = headerWrapper.querySelector('.search-container');
+  const cancelContainer = navWrapper.querySelector('.cancel-container');
+  const overlay = document.querySelector('.overlay');
+  const searchImage = document.querySelector('.icon-search');
+
+  searchContainer.style.display = 'none';
+  cancelContainer.style.display = 'none';
+  searchImage.style.display = 'block';
+  overlay.style.display = 'none';
+  document.body.classList.remove('no-scroll');
+}
+
 function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null
     ? !forceExpanded
@@ -103,6 +119,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   if (!expanded) {
     document.body.classList.add('no-scroll');
     navMenuOverlay.classList.add(constants.OPEN);
+    navMenuOverlay.scrollTop = 0;
   } else {
     document.body.classList.remove('no-scroll');
     navMenuOverlay.classList.remove(constants.OPEN);
@@ -114,6 +131,11 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     window.addEventListener(constants.KEY_DOWN, closeOnEscape);
   } else {
     window.removeEventListener(constants.KEY_DOWN, closeOnEscape);
+  }
+  const headerWrapper = document.querySelector('.header-wrapper');
+  const searchContainer = headerWrapper.querySelector('.search-container');
+  if (searchContainer) {
+    closeSearchBox();
   }
 }
 /**
@@ -169,12 +191,7 @@ function createSearchBox() {
     cancelImg.alt = 'cancel';
     cancelImg.style.cssText = 'display: flex; cursor: pointer;';
     cancelContainer.addEventListener('click', () => {
-      searchContainer.style.display = 'none';
-      cancelContainer.style.display = 'none';
-      searchImage.style.display = 'block'; // Show search icon again
-      overlay.style.display = 'none';
-      hamBurgerIcon.style.pointerEvents = 'all';
-      document.body.classList.remove('no-scroll');
+      closeSearchBox();
     });
     cancelContainer.appendChild(cancelImg);
     navTools.appendChild(cancelContainer);
@@ -195,7 +212,7 @@ function createSearchBox() {
     });
 
     Object.assign(searchInputBox, {
-      type: 'search',
+      type: 'text',
       id: 'search-input',
       name: 'myInput',
       placeholder: listOfAllPlaceholdersData.searchVariable,
