@@ -90,3 +90,4 @@ export function source(...items) { return domEl('source', ...items); }
 export function hr(...items) { return domEl('hr', ...items); }
 export function section(...items) { return domEl('section', ...items); }
 export function picture(...items) { return domEl('picture', ...items); }
+export function blockquote(...items) { return domEl('blockquote', ...items); }

@@ -1,26 +1,27 @@
 .block-quote {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    --quote-spacing: var(--spacing-24);
+    --quote-font-size: var(--size-20);
+
+    @media (width >= 768px) {
+        --quote-spacing: var(--spacing-28);
+        --quote-font-size: var(--size-24);
+    }
+
+    @media (width >= 1024px) {
+        --quote-spacing: var(--spacing-40);
+        --quote-font-size: var(--size-28);
+    }
+
     padding: 0 0 0 32px;
-    gap: 10px;
     border-left: 4px solid var(--primary-blue-90);
+    margin: var(--quote-spacing) 0;
 }
 
-.block-quote p {
+blockquote {
     font-weight: 700;
-    font-size: 24px;
+    font-size: var(--quote-font-size);
     letter-spacing: -0.15px;
-    line-height: 28px;
+    line-height: 115%;
     color: var(--primary-blue-90);
     margin: 0;
-}
-
-@media (width >= 1024px) {
-    .block-quote p {
-        font-size: 28px;
-        line-height: 32px;
-    }
 }
