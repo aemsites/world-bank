@@ -84,7 +84,7 @@ function buildTwitterLinks(main) {
 
       // add icon to end of tweet text
       const icon = document.createElement('i');
-      i.classList.add('lp', 'lp-twit');
+      icon.classList.add('lp', 'lp-twit');
       anchor.appendChild(icon);
 
       // wrap the anchor in a span
