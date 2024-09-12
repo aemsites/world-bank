@@ -76,6 +76,11 @@
   align-items: center;
   background-color: var(--color-white);
   cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.bio-detail .sections-container .name-job-social .social-media .social-media-link:hover{
+  border: 2px solid var(--primary-blue-50);
 }
 
 .bio-detail .media-resources {

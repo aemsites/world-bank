@@ -19,10 +19,10 @@ function createSocialMediaLink(linkName, className, iconPath) {
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
     anchor.appendChild(linkImage);
-    const socialMediaLink=  div({ class: 'social-media-link' }, anchor);
-    socialMediaLink.addEventListener('click',()=>{
+    const socialMediaLink = div({ class: 'social-media-link' }, anchor);
+    socialMediaLink.addEventListener('click', () => {
       window.location.href = linkName.textContent;
-    })
+    });
     return socialMediaLink;
   }
   return null;
@@ -100,7 +100,8 @@ function createMetaTag(
     { name: 'upi-id', value: upiId },
     { name: 'is-leader', value: isLeader },
     { name: 'is-expert', value: isExpert },
-    { name: 'is-sr-manager', value: isSrManager }];
+    { name: 'is-sr-manager', value: isSrManager },
+    { name: 'expertise-topics', value: expertiseTopics }];
   listOfMetaTags.forEach((metaData) => {
     const meta = document.createElement('meta');
     meta.name = metaData.name;
