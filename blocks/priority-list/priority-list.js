@@ -98,12 +98,13 @@ export default async function decorate(block) {
   rightColumnContainer.append(textContainer);
   rightColumnContainer.append(cardsContainer);
   const imageContainer = div({ class: 'image-container' });
-  const imgElement = img({ src: cards.at(0).querySelector('img') ? cards.at(0).querySelector('img').src : '' });
+  const imgElement = img({ src: cards.at(0).querySelector('img').src });
   imageContainer.append(imgElement);
-
-  imageContainer.style.backgroundImage = `url(${
-    cards.at(0).querySelector('img').src
-  })`;
+  if (cards.at(0).querySelector('img')) {
+    imageContainer.style.backgroundImage = `url(${
+      cards.at(0).querySelector('img').src
+    })`;
+  }
   leftColumnContainer.append(imageContainer);
   block.append(leftColumnContainer);
 
