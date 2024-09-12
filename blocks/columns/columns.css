@@ -547,5 +547,35 @@
         font-size: var(--h2-base);
         line-height: 44px;
   }
+
+  .columns.columns-1-cols.banner-text {
+    > div {
+      display:block;
+
+      > div {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        > p:nth-child(1) {
+          > strong {
+            width: 100%;
+            display:inline-block;
+          }
+
+          font-size: 40px;
+          line-height: 112%;
+          flex-basis: 35%;
+        }
+
+        > p:nth-child(2) {
+          font-size: 20px;
+          line-height: 125%;
+          flex-basis: 55%;
+          align-content: center;
+        }
+      }
+    }
+  }
 }
 }

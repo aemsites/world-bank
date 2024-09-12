@@ -147,6 +147,10 @@
               {
                 "name": "Image Left Variation",
                 "value": "columns-image-left"
+              },
+              {
+                "name": "Banner Text Variation",
+                "value": "banner-text"
               }
             ]
           },
@@ -218,6 +222,10 @@
         "value": "2",
         "label": "Columns",
         "options": [
+          {
+            "name": "1",
+            "value": "1"
+          },
           {
             "name": "2",
             "value": "2"
