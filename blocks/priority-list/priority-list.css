@@ -1,3 +1,7 @@
+.section.priority-list-container{
+    padding-bottom: 0;
+}
+
 .priority-list-wrapper .priority-list {
   display: grid;
   max-width: var(--screen-width);
@@ -27,6 +31,7 @@
   .main-heading
   p {
   margin: 0;
+  font-weight: 400;
   max-width: 550px;
   word-break: whitespace;
 }
@@ -75,8 +80,16 @@
   flex-direction: column;
   row-gap: 8px;
   position: relative;
-  padding-left: 26px;
+  padding-left: 20px;
   text-align: left;
+}
+
+.priority-list-wrapper
+  .priority-list
+  .right-column-container
+  .cards-container
+  > div:last-child {
+  border-left: 3px solid var(--transparent);
 }
 
 .priority-list-wrapper
@@ -218,7 +231,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
 }
 
 .priority-list-wrapper .priority-list .left-column-container {
@@ -254,7 +267,18 @@
   text-transform: capitalize;
 }
 
-@media (width >=768px) and (width <= 1024px) {
+.priority-list-wrapper
+  .priority-list
+  .right-column-container
+  .cards-container
+  > div
+  .carddesc
+  ul
+  a:hover {
+    text-decoration-color: var(--primary-blue-50);
+  }
+
+@media (width >=768px) and (width < 1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 0;
@@ -286,7 +310,19 @@
     .right-column-container
     .cards-container
     > div {
-    padding-left: 60px;
+    padding-left: 20px;
+  }
+
+  .priority-list-wrapper
+    .priority-list
+    .right-column-container
+    .cards-container
+    > div
+    .carddesc
+    ul {
+    margin-bottom: 0;
+    padding-bottom: 48px;
+
   }
 
   .priority-list-wrapper .priority-list .left-column-container {
@@ -323,10 +359,10 @@
   }
 }
 
-@media (width >1024px) {
+@media (width >= 1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
+    gap: 0 80px;
   }
 
   .priority-list-wrapper .priority-list .right-column-container {
@@ -348,7 +384,9 @@
     .cards-container
     > div
     .cardtitle {
+    line-height: 43px;
     font-size: 36px;
+    margin-top: -15px;
   }
 
   .priority-list-wrapper
@@ -365,7 +403,7 @@
     .right-column-container
     .cards-container
     > div {
-    padding-left: 60px;
+    padding-left: 40px;
     gap: 20px;
   }
 
@@ -411,6 +449,7 @@
     ul {
     flex-flow: row wrap;
     column-gap: 30px;
+    margin-bottom: 0;
     padding-bottom: 48px;
     justify-content: space-between;
   }
