@@ -822,7 +822,7 @@
         "label": "Language",
         "valueType": "string",
         "options": [
-          { "text": "Afrikaans, AFR1", "value": "Afrikaans, AFR1" }, 
+          { "text": "Afrikaans, AFR1", "value": "Afrikaans AFR1" }, 
           { "text": "Akan, AKA", "value": "Akan, AKA" }, 
           { "text": "Albanian, ALB", "value": "Albanian, ALB" }, 
           { "text": "American Sign Language, ASL", "value": "American Sign Language, ASL" }, 
