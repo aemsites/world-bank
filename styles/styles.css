@@ -940,3 +940,15 @@ body.no-scroll {
   word-wrap: normal;
   z-index: 1000;
 }
+
+main span.tweetable {
+  background: var(--primary-blue-30);
+}
+
+main span.tweetable > a {
+  color: var(--color-white);
+}
+
+main span.tweetable > a > i {
+  background: var(--color-black);
+}

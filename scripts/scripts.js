@@ -67,12 +67,43 @@ async function loadFonts() {
 }
 
 /**
+ * Finds and decorates anchor elements with Twitter hrefs
+ * @param {Element} main The container element
+ */
+function buildTwitterLinks(main) {
+  if (!main) return; 
+
+  // get all anchor elements
+  const anchors = main.querySelectorAll('a');
+
+  anchors.forEach(anchor => {
+    // check for 'twitter.com' or 'x.com'
+    if (anchor.href.includes('twitter.com') || anchor.href.includes('x.com')) {
+      // add class
+      anchor.classList.add('twd-id');
+
+      // add icon to end of tweet text
+      const icon = document.createElement('i');
+      i.classList.add('lp', 'lp-twit');
+      anchor.appendChild(icon);
+
+      // wrap the anchor in a span
+      const span = document.createElement('span');
+      span.classList.add('tweetable');
+      anchor.parentNode.insertBefore(span, anchor);
+      span.appendChild(anchor);
+    }
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
     // TODO: add auto block, if needed
+    buildTwitterLinks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
