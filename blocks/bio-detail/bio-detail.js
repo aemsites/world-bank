@@ -89,13 +89,6 @@ export default async function decorate(block) {
   const [
     profileImage,
     displayName,
-    firstName,
-    surName,
-    upiId,
-    isLeader,
-    isExpert,
-    isSrManager,
-    expertiseTopics,
     jobTitle,
     xLink,
     linkedinLink,
