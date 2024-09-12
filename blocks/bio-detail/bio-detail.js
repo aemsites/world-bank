@@ -85,41 +85,6 @@ function createResources() {
   });
 }
 
-function createMetaTag(
-  firstName,
-  surName,
-  upiId,
-  isLeader,
-  isExpert,
-  isSrManager,
-  expertiseTopics,
-) {
-  const listOfMetaTags = [
-    { name: 'firstname', value: firstName },
-    { name: 'surname', value: surName },
-    { name: 'upi-id', value: upiId },
-    { name: 'is-leader', value: isLeader },
-    { name: 'is-expert', value: isExpert },
-    { name: 'is-senior-manager', value: isSrManager },
-    { name: 'expertise-topics', value: expertiseTopics },
-  ];
-  listOfMetaTags.forEach((metaData) => {
-    if (metaData.value.textContent) {
-      const meta = document.createElement('meta');
-      meta.name = metaData.name;
-      meta.content = metaData.value.textContent.trim();
-      document.head.appendChild(meta);
-    }
-  });
-  firstName.remove();
-  surName.remove();
-  upiId.remove();
-  isLeader.remove();
-  isExpert.remove();
-  isSrManager.remove();
-  expertiseTopics.remove();
-}
-
 export default async function decorate(block) {
   const [
     profileImage,
@@ -160,16 +125,6 @@ export default async function decorate(block) {
     div({ class: 'title' }, placeholderData.biodetailResourcesText),
     resourcesTargetDiv.firstChild,
   );
-  createMetaTag(
-    firstName,
-    surName,
-    upiId,
-    isLeader,
-    isExpert,
-    isSrManager,
-    expertiseTopics,
-  );
-
   createResources();
   createPersonBio(
     displayName,
