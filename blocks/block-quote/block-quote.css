@@ -12,7 +12,7 @@
         --quote-font-size: var(--size-28);
     }
 
-    padding: 0 0 0 32px;
+    padding: 0 0 0 var(--spacing-32);
     border-left: 4px solid var(--primary-blue-90);
     margin: var(--quote-spacing) 0;
 }
