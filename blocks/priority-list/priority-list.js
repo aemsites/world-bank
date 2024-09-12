@@ -98,7 +98,7 @@ export default async function decorate(block) {
   rightColumnContainer.append(textContainer);
   rightColumnContainer.append(cardsContainer);
   const imageContainer = div({ class: 'image-container' });
-  const imgElement = img({ src: cards.at(0).querySelector('img').src });
+  const imgElement = img({ src: cards.at(0).querySelector('img') ? cards.at(0).querySelector('img').src : '' });
   imageContainer.append(imgElement);
 
   imageContainer.style.backgroundImage = `url(${
