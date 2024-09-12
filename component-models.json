@@ -1231,6 +1231,7 @@
         "value": "Topics of Expertise",
         "label": "Topics of Expertise",
         "valueType": "string",
+        "required": true,
         "options": [
           {
             "name": "Agribusiness",

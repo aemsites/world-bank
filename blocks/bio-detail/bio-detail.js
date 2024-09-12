@@ -19,7 +19,11 @@ function createSocialMediaLink(linkName, className, iconPath) {
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
     anchor.appendChild(linkImage);
-    return div({ class: 'social-media-link' }, anchor);
+    const socialMediaLink=  div({ class: 'social-media-link' }, anchor);
+    socialMediaLink.addEventListener('click',()=>{
+      window.location.href = linkName.textContent;
+    })
+    return socialMediaLink;
   }
   return null;
 }
@@ -72,7 +76,7 @@ function createPersonBio(
 }
 
 function createResources() {
-  const listItems = document.querySelectorAll('.resources li a');
+  const listItems = document.querySelectorAll('.resources div p');
   listItems.forEach((link) => {
     const downloadImg = img({ class: 'download-image' });
     downloadImg.src = `${window.hlx.codeBasePath}/icons/download.png`;
@@ -80,10 +84,49 @@ function createResources() {
     link.insertBefore(downloadImg, link.firstChild);
   });
 }
+
+function createMetaTag(
+  firstName,
+  surName,
+  upiId,
+  isLeader,
+  isExpert,
+  isSrManager,
+  expertiseTopics,
+) {
+  const listOfMetaTags = [
+    { name: 'firstname', value: firstName },
+    { name: 'surname', value: surName },
+    { name: 'upi-id', value: upiId },
+    { name: 'is-leader', value: isLeader },
+    { name: 'is-expert', value: isExpert },
+    { name: 'is-sr-manager', value: isSrManager }];
+  listOfMetaTags.forEach((metaData) => {
+    const meta = document.createElement('meta');
+    meta.name = metaData.name;
+    meta.content = metaData.value.textContent;
+    document.head.appendChild(meta);
+  });
+  firstName.remove();
+  surName.remove();
+  upiId.remove();
+  isLeader.remove();
+  isExpert.remove();
+  isSrManager.remove();
+  expertiseTopics.remove();
+}
+
 export default async function decorate(block) {
   const [
     profileImage,
-    bioName,
+    displayName,
+    firstName,
+    surName,
+    upiId,
+    isLeader,
+    isExpert,
+    isSrManager,
+    expertiseTopics,
     jobTitle,
     xLink,
     linkedinLink,
@@ -93,7 +136,7 @@ export default async function decorate(block) {
   ] = [...block.children];
 
   profileImage.className = 'profile-image';
-  bioName.className = 'bio-name';
+  displayName.className = 'display-name';
   jobTitle.className = 'job-title';
   xLink.className = 'x-link';
   linkedinLink.className = 'linkedin-lLink';
@@ -113,10 +156,19 @@ export default async function decorate(block) {
     div({ class: 'title' }, placeholderData.biodetailResourcesText),
     resourcesTargetDiv.firstChild,
   );
+  createMetaTag(
+    firstName,
+    surName,
+    upiId,
+    isLeader,
+    isExpert,
+    isSrManager,
+    expertiseTopics,
+  );
 
   createResources();
   createPersonBio(
-    bioName,
+    displayName,
     jobTitle,
     xLink,
     linkedinLink,
