@@ -758,18 +758,9 @@
         "label": "Page Swoosh",
         "valueType": "string",
         "options": [
-          {
-            "name": "No Swoosh",
-            "value": "page-swoosh-no"
-          },
-          {
-            "name": "Big Curve Swoosh",
-            "value": "page-swoosh-big-curve"
-          },
-          {
-            "name": "Half Curve Swoosh",
-            "value": "page-swoosh-half-curve"
-          }
+          { "name": "No Swoosh", "value": "page-swoosh-no" },
+          { "name": "Big Curve Swoosh", "value": "page-swoosh-big-curve" },
+          { "name": "Half Curve Swoosh", "value": "page-swoosh-half-curve" }
         ]
       },
       {
@@ -787,6 +778,12 @@
         "name": "tab-adv"
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author"
+      },
+      {
         "component": "select",
         "name": "content_type",
         "value": "",
@@ -794,82 +791,28 @@
         "required": true,
         "valueType": "string",
         "options": [
-          { "name": "Brief", "value": "brief" },
-          { "name": "Events", "value": "events" },
-          { "name": "Factsheet", "value": "factsheet" },
-          { "name": "Feature Story", "value": "feature-story" },
-          {
-            "name": "Immersive Story",
-            "value": "immersive-story"
-          },
-          {
-            "name": "Infographic",
-            "value": "infographic"
-          },
-          {
-            "name": "Informational",
-            "value": "informational"
-          },
-          {
-            "name": "Interactive",
-            "value": "interactive"
-          },
-          {
-            "name": "Landing",
-            "value": "landing"
-          },
-          {
-            "name": "Leadership",
-            "value": "leadership"
-          },
-          {
-            "name": "Listing",
-            "value": "listing"
-          },
-          {
-            "name": "Loans & Credits",
-            "value": "loans-&-credits"
-          },
-          {
-            "name": "Opinion",
-            "value": "opinion"
-          },
-          {
-            "name": "Others",
-            "value": "others"
-          },
-          {
-            "name": "People",
-            "value": "people"
-          },
-          {
-            "name": "Podcast",
-            "value": "podcast"
-          },
-          {
-            "name": "Publication",
-            "value": "publication"
-          },
-          {
-            "name": "Results",
-            "value": "results"
-          },
-          {
-            "name": "Slideshow",
-            "value": "slideshow"
-          },
-          {
-            "name": "Speeches and Transcripts",
-            "value": "speeches-and-transcripts"
-          },
-          {
-            "name": "Statement",
-            "value": "statement"
-          },
-          {
-            "name": "Video",
-            "value": "video"
-          }
+          { "name": "Brief", "value": "Brief" },
+          { "name": "Events", "value": "Events" },
+          { "name": "Factsheet", "value": "Factsheet" },
+          { "name": "Feature Story", "value": "Feature Story" },
+          { "name": "Immersive Story", "value": "Immersive Story" },
+          { "name": "Infographic", "value": "Infographic" },
+          { "name": "Informational", "value": "Informational" },
+          { "name": "Interactive", "value": "Interactive" },
+          { "name": "Landing", "value": "Landing" },
+          { "name": "Leadership", "value": "Leadership" },
+          { "name": "Listing", "value": "Listing" },
+          { "name": "Loans & Credits", "value": "Loans & Credits" },
+          { "name": "Opinion", "value": "Opinion" },
+          { "name": "Others", "value": "Others" },
+          { "name": "People", "value": "People" },
+          { "name": "Podcast", "value": "Podcast" },
+          { "name": "Publication", "value": "Publication" },
+          { "name": "Results", "value": "Results" },
+          { "name": "Slideshow", "value": "Slideshow" },
+          { "name": "Speeches and Transcripts", "value": "Speeches and Transcripts" },
+          { "name": "Statement", "value": "Statement" },
+          { "name": "Video", "value": "Video" }
         ]
         },
       {
@@ -879,34 +822,186 @@
         "label": "Language",
         "valueType": "string",
         "options": [
-          {
-            "name": "English, ENG",
-            "value": "English, ENG"
-          },
-          {
-            "name": "Spanish, SPA",
-            "value": "Spanish, SPA"
-          },
-          {
-            "name": "French, FRE",
-            "value": "French, FRE"
-          },
-          {
-            "name": "Arabic, ARA",
-            "value": "Arabic, ARA"
-          },
-          {
-            "name": "Russian, RUS",
-            "value": "Russian, RUS"
-          },
-          {
-            "name": "Chinese, CHI",
-            "value": "Chinese, CHI"
-          },
-          {
-            "name": "Chinese (Shanghai), CHS",
-            "value": "Chinese (Shanghai), CHS"
-          }
+          { "text": "Afrikaans, AFR1", "value": "Afrikaans, AFR1" }, 
+          { "text": "Akan, AKA", "value": "Akan, AKA" }, 
+          { "text": "Albanian, ALB", "value": "Albanian, ALB" }, 
+          { "text": "American Sign Language, ASL", "value": "American Sign Language, ASL" }, 
+          { "text": "Amharic, AMH", "value": "Amharic, AMH" }, 
+          { "text": "Arabic, ARA", "value": "Arabic, ARA" }, 
+          { "text": "Armenian, ARM", "value": "Armenian, ARM" }, 
+          { "text": "Assamese, ASM", "value": "Assamese, ASM" }, 
+          { "text": "Azerbaijani, AZE", "value": "Azerbaijani, AZE" }, 
+          { "text": "Bahasa Malaysia, MYS", "value": "Bahasa Malaysia, MYS" }, 
+          { "text": "Bamileke, BAM", "value": "Bamileke, BAM" }, 
+          { "text": "Bangla, BAN", "value": "Bangla, BAN" }, 
+          { "text": "Basque, BAQ", "value": "Basque, BAQ" }, 
+          { "text": "Bemba, BEM", "value": "Bemba, BEM" }, 
+          { "text": "Bengali, BEN", "value": "Bengali, BEN" }, 
+          { "text": "Berber, BER", "value": "Berber, BER" }, 
+          { "text": "Bhili, BHI", "value": "Bhili, BHI" }, 
+          { "text": "Bhojpuri, BHO", "value": "Bhojpuri, BHO" }, 
+          { "text": "Bosnian, BOS", "value": "Bosnian, BOS" }, 
+          { "text": "Bulgarian, BUL", "value": "Bulgarian, BUL" }, 
+          { "text": "Burmese, BUR", "value": "Burmese, BUR" }, 
+          { "text": "Byelorussian, BEL", "value": "Byelorussian, BEL" }, 
+          { "text": "Cambodian, CAM", "value": "Cambodian, CAM" }, 
+          { "text": "Cantonese, CNT", "value": "Cantonese, CNT" }, 
+          { "text": "Catalan, CAT", "value": "Catalan, CAT" }, 
+          { "text": "Chinese, CHI", "value": "Chinese, CHI" }, 
+          { "text": "Chinese (Shanghai), CHS", "value": "Chinese (Shanghai), CHS" }, 
+          { "text": "Creole French, CRF", "value": "Creole French, CRF" }, 
+          { "text": "Croatian, SCR", "value": "Croatian, SCR" }, 
+          { "text": "Czech, CZE", "value": "Czech, CZE" }, 
+          { "text": "Danish, DAN", "value": "Danish, DAN" }, 
+          { "text": "Dari, DAR", "value": "Dari, DAR" }, 
+          { "text": "Dhivehi, div", "value": "Dhivehi, div" }, 
+          { "text": "Dinka, DIN", "value": "Dinka, DIN" }, 
+          { "text": "Duala, DLA", "value": "Duala, DLA" }, 
+          { "text": "Dutch, DUT", "value": "Dutch, DUT" }, 
+          { "text": "Efik-Ibidio, EFI-2", "value": "Efik-Ibidio, EFI-2" }, 
+          { "text": "English, ENG", "value": "English, ENG" }, 
+          { "text": "Estonian, EST", "value": "Estonian, EST" }, 
+          { "text": "Ewe-Fon, EWE", "value": "Ewe-Fon, EWE" }, 
+          { "text": "Ewondo-Fang/Fang-Bulu, EWO", "value": "Ewondo-Fang/Fang-Bulu, EWO" }, 
+          { "text": "Farsi, FAR", "value": "Farsi, FAR" }, 
+          { "text": "Fijian, FIJ", "value": "Fijian, FIJ" }, 
+          { "text": "Finnish, FIN", "value": "Finnish, FIN" }, 
+          { "text": "Flemish, FLM", "value": "Flemish, FLM" }, 
+          { "text": "Frafra, FRA", "value": "Frafra, FRA" }, 
+          { "text": "French, FRE", "value": "French, FRE" }, 
+          { "text": "Fula, FUL", "value": "Fula, FUL" }, 
+          { "text": "Ga, GAA", "value": "Ga, GAA" }, 
+          { "text": "Gaelic, GAE", "value": "Gaelic, GAE" }, 
+          { "text": "Galla, GAL", "value": "Galla, GAL" }, 
+          { "text": "Georgian, GEO", "value": "Georgian, GEO" }, 
+          { "text": "German, GER", "value": "German, GER" }, 
+          { "text": "Gondi, GON", "value": "Gondi, GON" }, 
+          { "text": "Greek, GRE", "value": "Greek, GRE" }, 
+          { "text": "Guarani, GUR", "value": "Guarani, GUR" }, 
+          { "text": "Gujarati, GUJ", "value": "Gujarati, GUJ" }, 
+          { "text": "Gurenne, GRN", "value": "Gurenne, GRN" }, 
+          { "text": "Hausa, HAS", "value": "Hausa, HAS" }, 
+          { "text": "Hebrew, HEB", "value": "Hebrew, HEB" }, 
+          { "text": "Hindi, HIN", "value": "Hindi, HIN" }, 
+          { "text": "Hungarian, HUN", "value": "Hungarian, HUN" }, 
+          { "text": "Icelandic, ICE", "value": "Icelandic, ICE" }, 
+          { "text": "Igbo, IGB", "value": "Igbo, IGB" }, 
+          { "text": "Ilocano, ILC", "value": "Ilocano, ILC" }, 
+          { "text": "Indian, IDN", "value": "Indian, IDN" }, 
+          { "text": "Indonesian, BAH", "value": "Indonesian, BAH" }, 
+          { "text": "Italian, ITA", "value": "Italian, ITA" }, 
+          { "text": "Japanese, JPN", "value": "Japanese, JPN" }, 
+          { "text": "Javanese, JAV", "value": "Javanese, JAV" }, 
+          { "text": "Jwang-Bui, JWA", "value": "Jwang-Bui, JWA" }, 
+          { "text": "Kamba, KAM", "value": "Kamba, KAM" }, 
+          { "text": "Kannada, KAN", "value": "Kannada, KAN" }, 
+          { "text": "Kanuri, KAU", "value": "Kanuri, KAU" }, 
+          { "text": "Kashmiri, KAS", "value": "Kashmiri, KAS" }, 
+          { "text": "Kazakh, KAZ", "value": "Kazakh, KAZ" }, 
+          { "text": "Khmer, KHM", "value": "Khmer, KHM" }, 
+          { "text": "Kiche (Mayan language), QCE", "value": "Kiche (Mayan language), QCE" }, 
+          { "text": "Kikuyu, KIK", "value": "Kikuyu, KIK" }, 
+          { "text": "Kiswahili, KIS", "value": "Kiswahili, KIS" }, 
+          { "text": "Kongo, KNG", "value": "Kongo, KNG" }, 
+          { "text": "Konkani, KON", "value": "Konkani, KON" }, 
+          { "text": "Korean, KOR", "value": "Korean, KOR" }, 
+          { "text": "Krio, KRI", "value": "Krio, KRI" }, 
+          { "text": "Kumauni, KUM", "value": "Kumauni, KUM" }, 
+          { "text": "Kurdish, KDR", "value": "Kurdish, KDR" }, 
+          { "text": "Kurukh-Oraon, KUO", "value": "Kurukh-Oraon, KUO" }, 
+          { "text": "Kyrgyz, KYR", "value": "Kyrgyz, KYR" }, 
+          { "text": "Lahnda, LAH", "value": "Lahnda, LAH" }, 
+          { "text": "Lao, LAO", "value": "Lao, LAO" }, 
+          { "text": "Latin, LTN", "value": "Latin, LTN" }, 
+          { "text": "Latvian, LAT", "value": "Latvian, LAT" }, 
+          { "text": "Lingala, LIN", "value": "Lingala, LIN" }, 
+          { "text": "Lithuanian, LIT", "value": "Lithuanian, LIT" }, 
+          { "text": "Luba, LUB", "value": "Luba, LUB" }, 
+          { "text": "Luganda, LUG", "value": "Luganda, LUG" }, 
+          { "text": "Luhya, LUH", "value": "Luhya, LUH" }, 
+          { "text": "Luo, LUO", "value": "Luo, LUO" }, 
+          { "text": "Luxembourgish, LUX", "value": "Luxembourgish, LUX" }, 
+          { "text": "Macedonian, MAC", "value": "Macedonian, MAC" }, 
+          { "text": "Madurese, MAD", "value": "Madurese, MAD" }, 
+          { "text": "Magahi, MAH", "value": "Magahi, MAH" }, 
+          { "text": "Maithili, MAI", "value": "Maithili, MAI" }, 
+          { "text": "Makua, MAK", "value": "Makua, MAK" }, 
+          { "text": "Malagasy, MAG", "value": "Malagasy, MAG" }, 
+          { "text": "Malayalam, MAY", "value": "Malayalam, MAY" }, 
+          { "text": "Maltese, MLT", "value": "Maltese, MLT" }, 
+          { "text": "Mandarin, MDR", "value": "Mandarin, MDR" }, 
+          { "text": "Manding, MDG_lang", "value": "Manding, MDG_lang" }, 
+          { "text": "Marathi, MAR", "value": "Marathi, MAR" }, 
+          { "text": "Marshallese, MRS", "value": "Marshallese, MRS" }, 
+          { "text": "Mayan languages, MYN", "value": "Mayan languages, MYN" }, 
+          { "text": "Melanesian, MEL", "value": "Melanesian, MEL" }, 
+          { "text": "Mongolian, MON", "value": "Mongolian, MON" }, 
+          { "text": "Mossi, MOS", "value": "Mossi, MOS" }, 
+          { "text": "Myanmar, MMR", "value": "Myanmar, MMR" }, 
+          { "text": "Nepali, NEP", "value": "Nepali, NEP" }, 
+          { "text": "Ngundi, NGU", "value": "Ngundi, NGU" }, 
+          { "text": "Nkore, NKO", "value": "Nkore, NKO" }, 
+          { "text": "Norwegian, NOR", "value": "Norwegian, NOR" }, 
+          { "text": "Nupe, NUP", "value": "Nupe, NUP" }, 
+          { "text": "Nyanja, NYA", "value": "Nyanja, NYA" }, 
+          { "text": "Nyoro, NYO", "value": "Nyoro, NYO" }, 
+          { "text": "Oriya, ORI", "value": "Oriya, ORI" }, 
+          { "text": "Oromo, ORO", "value": "Oromo, ORO" }, 
+          { "text": "Pashto, PUS", "value": "Pashto, PUS" }, 
+          { "text": "Polish, POL", "value": "Polish, POL" }, 
+          { "text": "Portuguese, POR", "value": "Portuguese, POR" }, 
+          { "text": "Punjabi, PAN", "value": "Punjabi, PAN" }, 
+          { "text": "Quechua, QUE", "value": "Quechua, QUE" }, 
+          { "text": "Rajasthani, RAJ", "value": "Rajasthani, RAJ" }, 
+          { "text": "Romanian, RUM", "value": "Romanian, RUM" }, 
+          { "text": "Russian, RUS", "value": "Russian, RUS" }, 
+          { "text": "Rwanda-Rundi, RWA", "value": "Rwanda-Rundi, RWA" }, 
+          { "text": "Samoan, SAO", "value": "Samoan, SAO" }, 
+          { "text": "Sango-Ngbandi, SAG", "value": "Sango-Ngbandi, SAG" }, 
+          { "text": "Sanskrit, SAN", "value": "Sanskrit, SAN" }, 
+          { "text": "Santhali, STH", "value": "Santhali, STH" }, 
+          { "text": "Serbian, SCC", "value": "Serbian, SCC" }, 
+          { "text": "Serbo-Croatian, SER", "value": "Serbo-Croatian, SER" }, 
+          { "text": "Shona, SHO", "value": "Shona, SHO" }, 
+          { "text": "Sinhala, SIN", "value": "Sinhala, SIN" }, 
+          { "text": "Slovak, SLV", "value": "Slovak, SLV" }, 
+          { "text": "Slovene, SLO", "value": "Slovene, SLO" }, 
+          { "text": "Somali, SOM", "value": "Somali, SOM" }, 
+          { "text": "Songhai, SON", "value": "Songhai, SON" }, 
+          { "text": "Sotho, SSO", "value": "Sotho, SSO" }, 
+          { "text": "Spanish, SPA", "value": "Spanish, SPA" }, 
+          { "text": "Sukuma-Nyamwezi, SUK", "value": "Sukuma-Nyamwezi, SUK" }, 
+          { "text": "Sundanese, SUN", "value": "Sundanese, SUN" }, 
+          { "text": "Suthu, SUT", "value": "Suthu, SUT" }, 
+          { "text": "Swahili, SWA", "value": "Swahili, SWA" }, 
+          { "text": "Swatir, SWT", "value": "Swatir, SWT" }, 
+          { "text": "Swedish, SWE", "value": "Swedish, SWE" }, 
+          { "text": "Tagalog, TAG", "value": "Tagalog, TAG" }, 
+          { "text": "Tajik, TGK", "value": "Tajik, TGK" }, 
+          { "text": "Tamesheq, TAQ", "value": "Tamesheq, TAQ" }, 
+          { "text": "Tamil, TAM", "value": "Tamil, TAM" }, 
+          { "text": "Tatar, TAR", "value": "Tatar, TAR" }, 
+          { "text": "Telugu, TEL", "value": "Telugu, TEL" }, 
+          { "text": "Tetum, TET", "value": "Tetum, TET" }, 
+          { "text": "Thai, THI", "value": "Thai, THI" }, 
+          { "text": "Thai-Lao, THA", "value": "Thai-Lao, THA" }, 
+          { "text": "Tibetan, TIB", "value": "Tibetan, TIB" }, 
+          { "text": "Tigrina, TIG", "value": "Tigrina, TIG" }, 
+          { "text": "Tivi, TIV", "value": "Tivi, TIV" }, 
+          { "text": "Turkish, TUR", "value": "Turkish, TUR" }, 
+          { "text": "Turkmen, TKM", "value": "Turkmen, TKM" }, 
+          { "text": "Twi (Ghana), TWI", "value": "Twi (Ghana), TWI" }, 
+          { "text": "Ukrainian, UKR", "value": "Ukrainian, UKR" }, 
+          { "text": "Umbundu, UMB", "value": "Umbundu, UMB" }, 
+          { "text": "Urdu, URD", "value": "Urdu, URD" }, 
+          { "text": "Uzbek, UZB", "value": "Uzbek, UZB" }, 
+          { "text": "Vietnamese, VIT", "value": "Vietnamese, VIT" }, 
+          { "text": "Visayan, VIS", "value": "Visayan, VIS" }, 
+          { "text": "Welsh, WEL", "value": "Welsh, WEL" }, 
+          { "text": "Wolof, WOL", "value": "Wolof, WOL" }, 
+          { "text": "Yiddish, YID", "value": "Yiddish, YID" }, 
+          { "text": "Yoruba, YOR", "value": "Yoruba, YOR" }, 
+          { "text": "Zande, ZAN", "value": "Zande, ZAN" }
         ]
       },
       {
@@ -916,217 +1011,58 @@
         "label": "Unit",
         "valueType": "string",
         "options": [
-          {
-            "name": "Accountability Mechanism (AMIPN)",
-            "value": "Accountability Mechanism (AMIPN), AMIPN"
-          },
-          {
-            "name": "Accountability Mechanism (AMSEC)",
-            "value": "Accountability Mechanism (AMSEC), AMSEC"
-          },
-          {
-            "name": "Africa",
-            "value": "Africa, AFR"
-          },
-          {
-            "name": "Agriculture",
-            "value": "Agriculture, AGR"
-          },
-          {
-            "name": "Budget, Performance Review and Strategic Planning",
-            "value": "Budget Performance Review and Strategic Planning, BPS"
-          },
-          {
-            "name": "Climate Change",
-            "value": "Climate Change, GCC"
-          },
-          {
-            "name": "Corporate Secretariat",
-            "value": "Corporate Secretariat, SEC"
-          },
-          {
-            "name": "Development Economics",
-            "value": "Development Economics, DEC"
-          },
-          {
-            "name": "Development Finance",
-            "value": "Development Finance, DFI"
-          },
-          {
-            "name": "Digital Development",
-            "value": "Digital Development, DD"
-          },
-          {
-            "name": "East Asia and Pacific",
-            "value": "East Asia and Pacific, EAP"
-          },
-          {
-            "name": "Education",
-            "value": "Education, EDU"
-          },
-          {
-            "name": "Energy and Extractives",
-            "value": "Energy and Extractives, EEX"
-          },
-          {
-            "name": "Environment & Natural Resources",
-            "value": "Environment & Natural Resources, ENV"
-          },
-          {
-            "name": "Equitable Growth, Finance and Institutions",
-            "value": "Equitable Growth Finance and Institutions, EFI"
-          },
-          {
-            "name": "Europe and Central Asia",
-            "value": "Europe and Central Asia, ECA"
-          },
-          {
-            "name": "Executive Directors",
-            "value": "Executive Directors, EDS"
-          },
-          {
-            "name": "External and Corporate Relations",
-            "value": "External and Corporate Relations, ECR"
-          },
-          {
-            "name": "External and Corporate Relations - Corporate Communications",
-            "value": "External and Corporate Relations - Corporate Communications, ECRCC"
-          },
-          {
-            "name": "Finance, Competitiveness & Innovation",
-            "value": "Finance Competitiveness & Innovation, FCI"
-          },
-          {
-            "name": "Fragility, Conflict and Violence",
-            "value": "Fragility Conflict and Violence, GCF"
-          },
-          {
-            "name": "Gender",
-            "value": "Gender, GEN"
-          },
-          {
-            "name": "Global Corporate Solutions",
-            "value": "Global Corporate Solutions, GCS"
-          },
-          {
-            "name": "Governance",
-            "value": "Governance, GOV"
-          },
-          {
-            "name": "Health, Nutrition and Population",
-            "value": "Health Nutrition and Population, HNP"
-          },
-          {
-            "name": "Human Resources",
-            "value": "Human Resources, HRD"
-          },
-          {
-            "name": "Independent Evaluation Group",
-            "value": "Independent Evaluation Group, IEG"
-          },
-          {
-            "name": "Information and Technology Solutions",
-            "value": "Information and Technology Solutions, ITS"
-          },
-          {
-            "name": "Infrastructure Finance, PPPs and Guarantees",
-            "value": "Infrastructure Finance PPPs and Guarantees, IPG"
-          },
-          {
-            "name": "Inspection Panel",
-            "value": "Inspection Panel, IPN"
-          },
-          {
-            "name": "Integrity Vice Presidency",
-            "value": "Integrity Vice Presidency, INT"
-          },
-          {
-            "name": "Internal Audit",
-            "value": "Internal Audit, IAD"
-          },
-          {
-            "name": "Jobs",
-            "value": "Jobs, JOB"
-          },
-          {
-            "name": "Knowledge Management",
-            "value": "Knowledge Management, DECKM"
-          },
-          {
-            "name": "Latin America & Caribbean",
-            "value": "Latin America & Caribbean, LCR"
-          },
-          {
-            "name": "Legal",
-            "value": "Legal, LEG"
-          },
-          {
-            "name": "Macroeconomics, Trade and Investment",
-            "value": "Macroeconomics Trade and Investment, MTI"
-          },
-          {
-            "name": "Middle East and North Africa",
-            "value": "Middle East and North Africa, MNA"
-          },
-          {
-            "name": "Office of the President",
-            "value": "Office of the President, EXC"
-          },
-          {
-            "name": "Operations Policy and Country Services VP",
-            "value": "Operations Policy and Country Services VP, OPCS"
-          },
-          {
-            "name": "Poverty and Equity",
-            "value": "Poverty and Equity, POV"
-          },
-          {
-            "name": "Sanctions Board Secretariat",
-            "value": "Sanctions Board Secretariat, wbgsbs"
-          },
-          {
-            "name": "Social Development",
-            "value": "Social Development, SDN"
-          },
-          {
-            "name": "Social Protection and Jobs",
-            "value": "Social Protection and Jobs, SPJ"
-          },
-          {
-            "name": "South Asia",
-            "value": "South Asia, SAR"
-          },
-          {
-            "name": "Strategy, Performance and Administration",
-            "value": "Strategy Performance and Administration, SPA"
-          },
-          {
-            "name": "Transport",
-            "value": "Transport, TRA"
-          },
-          {
-            "name": "Treasury",
-            "value": "Treasury, TRE"
-          },
-          {
-            "name": "Urban, DRM, Resilience and Land",
-            "value": "Urban DRM Resilience and Land, GPURL"
-          },
-          {
-            "name": "WBG Finance and Accounting",
-            "value": "WBG Finance and Accounting, WFA"
-          },
-          {
-            "name": "Water",
-            "value": "Water, WAT"
-          }
+          { "name": "Accountability Mechanism (AMIPN)", "value": "Accountability Mechanism (AMIPN), AMIPN" },
+          { "name": "Accountability Mechanism (AMSEC)", "value": "Accountability Mechanism (AMSEC), AMSEC" },
+          { "name": "Africa", "value": "Africa, AFR" },
+          { "name": "Agriculture", "value": "Agriculture, AGR" },
+          { "name": "Budget, Performance Review and Strategic Planning", "value": "Budget Performance Review and Strategic Planning, BPS" },
+          { "name": "Climate Change", "value": "Climate Change, GCC" },
+          { "name": "Corporate Secretariat", "value": "Corporate Secretariat, SEC" },
+          { "name": "Development Economics", "value": "Development Economics, DEC" },
+          { "name": "Development Finance", "value": "Development Finance, DFI" },
+          { "name": "Digital Development", "value": "Digital Development, DD" },
+          { "name": "East Asia and Pacific", "value": "East Asia and Pacific, EAP" },
+          { "name": "Education", "value": "Education, EDU" },
+          { "name": "Energy and Extractives", "value": "Energy and Extractives, EEX" },
+          { "name": "Environment & Natural Resources", "value": "Environment & Natural Resources, ENV" },
+          { "name": "Equitable Growth, Finance and Institutions", "value": "Equitable Growth Finance and Institutions, EFI" },
+          { "name": "Europe and Central Asia", "value": "Europe and Central Asia, ECA" },
+          { "name": "Executive Directors", "value": "Executive Directors, EDS" },
+          { "name": "External and Corporate Relations", "value": "External and Corporate Relations, ECR" },
+          { "name": "External and Corporate Relations - Corporate Communications", "value": "External and Corporate Relations - Corporate Communications, ECRCC" },
+          { "name": "Finance, Competitiveness & Innovation", "value": "Finance Competitiveness & Innovation, FCI" },
+          { "name": "Fragility, Conflict and Violence", "value": "Fragility Conflict and Violence, GCF" },
+          { "name": "Gender", "value": "Gender, GEN" },
+          { "name": "Global Corporate Solutions", "value": "Global Corporate Solutions, GCS" },
+          { "name": "Governance", "value": "Governance, GOV" },
+          { "name": "Health, Nutrition and Population", "value": "Health Nutrition and Population, HNP" },
+          { "name": "Human Resources", "value": "Human Resources, HRD" },
+          { "name": "Independent Evaluation Group", "value": "Independent Evaluation Group, IEG" },
+          { "name": "Information and Technology Solutions", "value": "Information and Technology Solutions, ITS" },
+          { "name": "Infrastructure Finance, PPPs and Guarantees", "value": "Infrastructure Finance PPPs and Guarantees, IPG" },
+          { "name": "Inspection Panel", "value": "Inspection Panel, IPN" },
+          { "name": "Integrity Vice Presidency", "value": "Integrity Vice Presidency, INT" },
+          { "name": "Internal Audit", "value": "Internal Audit, IAD" },
+          { "name": "Jobs", "value": "Jobs, JOB" },
+          { "name": "Knowledge Management", "value": "Knowledge Management, DECKM" },
+          { "name": "Latin America & Caribbean", "value": "Latin America & Caribbean, LCR" },
+          { "name": "Legal", "value": "Legal, LEG" },
+          { "name": "Macroeconomics, Trade and Investment", "value": "Macroeconomics Trade and Investment, MTI" },
+          { "name": "Middle East and North Africa", "value": "Middle East and North Africa, MNA" },
+          { "name": "Office of the President", "value": "Office of the President, EXC" },
+          { "name": "Operations Policy and Country Services VP", "value": "Operations Policy and Country Services VP, OPCS" },
+          { "name": "Poverty and Equity", "value": "Poverty and Equity, POV" },
+          { "name": "Sanctions Board Secretariat", "value": "Sanctions Board Secretariat, wbgsbs" },
+          { "name": "Social Development", "value": "Social Development, SDN" },
+          { "name": "Social Protection and Jobs", "value": "Social Protection and Jobs, SPJ" },
+          { "name": "South Asia", "value": "South Asia, SAR" },
+          { "name": "Strategy, Performance and Administration", "value": "Strategy Performance and Administration, SPA" },
+          { "name": "Transport", "value": "Transport, TRA" },
+          { "name": "Treasury", "value": "Treasury, TRE" },
+          { "name": "Urban, DRM, Resilience and Land", "value": "Urban DRM Resilience and Land, GPURL" },
+          { "name": "WBG Finance and Accounting", "value": "WBG Finance and Accounting, WFA" },
+          { "name": "Water", "value": "Water, WAT" }
         ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "author",
-        "label": "Author"
       },
       {
         "component": "select",
@@ -1135,22 +1071,10 @@
         "label": "Information Classification",
         "valueType": "string",
         "options": [
-          {
-            "name": "Confidential",
-            "value": "CON_AI"
-          },
-          {
-            "name": "Official Use Only",
-            "value": "OUO_AI"
-          },
-          {
-            "name": "Public",
-            "value": "PUB_AI"
-          },
-          {
-            "name": "Strictly Confidential",
-            "value": "STC_AI"
-          }
+          { "name": "Confidential", "value": "CON_AI" },
+          { "name": "Official Use Only", "value": "OUO_AI" },
+          { "name": "Public", "value": "PUB_AI" },
+          { "name": "Strictly Confidential", "value": "STC_AI" }
         ]
       },
       {
