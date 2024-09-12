@@ -176,12 +176,8 @@
   border-radius: 5px;
 }
 
-.cards.senior-leadership .cards-card-image img {
-  border-radius: 5px;
-}
-
 .cards.senior-leadership .cards-card-body {
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 0;
 }
 
 .cards.senior-leadership .cards-card-body h4 {
