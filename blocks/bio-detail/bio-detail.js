@@ -75,8 +75,8 @@ function createPersonBio(
   insta.remove();
 }
 
-function createResources() {
-  const listItems = document.querySelectorAll('.resources div p');
+function createResources(block) {
+  const listItems = block.querySelectorAll('.resources div p');
   listItems.forEach((link) => {
     const downloadImg = img({ class: 'download-image' });
     downloadImg.src = `${window.hlx.codeBasePath}/icons/download.png`;
@@ -118,7 +118,7 @@ export default async function decorate(block) {
     div({ class: 'title' }, placeholderData.biodetailResourcesText),
     resourcesTargetDiv.firstChild,
   );
-  createResources();
+  createResources(block);
   createPersonBio(
     displayName,
     jobTitle,
