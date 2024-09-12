@@ -714,8 +714,8 @@
     "fields": [
       {
         "component": "tab",
-        "label": "Tab 1",
-        "name": "tab1"
+        "label": "Basic",
+        "name": "tab-basic"
       },
       {
         "component": "text",
@@ -742,8 +742,8 @@
       },
       {
         "component": "tab",
-        "label": "Tab 2",
-        "name": "tab2"
+        "label": "Advance",
+        "name": "tab-adv"
       },
       {
         "component": "select",
@@ -753,22 +753,10 @@
         "required": true,
         "valueType": "string",
         "options": [
-          {
-            "name": "Brief",
-            "value": "brief"
-          },
-          {
-            "name": "Events",
-            "value": "events"
-          },
-          {
-            "name": "Factsheet",
-            "value": "factsheet"
-          },
-          {
-            "name": "Feature Story",
-            "value": "feature-story"
-          },
+          { "name": "Brief", "value": "brief" },
+          { "name": "Events", "value": "events" },
+          { "name": "Factsheet", "value": "factsheet" },
+          { "name": "Feature Story", "value": "feature-story" },
           {
             "name": "Immersive Story",
             "value": "immersive-story"
@@ -1136,6 +1124,11 @@
             "value": "STC_AI"
           }
         ]
+      },
+      {
+        "component": "tab",
+        "label": "Profile",
+        "name": "tab-profile"
       },
       {
         "component": "select",
