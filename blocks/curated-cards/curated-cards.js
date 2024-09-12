@@ -29,8 +29,7 @@ function createFeatureCard(row, placeHolders) {
   featureTagContent.innerHTML = '';
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
-    p({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent),
-    p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
+    div({ class: ' feature-card-content-text' }, p({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent)),
     a({ href: featureLink.textContent }, button({ type: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
   const pictureElement = featureImageContent.querySelector('picture');
