@@ -2122,17 +2122,10 @@
         "valueType": "string"
       },
       {
-        "component": "text",
+        "component": "aem-content",
         "name": "link",
         "value": "",
-        "label": "Link",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "reference",
-        "value": "",
-        "label": "AEM Content Picker",
+        "label": "Impact Link",
         "valueType": "string"
       }
     ]
