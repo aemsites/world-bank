@@ -713,6 +713,11 @@
     "id": "page-metadata",
     "fields": [
       {
+        "component": "tab",
+        "label": "Tab 1",
+        "name": "tab1"
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "jcr:title",
@@ -734,6 +739,11 @@
         "label": "Page Description",
         "required": true,
         "description": "Sets the description of the page in page meta."
+      },
+      {
+        "component": "tab",
+        "label": "Tab 2",
+        "name": "tab2"
       },
       {
         "component": "select",
