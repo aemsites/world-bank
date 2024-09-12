@@ -14,8 +14,8 @@ function createStructure(firstContainer, secondContainer, block) {
 function createSocialMediaLink(linkName, className, iconPath) {
   if (linkName && linkName.textContent) {
     const anchor = document.createElement('a');
-    anchor.href = linkName.textContent;
-    anchor.title = linkName.textContent;
+    anchor.href = linkName.textContent.trim();
+    anchor.title = linkName.textContent.trim();
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
     anchor.appendChild(linkImage);
@@ -107,7 +107,7 @@ function createMetaTag(
     if (metaData.value.textContent) {
       const meta = document.createElement('meta');
       meta.name = metaData.name;
-      meta.content = metaData.value.textContent;
+      meta.content = metaData.value.textContent.trim();
       document.head.appendChild(meta);
     }
   });
