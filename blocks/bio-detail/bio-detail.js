@@ -95,16 +95,16 @@ function createMetaTag(
   expertiseTopics,
 ) {
   const listOfMetaTags = [
-    { name: "firstname", value: firstName },
-    { name: "surname", value: surName },
-    { name: "upi-id", value: upiId },
-    { name: "is-leader", value: isLeader },
-    { name: "is-expert", value: isExpert },
-    { name: "is-senior-manager", value: isSrManager },
-    { name: "expertise-topics", value: expertiseTopics },
+    { name: 'firstname', value: firstName },
+    { name: 'surname', value: surName },
+    { name: 'upi-id', value: upiId },
+    { name: 'is-leader', value: isLeader },
+    { name: 'is-expert', value: isExpert },
+    { name: 'is-senior-manager', value: isSrManager },
+    { name: 'expertise-topics', value: expertiseTopics },
   ];
   listOfMetaTags.forEach((metaData) => {
-    if(metaData.value.textContent){
+    if (metaData.value.textContent) {
       const meta = document.createElement('meta');
       meta.name = metaData.name;
       meta.content = metaData.value.textContent;
