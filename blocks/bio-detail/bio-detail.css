@@ -5,18 +5,18 @@
   font-weight: 400;
 }
 
-.bio-detail .media-inquiries p a{
+.bio-detail .media-inquiries p a {
   padding: 0;
   margin: 0;
   border-bottom: 2px solid transparent;
   color: #000D1A;
 }
 
-.bio-detail .media-inquiries p a:hover{
+.bio-detail .media-inquiries p a:hover {
   color: #000D1A;
 }
 
-.bio-detail .resources p, .bio-detail .resources p em{
+.bio-detail .resources p, .bio-detail .resources p em {
   display: flex;
   align-items: center;
 }
@@ -79,7 +79,7 @@
   border: 2px solid transparent;
 }
 
-.bio-detail .sections-container .name-job-social .social-media .social-media-link:hover{
+.bio-detail .sections-container .name-job-social .social-media .social-media-link:hover {
   border: 2px solid var(--primary-blue-50);
 }
 
@@ -127,12 +127,12 @@
     margin-top: 70px;
   }
 
-  .bio-detail .second-container .profile-image{
-    width: 460px;
+  .bio-detail .second-container .profile-image  {
+    width: 90%;
     height: 460px;
   }
 
-  .bio-detail .second-container .profile-image div{
+  .bio-detail .second-container .profile-image div {
     height: 100%;
   }
 
@@ -165,5 +165,6 @@
 
   .bio-detail .second-container {
     grid-template-columns: auto;
+    justify-items: end;
   }
 }

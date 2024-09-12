@@ -615,7 +615,7 @@
                   "resources": "<ul><li><a href='www.fullbio.com'>Full Bio</a></li><li><a href='www.highres.com'>High-Res Photo</a></li><li><a href='www.otherdownload.com'>Other Download</a></li></ul>",
                   "is-leader": false,
                   "is-expert": false,
-                  "is-sr-manager": false
+                  "is-senior-manager": false
 
                 }
               }

@@ -1226,7 +1226,7 @@
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "is-sr-manager",
+        "name": "is-senior-manager",
         "label": "Is Sr. Manager"
       },
       {
