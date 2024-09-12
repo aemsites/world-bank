@@ -34,6 +34,7 @@ module.exports = {
         'research-publications-card': 7,
         'page-metadata': 22,
         'bio-detail': 15,
+        'impact-card': 6,
       },
     ],
   },
