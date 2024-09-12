@@ -1592,11 +1592,45 @@
         "required": true
       },
       {
+        "component": "select",
+        "valueType": "string",
+        "name": "tab-type",
+        "label": "Type of Tab",
+        "description": "Select the Type of Tab",
+        "value": "",
+        "required": true,
+        "options": [
+          {
+            "name": "All Tab",
+            "value": "all-tab"
+          },
+          {
+            "name": "Publication",
+            "value": "publication"
+          },
+          {
+            "name": "Project",
+            "value": "project"
+          },
+          {
+            "name": "Blogs",
+            "value": "blogs"
+          },
+          {
+            "name": "Author Manually",
+            "value": "manual"
+          }
+        ]
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
-        "label": "Fragment Path"
+        "label": "Fragment Path",
+        "condition": { 
+          "==": [{ "var": "tab-type" }, "manual"] 
+        }
       }
     ]
   },

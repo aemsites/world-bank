@@ -393,7 +393,7 @@ h6 {
 h1 { 
   font-size: var(--h1-base); 
   line-height: 1.1;
-  margin-bottom: var(--large);
+  margin-bottom: var(--small);
 }
 
 h2 { 
