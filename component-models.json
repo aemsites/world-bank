@@ -262,6 +262,10 @@
           {
             "name": "Profile - Summary view",
             "value": "profile-summary"
+          },
+          {
+            "name": "Senior Leadership view",
+            "value": "senior-leadership"
           }
         ]
       }
