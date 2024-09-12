@@ -208,6 +208,6 @@
   }
 
   .cards.senior-leadership .cards-card-body h4 a {
-    font-size: 24px;
+    font-size: var(--body-huge);
   }
 }
