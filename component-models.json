@@ -1985,7 +1985,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "eyebrowText",
+        "name": "eyebrowtext",
         "value": "",
         "label": "Eyebrow text"
       },
@@ -1999,7 +1999,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "headingText",
+        "name": "headingtext",
         "value": "",
         "label": "Heading Text",
         "required": true

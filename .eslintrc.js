@@ -35,6 +35,7 @@ module.exports = {
         'page-metadata': 22,
         'bio-detail': 15,
         'impact-card': 6,
+        'heading': 7,
       },
     ],
   },
