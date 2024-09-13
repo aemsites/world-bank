@@ -215,6 +215,7 @@
 
   /* Gutter space */
   --section-gutter-space: 28px;
+  --section-container-space: var(--spacing-32);  
 
   /* Block specific */
   --signup-padding: var(--spacing-28);
@@ -262,6 +263,7 @@
   
     /* Gutter space */
     --section-gutter-space: 48px;
+    --section-container-space: var(--spacing-40); 
   
     /* Screen variables */
     --nav-height: 44px;
@@ -314,6 +316,7 @@
 
     /* Gutter space */
     --section-gutter-space: 72px;
+    --section-container-space: var(--spacing-64); 
   
     /* Screen variables */
     --nav-height: 50px;
@@ -854,7 +857,8 @@ main .section[class*='bg-'][data-sec-inside-container="true"] {
 }
 
 main .section[class*='bg-'][data-sec-inside-container="true"] > div {
-  padding: 0;
+  max-width: calc(var(--screen-width) - var(--section-container-space) - var(--section-container-space));
+  padding: var(--section-container-space);
   border-radius: 8px;
 }
 
