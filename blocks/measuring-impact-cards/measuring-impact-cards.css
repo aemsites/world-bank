@@ -5,6 +5,10 @@
     gap: 20px;
 }
 
+.impact-card-wrapper{
+    width: 100%;
+}
+
 .impact-card-wrapper > a {
     text-decoration: none;
     line-height: 0;
@@ -31,6 +35,7 @@
 .impact-card-body-content {
     display: grid;
     gap: 4px 20px;
+    align-items: center;
     grid-template-columns: 72px auto;
 }
 
@@ -73,7 +78,7 @@
 
     .impact-card-wrapper p.impact-indicator {
         margin-top: 8px;
-        min-height: 48px;
+        min-height: 32px;
     }
 
     .impact-card-body-content {
@@ -83,7 +88,8 @@
     }
 
     .impact-card-img img {
-        width: 100%;
+        width: 112px;
+        height: 112px;
     }
     
     .impact-card-content > p {
@@ -106,8 +112,21 @@
     }
 
     .impact-card-body-content {
-        display: grid;
-        gap: 8px 24px;
-        grid-template-columns: auto;
+        gap: 12px 32px;
+        grid-template-columns: 112px auto;
+    }
+
+    .impact-card-content {
+        gap: 8px;
+    }
+
+    .impact-card-content > p {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    
+    .impact-card-content p:first-child {
+        font-size: 36px;
+        line-height: 41px;
     }
 }
