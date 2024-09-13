@@ -308,58 +308,19 @@
         "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
-          {
-            "name": "Default spacing",
-            "value": "sec-spacing-default"
-          },
-          {
-            "name": "No space / padding",
-            "value": "section-none"
-          },
-          {
-            "name": "Spacing tiny",
-            "value": "section-tiny"
-          },
-          {
-            "name": "Spacing xxsmall",
-            "value": "section-xxsmall"
-          },
-          {
-            "name": "Spacing xsmall",
-            "value": "section-xsmall"
-          },
-          {
-            "name": "Spacing regular",
-            "value": "section-regular"
-          },
-          {
-            "name": "Spacing small",
-            "value": "section-small"
-          },
-          {
-            "name": "Spacing medium",
-            "value": "section-medium"
-          },
-          {
-            "name": "Spacing large",
-            "value": "section-large"
-          },
-          {
-            "name": "Spacing xlarge",
-            "value": "section-xlarge"
-          },
-          {
-            "name": "Spacing xxlarge",
-            "value": "section-xxlarge"
-          },
-          {
-            "name": "Spacing huge",
-            "value": "section-huge"
-          },
-          {
-            "name": "Spacing xhuge",
-            "value": "section-xhuge"
-          }
+          { "name": "Default spacing", "value": "sec-spacing-default" },
+          { "name": "No space / padding", "value": "section-none" },
+          { "name": "Spacing tiny", "value": "section-tiny" },
+          { "name": "Spacing xxsmall", "value": "section-xxsmall" },
+          { "name": "Spacing xsmall", "value": "section-xsmall" },
+          { "name": "Spacing regular", "value": "section-regular" },
+          { "name": "Spacing small", "value": "section-small" },
+          { "name": "Spacing medium", "value": "section-medium" },
+          { "name": "Spacing large", "value": "section-large" },
+          { "name": "Spacing xlarge", "value": "section-xlarge" },
+          { "name": "Spacing xxlarge", "value": "section-xxlarge" },
+          { "name": "Spacing huge", "value": "section-huge" },
+          { "name": "Spacing xhuge", "value": "section-xhuge" }
         ]
       },
       {
@@ -369,26 +330,11 @@
         "label": "Section Swoosh",
         "valueType": "string",
         "options": [
-          {
-            "name": "No Swoosh",
-            "value": "sec-swoosh-none"
-          },
-          {
-            "name": "Left Center Swoosh",
-            "value": "sec-swoosh-type1"
-          },
-          {
-            "name": "Left Top Swoosh",
-            "value": "sec-swoosh-type3"
-          },
-          {
-            "name": "Right Top Swoosh",
-            "value": "sec-swoosh-type2"
-          },
-          {
-            "name": "Primary Blue 90 theme Swoosh",
-            "value": "sec-swoosh-primary-blue-90"
-          }
+          { "name": "No Swoosh", "value": "sec-swoosh-none" },
+          { "name": "Left Center Swoosh", "value": "sec-swoosh-type1" },
+          { "name": "Left Top Swoosh", "value": "sec-swoosh-type3" },
+          { "name": "Right Top Swoosh", "value": "sec-swoosh-type2" },
+          { "name": "Primary Blue 90 theme Swoosh", "value": "sec-swoosh-primary-blue-90" }
         ]
       },
       {
@@ -398,30 +344,12 @@
         "label": "Section Background",
         "valueType": "string",
         "options": [
-          {
-            "name": "Transparent / White / Default",
-            "value": "bg-default"
-          },
-          {
-            "name": "Primary Blue 90",
-            "value": "bg-primary-blue-90"
-          },
-          {
-            "name": "Primary Blue 70",
-            "value": "bg-primary-blue-70"
-          },
-          {
-            "name": "Neutrals 10",
-            "value": "bg-neutrals-10"
-          },
-          {
-            "name": "Neutrals 20",
-            "value": "bg-neutrals-20"
-          },
-          {
-            "name": "Background Image",
-            "value": "bg-image"
-          }
+          { "name": "Transparent / White / Default", "value": "bg-default" },
+          { "name": "Primary Blue 90", "value": "bg-primary-blue-90" },
+          { "name": "Primary Blue 70", "value": "bg-primary-blue-70" },
+          { "name": "Neutrals 10", "value": "bg-neutrals-10" },
+          { "name": "Neutrals 20", "value": "bg-neutrals-20" },
+          { "name": "Background Image", "value": "bg-image" }
         ]
       },
       {
@@ -462,8 +390,20 @@
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "bg-inside-container",
-        "label": "Show background color inside container."
+        "name": "sec-inside-container",
+        "label": "Show background color inside container.",
+        "condition": { 
+          "!=": [{ "var": "style" }, "bg-image"] 
+        }
+      }, 
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "sec-width",
+        "label": "Reduce section width.",
+        "condition": { 
+          "!=": [{ "var": "style" }, "bg-image"] 
+        }
       }
     ]
   },
