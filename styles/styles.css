@@ -317,6 +317,7 @@
     /* Gutter space */
     --section-gutter-space: 72px;
     --section-container-space: var(--spacing-64); 
+    --section-reduced-space: 320px;
   
     /* Screen variables */
     --nav-height: 50px;
@@ -812,6 +813,10 @@ main .section > div {
     max-width: var(--screen-width);
     margin: auto;
   }
+
+  main .section[data-sec-width="true"] > div {
+    max-width: calc(var(--screen-width) + (var(--section-gutter-space)*2) - (var(--section-reduced-space) * 2));
+  }
 }
 
 .section[class*='bg-primary-blue'] {
@@ -837,7 +842,7 @@ main .section.bg-primary-blue-90[data-sec-inside-container="true"] > div {
 }
 
 main .section.bg-primary-blue-70,
-main .section.bg-primary-blue-70[data-sec-inside-container="true"] {
+main .section.bg-primary-blue-70[data-sec-inside-container="true"] > div {
   background-color: var(--primary-blue-70);
 }
 
@@ -880,6 +885,10 @@ main .section.bg-image .sec-img {
 
   main .section[class*='bg-'][data-sec-inside-container="true"] > div {
     border-radius: 10px;
+  }
+
+  main .section[data-sec-width="true"][data-sec-inside-container="true"] > div {
+    max-width: calc(var(--screen-width) + (var(--section-gutter-space)*2) - (var(--section-reduced-space) * 2));
   }
 }
 
