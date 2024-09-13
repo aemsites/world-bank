@@ -28,7 +28,7 @@ module.exports = {
         'news-card': 5,
         hero: 5,
         'explore-card': 7,
-        section: 7,
+        section: 8,
         teaser: 9,
         'mini-card': 8,
         'research-publications-card': 7,
