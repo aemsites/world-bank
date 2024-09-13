@@ -2046,6 +2046,13 @@
         "label": "Suffix text"
       },
       {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Description"
+      },
+      {
         "component": "boolean",
         "valueType": "boolean",
         "name": "show_borderline",
