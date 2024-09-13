@@ -1,21 +1,18 @@
 .measuring-impact-cards{
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    align-content: flex-start;
     padding: 0;
     gap: 20px;
 }
 
-.impact-card-wrapper {
+.impact-card-wrapper > a {
+    text-decoration: none;
+    line-height: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
     gap: 20px;
-    order: 0;
-    flex-grow: 1;
-    border-top: 1px solid #07AB50;
 }
 
 .impact-card-wrapper p.impact-indicator {
@@ -26,12 +23,15 @@
     letter-spacing: 1px;
     color: color(display-p3 0 0 0 / 57%);
     text-wrap: wrap;
+    margin-top: 6px;
+    margin-bottom: 0;
+    width: 100%;
 }
 
 .impact-card-body-content {
     display: grid;
-    gap: 12px 32px;
-    grid-template-columns: 112px auto;
+    gap: 4px 20px;
+    grid-template-columns: 72px auto;
 }
 
 .impact-card-content {
@@ -39,21 +39,75 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 4px;
+    justify-content: center;
 }
 
-.impact-card-title{
-    font-size: 28px;
-    line-height: 32px;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    color: #012740;
-}
-
-.impact-card-description {
+.impact-card-content > p {
+    margin: 0;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
     color: color(display-p3 0 0 0 / 96%);
     letter-spacing: -0.25px;
+}
+
+.impact-card-content p:first-child {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--primary-blue-90);
+}
+
+@media (width >= 768px) {
+    .measuring-impact-cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .impact-card-wrapper > a {
+        gap: 24px;
+    }
+
+    .impact-card-wrapper p.impact-indicator {
+        margin-top: 8px;
+        min-height: 48px;
+    }
+
+    .impact-card-body-content {
+        display: grid;
+        gap: 8px 24px;
+        grid-template-columns: auto;
+    }
+
+    .impact-card-img img {
+        width: 100%;
+    }
+    
+    .impact-card-content > p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+@media (width >= 1024px) {
+    .measuring-impact-cards{
+        gap: 32px;
+    }
+
+    .impact-card-wrapper > a {
+        gap: 32px;
+    }
+
+    .impact-card-wrapper p.impact-indicator {
+        margin-top: 12px;
+    }
+
+    .impact-card-body-content {
+        display: grid;
+        gap: 8px 24px;
+        grid-template-columns: auto;
+    }
 }
