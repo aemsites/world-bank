@@ -304,7 +304,7 @@
         "component": "select",
         "name": "sec-spacing",
         "value": "",
-        "label": "Section Spacing (padding)",
+        "label": "Spacing (padding)",
         "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
@@ -327,7 +327,7 @@
         "component": "select",
         "name": "sec-swoosh",
         "value": "",
-        "label": "Section Swoosh",
+        "label": "Swoosh",
         "valueType": "string",
         "options": [
           { "name": "No Swoosh", "value": "sec-swoosh-none" },
@@ -341,7 +341,7 @@
         "component": "select",
         "name": "style",
         "value": "",
-        "label": "Section Background",
+        "label": "Background style",
         "valueType": "string",
         "options": [
           { "name": "Transparent / White / Default", "value": "bg-default" },
