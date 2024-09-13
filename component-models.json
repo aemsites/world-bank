@@ -395,7 +395,7 @@
         "component": "select",
         "name": "style",
         "value": "",
-        "label": "Section Background color",
+        "label": "Section Background",
         "valueType": "string",
         "options": [
           {
@@ -430,6 +430,7 @@
         "name": "container",
         "valueType": "string",
         "collapsible": true,
+        "expand": true,
         "condition": { 
           "==": [{ "var": "style" }, "bg-image"] 
         },
