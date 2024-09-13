@@ -3,7 +3,7 @@ function updateHeadingStructure(block) {
   if (!headingBlock) return;
 
   const children = [...headingBlock.children];
-  if (children.length < 7) return; 
+  if (children.length < 7) return;
   const [
     eyebrowDiv,
     prefixDiv,
@@ -19,7 +19,7 @@ function updateHeadingStructure(block) {
   const eyebrowText = getTextContent(eyebrowDiv);
   const prefixText = getTextContent(prefixDiv);
   const mainHeadingText = getTextContent(mainHeadingDiv);
-  const headerTag = getTextContent(headerTagDiv) || 'h2'; 
+  const headerTag = getTextContent(headerTagDiv) || 'h2';
   const suffixText = getTextContent(suffixDiv);
   const descriptionText = getTextContent(descriptionDiv);
   const addBottomLine = getTextContent(bottomLineDiv) === 'true';
