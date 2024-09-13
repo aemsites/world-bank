@@ -81,3 +81,19 @@ export function decorateLinkedPictures(container) {
       a.setAttribute('title', txt);
     });
 }
+
+/**
+ *
+ * Helper function to create a <source> element
+ *
+ * @returns imageSource
+ */
+export function createSource(src, width, mediaQuery) {
+  const { pathname } = new URL(src, window.location.href);
+  const source = document.createElement('source');
+  source.type = 'image/webp';
+  source.srcset = `${pathname}?width=${width}&format=webply&optimize=medium`;
+  source.media = mediaQuery;
+
+  return source;
+}
