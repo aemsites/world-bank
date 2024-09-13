@@ -1,4 +1,4 @@
-import { p, span, h2, hr } from "../../scripts/dom-helpers";
+import { p, span, hr } from '../../scripts/dom-helpers.js';
 
 function updateHeadingStructure(block) {
   const headingBlock = block;
@@ -26,28 +26,21 @@ function updateHeadingStructure(block) {
   const descriptionText = getTextContent(descriptionDiv);
   const addBottomLine = getTextContent(bottomLineDiv) === 'true';
 
-  // Clear the current contents of the heading block
   headingBlock.innerHTML = '';
 
   // Create eyebrow text element
   const eyebrow = p({ class: 'eyebrowtext' }, eyebrowText);
+  const headerElement = document.createElement(headerTag);
+  const prefixSpan = span(prefixText);
+  const suffixSpan = span(suffixText);
 
-  // Create header element dynamically
-  const headerElement = domEl(headerTag, 
-    span({ class: 'prefix' }, prefixText), 
-    ` ${mainHeadingText} `, 
-    span({ class: 'suffix' }, suffixText)
-  );
-
-  // Create description element
+  headerElement.append(prefixSpan, ` ${mainHeadingText} `, suffixSpan);
   const description = p({ class: 'heading-description' }, descriptionText);
 
   // Append elements to the heading block
   headingBlock.append(eyebrow, headerElement, description);
-
-  // Append horizontal line if "true" is found in the last div
   if (addBottomLine) {
-    headingBlock.appendChild(hr());
+    headingBlock.append(hr());
   }
 }
 
