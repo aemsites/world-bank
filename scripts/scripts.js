@@ -125,6 +125,7 @@ function buildTwitterLinks(main) {
           + `&original_referrer=${encodedUrl}&source=tweetbutton&hashtags=${encodeURIComponent(tweetContent.hashtag)}`;
         
         openPopUp(modalURL);
+        return false; // does this stop default behavior?
       })
     }
   });
