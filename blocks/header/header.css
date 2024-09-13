@@ -69,9 +69,9 @@ header .nav-menu-overlay.open {
   display: block;
 }
 
-  header .nav-menu-overlay::-webkit-scrollbar {
-    display: none;
-  }
+header .nav-menu-overlay::-webkit-scrollbar {
+  display: none;
+}
 
 header .nav-menu-overlay .nav-menu {
   background-color: var(--primary-blue-100);
@@ -83,7 +83,7 @@ header .nav-menu-overlay .nav-menu {
   overflow: hidden scroll;
   padding: 100px 30px;
   max-width: 1456px;
-  height:-webkit-fill-available;
+  height: -webkit-fill-available;
   color: var(--neutrals-40);
 }
 
@@ -178,7 +178,7 @@ header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
 }
 
-header .nav-menu-overlay .nav-menu-column.left ul a{
+header .nav-menu-overlay .nav-menu-column.left ul a {
   font-family: var(--body-font-family);
   font-size: 28px;
   cursor: not-allowed;
@@ -186,7 +186,6 @@ header .nav-menu-overlay .nav-menu-column.left ul a{
   font-weight: 700;
   line-height: 38.13px;
 }
-
 
 header .nav-menu-overlay .nav-menu .submenu a:hover {
   color: var(--color-white);
@@ -197,13 +196,13 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
   font-weight: 800;
 }
 
-header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a{
+header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
   color: var(--color-white);
   font-size: var(--body-large);
   font-weight: 700;
 }
 
-header .nav-menu-overlay .nav-menu-column.left ul a:hover{
+header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   color: var(--neutrals-40);
 }
 
@@ -424,7 +423,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
   letter-spacing: 0.06em;
   text-align: left;
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   gap: var(--xlarge);
   padding: 0;
 }
@@ -696,7 +695,7 @@ header nav .nav-brand img {
 }
 
 header nav .nav-sections .default-content-wrapper {
-display: none;
+  display: none;
 }
 
 @media (width > 1024px) {
@@ -793,7 +792,7 @@ header nav .nav-tools {
 }
 
 @media (width >=768px) and (width< 1024px) {
-  .search-container{
+  .search-container {
     top: 94px;
   }
 
@@ -840,7 +839,7 @@ header nav .nav-tools {
     flex-flow: column wrap;
     position: relative;
     justify-content: space-around;
-    max-height:calc(670px - 2vw);
+    max-height: calc(670px - 2vw);
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country {
@@ -849,7 +848,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
-   width: calc(45vw - 4vw);
+    width: calc(45vw - 4vw);
     height: auto;
   }
 
@@ -860,9 +859,9 @@ header nav .nav-tools {
     border-top: 1px solid var(--primary-blue-80);
     flex-direction: row;
     align-items: center;
-   position: absolute;
+    position: absolute;
     bottom: -100px;
-    min-width:100%;
+    min-width: 100%;
     padding-top: 40px;
   }
 
@@ -881,13 +880,11 @@ header nav .nav-tools {
     align-items: center;
   }
 
-
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer > ul > li {
     color: var(nav-menu-footer-color);
     padding: 0 35px;
     margin: 0;
   }
-
 
   header
     .nav-menu-overlay
@@ -899,14 +896,19 @@ header nav .nav-tools {
     width: 100%;
     display: flex;
     position: absolute;
-    bottom:  -150px;
+    bottom: -150px;
     border-top: 1px solid var(--primary-blue-80);
     flex-direction: row;
     align-items: start;
- 
   }
 
-  header .nav-menu-overlay .nav-menu-column.right .submenu .footer > ul > li:not(li:last-child) {
+  header
+    .nav-menu-overlay
+    .nav-menu-column.right
+    .submenu
+    .footer
+    > ul
+    > li:not(li:last-child) {
     border-right: 1px solid var(--nav-menu-footer-color);
   }
 
@@ -916,8 +918,8 @@ header nav .nav-tools {
     .submenu
     li:has(ul.browse-country)
     > ul {
-      margin: 10px 0;
-      padding-top: 15px;
+    margin: 10px 0;
+    padding-top: 15px;
     border: none;
     display: flex;
     flex-direction: row;
@@ -1045,7 +1047,6 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right {
     width: 900px;
     position: relative;
-  
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
@@ -1079,11 +1080,11 @@ header nav .nav-tools {
     padding: 0;
   }
 
-  header .nav-menu-overlay .nav-menu-column.left > ul a{
+  header .nav-menu-overlay .nav-menu-column.left > ul a {
     font-size: 18px;
   }
 
-  header .nav-menu-overlay .nav-menu-column.left ul a{
+  header .nav-menu-overlay .nav-menu-column.left ul a {
     cursor: pointer;
     pointer-events: all;
   }
@@ -1111,13 +1112,11 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected {
     background-color: var(--color-white);
-
   }
 
-  header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a{
+  header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a {
     font-weight: 800;
     color: var(--color-black);
-
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected > span {
@@ -1144,9 +1143,7 @@ header nav .nav-tools {
     color: var(--nav-menu-footer-color);
     padding: 0 25px;
     margin: 0;
-
   }
-
 
   header
     .nav-menu-overlay
@@ -1209,15 +1206,19 @@ header nav .nav-tools {
     align-items: center;
   }
 
-
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer > ul > li {
     color: var(--nav-menu-footer-color);
     padding: 0 25px;
     margin: 0;
-  
   }
 
-  header .nav-menu-overlay .nav-menu-column.right .submenu .footer > ul > li:not(li:last-child) {
+  header
+    .nav-menu-overlay
+    .nav-menu-column.right
+    .submenu
+    .footer
+    > ul
+    > li:not(li:last-child) {
     border-right: 1px solid var(--nav-menu-footer-color);
   }
 
@@ -1413,10 +1414,7 @@ header nav .nav-tools {
     width: 50vw;
   }
 
-  header
-  .nav-menu-overlay
-  .nav-menu-column.right
-  .submenu{
+  header .nav-menu-overlay .nav-menu-column.right .submenu {
     max-height: none;
   }
 
@@ -1428,7 +1426,6 @@ header nav .nav-tools {
     > ul {
     flex-direction: column;
     align-items: start;
- 
   }
 
   header
