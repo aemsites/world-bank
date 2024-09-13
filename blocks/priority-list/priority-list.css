@@ -1,5 +1,5 @@
-.section.priority-list-container{
-    padding-bottom: 0;
+.section.priority-list-container {
+  padding-bottom: 0;
 }
 
 .priority-list-wrapper .priority-list {
@@ -15,13 +15,13 @@
   color: var(--primary-blue-90);
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: var(--medium);
 }
 
 .priority-list-wrapper .priority-list .right-column-container {
   display: flex;
   flex-direction: column;
-  row-gap: 32px;
+  row-gap: var(--xlarge);
 }
 
 .priority-list-wrapper
@@ -78,7 +78,7 @@
   > div {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: var(--regular);
   position: relative;
   padding-left: 20px;
   text-align: left;
@@ -205,6 +205,9 @@
   .cards-container
   > div
   .carddesc {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--xsmall);
   font-size: 18px;
   color: var(--neutrals-100);
 }
@@ -216,7 +219,7 @@
   > div
   .carddesc
   p {
-  margin-top: 0;
+  margin: 0;
 }
 
 .priority-list-wrapper
@@ -230,8 +233,9 @@
   font-size: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-bottom: 16px;
+  gap: var(--xxsmall);
+  margin: 0;
+  padding-bottom: var(--xlarge);
 }
 
 .priority-list-wrapper .priority-list .left-column-container {
@@ -275,20 +279,19 @@
   .carddesc
   ul
   a:hover {
-    text-decoration-color: var(--primary-blue-50);
-  }
+  text-decoration-color: var(--primary-blue-50);
+}
 
 @media (width >=768px) and (width < 1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0;
+    gap: 0 48px;
   }
 
   .priority-list-wrapper
     .priority-list
     .right-column-container
     .text-container {
-    column-gap: 32px;
     padding: 0 var(--xxsmall);
   }
 
@@ -301,28 +304,12 @@
     font-size: var(--body-medium);
   }
 
-  .priority-list-wrapper .priority-list .right-column-container {
-    row-gap: 56px;
-  }
-
   .priority-list-wrapper
     .priority-list
     .right-column-container
     .cards-container
     > div {
     padding-left: 20px;
-  }
-
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .cards-container
-    > div
-    .carddesc
-    ul {
-    margin-bottom: 0;
-    padding-bottom: 48px;
-
   }
 
   .priority-list-wrapper .priority-list .left-column-container {
@@ -347,6 +334,7 @@
     width: 341px;
     height: 322px;
     background-size: contain;
+    background-position: center center;
     transition: background-image 200ms linear;
   }
 
@@ -362,19 +350,17 @@
 @media (width >= 1024px) {
   .priority-list-wrapper .priority-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0 80px;
+    gap: 0 68px;
   }
 
   .priority-list-wrapper .priority-list .right-column-container {
     padding-bottom: 0;
-    gap: 56px 56px;
   }
 
   .priority-list-wrapper
     .priority-list
     .right-column-container
     .text-container {
-    column-gap: 32px;
     padding: 0 var(--xxsmall);
   }
 
@@ -404,7 +390,6 @@
     .cards-container
     > div {
     padding-left: 40px;
-    gap: 20px;
   }
 
   .priority-list-wrapper .priority-list .left-column-container {
@@ -448,9 +433,7 @@
     .carddesc
     ul {
     flex-flow: row wrap;
-    column-gap: 30px;
     margin-bottom: 0;
-    padding-bottom: 48px;
     justify-content: space-between;
   }
 
@@ -462,7 +445,7 @@
     .carddesc
     ul
     li {
-        padding-left: 4px;
+    padding-left: 4px;
     width: 45%;
   }
 }
