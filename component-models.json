@@ -430,7 +430,6 @@
         "name": "container",
         "valueType": "string",
         "collapsible": true,
-        "expand": true,
         "condition": { 
           "==": [{ "var": "style" }, "bg-image"] 
         },
