@@ -848,7 +848,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
-    width: calc(45vw - 4vw);
+    width: 41vw;
     height: auto;
   }
 
