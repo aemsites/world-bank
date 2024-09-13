@@ -180,7 +180,9 @@ header .nav-menu-overlay .nav-menu-column.left ul a{
   font-weight: 700;
   line-height: 38.13px;
 }
-
+header .nav-menu-overlay .nav-menu-column.left ul a:hover{
+  color: var(--neutrals-40);
+}
 header .nav-menu-overlay .nav-menu .submenu a:hover {
   color: var(--color-white);
 }
