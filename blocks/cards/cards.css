@@ -78,8 +78,8 @@
 }
 
 .cards.profile-summary .cards-card-body p {
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 20px;
   font-weight: 400;
   margin: 0;
   letter-spacing: -0.25px;
@@ -103,6 +103,11 @@
 }
 
 @media (width >= 768px) {
+  .cards.profile-summary .cards-card-body p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
   .cards.profile-summary > ul > li {
     grid-template-columns: 252px auto;
   }
