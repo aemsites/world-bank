@@ -174,6 +174,13 @@ header .nav-menu-overlay .nav-menu a:visited {
   color: var(--neutrals-40);
 }
 
+header .nav-menu-overlay .nav-menu-column.left ul a{
+  font-family: var(--body-font-family);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 38.13px;
+}
+
 header .nav-menu-overlay .nav-menu .submenu a:hover {
   color: var(--color-white);
 }
@@ -246,10 +253,6 @@ header .nav-menu-overlay .nav-menu-column.left > ul {
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul {
-  font-family: var(--body-font-family);
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 38.13px;
   margin: 0;
   text-align: left;
   display: flex;
@@ -403,10 +406,9 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
   line-height: 22px;
   letter-spacing: 0.06em;
   text-align: left;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 40px;
+  display: flex;
+   flex-direction: column;
+  gap: var(--xlarge);
   padding: 0;
 }
 
@@ -478,7 +480,8 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
   width: 100%;
   left: 0;
   display: flex;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
   height: 100px;
   z-index: 5;
   word-wrap: break-word;
@@ -498,7 +501,8 @@ header .nav-menu-overlay .nav-menu-column.right {
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul {
   padding: 0;
-  padding-top: 15px;
+  margin-top: var(--small);
+  padding-top: var(--regular);
 }
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li > ul {
@@ -508,6 +512,7 @@ header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li > ul {
   font-size: 16px;
   padding-left: 20px;
   margin-top: 10px;
+  margin-bottom: 0;
 }
 
 header
@@ -817,10 +822,11 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu {
-    display: grid;
-    grid-gap: 40px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+    justify-content: space-around;
+    max-height:640.5px;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country {
@@ -829,16 +835,19 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
-    max-width: 100%;
+   width: calc(50% - 20px);
     height: auto;
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu .footer {
-    grid-column: 1 / 3;
+    flex-grow: 2;
     display: flex;
     border-top: 1px solid var(--primary-blue-80);
     flex-direction: row;
     align-items: center;
+   position: absolute;
+    bottom: -100px;
+    width: 100%;
     padding-top: 40px;
   }
 
@@ -871,12 +880,15 @@ header nav .nav-tools {
     .submenu
     li:has(ul.browse-country) {
     padding-top: 40px;
-    grid-column: 1 / 3;
+    flex-grow: 2;
+    width: 100%;
     display: flex;
+    position: absolute;
+    bottom:  -150px;
     border-top: 1px solid var(--primary-blue-80);
     flex-direction: row;
     align-items: start;
-    height: 300px;
+ 
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer > ul > li:not(li:last-child) {
@@ -889,6 +901,8 @@ header nav .nav-tools {
     .submenu
     li:has(ul.browse-country)
     > ul {
+      margin: 10px 0;
+      padding-top: 15px;
     border: none;
     display: flex;
     flex-direction: row;
@@ -1016,6 +1030,7 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right {
     width: 900px;
     position: relative;
+  
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
@@ -1046,8 +1061,11 @@ header nav .nav-tools {
     border-right: 1px solid var(--primary-blue-80);
     gap: 5px;
     min-width: 340px;
-    font-size: 18px;
     padding: 0;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.left > ul a{
+    font-size: 18px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -1073,8 +1091,13 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected {
     background-color: var(--color-white);
+
+  }
+
+  header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a{
     font-weight: 800;
     color: var(--color-black);
+
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected > span {
@@ -1082,10 +1105,10 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 80px;
+    display: flex;
+    flex-flow: column wrap;
+    max-height: 630px;
+    position: relative;
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu:first-child {
@@ -1110,9 +1133,10 @@ header nav .nav-tools {
     .nav-menu-column.right
     .submenu
     li:has(ul.browse-country) {
-    position: relative;
+    position: absolute;
     padding-top: 40px;
-    grid-column: 1 / 3;
+    bottom: -100px;
+    width: 100%;
     border-top: 1px solid var(--primary-blue-80);
   }
 
@@ -1259,8 +1283,11 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu .footer {
     padding-top: 40px;
-    grid-column: 1 / 3;
+    flex-grow: 2;
     display: flex;
+    position: absolute;
+    bottom: -100px;
+    width: 100%;
     flex-direction: row;
     align-items: center;
     border-top: 1px solid var(--primary-blue-80);
@@ -1357,27 +1384,20 @@ header nav .nav-tools {
 }
 
 @media (width <= 1400px) and (width >=1024px) {
-  header .nav-menu-overlay .nav-menu-column.right > .submenu {
-    grid-gap: 40px;
-    grid-template-columns: repeat(1, 100%);
-    grid-template-rows: auto;
-  }
-
   header .nav-menu-overlay .nav-menu {
     height: fit-content;
   }
 
   header .nav-menu-overlay .nav-menu-column.right {
-    width: 55vw;
+    padding-bottom: 400px;
+    width: 50vw;
   }
 
-  header .nav-menu-overlay .nav-menu-column.right > .submenu .footer,
   header
-    .nav-menu-overlay
-    .nav-menu-column.right
-    .submenu
-    li:has(ul.browse-country) {
-    grid-column: 1/2;
+  .nav-menu-overlay
+  .nav-menu-column.right
+  .submenu{
+    max-height: none;
   }
 
   header
@@ -1388,7 +1408,7 @@ header nav .nav-tools {
     > ul {
     flex-direction: column;
     align-items: start;
-    height: 300px;
+ 
   }
 
   header

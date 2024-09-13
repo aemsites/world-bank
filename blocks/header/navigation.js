@@ -93,7 +93,7 @@ const createCategoriesAndSubMenu = (level0Item, submenuId, index, countrySearchP
     id: submenuId,
     class: constants.SUBMENU,
     style:
-            isDesktop.matches && index === 0 ? 'display: grid;' : 'display: none;',
+            isDesktop.matches && index === 0 ? 'display: flex;' : 'display: none;',
   });
 
   level0Item.categories.forEach((category) => {
@@ -129,7 +129,7 @@ const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIn
     sidemenuBackButton.style.display = 'block';
     const currentSubMenu = rightColumn.querySelector(constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR);
     currentSubMenu.textContent = submenuTitle;
-    currentSubMenu.style.display = 'grid';
+    currentSubMenu.style.display = 'flex';
     leftColumn.style.display = 'none';
   }
 
@@ -137,7 +137,7 @@ const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIn
     constants.SUBMENU_WITH_SELECTOR,
   );
   submenus.forEach((submenu) => {
-    submenu.style.display = submenu.id === submenuId ? 'grid' : 'none';
+    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
   });
 
   // Update the selected state of the menu items in the left column
@@ -168,7 +168,7 @@ const closesideMenu = (leftColumn, rightColumn) => {
   });
   submenus.forEach((submenu, index) => {
     if (isDesktop.matches && index === 0) {
-      submenu.style.display = 'grid';
+      submenu.style.display = 'flex';
     } else {
       submenu.style.display = 'none';
     }
@@ -211,16 +211,23 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
     // create left column menu
     const level0MenuItem = li(
       {
-        onclick: () => showSubMenu(
+        onmouseover: () => (isDesktop.matches ? showSubMenu(
           menuLeftColumn,
           menuRightColumn,
           submenuId,
           level0Item.title,
           index,
-        ),
+        ) : ''),
+        onclick: () => (!isDesktop.matches ? showSubMenu(
+          menuLeftColumn,
+          menuRightColumn,
+          submenuId,
+          level0Item.title,
+          index,
+        ) : ''),
       },
       span({ textContent: '' }), // level0MenuItemArrow
-      level0Item.title,
+      a({ href: level0Item.link }, level0Item.title),
     );
     const isSelected = isDesktop.matches && index === 0 ? constants.SELECTED : '';
     if (isSelected) level0MenuItem.classList.add(isSelected);
@@ -250,6 +257,7 @@ const formatNavigationJsonData = (navJson) => {
     if (item.Type === constants.LEVEL_0) {
       const level0 = {
         title: item.Title,
+        link: item.Link,
         categories: [],
       };
       structuredData.push(level0);
