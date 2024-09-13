@@ -119,7 +119,7 @@ const createCategoriesAndSubMenu = (level0Item, submenuId, index, countrySearchP
 };
 
 // Method to show SubMenu related to Level0 items.
-const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIndex) => {
+const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, submenuLn, currentIndex) => {
   document.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR).scrollTop = 0;
   rightColumn.style.display = 'block';
   if (!isDesktop.matches) {
@@ -128,7 +128,9 @@ const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIn
     );
     sidemenuBackButton.style.display = 'block';
     const currentSubMenu = rightColumn.querySelector(constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR);
-    currentSubMenu.textContent = submenuTitle;
+    const submenuredirect = currentSubMenu.querySelector('a');
+    submenuredirect.textContent = submenuTitle;
+    submenuredirect.href = submenuLn;
     currentSubMenu.style.display = 'flex';
     leftColumn.style.display = 'none';
   }
@@ -198,7 +200,7 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
       class: constants.NAV_MENU_OVERLAY_BACK,
       onclick: () => closesideMenu(menuLeftColumn, menuRightColumn),
     }),
-    p({ class: constants.SUBMENU_MAIN_TITLE }),
+    p({ class: constants.SUBMENU_MAIN_TITLE }, a()),
   );
 
   const navMenu = div({ class: constants.NAV_MENU }, menuLeftColumn, menuRightColumn);
@@ -216,6 +218,7 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
           menuRightColumn,
           submenuId,
           level0Item.title,
+          level0Item.link,
           index,
         ) : ''),
         onclick: () => (!isDesktop.matches ? showSubMenu(
@@ -223,6 +226,7 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
           menuRightColumn,
           submenuId,
           level0Item.title,
+          level0Item.link,
           index,
         ) : ''),
       },
