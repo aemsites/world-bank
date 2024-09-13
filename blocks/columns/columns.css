@@ -92,8 +92,9 @@
   z-index: 11;
 }
 
-/* Column alignment */
-.columns.valign-center > div {
+/* Column alignment - Start */
+
+/* .columns.valign-center > div {
   align-items: center;
 }
 
@@ -107,7 +108,67 @@
 
 .columns.halign-bottom > div {
   text-align: right;
+} */
+
+.columns.halign-top > div {
+  align-items: flex-start;
 }
+
+.columns.halign-center > div {
+  align-items: center;
+}
+
+.columns.halign-bottom > div {
+  align-items: flex-end;
+}
+
+.columns.valign-top > div {
+  justify-content: flex-start;
+}
+
+.columns.valign-center > div {
+  justify-content: center;
+}
+
+.columns.valign-bottom > div {
+  justify-content: flex-end;
+}
+
+@media (width >= 1024px) {
+  .columns.valign-top > div {
+    align-items: flex-start;
+  }
+
+  .columns.valign-center > div {
+    align-items: center;
+  }
+
+  .columns.valign-bottom > div {
+    align-items: flex-end;
+  }
+
+  .columns.halign-top > div {
+    justify-content: flex-start;
+  }
+
+  .columns.halign-center > div {
+    justify-content: center;
+  }
+
+  .columns.halign-bottom > div {
+    justify-content: flex-end;
+  }
+
+  /* Special Case for button in columns-2-cols */
+
+  .columns.columns-2-cols > div > div:last-child:has(p>a:only-child) {
+    all:unset;
+    display: flex;
+  }
+  
+}
+
+/* Column alignment - End */
 
 @media (width >= 1024px) {
   .columns.columns-transform-teaser > div p:nth-child(1) {
