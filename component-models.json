@@ -419,17 +419,37 @@
             "value": "bg-neutrals-20"
           },
           {
-            "name": "Neutrals 40 with gradient",
-            "value": "bg-neutrals-40-gradient"
+            "name": "Background Image",
+            "value": "bg-image"
           }
         ]
       },
       {
-        "component": "reference",
+        "component": "container",
+        "label": "Brakground Image",
+        "name": "container",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
+        "collapsible": true,
+        "condition": { 
+          "==": [{ "var": "style" }, "bg-image"] 
+        },
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Background Image",
+            "multi": false
+          },
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "tab-image",
+            "label": "Tablet/Mobile Image",
+            "description": "Background image will be used on tablet/mobile by default.",
+            "multi": false
+          }
+        ]
       },
       {
         "component": "boolean",
