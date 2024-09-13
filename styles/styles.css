@@ -829,27 +829,33 @@ main .section > div {
 }
 
 main .section.bg-primary-blue-90,
-main .section.bg-primary-blue-90[data-bg-inside-container="true"] > div {
+main .section.bg-primary-blue-90[data-sec-inside-container="true"] > div {
   background-color: var(--primary-blue-90);
 }
 
 main .section.bg-primary-blue-70,
-main .section.bg-primary-blue-70[data-bg-inside-container="true"] {
+main .section.bg-primary-blue-70[data-sec-inside-container="true"] {
   background-color: var(--primary-blue-70);
 }
 
 main .section.bg-neutrals-10,
-main .section.bg-neutrals-10[data-bg-inside-container="true"] > div {
+main .section.bg-neutrals-10[data-sec-inside-container="true"] > div {
   background-color: var(--neutrals-10);
 }
 
 main .section.bg-neutrals-20,
-main .section.bg-neutrals-20[data-bg-inside-container="true"] > div {
+main .section.bg-neutrals-20[data-sec-inside-container="true"] > div {
   background-color: var(--neutrals-20);
 }
 
-main .section[class*='bg-'][data-bg-inside-container="true"] {
+main .section[class*='bg-'][data-sec-inside-container="true"] {
   background-color: transparent;
+  margin: 0 var(--section-gutter-space);
+}
+
+main .section[class*='bg-'][data-sec-inside-container="true"] > div {
+  padding: 0;
+  border-radius: 8px;
 }
 
 /* Section background image */
@@ -866,6 +872,10 @@ main .section.bg-image .sec-img {
 @media (width >= 1024px) {
   main .section.bg-image .sec-img {
     top: -20px;
+  }
+
+  main .section[class*='bg-'][data-sec-inside-container="true"] > div {
+    border-radius: 10px;
   }
 }
 
@@ -900,7 +910,7 @@ body.no-scroll {
 }
 
 
-#skip-to-main-content{
+#skip-to-main-content {
   position: absolute;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
