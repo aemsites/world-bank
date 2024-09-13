@@ -354,7 +354,7 @@
       },
       {
         "component": "container",
-        "label": "Brakground Image",
+        "label": "Background Image",
         "name": "container",
         "valueType": "string",
         "collapsible": true,
