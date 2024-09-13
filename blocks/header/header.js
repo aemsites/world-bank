@@ -184,7 +184,6 @@ function createSearchBox() {
 
     searchImage.style.display = isVisible ? 'block' : 'none';
   } else {
-    hamBurgerIcon.style.pointerEvents = 'none';
     cancelContainer = div({ class: 'cancel-container' });
     const cancelImg = img({ class: 'cancel-image' });
     cancelImg.src = `${window.hlx.codeBasePath}/icons/cancel.svg`;
