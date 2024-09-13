@@ -70,10 +70,10 @@ async function loadFonts() {
  * Opens a popup for the Twitter links autoblock.
  */
 function openPopUp(popUrl) {
-  const popupParams = 'height=450, width=550, top=' + (window.innerHeight / 2 - 275)
-   + ', left=' + (window.innerWidth / 2 - 225) 
-   + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0';
-	window.open(popUrl, 'fbShareWindow', popupParams);
+  const popupParams = `height=450, width=550, top=${(window.innerHeight / 2 - 275)}`
+   + `, left=${(window.innerWidth / 2 - 225)}`
+   + `, toolbar=0, location=0, menubar=0, directories=0, scrollbars=0`;
+  window.open(popUrl, 'fbShareWindow', popupParams);
 }
 
 /**
@@ -81,14 +81,14 @@ function openPopUp(popUrl) {
  * @param {Element} main The container element
  */
 function buildTwitterLinks(main) {
-  if (!main) return; 
+  if (!main) return;
 
   // get all anchor elements
   const anchors = main.querySelectorAll('a');
   const url = window.location.href;
   const encodedUrl = encodeURIComponent(url);
 
-  anchors.forEach(anchor => {
+  anchors.forEach((anchor) => {
     // check for 'twitter.com' or 'x.com'
     if (anchor.href.includes('twitter.com') || anchor.href.includes('x.com')) {
       // add class
@@ -98,9 +98,9 @@ function buildTwitterLinks(main) {
       const tweetTextContent = anchor.textContent;
       const tweetChannel = 'worldbank';
       const tweetContent = {
-        'tweetText': tweetTextContent,
-        'channel': tweetChannel,
-        'hashtag': ''
+        tweetText: tweetTextContent,
+        channel: tweetChannel,
+        hashtag: '',
       };
 
       // add icon to end of tweet text
@@ -125,9 +125,8 @@ function buildTwitterLinks(main) {
         const modalURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(modalContent)}`
           + `&url=${encodedUrl}&via=${encodeURIComponent(modalChannel.charAt(0) === '@' ? modalChannel.substring(1) : modalChannel)}`
           + `&original_referrer=${encodedUrl}&source=tweetbutton&hashtags=${encodeURIComponent(tweetContent.hashtag)}`;
-        
         openPopUp(modalURL);
-      })
+      });
     }
   });
 }
