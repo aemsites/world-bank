@@ -861,12 +861,11 @@ main .section.bg-image .sec-img {
   width: 100%;
   position: absolute;
   z-index: -1;
-  top: -125px;
 }
 
 @media (width >= 1024px) {
   main .section.bg-image .sec-img {
-    top: -40px;
+    top: -20px;
   }
 }
 

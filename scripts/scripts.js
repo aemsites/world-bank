@@ -15,6 +15,7 @@ import {
 
 import {
   getLanguage,
+  createSource,
 } from './utils.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -212,32 +213,18 @@ function decorateSectionImages(doc) {
 
     const picture = document.createElement('picture');
     if (sectionImg) {
-      const sourceDesktop = document.createElement('source');
-      const { pathname } = new URL(sectionImg, window.location.href);
-      sourceDesktop.type = 'image/webp';
-      sourceDesktop.srcset = `${pathname}?width=1920&format=webply&optimize=medium`;
-      sourceDesktop.media = '(min-width: 1024px)';
-      picture.appendChild(sourceDesktop);
-      defaultImgUrl = pathname;
+      picture.appendChild(createSource(sectionImg, 1920, '(min-width: 1024px)'));
+      defaultImgUrl = sectionImg;
     }
 
     if (sectionTabImg) {
-      const sourceTab = document.createElement('source');
-      const { pathname } = new URL(sectionTabImg, window.location.href);
-      sourceTab.type = 'image/webp';
-      sourceTab.srcset = `${pathname}?width=1024&format=webply&optimize=medium`;
-      sourceTab.media = '(min-width: 768px)';
-      picture.appendChild(sourceTab);
-      defaultImgUrl = pathname;
+      picture.appendChild(createSource(sectionTabImg, 1024, '(min-width: 768px)'));
+      defaultImgUrl = sectionTabImg;
     }
 
     if (sectionMobImg) {
-      const sourceMobile = document.createElement('source');
-      const { pathname } = new URL(sectionMobImg, window.location.href);
-      sourceMobile.type = 'image/webp';
-      sourceMobile.srcset = `${pathname}?width=600&format=webply&optimize=medium`;
-      picture.appendChild(sourceMobile);
-      defaultImgUrl = pathname;
+      picture.appendChild(createSource(sectionTabImg, 600, '(max-width: 767px)'));
+      defaultImgUrl = sectionMobImg;
     }
 
     const img = document.createElement('img');
