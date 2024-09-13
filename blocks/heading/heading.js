@@ -3,8 +3,7 @@ function updateHeadingStructure(block) {
   if (!headingBlock) return;
 
   const children = [...headingBlock.children];
-  if (children.length < 7) return; // Ensure there are at least 7 divs
-
+  if (children.length < 7) return; 
   const [
     eyebrowDiv,
     prefixDiv,
@@ -20,15 +19,13 @@ function updateHeadingStructure(block) {
   const eyebrowText = getTextContent(eyebrowDiv);
   const prefixText = getTextContent(prefixDiv);
   const mainHeadingText = getTextContent(mainHeadingDiv);
-  const headerTag = getTextContent(headerTagDiv) || 'h2'; // Default to 'h2'
+  const headerTag = getTextContent(headerTagDiv) || 'h2'; 
   const suffixText = getTextContent(suffixDiv);
   const descriptionText = getTextContent(descriptionDiv);
   const addBottomLine = getTextContent(bottomLineDiv) === 'true';
 
-  // Clear the current contents of the heading block
   headingBlock.innerHTML = '';
 
-  // Create elements
   const eyebrow = document.createElement('p');
   eyebrow.classList.add('eyebrowtext');
   eyebrow.textContent = eyebrowText;
