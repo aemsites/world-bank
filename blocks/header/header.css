@@ -180,11 +180,19 @@ header .nav-menu-overlay .nav-menu-column.left ul a{
   font-weight: 700;
   line-height: 38.13px;
 }
-header .nav-menu-overlay .nav-menu-column.left ul a:hover{
-  color: var(--neutrals-40);
-}
+
+
 header .nav-menu-overlay .nav-menu .submenu a:hover {
   color: var(--color-white);
+}
+
+header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
+  color: white;
+  font-weight: 800;
+}
+
+header .nav-menu-overlay .nav-menu-column.left ul a:hover{
+  color: var(--neutrals-40);
 }
 
 .header .nav-item-content-expanded > ul {
@@ -274,11 +282,6 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
   height: 44px;
   width: 44px;
   border-radius: 50%;
-}
-
-header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
-  color: white;
-  font-weight: 800;
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul li span::before {
