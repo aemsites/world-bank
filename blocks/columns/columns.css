@@ -159,7 +159,7 @@
     justify-content: flex-end;
   }
 
-  /* Special Case for button in columns-2-cols*/
+  /* Special Case for button in columns-2-cols */
 
   .columns.columns-2-cols > div > div:last-child:has(p>a:only-child) {
     all:unset;
