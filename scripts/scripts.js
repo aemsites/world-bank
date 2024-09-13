@@ -198,6 +198,64 @@ export const fetchLangDatabyFileName = async (fileName) => {
 };
 
 /**
+ * Create section background image
+ *
+ * @param {*} doc
+ */
+function decorateSectionImages(doc) {
+  const sectionImgContainers = doc.querySelectorAll('main .section[data-image]');
+  sectionImgContainers.forEach((sectionImgContainer) => {
+    const sectionImg = sectionImgContainer.dataset.image;
+    const sectionTabImg = sectionImgContainer.dataset.tabImage;
+    const sectionMobImg = sectionImgContainer.dataset.mobImage;
+    let defaultImgUrl = null;
+
+    const picture = document.createElement('picture');
+    if (sectionImg) {
+      const sourceDesktop = document.createElement('source');
+      const { pathname } = new URL(sectionImg, window.location.href);
+      sourceDesktop.type = 'image/webp';
+      sourceDesktop.srcset = `${pathname}?width=1920&format=webply&optimize=medium`;
+      sourceDesktop.media = '(min-width: 1024px)';
+      picture.appendChild(sourceDesktop);
+      defaultImgUrl = pathname;
+    }
+
+    if (sectionTabImg) {
+      const sourceTab = document.createElement('source');
+      const { pathname } = new URL(sectionTabImg, window.location.href);
+      sourceTab.type = 'image/webp';
+      sourceTab.srcset = `${pathname}?width=1024&format=webply&optimize=medium`;
+      sourceTab.media = '(min-width: 768px)';
+      picture.appendChild(sourceTab);
+      defaultImgUrl = pathname;
+    }
+
+    if (sectionMobImg) {
+      const sourceMobile = document.createElement('source');
+      const { pathname } = new URL(sectionMobImg, window.location.href);
+      sourceMobile.type = 'image/webp';
+      sourceMobile.srcset = `${pathname}?width=600&format=webply&optimize=medium`;
+      picture.appendChild(sourceMobile);
+      defaultImgUrl = pathname;
+    }
+
+    const img = document.createElement('img');
+    img.src = defaultImgUrl;
+    img.alt = '';
+    img.className = 'sec-img';
+    img.loading = 'lazy';
+    img.width = '768';
+    img.height = '100%';
+
+    if (defaultImgUrl) {
+      picture.appendChild(img);
+      sectionImgContainer.prepend(picture);
+    }
+  });
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
@@ -208,6 +266,8 @@ async function loadLazy(doc) {
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
+
+  decorateSectionImages(doc);
 
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));

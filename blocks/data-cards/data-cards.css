@@ -15,7 +15,7 @@
 }
 
 .data-cards .rte-container > div:nth-child(3) {
-  margin-top: 30px;    
+  margin-top: 0;    
   margin-bottom: var(--huge);
 }
 
@@ -272,10 +272,12 @@
 
   .data-cards.data-card-variation .rte-container > div:first-child {
     grid-area: data;
+    padding-right: var(--spacing-24);
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(2) {
     grid-area: essentials;
+    padding-right: var(--spacing-24);
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(3) {
@@ -343,6 +345,10 @@
 
   .data-cards.data-card-variation .rte-container > div:nth-child(2) {
     margin-bottom: 72px;
+  }
+
+  .data-cards.data-card-variation .rte-container > div:nth-child(3) {
+    margin-top: 170px;
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p {
