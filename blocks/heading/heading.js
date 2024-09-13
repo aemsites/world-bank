@@ -1,9 +1,11 @@
+import { p, span, h2, hr } from "../../scripts/dom-helpers";
+
 function updateHeadingStructure(block) {
   const headingBlock = block;
   if (!headingBlock) return;
 
   const children = [...headingBlock.children];
-  if (children.length < 7) return;
+
   const [
     eyebrowDiv,
     prefixDiv,
@@ -14,7 +16,7 @@ function updateHeadingStructure(block) {
     bottomLineDiv,
   ] = children;
 
-  const getTextContent = (div) => div?.querySelector('p')?.textContent || '';
+  const getTextContent = (div) => div?.querySelector('p')?.textContent.trim() || '';
 
   const eyebrowText = getTextContent(eyebrowDiv);
   const prefixText = getTextContent(prefixDiv);
@@ -24,34 +26,28 @@ function updateHeadingStructure(block) {
   const descriptionText = getTextContent(descriptionDiv);
   const addBottomLine = getTextContent(bottomLineDiv) === 'true';
 
+  // Clear the current contents of the heading block
   headingBlock.innerHTML = '';
 
-  const eyebrow = document.createElement('p');
-  eyebrow.classList.add('eyebrowtext');
-  eyebrow.textContent = eyebrowText;
+  // Create eyebrow text element
+  const eyebrow = p({ class: 'eyebrowtext' }, eyebrowText);
 
-  const headerElement = document.createElement(headerTag);
-  const prefixSpan = document.createElement('span');
-  prefixSpan.classList.add('prefix');
-  prefixSpan.textContent = prefixText;
+  // Create header element dynamically
+  const headerElement = domEl(headerTag, 
+    span({ class: 'prefix' }, prefixText), 
+    ` ${mainHeadingText} `, 
+    span({ class: 'suffix' }, suffixText)
+  );
 
-  const suffixSpan = document.createElement('span');
-  suffixSpan.classList.add('suffix');
-  suffixSpan.textContent = suffixText;
-
-  headerElement.append(prefixSpan, ` ${mainHeadingText} `, suffixSpan);
-
-  const description = document.createElement('p');
-  description.classList.add('heading-description');
-  description.textContent = descriptionText;
+  // Create description element
+  const description = p({ class: 'heading-description' }, descriptionText);
 
   // Append elements to the heading block
   headingBlock.append(eyebrow, headerElement, description);
 
   // Append horizontal line if "true" is found in the last div
   if (addBottomLine) {
-    const hr = document.createElement('hr');
-    headingBlock.appendChild(hr);
+    headingBlock.appendChild(hr());
   }
 }
 
