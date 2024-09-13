@@ -1,0 +1,59 @@
+.measuring-impact-cards{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: flex-start;
+    padding: 0;
+    gap: 20px;
+}
+
+.impact-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 20px;
+    order: 0;
+    flex-grow: 1;
+    border-top: 1px solid #07AB50;
+}
+
+.impact-card-wrapper p.impact-indicator {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    color: color(display-p3 0 0 0 / 57%);
+    text-wrap: wrap;
+}
+
+.impact-card-body-content {
+    display: grid;
+    gap: 12px 32px;
+    grid-template-columns: 112px auto;
+}
+
+.impact-card-content {
+    padding: 0 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.impact-card-title{
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: #012740;
+}
+
+.impact-card-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: color(display-p3 0 0 0 / 96%);
+    letter-spacing: -0.25px;
+}
