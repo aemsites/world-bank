@@ -3,6 +3,8 @@
     flex-flow: row wrap;
     padding: 0;
     gap: 20px;
+    align-items: center;
+    align-content: flex-start;
 }
 
 .impact-card-wrapper{
@@ -25,10 +27,9 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 1px;
-    color: color(display-p3 0 0 0 / 57%);
+    color: var(--text-on-light-subdued);
     text-wrap: wrap;
-    margin-top: 6px;
-    margin-bottom: 0;
+    margin: 12px 0;
     width: 100%;
 }
 
@@ -53,7 +54,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-    color: color(display-p3 0 0 0 / 96%);
+    color: var(--text-on-light-emphasis);
     letter-spacing: -0.25px;
 }
 
@@ -63,6 +64,7 @@
     font-weight: 700;
     letter-spacing: -0.015em;
     color: var(--primary-blue-90);
+    margin-bottom: 4px;
 }
 
 @media (width >= 768px) {
@@ -79,6 +81,7 @@
     .impact-card-wrapper p.impact-indicator {
         margin-top: 8px;
         min-height: 32px;
+        margin-bottom: 0;
     }
 
     .impact-card-body-content {
@@ -109,6 +112,7 @@
 
     .impact-card-wrapper p.impact-indicator {
         margin-top: 12px;
+        min-height: auto;
     }
 
     .impact-card-body-content {
