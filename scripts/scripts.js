@@ -74,7 +74,6 @@ function openPopUp(popUrl) {
    + ', left=' + (window.innerWidth / 2 - 225) 
    + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0';
 	window.open(popUrl, 'fbShareWindow', popupParams);
-  return false;
 }
 
 /**
@@ -95,6 +94,7 @@ function buildTwitterLinks(main) {
       // add class
       anchor.classList.add('twd-id');
 
+      // may change the source of this data based on feedback from WB
       const tweetTextContent = anchor.textContent;
       const tweetChannel = 'worldbank';
       const tweetContent = {
@@ -127,7 +127,6 @@ function buildTwitterLinks(main) {
           + `&original_referrer=${encodedUrl}&source=tweetbutton&hashtags=${encodeURIComponent(tweetContent.hashtag)}`;
         
         openPopUp(modalURL);
-        return false; // does this stop default behavior?
       })
     }
   });

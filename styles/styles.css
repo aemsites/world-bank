@@ -946,9 +946,17 @@ main span.tweetable {
 }
 
 main span.tweetable > a {
-  color: var(--color-white);
+  color: var(--neutrals-90);
+  background: var(--neutrals-30);
 }
 
-main span.tweetable > a > i {
+main span.tweetable > a:hover,
+main span.tweetable > a:focus {
   background: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+main span.tweetable > a > i::before {
+  content: url('../icons/x_logo.svg');
 }
