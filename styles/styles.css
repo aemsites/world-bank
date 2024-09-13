@@ -459,6 +459,37 @@ a:any-link {
   text-align: left;
 }
 
+/* tweetable link autoblocking */
+main span.tweetable {
+  background: var(--primary-blue-30);
+}
+
+main span.tweetable > a,
+main span.tweetable > a:visited {
+  color: var(--neutrals-90);
+  background: var(--neutrals-30);
+  text-decoration: none;
+}
+
+main span.tweetable > a:hover,
+main span.tweetable > a:focus {
+  background: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+main span.tweetable > a > i::before {
+  content: url('../icons/xlogo.svg');
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  margin-left: 5px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(200%) contrast(100%);
+}
+
+/* end tweetable autoblocking */
+
+
 p strong > em > a:any-link {
   background-color: transparent;
   color: var(--primary-blue-70);
@@ -940,33 +971,3 @@ body.no-scroll {
   word-wrap: normal;
   z-index: 1000;
 }
-
-/* placed this here in the file for organization */
-/* eslint-disable no-descending-specificity */
-main span.tweetable {
-  background: var(--primary-blue-30);
-}
-
-main span.tweetable > a,
-main span.tweetable > a:visited {
-  color: var(--neutrals-90);
-  background: var(--neutrals-30);
-  text-decoration: none;
-}
-
-main span.tweetable > a:hover,
-main span.tweetable > a:focus {
-  background: var(--color-black);
-  color: var(--color-white);
-  text-decoration: none;
-}
-
-main span.tweetable > a > i::before {
-  content: url('../icons/xlogo.svg');
-  display: inline-block;
-  height: 18px;
-  width: 18px;
-  margin-left: 5px;
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(200%) contrast(100%);
-}
-/* eslint-enable no-descending-specificity */
