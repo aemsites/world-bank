@@ -1985,7 +1985,21 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "heading",
+        "name": "eyebrowText",
+        "value": "",
+        "label": "Eyebrow text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "prefix",
+        "value": "",
+        "label": "Prefix text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "headingText",
         "value": "",
         "label": "Heading Text",
         "required": true
@@ -2027,9 +2041,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "prefix",
+        "name": "suffix",
         "value": "",
-        "label": "Prefix text"
+        "label": "Suffix text"
       },
       {
         "component": "boolean",
