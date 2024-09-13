@@ -229,9 +229,10 @@
   padding-left: 20px;
   font-size: 16px;
   display: flex;
+  margin-bottom: 0;
   flex-direction: column;
   gap: 10px;
-  padding-bottom: 16px;
+  padding-bottom: var(--xlarge);
 }
 
 .priority-list-wrapper .priority-list .left-column-container {
@@ -311,18 +312,6 @@
     .cards-container
     > div {
     padding-left: 20px;
-  }
-
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .cards-container
-    > div
-    .carddesc
-    ul {
-    margin-bottom: 0;
-    padding-bottom: 48px;
-
   }
 
   .priority-list-wrapper .priority-list .left-column-container {
@@ -449,8 +438,6 @@
     ul {
     flex-flow: row wrap;
     column-gap: 30px;
-    margin-bottom: 0;
-    padding-bottom: 48px;
     justify-content: space-between;
   }
 
