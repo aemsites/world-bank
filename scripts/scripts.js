@@ -74,6 +74,7 @@ function openPopUp(popUrl) {
    + ', left=' + (window.innerWidth / 2 - 225) 
    + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0';
 	window.open(popUrl, 'fbShareWindow', popupParams);
+  return false;
 }
 
 /**
@@ -116,7 +117,8 @@ function buildTwitterLinks(main) {
       anchor.parentNode.insertBefore(span, anchor);
       span.appendChild(anchor);
 
-      span.addEventListener('click', () => {
+      span.addEventListener('click', (event) => {
+        event.preventDefault();
         const modalContent = tweetTextContent;
         const modalChannel = tweetChannel;
 
