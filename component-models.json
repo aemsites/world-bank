@@ -445,8 +445,16 @@
             "component": "reference",
             "valueType": "string",
             "name": "tab-image",
-            "label": "Tablet/Mobile Image",
-            "description": "Background image will be used on tablet/mobile by default.",
+            "label": "Tablet Image",
+            "description": "Background image will be used on tablet by default.",
+            "multi": false
+          },
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "mob-image",
+            "label": "Mobile Image",
+            "description": "Background / Tablet image will be used on mobile by default.",
             "multi": false
           }
         ]
