@@ -1,7 +1,9 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import getLanguageSelector from './language-selector.js';
-import { getNavigationMenu, formatNavigationJsonData, closesideMenu } from './navigation.js';
+import {
+  getNavigationMenu, formatNavigationJsonData, closesideMenu, closesearchbar,
+} from './navigation.js';
 
 import {
   fetchLanguageNavigation,
@@ -81,7 +83,7 @@ function closeSearchBox() {
   document.body.classList.remove('no-scroll');
 }
 
-function toggleMenu(nav, navSections, forceExpanded = null) {
+async function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null
     ? !forceExpanded
     : nav.getAttribute('aria-expanded') === 'true';
@@ -137,6 +139,9 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   if (searchContainer) {
     closeSearchBox();
   }
+  const rightColumn = navSections.querySelector('.nav-menu-column.right');
+  const leftColumn = navSections.querySelector('.nav-menu-column.left');
+  closesideMenu(leftColumn, rightColumn);
 }
 /**
  * loads and decorates the header, mainly the nav
@@ -258,6 +263,21 @@ async function changeTrendingData(navSections) {
   trendingDataWrapper.append(trendingDataDiv);
 }
 
+async function overalyLoad(navSections) {
+  const langCode = getLanguage();
+  const placeholdersData = await fetchLanguagePlaceholders();
+  if (!navSections.querySelector('.nav-menu-overlay')) {
+    const structuredNav = formatNavigationJsonData(
+      await fetchLanguageNavigation(`/${langCode}`),
+    );
+    // Add navigation menu to header
+    navSections.append(getNavigationMenu(structuredNav, placeholdersData));
+  }
+  const rightColumn = navSections.querySelector('.nav-menu-column.right');
+  const leftColumn = navSections.querySelector('.nav-menu-column.left');
+  isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
+  document.body.addEventListener('click', (e) => closesearchbar(e, navSections));
+}
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -291,12 +311,6 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    const structuredNav = formatNavigationJsonData(
-      await fetchLanguageNavigation(`/${langCode}`),
-    );
-    // Add navigation menu to header
-    navSections.append(getNavigationMenu(structuredNav, placeholdersData));
-
     navSections
       .querySelectorAll(':scope .default-content-wrapper > ul > li')
       .forEach((navSection) => {
@@ -321,11 +335,9 @@ export default async function decorate(block) {
     contentWrapper.prepend(languageSelector);
   }
 
-  const rightColumn = nav.querySelector('.nav-menu-column.right');
-  const leftColumn = nav.querySelector('.nav-menu-column.left');
   // hamburger for mobile
   const hamburger = div(
-    { class: 'nav-hamburger', onclick: () => { toggleMenu(nav, navSections); closesideMenu(leftColumn, rightColumn); } },
+    { class: 'nav-hamburger', onclick: () => { toggleMenu(nav, navSections); } },
     button(
       {
         type: 'button',
@@ -337,11 +349,11 @@ export default async function decorate(block) {
   );
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
-  isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  window.addEventListener('load', overalyLoad(navSections));
   if (isDesktop.matches) await changeTrendingData(navSections);
   fetchingPlaceholdersData(placeholdersData);
 }

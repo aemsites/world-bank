@@ -83,7 +83,7 @@ header .nav-menu-overlay .nav-menu {
   overflow: hidden scroll;
   padding: 100px 30px;
   max-width: 1456px;
-  height: -webkit-fill-available;
+  height: 100%;
   color: var(--neutrals-40);
 }
 
@@ -941,7 +941,7 @@ header nav .nav-tools {
     left: 0;
     padding: 17px 10px 17px 35px;
     border-radius: 40px;
-    width: 55vw;
+    max-width: 50vw;
     margin-top: -20px;
   }
 
@@ -971,7 +971,7 @@ header nav .nav-tools {
     width: 30px;
     height: 30px;
     background-color: var(--primary-blue-102);
-    left: 78vw;
+    left: 85%;
     z-index: 3;
     display: flex;
     justify-content: center;
@@ -1038,7 +1038,6 @@ header nav .nav-tools {
     background-size: 50% 100%;
     padding: 100px 0;
   }
-
   header .nav-menu-overlay .nav-menu-column.left {
     display: flex;
     min-height: 600px;
@@ -1410,7 +1409,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right {
-    padding-bottom: 400px;
+    padding-bottom: 300px;
     width: 50vw;
   }
 
