@@ -41,7 +41,6 @@ header nav {
 
 .homepage header nav {
   padding-bottom: var(--nav-padding);
-  border-bottom: none;
 }
 
 header nav p {
