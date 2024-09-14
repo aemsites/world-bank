@@ -341,10 +341,6 @@
     line-height: 24px;
   }
 
-  .columns.columns-feature-card .button-container:last-child {
-    margin-bottom: 40px;
-  }
-
   .columns.columns-feature-card .columns-feature-card-content:last-child {
     margin-bottom: 0;
   }
