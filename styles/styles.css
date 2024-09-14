@@ -372,7 +372,7 @@ header {
 
 .homepage header {
   padding-bottom: var(--nav-padding);
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 h1,
