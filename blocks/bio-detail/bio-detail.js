@@ -18,6 +18,8 @@ function createSocialMediaLink(linkName, className, iconPath) {
     anchor.title = linkName.textContent.trim();
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
+    linkImage.width = '15px';
+    linkImage.height = '15px';
     anchor.appendChild(linkImage);
     const socialMediaLink = div({ class: 'social-media-link' }, anchor);
     socialMediaLink.addEventListener('click', () => {
@@ -81,6 +83,8 @@ function createResources(block) {
     const downloadImg = img({ class: 'download-image' });
     downloadImg.src = `${window.hlx.codeBasePath}/icons/download.png`;
     downloadImg.alt = 'download';
+    downloadImg.height = '8px';
+    downloadImg.height = '13px';
     link.insertBefore(downloadImg, link.firstChild);
   });
 }
