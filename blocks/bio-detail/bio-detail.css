@@ -11,6 +11,11 @@
   gap: 30px;
 }
 
+.bio-detail .second-container .profile-image img{
+  width: 460px;
+  height: 460px;
+}
+
 .bio-detail .resources p a {
   margin: 0;
   border-bottom: 2px solid transparent;
