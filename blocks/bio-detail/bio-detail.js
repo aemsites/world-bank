@@ -109,7 +109,7 @@ export default async function decorate(block) {
   resources.className = 'resources';
 
   profileImage.querySelectorAll('div > picture > img').forEach((profileImg) => {
-    const optimizedPic = createOptimizedPicture(profileImg.src, profileImg.alt, false, [{ width: '750', loading: 'lazy' }]);
+    const optimizedPic = createOptimizedPicture(profileImg.src, 'profile-img', false, [{ width: '750', loading: 'lazy' }]);
     moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
     profileImg.closest('picture').replaceWith(optimizedPic);
   });
