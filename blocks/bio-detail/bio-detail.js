@@ -107,12 +107,10 @@ export default async function decorate(block) {
   instaLink.className = 'insta-link';
   mediaInquiries.className = 'media-inquiries';
   resources.className = 'resources';
-
-  profileImage.querySelectorAll('div > picture > img').forEach((profileImg) => {
-    const optimizedPic = createOptimizedPicture(profileImg.src, 'profile-img', false, [{ width: '460', height: '460', loading: 'eager' }]);
-    moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
-    profileImg.closest('picture').replaceWith(optimizedPic);
-  });
+  const profileImg = profileImage.querySelector('div > picture > img')
+  const optimizedPic = createOptimizedPicture(profileImg.src, 'profile-img', false, [{ width: '100', height: '100', loading: 'eager' }]);
+  moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
+  profileImg.closest('picture').replaceWith(optimizedPic);
 
   const mediaTargetDiv = document.querySelector('.media-inquiries');
   const placeholderData = await fetchLanguagePlaceholders();
