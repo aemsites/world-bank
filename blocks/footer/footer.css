@@ -237,7 +237,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   padding: 0;
 }
 
-@media only screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .ft-social {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
@@ -361,7 +361,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .ft-social {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
