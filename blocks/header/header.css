@@ -950,7 +950,7 @@ header nav .nav-tools {
     .nav-menu-column.right
     .browse-country
     .country-list {
-    width: 55.3vw;
+    width: 435px;
     left: 0;
     top: -15px;
     z-index: 2;
@@ -1416,7 +1416,9 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right .submenu {
     max-height: none;
   }
-
+  header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li{
+    padding: 0px 20px;
+  }
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1434,6 +1436,7 @@ header nav .nav-tools {
     .country-list {
     left: 0;
     top: -7px;
+    width: 546px;
   }
 
   header
@@ -1442,11 +1445,12 @@ header nav .nav-tools {
     .browse-country
     input[type="text"] {
     left: 0;
+    width: 500px;
     top: 0;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
-    left: 38rem;
+    left: 31rem;
     top: 80px;
   }
 }
