@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-=======
-.bio-detail .resources p a {
-  margin: 0;
-  border-bottom: 2px solid transparent;
-  padding: 4px 0;
-  font-weight: 400;
-}
-
-.bio-detail .media-inquiries p a {
-  padding: 0;
-  margin: 0;
-  border-bottom: 2px solid transparent;
-  color: #000D1A;
-}
-
-.bio-detail .media-inquiries p a:hover {
-  color: #000D1A;
-}
-
-.bio-detail .resources p, .bio-detail .resources p em {
-  display: flex;
-  align-items: center;
-}
-
-.bio-detail .download-image {
-  margin-right: var(--xxsmall);
-}
-
->>>>>>> 3eacaab2d09b61d7585302c3a310990827fb7b1e
 .bio-detail .sections-container {
   background-image: url('../../icons/background-swoosh.png');
   background-repeat: no-repeat;
@@ -39,7 +9,6 @@
   justify-content: space-between;
   flex-direction: column-reverse;
   gap: 30px;
-<<<<<<< HEAD
 }
 
 .bio-detail .resources p a {
@@ -76,8 +45,6 @@
 
 .bio-detail .download-image {
   margin-right: var(--xxsmall);
-=======
->>>>>>> 3eacaab2d09b61d7585302c3a310990827fb7b1e
 }
 
 .bio-detail .sections-container p {
