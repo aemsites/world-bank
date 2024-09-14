@@ -335,6 +335,7 @@
     height: 322px;
     background-position: center center;
     background-size: contain;
+    background-position: center center;
     transition: background-image 200ms linear;
   }
 
