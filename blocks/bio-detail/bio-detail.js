@@ -109,6 +109,12 @@ export default async function decorate(block) {
   mediaInquiries.className = 'media-inquiries';
   resources.className = 'resources';
 
+  profileImage.querySelectorAll('div > picture > img').forEach((img) => {
+  const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+  moveInstrumentation(img, optimizedPic.querySelector('img'));
+  img.closest('picture').replaceWith(optimizedPic);
+});
+
   const mediaTargetDiv = document.querySelector('.media-inquiries');
   const placeholderData = await fetchLanguagePlaceholders();
   mediaTargetDiv.insertBefore(
