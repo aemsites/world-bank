@@ -334,6 +334,7 @@
           { "name": "Left Center Swoosh", "value": "sec-swoosh-type1" },
           { "name": "Left Top Swoosh", "value": "sec-swoosh-type3" },
           { "name": "Right Top Swoosh", "value": "sec-swoosh-type2" },
+          { "name": "Swoosh for BG inside container - Desktop", "value": "sec-swoosh-type5" },
           { "name": "Primary Blue 90 theme Swoosh", "value": "sec-swoosh-primary-blue-90" }
         ]
       },
