@@ -304,138 +304,106 @@
         "component": "select",
         "name": "sec-spacing",
         "value": "",
-        "label": "Section Spacing (padding)",
+        "label": "Spacing (padding)",
         "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
-          {
-            "name": "Default spacing",
-            "value": "sec-spacing-default"
-          },
-          {
-            "name": "No space / padding",
-            "value": "section-none"
-          },
-          {
-            "name": "Spacing tiny",
-            "value": "section-tiny"
-          },
-          {
-            "name": "Spacing xxsmall",
-            "value": "section-xxsmall"
-          },
-          {
-            "name": "Spacing xsmall",
-            "value": "section-xsmall"
-          },
-          {
-            "name": "Spacing regular",
-            "value": "section-regular"
-          },
-          {
-            "name": "Spacing small",
-            "value": "section-small"
-          },
-          {
-            "name": "Spacing medium",
-            "value": "section-medium"
-          },
-          {
-            "name": "Spacing large",
-            "value": "section-large"
-          },
-          {
-            "name": "Spacing xlarge",
-            "value": "section-xlarge"
-          },
-          {
-            "name": "Spacing xxlarge",
-            "value": "section-xxlarge"
-          },
-          {
-            "name": "Spacing huge",
-            "value": "section-huge"
-          },
-          {
-            "name": "Spacing xhuge",
-            "value": "section-xhuge"
-          }
+          { "name": "Default spacing", "value": "sec-spacing-default" },
+          { "name": "No space / padding", "value": "section-none" },
+          { "name": "Spacing tiny", "value": "section-tiny" },
+          { "name": "Spacing xxsmall", "value": "section-xxsmall" },
+          { "name": "Spacing xsmall", "value": "section-xsmall" },
+          { "name": "Spacing regular", "value": "section-regular" },
+          { "name": "Spacing small", "value": "section-small" },
+          { "name": "Spacing medium", "value": "section-medium" },
+          { "name": "Spacing large", "value": "section-large" },
+          { "name": "Spacing xlarge", "value": "section-xlarge" },
+          { "name": "Spacing xxlarge", "value": "section-xxlarge" },
+          { "name": "Spacing huge", "value": "section-huge" },
+          { "name": "Spacing xhuge", "value": "section-xhuge" }
         ]
       },
       {
         "component": "select",
         "name": "sec-swoosh",
         "value": "",
-        "label": "Section Swoosh",
+        "label": "Swoosh",
         "valueType": "string",
         "options": [
-          {
-            "name": "No Swoosh",
-            "value": "sec-swoosh-none"
-          },
-          {
-            "name": "Left Center Swoosh",
-            "value": "sec-swoosh-type1"
-          },
-          {
-            "name": "Left Top Swoosh",
-            "value": "sec-swoosh-type3"
-          },
-          {
-            "name": "Right Top Swoosh",
-            "value": "sec-swoosh-type2"
-          },
-          {
-            "name": "Primary Blue 90 theme Swoosh",
-            "value": "sec-swoosh-primary-blue-90"
-          }
+          { "name": "No Swoosh", "value": "sec-swoosh-none" },
+          { "name": "Left Center Swoosh", "value": "sec-swoosh-type1" },
+          { "name": "Left Top Swoosh", "value": "sec-swoosh-type3" },
+          { "name": "Right Top Swoosh", "value": "sec-swoosh-type2" },
+          { "name": "Primary Blue 90 theme Swoosh", "value": "sec-swoosh-primary-blue-90" }
         ]
       },
       {
         "component": "select",
         "name": "style",
         "value": "",
-        "label": "Section Background color",
+        "label": "Background style",
         "valueType": "string",
         "options": [
+          { "name": "Transparent / White / Default", "value": "bg-default" },
+          { "name": "Primary Blue 90", "value": "bg-primary-blue-90" },
+          { "name": "Primary Blue 70", "value": "bg-primary-blue-70" },
+          { "name": "Neutrals 10", "value": "bg-neutrals-10" },
+          { "name": "Neutrals 20", "value": "bg-neutrals-20" },
+          { "name": "Background Image", "value": "bg-image" }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Background Image",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": true,
+        "condition": { 
+          "==": [{ "var": "style" }, "bg-image"] 
+        },
+        "fields": [
           {
-            "name": "Transparent / White / Default",
-            "value": "bg-default"
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Background Image",
+            "multi": false
           },
           {
-            "name": "Primary Blue 90",
-            "value": "bg-primary-blue-90"
+            "component": "reference",
+            "valueType": "string",
+            "name": "tab-image",
+            "label": "Tablet Image",
+            "description": "Background image will be used on tablet by default.",
+            "multi": false
           },
           {
-            "name": "Primary Blue 70",
-            "value": "bg-primary-blue-70"
-          },
-          {
-            "name": "Neutrals 10",
-            "value": "bg-neutrals-10"
-          },
-          {
-            "name": "Neutrals 20",
-            "value": "bg-neutrals-20"
-          },
-          {
-            "name": "Neutrals 40 with gradient",
-            "value": "bg-neutrals-40-gradient"
+            "component": "reference",
+            "valueType": "string",
+            "name": "mob-image",
+            "label": "Mobile Image",
+            "description": "Background / Tablet image will be used on mobile by default.",
+            "multi": false
           }
         ]
       },
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "sec-inside-container",
+        "label": "Show background color inside container.",
+        "condition": { 
+          "!=": [{ "var": "style" }, "bg-image"] 
+        }
+      }, 
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "bg-inside-container",
-        "label": "Show background color inside container."
+        "name": "sec-width",
+        "label": "Reduce section width.",
+        "condition": { 
+          "!=": [{ "var": "style" }, "bg-image"] 
+        }
       }
     ]
   },
@@ -2008,6 +1976,87 @@
         "value": "",
         "label": "Impact Link",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "heading",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrowtext",
+        "value": "",
+        "label": "Eyebrow text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "prefix",
+        "value": "",
+        "label": "Prefix text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "headingtext",
+        "value": "",
+        "label": "Heading Text",
+        "required": true
+      },
+      {
+        "component": "select",
+        "name": "type",
+        "value": "h2",
+        "label": "Type",
+        "valueType": "string",
+        "required": true,
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "suffix",
+        "value": "",
+        "label": "Suffix text"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Description"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show_borderline",
+        "label": "Show Borderline"
       }
     ]
   }

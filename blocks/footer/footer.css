@@ -164,7 +164,7 @@ html[dir="rtl"] .ft-social-list:first-child {
 
 .ft-main {
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.5fr;
+  grid-template-columns: repeat(3, 1fr) 1.45fr;
   justify-content: space-between;
   padding: 64px 0 76px;
 }
@@ -198,13 +198,9 @@ html[dir="rtl"] .ft-social-list:first-child {
   font-weight: 700;
 }
 
-.ft-main .ft-main-item:nth-child(3) {
-  padding-right: 48px;
-}
-
 .ft-main .ft-main-item:last-child {
   border-left: 1px solid var(--primary-blue-103);
-  margin: 0;
+  margin: 0 0 0 20px;
   min-width: 40%;
   padding: 0 0 0 48px;
 }
@@ -315,6 +311,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     border: 0;
     border-top: 1px solid var(--primary-blue-103);
     padding: 32px 0 0;
+    margin: 0;
     width: 100%;
   }
 
