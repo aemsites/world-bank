@@ -11,6 +11,11 @@
   gap: 30px;
 }
 
+.social-media-link img {
+  width: 15px;
+  height: 15px;
+}
+
 .bio-detail .second-container .profile-image img{
   width: 460px;
   height: 460px;
@@ -84,11 +89,6 @@
   display: flex;
   gap: 10px;
   margin-top: 20px;
-}
-
-.social-media-link img{
-  width: 15px;
-  height: 15px;
 }
 
 .bio-detail .sections-container .name-job-social .social-media .social-media-link {
