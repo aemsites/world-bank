@@ -98,7 +98,7 @@ export default async function decorate(block) {
   mediaInquiries.className = classNames.mediaInquiries;
   resources.className = classNames.resources;
 
-  profileImage.querySelector('div > picture > img').forEach((profileImg) => {
+  profileImage.querySelectorAll('div > picture > img').forEach((profileImg) => {
     const optimizedPic = createOptimizedPicture(profileImg.src, 'profile-img', false, [{ width: '750', loading: 'lazy' }]);
     moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
     profileImg.closest('picture').replaceWith(optimizedPic);
