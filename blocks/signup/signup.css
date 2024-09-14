@@ -1,8 +1,3 @@
-.signup.block {
-  padding: var(--signup-padding);
-  border-radius: 10px;
-}
-
 .email-signup-container .main-heading p {
   margin-bottom: 12px;
 }
