@@ -78,8 +78,8 @@
 }
 
 .cards.profile-summary .cards-card-body p {
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 20px;
   font-weight: 400;
   margin: 0;
   letter-spacing: -0.25px;
@@ -103,6 +103,11 @@
 }
 
 @media (width >= 768px) {
+  .cards.profile-summary .cards-card-body p {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
   .cards.profile-summary > ul > li {
     grid-template-columns: 252px auto;
   }
@@ -154,5 +159,60 @@
 
   .cards.profile-summary > ul > li img {
     border-radius: 8px 0 0 8px;
+  }
+}
+
+/* Senior Leadership View Styles */
+
+.cards.senior-leadership {
+  padding: 0;
+}
+
+.cards.senior-leadership > ul {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.5rem;
+}
+
+.cards.senior-leadership > ul > li {
+  border: none
+}
+
+.cards.senior-leadership .cards-card-image img {
+  border-radius: 5px;
+}
+
+.cards.senior-leadership .cards-card-body {
+  margin: 16px 0 0;
+}
+
+.cards.senior-leadership .cards-card-body h4 {
+  margin-bottom: 10px;
+  line-height: 10px;
+}
+
+.cards.senior-leadership .cards-card-body h4 a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--primary-blue-70);
+}
+
+.cards.senior-leadership .cards-card-body p {
+  font-size: var(--body-medium);
+  margin: 0;
+}
+
+@media (width >= 768px) {
+  .cards.senior-leadership > ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (width >= 1024px) {
+  .cards.senior-leadership > ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .cards.senior-leadership .cards-card-body h4 a {
+    font-size: var(--body-huge);
   }
 }

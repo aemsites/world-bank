@@ -254,7 +254,7 @@ async function setTrendingDataAsUrl(tdElement) {
 async function changeTrendingData(navSections) {
   if (!navSections) return;
   const trendingDataWrapper = navSections.querySelector('.default-content-wrapper');
-  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
+  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(2)'));
   trendingDataWrapper.append(trendingDataDiv);
 }
 
