@@ -1038,6 +1038,7 @@ header nav .nav-tools {
     background-size: 50% 100%;
     padding: 100px 0;
   }
+
   header .nav-menu-overlay .nav-menu-column.left {
     display: flex;
     min-height: 600px;
@@ -1416,9 +1417,11 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right .submenu {
     max-height: none;
   }
+
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li{
-    padding: 0px 20px;
+    padding: 0 20px;
   }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
