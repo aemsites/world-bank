@@ -237,7 +237,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   padding: 0;
 }
 
-@media (768px <= width <= 1024px) {
+@media (width <= 1024px) {
   .ft-social {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
@@ -332,7 +332,8 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
 
   html[dir="rtl"] .ft-main-item:last-child {
     border-left: 0;
-	border-right: 0;
+	  border-right: 0;
+    padding: 32px 0 0;
   }
 
   html[dir="rtl"] .ft-main-item:last-child p {
@@ -510,6 +511,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   html[dir="rtl"] .ft-main-item:last-child {
     border-left: 0;
     border-right: 0;
+    padding: 32px 0 0;
   }
 
   .ft-legal {
