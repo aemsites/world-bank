@@ -34,7 +34,7 @@
 .impact-card-body-content {
     display: grid;
     gap: 4px 20px;
-    align-items: center;
+    align-items: flex-start;
     grid-template-columns: 72px auto;
 }
 
