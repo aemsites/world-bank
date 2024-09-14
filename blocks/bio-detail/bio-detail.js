@@ -12,7 +12,7 @@ function createStructure(firstContainer, secondContainer, block) {
 }
 
 function createSocialMediaLink(linkName, className, iconPath) {
-  if (linkName && linkName.textContent) {
+  if (linkName && linkName.textContent.trim()) {
     const anchor = document.createElement('a');
     anchor.href = linkName.textContent.trim();
     anchor.title = linkName.textContent.trim();
