@@ -941,7 +941,7 @@ header nav .nav-tools {
     left: 0;
     padding: 17px 10px 17px 35px;
     border-radius: 40px;
-    max-width: 50vw;
+    max-width: 55vw;
     margin-top: -20px;
   }
 
@@ -971,7 +971,7 @@ header nav .nav-tools {
     width: 30px;
     height: 30px;
     background-color: var(--primary-blue-102);
-    left: 85%;
+    left: 78vw;
     z-index: 3;
     display: flex;
     justify-content: center;
