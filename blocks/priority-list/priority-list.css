@@ -1,4 +1,4 @@
-.section.priority-list-container {
+.section.priority-list-container[data-sec-spacing="section-xhuge"] {
   padding-bottom: 0;
 }
 
@@ -333,7 +333,6 @@
     top: 100px;
     width: 341px;
     height: 322px;
-    background-position: center center;
     background-size: contain;
     background-position: center center;
     transition: background-image 200ms linear;
