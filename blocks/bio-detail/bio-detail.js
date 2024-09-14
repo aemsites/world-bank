@@ -1,6 +1,7 @@
 import { div, img } from '../../scripts/dom-helpers.js';
 
-import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { fetchLanguagePlaceholders, moveInstrumentation } from '../../scripts/scripts.js';
+import { createOptimizedPicture } from '../../scripts/aem.js';
 
 function createStructure(firstContainer, secondContainer, block) {
   const sectionsContainer = div(
