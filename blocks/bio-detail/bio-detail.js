@@ -111,10 +111,10 @@ export default async function decorate(block) {
   resources.className = 'resources';
 
   profileImage.querySelectorAll('div > picture > img').forEach((profileImg) => {
-  const optimizedPic = createOptimizedPicture(profileImg.src, profileImg.alt, false, [{ width: '750' }]);
-  moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
-  profileImg.closest('picture').replaceWith(optimizedPic);
-});
+    const optimizedPic = createOptimizedPicture(profileImg.src, profileImg.alt, false, [{ width: '750' }]);
+    moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
+    profileImg.closest('picture').replaceWith(optimizedPic);
+  });
 
   const mediaTargetDiv = document.querySelector('.media-inquiries');
   const placeholderData = await fetchLanguagePlaceholders();
