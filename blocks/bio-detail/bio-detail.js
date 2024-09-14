@@ -84,8 +84,6 @@ function createResources(block) {
     const downloadImg = img({ class: 'download-image' });
     downloadImg.src = `${window.hlx.codeBasePath}/icons/download.png`;
     downloadImg.alt = 'download';
-    downloadImg.height = '8px';
-    downloadImg.height = '13px';
     link.insertBefore(downloadImg, link.firstChild);
   });
 }
