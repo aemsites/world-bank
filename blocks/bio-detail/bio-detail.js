@@ -18,7 +18,7 @@ function createSocialMediaLink(linkName, className, iconPath) {
     anchor.title = linkName.textContent.trim();
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
-    linkImage.alt = iconPath
+    linkImage.alt = iconPath;
     linkImage.width = '15px';
     linkImage.height = '15px';
     anchor.appendChild(linkImage);
