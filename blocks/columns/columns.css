@@ -262,7 +262,7 @@
 }
 
 .columns.columns-feature-card .columns-feature-card-content:last-child {
-  margin-bottom: 40px;
+  margin-bottom: var(--xhuge);
 }
 
 .columns.columns-feature-card > div > div:last-child .button-container {
