@@ -1,9 +1,17 @@
 import { div, a, p } from '../../scripts/dom-helpers.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
+const capitalizeFirstLetter = (str) => {
+  if (!str) return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
 const splitIndicatorTag = (indicatorTag, index = 0) => {
   if (indicatorTag && indicatorTag.indexOf('-') < 0) return indicatorTag;
-  const indicator = indicatorTag.split('-').map((part) => part.trim().replace(/[^a-zA-Z0-9]/g, ''));
+  const prefix = index === 1 ? 'theme' : 'impactCard';
+  const indicator = indicatorTag.split('-')
+    .map((part) => `${prefix}${capitalizeFirstLetter(part)}`)
+    .map((part) => part.trim().replace(/[^a-zA-Z0-9]/g, ''));
   return indicator[index];
 };
 
