@@ -1,17 +1,19 @@
 import { div, a, p } from '../../scripts/dom-helpers.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
-const getShortendIndicatorName = (indicatorTag, placeholdersData) => {
-  // Return Same indicator tag content if hyphen is not present
+const splitIndicatorTag = (indicatorTag, index = 0) => {
   if (indicatorTag && indicatorTag.indexOf('-') < 0) return indicatorTag;
+  const indicator = indicatorTag.split('-').map((part) => part.trim().replace(/[^a-zA-Z0-9]/g, ''));
+  return indicator[index];
+};
 
-  const indicatorKey = indicatorTag.split('-')[0].trim().replace(/[^a-zA-Z0-9]/g, '');
+const getShortendIndicatorName = (indicatorTag, placeholdersData) => {
+  const indicatorKey = splitIndicatorTag(indicatorTag);
   return placeholdersData[indicatorKey] ? placeholdersData[indicatorKey] : indicatorKey;
 };
 
 const getColorCode = (indicatorTag, placeholdersData) => {
-  if (indicatorTag && indicatorTag.indexOf('-') < 0) return '#07AB50;';
-  const indicatorColorKey = indicatorTag.split('-')[1].trim().replace(/[^a-zA-Z0-9]/g, '');
+  const indicatorColorKey = splitIndicatorTag(indicatorTag, 1);
   return placeholdersData[indicatorColorKey] ? placeholdersData[indicatorColorKey]
     : indicatorColorKey;
 };
