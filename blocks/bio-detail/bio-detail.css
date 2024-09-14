@@ -45,6 +45,8 @@
 
 .bio-detail .download-image {
   margin-right: var(--xxsmall);
+  width: 8px;
+  height: 14px;
 }
 
 .bio-detail .sections-container p {
@@ -77,6 +79,11 @@
   display: flex;
   gap: 10px;
   margin-top: 20px;
+}
+
+.social-media-link img{
+  width: 15px;
+  height: 15px;
 }
 
 .bio-detail .sections-container .name-job-social .social-media .social-media-link {
