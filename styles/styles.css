@@ -859,12 +859,14 @@ main .section.bg-neutrals-20[data-sec-inside-container="true"] > div {
 main .section[class*='bg-'][data-sec-inside-container="true"] {
   background-color: transparent;
   margin: 0 var(--section-gutter-space);
+  overflow: hidden;
 }
 
 main .section[class*='bg-'][data-sec-inside-container="true"] > div {
   max-width: calc(var(--screen-width) - var(--section-container-space) - var(--section-container-space));
   padding: var(--section-container-space);
   border-radius: 8px;
+  position: relative;
 }
 
 /* Section background image */
