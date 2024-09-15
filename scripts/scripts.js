@@ -156,6 +156,29 @@ export async function fetchLanguagePlaceholders() {
 }
 
 /**
+ * Helper function to create DOM elements
+ * @param {string} tag DOM element to be created
+ * @param {Object} attributes attributes to be added
+ * @param {HTMLElement|SVGElement|string} html HTML or SVG to append to/after new element
+ */
+export function createTag(tag, attributes, html = undefined) {
+  const el = document.createElement(tag);
+  if (html) {
+    if (html instanceof HTMLElement || html instanceof SVGElement) {
+      el.append(html);
+    } else {
+      el.insertAdjacentHTML('beforeend', html);
+    }
+  }
+  if (attributes) {
+    Object.entries(attributes).forEach(([key, val]) => {
+      el.setAttribute(key, val);
+    });
+  }
+  return el;
+}
+
+/**
  * Return the placeholder file specific to language
  * @returns
  */
@@ -229,6 +252,22 @@ function loadDelayed() {
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
   import('./sidekick.js').then(({ initSidekick }) => initSidekick());
+}
+
+/**
+ * Fetch filtered search results
+ * @returns List of search results
+ */
+export async function fetchSearch() {
+  window.searchData = window.searchData || {};
+  if (Object.keys(window.searchData).length === 0) {
+    const lang = document.documentElement.lang;
+    const path = '/' + lang + '/query-index.json?limit=500&offset=0';
+
+    const resp = await fetch(path);
+    window.searchData = JSON.parse(await resp.text()).data;
+  }
+  return window.searchData;
 }
 
 async function loadPage() {

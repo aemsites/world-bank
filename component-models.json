@@ -2529,10 +2529,21 @@
     "id": "breadcrumb",
     "fields": [
       {
-        "component": "boolean",
-        "label": "Enable Breadcrumb",
-        "name": "enableBreadcrumb",
-        "valueType": "boolean"
+        "component": "select",
+        "name": "style",
+        "value": "",
+        "label": "Background color",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Transparent / White / Default",
+            "value": "bg-default"
+          },
+          {
+            "name": "Neutrals 10",
+            "value": "bg-neutrals-10"
+          }
+        ]
       }
     ]
   },
