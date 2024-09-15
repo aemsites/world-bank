@@ -15,6 +15,7 @@ import {
 
 import {
   getLanguage,
+  createSource,
 } from './utils.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -221,6 +222,50 @@ export const fetchLangDatabyFileName = async (fileName) => {
 };
 
 /**
+ * Create section background image
+ *
+ * @param {*} doc
+ */
+function decorateSectionImages(doc) {
+  const sectionImgContainers = doc.querySelectorAll('main .section[data-image]');
+  sectionImgContainers.forEach((sectionImgContainer) => {
+    const sectionImg = sectionImgContainer.dataset.image;
+    const sectionTabImg = sectionImgContainer.dataset.tabImage;
+    const sectionMobImg = sectionImgContainer.dataset.mobImage;
+    let defaultImgUrl = null;
+
+    const picture = document.createElement('picture');
+    if (sectionImg) {
+      picture.appendChild(createSource(sectionImg, 1920, '(min-width: 1024px)'));
+      defaultImgUrl = sectionImg;
+    }
+
+    if (sectionTabImg) {
+      picture.appendChild(createSource(sectionTabImg, 1024, '(min-width: 768px)'));
+      defaultImgUrl = sectionTabImg;
+    }
+
+    if (sectionMobImg) {
+      picture.appendChild(createSource(sectionTabImg, 600, '(max-width: 767px)'));
+      defaultImgUrl = sectionMobImg;
+    }
+
+    const img = document.createElement('img');
+    img.src = defaultImgUrl;
+    img.alt = '';
+    img.className = 'sec-img';
+    img.loading = 'lazy';
+    img.width = '768';
+    img.height = '100%';
+
+    if (defaultImgUrl) {
+      picture.appendChild(img);
+      sectionImgContainer.prepend(picture);
+    }
+  });
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
@@ -231,6 +276,8 @@ async function loadLazy(doc) {
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
+
+  decorateSectionImages(doc);
 
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));

@@ -304,138 +304,107 @@
         "component": "select",
         "name": "sec-spacing",
         "value": "",
-        "label": "Section Spacing (padding)",
+        "label": "Spacing (padding)",
         "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
-          {
-            "name": "Default spacing",
-            "value": "sec-spacing-default"
-          },
-          {
-            "name": "No space / padding",
-            "value": "section-none"
-          },
-          {
-            "name": "Spacing tiny",
-            "value": "section-tiny"
-          },
-          {
-            "name": "Spacing xxsmall",
-            "value": "section-xxsmall"
-          },
-          {
-            "name": "Spacing xsmall",
-            "value": "section-xsmall"
-          },
-          {
-            "name": "Spacing regular",
-            "value": "section-regular"
-          },
-          {
-            "name": "Spacing small",
-            "value": "section-small"
-          },
-          {
-            "name": "Spacing medium",
-            "value": "section-medium"
-          },
-          {
-            "name": "Spacing large",
-            "value": "section-large"
-          },
-          {
-            "name": "Spacing xlarge",
-            "value": "section-xlarge"
-          },
-          {
-            "name": "Spacing xxlarge",
-            "value": "section-xxlarge"
-          },
-          {
-            "name": "Spacing huge",
-            "value": "section-huge"
-          },
-          {
-            "name": "Spacing xhuge",
-            "value": "section-xhuge"
-          }
+          { "name": "Default spacing", "value": "sec-spacing-default" },
+          { "name": "No space / padding", "value": "section-none" },
+          { "name": "Spacing tiny", "value": "section-tiny" },
+          { "name": "Spacing xxsmall", "value": "section-xxsmall" },
+          { "name": "Spacing xsmall", "value": "section-xsmall" },
+          { "name": "Spacing regular", "value": "section-regular" },
+          { "name": "Spacing small", "value": "section-small" },
+          { "name": "Spacing medium", "value": "section-medium" },
+          { "name": "Spacing large", "value": "section-large" },
+          { "name": "Spacing xlarge", "value": "section-xlarge" },
+          { "name": "Spacing xxlarge", "value": "section-xxlarge" },
+          { "name": "Spacing huge", "value": "section-huge" },
+          { "name": "Spacing xhuge", "value": "section-xhuge" }
         ]
       },
       {
         "component": "select",
         "name": "sec-swoosh",
         "value": "",
-        "label": "Section Swoosh",
+        "label": "Swoosh",
         "valueType": "string",
         "options": [
-          {
-            "name": "No Swoosh",
-            "value": "sec-swoosh-none"
-          },
-          {
-            "name": "Left Center Swoosh",
-            "value": "sec-swoosh-type1"
-          },
-          {
-            "name": "Left Top Swoosh",
-            "value": "sec-swoosh-type3"
-          },
-          {
-            "name": "Right Top Swoosh",
-            "value": "sec-swoosh-type2"
-          },
-          {
-            "name": "Primary Blue 90 theme Swoosh",
-            "value": "sec-swoosh-primary-blue-90"
-          }
+          { "name": "No Swoosh", "value": "sec-swoosh-none" },
+          { "name": "Left Center Swoosh", "value": "sec-swoosh-type1" },
+          { "name": "Left Top Swoosh", "value": "sec-swoosh-type3" },
+          { "name": "Right Top Swoosh", "value": "sec-swoosh-type2" },
+          { "name": "Swoosh for BG inside container - Desktop", "value": "sec-swoosh-type5" },
+          { "name": "Primary Blue 90 theme Swoosh", "value": "sec-swoosh-primary-blue-90" }
         ]
       },
       {
         "component": "select",
         "name": "style",
         "value": "",
-        "label": "Section Background color",
+        "label": "Background style",
         "valueType": "string",
         "options": [
+          { "name": "Transparent / White / Default", "value": "bg-default" },
+          { "name": "Primary Blue 90", "value": "bg-primary-blue-90" },
+          { "name": "Primary Blue 70", "value": "bg-primary-blue-70" },
+          { "name": "Neutrals 10", "value": "bg-neutrals-10" },
+          { "name": "Neutrals 20", "value": "bg-neutrals-20" },
+          { "name": "Background Image", "value": "bg-image" }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Background Image",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": true,
+        "condition": { 
+          "==": [{ "var": "style" }, "bg-image"] 
+        },
+        "fields": [
           {
-            "name": "Transparent / White / Default",
-            "value": "bg-default"
+            "component": "reference",
+            "valueType": "string",
+            "name": "image",
+            "label": "Background Image",
+            "multi": false
           },
           {
-            "name": "Primary Blue 90",
-            "value": "bg-primary-blue-90"
+            "component": "reference",
+            "valueType": "string",
+            "name": "tab-image",
+            "label": "Tablet Image",
+            "description": "Background image will be used on tablet by default.",
+            "multi": false
           },
           {
-            "name": "Primary Blue 70",
-            "value": "bg-primary-blue-70"
-          },
-          {
-            "name": "Neutrals 10",
-            "value": "bg-neutrals-10"
-          },
-          {
-            "name": "Neutrals 20",
-            "value": "bg-neutrals-20"
-          },
-          {
-            "name": "Neutrals 40 with gradient",
-            "value": "bg-neutrals-40-gradient"
+            "component": "reference",
+            "valueType": "string",
+            "name": "mob-image",
+            "label": "Mobile Image",
+            "description": "Background / Tablet image will be used on mobile by default.",
+            "multi": false
           }
         ]
       },
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "sec-inside-container",
+        "label": "Show background color inside container.",
+        "condition": { 
+          "!=": [{ "var": "style" }, "bg-image"] 
+        }
+      }, 
       {
         "component": "boolean",
         "valueType": "boolean",
-        "name": "bg-inside-container",
-        "label": "Show background color inside container."
+        "name": "sec-width",
+        "label": "Reduce section width.",
+        "condition": { 
+          "!=": [{ "var": "style" }, "bg-image"] 
+        }
       }
     ]
   },
@@ -1592,11 +1561,45 @@
         "required": true
       },
       {
+        "component": "select",
+        "valueType": "string",
+        "name": "tab-type",
+        "label": "Type of Tab",
+        "description": "Select the Type of Tab",
+        "value": "",
+        "required": true,
+        "options": [
+          {
+            "name": "All Tab",
+            "value": "all-tab"
+          },
+          {
+            "name": "Publication",
+            "value": "publication"
+          },
+          {
+            "name": "Project",
+            "value": "project"
+          },
+          {
+            "name": "Blogs",
+            "value": "blogs"
+          },
+          {
+            "name": "Author Manually",
+            "value": "manual"
+          }
+        ]
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
-        "label": "Fragment Path"
+        "label": "Fragment Path",
+        "condition": { 
+          "==": [{ "var": "tab-type" }, "manual"] 
+        }
       }
     ]
   },
@@ -1713,686 +1716,6 @@
         "value": "",
         "label": "Display Name",
         "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "firstname",
-        "value": "",
-        "label": "FirstName",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "surname",
-        "value": "",
-        "label": "Surname",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "upi-id",
-        "value": "",
-        "label": "UPI id",
-        "required": true
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "is-leader",
-        "label": "Is Leader"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "is-expert",
-        "label": "Is Expert"
-      },
-      {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "is-sr-manager",
-        "label": "Is Sr. Manager"
-      },
-      {
-        "component": "multiselect",
-        "name": "type of expertise",
-        "value": "Topics of Expertise",
-        "label": "Topics of Expertise",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Agribusiness",
-            "value": "Agribusiness, T144"
-          },
-
-          {
-            "name": "Agriculture & Rural Development",
-            "value": "Agriculture & Rural Development, ARD"
-          },
-
-          {
-            "name": "Aid Dependence",
-            "value": "Aid Dependence, T145"
-          },
-
-          {
-            "name": "Aid Effectiveness",
-            "value": "Aid Effectiveness, AIDEF"
-          },
-
-          {
-            "name": "Anti-Corruption",
-            "value": "Anti-Corruption, ANTCO"
-          },
-
-          {
-            "name": "Biodiversity",
-            "value": "Biodiversity, T100"
-          },
-
-          {
-            "name": "Capital Markets",
-            "value": "Capital Markets, T146"
-          },
-
-          {
-            "name": "Carbon Finance",
-            "value": "Carbon Finance, T122"
-          },
-
-          {
-            "name": "Children & Youth",
-            "value": "Children & Youth, CHIYO"
-          },
-
-          {
-            "name": "Climate Change",
-            "value": "Climate Change, CLI"
-          },
-
-          {
-            "name": "Climate Change Adaptation",
-            "value": "Climate Change Adaptation, T147"
-          },
-
-          {
-            "name": "Climate Finance",
-            "value": "Climate Finance, T101"
-          },
-
-          {
-            "name": "Community-Driven Development",
-            "value": "Community-Driven Development, T102"
-          },
-
-          {
-            "name": "Competition Policy",
-            "value": "Competition Policy, T148"
-          },
-
-          {
-            "name": "Competitiveness",
-            "value": "Competitiveness, T134"
-          },
-
-          {
-            "name": "Conflict",
-            "value": "Conflict, CONFL"
-          },
-
-          {
-            "name": "Conflict and fragile states",
-            "value": "Conflict and fragile states, T126"
-          },
-
-          {
-            "name": "Corporate Values",
-            "value": "Corporate Values, T141"
-          },
-
-          {
-            "name": "Credit Reporting",
-            "value": "Credit Reporting, T149"
-          },
-
-          {
-            "name": "Cultural Heritage and Sustainable Tourism",
-            "value": "Cultural Heritage and Sustainable Tourism, T150"
-          },
-
-          {
-            "name": "Data and/or Statistics",
-            "value": "Data and/or Statistics, T189"
-          },
-
-          {
-            "name": "Debt",
-            "value": "Debt, DEBT"
-          },
-
-          {
-            "name": "Demographic Change",
-            "value": "Demographic Change, T151"
-          },
-
-          {
-            "name": "Digital Economy Strategy",
-            "value": "Digital Economy Strategy, T152"
-          },
-
-          {
-            "name": "Disaster Risk Management",
-            "value": "Disaster Risk Management, DISRI"
-          },
-
-          {
-            "name": "Early Childhood Development",
-            "value": "Early Childhood Development, wbg_ecd"
-          },
-
-          {
-            "name": "Ebola Response",
-            "value": "Ebola Response, T129"
-          },
-
-          {
-            "name": "Economic Growth Analytics",
-            "value": "Economic Growth Analytics, T153"
-          },
-
-          {
-            "name": "Economics of Education",
-            "value": "Economics of Education, T154"
-          },
-
-          {
-            "name": "Education",
-            "value": "Education, EDUCA"
-          },
-
-          {
-            "name": "Education Management and Administration",
-            "value": "Education Management and Administration, T155"
-          },
-
-          {
-            "name": "Energy",
-            "value": "Energy, ENEMI_webtopics"
-          },
-
-          {
-            "name": "Energy Access",
-            "value": "Energy Access, T157"
-          },
-
-          {
-            "name": "Energy Efficiency",
-            "value": "Energy Efficiency, T158"
-          },
-
-          {
-            "name": "Entrepreneurship",
-            "value": "Entrepreneurship, T125"
-          },
-
-          {
-            "name": "Environment",
-            "value": "Environment, ENV"
-          },
-
-          {
-            "name": "Environmental Safeguards",
-            "value": "Environmental Safeguards, T159"
-          },
-
-          {
-            "name": "Ethical Risk Management ",
-            "value": "Ethical Risk Management , T142"
-          },
-
-          {
-            "name": "Evidence-Based Public Policy",
-            "value": "Evidence-Based Public Policy, T104"
-          },
-
-          {
-            "name": "Extractive Industries",
-            "value": "Extractive Industries, T103"
-          },
-
-          {
-            "name": "Financial Inclusion",
-            "value": "Financial Inclusion, T130"
-          },
-
-          {
-            "name": "Financial Market Integrity",
-            "value": "Financial Market Integrity, T132"
-          },
-
-          {
-            "name": "Financial Sector",
-            "value": "Financial Sector, FIN_Sec"
-          },
-
-          {
-            "name": "Fiscal Balance",
-            "value": "Fiscal Balance, T160"
-          },
-
-          {
-            "name": "Fiscal Policy",
-            "value": "Fiscal Policy, T161"
-          },
-
-          {
-            "name": "Food Security",
-            "value": "Food Security, T105"
-          },
-
-          {
-            "name": "Forests",
-            "value": "Forests, T106"
-          },
-
-          {
-            "name": "Gender",
-            "value": "Gender, GEN"
-          },
-
-          {
-            "name": "Gender Based Violence",
-            "value": "Gender Based Violence, T162"
-          },
-
-          {
-            "name": "Girls' Education",
-            "value": "Girls' Education, T139"
-          },
-
-          {
-            "name": "Global Economy",
-            "value": "Global Economy, GLE"
-          },
-
-          {
-            "name": "Governance",
-            "value": "Governance, T124"
-          },
-
-          {
-            "name": "Green Growth",
-            "value": "Green Growth, T163"
-          },
-
-          {
-            "name": "Growth",
-            "value": "Growth, T107"
-          },
-
-          {
-            "name": "HIV and AIDS",
-            "value": "HIV and AIDS, HIV_webtopics"
-          },
-
-          {
-            "name": "Health",
-            "value": "Health, HEA"
-          },
-
-          {
-            "name": "Human Development",
-            "value": "Human Development, T140"
-          },
-
-          {
-            "name": "Human Rights",
-            "value": "Human Rights, T164"
-          },
-
-          {
-            "name": "Hydropower",
-            "value": "Hydropower, T108"
-          },
-
-          {
-            "name": "Inclusive Growth",
-            "value": "Inclusive Growth, T165"
-          },
-
-          {
-            "name": "Indigenous Peoples",
-            "value": "Indigenous Peoples, T109"
-          },
-
-          {
-            "name": "Inequality and Shared Prosperity",
-            "value": "Inequality and Shared Prosperity, T110"
-          },
-
-          {
-            "name": "Inflation",
-            "value": "Inflation, T166"
-          },
-
-          {
-            "name": "Information Management",
-            "value": "Information Management, wbim"
-          },
-
-          {
-            "name": "Information and Communication Technologies",
-            "value": "Information and Communication Technologies, T111"
-          },
-
-          {
-            "name": "Infrastructure",
-            "value": "Infrastructure, INFRA"
-          },
-
-          {
-            "name": "Innovation and Growth",
-            "value": "Innovation and Growth, T167"
-          },
-
-          {
-            "name": "Innovations in Development",
-            "value": "Innovations in Development, T135"
-          },
-
-          {
-            "name": "Investment Climate",
-            "value": "Investment Climate, T168"
-          },
-
-          {
-            "name": "Irrigation & Drainage",
-            "value": "Irrigation & Drainage, T112"
-          },
-
-          {
-            "name": "Jobs and Development",
-            "value": "Jobs and Development, T128"
-          },
-
-          {
-            "name": "Jobs and Poverty",
-            "value": "Jobs and Poverty, T113"
-          },
-
-          {
-            "name": "Knowledge Management",
-            "value": "Knowledge Management, wbkm"
-          },
-
-          {
-            "name": "Labor Markets",
-            "value": "Labor Markets, LAB"
-          },
-
-          {
-            "name": "Land Tenure",
-            "value": "Land Tenure, T169"
-          },
-
-          {
-            "name": "Law Justice and Development",
-            "value": "Law Justice and Development, T137"
-          },
-
-          {
-            "name": "Law and Justice",
-            "value": "Law and Justice, LAWRE_webtopics"
-          },
-
-          {
-            "name": "Levels of Education",
-            "value": "Levels of Education, T170"
-          },
-
-          {
-            "name": "Manufacturing Sectors",
-            "value": "Manufacturing Sectors, T171"
-          },
-
-          {
-            "name": "Measuring Poverty",
-            "value": "Measuring Poverty, T114"
-          },
-
-          {
-            "name": "Migration",
-            "value": "Migration, T136"
-          },
-
-          {
-            "name": "Migration & Remittances",
-            "value": "Migration & Remittances, MIG"
-          },
-
-          {
-            "name": "Migration Policies and Jobs",
-            "value": "Migration Policies and Jobs, T172"
-          },
-
-          {
-            "name": "Mobile Networks and Devices",
-            "value": "Mobile Networks and Devices, T173"
-          },
-
-          {
-            "name": "Modes of Transport",
-            "value": "Modes of Transport, T174"
-          },
-
-          {
-            "name": "Monetary Policy",
-            "value": "Monetary Policy, T175"
-          },
-
-          {
-            "name": "None",
-            "value": "None, None"
-          },
-
-          {
-            "name": "Nutrition",
-            "value": "Nutrition, T115"
-          },
-
-          {
-            "name": "Open Development",
-            "value": "Open Development, T133"
-          },
-
-          {
-            "name": "Pandemics",
-            "value": "Pandemics, T127"
-          },
-
-          {
-            "name": "Payment Systems & Remittances",
-            "value": "Payment Systems & Remittances, T131"
-          },
-
-          {
-            "name": "Pollution Management",
-            "value": "Pollution Management, T176"
-          },
-
-          {
-            "name": "Poverty",
-            "value": "Poverty, POV"
-          },
-
-          {
-            "name": "Power and Electricity Sector",
-            "value": "Power and Electricity Sector, T177"
-          },
-
-          {
-            "name": "Private Sector Development",
-            "value": "Private Sector Development, PRISE_webtopics"
-          },
-
-          {
-            "name": "Project Finance",
-            "value": "Project Finance, T121"
-          },
-
-          {
-            "name": "Public Finance",
-            "value": "Public Finance, T143"
-          },
-
-          {
-            "name": "Public Sector & Governance",
-            "value": "Public Sector & Governance, Pub_s_webtopics"
-          },
-
-          {
-            "name": "Public-Private Partnerships",
-            "value": "Public-Private Partnerships, PPP"
-          },
-
-          {
-            "name": "Regional Integration",
-            "value": "Regional Integration, T179"
-          },
-
-          {
-            "name": "Reproductive, Maternal and Child Health",
-            "value": "Reproductive Maternal and Child Health, T117"
-          },
-
-          {
-            "name": "Research, Development and Innovation",
-            "value": "Research Development and Innovation, T180"
-          },
-
-          {
-            "name": "Road Safety",
-            "value": "Road Safety, T181"
-          },
-
-          {
-            "name": "Road to Refuge",
-            "value": "Road to Refuge, T138"
-          },
-
-          {
-            "name": "Rural Development",
-            "value": "Rural Development, T182"
-          },
-
-          {
-            "name": "Sanitation",
-            "value": "Sanitation, T118"
-          },
-
-          {
-            "name": "Science & Technology",
-            "value": "Science & Technology, SCITE"
-          },
-
-          {
-            "name": "Shocks and Vulnerabilities",
-            "value": "Shocks and Vulnerabilities, T119"
-          },
-
-          {
-            "name": "Skills and Workforce Development",
-            "value": "Skills and Workforce Development, SWD"
-          },
-
-          {
-            "name": "Small and Medium-Sized Enterprises and Jobs",
-            "value": "Small and Medium-Sized Enterprises and Jobs, T183"
-          },
-
-          {
-            "name": "Social Development",
-            "value": "Social Development, SOCDE"
-          },
-
-          {
-            "name": "Social Protection and Labor",
-            "value": "Social Protection and Labor, LABSO_webtopics"
-          },
-
-          {
-            "name": "Social Safeguards",
-            "value": "Social Safeguards, T184"
-          },
-
-          {
-            "name": "Supply Chain and Logistics",
-            "value": "Supply Chain and Logistics, T185"
-          },
-
-          {
-            "name": "Sustainable Development",
-            "value": "Sustainable Development, SUSDEV"
-          },
-
-          {
-            "name": "Sustainable Development Goals",
-            "value": "Sustainable Development Goals, T186"
-          },
-
-          {
-            "name": "Sustainable Energy",
-            "value": "Sustainable Energy, T123"
-          },
-
-          {
-            "name": "Technology Transfer and Diffusion",
-            "value": "Technology Transfer and Diffusion, TTD"
-          },
-
-          {
-            "name": "Trade",
-            "value": "Trade, TRADE"
-          },
-
-          {
-            "name": "Trade Facilitation and Logistics",
-            "value": "Trade Facilitation and Logistics, T187"
-          },
-
-          {
-            "name": "Transport",
-            "value": "Transport, Transport"
-          },
-
-          {
-            "name": "Urban Development",
-            "value": "Urban Development, URBDE"
-          },
-
-          {
-            "name": "Waste Management Planning",
-            "value": "Waste Management Planning, T188"
-          },
-
-          {
-            "name": "Water",
-            "value": "Water, WATER"
-          },
-
-          {
-            "name": "Water Resources Management�",
-            "value": "Water Resources Management�, T120"
-          },
-
-          {
-            "name": "test",
-            "value": "test, test"
-          }
-        ]
       },
       {
         "component": "richtext",
@@ -2556,6 +1879,196 @@
         "name": "block-quote",
         "value": "",
         "label": "Block Quote Text"
+      }
+    ]
+  },
+  {
+    "id": "impact-card",
+    "fields": [
+      {
+        "component": "select",
+        "name": "indicator",
+        "value": "",
+        "label": "Indicator Tag",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Protection for the Poorest ",
+            "value": "protectionForThePoorest-people"
+          },
+          {
+            "name": "No Learning Poverty",
+            "value": "noLeavingPoverty-people"
+          },
+          {
+            "name": "Healthier Lives",
+            "value": "healthierLives-people"
+          },
+          {
+            "name": "Effective Macroeconomic & Fiscal Management",
+            "value": "effectiveMacroEconomicNFiscalManagement-prosperity"
+          },
+          {
+            "name": "Green and Blue Planet & Resilient Populations",
+            "value": "greenNBluePlanetNResilientPopulations-planet"
+          },
+          {
+            "name": "Inclusive and Equitable Water and Sanitation Services",
+            "value": "inclusiveNEuitableWaterNSanitationServices-planet"
+          },
+          {
+            "name": "Sustainable Food Systems",
+            "value": "sustainableFoodSystems-planet"
+          },
+          {
+            "name": "Connected Communities",
+            "value": "connectedCommunities-infrastructure"
+          },
+          {
+            "name": "Affordable, Reliable & Sustainable Energy For All",
+            "value": "affordableNReliableEnergyForAll-infrastructure"
+          },
+          {
+            "name": "Digital Connectivity",
+            "value": "digitalConnectivity-digital"
+          },
+          {
+            "name": "Digital Services",
+            "value": "digitalServices-digital"
+          },
+          {
+            "name": "Gender Equality and Youth Inclusion",
+            "value": "genderEqualityNYouthInclusion-crossCuttingThemes"
+          },
+          {
+            "name": "More and Better Jobs",
+            "value": "moreNBetterJobs-crossCuttingThemes"
+          },
+          {
+            "name": "Better Lives for People in Fragility, Conflict & Violence",
+            "value": "betterLivesForPeopleInFCV-crossCuttingThemes"
+          },
+          {
+            "name": "More Private Investment ",
+            "value": "morePrivateInvestment-crossCuttingThemes"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Icon Alternate Text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "value": "",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "value": "",
+        "label": "Impact Link",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "heading",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eyebrowtext",
+        "value": "",
+        "label": "Eyebrow text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "prefix",
+        "value": "",
+        "label": "Prefix text"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "headingtext",
+        "value": "",
+        "label": "Heading Text",
+        "required": true
+      },
+      {
+        "component": "select",
+        "name": "type",
+        "value": "h2",
+        "label": "Type",
+        "valueType": "string",
+        "required": true,
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "suffix",
+        "value": "",
+        "label": "Suffix text"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "value": "",
+        "label": "Description"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "show_borderline",
+        "label": "Show Borderline"
       }
     ]
   }
