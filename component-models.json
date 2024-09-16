@@ -304,7 +304,7 @@
         "component": "select",
         "name": "sec-spacing",
         "value": "",
-        "label": "Spacing (padding)",
+        "label": "Spacing Top (padding top)",
         "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
@@ -327,7 +327,7 @@
         "component": "select",
         "name": "sec-spacing-bottom",
         "value": "",
-        "label": "Spacing bottom (padding)",
+        "label": "Spacing bottom (padding bottom)",
         "description": "Section Top and bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [

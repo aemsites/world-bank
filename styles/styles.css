@@ -908,6 +908,21 @@ main .section[data-sec-spacing="section-xxlarge"] { padding: var(--xxlarge) 0; }
 main .section[data-sec-spacing="section-huge"] { padding: var(--huge) 0; }
 main .section[data-sec-spacing="section-xhuge"] { padding: var(--xhuge) 0; }
 
+
+main .section[data-sec-spacing-bottom="section-none"] { padding-bottom: var(--none) 0; }
+main .section[data-sec-spacing-bottom="section-tiny"] { padding-bottom: var(--tiny) 0; }
+main .section[data-sec-spacing-bottom="section-xxsmall"] { padding-bottom: var(--xxsmall) 0; }
+main .section[data-sec-spacing-bottom="section-xtiny"] { padding-bottom: var(--xtiny) 0; }
+main .section[data-sec-spacing-bottom="section-xsmall"] { padding-bottom: var(--xsmall) 0; }
+main .section[data-sec-spacing-bottom="section-regular"] { padding-bottom: var(--regular) 0; }
+main .section[data-sec-spacing-bottom="section-small"] { padding-bottom: var(--small) 0; }
+main .section[data-sec-spacing-bottom="section-medium"] { padding-bottom: var(--medium) 0; }
+main .section[data-sec-spacing-bottom="section-large"] { padding-bottom: var(--large) 0; }
+main .section[data-sec-spacing-bottom="section-xlarge"] { padding-bottom: var(--xlarge) 0; }
+main .section[data-sec-spacing-bottom="section-xxlarge"] { padding-bottom: var(--xxlarge) 0; }
+main .section[data-sec-spacing-bottom="section-huge"] { padding-bottom: var(--huge) 0; }
+main .section[data-sec-spacing-bottom="section-xhuge"] { padding-bottom: var(--xhuge) 0; }
+
 body.no-scroll {
   overflow-y: hidden; /* Prevent scrolling */
 }
