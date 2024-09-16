@@ -99,10 +99,10 @@ function buildTwitterLinks() {
   const encodedUrl = encodeURIComponent(url);
 
   [...paras].forEach((p) => {
-    const tweetables = p.innerHTML.match(/<tweetable[^>]*>(.*?)<\/tweetable>/g);
+    const tweetables = p.innerHTML.match(/<tweetable[^>]*>([\s\S]*?)<\/tweetable>/gi);
     if (tweetables) {
       tweetables.forEach((tweetableTag) => {
-        const matchedContent = tweetableTag.match(/<tweetable[^>]*data-channel=['"](.*?)['"][^>]*data-hashtag=['"](.*?)['"][^>]*>(.*?)<\/tweetable>/);
+        const matchedContent = tweetableTag.match(/<tweetable(?:[^>]*data-channel=['"]?(.*?)['"]?)?(?:[^>]*data-hashtag=['"]?(.*?)['"]?)?[^>]*>([\s\S]*?)<\/tweetable>/i);
         const channel = matchedContent[1] || '';
         const hashtag = matchedContent[2] || '';
         const tweetContent = matchedContent[3];
