@@ -75,9 +75,117 @@ const getNavigationData = async (langCode) => {
   await fetchLanguageNavigation(`/${langCode}`);
 };
 
+// refactor tweetable links function
+/**
+ * Opens a popup for the Twitter links autoblock.
+ */
+function openPopUp(popUrl) {
+  const popupParams = `height=450, width=550, top=${(window.innerHeight / 2 - 275)}`
+   + `, left=${(window.innerWidth / 2 - 225)}`
+   + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0';
+  window.open(popUrl, 'fbShareWindow', popupParams);
+}
+
+/**
+ * Finds and decorates anchor elements with Twitter hrefs
+ */
+function buildTwitterLinks() {
+  const main = document.querySelector('main');
+  if (!main) return;
+
+  // get all paragraph elements
+  const paras = main.querySelectorAll('p');
+  const url = window.location.href;
+  const encodedUrl = encodeURIComponent(url);
+
+  [...paras].forEach((p) => {
+    const tweetables = p.innerHTML.match(/<tweetable[^>]*>(.*?)<\/tweetable>/g);
+    if (tweetables) {
+      tweetables.forEach((tweetableTag) => {
+        const matchedContent = tweetableTag.match(/<tweetable[^>]*data-channel=['"](.*?)['"][^>]*data-hashtag=['"](.*?)['"][^>]*>(.*?)<\/tweetable>/);
+        const channel = matchedContent[1] || '';
+        const hashtag = matchedContent[2] || '';
+        const tweetContent = matchedContent[3];
+
+        let modalURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetContent)}`
+          + `&original_referrer=${encodedUrl}&source=tweetbutton`;
+        if (channel) url += `&via=${encodeURIComponent(channel.charAt(0) === '@' ? channel.substring(1) : channel)}`;
+        if (hashtag) url += `&hashtags=${encodeURIComponent(hashtag)}`;
+
+        const span = document.createElement('span');
+        span.classList.add('tweetable');
+        const anchor = document.createElement('a');
+        anchor.href = modalURL;
+        anchor.target= '_blank';
+        anchor.textContent = tweetContent;
+        const icon = document.createElement('i');
+        icon.classList.add('lp', 'lp-twit');
+        anchor.appendChild(icon);
+        span.appendChild(anchor);
+
+        paragraph.innerHTML = paragraph.innerHTML.replace(tweetableTag, span);
+      });
+    }
+    [...p.querySelectorAll('.tweetable > a')].forEach((twitterAnchor) => {
+      twitterAnchor.addEventListener('click', (event) => {
+        event.preventDefault();
+        //const modalContent = twitterAnchor.textContent;
+        const url = twitterAnchor.href;
+        openPopUp(url);
+      });
+    })
+  });
+
+  /*
+
+  anchors.forEach((anchor) => {
+    // check for 'twitter.com' or 'x.com' quotable text
+    if (anchor.href.includes('twitter.com') || anchor.href.includes('x.com')) {
+      // add class
+      anchor.classList.add('twd-id');
+
+      // may change the source of this data based on feedback from WB
+      const tweetTextContent = anchor.textContent;
+      const tweetChannel = 'worldbank';
+      const tweetContent = {
+        tweetText: tweetTextContent,
+        channel: tweetChannel,
+        hashtag: '',
+      };
+
+      // add icon to end of tweet text
+      const icon = document.createElement('i');
+      icon.classList.add('lp', 'lp-twit');
+      anchor.appendChild(icon);
+
+      // wrap the anchor in a span
+      const span = document.createElement('span');
+      span.classList.add('tweetable');
+      span.dataset.content = tweetContent;
+      span.dataset.text = tweetTextContent;
+      span.dataset.tweet = tweetChannel;
+      anchor.parentNode.insertBefore(span, anchor);
+      span.appendChild(anchor);
+
+      span.addEventListener('click', (event) => {
+        event.preventDefault();
+        const modalContent = tweetTextContent;
+        const modalChannel = tweetChannel;
+
+        const modalURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(modalContent)}`
+          + `&url=${encodedUrl}&via=${encodeURIComponent(modalChannel.charAt(0) === '@' ? modalChannel.substring(1) : modalChannel)}`
+          + `&original_referrer=${encodedUrl}&source=tweetbutton&hashtags=${encodeURIComponent(tweetContent.hashtag)}`;
+        openPopUp(modalURL);
+      });
+    }
+  });
+  */
+}
+
 function loadDelayed() {
   pageSwoosh();
   cookiePopUp();
+  buildTwitterLinks();
   getNavigationData(getLanguage());
 }
 loadDelayed();
