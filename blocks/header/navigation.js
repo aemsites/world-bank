@@ -1,5 +1,12 @@
 import {
-  p, button, div, li, ul, span, input, a,
+  p,
+  button,
+  div,
+  li,
+  ul,
+  span,
+  input,
+  a,
 } from '../../scripts/dom-helpers.js';
 import * as constants from './constants.js';
 
@@ -38,7 +45,9 @@ const createCountryDropDown = (category, countrySearchPlaceholder) => {
           placeholder: countrySearchPlaceholder,
           oninput: (e) => filterCountry(e),
           onclick: () => {
-            const target = document.querySelector(constants.COUNTRY_LIST_WITH_SELECTOR);
+            const target = document.querySelector(
+              constants.COUNTRY_LIST_WITH_SELECTOR,
+            );
             target.style.display = 'block';
             const dropdownButton = document.querySelector('.browse-country p');
             dropdownButton.style.transform = 'rotate(-180deg)';
@@ -46,20 +55,20 @@ const createCountryDropDown = (category, countrySearchPlaceholder) => {
         }),
         countryList,
       ),
-      p(
-        {
-          onclick: (e) => {
-            const target = document.querySelector(constants.COUNTRY_LIST_WITH_SELECTOR);
-            if (target.style.display === 'block') {
-              target.style.display = 'none';
-              e.currentTarget.style.transform = 'rotate(0deg)';
-            } else {
-              target.style.display = 'block';
-              e.currentTarget.style.transform = 'rotate(-180deg)';
-            }
-          },
+      p({
+        onclick: (e) => {
+          const target = document.querySelector(
+            constants.COUNTRY_LIST_WITH_SELECTOR,
+          );
+          if (target.style.display === 'block') {
+            target.style.display = 'none';
+            e.currentTarget.style.transform = 'rotate(0deg)';
+          } else {
+            target.style.display = 'block';
+            e.currentTarget.style.transform = 'rotate(-180deg)';
+          }
         },
-      ),
+      }),
     ),
   );
   category.items.forEach((country) => {
@@ -88,12 +97,17 @@ const createListItemWithAnchor = (item) => {
   return listItem;
 };
 // Method to Create Submenu categories and its related child links
-const createCategoriesAndSubMenu = (level0Item, submenuId, index, countrySearchPlaceholder) => {
+const createCategoriesAndSubMenu = (
+  level0Item,
+  submenuId,
+  index,
+  countrySearchPlaceholder,
+) => {
   const submenu = ul({
     id: submenuId,
     class: constants.SUBMENU,
     style:
-            isDesktop.matches && index === 0 ? 'display: grid;' : 'display: none;',
+      isDesktop.matches && index === 0 ? 'display: flex;' : 'display: none;',
   });
 
   level0Item.categories.forEach((category) => {
@@ -119,17 +133,30 @@ const createCategoriesAndSubMenu = (level0Item, submenuId, index, countrySearchP
 };
 
 // Method to show SubMenu related to Level0 items.
-const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIndex) => {
-  document.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR).scrollTop = 0;
+const showSubMenu = (
+  leftColumn,
+  rightColumn,
+  submenuId,
+  submenuTitle,
+  submenuLn,
+  currentIndex,
+) => {
+  document.querySelector(
+    constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
+  ).scrollTop = 0;
   rightColumn.style.display = 'block';
   if (!isDesktop.matches) {
     const sidemenuBackButton = rightColumn.querySelector(
       constants.OVERLAY_BACK_WITH_SELECTOR,
     );
     sidemenuBackButton.style.display = 'block';
-    const currentSubMenu = rightColumn.querySelector(constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR);
-    currentSubMenu.textContent = submenuTitle;
-    currentSubMenu.style.display = 'grid';
+    const currentSubMenu = rightColumn.querySelector(
+      constants.SUBMENU_MAIN_TITLE_WITH_SELECTOR,
+    );
+    const submenuredirect = currentSubMenu.querySelector('a');
+    submenuredirect.textContent = submenuTitle;
+    submenuredirect.href = submenuLn;
+    currentSubMenu.style.display = 'flex';
     leftColumn.style.display = 'none';
   }
 
@@ -137,7 +164,7 @@ const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIn
     constants.SUBMENU_WITH_SELECTOR,
   );
   submenus.forEach((submenu) => {
-    submenu.style.display = submenu.id === submenuId ? 'grid' : 'none';
+    submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
   });
 
   // Update the selected state of the menu items in the left column
@@ -152,7 +179,9 @@ const showSubMenu = (leftColumn, rightColumn, submenuId, submenuTitle, currentIn
 };
 
 const closesideMenu = (leftColumn, rightColumn) => {
-  document.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR).scrollTop = 0;
+  document.querySelector(
+    constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
+  ).scrollTop = 0;
   leftColumn.style.display = 'flex';
   leftColumn.style.display = 'flex';
   if (!isDesktop.matches) {
@@ -168,7 +197,7 @@ const closesideMenu = (leftColumn, rightColumn) => {
   });
   submenus.forEach((submenu, index) => {
     if (isDesktop.matches && index === 0) {
-      submenu.style.display = 'grid';
+      submenu.style.display = 'flex';
     } else {
       submenu.style.display = 'none';
     }
@@ -183,7 +212,8 @@ const closesideMenu = (leftColumn, rightColumn) => {
   currentSubMenu.style.display = 'none';
 };
 const getNavigationMenu = (structuredNav, placeholdersData) => {
-  const searchByCountryPlaceholder = placeholdersData ? placeholdersData.navMenuSearchByCountryName
+  const searchByCountryPlaceholder = placeholdersData
+    ? placeholdersData.navMenuSearchByCountryName
     : constants.SEARCH_BY_COUNTRY;
   // Create menu Overlay and divide in two column
   const listMainNavTitle = ul();
@@ -198,10 +228,14 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
       class: constants.NAV_MENU_OVERLAY_BACK,
       onclick: () => closesideMenu(menuLeftColumn, menuRightColumn),
     }),
-    p({ class: constants.SUBMENU_MAIN_TITLE }),
+    p({ class: constants.SUBMENU_MAIN_TITLE }, a()),
   );
 
-  const navMenu = div({ class: constants.NAV_MENU }, menuLeftColumn, menuRightColumn);
+  const navMenu = div(
+    { class: constants.NAV_MENU },
+    menuLeftColumn,
+    menuRightColumn,
+  );
 
   const menuOverlay = div({ class: constants.NAV_MENU_OVERLAY }, navMenu);
 
@@ -211,16 +245,29 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
     // create left column menu
     const level0MenuItem = li(
       {
-        onclick: () => showSubMenu(
-          menuLeftColumn,
-          menuRightColumn,
-          submenuId,
-          level0Item.title,
-          index,
-        ),
+        onmouseover: () => (isDesktop.matches
+          ? showSubMenu(
+            menuLeftColumn,
+            menuRightColumn,
+            submenuId,
+            level0Item.title,
+            level0Item.link,
+            index,
+          )
+          : ''),
+        onclick: () => (!isDesktop.matches
+          ? showSubMenu(
+            menuLeftColumn,
+            menuRightColumn,
+            submenuId,
+            level0Item.title,
+            level0Item.link,
+            index,
+          )
+          : ''),
       },
       span({ textContent: '' }), // level0MenuItemArrow
-      level0Item.title,
+      a({ href: level0Item.link }, level0Item.title),
     );
     const isSelected = isDesktop.matches && index === 0 ? constants.SELECTED : '';
     if (isSelected) level0MenuItem.classList.add(isSelected);
@@ -250,14 +297,15 @@ const formatNavigationJsonData = (navJson) => {
     if (item.Type === constants.LEVEL_0) {
       const level0 = {
         title: item.Title,
+        link: item.Link,
         categories: [],
       };
       structuredData.push(level0);
       currentLevel0 = level0;
     } else if (
       item.Type === constants.CATEGORY
-        || item.Type === constants.FOOTER
-        || item.Type === constants.DROPDOWN
+      || item.Type === constants.FOOTER
+      || item.Type === constants.DROPDOWN
     ) {
       const category = {
         ...item,
@@ -279,8 +327,4 @@ const formatNavigationJsonData = (navJson) => {
   });
   return structuredData;
 };
-export {
-  getNavigationMenu,
-  formatNavigationJsonData,
-  closesideMenu,
-};
+export { getNavigationMenu, formatNavigationJsonData, closesideMenu };
