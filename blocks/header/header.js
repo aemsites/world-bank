@@ -98,7 +98,11 @@ async function overalyLoad(navSections) {
 }
 
 async function toggleMenu(nav, navSections, forceExpanded = null) {
-  await overalyLoad(navSections);
+  if (window.navigationData) {
+    await overalyLoad(navSections);
+  } else {
+    return;
+  }
   const expanded = forceExpanded !== null
     ? !forceExpanded
     : nav.getAttribute('aria-expanded') === 'true';
