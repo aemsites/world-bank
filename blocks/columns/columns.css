@@ -45,13 +45,13 @@
   font-size: var(--h2-base);
   text-transform: uppercase;
   margin-top: 40px;
-  margin-bottom: 16px;
+  margin-bottom: var(--regular);
   line-height: 35px;
 }
 
 .columns.columns-transform-teaser > div p:nth-child(2) {
   line-height: 25px;
-  font-size: 18px;
+  font-size: var(--body-large);
 }
 
 .columns.columns-transform-teaser > div p:nth-child(3) {
@@ -78,7 +78,7 @@
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a {
   background-color: var(--transparent);
   color: var(--color-white);
-  font-size: 16px;
+  font-size: var(--body-medium);
   border-bottom: 2px solid #FFFFFF4D;
   border-radius: 0;
   padding: 5px 0;
@@ -181,13 +181,12 @@
 
 @media (width >= 1024px) {
   .columns.columns-transform-teaser > div p:nth-child(1) {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     line-height: 44px;
   }
 
   .columns.columns-transform-teaser > div p:nth-child(2) {
     line-height: 28px;
-    font-size: 20px;
   }
 
   .columns.columns-transform-teaser > div p:nth-child(3) {
@@ -285,7 +284,7 @@
 
 @media(width<=1024px) {
   .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(1) {
-    font-size: 32px;
+    /* font-size: 32px; */
     line-height: 35px;
   }
 
@@ -377,7 +376,6 @@
   }
 
   .bg-primary-blue-90 .columns.columns-transform-teaser > div div:nth-child(1) p:nth-child(1) {
-    font-size: 28px;
     line-height:30px;
   }
 
@@ -397,34 +395,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-}
-
-@media (width < 768px) {
-  .bg-primary-blue-90 .columns.columns-transform-teaser > div {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    padding: 0;
-  }
-
-  .bg-primary-blue-90 .columns.columns-transform-teaser > div div:nth-child(1) {
-    grid-row:2;
-  }
-
-  .bg-primary-blue-90 .columns.columns-transform-teaser > div div:nth-child(1) p:nth-child(1) {
-    font-size: 28px;
-    line-height:30px;
-  }
-
-  .bg-primary-blue-90 .columns.columns-transform-teaser > div div:nth-child(1) p:nth-child(4) {
-    display: block;
-  }
-
-  .bg-primary-blue-90 .columns-img-col {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin-top: -160px;
   }
 }
 
