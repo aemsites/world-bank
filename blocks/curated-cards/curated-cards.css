@@ -18,13 +18,30 @@
 }
 
 .curated-cards .feature-card .feature-card-content {
+  display: flex;
   position: absolute;
   bottom: 20px;
   left: 20px;
   width: calc(100% - 40px);
   color: var(--color-white);
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+}
+
+.curated-cards .feature-card .feature-card-content .feature-card-content-text {
+  width: 80%;
+}
+
+.curated-cards .feature-card .feature-card-content .feature-card-content-text .feature-card-content-description {
+  margin: 0;
+}
+
+.curated-cards .feature-card .feature-card-content a {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  text-decoration: none;
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-heading {
@@ -35,16 +52,20 @@
 }
 
 .curated-cards .feature-card .feature-card-content button {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  padding: 10px 20px;
   font-size: var(--body-medium);
-  width: 182px;
   height: 55px;
   background: var(--color-white);
   border-radius: 100px;
   color: var(--primary-blue-80);
+}
+
+.curated-cards .feature-card .feature-card-content button:hover {
+  border: 1px solid var(--primary-blue-50);
+}
+
+.curated-cards .feature-card .feature-card-content button:focus {
+  background-color: var(--primary-blue-20);
+  border: 1px solid var(--primary-blue-80);
 }
 
 .curated-cards.list {
@@ -121,6 +142,21 @@
 }
 
 @media (width < 1024px) {
+  .curated-cards .feature-card .feature-card-content {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .curated-cards .feature-card .feature-card-content a {
+    justify-content: flex-start;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .curated-cards .feature-card .feature-card-content button {
+    height: 48px;
+  }
+
   .curated-cards .feature-card picture img {
     max-height: 443px;
   }
@@ -135,10 +171,6 @@
     line-height: 25px;
   }
 
-  .curated-cards .feature-card .feature-card-content button {
-    position: static;
-  }
-
   .curated-cards.list ul {
     grid-template-columns: 1fr;
   }
@@ -150,7 +182,7 @@
 
 @media (width < 768px) {
   .curated-cards .feature-card picture img {
-    max-height: 411px;
+    min-height: 431px;
   }
 
   .curated-cards .feature-card .feature-card-content .feature-card-content-heading {

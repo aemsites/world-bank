@@ -57,7 +57,14 @@
     "/content/world-bank/global/ru/data/leadership/icsid:/ru/leadership/icsid.json",
     "/content/world-bank/global/fr/data/leadership/icsid:/fr/leadership/icsid.json",
     "/content/world-bank/global/es/data/leadership/icsid:/es/leadership/icsid.json",
-    "/content/world-bank/global/ar/data/leadership/icsid:/ar/leadership/icsid.json"
+    "/content/world-bank/global/ar/data/leadership/icsid:/ar/leadership/icsid.json",
+    "/content/world-bank.resource/en/query-index.json:/en/query-index.json",
+    "/content/world-bank.resource/zh/query-index.json:/zh/query-index.json",
+    "/content/world-bank.resource/ru/query-index.json:/ru/query-index.json",
+    "/content/world-bank.resource/fr/query-index.json:/fr/query-index.json",
+    "/content/world-bank.resource/es/query-index.json:/es/query-index.json",
+    "/content/world-bank.resource/ar/query-index.json:/ar/query-index.json",
+    "/content/world-bank/properties:/properties.json"
 
   ],
   "includes": ["/content/world-bank/"]

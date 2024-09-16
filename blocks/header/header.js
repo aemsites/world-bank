@@ -1,7 +1,9 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 import getLanguageSelector from './language-selector.js';
-import { getNavigationMenu, formatNavigationJsonData, closesideMenu } from './navigation.js';
+import {
+  getNavigationMenu, formatNavigationJsonData, closesideMenu, closesearchbar,
+} from './navigation.js';
 
 import {
   fetchLanguageNavigation,
@@ -65,7 +67,23 @@ function toggleAllNavSections(sections, expanded = false) {
  * @param {Element} navSections The nav sections within the container element
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
  */
-function toggleMenu(nav, navSections, forceExpanded = null) {
+
+function closeSearchBox() {
+  const navWrapper = document.querySelector('.nav-wrapper');
+  const headerWrapper = document.querySelector('.header-wrapper');
+  const searchContainer = headerWrapper.querySelector('.search-container');
+  const cancelContainer = navWrapper.querySelector('.cancel-container');
+  const overlay = document.querySelector('.overlay');
+  const searchImage = document.querySelector('.icon-search');
+
+  searchContainer.style.display = 'none';
+  cancelContainer.style.display = 'none';
+  searchImage.style.display = 'block';
+  overlay.style.display = 'none';
+  document.body.classList.remove('no-scroll');
+}
+
+async function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null
     ? !forceExpanded
     : nav.getAttribute('aria-expanded') === 'true';
@@ -103,6 +121,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   if (!expanded) {
     document.body.classList.add('no-scroll');
     navMenuOverlay.classList.add(constants.OPEN);
+    navMenuOverlay.scrollTop = 0;
   } else {
     document.body.classList.remove('no-scroll');
     navMenuOverlay.classList.remove(constants.OPEN);
@@ -115,6 +134,14 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     window.removeEventListener(constants.KEY_DOWN, closeOnEscape);
   }
+  const headerWrapper = document.querySelector('.header-wrapper');
+  const searchContainer = headerWrapper.querySelector('.search-container');
+  if (searchContainer) {
+    closeSearchBox();
+  }
+  const rightColumn = navSections.querySelector('.nav-menu-column.right');
+  const leftColumn = navSections.querySelector('.nav-menu-column.left');
+  closesideMenu(leftColumn, rightColumn);
 }
 /**
  * loads and decorates the header, mainly the nav
@@ -150,7 +177,6 @@ function createSearchBox() {
   let cancelContainer = navWrapper.querySelector('.cancel-container');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
-  const hamBurgerIcon = navWrapper.querySelector('.nav-hamburger');
   document.body.classList.add('no-scroll');
   if (searchContainer) {
     const isVisible = searchContainer.style.display !== 'none';
@@ -162,19 +188,13 @@ function createSearchBox() {
 
     searchImage.style.display = isVisible ? 'block' : 'none';
   } else {
-    hamBurgerIcon.style.pointerEvents = 'none';
     cancelContainer = div({ class: 'cancel-container' });
     const cancelImg = img({ class: 'cancel-image' });
     cancelImg.src = `${window.hlx.codeBasePath}/icons/cancel.svg`;
     cancelImg.alt = 'cancel';
     cancelImg.style.cssText = 'display: flex; cursor: pointer;';
     cancelContainer.addEventListener('click', () => {
-      searchContainer.style.display = 'none';
-      cancelContainer.style.display = 'none';
-      searchImage.style.display = 'block'; // Show search icon again
-      overlay.style.display = 'none';
-      hamBurgerIcon.style.pointerEvents = 'all';
-      document.body.classList.remove('no-scroll');
+      closeSearchBox();
     });
     cancelContainer.appendChild(cancelImg);
     navTools.appendChild(cancelContainer);
@@ -195,7 +215,7 @@ function createSearchBox() {
     });
 
     Object.assign(searchInputBox, {
-      type: 'search',
+      type: 'text',
       id: 'search-input',
       name: 'myInput',
       placeholder: listOfAllPlaceholdersData.searchVariable,
@@ -237,10 +257,26 @@ async function setTrendingDataAsUrl(tdElement) {
 async function changeTrendingData(navSections) {
   if (!navSections) return;
   const trendingDataWrapper = navSections.querySelector('.default-content-wrapper');
-  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(3)'));
+  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(2)'));
   trendingDataWrapper.append(trendingDataDiv);
 }
 
+async function overalyLoad(navSections) {
+  const langCode = getLanguage();
+  const placeholdersData = await fetchLanguagePlaceholders();
+  const navOverlay = navSections.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR);
+  if (!navOverlay) {
+    const structuredNav = formatNavigationJsonData(
+      await fetchLanguageNavigation(`/${langCode}`),
+    );
+    // Add navigation menu to header
+    navSections.append(getNavigationMenu(structuredNav, placeholdersData));
+  }
+  const rightColumn = navSections.querySelector('.nav-menu-column.right');
+  const leftColumn = navSections.querySelector('.nav-menu-column.left');
+  isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
+  document.body.addEventListener('click', (e) => closesearchbar(e, navSections));
+}
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -274,12 +310,6 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    const structuredNav = formatNavigationJsonData(
-      await fetchLanguageNavigation(`/${langCode}`),
-    );
-    // Add navigation menu to header
-    navSections.append(getNavigationMenu(structuredNav, placeholdersData));
-
     navSections
       .querySelectorAll(':scope .default-content-wrapper > ul > li')
       .forEach((navSection) => {
@@ -304,11 +334,9 @@ export default async function decorate(block) {
     contentWrapper.prepend(languageSelector);
   }
 
-  const rightColumn = nav.querySelector('.nav-menu-column.right');
-  const leftColumn = nav.querySelector('.nav-menu-column.left');
   // hamburger for mobile
   const hamburger = div(
-    { class: 'nav-hamburger', onclick: () => { toggleMenu(nav, navSections); closesideMenu(leftColumn, rightColumn); } },
+    { class: 'nav-hamburger', onclick: () => { toggleMenu(nav, navSections); } },
     button(
       {
         type: 'button',
@@ -320,11 +348,11 @@ export default async function decorate(block) {
   );
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
-  isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+  window.addEventListener('load', overalyLoad(navSections));
   if (isDesktop.matches) await changeTrendingData(navSections);
   fetchingPlaceholdersData(placeholdersData);
 }
