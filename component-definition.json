@@ -607,12 +607,12 @@
                   "name": "Bio Detail",
                   "image": "/content/dam/world-bank/sample/placeholder-black.png",
                   "display-name": "Axel van Trotsenburg",
-                  "job-title": "Senior Managing Director World Bank Group",
+                  "job-title": " <p>Senior Managing Director</p><p>World Bank Group</p>",
                   "x-link": "www.xlink.com",
                   "linkedin-link": "www.linkedin.com",
                   "instagram-link": "www.instagram.com",
-                  "media-inquiries": "<p>&nbsp;<strong>Kimberly Versak</strong><br />Senior External Affairs Officer <br /> <strong><em><a href='tel:2024588881' title='Tel: 202-458-8881'>Tel: 202-458-8881</a></em></strong> <br/ > <strong><em><a href='kversak@worldbank.org' title='kversak@worldbank.org'>kversak@worldbank.org</a></em></strong>",
-                  "resources": "<strong><em><a href='#' title='Full Bio'>Full Bio</a></em></strong><br /> <strong><em><a href='#' title='#'>High-Res Photo</a></em></strong> <br /> <strong><em><a href='#' title='Other Download'>Other Download</a></em></strong>"
+                  "media-inquiries": "<p><strong>Kimberly Versak</strong></p><p>Senior External Affairs Officer</p><p><strong><em><a href='tel:2024588881' title='Tel: 202-458-8881'>Tel: 202-458-8881</a></em></strong></p><p><strong><em><a href='mailto:kversak@worldbank.org' title='kversak@worldbank.org'>kversak@worldbank.org</a></em></strong></p>",
+                  "resources": "<p><strong><em><a href='#' title='Full Bio'>Full Bio</a></em></strong></p><p> <strong><em><a href='#' title='High-Res Photo'>High-Res Photo</a></em></strong> </p> <p><strong><em><a href='#' title='Other Download'>Other Download</a></em></strong></p>"
                 }
               }
             }
@@ -752,7 +752,7 @@
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Impact Card",
                     "model": "impact-card",
-                    "image": "/content/dam/world-bank/impact-icons/INCLUSIVE-AND-EQUITABLE-WATER-AND-SANITATION-SERVICES.svg",
+                    "image": "/content/dam/world-bank/impact-icons/Layer_1.png",
                     "imageAlt": "Water and Sanitation",
                     "indicator":"inclusiveNEuitableWaterNSanitationServices-planet",
                     "title": "49 million",
@@ -763,7 +763,7 @@
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Impact Card",
                     "model": "impact-card",
-                    "image": "/content/dam/world-bank/impact-icons/AFFORDABLE-RELIABLE-SUSTAINABLE-ENERGY-FOR-ALL.svg",
+                    "image": "/content/dam/world-bank/impact-icons/Layer_2.png",
                     "imageAlt": "Sustainable Energy",
                     "indicator":"affordableNReliableEnergyForAll-infrastructure",
                     "title": "230 Gigawatts",
@@ -774,7 +774,7 @@
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
                     "name": "Impact Card",
                     "model": "impact-card",
-                    "image": "/content/dam/world-bank/impact-icons/DIGITAL-CONNECTIVITY.svg",
+                    "image": "/content/dam/world-bank/impact-icons/Layer_3.png",
                     "imageAlt": "Digital Connectivity",
                     "indicator":"digitalConnectivity-digital",
                     "title": "59 million",

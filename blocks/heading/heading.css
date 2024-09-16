@@ -1,1 +1,48 @@
-/* TODO */
+.heading h1,
+.heading h2,
+.heading h3,
+.heading h4,
+.heading h5,
+.heading h6 {
+    color: var( --primary-blue-90);
+    margin-bottom: 0;
+}
+
+.heading h1 span,
+.heading h2 span,
+.heading h3 span,
+.heading h4 span,
+.heading h5 span,
+.heading h6 span {
+    color: var(--primary-blue-90);
+    font-weight: 400;
+}
+
+.heading .eyebrowtext {
+    margin-bottom: 0;
+    font-weight: 700;
+    line-height: 17.5px;
+    font-size: var(--body-medium);
+}
+
+.heading .heading-description {
+    font-size: var(--body-medium);
+    margin-top: 4px;
+}
+
+.heading hr {
+    color: var(--divider-on-light-default);
+}
+
+@media (width <768px) {
+    .heading .eyebrowtext {
+        font-size: var(--body-small);
+    }
+}
+
+@media (width >=1024px) {
+    .heading .eyebrowtext {
+        line-height: 20px;
+        font-size: var(--body-small);
+    }
+}

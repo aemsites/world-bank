@@ -304,8 +304,31 @@
         "component": "select",
         "name": "sec-spacing",
         "value": "",
-        "label": "Spacing (padding)",
-        "description": "Section Top and bottom spacing, default is 32px.",
+        "label": "Spacing Top (padding top)",
+        "description": "Section top spacing, default is 32px.",
+        "valueType": "string",
+        "options": [
+          { "name": "Default spacing", "value": "sec-spacing-default" },
+          { "name": "No space / padding", "value": "section-none" },
+          { "name": "Spacing tiny", "value": "section-tiny" },
+          { "name": "Spacing xxsmall", "value": "section-xxsmall" },
+          { "name": "Spacing xsmall", "value": "section-xsmall" },
+          { "name": "Spacing regular", "value": "section-regular" },
+          { "name": "Spacing small", "value": "section-small" },
+          { "name": "Spacing medium", "value": "section-medium" },
+          { "name": "Spacing large", "value": "section-large" },
+          { "name": "Spacing xlarge", "value": "section-xlarge" },
+          { "name": "Spacing xxlarge", "value": "section-xxlarge" },
+          { "name": "Spacing huge", "value": "section-huge" },
+          { "name": "Spacing xhuge", "value": "section-xhuge" }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "sec-spacing-bottom",
+        "value": "",
+        "label": "Spacing Bottom (padding bottom)",
+        "description": "Section bottom spacing, default is 32px.",
         "valueType": "string",
         "options": [
           { "name": "Default spacing", "value": "sec-spacing-default" },
@@ -334,6 +357,7 @@
           { "name": "Left Center Swoosh", "value": "sec-swoosh-type1" },
           { "name": "Left Top Swoosh", "value": "sec-swoosh-type3" },
           { "name": "Right Top Swoosh", "value": "sec-swoosh-type2" },
+          { "name": "Swoosh for BG inside container - Desktop", "value": "sec-swoosh-type5" },
           { "name": "Primary Blue 90 theme Swoosh", "value": "sec-swoosh-primary-blue-90" }
         ]
       },
@@ -1848,17 +1872,6 @@
     ]
   },
   {
-    "id": "breadcrumb",
-    "fields": [
-      {
-        "component": "boolean",
-        "label": "Enable Breadcrumb",
-        "name": "enableBreadcrumb",
-        "valueType": "boolean"
-      }
-    ]
-  },
-  {
     "id": "block-quote",
     "fields": [
       {
@@ -1902,7 +1915,7 @@
           },
           {
             "name": "Inclusive and Equitable Water and Sanitation Services",
-            "value": "inclusiveNEuitableWaterNSanitationServices-planet"
+            "value": "inclusiveNEquitableWaterNSanitationServices-planet"
           },
           {
             "name": "Sustainable Food Systems",

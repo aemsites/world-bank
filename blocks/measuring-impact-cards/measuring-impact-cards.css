@@ -1,0 +1,110 @@
+.measuring-impact-cards{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    gap: var(--medium);
+}
+
+.measuring-impact-cards .impact-card-wrapper{
+    width: 100%;
+}
+
+.measuring-impact-cards .impact-card-wrapper > a {
+    text-decoration: none;
+    line-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: var(--medium);
+}
+
+.measuring-impact-cards .impact-card-wrapper p.impact-indicator {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--body-indicator-paragraph);
+    line-height: 16px;
+    letter-spacing: 1px;
+    color: var(--text-on-light-subdued);
+    text-wrap: wrap;
+    margin: var(--body-indicator-paragraph-spacing) 0;
+    width: 100%;
+}
+
+.impact-card-body-content {
+    display: grid;
+    gap: var(--xsmall) var(--medium);
+    align-items: flex-start;
+    grid-template-columns: 72px auto;
+}
+
+.impact-card-content {
+    padding: 0 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--xxsmall);
+    justify-content: center;
+}
+
+.impact-card-content > p {
+    margin: 0;
+    font-weight: 400;
+    font-size: var(--body-description-paragraph);
+    line-height: 20px;
+    color: var(--text-on-light-emphasis);
+    letter-spacing: -0.25px;
+}
+
+.impact-card-content p:first-child {
+    font-size: var(--body-title-paragraph);
+    line-height: 32px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--primary-blue-90);
+    margin-bottom: var(--tiny);
+}
+
+@media (width >= 768px) {
+    .measuring-impact-cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
+        min-height: 32px;
+        margin-bottom: var(--none);
+    }
+
+    .impact-card-body-content {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .impact-card-img img {
+        width: 112px;
+        height: 112px;
+    }
+    
+    .impact-card-content > p {
+        line-height: 22px;
+    }
+}
+
+@media (width >= 1024px) {
+    .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
+        min-height: auto;
+    }
+
+    .impact-card-body-content {
+        grid-template-columns: 112px auto;
+    }
+
+    .impact-card-content > p {
+        line-height: 25px;
+    }
+    
+    .impact-card-content p:first-child {
+        line-height: 41px;
+    }
+}

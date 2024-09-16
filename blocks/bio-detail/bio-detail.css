@@ -1,3 +1,29 @@
+.bio-detail .sections-container {
+  background-image: url('../../icons/background-swoosh.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+  padding: var(--regular) 28px var(--medium);
+  background-color: var(--neutrals-20);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  gap: 30px;
+}
+
+.profile-image img{
+  width: 100%;
+  height: 278px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.social-media-link img {
+  width: 15px;
+  height: 15px;
+}
+
 .bio-detail .resources p a {
   margin: 0;
   border-bottom: 2px solid transparent;
@@ -5,15 +31,24 @@
   font-weight: 400;
 }
 
+.bio-detail .media-inquiries p em{
+  display: flex;
+}
+
 .bio-detail .media-inquiries p a {
   padding: 0;
   margin: 0;
   border-bottom: 2px solid transparent;
-  color: #000D1A;
+  color: var(--text-color);
+  font-weight: normal;
+}
+
+.bio-detail .media-inquiries p a:nth-child(2){
+  text-decoration: underline;
 }
 
 .bio-detail .media-inquiries p a:hover {
-  color: #000D1A;
+  color: var(--text-color);
 }
 
 .bio-detail .resources p, .bio-detail .resources p em {
@@ -23,16 +58,8 @@
 
 .bio-detail .download-image {
   margin-right: var(--xxsmall);
-}
-
-.bio-detail .sections-container {
-  padding: var(--regular) 28px var(--medium);
-  background: var(--neutrals-20);
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column-reverse;
-  gap: 30px;
+  width: 8px;
+  height: 14px;
 }
 
 .bio-detail .sections-container p {
@@ -46,6 +73,7 @@
 .bio-detail .second-container {
   display: flex;
   flex-direction: column-reverse;
+  gap: var(--huge);
 }
 
 .bio-detail .sections-container .display-name {
@@ -99,11 +127,15 @@
   border-bottom: 2px solid var(--neutrals-103);
   margin-bottom: 20px;
   font-size: var(--body-small);
-  font-weight: bold;
+  font-weight: 800;
   padding-bottom: var(--xsmall);
 }
 
 @media (width >=768px) {
+  .profile-image img {
+    height: 264px;
+  }
+
   .bio-detail .second-container {
     display: grid;
     gap: 28px;
@@ -117,23 +149,25 @@
   }
 
   .bio-detail .sections-container {
-    padding: var(--huge) var(--huge) 88px;
+    padding: var(--huge) var(--huge) var(--xhuge);
   }
 }
 
 @media (width >=1024px) {
+  .sections-container .first-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .bio-detail .media-resources {
     gap: var(--xhuge);
     margin-top: 70px;
   }
 
   .bio-detail .second-container .profile-image {
-    width: 90%;
     height: 460px;
-  }
-
-  .bio-detail .second-container .profile-image div {
-    height: 100%;
   }
 
   .bio-detail .second-container .profile-image div img {
