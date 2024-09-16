@@ -41,7 +41,6 @@ header nav {
 
 .homepage header nav {
   padding-bottom: var(--nav-padding);
-  border-bottom: none;
 }
 
 header nav p {
@@ -51,6 +50,10 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+}
+
+.section.nav-brand .default-content-wrapper picture {
+  display: flex;
 }
 
 header .nav-menu-overlay {
@@ -95,7 +98,7 @@ header .nav-menu-overlay .nav-menu {
   text-align: right;
   opacity: 1;
   right: 42px;
-  top: 1px;
+  top: -2px;
   border: 1px solid transparent;
   position: absolute;
   min-width: 125px;
@@ -240,7 +243,7 @@ header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   }
 
   .language-container {
-    top: -6px;
+    top: -8px;
     right: 20px;
   }
 
@@ -553,6 +556,7 @@ header
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  height: 18px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country p {
@@ -598,6 +602,7 @@ header
 /* hamburger */
 header nav .nav-hamburger {
   width: 20px;
+  display: flex;
 }
 
 header nav .nav-hamburger button {
