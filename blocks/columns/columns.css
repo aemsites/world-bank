@@ -160,10 +160,12 @@
   }
 
   /* Special Case for button in columns-2-cols */
-
-  .columns.columns-2-cols > div > div:last-child:has(p>a:only-child) {
-    all:unset;
+  .columns.columns-2-cols > div > div:last-child:has(p:only-child>a:only-child) {
     display: flex;
+  }
+  
+  .columns.columns-2-cols > div > div:last-child:has(p:only-child) > p:has(a:only-child) {
+    align-self: flex-end;
   }
   
 }
