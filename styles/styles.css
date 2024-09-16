@@ -93,8 +93,11 @@
   
   /* Impact Card */
   --text-on-light-subdued: #000D1A91;
-  --text-on-light-emphasis: #000D1AF5
+  --text-on-light-emphasis: #000D1AF5;
 
+   /* Heading Block */
+  --divider-on-light-default:  #00396B29;
+  
   /* spacing (Padding & Margins) */
   --spacing-0: 0;
   --spacing-2: 2px;
