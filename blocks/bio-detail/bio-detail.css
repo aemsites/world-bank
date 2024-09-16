@@ -31,7 +31,7 @@
   font-weight: 400;
 }
 
-.bio-detail .media-inquiries p em{
+.bio-detail .media-inquiries p em {
   display: flex;
 }
 
@@ -43,12 +43,17 @@
   font-weight: normal;
 }
 
-.bio-detail .media-inquiries p a:nth-child(2){
+ p strong>em>a:any-link:visited,
+ .bio-detail .media-inquiries p a:hover {
+   color: var(--primary-blue-70);
+ }
+
+.bio-detail .media-inquiries p:nth-child(4) a{
   text-decoration: underline;
 }
 
-.bio-detail .media-inquiries p a:hover {
-  color: var(--text-color);
+.bio-detail .media-inquiries p:nth-child(4) a:hover {
+  text-decoration: none
 }
 
 .bio-detail .resources p, .bio-detail .resources p em {
