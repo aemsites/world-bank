@@ -66,8 +66,8 @@ export default async function createSlider(block) {
     moveDirection(itemWidth, '+');
   }, true);
 
-    // Observer Callback Function
-    const callBack = (entries) => {
+  // Observer Callback Function
+  const callBack = (entries) => {
     const dir = document.documentElement.dir || 'ltr';
     let disableLeftBtn = false;
     let disableRightBtn = false;
