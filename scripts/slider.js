@@ -34,26 +34,37 @@ export default async function createSlider(block) {
   block.append(arrow(`${prevBtn}`));
 
   // Call function after page load
-  window.setTimeout(() => {
-    const carouselItems = document.querySelector('.carousel > ul');
-    const totalItems = carouselItems.children.length || 1;
     const moveRightBtn = document.querySelector(`.${nextBtn}`);
     const moveLeftBtn = document.querySelector(`.${prevBtn}`);
-    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10);
     const itemList = [...document.querySelectorAll('.carousel > ul > li')];
     const observerOptions = {
       rootMargin: '0px',
       threshold: 0.25,
     };
 
-    // Button Event Handler
-    moveRightBtn.addEventListener('click', () => {
+  function moveDirection(itemWidth, option) {
+    const carouselItems = document.querySelector('.carousel > ul');
+    if (option === '+') {
       carouselItems.scrollLeft += itemWidth;
-    }, false);
-
-    moveLeftBtn.addEventListener('click', () => {
+    } else {
       carouselItems.scrollLeft -= itemWidth;
-    }, false);
+    }
+  }
+
+  // Button Event Handler
+  moveLeftBtn.addEventListener('click', () => {
+    const carouselItems = document.querySelector('.carousel > ul');
+    const totalItems = carouselItems.children.length || 1;
+    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10);
+    moveDirection(itemWidth, '-');
+  }, true);
+
+  moveRightBtn.addEventListener('click', () => {
+    const carouselItems = document.querySelector('.carousel > ul');
+    const totalItems = carouselItems.children.length || 1;
+    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10);
+    moveDirection(itemWidth, '+');
+  }, true);
 
     // Observer Callback Function
     const callBack = (entries) => {
@@ -113,5 +124,4 @@ export default async function createSlider(block) {
     itemList.forEach((item) => {
       observer.observe(item);
     });
-  }, 0);
 }
