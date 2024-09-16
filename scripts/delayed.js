@@ -102,7 +102,9 @@ function buildTwitterLinks() {
     const tweetables = p.innerHTML.match(/&lt;tweetable[^>]*&gt;([\s\S]*?)&lt;\/tweetable&gt;/g);
     if (tweetables) {
       tweetables.forEach((tweetableTag) => {
-        const matchedContent = tweetableTag.match(/&lt;tweetable(?:[^>]*data-channel=['"]?(.*?)['"]?)?(?:[^>]*data-hashtag=['"]?(.*?)['"]?)?[^>]*&gt;([\s\S]*?)&lt;\/tweetable&gt;/);
+        const matchedContent = tweetableTag.match(
+          /&lt;tweetable(?:[^>]*data-channel=['"]([^'"]*)['"])?(?:[^>]*data-hashtag=['"]([^'"]*)['"])?[^>]*&gt;([\s\S]*?)&lt;\/tweetable&gt;/
+        );
         const channel = matchedContent[1] || '';
         const hashtag = matchedContent[2] || '';
         const tweetContent = matchedContent[3];
