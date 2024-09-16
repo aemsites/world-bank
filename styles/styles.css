@@ -90,7 +90,14 @@
   --purple-70: #5C01AC;
   --purple-80: #410179;
   --purple-90: #260147;
+  
+  /* Impact Card */
+  --text-on-light-subdued: #000D1A91;
+  --text-on-light-emphasis: #000D1AF5;
 
+   /* Heading Block */
+  --divider-on-light-default:  #00396B29;
+  
   /* spacing (Padding & Margins) */
   --spacing-0: 0;
   --spacing-2: 2px;
@@ -147,6 +154,12 @@
   --body-medium: var(--size-16);
   --body-small: var(--size-14);
   --body-tiny: var(--size-12);
+
+  /** Measuring impact card paragraph varibales **/
+  --body-indicator-paragraph: var(--size-12);
+  --body-description-paragraph: var(--size-16);
+  --body-title-paragraph: var(--size-28);
+  --body-indicator-paragraph-spacing: var(--spacing-12);
 
   /* Spacing - mobile */
   --none: var(--spacing-0);
@@ -249,6 +262,12 @@
     --body-small: var(--size-14);
     --body-tiny: var(--size-12);
 
+    /** Measuring impact card paragraph varibales **/
+  --body-indicator-paragraph: var(--size-12);
+  --body-description-paragraph: var(--size-18);
+  --body-title-paragraph: var(--size-28);
+  --body-indicator-paragraph-spacing: var(--spacing-8);
+
     /* body styles */
     --body-font-size: var(--default);
     --body-font-size-citation: 12px;
@@ -310,6 +329,12 @@
     --body-medium: var(--size-16);
     --body-small: var(--size-14);
     --body-tiny: var(--size-12);
+
+    /** Measuring impact card paragraph varibales **/
+  --body-indicator-paragraph: var(--size-12);
+  --body-description-paragraph: var(--size-20);
+  --body-title-paragraph: var(--size-36);
+  --body-indicator-paragraph-spacing: var(--spacing-12);
     
     /* body styles */
     --body-font-size: var(--default);
@@ -376,7 +401,7 @@ header {
 
 .homepage header {
   padding-bottom: var(--nav-padding);
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 h1,

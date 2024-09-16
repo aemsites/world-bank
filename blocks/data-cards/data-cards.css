@@ -351,21 +351,25 @@
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(2) {
-    margin-bottom: 72px;
+    margin-bottom: 0;
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(3) {
-    margin-top: 170px;
+    margin-top: 0;
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p {
     margin-top:0;
-    margin-bottom: var(--medium);
+    margin-bottom: 0;
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child{
-    margin-top:0;
+    margin-top:160px;
     margin-bottom: var(--medium);
+  }
+
+  .data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p >a {
+    margin-bottom: 0;
   }
 
   .data-cards.data-card-variation .data-card-items {
