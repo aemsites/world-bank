@@ -1,13 +1,9 @@
 main .breadcrumb-wrapper ol {
-  padding: 20px 0 0 0;
-}
-
-main .breadcrumb-wrapper ol {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 20px 0 0;
 }
 
 main .breadcrumb-wrapper ol li {
@@ -19,6 +15,7 @@ main .breadcrumb-wrapper ol li {
   font-size: var(--body-small);
   color: var(--primary-blue-70);
 }
+
 main .breadcrumb-wrapper a {
   font-size: var(--body-small);
   line-height: 1.4;
@@ -45,6 +42,6 @@ main .breadcrumb-wrapper img {
 
 @media (width >= 768px) {
   main .breadcrumb-wrapper ol {
-    padding: 20px 0 28px 0;
+    padding: 20px 0 28px;
   }
 }
