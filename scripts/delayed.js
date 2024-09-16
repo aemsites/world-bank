@@ -114,7 +114,7 @@ function buildTwitterLinks() {
         if (channel) modalURL += `&via=${encodeURIComponent(channel.charAt(0) === '@' ? channel.substring(1) : channel)}`;
         if (hashtag) modalURL += `&hashtags=${encodeURIComponent(hashtag)}`;
 
-        const span = document.createElement('span');
+        //const span = document.createElement('span');
         const tweetableEl = span({ class: 'tweetable' },
           a({ href: modalURL, target: '_blank', tabindex: 0 }, tweetContent,
             i({ class: 'lp lp-twit' }),
