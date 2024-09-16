@@ -376,7 +376,7 @@ header {
 
 .homepage header {
   padding-bottom: var(--nav-padding);
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 h1,
