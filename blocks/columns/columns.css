@@ -170,6 +170,15 @@
 
 /* Column alignment - End */
 
+.columns h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.columns h2 strong {
+  font-weight: 700;
+}
+
 @media (width >= 1024px) {
   .columns.columns-transform-teaser > div p:nth-child(1) {
     /* margin-bottom: 20px; */
