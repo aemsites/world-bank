@@ -98,12 +98,12 @@ function buildTwitterLinks() {
   const url = window.location.href;
   const encodedUrl = encodeURIComponent(url);
 
-  [...paras].forEach((p) => {
-    const tweetables = p.innerHTML.match(/&lt;tweetable[^>]*&gt;([\s\S]*?)&lt;\/tweetable&gt;/g);
+  [...paras].forEach((paragraph) => {
+    const tweetables = paragraph.innerHTML.match(/&lt;tweetable[^>]*&gt;([\s\S]*?)&lt;\/tweetable&gt;/g);
     if (tweetables) {
       tweetables.forEach((tweetableTag) => {
         const matchedContent = tweetableTag.match(
-          /&lt;tweetable(?:[^>]*data-channel=['"]([^'"]*)['"])?(?:[^>]*data-hashtag=['"]([^'"]*)['"])?[^>]*&gt;([\s\S]*?)&lt;\/tweetable&gt;/
+          /&lt;tweetable(?:[^>]*data-channel=['"]([^'"]*)['"])?(?:[^>]*data-hashtag=['"]([^'"]*)['"])?[^>]*&gt;([\s\S]*?)&lt;\/tweetable&gt;/,
         );
         const channel = matchedContent[1] || '';
         const hashtag = matchedContent[2] || '';
@@ -114,28 +114,16 @@ function buildTwitterLinks() {
         if (channel) modalURL += `&via=${encodeURIComponent(channel.charAt(0) === '@' ? channel.substring(1) : channel)}`;
         if (hashtag) modalURL += `&hashtags=${encodeURIComponent(hashtag)}`;
 
-        //const span = document.createElement('span');
+        /* eslint-disable-next-line no-shadow */
         const tweetableEl = span({ class: 'tweetable' },
-          a({ href: modalURL, target: '_blank', tabindex: 0 }, tweetContent,
-            i({ class: 'lp lp-twit' }),
+          a(
+            { href: modalURL, target: '_blank', tabindex: 0 }, tweetContent, i({ class: 'lp lp-twit' }),
           )
         );
-        /*span.classList.add('tweetable');
-        const anchor = document.createElement('a');
-        anchor.href = modalURL;
-        anchor.target= '_blank';
-        anchor.textContent = tweetContent;
-        const icon = document.createElement('i');
-        icon.classList.add('lp', 'lp-twit');
-        anchor.appendChild(icon);
-        span.appendChild(anchor);
-        */
-
-        //p.innerHTML = p.innerHTML.replace(tweetableTag, span.outerHTML);
-        p.innerHTML = p.innerHTML.replace(tweetableTag, tweetableEl.outerHTML);
+        paragraph.innerHTML = paragraph.innerHTML.replace(tweetableTag, tweetableEl.outerHTML);
       });
     }
-    [...p.querySelectorAll('.tweetable > a')].forEach((twitterAnchor) => {
+    [...paragraph.querySelectorAll('.tweetable > a')].forEach((twitterAnchor) => {
       twitterAnchor.addEventListener('click', (event) => {
         event.preventDefault();
         const url = twitterAnchor.href;
