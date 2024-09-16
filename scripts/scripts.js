@@ -68,78 +68,12 @@ async function loadFonts() {
 }
 
 /**
- * Opens a popup for the Twitter links autoblock.
- */
-function openPopUp(popUrl) {
-  const popupParams = `height=450, width=550, top=${(window.innerHeight / 2 - 275)}`
-   + `, left=${(window.innerWidth / 2 - 225)}`
-   + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0';
-  window.open(popUrl, 'fbShareWindow', popupParams);
-}
-
-/**
- * Finds and decorates anchor elements with Twitter hrefs
- * @param {Element} main The container element
- */
-function buildTwitterLinks(main) {
-  if (!main) return;
-
-  // get all anchor elements
-  const anchors = main.querySelectorAll('a');
-  const url = window.location.href;
-  const encodedUrl = encodeURIComponent(url);
-
-  anchors.forEach((anchor) => {
-    // check for 'twitter.com' or 'x.com'
-    if (anchor.href.includes('twitter.com') || anchor.href.includes('x.com')) {
-      // add class
-      anchor.classList.add('twd-id');
-
-      // may change the source of this data based on feedback from WB
-      const tweetTextContent = anchor.textContent;
-      const tweetChannel = 'worldbank';
-      const tweetContent = {
-        tweetText: tweetTextContent,
-        channel: tweetChannel,
-        hashtag: '',
-      };
-
-      // add icon to end of tweet text
-      const icon = document.createElement('i');
-      icon.classList.add('lp', 'lp-twit');
-      anchor.appendChild(icon);
-
-      // wrap the anchor in a span
-      const span = document.createElement('span');
-      span.classList.add('tweetable');
-      span.dataset.content = tweetContent;
-      span.dataset.text = tweetTextContent;
-      span.dataset.tweet = tweetChannel;
-      anchor.parentNode.insertBefore(span, anchor);
-      span.appendChild(anchor);
-
-      span.addEventListener('click', (event) => {
-        event.preventDefault();
-        const modalContent = tweetTextContent;
-        const modalChannel = tweetChannel;
-
-        const modalURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(modalContent)}`
-          + `&url=${encodedUrl}&via=${encodeURIComponent(modalChannel.charAt(0) === '@' ? modalChannel.substring(1) : modalChannel)}`
-          + `&original_referrer=${encodedUrl}&source=tweetbutton&hashtags=${encodeURIComponent(tweetContent.hashtag)}`;
-        openPopUp(modalURL);
-      });
-    }
-  });
-}
-
-/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
     // TODO: add auto block, if needed
-    buildTwitterLinks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

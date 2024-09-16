@@ -4,7 +4,7 @@ import {
 } from './aem.js';
 import {
   div, p, section, a, button,
-  span,
+  span, i,
 } from './dom-helpers.js';
 import {
   getLanguage, fetchLanguageNavigation,
@@ -115,7 +115,12 @@ function buildTwitterLinks() {
         if (hashtag) modalURL += `&hashtags=${encodeURIComponent(hashtag)}`;
 
         const span = document.createElement('span');
-        span.classList.add('tweetable');
+        const tweetableEl = span({ class: 'tweetable' },
+          a({ href: modalURL, target: '_blank', tabindex: 0 }, tweetContent,
+            i({ class: 'lp lp-twit' }),
+          )
+        );
+        /*span.classList.add('tweetable');
         const anchor = document.createElement('a');
         anchor.href = modalURL;
         anchor.target= '_blank';
@@ -124,64 +129,20 @@ function buildTwitterLinks() {
         icon.classList.add('lp', 'lp-twit');
         anchor.appendChild(icon);
         span.appendChild(anchor);
+        */
 
-        p.innerHTML = p.innerHTML.replace(tweetableTag, span.outerHTML);
+        //p.innerHTML = p.innerHTML.replace(tweetableTag, span.outerHTML);
+        p.innerHTML = p.innerHTML.replace(tweetableTag, tweetableEl.outerHTML);
       });
     }
     [...p.querySelectorAll('.tweetable > a')].forEach((twitterAnchor) => {
       twitterAnchor.addEventListener('click', (event) => {
         event.preventDefault();
-        //const modalContent = twitterAnchor.textContent;
         const url = twitterAnchor.href;
         openPopUp(url);
       });
     })
   });
-
-  /*
-
-  anchors.forEach((anchor) => {
-    // check for 'twitter.com' or 'x.com' quotable text
-    if (anchor.href.includes('twitter.com') || anchor.href.includes('x.com')) {
-      // add class
-      anchor.classList.add('twd-id');
-
-      // may change the source of this data based on feedback from WB
-      const tweetTextContent = anchor.textContent;
-      const tweetChannel = 'worldbank';
-      const tweetContent = {
-        tweetText: tweetTextContent,
-        channel: tweetChannel,
-        hashtag: '',
-      };
-
-      // add icon to end of tweet text
-      const icon = document.createElement('i');
-      icon.classList.add('lp', 'lp-twit');
-      anchor.appendChild(icon);
-
-      // wrap the anchor in a span
-      const span = document.createElement('span');
-      span.classList.add('tweetable');
-      span.dataset.content = tweetContent;
-      span.dataset.text = tweetTextContent;
-      span.dataset.tweet = tweetChannel;
-      anchor.parentNode.insertBefore(span, anchor);
-      span.appendChild(anchor);
-
-      span.addEventListener('click', (event) => {
-        event.preventDefault();
-        const modalContent = tweetTextContent;
-        const modalChannel = tweetChannel;
-
-        const modalURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(modalContent)}`
-          + `&url=${encodedUrl}&via=${encodeURIComponent(modalChannel.charAt(0) === '@' ? modalChannel.substring(1) : modalChannel)}`
-          + `&original_referrer=${encodedUrl}&source=tweetbutton&hashtags=${encodeURIComponent(tweetContent.hashtag)}`;
-        openPopUp(modalURL);
-      });
-    }
-  });
-  */
 }
 
 function loadDelayed() {
