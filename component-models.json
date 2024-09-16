@@ -1692,7 +1692,7 @@
         "valueType": "string",
         "name": "alttext",
         "label": "Alt Text",
-        "required":true
+        "required": true
       }
     ]
   },
