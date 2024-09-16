@@ -18,8 +18,8 @@
 .carousel-container .button-container button {
   background-color: var(--color-white);
   border: 2px solid var(--primary-blue-80);
-  padding: 13px 16px;
-  right: 0;
+  padding: 8px 11px;
+  right: 2%;
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -35,9 +35,9 @@
 html[dir="rtl"] .carousel-container .button-container button {
   background-color: var(--color-white);
   border: 2px solid var(--primary-blue-80);
-  padding: 13px 16px;
+  padding: 8px 11px;
   right: auto;
-  left: 0;
+  left: 2%;
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -88,7 +88,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 .carousel > ul {
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, 92%);
+  grid-template-columns: repeat(5, 85%);
   grid-template-rows: 1fr;
   gap: 0 var(--spacing-32);
   overflow: scroll hidden;
@@ -115,11 +115,11 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 }
   
 .carousel .button-container .next {
-  margin: 35px 0 0;
+  margin: 8px 0 0;
 }
 
 .carousel .button-container .prev {
-  margin: -35px 0 0;
+  margin: -40px 0 0;
 }
 
 .carousel .button-container .prev:hover,
@@ -195,7 +195,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel > ul {
-    grid-template-columns: repeat(5, 80%);
+    grid-template-columns: repeat(5, 85%);
     gap: 0 var(--spacing-24);
   }
 
@@ -299,7 +299,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel > ul {
-    grid-template-columns: repeat(5, 80%);
+    grid-template-columns: repeat(5, 85%);
     gap: 0 var(--spacing-24);
   }
 }
@@ -329,6 +329,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     font-size: var(--size-16);
     font-weight: 700;
     line-height: 21px;
+    padding: 15px 32px 18px;
   }
 
   .carousel-container .button-container button:disabled {
