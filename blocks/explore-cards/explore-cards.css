@@ -37,6 +37,7 @@
     border-radius: 10px;
     height: 400px;
     width: 276px;
+    flex:none;
 }
 
 .card-icon {
@@ -151,6 +152,15 @@
 
 @media (width <768px) {
     .explore-card-container {
+        display: flex;
         width: calc(100vw - 28px);
+    }
+
+    .explore-card {
+        flex:none;
+    }
+
+    .explore-card:last-child {
+        padding-right: 20px;
     }
 }

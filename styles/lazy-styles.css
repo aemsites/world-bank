@@ -7,8 +7,19 @@
   bg-neutrals-20: #FFF
   bg-neutrals-10: #FFF
 */
+main .section[data-sec-swoosh="sec-swoosh-type1"]::before { background-position: left center; }
+main .section[data-sec-swoosh="sec-swoosh-type2"]::before { background-position: right top; }
+main .section[data-sec-swoosh="sec-swoosh-type3"]::before { background-position: left top; }
+main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-position: center center; }
+
+main .section[data-sec-swoosh="sec-swoosh-type5"] > div::before { 
+    background-position: right center; 
+    background-size: contain;
+}
+
 body[class*='page-swoosh-']::before,
-main .section[data-sec-swoosh^="sec-swoosh"]::before {
+main .section[data-sec-swoosh^="sec-swoosh"]:not([data-sec-inside-container="true"])::before,
+main .section[data-sec-swoosh^="sec-swoosh"][data-sec-inside-container="true"] > div::before {
   background-repeat: no-repeat;
   content: '';
   position: absolute;
@@ -16,6 +27,13 @@ main .section[data-sec-swoosh^="sec-swoosh"]::before {
   height: 100%;
   z-index: -1;
   top: 0;
+}
+
+main .section[data-sec-swoosh^="sec-swoosh"][data-sec-inside-container="true"] > div::before { z-index: 0; }
+
+main .section[data-sec-swoosh^="sec-swoosh"][data-sec-inside-container="true"] > div > * { 
+    z-index: 1; 
+    position: relative; 
 }
 
 body[class*='page-swoosh-']::before { 
@@ -31,11 +49,6 @@ body[class*='page-swoosh-']::before {
 
 body.page-swoosh-big-curve::before { background-image: url('../icons/swoosh/page/big-curve.svg'); }
 body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/page/half-curve.svg'); }
-
-main .section[data-sec-swoosh="sec-swoosh-type1"]::before { background-position: left center; }
-main .section[data-sec-swoosh="sec-swoosh-type2"]::before { background-position: right top; }
-main .section[data-sec-swoosh="sec-swoosh-type3"]::before { background-position: left top; }
-main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-position: center center; }
 
 @media (width < 768px) {
     main .section.bg-default[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/default-m.svg'); }
@@ -90,6 +103,11 @@ main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/primary90-d.svg'); }
     main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/primary70-d.svg'); }
     main .section[class*='bg-neutrals'][data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/neutrals-d.svg'); }
+
+    main .section.bg-default[data-sec-swoosh="sec-swoosh-type5"][data-sec-inside-container="true"] > div::before { background-image: url('../icons/swoosh/type5/default-d.svg'); }
+    main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type5"][data-sec-inside-container="true"] > div::before { background-image: url('../icons/swoosh/type5/primary90-d.svg'); }
+    main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type5"][data-sec-inside-container="true"] > div::before { background-image: url('../icons/swoosh/type5/primary70-d.svg'); }
+    main .section[class*='bg-neutrals'][data-sec-swoosh="sec-swoosh-type5"][data-sec-inside-container="true"] > div::before { background-image: url('../icons/swoosh/type5/default-d.svg'); }
 
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-image: url('../icons/swoosh/primary-blue-90/desktop.svg'); }
 }
