@@ -6,7 +6,6 @@ import {
 } from './navigation.js';
 
 import {
-  fetchLanguageNavigation,
   fetchLanguagePlaceholders,
   fetchLangDatabyFileName,
 } from '../../scripts/scripts.js';
@@ -83,7 +82,27 @@ function closeSearchBox() {
   document.body.classList.remove('no-scroll');
 }
 
+async function overlayLoad(navSections) {
+  const langCode = getLanguage();
+  const placeholdersData = await fetchLanguagePlaceholders();
+  const navOverlay = navSections.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR);
+  if (!navOverlay) {
+    const structuredNav = formatNavigationJsonData(window.navigationData[`/${langCode}`]);
+    // Add navigation menu to header
+    navSections.append(getNavigationMenu(structuredNav, placeholdersData));
+  }
+  const rightColumn = navSections.querySelector('.nav-menu-column.right');
+  const leftColumn = navSections.querySelector('.nav-menu-column.left');
+  isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
+  document.body.addEventListener('click', (e) => closesearchbar(e, navSections));
+}
+
 async function toggleMenu(nav, navSections, forceExpanded = null) {
+  if (window.navigationData) {
+    await overlayLoad(navSections);
+  } else {
+    return;
+  }
   const expanded = forceExpanded !== null
     ? !forceExpanded
     : nav.getAttribute('aria-expanded') === 'true';
@@ -261,22 +280,6 @@ async function changeTrendingData(navSections) {
   trendingDataWrapper.append(trendingDataDiv);
 }
 
-async function overalyLoad(navSections) {
-  const langCode = getLanguage();
-  const placeholdersData = await fetchLanguagePlaceholders();
-  const navOverlay = navSections.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR);
-  if (!navOverlay) {
-    const structuredNav = formatNavigationJsonData(
-      await fetchLanguageNavigation(`/${langCode}`),
-    );
-    // Add navigation menu to header
-    navSections.append(getNavigationMenu(structuredNav, placeholdersData));
-  }
-  const rightColumn = navSections.querySelector('.nav-menu-column.right');
-  const leftColumn = navSections.querySelector('.nav-menu-column.left');
-  isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
-  document.body.addEventListener('click', (e) => closesearchbar(e, navSections));
-}
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -352,7 +355,6 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
-  window.addEventListener('load', overalyLoad(navSections));
   if (isDesktop.matches) await changeTrendingData(navSections);
   fetchingPlaceholdersData(placeholdersData);
 }
