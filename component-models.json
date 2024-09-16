@@ -1686,6 +1686,12 @@
         "name": "image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alttext",
+        "label": "Alt Text"
       }
     ]
   },
