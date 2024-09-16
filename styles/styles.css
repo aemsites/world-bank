@@ -90,7 +90,14 @@
   --purple-70: #5C01AC;
   --purple-80: #410179;
   --purple-90: #260147;
+  
+  /* Impact Card */
+  --text-on-light-subdued: #000D1A91;
+  --text-on-light-emphasis: #000D1AF5;
 
+   /* Heading Block */
+  --divider-on-light-default:  #00396B29;
+  
   /* spacing (Padding & Margins) */
   --spacing-0: 0;
   --spacing-2: 2px;
@@ -147,6 +154,12 @@
   --body-medium: var(--size-16);
   --body-small: var(--size-14);
   --body-tiny: var(--size-12);
+
+  /** Measuring impact card paragraph varibales **/
+  --body-indicator-paragraph: var(--size-12);
+  --body-description-paragraph: var(--size-16);
+  --body-title-paragraph: var(--size-28);
+  --body-indicator-paragraph-spacing: var(--spacing-12);
 
   /* Spacing - mobile */
   --none: var(--spacing-0);
@@ -249,6 +262,12 @@
     --body-small: var(--size-14);
     --body-tiny: var(--size-12);
 
+    /** Measuring impact card paragraph varibales **/
+  --body-indicator-paragraph: var(--size-12);
+  --body-description-paragraph: var(--size-18);
+  --body-title-paragraph: var(--size-28);
+  --body-indicator-paragraph-spacing: var(--spacing-8);
+
     /* body styles */
     --body-font-size: var(--default);
     --body-font-size-citation: 12px;
@@ -310,6 +329,12 @@
     --body-medium: var(--size-16);
     --body-small: var(--size-14);
     --body-tiny: var(--size-12);
+
+    /** Measuring impact card paragraph varibales **/
+  --body-indicator-paragraph: var(--size-12);
+  --body-description-paragraph: var(--size-20);
+  --body-title-paragraph: var(--size-36);
+  --body-indicator-paragraph-spacing: var(--spacing-12);
     
     /* body styles */
     --body-font-size: var(--default);
@@ -894,19 +919,34 @@ main .section.bg-image .sec-img {
   }
 }
 
-main .section[data-sec-spacing="section-none"] { padding: var(--none) 0; }
-main .section[data-sec-spacing="section-xtiny"] { padding: var(--xtiny) 0; }
-main .section[data-sec-spacing="section-tiny"] { padding: var(--tiny) 0; }
-main .section[data-sec-spacing="section-xxsmall"] { padding: var(--xxsmall) 0; }
-main .section[data-sec-spacing="section-xsmall"] { padding: var(--xsmall) 0; }
-main .section[data-sec-spacing="section-regular"] { padding: var(--regular) 0; }
-main .section[data-sec-spacing="section-small"] { padding: var(--small) 0; }
-main .section[data-sec-spacing="section-medium"] { padding: var(--medium) 0; }
-main .section[data-sec-spacing="section-large"] { padding: var(--large) 0; }
-main .section[data-sec-spacing="section-xlarge"] { padding: var(--xlarge) 0; }
-main .section[data-sec-spacing="section-xxlarge"] { padding: var(--xxlarge) 0; }
-main .section[data-sec-spacing="section-huge"] { padding: var(--huge) 0; }
-main .section[data-sec-spacing="section-xhuge"] { padding: var(--xhuge) 0; }
+main .section[data-sec-spacing="section-none"] { padding-top: var(--none); }
+main .section[data-sec-spacing="section-xtiny"] { padding-top: var(--xtiny); }
+main .section[data-sec-spacing="section-tiny"] { padding-top: var(--tiny); }
+main .section[data-sec-spacing="section-xxsmall"] { padding-top: var(--xxsmall); }
+main .section[data-sec-spacing="section-xsmall"] { padding-top: var(--xsmall); }
+main .section[data-sec-spacing="section-regular"] { padding-top: var(--regular); }
+main .section[data-sec-spacing="section-small"] { padding-top: var(--small); }
+main .section[data-sec-spacing="section-medium"] { padding-top: var(--medium); }
+main .section[data-sec-spacing="section-large"] { padding-top: var(--large); }
+main .section[data-sec-spacing="section-xlarge"] { padding-top: var(--xlarge); }
+main .section[data-sec-spacing="section-xxlarge"] { padding-top: var(--xxlarge); }
+main .section[data-sec-spacing="section-huge"] { padding-top: var(--huge); }
+main .section[data-sec-spacing="section-xhuge"] { padding-top: var(--xhuge); }
+
+
+main .section[data-sec-spacing-bottom="section-none"] { padding-bottom: var(--none); }
+main .section[data-sec-spacing-bottom="section-tiny"] { padding-bottom: var(--tiny); }
+main .section[data-sec-spacing-bottom="section-xxsmall"] { padding-bottom: var(--xxsmall); }
+main .section[data-sec-spacing-bottom="section-xtiny"] { padding-bottom: var(--xtiny); }
+main .section[data-sec-spacing-bottom="section-xsmall"] { padding-bottom: var(--xsmall); }
+main .section[data-sec-spacing-bottom="section-regular"] { padding-bottom: var(--regular); }
+main .section[data-sec-spacing-bottom="section-small"] { padding-bottom: var(--small); }
+main .section[data-sec-spacing-bottom="section-medium"] { padding-bottom: var(--medium); }
+main .section[data-sec-spacing-bottom="section-large"] { padding-bottom: var(--large); }
+main .section[data-sec-spacing-bottom="section-xlarge"] { padding-bottom: var(--xlarge); }
+main .section[data-sec-spacing-bottom="section-xxlarge"] { padding-bottom: var(--xxlarge); }
+main .section[data-sec-spacing-bottom="section-huge"] { padding-bottom: var(--huge); }
+main .section[data-sec-spacing-bottom="section-xhuge"] { padding-bottom: var(--xhuge); }
 
 body.no-scroll {
   overflow-y: hidden; /* Prevent scrolling */
