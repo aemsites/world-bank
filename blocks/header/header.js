@@ -82,7 +82,7 @@ function closeSearchBox() {
   document.body.classList.remove('no-scroll');
 }
 
-async function overalyLoad(navSections) {
+async function overlayLoad(navSections) {
   const langCode = getLanguage();
   const placeholdersData = await fetchLanguagePlaceholders();
   const navOverlay = navSections.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR);
@@ -99,7 +99,7 @@ async function overalyLoad(navSections) {
 
 async function toggleMenu(nav, navSections, forceExpanded = null) {
   if (window.navigationData) {
-    await overalyLoad(navSections);
+    await overlayLoad(navSections);
   } else {
     return;
   }
