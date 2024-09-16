@@ -16,6 +16,7 @@
   height: 278px;
   object-fit: cover;
   object-position: center;
+  border-radius: 5px;
 }
 
 .social-media-link img {
@@ -72,6 +73,7 @@
 .bio-detail .second-container {
   display: flex;
   flex-direction: column-reverse;
+  gap: var(--huge);
 }
 
 .bio-detail .sections-container .display-name {
@@ -125,7 +127,7 @@
   border-bottom: 2px solid var(--neutrals-103);
   margin-bottom: 20px;
   font-size: var(--body-small);
-  font-weight: bold;
+  font-weight: 800;
   padding-bottom: var(--xsmall);
 }
 
@@ -147,11 +149,18 @@
   }
 
   .bio-detail .sections-container {
-    padding: var(--huge) var(--huge) 88px;
+    padding: var(--huge) var(--huge) var(--xhuge);
   }
 }
 
 @media (width >=1024px) {
+  .sections-container .first-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .bio-detail .media-resources {
     gap: var(--xhuge);
     margin-top: 70px;
