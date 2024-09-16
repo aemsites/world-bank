@@ -1,15 +1,18 @@
-import { fetchSearch, createTag } from '../../scripts/scripts.js';
+import { fetchSearch } from '../../scripts/scripts.js';
+import {
+  ol, li, a, span,
+} from '../../scripts/dom-helpers.js';
 
 export default async function decorate(block) {
   const results = await fetchSearch();
   const regex = '^/(.*?)/?$';
   const pathSegments = window.location.pathname.replace(regex, '$1').split('/');
-  const list = createTag('ol', { class: 'breadcrumb' });
+  const list = ol({ class: 'breadcrumb' });
   const { origin } = window.location;
   let pagePath = '';
   pathSegments.forEach((page) => {
     pagePath += page;
-    const crumb = createTag('li', { class: 'crumb' });
+    const crumb = li({ class: 'crumb' });
     // This condition is for homepage path
     if (!pagePath) {
       let lang = '';
@@ -22,7 +25,7 @@ export default async function decorate(block) {
       const homeLink = `<a href='${origin + lang}' title='Home'><img src='${homeSvg}' alt='Home'>
                                       </img></a>`;
       crumb.innerHTML = homeLink;
-      const pipelineSymbol = createTag('span', { class: 'breadcrumb-separator' });
+      const pipelineSymbol = span({ class: 'breadcrumb-separator' });
       crumb.append(pipelineSymbol);
       list.append(crumb);
     } else {
@@ -31,13 +34,13 @@ export default async function decorate(block) {
         const pageInfo = pageObj[0];
         const label = pageInfo.navTitle ? pageInfo.navTitle : pageInfo.title;
         if (pageInfo.path !== window.location.pathname) {
-          const anchor = createTag('a', {
+          const anchor = a({
             class: 'breadcrumb',
             href: origin + pagePath,
             title: label,
           }, label);
           crumb.append(anchor);
-          const pipelineSymbol = createTag('span', {
+          const pipelineSymbol = span({
             class: 'breadcrumb-separator',
           });
           crumb.append(pipelineSymbol);
