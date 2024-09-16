@@ -109,8 +109,8 @@ function buildTwitterLinks() {
 
         let modalURL = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetContent)}`
           + `&original_referrer=${encodedUrl}&source=tweetbutton`;
-        if (channel) url += `&via=${encodeURIComponent(channel.charAt(0) === '@' ? channel.substring(1) : channel)}`;
-        if (hashtag) url += `&hashtags=${encodeURIComponent(hashtag)}`;
+        if (channel) modalURL += `&via=${encodeURIComponent(channel.charAt(0) === '@' ? channel.substring(1) : channel)}`;
+        if (hashtag) modalURL += `&hashtags=${encodeURIComponent(hashtag)}`;
 
         const span = document.createElement('span');
         span.classList.add('tweetable');
