@@ -325,6 +325,29 @@
       },
       {
         "component": "select",
+        "name": "sec-spacing-bottom",
+        "value": "",
+        "label": "Spacing (padding)",
+        "description": "Section Top and bottom spacing, default is 32px.",
+        "valueType": "string",
+        "options": [
+          { "name": "Default spacing", "value": "sec-spacing-default" },
+          { "name": "No space / padding", "value": "section-none" },
+          { "name": "Spacing tiny", "value": "section-tiny" },
+          { "name": "Spacing xxsmall", "value": "section-xxsmall" },
+          { "name": "Spacing xsmall", "value": "section-xsmall" },
+          { "name": "Spacing regular", "value": "section-regular" },
+          { "name": "Spacing small", "value": "section-small" },
+          { "name": "Spacing medium", "value": "section-medium" },
+          { "name": "Spacing large", "value": "section-large" },
+          { "name": "Spacing xlarge", "value": "section-xlarge" },
+          { "name": "Spacing xxlarge", "value": "section-xxlarge" },
+          { "name": "Spacing huge", "value": "section-huge" },
+          { "name": "Spacing xhuge", "value": "section-xhuge" }
+        ]
+      },
+      {
+        "component": "select",
         "name": "sec-swoosh",
         "value": "",
         "label": "Swoosh",
