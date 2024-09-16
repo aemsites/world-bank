@@ -46,6 +46,7 @@
  p strong>em>a:any-link:visited,
  .bio-detail .media-inquiries p a:hover {
    color: var(--primary-blue-70);
+   border-bottom: 2px solid rgb(22 154 243 / 100%);
  }
 
 .bio-detail .media-inquiries p:nth-child(4) a{
