@@ -83,7 +83,7 @@ header .nav-menu-overlay .nav-menu {
   overflow: hidden scroll;
   padding: 100px 30px;
   max-width: 1456px;
-  height: 100%;
+  height: calc(100% - 200px);
   color: var(--neutrals-40);
 }
 
