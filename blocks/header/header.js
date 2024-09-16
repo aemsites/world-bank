@@ -172,7 +172,6 @@ function createSearchBox() {
   let cancelContainer = navWrapper.querySelector('.cancel-container');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
-  const hamBurgerIcon = navWrapper.querySelector('.nav-hamburger');
   document.body.classList.add('no-scroll');
   if (searchContainer) {
     const isVisible = searchContainer.style.display !== 'none';
