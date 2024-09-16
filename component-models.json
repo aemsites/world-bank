@@ -1633,7 +1633,7 @@
         ]
       },
       {
-        "component": "text",
+        "component": "aem-content",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
