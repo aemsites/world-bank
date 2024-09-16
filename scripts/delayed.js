@@ -7,9 +7,8 @@ import {
   span,
 } from './dom-helpers.js';
 import {
-  getLanguage,
+  getLanguage, fetchLanguageNavigation,
 } from './utils.js';
-
 /**
  * Swoosh on page
  */
@@ -72,9 +71,13 @@ function cookiePopUp() {
   footerTag.append(cookieSection);
 }
 
+const getNavigationData = async (langCode) => {
+  await fetchLanguageNavigation(`/${langCode}`);
+};
+
 function loadDelayed() {
   pageSwoosh();
   cookiePopUp();
+  getNavigationData(getLanguage());
 }
-
 loadDelayed();

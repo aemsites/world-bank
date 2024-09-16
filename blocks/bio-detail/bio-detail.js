@@ -1,6 +1,7 @@
 import { div, img } from '../../scripts/dom-helpers.js';
 
-import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { fetchLanguagePlaceholders, moveInstrumentation } from '../../scripts/scripts.js';
+import { createOptimizedPicture } from '../../scripts/aem.js';
 
 function createStructure(firstContainer, secondContainer, block) {
   const sectionsContainer = div(
@@ -12,14 +13,19 @@ function createStructure(firstContainer, secondContainer, block) {
 }
 
 function createSocialMediaLink(linkName, className, iconPath) {
-  if (linkName && linkName.textContent) {
+  if (linkName && linkName.textContent.trim()) {
     const anchor = document.createElement('a');
-    anchor.href = linkName.textContent;
-    anchor.title = linkName.textContent;
+    anchor.href = linkName.textContent.trim();
+    anchor.title = linkName.textContent.trim();
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
+    linkImage.alt = iconPath;
     anchor.appendChild(linkImage);
-    return div({ class: 'social-media-link' }, anchor);
+    const socialMediaLink = div({ class: 'social-media-link' }, anchor);
+    socialMediaLink.addEventListener('click', () => {
+      window.location.href = linkName.textContent;
+    });
+    return socialMediaLink;
   }
   return null;
 }
@@ -71,8 +77,8 @@ function createPersonBio(
   insta.remove();
 }
 
-function createResources() {
-  const listItems = document.querySelectorAll('.resources li a');
+function createResources(block) {
+  const listItems = block.querySelectorAll('.resources div p');
   listItems.forEach((link) => {
     const downloadImg = img({ class: 'download-image' });
     downloadImg.src = `${window.hlx.codeBasePath}/icons/download.png`;
@@ -80,10 +86,11 @@ function createResources() {
     link.insertBefore(downloadImg, link.firstChild);
   });
 }
+
 export default async function decorate(block) {
   const [
     profileImage,
-    bioName,
+    displayName,
     jobTitle,
     xLink,
     linkedinLink,
@@ -93,13 +100,17 @@ export default async function decorate(block) {
   ] = [...block.children];
 
   profileImage.className = 'profile-image';
-  bioName.className = 'bio-name';
+  displayName.className = 'display-name';
   jobTitle.className = 'job-title';
   xLink.className = 'x-link';
   linkedinLink.className = 'linkedin-lLink';
   instaLink.className = 'insta-link';
   mediaInquiries.className = 'media-inquiries';
   resources.className = 'resources';
+  const profileImg = profileImage.querySelector('div > picture > img');
+  const optimizedPic = createOptimizedPicture(profileImg.src, 'profile-img', false, [{ width: '460', height: '460', loading: 'eager' }]);
+  moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
+  profileImg.closest('picture').replaceWith(optimizedPic);
 
   const mediaTargetDiv = document.querySelector('.media-inquiries');
   const placeholderData = await fetchLanguagePlaceholders();
@@ -113,10 +124,9 @@ export default async function decorate(block) {
     div({ class: 'title' }, placeholderData.biodetailResourcesText),
     resourcesTargetDiv.firstChild,
   );
-
-  createResources();
+  createResources(block);
   createPersonBio(
-    bioName,
+    displayName,
     jobTitle,
     xLink,
     linkedinLink,
