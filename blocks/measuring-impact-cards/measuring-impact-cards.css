@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: row wrap;
     padding: 0;
-    gap: 20px;
+    gap: var(--medium);
 }
 
 .measuring-impact-cards .impact-card-wrapper{
@@ -16,24 +16,24 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
-    gap: 20px;
+    gap: var(--medium);
 }
 
 .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 12px;
+    font-size: var(--body-indicator-paragraph);
     line-height: 16px;
     letter-spacing: 1px;
     color: var(--text-on-light-subdued);
     text-wrap: wrap;
-    margin: 12px 0;
+    margin: var(--body-indicator-paragraph-spacing) 0;
     width: 100%;
 }
 
 .impact-card-body-content {
     display: grid;
-    gap: 4px 20px;
+    gap: var(--xsmall) var(--medium);
     align-items: flex-start;
     grid-template-columns: 72px auto;
 }
@@ -43,48 +43,41 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: var(--xxsmall);
     justify-content: center;
 }
 
 .impact-card-content > p {
     margin: 0;
     font-weight: 400;
-    font-size: 16px;
+    font-size: var(--body-description-paragraph);
     line-height: 20px;
     color: var(--text-on-light-emphasis);
     letter-spacing: -0.25px;
 }
 
 .impact-card-content p:first-child {
-    font-size: 28px;
+    font-size: var(--body-title-paragraph);
     line-height: 32px;
     font-weight: 700;
     letter-spacing: -0.015em;
     color: var(--primary-blue-90);
-    margin-bottom: 4px;
+    margin-bottom: var(--tiny);
 }
 
 @media (width >= 768px) {
     .measuring-impact-cards{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-    }
-
-    .measuring-impact-cards .impact-card-wrapper > a {
-        gap: 24px;
     }
 
     .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
-        margin-top: 8px;
         min-height: 32px;
-        margin-bottom: 0;
+        margin-bottom: var(--none);
     }
 
     .impact-card-body-content {
         display: grid;
-        gap: 8px 24px;
         grid-template-columns: auto;
     }
 
@@ -94,41 +87,24 @@
     }
     
     .impact-card-content > p {
-        font-size: 18px;
         line-height: 22px;
     }
 }
 
 @media (width >= 1024px) {
-    .measuring-impact-cards{
-        gap: 32px;
-    }
-
-    .measuring-impact-cards .impact-card-wrapper > a {
-        gap: 32px;
-    }
-
     .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
-        margin-top: 12px;
         min-height: auto;
     }
 
     .impact-card-body-content {
-        gap: 12px 32px;
         grid-template-columns: 112px auto;
     }
 
-    .impact-card-content {
-        gap: 8px;
-    }
-
     .impact-card-content > p {
-        font-size: 20px;
         line-height: 25px;
     }
     
     .impact-card-content p:first-child {
-        font-size: 36px;
         line-height: 41px;
     }
 }
