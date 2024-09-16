@@ -266,7 +266,8 @@ async function changeTrendingData(navSections) {
 async function overalyLoad(navSections) {
   const langCode = getLanguage();
   const placeholdersData = await fetchLanguagePlaceholders();
-  if (!navSections.querySelector('.nav-menu-overlay')) {
+  const navOverlay = navSections.querySelector(constants.NAV_MENU_OVERLAY_WITH_SELECTOR);
+  if (!navOverlay) {
     const structuredNav = formatNavigationJsonData(
       await fetchLanguageNavigation(`/${langCode}`),
     );
