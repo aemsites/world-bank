@@ -103,7 +103,6 @@ export default async function decorate(block) {
   const imageContainer = div({ class: 'image-container' });
   const firstimg = cards.at(0).querySelector('img');
   if (firstimg) {
-    console.log(firstimg);
     const imgElement = img({ src: firstimg.src, alt: firstimg.alt });
     imageContainer.append(imgElement);
     imageContainer.style.backgroundImage = `url(${
