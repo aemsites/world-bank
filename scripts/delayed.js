@@ -123,7 +123,7 @@ function buildTwitterLinks() {
         anchor.appendChild(icon);
         span.appendChild(anchor);
 
-        paragraph.innerHTML = paragraph.innerHTML.replace(tweetableTag, span);
+        p.innerHTML = p.innerHTML.replace(tweetableTag, span.outerHTML);
       });
     }
     [...p.querySelectorAll('.tweetable > a')].forEach((twitterAnchor) => {
