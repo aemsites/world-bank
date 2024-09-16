@@ -2,6 +2,33 @@ import { fetchSearch } from '../../scripts/scripts.js';
 import {
   ol, li, a, span,
 } from '../../scripts/dom-helpers.js';
+import { getMetadata } from '../../scripts/aem.js';
+
+/**
+ * Get label for the current page. If page does not exist in search index, get the label
+ * from og:title metadata or else get it from the page url in title case format.
+ * @param {*} searchIndex
+ * @returns label
+ */
+const getCurrentPageLabel = (searchIndex) => {
+  const currentPagePath = window.location.pathname;
+  let label = '';
+  const pageObj = searchIndex.filter((item) => item.path === currentPagePath);
+  if (pageObj && pageObj.length === 1) {
+    label = pageObj[0].navTitle ? pageObj[0].navTitle : pageObj[0].title;
+    if (label) {
+      return label;
+    }
+  }
+  label = getMetadata('og:title');
+  if (label) {
+    return label;
+  }
+  const currentPageName = currentPagePath.split('/').pop();
+  return currentPageName.toLowerCase().split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+    .replace(/-/g, ' ');
+};
 
 export default async function decorate(block) {
   const results = await fetchSearch();
@@ -44,14 +71,16 @@ export default async function decorate(block) {
             class: 'breadcrumb-separator',
           });
           crumb.append(pipelineSymbol);
-        } else {
-          const navTitleEl = document.createTextNode(label);
-          crumb.appendChild(navTitleEl);
         }
         list.append(crumb);
       }
     }
     pagePath = `${pagePath}/`;
   });
+  const currentPageLabel = getCurrentPageLabel(results);
+  const navTitleEl = document.createTextNode(currentPageLabel);
+  const crumb = li({ class: 'crumb' });
+  crumb.appendChild(navTitleEl);
+  list.append(crumb);
   block.innerHTML = list.outerHTML;
 }
