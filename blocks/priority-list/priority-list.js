@@ -6,8 +6,8 @@ const desktopConst = 400;
 const tabConst = 150;
 const tabTopPosition = 100;
 function createCard(card) {
-  const [cardtitle, carddesc, imgagediv, imagealt] = card.children;
-  if (!cardtitle || !carddesc || !imgagediv || !imagealt) {
+  const [cardtitle, carddesc, imagediv, imagealt] = card.children;
+  if (!cardtitle || !carddesc || !imagediv || !imagealt) {
     return;
   }
   cardtitle.textContent = cardtitle.textContent.replace(
@@ -17,7 +17,7 @@ function createCard(card) {
   card.className = cardtitle.textContent;
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
-  const image = imgagediv.querySelector('img');
+  const image = imagediv.querySelector('img');
   image.alt = imagealt.querySelector('p').textContent;
   imagealt.remove();
 }

@@ -1691,7 +1691,8 @@
         "component": "text",
         "valueType": "string",
         "name": "alttext",
-        "label": "Alt Text"
+        "label": "Alt Text",
+        "required":true
       }
     ]
   },
