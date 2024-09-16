@@ -1872,17 +1872,6 @@
     ]
   },
   {
-    "id": "breadcrumb",
-    "fields": [
-      {
-        "component": "boolean",
-        "label": "Enable Breadcrumb",
-        "name": "enableBreadcrumb",
-        "valueType": "boolean"
-      }
-    ]
-  },
-  {
     "id": "block-quote",
     "fields": [
       {

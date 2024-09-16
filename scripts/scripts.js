@@ -254,6 +254,22 @@ function loadDelayed() {
   import('./sidekick.js').then(({ initSidekick }) => initSidekick());
 }
 
+/**
+ * Fetch filtered search results
+ * @returns List of search results
+ */
+export async function fetchSearch() {
+  window.searchData = window.searchData || {};
+  if (Object.keys(window.searchData).length === 0) {
+    const lang = getLanguage();
+    const path = `/${lang}/query-index.json?limit=500&offset=0`;
+
+    const resp = await fetch(path);
+    window.searchData = JSON.parse(await resp.text()).data;
+  }
+  return window.searchData;
+}
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
