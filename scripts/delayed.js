@@ -116,7 +116,7 @@ function buildTwitterLinks() {
 
         const tweetableEl = span(
           { class: 'tweetable' },
-          a({ href: modalURL, target: '_blank', tabindex: 0 }, tweetContent, i({ class: 'lp lp-twit' }),),
+          a({ href: modalURL, target: '_blank', tabindex: 0 }, tweetContent, i({ class: 'lp lp-twit' })),
         );
         paragraph.innerHTML = paragraph.innerHTML.replace(tweetableTag, tweetableEl.outerHTML);
       });
@@ -127,7 +127,7 @@ function buildTwitterLinks() {
         const apiURL = twitterAnchor.href;
         openPopUp(apiURL);
       });
-    })
+    });
   });
 }
 
