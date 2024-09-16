@@ -114,11 +114,9 @@ function buildTwitterLinks() {
         if (channel) modalURL += `&via=${encodeURIComponent(channel.charAt(0) === '@' ? channel.substring(1) : channel)}`;
         if (hashtag) modalURL += `&hashtags=${encodeURIComponent(hashtag)}`;
 
-        /* eslint-disable-next-line no-shadow */
-        const tweetableEl = span({ class: 'tweetable' },
-          a(
-            { href: modalURL, target: '_blank', tabindex: 0 }, tweetContent, i({ class: 'lp lp-twit' }),
-          )
+        const tweetableEl = span(
+          { class: 'tweetable' },
+          a({ href: modalURL, target: '_blank', tabindex: 0 }, tweetContent, i({ class: 'lp lp-twit' }),),
         );
         paragraph.innerHTML = paragraph.innerHTML.replace(tweetableTag, tweetableEl.outerHTML);
       });
@@ -126,8 +124,8 @@ function buildTwitterLinks() {
     [...paragraph.querySelectorAll('.tweetable > a')].forEach((twitterAnchor) => {
       twitterAnchor.addEventListener('click', (event) => {
         event.preventDefault();
-        const url = twitterAnchor.href;
-        openPopUp(url);
+        const apiURL = twitterAnchor.href;
+        openPopUp(apiURL);
       });
     })
   });
