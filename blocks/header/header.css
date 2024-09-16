@@ -86,7 +86,7 @@ header .nav-menu-overlay .nav-menu {
   overflow: hidden scroll;
   padding: 100px 30px;
   max-width: 1456px;
-  height: -webkit-fill-available;
+  height: calc(100% - 200px);
   color: var(--neutrals-40);
 }
 
@@ -946,7 +946,7 @@ header nav .nav-tools {
     left: 0;
     padding: 17px 10px 17px 35px;
     border-radius: 40px;
-    width: 55vw;
+    max-width: 430px;
     margin-top: -20px;
   }
 
@@ -955,7 +955,7 @@ header nav .nav-tools {
     .nav-menu-column.right
     .browse-country
     .country-list {
-    width: 55.3vw;
+    width: 435px;
     left: 0;
     top: -15px;
     z-index: 2;
@@ -976,7 +976,7 @@ header nav .nav-tools {
     width: 30px;
     height: 30px;
     background-color: var(--primary-blue-102);
-    left: 78vw;
+    left: 650px;
     z-index: 3;
     display: flex;
     justify-content: center;
@@ -1415,12 +1415,16 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right {
-    padding-bottom: 400px;
+    padding-bottom: 300px;
     width: 50vw;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu {
     max-height: none;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li{
+    padding: 0 20px;
   }
 
   header
@@ -1440,6 +1444,7 @@ header nav .nav-tools {
     .country-list {
     left: 0;
     top: -7px;
+    width: 546px;
   }
 
   header
@@ -1448,11 +1453,12 @@ header nav .nav-tools {
     .browse-country
     input[type="text"] {
     left: 0;
+    width: 500px;
     top: 0;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
-    left: 38rem;
+    left: 31rem;
     top: 80px;
   }
 }
