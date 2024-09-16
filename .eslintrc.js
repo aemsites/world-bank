@@ -36,6 +36,7 @@ module.exports = {
         'bio-detail': 15,
         'impact-card': 6,
         heading: 7,
+        video:5,
       },
     ],
   },
