@@ -162,7 +162,7 @@ function buildModal(title, thumbnailPath, url) {
       <div class='modal-column-left'>
         <div class='modal-title'>
           <img src='${broadcastSvg}' alt='Broadcast symbol'></img>
-          <div class='modal-title-txt'>${modaltitle}</div>
+          <div class='modal-title-txt'>${modalTitle}</div>
         </div>
         <div class='event-title'>
           <div class='wblive-header'>
