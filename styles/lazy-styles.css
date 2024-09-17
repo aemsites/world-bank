@@ -133,7 +133,7 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
     }
 }
 
-@media (width >= 1024px) {
+@media (width > 1024px) {
     .columns.columns-transform-teaser .columns-img-col::before {
         width: 623px;
         height: 592px;

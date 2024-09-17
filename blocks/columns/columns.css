@@ -284,7 +284,7 @@
   padding-left: 10px;
 }
 
-@media(width<=1024px) {
+@media(width <= 1024px) {
   .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(1) {
     line-height: 35px;
   }
