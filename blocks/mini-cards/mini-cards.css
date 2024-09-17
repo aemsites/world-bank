@@ -72,6 +72,10 @@
   padding-left: 4px;
 } 
 
+.image-list-variation .mini-card {
+  border-top: unset;
+  border-bottom: 2px solid var(--neutrals-20);
+}
 
 @media (width <768px) {
   .image-list-variation .mini-card .mc-text-wrapper {
