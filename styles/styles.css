@@ -882,13 +882,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  padding: var(--nav-padding) 0 calc(var(--nav-padding) - 2px);
-  margin-bottom: 2px;
-}
-
-.homepage header {
-  padding-bottom: var(--nav-padding);
-  margin-bottom: 0;
+  padding: var(--nav-padding) 0;
 }
 
 h1,
@@ -1379,6 +1373,16 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div {
   padding: var(--section-container-space);
   border-radius: 8px;
   position: relative;
+}
+
+main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
+  padding: 0 0 0 28px;
+  border-radius: 10px 10px 0 0;
+  max-width: calc(var(--screen-width) - 28px);
+}
+
+main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
+  border-radius: 0 0 10px 10px;
 }
 
 /* Section background image */
