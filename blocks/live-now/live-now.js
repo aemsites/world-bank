@@ -127,7 +127,13 @@ function buildModal(title, thumbnailPath, url) {
 
   let cidCode, modalTitle, modalHeader, joinMsg;
   const locale = navigator.language;
-  const language = locale.split('-')[0];
+  //const language = locale.split('-')[0];
+  // extract language from the url
+  const url = window.location.href;
+  const langRegex = /https:\/\/[^\/]+\/([a-z]{2})\//;
+  const langMatches = url.match(langRegex);
+  const language = langMatches ? langMatches[1] : 'en';
+  console.log(`detected language: ${language}`);
   const cidCodes = {
     en: '?intcid=wbw_xpl_liveoverlay_en_ext',
     es: '?intcid=wbw_xpl_liveoverlay_es_ext',
