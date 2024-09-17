@@ -129,6 +129,10 @@
                 "value": "columns-default-variant"
               },
               {
+                "name": "Heading With Description",
+                "value": "columns-heading-with-description"
+              },
+              {
                 "name": "Divider Variant",
                 "value": "columns-divider-variant"
               },
