@@ -98,7 +98,7 @@
 
 .teaser-wrapper .button-container .button.dark-bg {
     background-color: var(--white);
-    color: var(--accent-blue-primary-90);
+    color: var(--text-on-light-link-primary-enabled);
 }
 
 .teaser-wrapper .button-container .button.dark-bg:focus {
