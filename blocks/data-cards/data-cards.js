@@ -11,6 +11,16 @@ function processTag(tag) {
   }
 }
 
+function processNewsTag(tag) {
+  let tagTxt = tag.innerText;
+  if (tagTxt) {
+    tagTxt = processTags(tagTxt, 'category');
+    tag.nextElementSibling.classList.add(tagTxt);
+    // TODO: Read it from placeholder
+    tag.firstElementChild.innerText = tagTxt;
+  }
+}
+
 function createRTEContainer(rteElements) {
   const rteContainer = div({ class: 'rte-container' });
   rteElements.forEach((rte) => rteContainer.append(rte));
@@ -75,7 +85,7 @@ export default async function decorate(block) {
       link.remove();
 
       if (tag) {
-        processTag(tag);
+        processNewsTag(tag);
       }
       row.parentNode.insertBefore(anchor, row);
       anchor.appendChild(row);
