@@ -140,7 +140,7 @@ main .section > div.organizational-cards-wrapper {
   padding-bottom: var(--spacing-80);
 }
 
-.organizational-card .card-link-wrapper .button-container > a.button:any-link {
+.organizational-card .card-link-wrapper .button-container > a.card-link.button:any-link {
   font-weight: 700;
   letter-spacing: 0.25px;
   height: 24px;
