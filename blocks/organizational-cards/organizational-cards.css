@@ -31,7 +31,11 @@ main .section > div.organizational-cards-wrapper {
 }
 
 .organizational-cards.block .bg-wrapper > .bg-overlay {
-  background: linear-gradient(178.99deg, rgba(1 39 64 / 0%) 13.68%, #012740 79.86%);
+  background: linear-gradient(
+    178.99deg,
+    rgba(1 39 64 / 0%) 13.68%,
+    #012740 79.86%
+  );
   position: absolute;
   height: 100%;
   width: 100%;
@@ -80,7 +84,8 @@ main .section > div.organizational-cards-wrapper {
   visibility: hidden;
 }
 
-.organizational-card.collapsed .expand-btn, .organizational-card .collapse-btn {
+.organizational-card.collapsed .expand-btn,
+.organizational-card .collapse-btn {
   height: 30px;
   width: 30px;
   display: flex;
@@ -98,8 +103,8 @@ main .section > div.organizational-cards-wrapper {
   right: 0;
 }
 
-
-.organizational-card .expand-btn:hover, .organizational-card .collapse-btn:hover {
+.organizational-card .expand-btn:hover,
+.organizational-card .collapse-btn:hover {
   background: var(--primary-blue-50);
   border: 1px solid var(--primary-blue-102);
 }
@@ -140,15 +145,25 @@ main .section > div.organizational-cards-wrapper {
   padding-bottom: var(--spacing-80);
 }
 
-.organizational-card a.button.card-link {
+.organizational-card
+  .card-link-wrapper
+  .button-container
+  > a.card-link.button:any-link {
+  font-weight: 700;
+  letter-spacing: 0.25px;
   height: 24px;
   line-height: var(--size-24);
   font-size: var(--size-14);
-  border-bottom: 2px solid rgba(255 255 255 / 24%);
+  border-bottom: 2px solid var(--divider-on-dark-subdued);
   border-radius: unset;
+  color: var(--text-on-dark-emphasis);
   background-color: unset;
   padding: 0 0 var(--spacing-32) 0;
   margin: unset;
+}
+
+.organizational-card .card-link-wrapper .button-container > a.button:hover {
+  border: 1px solid var(--transparent);
 }
 
 .organizational-card.collapsed {
@@ -168,7 +183,8 @@ main .section > div.organizational-cards-wrapper {
   margin-bottom: var(--spacing-64);
 }
 
-.organizational-card.collapsed .card-mission, .organizational-card.collapsed .card-link-wrapper {
+.organizational-card.collapsed .card-mission,
+.organizational-card.collapsed .card-link-wrapper {
   display: none;
   visibility: hidden;
 }
@@ -198,13 +214,12 @@ main .section > div.organizational-cards-wrapper {
   }
 
   .organizational-card .card-acronym {
-    font-size: var(--heading-label-tiny)
+    font-size: var(--heading-label-tiny);
   }
 
   .organizational-card.collapsed {
     padding: 0 var(--spacing-16) 0 var(--spacing-16);
   }
-
 }
 
 @media (width < 1130px) {
@@ -221,7 +236,7 @@ main .section > div.organizational-cards-wrapper {
     background: var(--primary-blue-90);
     flex-direction: column;
   }
-  
+
   .organizational-cards.block .bg-wrapper {
     display: none;
     visibility: hidden;
@@ -242,7 +257,8 @@ main .section > div.organizational-cards-wrapper {
     border-bottom: 1px solid white;
   }
 
-  .organizational-card:not(first-child), .organizational-card:not(last-child) {
+  .organizational-card:not(first-child),
+  .organizational-card:not(last-child) {
     margin-left: unset;
     margin-right: unset;
   }
@@ -276,7 +292,6 @@ main .section > div.organizational-cards-wrapper {
     min-height: unset;
   }
 
-
   .organizational-card .card-mission {
     margin-bottom: var(--spacing-32);
     min-height: unset;
@@ -308,11 +323,11 @@ main .section > div.organizational-cards-wrapper {
     right: 0;
   }
 
-  .organizational-card .card-content-wrapper .expand-btn:hover, .organizational-card .card-content-wrapper .collapse-btn:hover {
+  .organizational-card .card-content-wrapper .expand-btn:hover,
+  .organizational-card .card-content-wrapper .collapse-btn:hover {
     background: var(--primary-blue-50);
     border: 1px solid var(--primary-blue-102);
   }
-
 }
 
 @media (width < 768px) {
@@ -366,5 +381,4 @@ main .section > div.organizational-cards-wrapper {
   .organizational-card.collapsed .expand-btn {
     top: calc(50% - 16px);
   }
-
 }
