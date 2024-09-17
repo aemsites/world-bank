@@ -1375,6 +1375,16 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div {
   position: relative;
 }
 
+main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
+  padding: 0 0 0 28px;
+  border-radius: 10px 10px 0 0;
+  max-width: calc(var(--screen-width) - 28px);
+}
+
+main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
+  border-radius: 0 0 10px 10px;
+}
+
 /* Section background image */
 main .section.bg-image {
   overflow: hidden;

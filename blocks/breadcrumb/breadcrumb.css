@@ -41,7 +41,5 @@ main .breadcrumb-wrapper img {
 }
 
 @media (width >= 768px) {
-  main .breadcrumb-wrapper ol {
-    padding: 20px 0 28px;
-  }
+
 }
