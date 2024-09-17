@@ -148,7 +148,7 @@ main .section > div.organizational-cards-wrapper {
   font-size: var(--size-14);
   border-bottom: 2px solid rgba(255 255 255 / 24%);
   border-radius: unset;
-  color: rgba(255, 255, 255, 90%);
+  color: rgb(255 255 255 / 90%);
   background-color: unset;
   padding: 0 0 var(--spacing-32) 0;
   margin: unset;
