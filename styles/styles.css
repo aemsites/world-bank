@@ -63,7 +63,7 @@
   --accent-teal-90: #01505b;
   --annotations-magenta: #bd10e0;
   --blue-05: #f6fcff;
-  --blue-10: #e9f7fd;
+  --blue-10: #e9f7fd; /* --accent-blue-primary-10 */
   --blue-100: #002035;
   --blue-120: #001c2d;
   --blue-20: #cde7f9;
@@ -451,8 +451,8 @@
   --primary-blue-40: #A3DAFF;
   --primary-blue-50: #169AF3;
   --primary-blue-60: #0071BC;
-  --primary-blue-70: #004370;
-  --primary-blue-80: #004370;
+  --primary-blue-70: #004370; /* --accent-blue-primary-70 */
+  --primary-blue-80: #004370; /* --accent-blue-primary-70 */
   --primary-blue-90: #012740;
   --primary-blue-100: #012740;
   --primary-blue-101: #002035;
