@@ -8,6 +8,14 @@
     margin-bottom: 0;
 }
 
+.heading h1 {
+    font-size: var(--h1-large);
+}
+
+.heading h2 {
+    font-size: var(--h2-large);
+}
+
 .heading h1 span,
 .heading h2 span,
 .heading h3 span,
@@ -47,7 +55,6 @@
     }
 
     .heading h1 {
-        font-size: var(--h1-large);
         line-height: 67.2px;
     }
 
