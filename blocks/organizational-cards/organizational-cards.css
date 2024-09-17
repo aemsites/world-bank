@@ -140,12 +140,15 @@ main .section > div.organizational-cards-wrapper {
   padding-bottom: var(--spacing-80);
 }
 
-.organizational-card a.button.card-link {
+.organizational-card .card-link-wrapper .button-container > a.button:any-link {
+  font-weight: 700;
+  letter-spacing: 0.25px;
   height: 24px;
   line-height: var(--size-24);
   font-size: var(--size-14);
   border-bottom: 2px solid rgba(255 255 255 / 24%);
   border-radius: unset;
+  color: rgba(255, 255, 255, 90%);
   background-color: unset;
   padding: 0 0 var(--spacing-32) 0;
   margin: unset;
