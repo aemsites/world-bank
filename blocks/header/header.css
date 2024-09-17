@@ -1125,7 +1125,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a {
-    font-weight: 800;
+    font-weight: 700;
     color: var(--color-black);
   }
 
