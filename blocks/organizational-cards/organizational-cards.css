@@ -162,7 +162,7 @@ main .section > div.organizational-cards-wrapper {
   margin: unset;
 }
 
-.organizational-card .card-link-wrapper .button-container a.button:any-link:hover {
+.organizational-card .card-link-wrapper .button-container > a.button:hover {
   border: 1px solid var(--transparent);
 }
 
