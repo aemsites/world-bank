@@ -105,14 +105,14 @@
   color: var(--neutrals-100);  
 }
 
-.spinner-container {
+.tabs-panel .spinner-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
 
-.spinner {
+.tabs-panel .spinner-container .spinner {
   border: 3px solid var(--neutrals-20);
   border-top: 3px solid #00ADE4; 
   border-radius: 50%;
