@@ -27,7 +27,7 @@
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background: var(--primary-blue-100);
+    background: var(--accent-blue-primary-90);
     color: white;
     padding: 10px;
     border-radius: 50%;
@@ -70,12 +70,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
-    width: 70%;
+    width: 72%;
 }
 
 .teaser-wrapper .teaser-title {
     font-family: var(--body-font-family);
-    font-size: var(--h2-base);
+    font-size: var(--font-size-1000);
     color: white;
     text-align: center;
     padding-top: 15%;
@@ -93,83 +93,83 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
 }
 
 .teaser-wrapper .button-container .button.dark-bg {
-    background-color: var(--color-white);
-    color: var(--primary-blue-100);
+    background-color: var(--white);
+    color: var(--accent-blue-primary-90);
 }
 
 .teaser-wrapper .button-container .button.dark-bg:focus {
-    background-color: var(--primary-blue-20);
-    border: 1px solid var(--primary-blue-80);
+    background-color: var(--accent-blue-primary-10);
+    border: 1px solid var(--accent-blue-primary-70);
 }
 
 .teaser-wrapper .button-container .button.dark-bg:hover {
-    border: 1px solid var(--primary-blue-50);
+    border: 1px solid var(--accent-blue-primary-40);
 }
 
 .teaser-wrapper .button-container .button.dark-bg-ul {
-    background-color: var(--color-white);
-    color: var(--primary-blue-100);
-    text-decoration: underline var(--primary-blue-100);
+    background-color: var(--white);
+    color: var(--accent-blue-primary-90);
+    text-decoration: underline var(--accent-blue-primary-90);
 }
 
 .teaser-wrapper .button-container .button.dark-bg-ul:focus {
-    background-color: var(--primary-blue-20);
-    border: 1px solid var(--primary-blue-80);
+    background-color: var(--accent-blue-primary-10);
+    border: 1px solid var(--accent-blue-primary-70);
 }
 
 .teaser-wrapper .button-container .button.dark-bg-ul:hover {
-    border: 1px solid var(--primary-blue-50);
+    border: 1px solid var(--accent-blue-primary-40);
 }
 
 .teaser-wrapper .button-container .button.light-bg-1 {
-    background-color: var(--primary-blue-80);
-    color: var(--color-white);
+    background-color: var(--accent-blue-primary-70);
+    color: var(--white);
 }
 
 .teaser-wrapper .button-container .button.light-bg-1:focus {
-    background-color: var(--primary-blue-100);
-    color: var(--color-white);
+    background-color: var(--accent-blue-primary-90);
+    color: var(--white);
 }
 
 .teaser-wrapper .button-container .button.light-bg-1:hover {
-    background-color: var(--primary-blue-50);
-    color: var(--color-black);
+    background-color: var(--accent-blue-primary-40);
+    color: var(--black);
 }
 
 .teaser-wrapper .button-container .button.light-bg-2 {
     background-color: rgb(255 255 255 / 0%);
-    color: var(--primary-blue-100);
-    border: 1px solid var(--primary-blue-80);
+    color: var(--accent-blue-primary-90);
+    border: 1px solid var(--accent-blue-primary-70);
 }
 
 .teaser-wrapper .button-container .button.light-bg-2:focus {
-    border: 1px solid var(--color-black);
-    color: var(--color-black);
-    background-color: var(--primray-blue-50);
+    border: 1px solid var(--black);
+    color: var(--black);
+    background-color: var(--accent-blue-primary-40);
 }
 
 .teaser-wrapper .button-container .button.light-bg-2:hover {
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--black);
 }
 
 .teaser-wrapper .button-container .button.light-bg-ul {
-    background-color: var(--primary-blue-80);
-    color: var(--primary-blue-100);
-    text-decoration: underline var(--color-white);
+    background-color: var(--accent-blue-primary-70);
+    color: var(--accent-blue-primary-90);
+    text-decoration: underline var(--white);
 }
 
 .teaser-wrapper .button-container .button.light-bg-ul:focus {
-    background-color: var(--primary-blue-100);
-    color: var(--color-white);
+    background-color: var(--accent-blue-primary-90);
+    color: var(--white);
 }
 
 .teaser-wrapper .button-container .button.light-bg-ul:hover {
-    background-color: var(--primary-blue-50);
-    color: var(--color-black);
+    background-color: var(--accent-blue-primary-40);
+    color: var(--black);
 }
 
 .teaser-wrapper .teaser-swoosh-wrapper {
@@ -214,7 +214,7 @@
 
 .teaser-wrapper .swoosh-bg {
     border-radius: 50%;
-    background-color: var(--primary-blue-80);
+    background-color: var(--accent-blue-primary-70);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

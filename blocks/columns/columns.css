@@ -172,14 +172,35 @@
 
 /* Column alignment - End */
 
-.columns h2 {
-  font-weight: 400;
-  text-transform: uppercase;
-}
+  .columns h2 {
+    font-weight: 400;
+  }
+  
+  .columns h2 strong {
+    font-weight: 700;
+  }
 
-.columns h2 strong {
-  font-weight: 700;
-}
+  .columns.columns-2-cols.columns-heading-with-description div > div {
+    margin-bottom:var(--regular);
+  }
+
+  .columns.columns-2-cols.columns-heading-with-description > div h2 {
+    font-size:var(--h2-base);
+    line-height: 112%;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin:0;
+  }
+
+  .columns.columns-2-cols.columns-heading-with-description > div h2 > strong {
+      font-weight: 700;
+    }
+
+  .columns.columns-2-cols.columns-heading-with-description > div > div > p {
+    font-size:var(--body-large);
+    line-height: 125%;
+    margin:0
+  }
 
 @media (width >= 1024px) {
   .columns.columns-transform-teaser > div p:nth-child(1) {

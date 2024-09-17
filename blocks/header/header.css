@@ -31,16 +31,13 @@ header:has(.nav-menu-overlay.open) {
 }
 
 header nav {
+  height: var(--nav-height);
   display: flex;
   align-items: center;
   padding: 0 0 calc(var(--nav-padding) - 2px);
   gap: 20px;
   position: relative;
   border-bottom: 2px solid var(--neutrals-20);
-}
-
-.homepage header nav {
-  padding-bottom: var(--nav-padding);
 }
 
 header nav p {
@@ -773,7 +770,6 @@ header nav .nav-tools {
   z-index: 1;
   width: 100%;
   top: 84px;
-  border-top: 2px solid var(--neutrals-20);
 }
 
 .search-input-wrapper {
@@ -793,7 +789,7 @@ header nav .nav-tools {
 
 @media (width >= 1024px) {
   .search-container {
-    top: 114px;
+    top: 120px;
   }
 
   .search-input-container {
@@ -1125,7 +1121,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a {
-    font-weight: 800;
+    font-weight: 700;
     color: var(--color-black);
   }
 
