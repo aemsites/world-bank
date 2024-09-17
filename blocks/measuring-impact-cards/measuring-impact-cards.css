@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: row wrap;
     padding: 0;
-    gap: var(--medium);
+    gap: var(--spacing-medium);
 }
 
 .measuring-impact-cards .impact-card-wrapper{
@@ -16,7 +16,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
-    gap: var(--medium);
+    gap: var(--spacing-medium);
 }
 
 .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
@@ -33,7 +33,7 @@
 
 .impact-card-body-content {
     display: grid;
-    gap: var(--xsmall) var(--medium);
+    gap: var(--spacing-xsmall) var(--spacing-medium);
     align-items: flex-start;
     grid-template-columns: 72px auto;
 }
@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--xxsmall);
+    gap: var(--spacing-xxsmall);
     justify-content: center;
 }
 
@@ -61,8 +61,8 @@
     line-height: 32px;
     font-weight: 700;
     letter-spacing: -0.015em;
-    color: var(--primary-blue-90);
-    margin-bottom: var(--tiny);
+    color: var(--accent-blue-primary-90);
+    margin-bottom: var(--spacing-tiny);
 }
 
 @media (width >= 768px) {
@@ -73,7 +73,7 @@
 
     .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
         min-height: 32px;
-        margin-bottom: var(--none);
+        margin-bottom: var(--spacing-none);
     }
 
     .impact-card-body-content {
