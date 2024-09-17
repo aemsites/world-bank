@@ -125,7 +125,7 @@
   font-weight: 700;
   font-size: var(--font-size-300);
   line-height: 140%;
-  color: var(--white);
+  color: var(--text-on-dark-emphasis);
 }
 
 .curated-cards.list ul li .curated-cards-card-text-wrapper a{
