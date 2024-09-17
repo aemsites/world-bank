@@ -125,28 +125,49 @@ function buildModal(title, thumbnailPath, url) {
   const discussionSvg = `${window.hlx.codeBasePath}/icons/discussion.svg`;
   const playSvg = `${window.hlx.codeBasePath}/icons/video_play.svg`;
 
-  let cidCode;
+  let cidCode, modalTitle, modalHeader, joinMsg;
   const locale = navigator.language;
   const language = locale.split('-')[0];
   const cidCodes = {
-    en: '?intcid=wbw_xpl_overlay_en_ext',
-    es: '?intcid=wbw_xpl_overlay_es_ext',
-    fr: '?intcid=wbw_xpl_overlay_fr_ext',
-    ar: '?intcid=wbw_xpl_overlay_ar_ext',
+    en: '?intcid=wbw_xpl_liveoverlay_en_ext',
+    es: '?intcid=wbw_xpl_liveoverlay_es_ext',
+    fr: '?intcid=wbw_xpl_liveoverlay_fr_ext',
+    ar: '?intcid=wbw_xpl_liveoverlay_ar_ext',
+  };
+  const modalTitles = {
+    en: 'Live Now',
+    es: 'En vivo',
+    fr: 'En direct maintenant',
+    ar: 'مباشر الآن',
+  };
+  const modalHeaders = {
+    en: 'WORLD BANK LIVE',
+    es: 'BANCO MUNDIAL EN VIVO',
+    fr: 'BANQUE MONDIALE LIVE',
+    ar: 'البنك الدولي مباشر',
+  };
+  const joinMsgs = {
+    en: 'Join Now',
+    es: 'Únete ahora',
+    fr: 'Connectez-vous maintenant',
+    ar: 'انضم الآن',
   };
   if (language in cidCodes) cidCode = cidCodes[language] || cidCodes.en;
+  if (language in modalTitles) modalTitle = modalTitles[language] || modalTitle.en;
+  if (language in modalHeaders) modalHeader = modalHeaders[language] || modalHeaders.en;
+  if (language in joinMsg) joinMsg = joinMsg[language] || joinMsg.en;
 
   const wbModal = `
     <div class='modal-content-wrapper'>
       <div class='modal-column-left'>
         <div class='modal-title'>
           <img src='${broadcastSvg}' alt='Broadcast symbol'></img>
-          <div class='modal-title-txt'>Live Now</div>
+          <div class='modal-title-txt'>${modaltitle}</div>
         </div>
         <div class='event-title'>
           <div class='wblive-header'>
             <img src='${discussionSvg}' alt='Discussion symbol'></img>
-            <div class='wblive-header-txt'>WORLD BANK LIVE</div>
+            <div class='wblive-header-txt'>${modalHeader}</div>
           </div>
           <div class='event-title-txt'>${title}</div>
         </div>
@@ -157,7 +178,7 @@ function buildModal(title, thumbnailPath, url) {
           <div class='event-play'>
             <img src='${playSvg}' alt='Play symbol'></img>
           </div>
-          <div class='join-btn-txt'>Join Now</div>
+          <div class='join-btn-txt'>${joinMsg}</div>
         </a>
       </div>
     </div>
