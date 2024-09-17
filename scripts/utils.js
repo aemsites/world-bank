@@ -1,4 +1,5 @@
 export const TAG_ROOT = 'world-bank:';
+export const SUPPORTED_LANGUAGES = ['en', 'zh', 'ru', 'fr', 'es', 'ar'];
 
 let lang;
 
@@ -40,6 +41,9 @@ export function getPathDetails() {
 export function getLanguage() {
   if (!lang) {
     lang = getPathDetails().langCode;
+    if (!SUPPORTED_LANGUAGES.includes(lang)) {
+      lang = 'en';
+    }
   }
   return lang;
 }
