@@ -173,19 +173,6 @@ export const fetchLangDatabyFileName = async (fileName) => {
     return [];
   }
 };
-export const fetchGlobalProperty = async (key) => {
-  try {
-    const response = await fetch('/properties.json');
-    if (!response.ok) {
-      throw new Error('Failed to load data');
-    }
-    const json = await response.json();
-    const item = json.data.find((entry) => entry.Key === key);
-    return item ? item.Value : '';
-  } catch (error) {
-    return '';
-  }
-};
 
 /**
  * Create section background image

@@ -1,6 +1,5 @@
-import { getMetadata, toClassName } from '../../scripts/aem.js';
+import { getMetadata, toClassName, fetchPlaceholders } from '../../scripts/aem.js';
 import { a, button, div } from '../../scripts/dom-helpers.js';
-import { fetchGlobalProperty } from '../../scripts/scripts.js';
 import { getLanguage, fetchData } from '../../scripts/utils.js';
 import { loadFragment } from '../fragment/fragment.js';
 
@@ -9,8 +8,9 @@ const upiId = getMetadata('upi');
 
 async function getTabUrl(type) {
   try {
-    const tabUrl = `${type}_url`;
-    const rawUrl = await fetchGlobalProperty(tabUrl);
+    const tabUrl = `${type}Url`;
+    const globalProperties = await fetchPlaceholders();
+    const rawUrl = globalProperties[`${tabUrl}`];
     return rawUrl.replace('{langCode}', langCode).replace('{upiId}', upiId);
   } catch (error) {
     // eslint-disable-next-line no-console
