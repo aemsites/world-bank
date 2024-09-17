@@ -43,6 +43,15 @@
 @media (width >=1024px) {
     .heading .eyebrowtext {
         line-height: 20px;
-        font-size: var(--body-small);
+        font-size: var(--body-medium);
+    }
+
+    .heading h1 {
+        font-size: var(--h1-large);
+        line-height: 67.2px;
+    }
+
+    .heading h2 {
+        line-height: 44.8px;
     }
 }
