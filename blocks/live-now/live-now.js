@@ -130,7 +130,7 @@ function buildModal(title, thumbnailPath, url) {
   //const language = locale.split('-')[0];
   // extract language from the url
   const windowUrl = window.location.href;
-  const langRegex = /https:\/\/[^\/]+\/([a-z]{2})\//;
+  const langRegex = /https:\/\/[^\/]+\/([a-z]{2})(\/|$)/;
   const langMatches = windowUrl.match(langRegex);
   const language = langMatches ? langMatches[1] : 'en';
   console.log(`detected language: ${language}`);
