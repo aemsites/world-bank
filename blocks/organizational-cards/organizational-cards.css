@@ -163,7 +163,7 @@ main .section > div.organizational-cards-wrapper {
 }
 
 .organizational-card .card-link-wrapper .button-container > a.button:hover {
-  border: none;
+  border: 1px solid var(--transparent);
 }
 
 .organizational-card.collapsed {
