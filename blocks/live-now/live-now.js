@@ -129,9 +129,9 @@ function buildModal(title, thumbnailPath, url) {
   const locale = navigator.language;
   //const language = locale.split('-')[0];
   // extract language from the url
-  const url = window.location.href;
+  const windowUrl = window.location.href;
   const langRegex = /https:\/\/[^\/]+\/([a-z]{2})\//;
-  const langMatches = url.match(langRegex);
+  const langMatches = windowUrl.match(langRegex);
   const language = langMatches ? langMatches[1] : 'en';
   console.log(`detected language: ${language}`);
   const cidCodes = {
