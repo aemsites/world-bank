@@ -52,9 +52,9 @@
 .cards-container .rp-card .text-content .desc {
   font-size: var(--size-16);
   line-height: 22px;
-  padding: 5px 0 15px;
+  padding: var(--regular) 0 var(--regular);
   border-top: 1px solid #e7edf3;
-  margin-top: 40px;
+  margin-top: var(--xlarge);
 }
 
 .cards-container .rp-card .text-content a {

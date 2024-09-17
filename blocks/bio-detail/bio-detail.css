@@ -1,25 +1,75 @@
-.bio-detail .resources ul {
-  list-style: none;
-  padding: var(--none);
-}
-
-.bio-detail .resources ul li a {
-  color: var(--primary-blue-70);
-  text-decoration: none;
-  font-size: var(--body-medium);
-}
-
-.bio-detail .download-image {
-  margin-right: var(--xxsmall);
-}
-
 .bio-detail .sections-container {
+  background-image: url('../../icons/background-swoosh.png');
+  background-repeat: no-repeat;
+  background-position: right top;
   padding: var(--regular) 28px var(--medium);
-  background: var(--neutrals-20);
+  background-color: var(--neutrals-20);
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
+  gap: 30px;
+}
+
+.profile-image img{
+  width: 100%;
+  height: 278px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.social-media-link img {
+  width: 15px;
+  height: 15px;
+}
+
+.bio-detail .resources p a {
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  padding: 4px 0;
+  font-weight: 400;
+}
+
+.bio-detail .media-inquiries p em {
+  display: flex;
+}
+
+.bio-detail .media-inquiries p a {
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--text-color);
+  font-weight: normal;
+}
+
+.bio-detail .media-inquiries p:nth-child(4) a {
+  text-decoration: underline;
+}
+
+.bio-detail .media-inquiries p a:hover{
+  color: var(--primary-blue-70);
+  border-bottom: 2px solid rgb(22 154 243 / 100%);
+}
+
+.bio-detail .media-inquiries p:nth-child(4) a:hover {
+  text-decoration: none
+}
+
+.bio-detail .resources p strong>em>a:any-link:visited {
+  color: var(--primary-blue-70);
+  border-bottom: 2px solid rgb(22 154 243 / 100%);
+}
+
+.bio-detail .resources p, .bio-detail .resources p em {
+  display: flex;
+  align-items: center;
+}
+
+.bio-detail .download-image {
+  margin-right: var(--xxsmall);
+  width: 8px;
+  height: 14px;
 }
 
 .bio-detail .sections-container p {
@@ -33,9 +83,10 @@
 .bio-detail .second-container {
   display: flex;
   flex-direction: column-reverse;
+  gap: var(--huge);
 }
 
-.bio-detail .sections-container .bio-name {
+.bio-detail .sections-container .display-name {
   font-size: 36px;
   font-weight: bold;
   color: var(--primary-blue-90);
@@ -62,6 +113,12 @@
   justify-content: center;
   align-items: center;
   background-color: var(--color-white);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.bio-detail .sections-container .name-job-social .social-media .social-media-link:hover {
+  border: 2px solid var(--primary-blue-50);
 }
 
 .bio-detail .media-resources {
@@ -77,14 +134,18 @@
 }
 
 .bio-detail .title {
-  border-bottom: 1px solid var(--neutrals-103);
+  border-bottom: 2px solid var(--neutrals-103);
   margin-bottom: 20px;
   font-size: var(--body-small);
-  font-weight: bold;
+  font-weight: 800;
   padding-bottom: var(--xsmall);
 }
 
 @media (width >=768px) {
+  .profile-image img {
+    height: 264px;
+  }
+
   .bio-detail .second-container {
     display: grid;
     gap: 28px;
@@ -98,17 +159,33 @@
   }
 
   .bio-detail .sections-container {
-    padding: var(--huge) var(--huge) 88px;
+    padding: var(--huge) var(--huge) var(--xhuge);
   }
 }
 
 @media (width >=1024px) {
+  .sections-container .first-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .bio-detail .media-resources {
     gap: var(--xhuge);
     margin-top: 70px;
   }
 
-  .bio-detail .sections-container .bio-name {
+  .bio-detail .second-container .profile-image {
+    height: 460px;
+  }
+
+  .bio-detail .second-container .profile-image div img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .bio-detail .sections-container .display-name {
     font-size: var(--h1-base);
     line-height: 58px;
   }
@@ -131,5 +208,6 @@
 
   .bio-detail .second-container {
     grid-template-columns: auto;
+    justify-items: end;
   }
 }
