@@ -125,3 +125,19 @@ export async function fetchLanguageNavigation(langCode) {
   }
   await window.navigationData[langCode];
 }
+
+export async function fetchData(url, method = 'GET', headers = {}, body = null) {
+  try {
+    const options = { method, headers: { ...headers } };
+    if (method === 'POST' && body) { options.headers['Content-Type'] = 'application/json'; options.body = JSON.stringify(body); }
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(`Error fetching data from ${url}:`, error);
+    return null;
+  }
+}
