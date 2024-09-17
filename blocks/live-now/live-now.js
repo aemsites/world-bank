@@ -155,7 +155,7 @@ function buildModal(title, thumbnailPath, url) {
   if (language in cidCodes) cidCode = cidCodes[language] || cidCodes.en;
   if (language in modalTitles) modalTitle = modalTitles[language] || modalTitle.en;
   if (language in modalHeaders) modalHeader = modalHeaders[language] || modalHeaders.en;
-  if (language in joinMsg) joinMsg = joinMsg[language] || joinMsg.en;
+  if (language in joinMsgs) joinMsg = joinMsgs[language] || joinMsgs.en;
 
   const wbModal = `
     <div class='modal-content-wrapper'>
