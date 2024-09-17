@@ -3,8 +3,8 @@
 }
 
 .email-signup-container .signup-description {
-  font-size: var(--body-medium);
-  margin-bottom: var(--large);
+  font-size: var(--font-size-300);
+  margin-bottom: var(--spacing-large);
   margin-top: 0;
 }
 
@@ -14,9 +14,9 @@
   margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #4C809C;
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
   width: 100%;
-  color: #000D1AB2
+  color: var(--text-on-light-default);
 }
 
 .email-signup-container .checkbox-group {
@@ -24,11 +24,11 @@
   gap: 8px;
   margin-top: 18px;
   align-items: start;
-  font-size: var(--body-tiny);
+  font-size: var(--font-size-100);
 }
 
 .email-signup-container input[type="checkbox"] {
-  border: 1.5px solid #00396B3D;
+  border: 1.5px solid var(--neutral-alpha-24-a);
   height: 20px;
   width: 20px;
 }
@@ -39,8 +39,8 @@
 
 .input-group .floating-placeholder {
   position: absolute;
-  color: #000D1A91;
-  font-size: var(--body-medium);
+  color: var(--text-on-light-subdued);
+  font-size: var(--font-size-300);
   top:13px;
   left: 10px;
   white-space: nowrap;
@@ -59,12 +59,12 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
 }
 
 .email-signup-container .checkbox-group label p a {
-  font-size: var(--body-tiny);
+  font-size: var(--font-size-100);
 }
 
 .email-signup-container button#signup-btn,
 .email-signup-container button#signup-btn-desktop {
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -87,8 +87,8 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
 }
 
 .email-signup-container .error-message {
-  color: red;
-  font-size: var(--body-tiny);
+  color: var(--global-states-negative-high);
+  font-size: var(--font-size-100);
   margin-top: 10px;
   background-image: url("../../icons/exclamation.png");
   background-repeat: no-repeat;
@@ -99,8 +99,8 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
 
 .email-signup-container input[type="email"].input-error,
 .email-signup-container [type="checkbox"]:not(:checked).input-error {
-  border: 1px solid red;
-  background-color: #FDF2F2;
+  border: 1px solid var(--global-states-negative-high);
+  background-color: var(--text-on-state-error-default);
 }
 
 
@@ -115,14 +115,14 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
   }
 
   .email-signup-container .signup-description {
-    margin-bottom: var(--xlarge);
+    margin-bottom: var(--spacing-xlarge);
   }
 
   .email-signup-container input[type="email"],
   .email-signup-container input[type="text"] {
     padding: 22px 0 10px 19px;
     font-size: 14px;
-    border: 1px solid #00396B3D;
+    border: 1px solid var(--neutral-alpha-24-a);
     margin-right: 0;
   }
 
@@ -161,11 +161,11 @@ input:focus + .floating-placeholder, input:not(:placeholder-shown) + .floating-p
   }
 
   .email-signup-container .checkbox-group label p {
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
   }
 
   .email-signup-container .checkbox-group label p a {
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
   }
 }
 
