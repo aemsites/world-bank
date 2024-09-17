@@ -63,7 +63,7 @@
   --accent-teal-90: #01505b;
   --annotations-magenta: #bd10e0;
   --blue-05: #f6fcff;
-  --blue-10: #e9f7fd;
+  --blue-10: #e9f7fd; /* --accent-blue-primary-10 */
   --blue-100: #002035;
   --blue-120: #001c2d;
   --blue-20: #cde7f9;
@@ -451,8 +451,8 @@
   --primary-blue-40: #A3DAFF;
   --primary-blue-50: #169AF3;
   --primary-blue-60: #0071BC;
-  --primary-blue-70: #004370;
-  --primary-blue-80: #004370;
+  --primary-blue-70: #004370; /* --accent-blue-primary-70 */
+  --primary-blue-80: #004370; /* --accent-blue-primary-70 */
   --primary-blue-90: #012740;
   --primary-blue-100: #012740;
   --primary-blue-101: #002035;
@@ -882,13 +882,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  padding: var(--nav-padding) 0 calc(var(--nav-padding) - 2px);
-  margin-bottom: 2px;
-}
-
-.homepage header {
-  padding-bottom: var(--nav-padding);
-  margin-bottom: 0;
+  padding: var(--nav-padding) 0;
 }
 
 h1,
@@ -1379,6 +1373,16 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div {
   padding: var(--section-container-space);
   border-radius: 8px;
   position: relative;
+}
+
+main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
+  padding: 0 0 0 28px;
+  border-radius: 10px 10px 0 0;
+  max-width: calc(var(--screen-width) - 28px);
+}
+
+main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
+  border-radius: 0 0 10px 10px;
 }
 
 /* Section background image */
