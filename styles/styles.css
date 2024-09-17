@@ -63,7 +63,7 @@
   --accent-teal-90: #01505b;
   --annotations-magenta: #bd10e0;
   --blue-05: #f6fcff;
-  --blue-10: #e9f7fd;
+  --blue-10: #e9f7fd; /* --accent-blue-primary-10 */
   --blue-100: #002035;
   --blue-120: #001c2d;
   --blue-20: #cde7f9;
@@ -122,7 +122,7 @@
   --neutral-solid-15-s: #dae3eb;
   --neutral-solid-20-s: #d4dee8;
   --neutral-solid-30-s: #bdccdb;
-  --neutral-solid-40-s: #8a9db1;
+  --neutral-solid-40-s: #8a9db1; /* --neutrals-50 */
   --neutral-solid-50-s: #586e84;
   --neutral-solid-60-s: #4b5e71;
   --neutral-solid-70-s: #3d4c5c;
@@ -159,17 +159,17 @@
 
   /* Colors: Semantic */
   --accent-blue-primary-05: var(--blue-05);
-  --accent-blue-primary-10: var(--blue-10);
+  --accent-blue-primary-10: var(--blue-10); /* --primary-blue-20 */
   --accent-blue-primary-100: var(--blue-100);
   --accent-blue-primary-120: var(--blue-120);
   --accent-blue-primary-20: var(--blue-20);
   --accent-blue-primary-30: var(--blue-30);
-  --accent-blue-primary-40: var(--blue-40);
+  --accent-blue-primary-40: var(--blue-40); /* --primary-blue-50 */
   --accent-blue-primary-50: var(--blue-50-base);
   --accent-blue-primary-60: var(--blue-60);
-  --accent-blue-primary-70: var(--blue-70);
+  --accent-blue-primary-70: var(--blue-70); /* --primary-blue-80 */
   --accent-blue-primary-80: var(--blue-80);
-  --accent-blue-primary-90: var(--blue-90);
+  --accent-blue-primary-90: var(--blue-90); /* --primary-blue-100 */
   --background-black: var(--black);
   --background-white: var(--white);
   --background-container-primary: var(--global-primary);
@@ -451,8 +451,8 @@
   --primary-blue-40: #A3DAFF;
   --primary-blue-50: #169AF3;
   --primary-blue-60: #0071BC;
-  --primary-blue-70: #004370;
-  --primary-blue-80: #004370;
+  --primary-blue-70: #004370; /* --accent-blue-primary-70 */
+  --primary-blue-80: #004370; /* --accent-blue-primary-70 */
   --primary-blue-90: #012740;
   --primary-blue-100: #012740;
   --primary-blue-101: #002035;
@@ -575,7 +575,7 @@
   --light-color: #eee;
   --dark-color: #ccc;
   --text-color: var(--neutrals-100);
-  --color-white: #FFF;
+  --color-white: #FFF; /* white */
   --color-black: #000;
 
   /* Navigation Menu */
@@ -748,24 +748,24 @@
   :root {
     /* typography specific - h1..h6, body ..etc */
     --h1-huge: var(--size-72);
-    --h1-large: var(--size-60);
-    --h1-base: var(--size-48);
-    --h2-large: var(--size-40);
-    --h2-base: var(--size-40);
-    --h3-large: var(--size-32);
-    --h3-base: var(--size-32);
-    --heading-label-large: var(--size-48);
-    --heading-label-base: var(--size-40);
-    --heading-label-small: var(--size-36);
-    --heading-label-tiny: var(--size-28);
+    --h1-large: var(--size-60); /* --font-size-1200 */
+    --h1-base: var(--size-48); /* --font-size-1100 */
+    --h2-large: var(--size-40); /* --font-size-1000 */
+    --h2-base: var(--size-40); /* --font-size-1000 */
+    --h3-large: var(--size-32); /* --font-size-800 */
+    --h3-base: var(--size-32); /* --font-size-800 */
+    --heading-label-large: var(--size-48); /* --font-size-1100 */
+    --heading-label-base: var(--size-40); /* --font-size-1000 */
+    --heading-label-small: var(--size-36); /* --font-size-900 */
+    --heading-label-tiny: var(--size-28); /* --font-size-700 */
 
     /* Body variables */
-    --default: var(--size-20);
-    --body-huge: var(--size-24);
-    --body-large: var(--size-20);
-    --body-medium: var(--size-16);
-    --body-small: var(--size-14);
-    --body-tiny: var(--size-12);
+    --default: var(--size-20); /* --font-size-500 */
+    --body-huge: var(--size-24); /* --font-size-600 */
+    --body-large: var(--size-20); /* --font-size-500 */
+    --body-medium: var(--size-16); /* --font-size-300 */
+    --body-small: var(--size-14); /* --font-size-200 */
+    --body-tiny: var(--size-12); /* --font-size-100 */
 
     /** Measuring impact card paragraph varibales **/
   --body-indicator-paragraph: var(--size-12);
@@ -882,13 +882,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  padding: var(--nav-padding) 0 calc(var(--nav-padding) - 2px);
-  margin-bottom: 2px;
-}
-
-.homepage header {
-  padding-bottom: var(--nav-padding);
-  margin-bottom: 0;
+  padding: var(--nav-padding) 0;
 }
 
 h1,
@@ -1379,6 +1373,16 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div {
   padding: var(--section-container-space);
   border-radius: 8px;
   position: relative;
+}
+
+main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
+  padding: 0 0 0 28px;
+  border-radius: 10px 10px 0 0;
+  max-width: calc(var(--screen-width) - 28px);
+}
+
+main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
+  border-radius: 0 0 10px 10px;
 }
 
 /* Section background image */
