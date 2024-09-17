@@ -1287,6 +1287,23 @@
         "label": "Mini Cards Heading",
         "valueType": "string",
         "required": true
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "classes",
+        "value": "",
+        "label": "Classes",
+        "options": [
+          {
+            "name": "Mini Card",
+            "value": "mini-card-variation"
+          },
+          {
+            "name": "Image List",
+            "value": "image-list-variation"
+          }
+        ]
       }
     ]
   },
