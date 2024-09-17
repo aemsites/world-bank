@@ -154,9 +154,9 @@ main .section > div.organizational-cards-wrapper {
   height: 24px;
   line-height: var(--size-24);
   font-size: var(--size-14);
-  border-bottom: 2px solid rgba(255 255 255 / 24%);
+  border-bottom: 2px solid var(--divider-on-dark-subdued);
   border-radius: unset;
-  color: rgb(255 255 255 / 90%);
+  color: var(--text-on-dark-emphasis);
   background-color: unset;
   padding: 0 0 var(--spacing-32) 0;
   margin: unset;
