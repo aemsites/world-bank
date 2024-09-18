@@ -1,6 +1,6 @@
 /* Global Footer  */
 footer {
-  background-color: var(--primary-blue-100);
+  background-color: var(--accent-blue-primary-90);
 }
   
 footer .block {
@@ -10,7 +10,7 @@ footer .block {
 }
 
 footer a {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .ft-social a {
@@ -18,7 +18,7 @@ footer a {
 }
 
 footer a:any-link {
-  color: var(--color-white);
+  color: var(--white);
   font-size: 14px;
   line-height: 17px;
   white-space: nowrap;
@@ -27,7 +27,7 @@ footer a:any-link {
 }
 
 footer a:visited {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 footer a:hover {
@@ -50,7 +50,7 @@ footer ul li {
   display: grid;
   grid-template-columns: 0.5fr 1fr 2fr;
   grid-column-gap: 0;
-  border-bottom: 1px var(--primary-blue-103) solid;
+  border-bottom: 1px var(--accent-blue-primary-60) solid;
   padding: 44px 0 42px;
 }
 
@@ -71,7 +71,7 @@ footer ul li {
 
 .ft-social .ft-social-list:first-child {
   padding-right: 40px;
-  border-right: 1px solid var(--primary-blue-103);
+  border-right: 1px solid var(--accent-blue-primary-60);
   border-left: 0;
 }
 
@@ -159,7 +159,7 @@ html[dir="rtl"] .ft-social .ft-social-list:nth-child(2)>ul>li:not(:first-child) 
 
 html[dir="rtl"] .ft-social-list:first-child {
   border-right: 0;
-  border-left: 1px solid var(--primary-blue-103);
+  border-left: 1px solid var(--accent-blue-primary-60);
   padding-right: 0;
   padding-left: 40px;
 }
@@ -201,19 +201,19 @@ html[dir="rtl"] .ft-social-list:first-child {
 }
 
 .ft-main .ft-main-item:last-child {
-  border-left: 1px solid var(--primary-blue-103);
+  border-left: 1px solid var(--accent-blue-primary-60);
   margin: 0 0 0 20px;
   min-width: 40%;
   padding: 0 0 0 48px;
 }
 
 footer .section.bg-primary-blue-90 a:any-link:visited:not(.button) {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 html[dir="rtl"] .ft-main-item:last-child {
   border-left: 0;
-  border-right: 1px solid var(--primary-blue-103);
+  border-right: 1px solid var(--accent-blue-primary-60);
   padding: 0 48px 0 0;
 }
 
@@ -225,7 +225,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   justify-content: space-between;
-  border-top: 1px var(--primary-blue-103) solid;
+  border-top: 1px var(--accent-blue-primary-60) solid;
   padding: 42px 0 72px;
   margin: auto;
   font-size: 14px;
@@ -266,7 +266,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     justify-content: center;
     padding: 32px 0 0;
     margin: 32px 0 0;
-    border-top: 1px solid var(--primary-blue-103);
+    border-top: 1px solid var(--accent-blue-primary-60);
   }
 
   .ft-main .ft-main-item:last-child ul {
@@ -312,7 +312,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     grid-column: 1 / 4;
     grid-row: 2 / 2;
     border: 0;
-    border-top: 1px solid var(--primary-blue-103);
+    border-top: 1px solid var(--accent-blue-primary-60);
     padding: 32px 0 0;
     margin: 0;
     width: 100%;
@@ -323,7 +323,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   }
     
   .ft-main .ft-main-item:last-child ul li a {
-    font-size: var(--size-14);
+    font-size: 14px;
   }
     
   .ft-main .ft-main-item:last-child p {
@@ -374,7 +374,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     border-right: 0;
     border-left: 0;
     padding-bottom: 28px;
-    border-bottom: 1px solid var(--primary-blue-103);
+    border-bottom: 1px solid var(--accent-blue-primary-60);
   }
 
   .ft-social .ft-social-list:nth-child(2) {
@@ -421,7 +421,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     flex-wrap: wrap;
     justify-content: center;
     padding: 32px 0 0;
-    border-top: 1px solid var(--primary-blue-103);
+    border-top: 1px solid var(--accent-blue-primary-60);
     margin: 0;
   }
 
@@ -436,7 +436,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   }
 
   .ft-main .ft-main-item {
-    border-bottom: 1px solid var(--primary-blue-103);
+    border-bottom: 1px solid var(--accent-blue-primary-60);
     padding-bottom: 2rem;
   }
 
@@ -483,7 +483,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   .ft-main .ft-main-item:last-child {
     grid-column: 1 / 4;
     grid-row: 4 / 4;
-    border-top: 1px solid var(--primary-blue-103);
+    border-top: 1px solid var(--accent-blue-primary-60);
     margin-top: 32px;
     width: 100%;
   }
@@ -496,7 +496,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   .ft-main .ft-main-item:last-child ul li a {
     width: 100%;
     padding: 13px 0 16px;
-    font-size: var(--size-14);
+    font-size: 14px;
   }
 
   .ft-main .ft-main-item:last-child p {
