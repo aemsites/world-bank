@@ -9,7 +9,7 @@
 
 .cards:not(.profile-summary) > ul > li {
   border: 1px solid var(--dark-color);
-  background-color: var(--background-color);
+  background-color: var(--white);
 }
 
 .cards:not(.profile-summary) .cards-card-body {
@@ -35,7 +35,7 @@
 }
 
 .cards:not(.profile-summary) {
-  padding: var(--large) var(--xlarge) 0;
+  padding: var(--spacing-large) var(--spacing-xlarge) 0;
 }
 
 /* Profile View Styles */
@@ -46,7 +46,7 @@
 }
 
 .cards.profile-summary .cards-card-body {
-  background: var(--neutrals-20);
+  background: var(--neutral-solid-10-s);
   border-radius: 0 0 10px 10px;
   display: flex;
   flex-direction: column;
@@ -85,7 +85,7 @@
   letter-spacing: -0.25px;
   text-align: left;
   text-wrap: wrap;
-  color: var(--neutrals-a-100);
+  color: var(--neutral-alpha-95-a);
 }
 
 .cards.profile-summary .cards-card-body p > a {
@@ -193,11 +193,11 @@
 .cards.senior-leadership .cards-card-body h4 a {
   text-decoration: none;
   font-weight: 700;
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
 }
 
 .cards.senior-leadership .cards-card-body p {
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   margin: 0;
 }
 
