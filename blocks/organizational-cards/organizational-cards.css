@@ -170,12 +170,16 @@ main .section > div.organizational-cards-wrapper {
 
 .organizational-card.collapsed {
   width: 188px;
-  padding: 0 32px 32px 32px;
-  border-bottom: 2px solid var(--accent-blue-primary-40);
-  box-sizing: border-box;
+  padding: 0 32px;
   background: unset;
 }
 
+.organizational-card.collapsed .card-content-wrapper {
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--accent-blue-primary-40);
+}
+
+/*
 .organizational-card.collapsed > .card-acronym {
   margin-top: 340px;
 }
@@ -186,6 +190,7 @@ main .section > div.organizational-cards-wrapper {
   padding-bottom: 16px;
   margin-bottom: 64px;
 }
+  */
 
 .organizational-card.collapsed .card-mission,
 .organizational-card.collapsed .card-link-wrapper {
