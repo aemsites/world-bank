@@ -125,15 +125,15 @@ function buildModal(title, thumbnailPath, url) {
   const discussionSvg = `${window.hlx.codeBasePath}/icons/discussion.svg`;
   const playSvg = `${window.hlx.codeBasePath}/icons/video_play.svg`;
 
-  let cidCode, modalTitle, modalHeader, joinMsg;
-  const locale = navigator.language;
-  //const language = locale.split('-')[0];
-  // extract language from the url
+  let cidCode;
+  let modalTitle;
+  let modalHeader;
+  let joinMsg;
   const windowUrl = window.location.href;
+  // eslint-disable-next-line no-useless-escape
   const langRegex = /https:\/\/[^\/]+\/([a-z]{2})(\/|$)/;
   const langMatches = windowUrl.match(langRegex);
   const language = langMatches ? langMatches[1] : 'en';
-  console.log(`detected language: ${language}`);
   const cidCodes = {
     en: '?intcid=wbw_xpl_liveoverlay_en_ext',
     es: '?intcid=wbw_xpl_liveoverlay_es_ext',
