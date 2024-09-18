@@ -12,7 +12,7 @@ main .section > div.organizational-cards-wrapper {
   overflow: hidden;
   position: relative;
   justify-content: space-around;
-  padding: 0 var(--spacing-32) var(--spacing-80) var(--spacing-32);
+  padding: 0 32px 80px;
 }
 
 .organizational-cards.block .bg-wrapper {
@@ -49,11 +49,11 @@ main .section > div.organizational-cards-wrapper {
   justify-content: flex-end;
   align-items: center;
   width: 386px;
-  padding: 0 var(--spacing-32) 0 var(--spacing-32);
+  padding: 0 32px;
   max-width: 450px;
   height: 100%;
   z-index: 3;
-  color: var(--color-white);
+  color: var(--white);
   font-weight: 700;
   text-align: left;
   transition: width 0.5s linear;
@@ -91,8 +91,8 @@ main .section > div.organizational-cards-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--primary-blue-102);
-  border: 1px solid var(--primary-blue-50);
+  background: var(--accent-blue-primary-120);
+  border: 1px solid var(--accent-blue-primary-40);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -105,8 +105,8 @@ main .section > div.organizational-cards-wrapper {
 
 .organizational-card .expand-btn:hover,
 .organizational-card .collapse-btn:hover {
-  background: var(--primary-blue-50);
-  border: 1px solid var(--primary-blue-102);
+  background: var(--accent-blue-primary-40);
+  border: 1px solid var(--accent-blue-primary-120);
 }
 
 .organizational-card .card-acronym {
@@ -117,24 +117,24 @@ main .section > div.organizational-cards-wrapper {
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  margin-bottom: var(--spacing-12);
+  margin-bottom: 12px;
 }
 
 .organizational-card .card-title {
-  font-size: var(--size-14);
+  font-size: 14px;
   line-height: 17.5px;
-  border-bottom: 2px solid var(--primary-blue-50);
+  border-bottom: 2px solid var(--accent-blue-primary-40);
   min-height: 70px;
   width: 100%;
-  margin-bottom: var(--spacing-12);
+  margin-bottom: 12px;
 }
 
 .organizational-card .card-mission {
-  font-size: var(--size-16);
+  font-size: 16px;
   font-weight: 400;
-  line-height: var(--size-24);
+  line-height: 24px;
   min-height: 104px;
-  margin-top: var(--spacing-24);
+  margin-top: 24px;
 }
 
 .organizational-card .card-link-wrapper {
@@ -142,7 +142,7 @@ main .section > div.organizational-cards-wrapper {
 }
 
 .organizational-card > .card-link-wrapper > .button-container {
-  padding-bottom: var(--spacing-80);
+  padding-bottom: 80px;
 }
 
 .organizational-card
@@ -152,13 +152,13 @@ main .section > div.organizational-cards-wrapper {
   font-weight: 700;
   letter-spacing: 0.25px;
   height: 24px;
-  line-height: var(--size-24);
-  font-size: var(--size-14);
+  line-height: 24px;
+  font-size: 14px;
   border-bottom: 2px solid var(--divider-on-dark-subdued);
   border-radius: unset;
   color: var(--text-on-dark-emphasis);
   background-color: unset;
-  padding: 0 0 var(--spacing-32) 0;
+  padding: 0 0 32px;
   margin: unset;
 }
 
@@ -168,7 +168,7 @@ main .section > div.organizational-cards-wrapper {
 
 .organizational-card.collapsed {
   width: 188px;
-  padding: 0 var(--spacing-32) 0 var(--spacing-32);
+  padding: 0 32px;
   background: unset;
 }
 
@@ -179,8 +179,8 @@ main .section > div.organizational-cards-wrapper {
 .organizational-card.collapsed > .card-title {
   height: fit-content;
   min-height: 81px;
-  padding-bottom: var(--spacing-16);
-  margin-bottom: var(--spacing-64);
+  padding-bottom: 16px;
+  margin-bottom: 64px;
 }
 
 .organizational-card.collapsed .card-mission,
@@ -218,7 +218,7 @@ main .section > div.organizational-cards-wrapper {
   }
 
   .organizational-card.collapsed {
-    padding: 0 var(--spacing-16) 0 var(--spacing-16);
+    padding: 0 16px;
   }
 }
 
@@ -232,8 +232,8 @@ main .section > div.organizational-cards-wrapper {
   .organizational-cards.block {
     width: 100%;
     height: fit-content;
-    padding: 0 var(--spacing-32) 0 var(--spacing-32);
-    background: var(--primary-blue-90);
+    padding: 0 32px;
+    background: var(--accent-blue-primary-90);
     flex-direction: column;
   }
 
@@ -264,7 +264,7 @@ main .section > div.organizational-cards-wrapper {
   }
 
   .organizational-card:not(.collapsed) {
-    padding: var(--spacing-32) 0 var(--spacing-32) 0;
+    padding: 32px 0;
   }
 
   .organizational-card .collapse-btn {
@@ -279,8 +279,8 @@ main .section > div.organizational-cards-wrapper {
   .organizational-card .card-acronym {
     display: inline-block;
     width: fit-content;
-    font-size: var(--size-32);
-    margin: 0 var(--spacing-12) 0 0;
+    font-size: 32px;
+    margin: 0 12px 0 0;
   }
 
   .organizational-card .card-title {
@@ -293,7 +293,7 @@ main .section > div.organizational-cards-wrapper {
   }
 
   .organizational-card .card-mission {
-    margin-bottom: var(--spacing-32);
+    margin-bottom: 32px;
     min-height: unset;
   }
 
@@ -302,7 +302,7 @@ main .section > div.organizational-cards-wrapper {
   }
 
   .organizational-card a.button.card-link {
-    padding: 0 0 var(--spacing-32) 0;
+    padding: 0 0 32px;
     margin: unset;
   }
 
@@ -325,27 +325,27 @@ main .section > div.organizational-cards-wrapper {
 
   .organizational-card .card-content-wrapper .expand-btn:hover,
   .organizational-card .card-content-wrapper .collapse-btn:hover {
-    background: var(--primary-blue-50);
-    border: 1px solid var(--primary-blue-102);
+    background: var(--accent-blue-primary-40);
+    border: 1px solid var(--accent-blue-primary-120);
   }
 }
 
 @media (width < 768px) {
   .organizational-cards.block {
     width: 100%;
-    padding: 0 var(--spacing-32) 0 var(--spacing-32);
-    background: var(--primary-blue-90);
+    padding: 0 32px;
+    background: var(--accent-blue-primary-90);
     flex-direction: column;
   }
 
   .organizational-card:not(.collapsed) {
-    padding: var(--spacing-32) 0 var(--spacing-32) 0;
+    padding: 32px 0;
     min-height: unset;
     max-height: unset;
   }
 
   .organizational-card .card-mission {
-    margin: var(--spacing-8) 0 var(--spacing-8) 0;
+    margin: 8px 0;
     min-height: unset;
   }
 
@@ -361,12 +361,12 @@ main .section > div.organizational-cards-wrapper {
   }
 
   .organizational-card .card-link-wrapper {
-    margin-top: var(--spacing-12);
+    margin-top: 12px;
   }
 
   .organizational-card.collapsed {
     height: unset;
-    padding: var(--spacing-32) 0 var(--spacing-32) 0;
+    padding: 32px 0;
     line-height: unset;
     padding-top: 32px;
   }
