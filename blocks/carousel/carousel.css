@@ -4,16 +4,16 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
-  grid-gap: var(--spacing-16);
+  grid-gap: 16px;
 }
 
 .carousel > ul > li {
   border: 1px solid var(--dark-color);
-  background-color: var(--background-color);
+  background-color: var(--white);
 }
 
 .carousel .cards-card-body {
-  margin: var(--spacing-16);
+  margin: 16px;
 }
 
 .carousel .cards-card-image {
