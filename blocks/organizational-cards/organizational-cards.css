@@ -143,8 +143,9 @@ main .section > div.organizational-cards-wrapper {
   width: 100%;
 }
 
-.organizational-card > .card-link-wrapper > .button-container {
-  padding-bottom: 80px;
+.organizational-card .card-link-wrapper .button-container {
+  height: 30px;
+  border-bottom: 2px solid var(--divider-on-dark-subdued);
 }
 
 .organizational-card
@@ -160,7 +161,8 @@ main .section > div.organizational-cards-wrapper {
   border-radius: unset;
   color: var(--text-on-dark-emphasis);
   background-color: unset;
-  padding: 0 0 32px;
+  /*padding: 0 0 32px;*/
+  padding: 0;
   margin: unset;
 }
 
