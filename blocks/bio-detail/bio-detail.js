@@ -41,7 +41,7 @@ function createPersonBio(
   resources,
   block,
 ) {
-  const pElement = document.querySelector('.display-name p');
+  const pElement = block.querySelector('.display-name p');
   const h1Element = document.createElement('h1');
   h1Element.textContent = pElement.textContent;
   pElement.parentNode.replaceChild(h1Element, pElement);
@@ -115,7 +115,7 @@ export default async function decorate(block) {
   moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
   profileImg.closest('picture').replaceWith(optimizedPic);
 
-  const mediaTargetDiv = document.querySelector('.media-inquiries');
+  const mediaTargetDiv = block.querySelector('.media-inquiries');
   const placeholderData = await fetchLanguagePlaceholders();
   mediaTargetDiv.insertBefore(
     div({ class: 'title' }, placeholderData.biodetailMediaText),
@@ -123,7 +123,7 @@ export default async function decorate(block) {
   );
 
   if (resources.textContent.trim()) {
-    const resourcesTargetDiv = document.querySelector('.resources');
+    const resourcesTargetDiv = block.querySelector('.resources');
     resourcesTargetDiv.insertBefore(
       div({ class: 'title' }, placeholderData.biodetailResourcesText),
       resourcesTargetDiv.firstChild,
