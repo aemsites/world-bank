@@ -1,3 +1,11 @@
+import { fetchLanguagePlaceholders } from "../../scripts/scripts";
+import { toCamelCase } from '../../scripts/aem.js';
+
+const MODAL_TITLE = 'live-now-title';
+const MODAL_HEADER = 'live-now-header';
+const MODAL_JOIN_TXT = 'live-now-join';
+const MODAL_CID = 'live-now-cid';
+
 // set session cookie
 function setSessionCookie(name, value) {
   document.cookie = `${name}=${value}; path=/`;
@@ -120,21 +128,27 @@ function getModal(modalId, createContent, addEventListeners) {
 }
 
 // build the 'live now' modal
-function buildModal(title, thumbnailPath, url) {
+async function buildModal(title, thumbnailPath, url) {
   const broadcastSvg = `${window.hlx.codeBasePath}/icons/broadcast.svg`;
   const discussionSvg = `${window.hlx.codeBasePath}/icons/discussion.svg`;
   const playSvg = `${window.hlx.codeBasePath}/icons/video_play.svg`;
 
-  let cidCode;
-  let modalTitle;
-  let modalHeader;
-  let joinMsg;
-  const windowUrl = window.location.href;
+  //let cidCode;
+  //let modalTitle;
+  //let modalHeader;
+  //let joinMsg;
+  //const windowUrl = window.location.href;
+  // use getLanguage? shouldn't need to if i use fetch by language it does it automatically :)
+  const phData = await fetchLanguagePlaceholders();
+  const modalTitle = phData[toCamelCase(MODAL_TITLE)] || 'Live Now';
+  const modalHeader = phData[toCamelCase(MODAL_HEADER)] || 'WORLD BANK LIVE';
+  const joinMsg = phData[toCamelCase(MODAL_JOIN_TXT)] || 'Join Now';
+  const cidCode = phData[toCamelCase(MODAL_CID)] || '?intcid=wbw_xpl_liveoverlay_en_ext';
   // eslint-disable-next-line no-useless-escape
-  const langRegex = /https:\/\/[^\/]+\/([a-z]{2})(\/|$)/;
-  const langMatches = windowUrl.match(langRegex);
-  const language = langMatches ? langMatches[1] : 'en';
-  const cidCodes = {
+  //const langRegex = /https:\/\/[^\/]+\/([a-z]{2})(\/|$)/;
+  //const langMatches = windowUrl.match(langRegex);
+  //const language = langMatches ? langMatches[1] : 'en';
+  /*const cidCodes = {
     en: '?intcid=wbw_xpl_liveoverlay_en_ext',
     es: '?intcid=wbw_xpl_liveoverlay_es_ext',
     fr: '?intcid=wbw_xpl_liveoverlay_fr_ext',
@@ -162,7 +176,7 @@ function buildModal(title, thumbnailPath, url) {
   if (language in modalTitles) modalTitle = modalTitles[language] || modalTitle.en;
   if (language in modalHeaders) modalHeader = modalHeaders[language] || modalHeaders.en;
   if (language in joinMsgs) joinMsg = joinMsgs[language] || joinMsgs.en;
-
+*/
   const wbModal = `
     <div class='modal-content-wrapper'>
       <div class='modal-column-left'>
@@ -232,7 +246,7 @@ export default async function decorate(block) {
     const event = filteredEvents[0] ? filteredEvents[0] : events[0];
     // and if modal has not been seen
     if (!(hasModalBeenDisplayed(sessionCookieName, event.guid))) {
-      liveNowModal = buildModal(
+      liveNowModal = await buildModal(
         event.title,
         event.eventCardImageReference,
         event.canonicalURL,
