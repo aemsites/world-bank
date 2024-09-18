@@ -67,11 +67,16 @@
     "id": "dam-asset",
     "fields": [
       {
-        "component": "world-bank-namespace:dam-asset",
+        "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
         "configUrl": "https://asset-picker-ext--world-bank--aemsites.aem.page/tools/assets-selector/selector-config.json",
         "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "imageMimeType"
       },
       {
         "component": "text",
