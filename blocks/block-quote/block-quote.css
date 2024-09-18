@@ -1,27 +1,14 @@
 .block-quote {
-    --quote-spacing: var(--spacing-24);
-    --quote-font-size: var(--size-20);
-
-    @media (width >= 768px) {
-        --quote-spacing: var(--spacing-28);
-        --quote-font-size: var(--size-24);
-    }
-
-    @media (width >= 1024px) {
-        --quote-spacing: var(--spacing-40);
-        --quote-font-size: var(--size-28);
-    }
-
     padding: 0 0 0 var(--spacing-32);
-    border-left: 4px solid var(--primary-blue-90);
-    margin: var(--quote-spacing) 0;
+    border-left: 4px solid var(--text-on-light-highlight);
+    margin: var(--spacing-large) 0;
 }
 
 blockquote {
     font-weight: 700;
-    font-size: var(--quote-font-size);
+    font-size: var(--font-size-700);
     letter-spacing: -0.15px;
     line-height: 115%;
-    color: var(--primary-blue-90);
+    color: var(--text-on-light-highlight);
     margin: 0;
 }
