@@ -172,13 +172,13 @@
   margin: 16px 0 0;
 }
 
-.cards.senior-leadership .cards-card-body h4 {
+.cards.senior-leadership .cards-card-body h3 {
   margin-bottom: 10px;
   line-height: 10px;
   font-size: var(--font-size-600);
 }
 
-.cards.senior-leadership .cards-card-body h4 a {
+.cards.senior-leadership .cards-card-body h3 a {
   text-decoration: none;
   font-weight: 700;
   font-size: var(--font-size-600);
