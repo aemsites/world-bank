@@ -70,7 +70,7 @@
         "component": "world-bank-namespace:dam-asset",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://main--world-bank--aemsites.aem.page/tools/assets-selector/selector-config.json",
+        "configUrl": "https://asset-picker-ext--world-bank--aemsites.aem.page/tools/assets-selector/selector-config.json",
         "valueType": "string"
       },
       {
