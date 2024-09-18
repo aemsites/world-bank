@@ -5,24 +5,12 @@
       "id": "default",
       "components": [
         {
-          "title": "Text",
-          "id": "text",
+          "title": "Button",
+          "id": "button",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/text/v1/text",
-                "template": {}
-              }
-            }
-          }
-        },
-        {
-          "title": "Title",
-          "id": "title",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/title/v1/title",
+                "resourceType": "core/franklin/components/button/v1/button",
                 "template": {}
               }
             }
@@ -41,12 +29,24 @@
           }
         },
         {
-          "title": "Button",
-          "id": "button",
+          "title": "Text",
+          "id": "text",
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/button/v1/button",
+                "resourceType": "core/franklin/components/text/v1/text",
+                "template": {}
+              }
+            }
+          }
+        },
+        {
+          "title": "Title",
+          "id": "title",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/title/v1/title",
                 "template": {}
               }
             }
