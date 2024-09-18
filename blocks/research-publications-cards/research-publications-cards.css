@@ -1,8 +1,4 @@
-.research-publications-cards a.button {
-  margin: 0;
-}
-
-.research-publications-cards .heading-wrapper p {
+.research-publications-cards a.button, .research-publications-cards .heading-wrapper p, .cards-container .rp-card .text-content p {
   margin: 0;
 }
 
@@ -11,6 +7,12 @@
   justify-content: space-between;
   align-items: center;
   margin: var(--main-heading-spacing);
+}
+
+.cards-container .rp-card .text-content .card-btn p{
+  height: 48px;
+  display: flex;
+  align-items: center;
 }
 
 .button-wrapper {
@@ -43,10 +45,6 @@
 
 .text-content .title div {
   height: 65px;
-}
-
-.cards-container .rp-card .text-content .title p {
-  margin: 0;
 }
 
 .cards-container .rp-card .text-content .desc {

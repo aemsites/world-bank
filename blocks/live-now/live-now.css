@@ -97,6 +97,8 @@ dialog.livenow-modal:modal {
       font-size: 14px;
       line-height: 15.4px;
       font-weight: 800;
+      letter-spacing: 0.05em;
+      text-align: left;
       color: var(--neutrals-100);
       margin-bottom: var(--spacing-8);
     }
