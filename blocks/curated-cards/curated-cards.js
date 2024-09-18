@@ -1,7 +1,7 @@
 import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
-  p, button, div, a, li, ul, picture, img,
+  p, h1, div, a, li, ul, picture, img,
 } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
 
@@ -29,8 +29,8 @@ function createFeatureCard(row, placeHolders) {
   featureTagContent.innerHTML = '';
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
-    div({ class: ' feature-card-content-text' }, p({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent)),
-    a({ href: featureLink.textContent }, button({ type: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
+    div({ class: ' feature-card-content-text' }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent)),
+    div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
@@ -91,8 +91,11 @@ export default async function decorate(block) {
 
     // Optimize images
     ulElement.querySelectorAll('picture > img').forEach((imgVar) => {
-      const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '750' }]);
-      moveInstrumentation(imgVar, optimizedPic.querySelector('img'));
+      const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '250' }]);
+      const newPic = optimizedPic.querySelector('img');
+      moveInstrumentation(imgVar, newPic);
+      newPic.width = 200;
+      newPic.height = 150;
       imgVar.closest('picture').replaceWith(optimizedPic);
     });
 

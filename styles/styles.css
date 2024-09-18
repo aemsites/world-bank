@@ -161,7 +161,7 @@
   --accent-blue-primary-05: var(--blue-05);
   --accent-blue-primary-10: var(--blue-10); /* --primary-blue-20 */
   --accent-blue-primary-100: var(--blue-100);
-  --accent-blue-primary-120: var(--blue-120);
+  --accent-blue-primary-120: var(--blue-120); /* --primary-blue-102 */
   --accent-blue-primary-20: var(--blue-20);
   --accent-blue-primary-30: var(--blue-30);
   --accent-blue-primary-40: var(--blue-40); /* --primary-blue-50 */
@@ -426,10 +426,10 @@
   --font-size-100: 0.75rem;
   --font-size-200: 0.875rem;
   --font-size-300: 1rem;
-  --font-size-400: 1.125rem;
-  --font-size-500: 1.125rem;
-  --font-size-600: 1.25rem;
-  --font-size-700: 1.5rem;
+  --font-size-400: 1rem;
+  --font-size-500: 1rem;
+  --font-size-600: 1.125rem;
+  --font-size-700: 1.25rem;
   --font-size-800: 1.5rem;
   --font-size-1000: 1.75rem;
   --font-size-1100: 1.75rem;
@@ -615,7 +615,7 @@
 
   /* Gutter space */
   --section-gutter-space: 28px;
-  --section-container-space: var(--spacing-32);  
+  --section-container-space: var(--spacing-xxlarge); 
 
   /* Block specific */
   --signup-padding: var(--spacing-28);
@@ -669,7 +669,6 @@
   
     /* Gutter space */
     --section-gutter-space: 48px;
-    --section-container-space: var(--spacing-40); 
   
     /* Screen variables */
     --nav-height: 44px;
@@ -778,7 +777,6 @@
 
     /* Gutter space */
     --section-gutter-space: 72px;
-    --section-container-space: var(--spacing-64); 
     --section-reduced-space: 320px;
   
     /* Screen variables */
