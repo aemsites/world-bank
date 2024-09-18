@@ -141,6 +141,7 @@ main .section > div.organizational-cards-wrapper {
 
 .organizational-card .card-link-wrapper {
   width: 100%;
+  margin-top: 12px;
 }
 
 .organizational-card .card-link-wrapper .button-container {
