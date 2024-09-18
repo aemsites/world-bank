@@ -41,6 +41,10 @@ function createPersonBio(
   resources,
   block,
 ) {
+  const pElement = block.querySelector('.display-name p');
+  const h1Element = document.createElement('h1');
+  h1Element.textContent = pElement.textContent;
+  pElement.parentNode.replaceChild(h1Element, pElement);
   const firstContainer = div({ class: 'first-container' });
   const nameJobSocial = div({ class: 'name-job-social' }, bioName, jobTitle);
   const socialMedias = div({ class: 'social-media' });
@@ -98,7 +102,6 @@ export default async function decorate(block) {
     mediaInquiries,
     resources,
   ] = [...block.children];
-
   profileImage.className = 'profile-image';
   displayName.className = 'display-name';
   jobTitle.className = 'job-title';
@@ -112,19 +115,21 @@ export default async function decorate(block) {
   moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
   profileImg.closest('picture').replaceWith(optimizedPic);
 
-  const mediaTargetDiv = document.querySelector('.media-inquiries');
+  const mediaTargetDiv = block.querySelector('.media-inquiries');
   const placeholderData = await fetchLanguagePlaceholders();
   mediaTargetDiv.insertBefore(
     div({ class: 'title' }, placeholderData.biodetailMediaText),
     mediaTargetDiv.firstChild,
   );
 
-  const resourcesTargetDiv = document.querySelector('.resources');
-  resourcesTargetDiv.insertBefore(
-    div({ class: 'title' }, placeholderData.biodetailResourcesText),
-    resourcesTargetDiv.firstChild,
-  );
-  createResources(block);
+  if (resources.textContent.trim()) {
+    const resourcesTargetDiv = block.querySelector('.resources');
+    resourcesTargetDiv.insertBefore(
+      div({ class: 'title' }, placeholderData.biodetailResourcesText),
+      resourcesTargetDiv.firstChild,
+    );
+    createResources(block);
+  }
   createPersonBio(
     displayName,
     jobTitle,

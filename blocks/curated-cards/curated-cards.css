@@ -29,15 +29,15 @@
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-text {
-  width: 80%;
+  width: 70%;
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-text .feature-card-content-description {
   margin: 0;
 }
 
-.curated-cards .feature-card .feature-card-content a {
-  width: 20%;
+.curated-cards .feature-card .feature-card-content .feature-card-link {
+  width: 30%;
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
@@ -45,13 +45,12 @@
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-heading {
-  font-size: var(--font-size-1100);
-  margin: 0 0 10px;
+  color: var(--white);
+  margin: 0 0 var(--spacing-small);
   line-height: 58px;
-  font-weight: 700;
 }
 
-.curated-cards .feature-card .feature-card-content button {
+.curated-cards .feature-card .feature-card-content .button {
   font-size: var(--font-size-300);
   height: 55px;
   background: var(--white);
@@ -59,11 +58,11 @@
   color: var(--accent-blue-primary-70);
 }
 
-.curated-cards .feature-card .feature-card-content button:hover {
+.curated-cards .feature-card .feature-card-content .button:hover {
   border: 1px solid var(--accent-blue-primary-40);
 }
 
-.curated-cards .feature-card .feature-card-content button:focus {
+.curated-cards .feature-card .feature-card-content .button:focus {
   background-color: var(--accent-blue-primary-10);
   border: 1px solid var(--accent-blue-primary-70);
 }
@@ -84,7 +83,7 @@
 }
 
 .curated-cards.list .curated-cards-line-div .line-text {
-  color: var(--text-on-dark-emphasys, var(--gray-alpha-white-90-a));
+  color: var(--text-on-dark-emphasis, var(--gray-alpha-white-90-a));
   padding-left: 10px;
   font-size: 12px;
   font-weight: 700;
@@ -92,7 +91,7 @@
 
 .curated-cards.list .curated-cards-line-div .line {
   height: 2px;
-  width: calc(100% - 140px);
+  width: calc(100% - 150px);
   background: var(--gray-alpha-white-24-a);
   margin: 0 auto;
 }
@@ -147,7 +146,11 @@
     padding: 0 10px;
   }
 
-  .curated-cards .feature-card .feature-card-content a {
+  .curated-cards .feature-card .feature-card-content .feature-card-content-text {
+    width: 85%;
+  }
+
+  .curated-cards .feature-card .feature-card-content .feature-card-link {
     justify-content: flex-start;
     align-self: flex-start;
     width: 100%;
@@ -163,7 +166,6 @@
 
   .curated-cards .feature-card .feature-card-content .feature-card-content-heading {
     line-height: 43px;
-    font-size: 36px;
   }
 
   .curated-cards .feature-card .feature-card-content .feature-card-content-description {
@@ -187,7 +189,6 @@
 
   .curated-cards .feature-card .feature-card-content .feature-card-content-heading {
     line-height: 29px;
-    font-size: 24px;
   }
 
   .curated-cards .feature-card .feature-card-content .feature-card-content-description {

@@ -262,6 +262,15 @@
   height: 100%;
 }
 
+.section .data-cards.news-card-variation .rte-container > .main-heading > div > p:first-child {
+  margin-bottom:0;
+}
+
+.section .data-cards-wrapper .data-cards.news-card-variation > .rte-container > div:nth-child(2) > div > p a {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 @media (width >= 768px) {  
   .data-cards .news-card .news-card-title {
     font-size: var(--heading-label-tiny);
