@@ -1,4 +1,4 @@
-import { fetchLanguagePlaceholders } from "../../scripts/scripts";
+import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import { toCamelCase } from '../../scripts/aem.js';
 
 const MODAL_TITLE = 'live-now-title';
