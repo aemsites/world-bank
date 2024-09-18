@@ -44,8 +44,11 @@ export default function decorate(block) {
   block.append(miniCardsContainer);
   // Optimize images
   block.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, optimizedPic.querySelector('img'));
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '250' }]);
+    const newPic = optimizedPic.querySelector('img');
+    newPic.width = 250;
+    newPic.height = 150;
+    moveInstrumentation(img, newPic);
     img.closest('picture').replaceWith(optimizedPic);
   });
 }

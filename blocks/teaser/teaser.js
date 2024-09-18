@@ -13,10 +13,14 @@ function createVideoPlayer(videoSrc) {
   /* eslint-disable function-paren-newline */
   const videoPlayer = div({ class: 'video-container' },
     div({ class: 'video-play', id: 'playButton', tabindex: 0 },
-      img({ class: 'play-icon controls', src: playIcon }),
+      img({
+        class: 'play-icon controls', src: playIcon, width: 28, height: 28, alt: 'play',
+      }),
     ),
     div({ class: 'video-pause inactive', id: 'pauseButton' },
-      img({ class: 'pause-icon controls', src: pauseIcon }),
+      img({
+        class: 'pause-icon controls', src: pauseIcon, width: 28, height: 28, alt: 'pause',
+      }),
     ),
     video({ id: 'videoPlayer' },
       source({ src: videoSrc, type: 'video/mp4' }, 'Your browser does not support the video tag.'),
