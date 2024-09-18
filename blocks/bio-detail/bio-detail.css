@@ -81,7 +81,7 @@
 }
 
 .bio-detail .sections-container .display-name {
-  font-size: 36px;
+  font-size: var(--h1-base);
   font-weight: bold;
   color: var(--primary-blue-90);
   line-height: 43px;
@@ -177,7 +177,6 @@
   }
 
   .bio-detail .sections-container .display-name {
-    font-size: var(--h1-base);
     line-height: 58px;
   }
 
