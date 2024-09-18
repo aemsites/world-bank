@@ -6,7 +6,15 @@ function processTag(tag) {
   if (tagTxt) {
     tagTxt = processTags(tagTxt, 'category');
     tag.classList.add(tagTxt);
-    // TODO: Read it from placeholder
+    tag.firstElementChild.innerText = tagTxt;
+  }
+}
+
+function processNewsTag(tag) {
+  let tagTxt = tag.innerText;
+  if (tagTxt) {
+    tagTxt = processTags(tagTxt, 'category');
+    tag.nextElementSibling.classList.add(tagTxt);
     tag.firstElementChild.innerText = tagTxt;
   }
 }
@@ -75,7 +83,7 @@ export default async function decorate(block) {
       link.remove();
 
       if (tag) {
-        processTag(tag);
+        processNewsTag(tag);
       }
       row.parentNode.insertBefore(anchor, row);
       anchor.appendChild(row);
