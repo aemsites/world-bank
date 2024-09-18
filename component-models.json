@@ -48,7 +48,7 @@
     "id": "image",
     "fields": [
       {
-        "component": "reference",
+        "component": "dam-asset",
         "valueType": "string",
         "name": "fileReference",
         "label": "Image",
@@ -72,11 +72,6 @@
         "label": "Image",
         "configUrl": "https://asset-picker-ext--world-bank--aemsites.aem.page/tools/assets-selector/selector-config.json",
         "valueType": "string"
-      },
-      {
-        "component": "custom-asset-namespace:custom-asset-mimetype",
-        "valueType": "string",
-        "name": "imageMimeType"
       },
       {
         "component": "text",
