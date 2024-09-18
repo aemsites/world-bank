@@ -9,7 +9,7 @@
 .mini-card {
   display: flex;
   gap: 28px;
-  border-top: 2px solid var(--neutrals-20);
+  border-top: 2px solid var(--neutral-solid-10-s);
   padding-block-start: 20px;
   width: 100%;
   justify-content: space-between;
@@ -40,26 +40,26 @@
 
 .mini-card-tag {
   font-weight: 700;
-  font-size: var(--body-tiny);
+  font-size: var(--font-size-100);
   line-height: 110%;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--neutrals-70);
+  color: var(--neutral-solid-60-s);
 }
 
 .mini-card-title {
   font-weight: 700;
-  font-size: var(--body-large);
+  font-size: var(--font-size-500);
   line-height: 120%;
-  color: var(--primary-blue-80);
+  color: var(--accent-blue-primary-70);
 }
 
 .date-time-info, .mini-card-location {
   font-style: normal;
   font-weight: 400;
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
   line-height: 150%;
-  color: var(--neutrals-100);  
+  color: var(--neutral-solid-90-s);
 }
 
 .date-time-info {
@@ -68,13 +68,13 @@
 }
 
 .mini-card-time {
-  border-left: 2px solid var(--neutrals-20);
+  border-left: 2px solid var(--neutral-solid-10-s);
   padding-left: 4px;
 } 
 
 .image-list-variation .mini-card {
   border-top: unset;
-  border-bottom: 2px solid var(--neutrals-20);
+  border-bottom: 2px solid var(--neutral-solid-10-s);
 }
 
 @media (width <768px) {
