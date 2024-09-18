@@ -1616,7 +1616,7 @@
         "options": [
           {
             "name": "All Tab",
-            "value": "all-tab"
+            "value": "all"
           },
           {
             "name": "Publication",
@@ -1637,7 +1637,7 @@
         ]
       },
       {
-        "component": "text",
+        "component": "aem-content",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",

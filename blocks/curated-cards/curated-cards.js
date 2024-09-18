@@ -91,8 +91,11 @@ export default async function decorate(block) {
 
     // Optimize images
     ulElement.querySelectorAll('picture > img').forEach((imgVar) => {
-      const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '750' }]);
-      moveInstrumentation(imgVar, optimizedPic.querySelector('img'));
+      const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '250' }]);
+      const newPic = optimizedPic.querySelector('img');
+      moveInstrumentation(imgVar, newPic);
+      newPic.width = 200;
+      newPic.height = 150;
       imgVar.closest('picture').replaceWith(optimizedPic);
     });
 
