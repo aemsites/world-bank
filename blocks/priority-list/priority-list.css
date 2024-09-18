@@ -12,16 +12,16 @@
 }
 
 .priority-list-wrapper .priority-list .right-column-container .text-container {
-  color: var(--primary-blue-90);
+  color: var(--accent-blue-primary-90);
   display: flex;
   flex-direction: column;
-  row-gap: var(--medium);
+  row-gap: var(--spacing-medium);
 }
 
 .priority-list-wrapper .priority-list .right-column-container {
   display: flex;
   flex-direction: column;
-  row-gap: var(--xlarge);
+  row-gap: var(--spacing-xlarge);
 }
 
 .priority-list-wrapper
@@ -62,9 +62,9 @@
   .text-container
   .button-wrapper
   a {
-  background-color: var(--color-white);
-  color: var(--primary-blue-70);
-  padding: 0 0 var(--xxsmall) 0;
+  background-color: var(--white);
+  color: var(--accent-blue-primary-70);
+  padding: 0 0 var(--spacing-xxsmall) 0;
   font-size: 16px;
   margin: 0;
   border-radius: 0;
@@ -78,7 +78,7 @@
   > div {
   display: flex;
   flex-direction: column;
-  row-gap: var(--regular);
+  row-gap: var(--spacing-regular);
   position: relative;
   padding-left: 20px;
   text-align: left;
@@ -97,7 +97,7 @@
   .right-column-container
   .cards-container
   > div:not(div:last-child) {
-  border-left: 3px solid var(--neutrals-20);
+  border-left: 3px solid var(--neutral-solid-10-s);
 }
 
 .priority-list-wrapper
@@ -187,7 +187,7 @@
   .cardtitle {
   text-transform: capitalize;
   font-size: 24px;
-  color: var(--primary-blue-90);
+  color: var(--accent-blue-primary-90);
   line-height: 29px;
   font-weight: 700;
   margin-top: -8px;
@@ -207,9 +207,9 @@
   .carddesc {
   display: flex;
   flex-direction: column;
-  row-gap: var(--xsmall);
+  row-gap: var(--spacing-xsmall);
   font-size: 18px;
-  color: var(--neutrals-100);
+  color: var(--neutral-solid-90-s);
 }
 
 .priority-list-wrapper
@@ -233,9 +233,9 @@
   font-size: 16px;
   display: flex;
   flex-direction: column;
-  gap: var(--xxsmall);
+  gap: var(--spacing-xxsmall);
   margin: 0;
-  padding-bottom: var(--xlarge);
+  padding-bottom: var(--spacing-xlarge);
 }
 
 .priority-list-wrapper .priority-list .left-column-container {
@@ -264,8 +264,8 @@
   .carddesc
   ul
   a {
-  color: var(--neutrals-100);
-  text-decoration-color: var(--neutrals-100);
+  color: var(--neutral-solid-90-s);
+  text-decoration-color: var(--neutral-solid-90-s);
   line-height: 22px;
   font-size: 16px;
   text-transform: capitalize;
@@ -279,7 +279,7 @@
   .carddesc
   ul
   a:hover {
-  text-decoration-color: var(--primary-blue-50);
+  text-decoration-color: var(--accent-blue-primary-40);
 }
 
 @media (width >=768px) and (width < 1024px) {
@@ -292,7 +292,7 @@
     .priority-list
     .right-column-container
     .text-container {
-    padding: 0 var(--xxsmall);
+    padding: 0 var(--spacing-xxsmall);
   }
 
   .priority-list-wrapper
@@ -301,7 +301,7 @@
     .text-container
     .subtitle {
     text-transform: uppercase;
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
   }
 
   .priority-list-wrapper
@@ -361,7 +361,7 @@
     .priority-list
     .right-column-container
     .text-container {
-    padding: 0 var(--xxsmall);
+    padding: 0 var(--spacing-xxsmall);
   }
 
   .priority-list-wrapper
@@ -381,7 +381,7 @@
     .text-container
     .subtitle {
     text-transform: uppercase;
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
   }
 
   .priority-list-wrapper
