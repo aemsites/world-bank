@@ -26,14 +26,14 @@
     font-weight: 400;
 }
 
-.heading .eyebrowtext {
+.heading .eyebrowtext:not(:empty) {
     margin-bottom: 0;
     font-weight: 700;
     line-height: 17.5px;
     font-size: var(--body-medium);
 }
 
-.heading .heading-description {
+.heading .heading-description:not(:empty) {
     font-size: var(--body-medium);
     margin-top: 4px;
 }
@@ -43,13 +43,13 @@
 }
 
 @media (width <768px) {
-    .heading .eyebrowtext {
+    .heading .eyebrowtext:not(:empty)  {
         font-size: var(--body-small);
     }
 }
 
 @media (width >=1024px) {
-    .heading .eyebrowtext {
+    .heading .eyebrowtext:not(:empty) {
         line-height: 20px;
         font-size: var(--body-medium);
     }
