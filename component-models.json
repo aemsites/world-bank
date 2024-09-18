@@ -1804,8 +1804,7 @@
         "valueType": "string",
         "name": "resources",
         "value": "",
-        "label": "Resources",
-        "required": true
+        "label": "Resources"
       }
     ]
   },
