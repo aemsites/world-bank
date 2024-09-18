@@ -35,7 +35,7 @@
 }
 
 .cards:not(.profile-summary) {
-  padding: var(--large) var(--xlarge) 0;
+  padding: var(--spacing-large) var(--spacing-xlarge) 0;
 }
 
 /* Profile View Styles */
@@ -46,7 +46,7 @@
 }
 
 .cards.profile-summary .cards-card-body {
-  background: var(--neutrals-20);
+  background: var(--neutral-solid-10-s);
   border-radius: 0 0 10px 10px;
   display: flex;
   flex-direction: column;
@@ -63,29 +63,30 @@
 }
 
 .cards.profile-summary .cards-card-body p.button-container {
-  margin-top: 24px;
+  margin-top: var(--spacing-large);
 }
 
 .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
-  font-size: 28px;
+  font-size: var(--font-size-1100);
   line-height: 28px;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-medium);
   margin-top: 0;
   font-weight: 700;
   letter-spacing: -0.015em;
   text-align: left;
   font-style: normal;
+  color: var(--text-on-light-highlight);
 }
 
 .cards.profile-summary .cards-card-body p {
-  font-size: 16px;
+  font-size: var(--font-size-500);
   line-height: 20px;
   font-weight: 400;
   margin: 0;
   letter-spacing: -0.25px;
   text-align: left;
   text-wrap: wrap;
-  color: var(--neutrals-a-100);
+  color: var(--text-on-light-emphasis);
 }
 
 .cards.profile-summary .cards-card-body p > a {
@@ -104,7 +105,6 @@
 
 @media (width >= 768px) {
   .cards.profile-summary .cards-card-body p {
-    font-size: 18px;
     line-height: 22px;
   }
   
@@ -124,12 +124,6 @@
 
   .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
     line-height: 36px;
-    margin-bottom: 24px;
-    font-size: 36px;
-  }
-
-  .cards.profile-summary .cards-card-body p.button-container {
-    margin-top: 28px;
   }
 }
 
@@ -144,17 +138,10 @@
 
   .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
     line-height: 48px;
-    margin-bottom: 20px;
-    font-size: 48px;
   }
 
   .cards.profile-summary .cards-card-body p {
-    font-size: 20px;
     line-height: 25px;
-  }
-  
-  .cards.profile-summary .cards-card-body p.button-container {
-    margin-top: 40px;
   }
 
   .cards.profile-summary > ul > li img {
@@ -188,16 +175,18 @@
 .cards.senior-leadership .cards-card-body h4 {
   margin-bottom: 10px;
   line-height: 10px;
+  font-size: var(--font-size-600);
 }
 
 .cards.senior-leadership .cards-card-body h4 a {
   text-decoration: none;
   font-weight: 700;
-  color: var(--primary-blue-70);
+  font-size: var(--font-size-600);
+  color: var(--background-container-on-light-link-primary-enabled);
 }
 
 .cards.senior-leadership .cards-card-body p {
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   margin: 0;
 }
 
@@ -210,9 +199,5 @@
 @media (width >= 1024px) {
   .cards.senior-leadership > ul {
     grid-template-columns: repeat(5, 1fr);
-  }
-
-  .cards.senior-leadership .cards-card-body h4 a {
-    font-size: var(--body-huge);
   }
 }
