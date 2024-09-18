@@ -3,6 +3,7 @@
   justify-content: space-between;
   flex-direction: column-reverse;
   gap: 30px;
+  padding: var(--spacing-small);
 }
 
 .profile-image img {
@@ -153,7 +154,7 @@
   }
 
   .bio-detail .sections-container {
-    padding: var(--spacing-small);
+    padding: 1rem;
   }
 }
 
