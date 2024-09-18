@@ -199,10 +199,6 @@ export default async function decorate(block) {
     tabpanel.setAttribute('type', tabType);
     tabpanel.setAttribute('data-loaded', false);
     tabpanel.children[1].remove();
-    if (i === 0) {
-      decorateTab(tabpanel, tabType);
-      tabpanel.setAttribute('data-loaded', true);
-    }
     // build tab button
     const tabButton = button({
       class: 'tabs-tab',
@@ -228,6 +224,10 @@ export default async function decorate(block) {
         tabpanel.setAttribute('data-loaded', true);
       }
     });
+    if (i === 0 && tabType !== 'manual') {
+      decorateTab(tabpanel, tabType);
+      tabpanel.setAttribute('data-loaded', true);
+    }
     tablist.append(tabButton);
     tab.remove();
   });
