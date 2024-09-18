@@ -1,0 +1,77 @@
+{
+  "aemTierType": [
+      "delivery",
+      "author"
+  ],
+  "apiKey": "asset_search_service",
+  "repoNames": [
+    "author-p136806-e1403562.adobeaemcloud.com"
+  ],
+  "filterSchema": [
+    {
+      "header": "File Types",
+      "groupKey": "TopGroup",
+      "fields": [
+        {
+          "defaultValue": ["image/*", "video/*"],
+          "excludeTags": ["image/*", "video/*", "application/pdf"],
+          "element": "checkbox",
+          "name": "type",
+          "options": [
+            {
+              "label": "Images",
+              "value": "image/*"
+            },
+            {
+              "label": "Videos",
+              "value": "video/*"
+            },
+            {
+              "label": "PDFs",
+              "value": "application/pdf"
+            }
+          ],
+          "columns": 2
+        }
+      ]
+    },
+    {
+      "header": "Assets Tags",
+      "groupKey": "AssetTagsGroup",
+      "fields": [
+        {
+          "element": "taggroup",
+          "name": "property=metadata.application.xcm:keywords.id",
+          "defaultValue": [],
+          "options": [],
+          "columns": 3
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "element": "checkbox",
+          "name": "expiredAsset",
+          "options": [
+            {
+              "label": "Expired",
+              "value": "expired"
+            }
+          ],
+          "orientation": "horizontal",
+          "columns": 2
+        },
+        {
+          "element": "DateRange",
+          "name": "property=pur:expirationDate",
+          "position": "top",
+          "label": "Expiration Duration",
+          "orientation": "horizontal"
+        }
+      ],
+      "header": "Expiration Status",
+      "groupKey": "ExpirationGroup"
+    }
+  ]
+}
