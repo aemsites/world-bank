@@ -6,7 +6,6 @@
 .heading h6 {
     color: var( --primary-blue-90);
     margin-bottom: 0;
-    margin-bottom: 0;
 }
 
 .heading h1 {
@@ -31,7 +30,6 @@
 
 .heading .eyebrowtext:not(:empty) {
     margin-bottom: 0;
-    margin-bottom: 0;
     font-weight: 700;
     line-height: 17.5px;
     font-size: var(--body-medium);
@@ -40,18 +38,18 @@
 .heading .heading-description:empty {
    display:none;
 }
+
 .heading .eyebrowtext:empty {
     display:none;
 }
+
 .heading .heading-description:not(:empty) {
     font-size: var(--body-medium);
-    margin-top: 4px;
     margin-top: 4px;
 }
 
 .heading hr {
     margin-top: var(--spacing-medium);
-
     color: var(--divider-on-light-default);
 }
 
@@ -80,9 +78,9 @@
 
     .heading hr {
         margin-top: 32px;
-        margin-top: 32px;
     }
 }
+
 @media (width >=1024px) {
     .heading .eyebrowtext:not(:empty) {
         line-height: 20px;
