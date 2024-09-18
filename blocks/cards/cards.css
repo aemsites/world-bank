@@ -122,7 +122,10 @@
     border-radius: 0 10px 10px 0;
   }
 
-  .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+  .cards.profile-summary .cards-card-body h1,
+  .cards.profile-summary .cards-card-body h2,
+  .cards.profile-summary .cards-card-body h3,
+  .cards.profile-summary .cards-card-body h4 {
     line-height: 36px;
   }
 }
@@ -136,7 +139,10 @@
       padding: 80px;
   }
 
-  .cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+  .cards.profile-summary .cards-card-body h1,
+  .cards.profile-summary .cards-card-body h2,
+  .cards.profile-summary .cards-card-body h3,
+  .cards.profile-summary .cards-card-body h4 {
     line-height: 48px;
   }
 
