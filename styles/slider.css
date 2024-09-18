@@ -7,7 +7,7 @@
 
 .carousel-container > .default-content-wrapper {
   flex: 1;
-  padding: 0 var(--section-gutter-space);
+  padding: 0;
 }
 
 .carousel-container > .default-content-wrapper > p {
@@ -18,8 +18,8 @@
 .carousel-container .button-container button {
   background-color: var(--color-white);
   border: 2px solid var(--primary-blue-80);
-  padding: 8px 11px;
-  right: 2%;
+  padding: 8px 13px;
+  right: 3%;
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -35,9 +35,9 @@
 html[dir="rtl"] .carousel-container .button-container button {
   background-color: var(--color-white);
   border: 2px solid var(--primary-blue-80);
-  padding: 8px 11px;
+  padding: 8px 13px;
   right: auto;
-  left: 2%;
+  left: 3%;
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -47,16 +47,16 @@ html[dir="rtl"] .carousel-container .button-container button {
   font-weight: 800;
   font-size: var(--size-14);
   line-height: 15px;
-  padding-bottom: var(--spacing-20);
-  color: var(--input-background-color);
+  padding-bottom: var(--spacing-16);
+  color: var(--neutral-alpha-57-a);
 }
 
 .carousel-container > .default-content-wrapper > p:nth-child(2) {
   font-weight: 400;
   font-size: var(--size-40);
   line-height: var(--nav-height);
-  padding-bottom: var(--spacing-56);
-  color: var(--input-background-color);
+  padding-bottom: var(--spacing-48);
+  color: var(--primary-blue-90);
   text-transform: uppercase;
 }
   
@@ -88,7 +88,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 .carousel > ul {
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, 85%);
+  grid-template-columns: repeat(5, 83%);
   grid-template-rows: 1fr;
   gap: 0 var(--spacing-32);
   overflow: scroll hidden;
@@ -132,7 +132,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   font-size: var(--size-14);
   line-height: 16px;
   font-weight: 400;
-  color: var(--neutrals-100);
+  color: var(--neutral-alpha-95-a);
   padding: var(--spacing-24) 0 0;
   margin: 0;
 }
@@ -162,11 +162,17 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
+    padding: 0 var(--section-gutter-space);
   }
   
   .carousel-container > .default-content-wrapper p:first-child {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
+    font-weight: 700;
+    font-size: var(--size-16);
+    line-height: 17px;
+    padding-bottom: var(--spacing-12);
+    color: var(--neutral-alpha-70-a);
   }
   
   .carousel-container > .default-content-wrapper p:nth-child(2) {
@@ -194,6 +200,20 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     padding-right: 0;
   }
 
+  .carousel-container .button-container button {
+    padding: var(--spacing-8) var(--spacing-12);
+    right: 3%;
+  }
+
+  .carousel-container .button-container button:disabled {
+    opacity: 0.5;
+  }
+  
+  html[dir="rtl"] .carousel-container .button-container button {
+    padding: var(--spacing-8) var(--spacing-12);
+    left: 3%;
+  }
+
   .carousel > ul {
     grid-template-columns: repeat(5, 85%);
     gap: 0 var(--spacing-24);
@@ -209,6 +229,12 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     left: var(--nav-height); 
   }
 
+  .carousel .cards-card-body {
+    font-size: var(--size-16);
+    line-height: 17px;
+    font-weight: 400;
+  }
+
   .carousel-container .button-container {
     padding-bottom: var(--spacing-40);
   }
@@ -216,12 +242,8 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   .carousel-container .button-container a.button:any-link, button {
     font-size: var(--size-14);
     font-weight: 700;
-    line-height: 19px;
+    line-height: 23px;
     margin: 0;
-  }
-
-  .carousel-container .button-container button:disabled {
-    opacity: 0.5;
   }
 
   .carousel-container > div.carousel-wrapper {
@@ -266,6 +288,10 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   .carousel-container > .default-content-wrapper p:first-child {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
+    font-weight: 800;
+    font-size: var(--size-14);
+    line-height: 15px;
+    padding-bottom: var(--spacing-8);
   }
 
   .carousel-container > .default-content-wrapper p:nth-child(2) {
@@ -281,7 +307,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   .carousel-container > .default-content-wrapper > p:nth-child(2) {
     font-weight: 400;
     font-size: var(--size-28);
-    line-height: 30px;
+    line-height: 31px;
     color: var(--primary-blue-90);
     padding-bottom: var(--spacing-24);
   }
@@ -299,7 +325,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel > ul {
-    grid-template-columns: repeat(5, 85%);
+    grid-template-columns: repeat(5, 83%);
     gap: 0 var(--spacing-24);
   }
 }
@@ -322,14 +348,14 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   html[dir="rtl"] .carousel-container {
     max-width: var(--screen-width);
     margin: auto;
-    padding: 0 var(--section-gutter-space);
+    padding: var(--spacing-32) var(--section-gutter-space);
   }
 
   .carousel-container .button-container a.button:any-link, button {
     font-size: var(--size-16);
     font-weight: 700;
-    line-height: 21px;
-    padding: 15px 32px 18px;
+    line-height: var(--spacing-24);
+    padding: var(--spacing-16) var(--spacing-32);
   }
 
   .carousel-container .button-container button:disabled {
