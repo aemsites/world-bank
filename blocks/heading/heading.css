@@ -75,10 +75,6 @@
     .heading h2 {
         line-height: 35.84px;
     }
-
-    .heading hr {
-        margin-top: 32px;
-    }
 }
 
 @media (width >=1024px) {
