@@ -70,7 +70,7 @@ input:not(:placeholder-shown) + .floating-placeholder {
   align-items: center;
   cursor: pointer;
   margin-top: 20px;
-  padding: 12px 0px;
+  padding: 12px 0;
   width: 100%;
   gap: 8px;
   justify-content: center;
@@ -197,6 +197,7 @@ input:not(:placeholder-shown) + .floating-placeholder {
   .email-signup-container .checkbox-group {
     margin-top: 16px;
   }
+
   .email-signup-container button#signup-btn,
   .email-signup-container button#signup-btn-desktop{
     gap: 12px;
