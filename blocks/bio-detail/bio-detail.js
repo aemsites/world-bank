@@ -41,6 +41,11 @@ function createPersonBio(
   resources,
   block,
 ) {
+  const pElement = document.querySelector('.display-name p');
+  const h1Element = document.createElement('h1');
+  h1Element.textContent = pElement.textContent;
+  pElement.parentNode.replaceChild(h1Element, pElement);
+  console.log(bioName)
   const firstContainer = div({ class: 'first-container' });
   const nameJobSocial = div({ class: 'name-job-social' }, bioName, jobTitle);
   const socialMedias = div({ class: 'social-media' });
@@ -98,6 +103,7 @@ export default async function decorate(block) {
     mediaInquiries,
     resources,
   ] = [...block.children];
+  console.log(block.children)
 
   profileImage.className = 'profile-image';
   displayName.className = 'display-name';
@@ -119,12 +125,14 @@ export default async function decorate(block) {
     mediaTargetDiv.firstChild,
   );
 
-  const resourcesTargetDiv = document.querySelector('.resources');
-  resourcesTargetDiv.insertBefore(
-    div({ class: 'title' }, placeholderData.biodetailResourcesText),
-    resourcesTargetDiv.firstChild,
-  );
-  createResources(block);
+  if(resources.textContent.trim()){
+    const resourcesTargetDiv = document.querySelector('.resources');
+    resourcesTargetDiv.insertBefore(
+      div({ class: 'title' }, placeholderData.biodetailResourcesText),
+      resourcesTargetDiv.firstChild,
+    );
+    createResources(block);
+  }
   createPersonBio(
     displayName,
     jobTitle,

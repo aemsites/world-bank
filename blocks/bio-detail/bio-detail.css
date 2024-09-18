@@ -81,10 +81,13 @@
 }
 
 .bio-detail .sections-container .display-name {
-  font-size: var(--h1-base);
   font-weight: bold;
   color: var(--primary-blue-90);
   line-height: 43px;
+}
+
+.bio-detail .sections-container .display-name h1 {
+  margin: var(--none);
 }
 
 .bio-detail .sections-container .job-title {
