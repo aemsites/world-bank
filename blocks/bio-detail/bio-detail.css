@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column-reverse;
-  gap: 30px;
+  gap: var(--spacing-huge);
 }
 
 .profile-image img {
@@ -61,7 +61,7 @@
 }
 
 .bio-detail .download-image {
-  margin-right: var(--xxsmall);
+  margin-right: 9px;
   width: 8px;
   height: 14px;
 }
@@ -77,7 +77,7 @@
 .bio-detail .second-container {
   display: flex;
   flex-direction: column-reverse;
-  gap: var(--huge);
+  gap: var(--spacing-xhuge);
 }
 
 .bio-detail .sections-container .display-name {
@@ -95,8 +95,8 @@
 
 .bio-detail .sections-container .name-job-social .social-media {
   display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  gap: var(--xsmall);
+  margin-top: var(--regular);
 }
 
 .bio-detail .sections-container .name-job-social .social-media .social-media-link {
@@ -118,8 +118,7 @@
 .bio-detail .media-resources {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 28px;
-  margin-top: var(--medium);
+  gap: var(--spacing-xlarge);
 }
 
 .bio-detail .media-inquiries p {
@@ -149,7 +148,6 @@
   .bio-detail .media-resources {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    margin-top: var(--xlarge);
   }
 
   .bio-detail .sections-container {
@@ -165,8 +163,7 @@
   }
 
   .bio-detail .media-resources {
-    gap: var(--xhuge);
-    margin-top: 70px;
+    margin-top: 80px;
   }
 
   .bio-detail .second-container .profile-image {
@@ -197,7 +194,9 @@
   }
 
   .bio-detail .sections-container {
-    flex-direction: row;
+    /* flex-direction: row; */
+            display: grid;
+              grid-template-columns: 1fr 1fr;
   }
 
   .bio-detail .second-container {
