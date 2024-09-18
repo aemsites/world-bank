@@ -123,18 +123,20 @@ main .section > div.organizational-cards-wrapper {
 .organizational-card .card-title {
   font-size: 14px;
   line-height: 17.5px;
-  border-bottom: 2px solid var(--accent-blue-primary-40);
-  min-height: 70px;
+  /*border-bottom: 2px solid var(--accent-blue-primary-40);*/
+  /*min-height: 70px;*/
   width: 100%;
-  margin-bottom: 12px;
+  /*margin-bottom: 12px;*/
 }
 
 .organizational-card .card-mission {
+  border-top: 2px solid var(--accent-blue-primary-40);
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   min-height: 104px;
-  margin-top: 24px;
+  padding-top: 32px;
+  margin-top: 32px;
 }
 
 .organizational-card .card-link-wrapper {
@@ -168,7 +170,9 @@ main .section > div.organizational-cards-wrapper {
 
 .organizational-card.collapsed {
   width: 188px;
-  padding: 0 32px;
+  padding: 0 32px 32px 32px;
+  border-bottom: 2px solid var(--accent-blue-primary-40);
+  box-sizing: border-box;
   background: unset;
 }
 
