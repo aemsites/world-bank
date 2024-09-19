@@ -165,7 +165,7 @@
   }
 
   .columns.columns-2-cols.columns-heading-with-description div > div {
-    margin-bottom:var(--spacing-regular);
+    margin-bottom:var(--spacing-medium);
   }
 
   .columns.columns-2-cols.columns-heading-with-description > div h2 {
