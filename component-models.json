@@ -129,10 +129,6 @@
                 "value": "columns-default-variant"
               },
               {
-                "name": "Heading With Description",
-                "value": "columns-heading-with-description"
-              },
-              {
                 "name": "Divider Variant",
                 "value": "columns-divider-variant"
               },
@@ -362,7 +358,6 @@
           { "name": "Left Top Swoosh", "value": "sec-swoosh-type3" },
           { "name": "Right Top Swoosh", "value": "sec-swoosh-type2" },
           { "name": "Swoosh for BG inside container - Desktop", "value": "sec-swoosh-type5" },
-          { "name": "Leaders profile swoosh", "value": "sec-swoosh-type6" },
           { "name": "Primary Blue 90 theme Swoosh", "value": "sec-swoosh-primary-blue-90" }
         ]
       },
@@ -1292,23 +1287,6 @@
         "label": "Mini Cards Heading",
         "valueType": "string",
         "required": true
-      },
-      {
-        "component": "select",
-        "valueType": "string",
-        "name": "classes",
-        "value": "",
-        "label": "Classes",
-        "options": [
-          {
-            "name": "Mini Card",
-            "value": "mini-card-variation"
-          },
-          {
-            "name": "Image List",
-            "value": "image-list-variation"
-          }
-        ]
       }
     ]
   },
@@ -1616,7 +1594,7 @@
         "options": [
           {
             "name": "All Tab",
-            "value": "all"
+            "value": "all-tab"
           },
           {
             "name": "Publication",
@@ -1637,7 +1615,7 @@
         ]
       },
       {
-        "component": "aem-content",
+        "component": "text",
         "valueType": "string",
         "name": "fragmentPath",
         "value": "",
@@ -1708,6 +1686,12 @@
         "name": "image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "altText",
+        "label": "Alt Text"
       }
     ]
   },
@@ -1804,7 +1788,8 @@
         "valueType": "string",
         "name": "resources",
         "value": "",
-        "label": "Resources"
+        "label": "Resources",
+        "required": true
       }
     ]
   },
@@ -1889,6 +1874,17 @@
         "name": "linkText",
         "label": "Link Text",
         "multi": false
+      }
+    ]
+  },
+  {
+    "id": "breadcrumb",
+    "fields": [
+      {
+        "component": "boolean",
+        "label": "Enable Breadcrumb",
+        "name": "enableBreadcrumb",
+        "valueType": "boolean"
       }
     ]
   },
