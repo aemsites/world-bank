@@ -155,7 +155,7 @@ main .section > div.organizational-cards-wrapper {
   height: 24px;
   line-height: 24px;
   font-size: 14px;
-  border-bottom: 2px solid var(--divider-on-dark-subdued);
+  /*border-bottom: 2px solid var(--divider-on-dark-subdued);*/
   border-radius: unset;
   color: var(--text-on-dark-emphasis);
   background-color: unset;
@@ -298,9 +298,10 @@ main .section > div.organizational-cards-wrapper {
     padding: unset;
   }
 
+  /*
   .organizational-card .card-link-wrapper .button-container > a.card-link.button:any-link {
     border-bottom: none;
-  }
+  }*/
 
   .organizational-card.collapsed {
     width: 100%;
