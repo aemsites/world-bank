@@ -14,11 +14,11 @@ function createCard(card) {
     `${TAG_ROOT}category/`,
     '',
   );
-  card.className = cardtitle.textContent;
+  card.className = cardtitle.textContent.trim();
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
   const image = imagediv.querySelector('img');
-  image.alt = imagealt.querySelector('p').textContent || '';
+  image.alt = imagealt.querySelector('p').textContent.trim() || '';
   imagealt.remove();
 }
 function handlePriorityListScroll(leftColumnContainer, cards) {
