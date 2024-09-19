@@ -56,7 +56,7 @@
 
 .columns.columns-transform-teaser > div p:nth-child(3) {
   display: inline-flex;
-  margin: var(--spacing-large) 30px 9px 0;
+  margin: var(--spacing-large) 30px var(--small) 0;
 }
 
 .columns.columns-transform-teaser > div p:nth-child(4) {
