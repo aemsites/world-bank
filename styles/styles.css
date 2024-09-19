@@ -504,6 +504,8 @@
   --spacing-64: 64px;
   --spacing-80: 80px;
   --spacing-96: 96px;
+  --button-vertical-padding: var(--spacing-12);
+  --button-horizontal-padding: var(--spacing-32);
 
   /* Typography spacing */
   --size-72: 72px;
@@ -740,6 +742,7 @@
     --global-font-familly: 'Open Sans';
     --heading-font-weight: var(--body-font-weight-bold);
     --label-font-weight: var(--body-font-weight-bold);
+    --button-vertical-padding: var(--spacing-12);
   }
 }
 
@@ -854,6 +857,7 @@
     --global-font-familly: 'Open Sans';
     --heading-font-weight: var(--body-font-weight-bold);
     --label-font-weight: var(--body-font-weight-bold);
+    --button-vertical-padding: var(--spacing-16);
   }
 }
 
@@ -1045,7 +1049,7 @@ button {
   box-sizing: border-box;
   text-decoration: none;
   border: 1px solid transparent;
-  padding: 12px 32px;
+  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
   font-style: normal;
   cursor: pointer;
   color: var(--background-color);
