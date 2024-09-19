@@ -3,7 +3,7 @@ main .breadcrumb-wrapper ol {
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 20px 0 0;
+  padding: 24px 0 0;
 }
 
 main .breadcrumb-wrapper ol li {
