@@ -1690,7 +1690,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "altText",
+        "name": "alttext",
         "label": "Alt Text",
         "value": "Default Alt"
       }
