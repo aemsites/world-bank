@@ -48,7 +48,7 @@
     "id": "image",
     "fields": [
       {
-        "component": "dam-asset",
+        "component": "reference",
         "valueType": "string",
         "name": "fileReference",
         "label": "Image",
