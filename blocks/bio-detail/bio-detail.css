@@ -38,10 +38,6 @@
   font-weight: normal;
 }
 
-.bio-detail .media-inquiries p:nth-child(4) a {
-  text-decoration: underline;
-}
-
 .bio-detail .media-inquiries p a:hover{
   color: var(--primary-blue-70);
   border-bottom: 2px solid rgb(22 154 243 / 100%);

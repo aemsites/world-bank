@@ -6,34 +6,37 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: var(--main-heading-spacing);
+  margin: 0 0 var(--spacing-xlarge);
 }
 
 .cards-container .rp-card .text-content .card-btn p{
-  height: 48px;
+  height: 46px;
   display: flex;
   align-items: center;
 }
 
 .button-wrapper {
   display: block;
-  margin-top: 50px;
+  margin-top: var(--spacing-xlarge);
 }
 
 .cards-container {
   display: grid;
-  gap: 40px;
+  gap: 100px;
 }
 
 .cards-container .rp-card {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 40px;
-  align-items: top;
+  gap: var(--spacing-xlarge);
 }
 
 .cards-container .rp-card .card-img {
-    align-self: start;
+  align-self: start;
+}
+
+.cards-container .rp-card .card-img img {
+  width: 100%;
 }
 
 .cards-container .rp-card .text-content .title {
@@ -41,10 +44,6 @@
   line-height: 22px;
   color: var(--accent-blue-primary-70);
   font-weight: 700;
-}
-
-.text-content .title div {
-  height: 65px;
 }
 
 .cards-container .rp-card .text-content .desc {
@@ -79,7 +78,7 @@
 
   .cards-container {
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 156px;
   }
 
   .button-wrapper {
@@ -90,10 +89,6 @@
 @media (width < 1024px) {
   .heading-wrapper div:nth-child(2) {
     display: none;
-  }
-
-  .cards-container .rp-card{
-    gap:20px;
   }
 }
 
