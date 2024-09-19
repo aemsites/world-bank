@@ -1,7 +1,7 @@
 .carousel-container {
   display: flex;
   padding: 0 var(--section-gutter-space);
-  background-color: var(--color-white);
+  background-color: var(--white);
   box-shadow: none;
 }
 
@@ -16,8 +16,8 @@
 }
  
 .carousel-container .button-container button {
-  background-color: var(--color-white);
-  border: 2px solid var(--primary-blue-80);
+  background-color: var(--white);
+  border: 2px solid var(--accent-blue-primary-70);
   padding: 8px 13px;
   right: 3%;
   cursor: pointer;
@@ -27,14 +27,14 @@
 
 .carousel-container .button-container button:disabled {
   opacity: 0.5;
-  background-color: var(--neutrals-40);
+  background-color: var(--neutral-solid-30-s);
   color: rgb(0 41 77 / 42%);
   cursor: unset;
 }
 
 html[dir="rtl"] .carousel-container .button-container button {
-  background-color: var(--color-white);
-  border: 2px solid var(--primary-blue-80);
+  background-color: var(--white);
+  border: 2px solid var(--accent-blue-primary-70);
   padding: 8px 13px;
   right: auto;
   left: 3%;
@@ -45,23 +45,23 @@ html[dir="rtl"] .carousel-container .button-container button {
 
 .carousel-container > .default-content-wrapper > p:first-child {
   font-weight: 800;
-  font-size: var(--size-14);
+  font-size: 14px;
   line-height: 15px;
-  padding-bottom: var(--spacing-16);
+  padding-bottom: 16px;
   color: var(--neutral-alpha-57-a);
 }
 
 .carousel-container > .default-content-wrapper > p:nth-child(2) {
   font-weight: 400;
-  font-size: var(--size-40);
+  font-size: 40px;
   line-height: var(--nav-height);
-  padding-bottom: var(--spacing-48);
-  color: var(--primary-blue-90);
+  padding-bottom: 48px;
+  color: var(--accent-blue-primary-90);
   text-transform: uppercase;
 }
   
 .carousel-container > .default-content-wrapper > p:nth-child(2) > strong {
-  color: var(--primary-blue-90);
+  color: var(--accent-blue-primary-90);
 }
 
 .carousel-container .button-container {
@@ -90,7 +90,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   display: grid;
   grid-template-columns: repeat(5, 83%);
   grid-template-rows: 1fr;
-  gap: 0 var(--spacing-32);
+  gap: 0 32px;
   overflow: scroll hidden;
   scroll-snap-type: both mandatory;
   scroll-padding: 0;
@@ -129,11 +129,11 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 }
   
 .carousel .cards-card-body {
-  font-size: var(--size-14);
+  font-size: 14px;
   line-height: 16px;
   font-weight: 400;
   color: var(--neutral-alpha-95-a);
-  padding: var(--spacing-24) 0 0;
+  padding: 24px 0 0;
   margin: 0;
 }
 
@@ -169,9 +169,9 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
     font-weight: 700;
-    font-size: var(--size-16);
+    font-size: 16px;
     line-height: 17px;
-    padding-bottom: var(--spacing-12);
+    padding-bottom: 12px;
     color: var(--neutral-alpha-70-a);
   }
   
@@ -187,21 +187,21 @@ html[dir="rtl"] .section > div.carousel-wrapper {
  
   .carousel-container > .default-content-wrapper > p:nth-child(2) {
     font-weight: 400;
-    font-size: var(--size-32);
+    font-size: 32px;
     line-height: 35px;
-    color: var(--primary-blue-90);
-    padding-bottom: var(--spacing-40);
-    padding-right: var(--spacing-24);
+    color: var(--accent-blue-primary-90);
+    padding-bottom: 40px;
+    padding-right: 24px;
     padding-left: 0;
   }
 
   html[dir="rtl"] .carousel-container > .default-content-wrapper > p:nth-child(2) {
-    padding-left: var(--spacing-24);
+    padding-left: 24px;
     padding-right: 0;
   }
 
   .carousel-container .button-container button {
-    padding: var(--spacing-8) var(--spacing-12);
+    padding: 8px 12px;
     right: 3%;
   }
 
@@ -210,13 +210,13 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
   
   html[dir="rtl"] .carousel-container .button-container button {
-    padding: var(--spacing-8) var(--spacing-12);
+    padding: 8px 12px;
     left: 3%;
   }
 
   .carousel > ul {
     grid-template-columns: repeat(5, 85%);
-    gap: 0 var(--spacing-24);
+    gap: 0 24px;
   }
 
   .carousel > .prev,
@@ -230,17 +230,17 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel .cards-card-body {
-    font-size: var(--size-16);
+    font-size: 16px;
     line-height: 17px;
     font-weight: 400;
   }
 
   .carousel-container .button-container {
-    padding-bottom: var(--spacing-40);
+    padding-bottom: 40px;
   }
 
   .carousel-container .button-container a.button:any-link, button {
-    font-size: var(--size-14);
+    font-size: 14px;
     font-weight: 700;
     line-height: 23px;
     margin: 0;
@@ -289,9 +289,9 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
     font-weight: 800;
-    font-size: var(--size-14);
+    font-size: 14px;
     line-height: 15px;
-    padding-bottom: var(--spacing-8);
+    padding-bottom: 8px;
   }
 
   .carousel-container > .default-content-wrapper p:nth-child(2) {
@@ -306,14 +306,14 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 
   .carousel-container > .default-content-wrapper > p:nth-child(2) {
     font-weight: 400;
-    font-size: var(--size-28);
+    font-size: 28px;
     line-height: 31px;
-    color: var(--primary-blue-90);
-    padding-bottom: var(--spacing-24);
+    color: var(--accent-blue-primary-90);
+    padding-bottom: 24px;
   }
 
   .carousel-container p.button-container {
-    padding-bottom: var(--spacing-40);
+    padding-bottom: 40px;
   }
 
   .carousel-container .button-container a.button:any-link, button {
@@ -326,7 +326,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 
   .carousel > ul {
     grid-template-columns: repeat(5, 83%);
-    gap: 0 var(--spacing-24);
+    gap: 0 24px;
   }
 }
 
@@ -334,7 +334,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   main .section.carousel-container {
     max-width: var(--screen-width);
     margin: auto;
-    padding: var(--spacing-32) var(--section-gutter-space);
+    padding: 32px var(--section-gutter-space);
   }
 
   .carousel-container > .default-content-wrapper {
@@ -348,18 +348,18 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   html[dir="rtl"] .carousel-container {
     max-width: var(--screen-width);
     margin: auto;
-    padding: var(--spacing-32) var(--section-gutter-space);
+    padding: 32px var(--section-gutter-space);
   }
 
   .carousel-container .button-container a.button:any-link, button {
-    font-size: var(--size-16);
+    font-size: 16px;
     font-weight: 700;
-    line-height: var(--spacing-24);
-    padding: var(--spacing-16) var(--spacing-32);
+    line-height: 24px;
+    padding: 16px 32px;
   }
 
   .carousel-container .button-container button:disabled {
-    background-color: var(--neutrals-40);
+    background-color: var(--neutral-solid-30-s);
     color: rgb(0 41 77 / 42%);
     cursor: unset;
   }

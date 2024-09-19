@@ -5,7 +5,8 @@
 }
 
 dialog.livenow-modal::backdrop {
-  background-color: rgba(0 28 45 / 50%)
+  background-color: var(--blue-90);
+  opacity: 0.9;
 }
 
 dialog.livenow-modal:modal {
@@ -21,174 +22,174 @@ dialog.livenow-modal:modal {
   justify-content: center;
   font-family: var(--body-font-family);
   font-weight: 700;
+}
 
-  .modal-content-wrapper {
-      display: flex;
-      flex-direction: row;
-      margin: var(--spacing-48);
-  }
-
-  button[name="close"] {
-    position: absolute;
-    height: 48px;
-    width: 48px;
-    background-color: var(--primary-blue-50);
-    border-radius: 50%;
+dialog.livenow-modal:modal .modal-content-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    top: -40px;
-    right: 24px;
-    padding: unset;
-    border: none;
+    flex-direction: row;
+    margin: var(--spacing-48);
+}
 
-    &:hover {
-      background-color: var(--primary-blue-40);
-      border: 2px solid var(--primary-blue-50);
-    }
+dialog.livenow-modal:modal button[name="close"] {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  background-color: var(--primary-blue-50);
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  top: -40px;
+  right: 24px;
+  padding: unset;
+  border: none;
+}
 
-    &:focus {
-      border: unset;
-      border: 2px solid var(--primary-blue-70);
-    }
-  }
+dialog.livenow-modal:modal button[name="close"]:hover {
+  background-color: var(--primary-blue-40);
+  border: 2px solid var(--primary-blue-50);
+}
 
-  .close-x {
-    height: 14px;
-  }
+dialog.livenow-modal:modal button[name="close"]:focus {
+  border: unset;
+  border: 2px solid var(--primary-blue-70);
+}
 
-  .modal-title {
-    display: flex;
-    border-bottom: 2px solid var(--neutrals-20);
-    padding-bottom: var(--spacing-40);
+dialog.livenow-modal:modal .close-x {
+  height: 14px;
+}
 
-    img {
-      height: 33px;
-      width: 52px;
-      margin-right: 8px;
-    }
+dialog.livenow-modal:modal .modal-title {
+  display: flex;
+  border-bottom: 2px solid var(--neutrals-20);
+  padding-bottom: var(--spacing-40);
+}
 
-    .modal-title-txt {
-      font-size: 28px;
-      line-height: 33.6px;
-      color: var(--red-50);
-    }
-  }
+dialog.livenow-modal:modal .modal-title img {
+  height: 33px;
+  width: 52px;
+  margin-right: 8px;
+}
 
-  .event-title {
-    display: flex;
-    flex-direction: column;
-    margin-top: var(--spacing-40);
+dialog.livenow-modal:modal .modal-title .modal-title-txt {
+  font-size: 28px;
+  line-height: 33.6px;
+  color: var(--red-50);
+}
 
-    .wblive-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: var(--spacing-16);
+dialog.livenow-modal:modal .event-title {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--spacing-40);
+}
 
-      img {
-        margin-right: var(--spacing-8);
-        width: 26px;
-        height: 33px;
-      }
-    }
+dialog.livenow-modal:modal .event-title .wblive-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-16);
+}
 
-    .wblive-header-txt {
-      font-size: 14px;
-      line-height: 15.4px;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-align: left;
-      color: var(--neutrals-100);
-      margin-bottom: var(--spacing-8);
-    }
+dialog.livenow-modal:modal .event-title .wblive-header img {
+  margin-right: var(--spacing-8);
+  width: 26px;
+  height: 33px;
+}
 
-    .event-title-txt {
-      color: var(--primary-blue-70);
-      font-size: 36px;
-      line-height: 44px;
-    }
-  }
+dialog.livenow-modal:modal .event-title .wblive-header-txt {
+  font-size: 14px;
+  line-height: 15.4px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: var(--neutrals-100);
+  margin-bottom: var(--spacing-8);
+}
 
-  .modal-column-left {
-    height: 312px;
-    width: 417px;
-    margin-right: var(--spacing-48);
-  }
+dialog.livenow-modal:modal .event-title .event-title-txt {
+  color: var(--primary-blue-70);
+  font-size: 36px;
+  line-height: 44px;
+}
 
-  .modal-column-right {
-    width: 100%;
-    max-width: 580px;
-    height: 336px;
-    position: relative;
-    
-    img.event-thumbnail {
-      height: 100%;
-      width: 100%;
-      border-radius: 10px;
-    }
+dialog.livenow-modal:modal .modal-column-left {
+  height: 312px;
+  width: 417px;
+  margin-right: var(--spacing-48);
+}
 
-    .join-event-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      width: 200px;
-      height: 70px;
-      border-radius: 100px;
-      background-color: var(--color-white);
-      text-decoration: none;
+dialog.livenow-modal:modal .modal-column-right {
+  width: 100%;
+  max-width: 580px;
+  height: 336px;
+  position: relative;
+}
+  
+dialog.livenow-modal:modal .modal-column-right img.event-thumbnail {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
 
-      &:hover {
-        border: 2px solid var(--primary-blue-50);
-      }
+dialog.livenow-modal:modal .modal-column-right .join-event-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 70px;
+  border-radius: 100px;
+  background-color: var(--color-white);
+  text-decoration: none;
+}
 
-      &:focus {
-        border: 1px solid var(--primary-blue-70);
-        background-color: var(--primary-blue-20);
-      }
+dialog.livenow-modal:modal .modal-column-right .join-event-btn:hover {
+  border: 2px solid var(--primary-blue-50);
+}
 
-      .event-play {
-        height: 36px;
-        width: 36px;
-        border-radius: 50%;
-        background-color: var(--red-50);
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        margin-right: 24px;
+dialog.livenow-modal:modal .modal-column-right .join-event-btn:focus {
+  border: 1px solid var(--primary-blue-70);
+  background-color: var(--primary-blue-20);
+}
 
-        img {
-          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(200%) contrast(100%);
-          height: 16px;
-          margin-left: 2px;
-        }
-      }
+dialog.livenow-modal:modal .modal-column-right .join-event-btn .event-play {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background-color: var(--red-50);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24px;
+}
 
-      .join-btn-txt {
-        color: var(--primary-blue-70);
-        font-family: var(--heading-font-family);
-        font-size: 16px;
-        font-weight: 700;
-      }
-    }
-  }
+dialog.livenow-modal:modal .modal-column-right .join-event-btn .event-play img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(200%) contrast(100%);
+  height: 16px;
+  margin-left: 2px;
+}
 
-  &::before {
-    content: "";
-    display: block;
-    height: 24px; /* Adds 24px of space above the dialog */
-    width: 100%;
-    position: absolute;
-    top: -24px;
-    left: 0;
-    background: transparent; /* Keeps it invisible */
-  }
+dialog.livenow-modal:modal .modal-column-right .join-event-btn .join-btn-txt {
+  color: var(--primary-blue-70);
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+dialog.livenow-modal:modal &::before {
+  content: "";
+  display: block;
+  height: 24px; /* Adds 24px of space above the dialog */
+  width: 100%;
+  position: absolute;
+  top: -24px;
+  left: 0;
+  background: transparent; /* Keeps it invisible */
 }
 
 @media (width <=1024px) {
@@ -196,48 +197,48 @@ dialog.livenow-modal:modal {
     max-width: 648px;
     max-height: 674px;
     height: 85%;
+  }
 
-    .modal-content-wrapper {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .modal-column-left {
-      max-height: 220px;
-      height: 40%;
+  dialog.livenow-modal:modal .modal-content-wrapper {
+      flex-direction: column;
       width: 100%;
-      margin-right: unset;
-      margin-bottom: 24px;
-    }
+  }
 
-    .modal-column-right {
-      max-height: 306px;
-      height: 60%;
-      width: 100%;
+  dialog.livenow-modal:modal .modal-column-left {
+    max-height: 220px;
+    height: 40%;
+    width: 100%;
+    margin-right: unset;
+    margin-bottom: 24px;
+  }
 
-      .join-event-btn {
-        height: 64px;
-        width: 182px;
-      }
-    }
+  dialog.livenow-modal:modal .modal-column-right {
+    max-height: 306px;
+    height: 60%;
+    width: 100%;
+  }
 
-    .modal-title {
-      padding-bottom: var(--spacing-24);
+  dialog.livenow-modal:modal .modal-column-right .join-event-btn {
+    height: 64px;
+    width: 182px;
+  }
 
-      .modal-title-txt {
-        font-size: 24px;
-        line-height: 28px;
-      }
-    }
+  dialog.livenow-modal:modal .modal-column-left .modal-title {
+    padding-bottom: var(--spacing-24);
+  }
 
-    .event-title {
+  dialog.livenow-modal:modal .modal-column-left .modal-title .modal-title-txt {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  dialog.livenow-modal:modal .modal-column-left .event-title {
       margin-top: var(--spacing-24);
+  }
 
-      .event-title-txt {
-        font-size: 28px;
-        line-height: 32px;
-      }
-    }
+  dialog.livenow-modal:modal .modal-column-left .event-title .event-title-txt {
+    font-size: 28px;
+    line-height: 32px;
   }
 }
 
@@ -245,51 +246,51 @@ dialog.livenow-modal:modal {
   dialog.livenow-modal:modal {
     max-width: 334px;
     max-height: 536px;
+  }
 
-    .modal-content-wrapper {
-        flex-direction: column;
-        width: 100%;
-        height: 90%;
-        margin: var(--spacing-32);
-    }
-
-    .modal-column-left {
-      max-height: 288px;
-      height: 60%;
+  dialog.livenow-modal:modal .modal-content-wrapper {
+      flex-direction: column;
       width: 100%;
-      margin-right: unset;
-      margin-bottom: 12px;
-    }
+      height: 90%;
+      margin: var(--spacing-32);
+  }
 
-    .modal-column-right {
-      max-height: 157px;
-      height: 40%;
-      width: 100%;
+  dialog.livenow-modal:modal .modal-column-left {
+    max-height: 288px;
+    height: 60%;
+    width: 100%;
+    margin-right: unset;
+    margin-bottom: 12px;
+  }
 
-      .join-event-btn {
-        height: 56px;
-        width: 174px;
-      }
-    }
+  dialog.livenow-modal:modal .modal-column-right {
+    max-height: 157px;
+    height: 40%;
+    width: 100%;
+  }
 
-    .modal-title {
-      padding-bottom: var(--spacing-32);
+  dialog.livenow-modal:modal .modal-column-right .join-event-btn {
+    height: 56px;
+    width: 174px;
+  }
 
-      .modal-title-txt {
-        font-size: 24px;
-        line-height: 28px;
-      }
-    }
+  dialog.livenow-modal:modal .modal-title {
+    padding-bottom: var(--spacing-32);
+  }
 
-    .event-title {
-      margin-top: var(--spacing-32);
-      max-height: 189px;
-      width: 100%;
+  dialog.livenow-modal:modal .modal-title .modal-title-txt {
+    font-size: 24px;
+    line-height: 28px;
+  }
 
-      .event-title-txt {
-        font-size: 28px;
-        line-height: 32px;
-      }
-    }
+  dialog.livenow-modal:modal .event-title {
+    margin-top: var(--spacing-32);
+    max-height: 189px;
+    width: 100%;
+  }
+
+  dialog.livenow-modal:modal .event-title .event-title-txt {
+    font-size: 28px;
+    line-height: 32px;
   }
 }
