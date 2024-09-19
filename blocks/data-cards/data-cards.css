@@ -70,7 +70,6 @@
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p {
   display: inline-block;
-  margin-right: var(--spacing-xxsmall);
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
