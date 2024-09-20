@@ -10,7 +10,7 @@
 }
 
 .cards-container .rp-card .text-content .card-btn p{
-  padding: 17px var(--none) 7px;
+  padding: 17px var(--none) var(--xxsmall);
 }
 
 .button-wrapper {
@@ -42,15 +42,15 @@
 }
 
 .cards-container .rp-card .text-content .title {
-  font-size: var(--font-size-500);
-  line-height: 22px;
+  font-size: var(--heading-label-tiny);
+  line-height: 23px;
   color: var(--accent-blue-primary-70);
   font-weight: 700;
 }
 
 .cards-container .rp-card .text-content .desc {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: var(--font-size-300);
+  line-height: 20px;
   padding: var(--spacing-regular) 0 var(--spacing-regular);
   border-top: 2px solid var(--neutral-alpha-08-a);
   margin-top: var(--spacing-xlarge);
@@ -65,7 +65,7 @@
   line-height: 22px;
   color: var(--accent-blue-primary-70);
   font-weight: 700;
-  width: fit-content;
+  width: max-content;
   border-bottom: 2px solid #0049724d;
 }
 
@@ -73,8 +73,18 @@
   margin: 10px 0;
 }
 
+@media (width >= 768px) {
+  .cards-container .rp-card {
+    align-items: center;
+  }
+
+  .cards-container .rp-card .text-content .title {
+    line-height: 27px;
+  }
+}
+
 @media (width >= 1024px) {
-  .research-publications-cards a.button{
+  .research-publications-cards a.button {
     font-size: var(--font-size-200);
     padding: 15px 32px;
   }
@@ -87,21 +97,14 @@
   .button-wrapper {
     display: none;
   }
+
+  .cards-container .rp-card .text-content .title {
+    line-height: 32px;
+  }
 }
 
 @media (width < 1024px) {
   .heading-wrapper div:nth-child(2) {
     display: none;
-  }
-}
-
-@media (width >= 768px) {
-  .cards-container .rp-card {
-    align-items: center;
-  }  
-
-  .cards-container .rp-card .text-content .title {
-    font-size: var(--font-size-600);
-    line-height: 29px;
   }
 }
