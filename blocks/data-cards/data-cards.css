@@ -72,6 +72,10 @@
   display: inline-block;
 }
 
+.section .data-cards-wrapper .data-cards.news-card-variation .rte-container div p em ,.data-cards.data-card-variation .rte-container div p em{
+  display: flex;
+}
+
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
   font-weight: 700;
   font-size: var(--default);
@@ -79,11 +83,15 @@
   color: var(--neutral-solid-90-s);
   display: block;
   margin-bottom: var(--spacing-regular);
+}
 
+.data-cards.news-card-variation.block .rte-container>div:nth-child(2)>div>p {
+  margin: var(--spacing-regular) 0 0;
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
   margin: 0;
+  padding: 10px 30px;
 }
 
 .data-cards.news-card-variation .anchor-tag {    
@@ -243,12 +251,14 @@
   background: #91302F;
 }
 
-.data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container {
+.data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container, .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container {
   display: inline-block;
+  margin-bottom: var(--spacing-xsmall);
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
   margin: 0;
+  padding: 10px 34px;
 }
 
 .data-cards .news-card .news-card-image {
@@ -266,8 +276,8 @@
 }
 
 .section .data-cards-wrapper .data-cards.news-card-variation > .rte-container > div:nth-child(2) > div > p a {
-  margin-top: 0;
-  padding-top: 0;
+  margin: 0;
+  padding: 14px 0 8px;
 }
 
 @media (width >= 768px) {  
@@ -429,16 +439,7 @@
 
   .data-cards.news-card-variation.block .rte-container > div:nth-child(1) > div > p {
     margin-bottom:var(--spacing-regular);
-  } 
-
-  .data-cards.news-card-variation.block .rte-container > div:nth-child(2) > div > p {
-    a {
-      margin:0;
-      padding:0;
-    }
-
-    margin-bottom:0;
-  } 
+  }
 
   .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
     margin:var(--spacing-regular) 0;
