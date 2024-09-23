@@ -425,7 +425,6 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country div {
 header .nav-menu-overlay .nav-menu-column.right > ul {
   font-size: 16px;
   color: var(--color-white);
-  margin-top: 0px;
   line-height: 22px;
   letter-spacing: 0.06em;
   text-align: left;
@@ -442,7 +441,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
   font-family: var(--body-font-family);
   text-transform: none;
   padding-top: 15px;
-  width: 95%;
+  min-width: 100%;
   border-top: 1px solid var(--primary-blue-80);
   line-height: 19.2px;
   display: flex;
@@ -516,9 +515,6 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
 header .nav-menu-overlay .nav-menu-column.right {
   flex-direction: column;
   display: none;
-  height: 80vh;
-  margin-top: 30px;
-  overflow: hidden auto;
   padding-left: var(--section-gutter-space);
 }
 
@@ -811,22 +807,6 @@ align-items: center;
   width: 90%;
 }
 
-header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar {
-  background: #002035;
-  width: 8px;
-  height: 8px;
-  border-radius: 8px;
-}
-header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-thumb {
-  background-color: var(--background-container-on-light-link-primary-hover);
-  width: 8px;
-  border-radius: 8px;
-}
-header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-track {
-  background: #002035;
-  border-radius: 8px;
-}
-
 @media (width >= 1024px) {
   .search-container {
     top: 120px;
@@ -867,14 +847,8 @@ header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-track {
   }
 
   header .nav-menu-overlay .nav-menu-column.right {
-    width: calc(100vw - 70px);
+    width: auto;
     padding: 0;
-    margin-top: 30px;
-    height: 70vh;
-    overflow: hidden auto;
-  }
-  header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
-    width: 100%;
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
@@ -1101,18 +1075,13 @@ header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-track {
 
   header .nav-menu-overlay .nav-menu-column.right {
     width: 900px;
-    height: unset;
-    margin-top: 0px;
-    overflow: visible;
     position: relative;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
     display: none;
   }
-  header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
-    width: 100%;
-  }
+
   header .nav-menu-overlay .nav-menu-column.left > ul > li > span {
     display: none;
     background-color: var(--transparent);
@@ -1479,7 +1448,7 @@ header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-track {
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li {
-    padding: 0 18px;
+    padding: 0 20px;
   }
 
   header
