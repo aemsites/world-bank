@@ -194,3 +194,22 @@ export function formatDate(dObjStr) {
   }
   return '';
 }
+
+/**
+ * Gets the extension of a URL.
+ * @param {string} url The URL
+ * @returns {string} The extension
+ * @private
+ * @example
+ * get_url_extension('https://example.com/foo.jpg');
+ * // returns 'jpg'
+ * get_url_extension('https://example.com/foo.jpg?bar=baz');
+ * // returns 'jpg'
+ * get_url_extension('https://example.com/foo');
+ * // returns ''
+ * get_url_extension('https://example.com/foo.jpg#qux');
+ * // returns 'jpg'
+ */
+export function getUrlExtension(url) {
+  return url.split(/[#?]/)[0].split('.').pop().trim();
+}
