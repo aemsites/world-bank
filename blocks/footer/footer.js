@@ -29,6 +29,11 @@ function addAttributes(span, prefix = '') {
   img.title = iconName;
   img.loading = 'lazy';
   span.append(img);
+
+  // Icon link analytics
+  const iconLink = span.parentElement;
+  iconLink.dataset.customlink = 'sm:footer';
+  iconLink.dataset.text = iconName;
 }
 
 /**
@@ -126,6 +131,14 @@ export default async function decorate(block) {
           rowValue.append(switchBlock('ft-legal-list', ul));
           break;
         default:
+      }
+
+      // Subscribe newsletter analytics
+      if (rowValue.className === 'ft-main') {
+        const subscribeLink = ul.querySelector('a[href*="newsletter"]');
+        if (subscribeLink) {
+          subscribeLink.dataset.form = 'world bank group newsletters::newsletter';
+        }
       }
     });
     rowValue.removeChild(rowValue.firstElementChild);

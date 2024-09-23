@@ -748,7 +748,13 @@
         "value": "2024-09-23T00:00:00.000Z",
         "name": "content_date",
         "required": true,
-        "label": "Date Of Content"
+        "label": "Date Of Content creation"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author"
       },
       {
         "component": "select",
@@ -773,14 +779,29 @@
       },
       {
         "component": "tab",
-        "label": "Advance",
+        "label": "Analytics",
         "name": "tab-adv"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "author",
-        "label": "Author"
+        "name": "pageUid",
+        "label": "Page Uid",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pageCategory",
+        "label": "Page Category",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "channel",
+        "label": "Channel",
+        "required": true
       },
       {
         "component": "select",
