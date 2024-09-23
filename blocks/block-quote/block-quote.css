@@ -1,5 +1,5 @@
 .block-quote {
-    padding: 0 0 0 var(--spacing-32);
+    padding: 0 0 0 32px;
     border-left: 4px solid var(--text-on-light-highlight);
     margin: var(--spacing-large) 0;
 }
