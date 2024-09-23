@@ -65,7 +65,7 @@
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a {
   background-color: var(--white);
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   font-size: var(--font-size-300);
   margin: 0;
   padding: 11px 27px;
