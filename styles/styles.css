@@ -570,6 +570,10 @@
 
   /* Block specific */
   --signup-padding: 28px;
+
+  /** Button Padding **/
+  --button-vertical-padding: 12px;
+  --button-horizontal-padding: 32px;
 }
 
 /*
@@ -678,7 +682,6 @@
     --global-font-familly: 'Open Sans';
     --heading-font-weight: var(--body-font-weight-bold);
     --label-font-weight: var(--body-font-weight-bold);
-    --button-vertical-padding: var(--spacing-12);
   }
 }
 
@@ -780,7 +783,7 @@
     --global-font-familly: 'Open Sans';
     --heading-font-weight: var(--body-font-weight-bold);
     --label-font-weight: var(--body-font-weight-bold);
-    --button-vertical-padding: var(--spacing-16);
+    --button-vertical-padding: 16px;
   }
 }
 
