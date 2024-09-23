@@ -593,7 +593,7 @@
   /* main-heading styles */
   --main-heading-font-size: var(--size-28);
   --main-heading-spacing: 0 0 var(--spacing-36);
-  --main-heading-line-height: 110%;
+  --main-heading-line-height: 112%;
 
   /* eyebrow styles */
   --eyebrow-font-size-l: 14px;
