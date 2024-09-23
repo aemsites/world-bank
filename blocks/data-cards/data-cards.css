@@ -41,8 +41,10 @@
 
 .data-cards.data-card-variation .data-card-disclaimer > p {
   padding-top: 18px;
+  font-size: var(--body-small);
+  line-height:120%;
   color: var(--neutrals-a-90);
-  border-top: 2px #D9D9D9 solid;
+  border-top: 2px var(--neutral-alpha-16-a) solid;
 }
 
 .data-cards.data-card-variation .anchor-tag{
@@ -52,34 +54,41 @@
 
 .data-cards.data-card-variation .data-card-description > p {
   margin-top: var(--spacing-xxsmall);
+  font-size:var(--font-size-500);
   margin-bottom: 58px;
 }
 
 .data-cards.data-card-variation .data-card-title > p {
-  margin-top: 20px;
+  margin-top: var(--spacing-regular);
   margin-bottom: var(--spacing-xxsmall);
 }
 
 .data-cards.data-card-variation .data-card-tag > p {
   text-transform: uppercase;
+  line-height: var(--size-icon-regular);
 }
 
 .data-cards .news-card .news-card-tag > p {
   margin: 0;
 }
 
+.data-cards.data-card-variation .rte-container .main-heading p {
+  margin-bottom: 0;
+}
+
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p {
   display: inline-block;
 }
 
-.section .data-cards-wrapper .data-cards.news-card-variation .rte-container div p em ,.data-cards.data-card-variation .rte-container div p em{
+.section .data-cards-wrapper .data-cards.news-card-variation .rte-container div p em {
   display: flex;
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
   font-weight: 700;
-  font-size: var(--default);
-  line-height: 125%;
+  flex-basis:100%;
+  font-size: var(--font-size-500);
+  line-height: 150%;
   color: var(--neutral-solid-90-s);
   display: block;
   margin-bottom: var(--spacing-regular);
@@ -247,7 +256,8 @@
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container, .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container {
   display: inline-block;
-  margin-bottom: var(--spacing-xsmall);
+  
+  /* margin-bottom: var(--spacing-xsmall); */
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
@@ -305,10 +315,11 @@
 
   .data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p {
     margin-top:0;
-    margin-bottom: var(--spacing-medium);
+
+    /* margin-bottom: var(--spacing-medium); */
 
     > a {
-      margin-bottom: var(--spacing-xhuge);
+      margin-bottom: var(--spacing-huge);
     }
   }
 
