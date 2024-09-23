@@ -122,14 +122,14 @@
 }
 
 .bio-detail .media-inquiries p {
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   line-height: 22px;
 }
 
 .bio-detail .title {
   border-bottom: 2px solid var(--neutrals-103);
   margin-bottom: 20px;
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
   font-weight: 800;
   padding-bottom: var(--xsmall);
 }

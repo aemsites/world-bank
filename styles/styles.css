@@ -485,14 +485,6 @@
   --neutrals-a-90: rgb(0 13 26 / 70%);
   --neutrals-a-100: rgb(0 13 26 / 96%);
 
-  /* Body variables */
-  --default: 20px;
-  --body-huge: 20px;
-  --body-large: 18px;
-  --body-medium: 16px;
-  --body-small: 14px;
-  --body-tiny: 12px;
-
   /** Measuring impact card paragraph varibales **/
   --body-indicator-paragraph: 12px;
   --body-description-paragraph: 16px;
@@ -536,7 +528,7 @@
   --nav-menu-footer-color: #99b6C7;
 
   /* body sizes */
-  --body-font-size: var(--default);
+  --body-font-size: var(--font-size-500);
   --body-font-size-citation: 12px;
 
   /* main-heading styles */
@@ -579,14 +571,6 @@
 */
 @media (width >= 768px) {
   :root {
-    /* Body variables */
-    --default: 20px;
-    --body-huge: 20px;
-    --body-large: 18px;
-    --body-medium: 14px;
-    --body-small: 14px;
-    --body-tiny: 12px;
-
     /** Measuring impact card paragraph varibales **/
   --body-indicator-paragraph: 12px;
   --body-description-paragraph: 18px;
@@ -594,7 +578,7 @@
   --body-indicator-paragraph-spacing: 8px;
 
     /* body styles */
-    --body-font-size: var(--default);
+    --body-font-size: var(--font-size-500);
     --body-font-size-citation: 12px;
 
     /* main-heading styles */
@@ -683,14 +667,6 @@
 
 @media (width >= 1024px) {
   :root {
-    /* Body variables */
-    --default: 20px; /* --font-size-500 */
-    --body-huge: 24px; /* --font-size-600 */
-    --body-large: 20px; /* --font-size-500 */
-    --body-medium: 16px; /* --font-size-300 */
-    --body-small: 14px; /* --font-size-200 */
-    --body-tiny: 12px; /* --font-size-100 */
-
     /** Measuring impact card paragraph varibales **/
   --body-indicator-paragraph: 12px;
   --body-description-paragraph: 20px;
@@ -698,7 +674,7 @@
   --body-indicator-paragraph-spacing: 12px;
     
     /* body styles */
-    --body-font-size: var(--default);
+    --body-font-size: var(--font-size-500);
 
     /* Gutter space */
     --section-gutter-space: 72px;
@@ -862,7 +838,7 @@ blockquote {
 code,
 pre {
   font-family: var(--fixed-font-family);
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
 }
 
 code {
@@ -896,7 +872,7 @@ p strong > em > a:any-link {
   background-color: transparent;
   color: var(--primary-blue-70);
   font-family: var(--body-font-family);
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.25px;
@@ -961,7 +937,7 @@ p strong > em > a:any-link:visited {
 a.button:any-link,
 button {
   font-family: var(--body-font-family);
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.25px;

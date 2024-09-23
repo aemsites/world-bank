@@ -12,12 +12,12 @@ main .breadcrumb-wrapper ol li {
   overflow: hidden;
   display: flex;
   text-overflow: ellipsis;
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
   color: var(--text-on-light-link-primary-enabled);
 }
 
 main .breadcrumb-wrapper a {
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
   line-height: 1.4;
   color: var(--primary-blue-70);
   text-decoration: none;
