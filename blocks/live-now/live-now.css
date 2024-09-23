@@ -27,7 +27,7 @@ dialog.livenow-modal:modal {
 dialog.livenow-modal:modal .modal-content-wrapper {
     display: flex;
     flex-direction: row;
-    margin: var(--spacing-48);
+    margin: 48px;
 }
 
 dialog.livenow-modal:modal button[name="close"] {
@@ -63,7 +63,7 @@ dialog.livenow-modal:modal .close-x {
 dialog.livenow-modal:modal .modal-title {
   display: flex;
   border-bottom: 2px solid var(--neutrals-20);
-  padding-bottom: var(--spacing-40);
+  padding-bottom: 40px;
 }
 
 dialog.livenow-modal:modal .modal-title img {
@@ -81,17 +81,17 @@ dialog.livenow-modal:modal .modal-title .modal-title-txt {
 dialog.livenow-modal:modal .event-title {
   display: flex;
   flex-direction: column;
-  margin-top: var(--spacing-40);
+  margin-top: 40px;
 }
 
 dialog.livenow-modal:modal .event-title .wblive-header {
   display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-16);
+  margin-bottom: 16px;
 }
 
 dialog.livenow-modal:modal .event-title .wblive-header img {
-  margin-right: var(--spacing-8);
+  margin-right: 8px;
   width: 26px;
   height: 33px;
 }
@@ -103,7 +103,7 @@ dialog.livenow-modal:modal .event-title .wblive-header-txt {
   letter-spacing: 0.05em;
   text-align: left;
   color: var(--neutrals-100);
-  margin-bottom: var(--spacing-8);
+  margin-bottom: 8px;
 }
 
 dialog.livenow-modal:modal .event-title .event-title-txt {
@@ -115,7 +115,7 @@ dialog.livenow-modal:modal .event-title .event-title-txt {
 dialog.livenow-modal:modal .modal-column-left {
   height: 312px;
   width: 417px;
-  margin-right: var(--spacing-48);
+  margin-right: 48px;
 }
 
 dialog.livenow-modal:modal .modal-column-right {
@@ -224,7 +224,7 @@ dialog.livenow-modal:modal &::before {
   }
 
   dialog.livenow-modal:modal .modal-column-left .modal-title {
-    padding-bottom: var(--spacing-24);
+    padding-bottom: 24px;
   }
 
   dialog.livenow-modal:modal .modal-column-left .modal-title .modal-title-txt {
@@ -233,7 +233,7 @@ dialog.livenow-modal:modal &::before {
   }
 
   dialog.livenow-modal:modal .modal-column-left .event-title {
-      margin-top: var(--spacing-24);
+      margin-top: 24px;
   }
 
   dialog.livenow-modal:modal .modal-column-left .event-title .event-title-txt {
@@ -252,7 +252,7 @@ dialog.livenow-modal:modal &::before {
       flex-direction: column;
       width: 100%;
       height: 90%;
-      margin: var(--spacing-32);
+      margin: 32px;
   }
 
   dialog.livenow-modal:modal .modal-column-left {
@@ -275,7 +275,7 @@ dialog.livenow-modal:modal &::before {
   }
 
   dialog.livenow-modal:modal .modal-title {
-    padding-bottom: var(--spacing-32);
+    padding-bottom: 32px;
   }
 
   dialog.livenow-modal:modal .modal-title .modal-title-txt {
@@ -284,7 +284,7 @@ dialog.livenow-modal:modal &::before {
   }
 
   dialog.livenow-modal:modal .event-title {
-    margin-top: var(--spacing-32);
+    margin-top: 32px;
     max-height: 189px;
     width: 100%;
   }
