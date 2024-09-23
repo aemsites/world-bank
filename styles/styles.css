@@ -789,6 +789,10 @@
   src: local('Arial');
 }
 
+html:lang(ar) {
+  direction: rtl;
+}
+
 body {
   font-size: var(--body-font-size);
   margin: 0;

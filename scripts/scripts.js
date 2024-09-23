@@ -117,7 +117,7 @@ function createSkipToMainNavigationBtn() {
 }
 
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
+  document.documentElement.lang = getLanguage();
   decorateTemplateAndTheme();
   createSkipToMainNavigationBtn();
   const main = doc.querySelector('main');
