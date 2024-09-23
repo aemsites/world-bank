@@ -24,7 +24,7 @@
 .columns.columns-transform-teaser > div {
   display: grid;
   grid-template-columns: 40% 55%;
-  padding: 40px 0;
+  padding: var(--spacing-xhuge) 0;
   position: relative;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .columns.columns-divider-variant > div > div > p {
-  margin-top: 0;
+  margin-top: 0 0 20px;
 }
 
 .columns.columns-feature-card .columns-feature-card-content > p,
@@ -44,9 +44,8 @@
 .columns.columns-transform-teaser > div p:nth-child(1) {
   font-size: var(--font-size-1000);
   text-transform: uppercase;
-  margin-top: 40px;
   margin-bottom: var(--spacing-small);
-  line-height: 35px;
+  line-height: 31px;
 }
 
 .columns.columns-transform-teaser > div p:nth-child(2) {
@@ -381,6 +380,7 @@
 
   .bg-primary-blue-90 .columns.columns-transform-teaser > div div:nth-child(1) {
     grid-row:2;
+    margin-top: var(--spacing-medium);
   }
 
   .bg-primary-blue-90 .columns.columns-transform-teaser > div div:nth-child(1) p:nth-child(1) {

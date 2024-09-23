@@ -6,11 +6,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: var(--none) var(--none) var(--spacing-xlarge);
+  margin: var(--spacing-none) var(--spacing-none) var(--spacing-xlarge);
 }
 
 .cards-container .rp-card .text-content .card-btn p{
-  padding: 17px var(--none) var(--xxsmall);
+  padding: 17px var(--spacing-none) var(--spacing-xxsmall);
 }
 
 .button-wrapper {
@@ -42,7 +42,7 @@
 }
 
 .cards-container .rp-card .text-content .title {
-  font-size: var(--heading-label-tiny);
+  font-size: var(--font-size-700);
   line-height: 23px;
   color: var(--accent-blue-primary-70);
   font-weight: 700;
