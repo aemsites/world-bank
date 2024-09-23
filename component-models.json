@@ -747,6 +747,7 @@
         "valueType": "date",
         "value": "",
         "name": "content_date",
+        "required": true,
         "label": "Date Of Content"
       },
       {
