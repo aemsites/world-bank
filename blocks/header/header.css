@@ -99,7 +99,7 @@ header .nav-menu-overlay .nav-menu {
   border: 1px solid transparent;
   position: absolute;
   min-width: 125px;
-  padding: 10px;
+  padding: 13px 10px;
   margin-right: 10px;
 }
 
@@ -236,7 +236,7 @@ header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   background-color: var(--overlay-color);
   position: fixed;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   top: 0;
 }
 
@@ -246,8 +246,8 @@ header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   }
 
   .language-container {
-    top: -8px;
-    right: 20px;
+    top: -10px;
+    right: 28px;
   }
 
   .language-toggle {
@@ -425,6 +425,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country div {
 header .nav-menu-overlay .nav-menu-column.right > ul {
   font-size: 16px;
   color: var(--color-white);
+  margin-top: 0px;
   line-height: 22px;
   letter-spacing: 0.06em;
   text-align: left;
@@ -441,7 +442,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
   font-family: var(--body-font-family);
   text-transform: none;
   padding-top: 15px;
-  min-width: 100%;
+  width: 95%;
   border-top: 1px solid var(--primary-blue-80);
   line-height: 19.2px;
   display: flex;
@@ -515,6 +516,9 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
 header .nav-menu-overlay .nav-menu-column.right {
   flex-direction: column;
   display: none;
+  height: 80vh;
+  margin-top: 30px;
+  overflow-y: auto;
   padding-left: var(--section-gutter-space);
 }
 
@@ -738,6 +742,20 @@ header nav .nav-tools {
   font-weight: normal;
 }
 
+
+.section.nav-tools .default-content-wrapper .icon {
+height: 44px;
+display: flex;
+width: 44px;
+justify-content: center;
+align-items: center;
+}
+
+.section.nav-tools .default-content-wrapper .icon img{
+  height: 20px;
+  width: 20px;
+}
+
 .global-header-wrapper {
   display: none;
 }
@@ -774,7 +792,7 @@ header nav .nav-tools {
   justify-content: center;
   position: absolute;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   top: 84px;
 }
 
@@ -791,6 +809,22 @@ header nav .nav-tools {
   border-bottom: 2px solid var(--search-input-container-border);
   justify-content: space-between;
   width: 90%;
+}
+
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar {
+  background: #002035;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+}
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-thumb {
+  background-color: var(--background-container-on-light-link-primary-hover);
+  width: 8px;
+  border-radius: 8px;
+}
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-track {
+  background: #002035;
+  border-radius: 8px;
 }
 
 @media (width >= 1024px) {
@@ -812,6 +846,9 @@ header nav .nav-tools {
     overflow-y: visible;
   }
 
+  .language-container {
+   top: -4px;
+  }
   header .nav-menu {
     width: 100%;
     overflow-y: scroll;
@@ -830,8 +867,14 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right {
-    width: auto;
+    width: calc(100vw - 70px);
     padding: 0;
+    margin-top: 30px;
+    height: 70vh;
+    overflow: hidden auto;
+  }
+  header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
+    width: 100%;
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
@@ -1058,13 +1101,18 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.right {
     width: 900px;
+    height: unset;
+    margin-top: 0px;
+    overflow: visible;
     position: relative;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
     display: none;
   }
-
+  header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
+    width: 100%;
+  }
   header .nav-menu-overlay .nav-menu-column.left > ul > li > span {
     display: none;
     background-color: var(--transparent);
@@ -1431,7 +1479,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li {
-    padding: 0 20px;
+    padding: 0 18px;
   }
 
   header
