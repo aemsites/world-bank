@@ -136,7 +136,7 @@
   margin: 0;
   font-weight: 700;
   font-size: var(--font-size-300);
-  line-height: 140%;
+  line-height: 20px;
   color: var(--text-on-dark-emphasis);
 }
 
@@ -147,6 +147,7 @@
   text-transform: uppercase;
   color: var(--text-on-dark-subdued);
   margin-top: 15px;
+  line-height: 16px;
 }
 
 @media (width < 1024px) {
