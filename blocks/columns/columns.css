@@ -24,7 +24,7 @@
 .columns.columns-transform-teaser > div {
   display: grid;
   grid-template-columns: 40% 55%;
-  padding: 55px 0;
+  padding: 40px 0;
   position: relative;
 }
 
