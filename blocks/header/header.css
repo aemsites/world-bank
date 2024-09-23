@@ -193,6 +193,7 @@ header .nav-menu-overlay .nav-menu-column.left ul a {
 
 header .nav-menu-overlay .nav-menu .submenu a:hover {
   color: var(--color-white);
+  border-bottom:1px solid var(--color-white) 
 }
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
@@ -208,6 +209,7 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
 
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   color: var(--neutrals-40);
+  border-bottom:1px solid var(--background-container-on-light-link-primary-hover);
 }
 
 .header .nav-item-content-expanded > ul {
