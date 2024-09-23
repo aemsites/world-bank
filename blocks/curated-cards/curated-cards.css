@@ -30,9 +30,15 @@
 .curated-cards .feature-card .feature-card-content .feature-card-content-text {
   width: 80%;
 }
+
+.curated-cards.list ul li .curated-cards-card-text-wrapper a{
+  text-decoration: none;
+}
+
 .curated-cards .feature-card .feature-card-content .feature-card-content-text a{
   text-decoration: none;
 }
+
 .curated-cards .feature-card .feature-card-content .feature-card-content-description {
   font-size: var(--font-size-500);
   color: var(--text-on-dark-emphasis);
@@ -132,10 +138,6 @@
   font-size: var(--font-size-300);
   line-height: 140%;
   color: var(--text-on-dark-emphasis);
-}
-
-.curated-cards.list ul li .curated-cards-card-text-wrapper a{
-  text-decoration: none;
 }
 
 .curated-cards.list ul li .curated-cards-card-text-wrapper .curated-cards-card-event {
