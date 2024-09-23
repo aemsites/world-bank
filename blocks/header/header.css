@@ -37,7 +37,7 @@ header nav {
   padding: 0 0 calc(var(--nav-padding) - 2px);
   gap: 20px;
   position: relative;
-  border-bottom: 2px solid var(--neutrals-20);
+  border-bottom: 2px solid var(--neutral-solid-10-s);
 }
 
 header nav p {
@@ -84,7 +84,7 @@ header .nav-menu-overlay .nav-menu {
   padding: 100px 30px;
   max-width: 1456px;
   height: calc(100% - 200px);
-  color: var(--neutrals-40);
+  color: var(--neutral-solid-30-s);
 }
 
 /** Lanaguge Selector CSS **/
@@ -99,14 +99,14 @@ header .nav-menu-overlay .nav-menu {
   border: 1px solid transparent;
   position: absolute;
   min-width: 125px;
-  padding: 10px;
+  padding: 13px 10px;
   margin-right: 10px;
 }
 
 .nav-item-expanded-active {
-  border: 1px solid var(--neutrals-30);
+  border: 1px solid var(--neutral-solid-15-s);
   border-radius: 5px;
-  background: var(--color-white);
+  background: var(--white);
 }
 
 /* Dropdown Text */
@@ -163,19 +163,23 @@ header .nav-menu-overlay .nav-menu a {
 
 .header .nav-item-content-expanded > ul > li a {
   color: var(--text-on-light-link-primary-enabled);
-  text-decoration: underline;
   display: block;
   font-size: 14px;
   line-height: 17px;
+  text-decoration: none;
+}
+
+header .nav-menu-overlay .nav-menu a:visited {
+  color: var(--neutral-solid-30-s);
+}
+
+.header .nav-item-content-expanded > ul > li a:hover {
+  text-decoration: underline;
 }
 
 .header .nav-item-content-expanded {
   display: block;
   padding-top: 10px;
-}
-
-header .nav-menu-overlay .nav-menu a:visited {
-  color: var(--neutrals-40);
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a {
@@ -188,7 +192,8 @@ header .nav-menu-overlay .nav-menu-column.left ul a {
 }
 
 header .nav-menu-overlay .nav-menu .submenu a:hover {
-  color: var(--color-white);
+  color: var(--white);
+  border-bottom: 1px solid var(--white);
 }
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
@@ -197,13 +202,15 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
 }
 
 header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
-  color: var(--color-white);
+  color: var(--white);
   font-size: var(--body-large);
   font-weight: 700;
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
-  color: var(--neutrals-40);
+  color: var(--neutral-solid-30-s);
+  border-bottom: 1px solid
+    var(--background-container-on-light-link-primary-hover);
 }
 
 .header .nav-item-content-expanded > ul {
@@ -230,7 +237,7 @@ header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   background-color: var(--overlay-color);
   position: fixed;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   top: 0;
 }
 
@@ -240,8 +247,8 @@ header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   }
 
   .language-container {
-    top: -8px;
-    right: 20px;
+    top: -10px;
+    right: 28px;
   }
 
   .language-toggle {
@@ -336,7 +343,7 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   margin-bottom: 6px;
   margin-left: 8px;
   border-radius: 10px;
-  background-color: var(--neutrals-40);
+  background-color: var(--neutral-solid-30-s);
   border: 1px;
 }
 
@@ -362,8 +369,8 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   display: inline-block;
   margin-bottom: 3px;
   transform: rotate(225deg);
-  border-bottom: 3px solid var(--neutrals-40);
-  border-left: 3px solid var(--neutrals-40);
+  border-bottom: 3px solid var(--neutral-solid-30-s);
+  border-left: 3px solid var(--neutral-solid-30-s);
   border-radius: 1px;
 }
 
@@ -385,7 +392,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country {
   text-transform: uppercase;
   display: flex;
   font-weight: 800;
-  color: var(--color-white);
+  color: var(--white);
   flex-direction: column;
   position: relative;
   justify-content: start;
@@ -398,7 +405,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
   text-transform: capitalize;
   position: absolute;
   left: 0;
-  color: var(--neutrals-40);
+  color: var(--neutral-solid-30-s);
   z-index: 2;
   background-color: var(--primary-blue-102);
 }
@@ -418,7 +425,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country div {
 
 header .nav-menu-overlay .nav-menu-column.right > ul {
   font-size: 16px;
-  color: var(--color-white);
+  color: var(--white);
   line-height: 22px;
   letter-spacing: 0.06em;
   text-align: left;
@@ -430,7 +437,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
 
 header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
   font-size: 16px;
-  color: var(--neutrals-40);
+  color: var(--neutral-solid-30-s);
   margin-top: 10px;
   font-family: var(--body-font-family);
   text-transform: none;
@@ -536,7 +543,7 @@ header
   background-color: var(--primary-blue-80);
   outline: none;
   border: none;
-  color: var(--color-white);
+  color: var(--white);
   position: absolute;
   width: 60vw;
   z-index: 3;
@@ -580,8 +587,8 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
   display: inline-block;
   padding: 2px;
   height: 2px;
-  border-left: 2px solid var(--color-white);
-  border-bottom: 2px solid var(--color-white);
+  border-left: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
   transform: rotate(-45deg);
   margin-top: -2px;
 }
@@ -656,7 +663,7 @@ header nav[aria-expanded="true"] .nav-hamburger-icon {
   height: 44px;
   width: 44px;
   z-index: 3;
-  background-color: var(--color-white);
+  background-color: var(--white);
   border-radius: 50%;
   position: fixed;
   right: 30px;
@@ -732,6 +739,19 @@ header nav .nav-tools {
   font-weight: normal;
 }
 
+.section.nav-tools .default-content-wrapper .icon {
+  height: 44px;
+  display: flex;
+  width: 44px;
+  justify-content: center;
+  align-items: center;
+}
+
+.section.nav-tools .default-content-wrapper .icon img {
+  height: 20px;
+  width: 20px;
+}
+
 .global-header-wrapper {
   display: none;
 }
@@ -742,7 +762,7 @@ header nav .nav-tools {
   background: var(--input-background-color);
   height: 71px;
   font-size: var(--search-text-size);
-  color: var(--color-white);
+  color: var(--white);
   font-weight: normal;
 }
 
@@ -752,7 +772,7 @@ header nav .nav-tools {
 }
 
 #search-input::placeholder {
-  color: var(--color-white);
+  color: var(--white);
   font-weight: 400;
 }
 
@@ -768,7 +788,7 @@ header nav .nav-tools {
   justify-content: center;
   position: absolute;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   top: 84px;
 }
 
@@ -804,6 +824,10 @@ header nav .nav-tools {
 
   header .nav-wrapper {
     overflow-y: visible;
+  }
+
+  .language-container {
+    top: -4px;
   }
 
   header .nav-menu {
@@ -992,8 +1016,8 @@ header nav .nav-tools {
     display: inline-block;
     padding: 2px;
     height: 2px;
-    border-left: 2px solid var(--color-white);
-    border-bottom: 2px solid var(--color-white);
+    border-left: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
     transform: rotate(-45deg);
     margin-top: -2px;
   }
@@ -1117,7 +1141,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected {
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a {
@@ -1384,8 +1408,8 @@ header nav .nav-tools {
     display: inline-block;
     padding: 2px;
     height: 2px;
-    border-left: 2px solid var(--color-white);
-    border-bottom: 2px solid var(--color-white);
+    border-left: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
     transform: rotate(-45deg);
     margin-top: -2px;
   }
@@ -1424,7 +1448,7 @@ header nav .nav-tools {
     max-height: none;
   }
 
-  header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li{
+  header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li {
     padding: 0 20px;
   }
 

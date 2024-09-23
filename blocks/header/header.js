@@ -77,7 +77,7 @@ function closeSearchBox() {
 
   searchContainer.style.display = 'none';
   cancelContainer.style.display = 'none';
-  searchImage.style.display = 'block';
+  searchImage.style.display = 'flex';
   overlay.style.display = 'none';
   document.body.classList.remove('no-scroll');
 }
