@@ -485,6 +485,7 @@
   --neutrals-a-90: rgb(0 13 26 / 70%);
   --neutrals-a-100: rgb(0 13 26 / 96%);
 
+<<<<<<< HEAD
   /* spacing (Padding & Margins) */
   --spacing-0: 0;
   --spacing-2: 2px;
@@ -517,6 +518,23 @@
   --heading-label-base: 28px;
   --heading-label-small: 28px;
   --heading-label-tiny: 24px;
+=======
+  /* Typography spacing */
+  --size-72: 72px;
+  --size-60: 60px;
+  --size-48: 48px;
+  --size-44: 44px;
+  --size-40: 40px;
+  --size-36: 36px;
+  --size-32: 32px;
+  --size-28: 28px;
+  --size-24: 24px;
+  --size-20: 20px;
+  --size-18: 18px;
+  --size-16: 16px;
+  --size-14: 14px;
+  --size-12: 12px;
+>>>>>>> main
 
   /* Body variables */
   --default: 20px;
@@ -527,9 +545,15 @@
   --body-tiny: 12px;
 
   /** Measuring impact card paragraph varibales **/
+<<<<<<< HEAD
   --body-indicator-paragraph: 12px;
   --body-description-paragraph: 16px;
   --body-title-paragraph: 28px;
+=======
+  --body-indicator-paragraph: var(--size-12);
+  --body-description-paragraph: var(--size-16);
+  --body-title-paragraph: var(--size-28);
+>>>>>>> main
   --body-indicator-paragraph-spacing: 12px;
 
   /* Spacing - mobile */
@@ -573,8 +597,13 @@
   --body-font-size-citation: 12px;
 
   /* main-heading styles */
+<<<<<<< HEAD
   --main-heading-font-size: 28px;
   --main-heading-spacing: 0 0 var(--spacing-36);
+=======
+  --main-heading-font-size: var(--size-28);
+  --main-heading-spacing: 0 0 36px;
+>>>>>>> main
   --main-heading-line-height: 110%;
 
   /* eyebrow styles */
@@ -602,7 +631,7 @@
   --section-container-space: var(--spacing-xxlarge); 
 
   /* Block specific */
-  --signup-padding: var(--spacing-28);
+  --signup-padding: 28px;
 }
 
 /*
@@ -612,6 +641,7 @@
 */
 @media (width >= 768px) {
   :root {
+<<<<<<< HEAD
     /* typography specific - h1..h6, body ..etc */
     --h1-huge: 60px;
     --h1-large: 44px;
@@ -625,6 +655,8 @@
     --heading-label-small: 28px;
     --heading-label-tiny: 24px;
 
+=======
+>>>>>>> main
     /* Body variables */
     --default: 20px;
     --body-huge: 20px;
@@ -634,9 +666,15 @@
     --body-tiny: 12px;
 
     /** Measuring impact card paragraph varibales **/
+<<<<<<< HEAD
   --body-indicator-paragraph: 12px;
   --body-description-paragraph: 18px;
   --body-title-paragraph: 28px;
+=======
+  --body-indicator-paragraph: var(--size-12);
+  --body-description-paragraph: var(--size-18);
+  --body-title-paragraph: var(--size-28);
+>>>>>>> main
   --body-indicator-paragraph-spacing: 8px;
 
     /* body styles */
@@ -673,7 +711,7 @@
     --xhuge: 64px;
 
     /* Block specific */
-    --signup-padding: var(--spacing-32);
+    --signup-padding: 32px;
 
     /* number */
     --border-radius-none: 0rem;
@@ -729,19 +767,6 @@
 
 @media (width >= 1024px) {
   :root {
-    /* typography specific - h1..h6, body ..etc */
-    --h1-huge: 72px;
-    --h1-large: 60px; /* --font-size-1200 */
-    --h1-base: 48px; /* --font-size-1100 */
-    --h2-large: 40px; /* --font-size-1000 */
-    --h2-base: 40px; /* --font-size-1000 */
-    --h3-large: 32px; /* --font-size-800 */
-    --h3-base: 32px; /* --font-size-800 */
-    --heading-label-large: 48px; /* --font-size-1100 */
-    --heading-label-base: 40px; /* --font-size-1000 */
-    --heading-label-small: 36px; /* --font-size-900 */
-    --heading-label-tiny: 28px; /* --font-size-700 */
-
     /* Body variables */
     --default: 20px; /* --font-size-500 */
     --body-huge: 24px; /* --font-size-600 */
@@ -783,11 +808,16 @@
     --xhuge: 96px;
 
     /* main-heading styles */
+<<<<<<< HEAD
     --main-heading-font-size: 40px;
     --main-heading-spacing: 0 0 var(--spacing-48);
+=======
+    --main-heading-font-size: var(--size-40);
+    --main-heading-spacing: 0 0 48px;
+>>>>>>> main
 
     /* Block specific */
-    --signup-padding: var(--spacing-52);
+    --signup-padding: 52px;
 
     /* numbers */
     --border-radius-none: 0rem;
@@ -883,30 +913,30 @@ h6 {
 }
 
 h1 { 
-  font-size: var(--h1-base); 
+  font-size: var(--font-size-1100);
   line-height: 1.1;
   margin-bottom: var(--large);
 }
 
 h2 { 
-  font-size: var(--h2-base);
+  font-size: var(--font-size-1000);
   margin-bottom: var(--medium);
 }
 
 h3 { 
-  font-size: var(--h3-base);
+  font-size: var(--font-size-800);
   line-height: 1.1;
   margin-bottom: var(--regular);
 }
 
 h4 {
-  font-size: var(--heading-label-tiny);
+  font-size: var(--font-size-700);
   margin-bottom: var(--small);
 }
 
 /* TODO: Check with Maria */
-h5 { font-size: var(--heading-label-tiny); }
-h6 { font-size: var(--heading-label-tiny); }
+h5 { font-size: var(--font-size-700); }
+h6 { font-size: var(--font-size-700); }
 
 p,
 dl,
@@ -1287,7 +1317,7 @@ main img {
 /* sections */
 main .section {
   margin: 0;
-  padding: var(--spacing-32) 0;
+  padding: 32px 0;
   position: relative;
   z-index: 0;
 }
