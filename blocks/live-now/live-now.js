@@ -1,3 +1,11 @@
+import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { toCamelCase } from '../../scripts/aem.js';
+
+const MODAL_TITLE = 'live-now-title';
+const MODAL_HEADER = 'live-now-header';
+const MODAL_JOIN_TXT = 'live-now-join';
+const MODAL_CID = 'live-now-cid';
+
 // set session cookie
 function setSessionCookie(name, value) {
   document.cookie = `${name}=${value}; path=/`;
@@ -120,33 +128,28 @@ function getModal(modalId, createContent, addEventListeners) {
 }
 
 // build the 'live now' modal
-function buildModal(title, thumbnailPath, url) {
+async function buildModal(title, thumbnailPath, url) {
   const broadcastSvg = `${window.hlx.codeBasePath}/icons/broadcast.svg`;
   const discussionSvg = `${window.hlx.codeBasePath}/icons/discussion.svg`;
   const playSvg = `${window.hlx.codeBasePath}/icons/video_play.svg`;
 
-  let cidCode;
-  const locale = navigator.language;
-  const language = locale.split('-')[0];
-  const cidCodes = {
-    en: '?intcid=wbw_xpl_overlay_en_ext',
-    es: '?intcid=wbw_xpl_overlay_es_ext',
-    fr: '?intcid=wbw_xpl_overlay_fr_ext',
-    ar: '?intcid=wbw_xpl_overlay_ar_ext',
-  };
-  if (language in cidCodes) cidCode = cidCodes[language] || cidCodes.en;
-
+  // retrieve correct language data. fallback to en.
+  const phData = await fetchLanguagePlaceholders();
+  const modalTitle = phData[toCamelCase(MODAL_TITLE)] || 'Live Now';
+  const modalHeader = phData[toCamelCase(MODAL_HEADER)] || 'WORLD BANK LIVE';
+  const joinMsg = phData[toCamelCase(MODAL_JOIN_TXT)] || 'Join Now';
+  const cidCode = phData[toCamelCase(MODAL_CID)] || '?intcid=wbw_xpl_liveoverlay_en_ext';
   const wbModal = `
     <div class='modal-content-wrapper'>
       <div class='modal-column-left'>
         <div class='modal-title'>
           <img src='${broadcastSvg}' alt='Broadcast symbol'></img>
-          <div class='modal-title-txt'>Live Now</div>
+          <div class='modal-title-txt'>${modalTitle}</div>
         </div>
         <div class='event-title'>
           <div class='wblive-header'>
             <img src='${discussionSvg}' alt='Discussion symbol'></img>
-            <div class='wblive-header-txt'>WORLD BANK LIVE</div>
+            <div class='wblive-header-txt'>${modalHeader}</div>
           </div>
           <div class='event-title-txt'>${title}</div>
         </div>
@@ -157,7 +160,7 @@ function buildModal(title, thumbnailPath, url) {
           <div class='event-play'>
             <img src='${playSvg}' alt='Play symbol'></img>
           </div>
-          <div class='join-btn-txt'>Join Now</div>
+          <div class='join-btn-txt'>${joinMsg}</div>
         </a>
       </div>
     </div>
@@ -205,7 +208,7 @@ export default async function decorate(block) {
     const event = filteredEvents[0] ? filteredEvents[0] : events[0];
     // and if modal has not been seen
     if (!(hasModalBeenDisplayed(sessionCookieName, event.guid))) {
-      liveNowModal = buildModal(
+      liveNowModal = await buildModal(
         event.title,
         event.eventCardImageReference,
         event.canonicalURL,
