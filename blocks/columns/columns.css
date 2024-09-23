@@ -24,7 +24,7 @@
 .columns.columns-transform-teaser > div {
   display: grid;
   grid-template-columns: 40% 55%;
-  padding: var(--spacing-xhuge) 0;
+  padding: var(--spacing-xhuge) 0 66px;
   position: relative;
 }
 
