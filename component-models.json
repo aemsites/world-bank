@@ -746,6 +746,7 @@
         "component": "date-time",
         "valueType": "date",
         "name": "content_date",
+        "required": true,
         "label": "Date Of Content"
       },
       {
@@ -817,6 +818,7 @@
         "name": "languages",
         "value": "",
         "label": "Language",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Afrikaans, AFR1", "value": "Afrikaans, AFR1" }, 
@@ -1006,6 +1008,7 @@
         "name": "originating_unit",
         "value": "",
         "label": "Unit",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Accountability Mechanism (AMIPN)", "value": "Accountability Mechanism (AMIPN), AMIPN" },
@@ -1066,6 +1069,7 @@
         "name": "information_classification",
         "value": "",
         "label": "Information Classification",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Confidential", "value": "CON_AI" },
