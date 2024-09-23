@@ -1,0 +1,30 @@
+meta {
+  name: UPDATE Site Config - Public
+  type: http
+  seq: 12
+}
+
+post {
+  url: https://admin.hlx.page/config/{{org}}/sites/:siteName/public.json
+  body: json
+  auth: none
+}
+
+params:path {
+  siteName: world-bank
+}
+
+body:json {
+  {
+    "paths": {
+      "mappings": [
+        "/content/world-bank/:/",
+        "/content/world-bank/redirects:/redirects.json",
+        "/content/world-bank/metadata:/metadata.json",
+        "/content/world-bank/en/placeholders:/en/placeholders.json",      ],
+      "includes": [
+        "/content/world-bank/"
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+meta {
+  name: UPDATE Site Config
+  type: http
+  seq: 8
+}
+
+post {
+  url: https://admin.hlx.page/config/{{org}}/sites/:siteName
+  body: json
+  auth: none
+}
+
+params:path {
+  siteName: world-bank.json
+}
+
+body:json {
+  {
+    "version": 1,
+    "extends": {
+      "profile": "world-bank-default"
+    },
+    "code": {
+      "owner": "{{org}}",
+      "repo": "{{repo}}",
+      "source": {
+        "type": "github",
+        "url": "https://github.com/{{org}}/{{repo}}"
+      }
+    },
+    "content": {
+      "source": {
+        "url": "https://author-p136806-e1403562.adobeaemcloud.com/bin/franklin.delivery/wbgextapp/externalweb/main",
+        "type": "markup",
+        "suffix": ".html"
+      },
+      "contentBusId": "fdf3ba5b2fcc0403c1f14f25222b67628a4ec415c3664bc91f046b467d0"
+    },
+    "access": {
+      "admin": {
+        "role": {
+          "author": [
+            "98261E5266C7C4970A495C94@techacct.adobe.com"
+          ],
+          "publish": [
+            "98261E5266C7C4970A495C94@techacct.adobe.com"
+          ]
+        },
+        "requireAuth": "auto"
+      }
+    },
+    "public": {
+      "paths": {
+        "mappings": [
+          "/content/world-bank/:/",
+          "/content/world-bank/redirects:/redirects.json",
+          "/content/world-bank/metadata:/metadata.json",
+          "/content/world-bank/en/placeholders:/en/placeholders.json",        ],
+        "includes": [
+          "/content/world-bank/"
+        ]
+      }
+    }
+  }
+}

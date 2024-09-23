@@ -1,22 +1,20 @@
 {
-  "aemTierType": [
-      "delivery",
-      "author"
-  ],
-  "apiKey": "asset_search_service",
   "repoNames": [
-    "author-p136806-e1403562.adobeaemcloud.com"
+    "author-p136806-e1403562.adobeaemcloud.com",
+    "delivery-p136806-e1403562.adobeaemcloud.com"
   ],
   "filterSchema": [
     {
       "header": "File Types",
-      "groupKey": "TopGroup",
+      "groupKey": "FileTypeGroup",
       "fields": [
         {
-          "defaultValue": ["image/*", "video/*"],
           "excludeTags": ["image/*", "video/*", "application/pdf"],
           "element": "checkbox",
           "name": "type",
+          "defaultValue": [
+            "image/*"
+          ],
           "options": [
             {
               "label": "Images",
@@ -31,7 +29,7 @@
               "value": "application/pdf"
             }
           ],
-          "columns": 2
+          "orientation": "horizontal"
         }
       ]
     },
