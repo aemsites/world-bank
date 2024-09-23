@@ -1,5 +1,6 @@
 export const TAG_ROOT = 'world-bank:';
 export const SUPPORTED_LANGUAGES = ['en', 'zh', 'ru', 'fr', 'es', 'ar'];
+export const INTERNAL_PAGES = ['/footer', '/nav', '/fragments', '/data', '/drafts'];
 
 let lang;
 
@@ -140,4 +141,56 @@ export async function fetchData(url, method = 'GET', headers = {}, body = null) 
     console.error(`Error fetching data from ${url}:`, error);
     return null;
   }
+}
+
+/**
+ * Returns the true of the current page in the browser.
+ * If the page is running in a iframe with srcdoc,
+ * the ancestor origin + the path query param is returned.
+ * @returns {String} The href of the current page or the href of the block running in the library
+ */
+export function getHref() {
+  if (window.location.href !== 'about:srcdoc') return window.location.href;
+
+  const urlParams = new URLSearchParams(window.parent.location.search);
+  return `${window.parent.location.origin}${urlParams.get('path')}`;
+}
+
+/*
+ * Returns the environment type based on the hostname.
+ */
+export function getEnvType(hostname = window.location.hostname) {
+  const fqdnToEnvType = {
+    'worldbank.org': 'prod',
+    'www.worldbank.org': 'prod',
+    'main--aem-competency--aem-comp.hlx.page': 'prod',
+    'main--aem-competency--aem-comp.hlx.live': 'prod',
+  };
+  return fqdnToEnvType[hostname] || 'dev';
+}
+
+/**
+ * Check if a page is internal or not
+ */
+export function isInternalPage() {
+  const pageUrl = getHref();
+  // eslint-disable-next-line consistent-return
+  INTERNAL_PAGES.forEach((element) => { if (pageUrl.indexOf(element) > 0) return true; });
+  return false;
+}
+
+export function formatDate(dObjStr) {
+  if (dObjStr) {
+    const dObj = new Date(dObjStr);
+    const yyyy = dObj.getFullYear();
+    let mm = dObj.getMonth() + 1;
+    let dd = dObj.getDate();
+
+    if (dd < 10) dd = `0${dd}`;
+    if (mm < 10) mm = `0${mm}`;
+
+    const formatted = `${dd}-${mm}-${yyyy}`;
+    return formatted;
+  }
+  return '';
 }
