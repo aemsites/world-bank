@@ -1,5 +1,7 @@
 import { getMetadata, toClassName, fetchPlaceholders } from '../../scripts/aem.js';
-import { a, button, div } from '../../scripts/dom-helpers.js';
+import {
+  a, button, div, li, ul,
+} from '../../scripts/dom-helpers.js';
 import { getLanguage, fetchData } from '../../scripts/utils.js';
 import { loadFragment } from '../fragment/fragment.js';
 
@@ -180,15 +182,48 @@ async function decorateTab(tabPanel, type) {
   removeSpinner(tabPanel);
 }
 
-export default async function decorate(block) {
+function createTabListWithButtons(tabBtnContainer) {
   const tablist = div({ class: 'tabs-list', role: 'tablist' });
+  const rightbtn = button({ class: 'right-btn' }, '>>');
+  const leftbtn = button({ class: 'left-btn' }, '<<');
 
-  // decorate tabs and tabpanels
+  const iconVisibility = () => {
+    const scrollLeftValue = Math.ceil(tabBtnContainer.scrollLeft);
+    const scrollableWidth = tabBtnContainer.scrollWidth - tabBtnContainer.clientWidth;
+    leftbtn.style.display = scrollLeftValue > 0 ? 'block' : 'none';
+    rightbtn.style.display = scrollableWidth > 0 && scrollLeftValue < scrollableWidth ? 'block' : 'none';
+  };
+  rightbtn.addEventListener('click', () => {
+    tabBtnContainer.scrollLeft += 150;
+    setTimeout(iconVisibility, 50);
+  });
+
+  leftbtn.addEventListener('click', () => {
+    tabBtnContainer.scrollLeft -= 200;
+    setTimeout(iconVisibility, 50);
+  });
+
+  tablist.appendChild(leftbtn);
+  tablist.appendChild(rightbtn);
+  tablist.appendChild(tabBtnContainer);
+
+  setTimeout(iconVisibility, 0);
+  const resizeObserver = new ResizeObserver(() => {
+    iconVisibility();
+  });
+  resizeObserver.observe(tabBtnContainer);
+
+  return tablist;
+}
+
+export default async function decorate(block) {
+  const tabBtnContainer = ul({ class: 'tab-menu' });
+  const tablist = createTabListWithButtons(tabBtnContainer);
+
+  // Decorate tabs and tab panels
   const tabs = [...block.children].map((child) => child.firstElementChild);
-
   tabs.forEach((tab, i) => {
     const id = toClassName(tab.textContent);
-    // decorate tabpanel
     const tabpanel = block.children[i];
     const tabType = tabpanel.children[1].textContent;
     tabpanel.className = 'tabs-panel';
@@ -199,9 +234,9 @@ export default async function decorate(block) {
     tabpanel.setAttribute('type', tabType);
     tabpanel.setAttribute('data-loaded', false);
     tabpanel.children[1].remove();
-    // build tab button
-    const tabButton = button({
-      class: 'tabs-tab',
+
+    const tabButton = li({
+      class: 'tab-btn',
       id: `tab-${id}`,
       type: 'button',
       'aria-controls': `tabpanel-${id}`,
@@ -213,22 +248,24 @@ export default async function decorate(block) {
       block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
         panel.setAttribute('aria-hidden', true);
       });
-      tablist.querySelectorAll('button').forEach((btn) => {
+      tablist.querySelectorAll('li').forEach((btn) => {
         btn.setAttribute('aria-selected', false);
       });
       tabpanel.setAttribute('aria-hidden', false);
       tabButton.setAttribute('aria-selected', true);
-      const dataLoaded = tabpanel.getAttribute('data-loaded');
-      if (tabType !== 'manual' && dataLoaded === 'false') {
+
+      if (tabType !== 'manual' && tabpanel.getAttribute('data-loaded') === 'false') {
         decorateTab(tabpanel, tabType);
         tabpanel.setAttribute('data-loaded', true);
       }
     });
+
     if (i === 0 && tabType !== 'manual') {
       decorateTab(tabpanel, tabType);
       tabpanel.setAttribute('data-loaded', true);
     }
-    tablist.append(tabButton);
+
+    tabBtnContainer.append(tabButton);
     tab.remove();
   });
 
@@ -245,5 +282,6 @@ export default async function decorate(block) {
     tabPanel.append(content);
   });
 
-  block.prepend(tablist);
+  const tabNav = div({ class: 'tab-navigation' }, tablist);
+  block.prepend(tabNav);
 }
