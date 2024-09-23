@@ -110,7 +110,7 @@ main .section > div.organizational-cards-wrapper {
 }
 
 .organizational-card .card-acronym {
-  font-size: var(--heading-label-base);
+  font-size: var(--font-size-1000);
   height: 46px;
   line-height: 46px;
   display: flex;
@@ -208,7 +208,7 @@ main .section > div.organizational-cards-wrapper {
   }
 
   .organizational-card .card-acronym {
-    font-size: var(--heading-label-tiny);
+    font-size: var(--font-size-700);
   }
 
   .organizational-card.collapsed {

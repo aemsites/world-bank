@@ -853,7 +853,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
-    font-size: var(--h2-base);
+    font-size: var(--font-size-1000);
     font-weight: 700;
     line-height: 54.47px;
     text-align: left;

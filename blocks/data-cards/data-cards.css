@@ -282,7 +282,7 @@
 
 @media (width >= 768px) {  
   .data-cards .news-card .news-card-title {
-    font-size: var(--heading-label-tiny);
+    font-size: var(--font-size-700);
   }
 
   .data-cards.data-card-variation .rte-container {
@@ -409,7 +409,7 @@
   }
 
   .data-cards a .news-card .news-card-title {
-    font-size: var(--heading-label-tiny);
+    font-size: var(--font-size-700);
   }
 
   .data-cards a:not(:first-child) .news-card-title {
