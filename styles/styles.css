@@ -521,19 +521,6 @@
   --size-14: 14px;
   --size-12: 12px;
 
-  /* Heading variables */
-  --h1-huge: var(--size-44);
-  --h1-large: var(--size-36);
-  --h1-base: var(--size-24);
-  --h2-large: var(--size-28);
-  --h2-base: var(--size-28);
-  --h3-large: var(--size-24);
-  --h3-base: var(--size-24);
-  --heading-label-large: var(--size-36);
-  --heading-label-base: var(--size-28);
-  --heading-label-small: var(--size-28);
-  --heading-label-tiny: var(--size-24);
-
   /* Body variables */
   --default: var(--size-20);
   --body-huge: var(--size-20);
@@ -628,19 +615,6 @@
 */
 @media (width >= 768px) {
   :root {
-    /* typography specific - h1..h6, body ..etc */
-    --h1-huge: var(--size-60);
-    --h1-large: var(--size-44);
-    --h1-base: var(--size-36);
-    --h2-large: var(--size-32);
-    --h2-base: var(--size-32);
-    --h3-large: var(--size-28);
-    --h3-base: var(--size-28);
-    --heading-label-large: var(--size-36);
-    --heading-label-base: var(--size-28);
-    --heading-label-small: var(--size-28);
-    --heading-label-tiny: var(--size-24);
-
     /* Body variables */
     --default: var(--size-20);
     --body-huge: var(--size-20);
@@ -745,19 +719,6 @@
 
 @media (width >= 1024px) {
   :root {
-    /* typography specific - h1..h6, body ..etc */
-    --h1-huge: var(--size-72);
-    --h1-large: var(--size-60); /* --font-size-1200 */
-    --h1-base: var(--size-48); /* --font-size-1100 */
-    --h2-large: var(--size-40); /* --font-size-1000 */
-    --h2-base: var(--size-40); /* --font-size-1000 */
-    --h3-large: var(--size-32); /* --font-size-800 */
-    --h3-base: var(--size-32); /* --font-size-800 */
-    --heading-label-large: var(--size-48); /* --font-size-1100 */
-    --heading-label-base: var(--size-40); /* --font-size-1000 */
-    --heading-label-small: var(--size-36); /* --font-size-900 */
-    --heading-label-tiny: var(--size-28); /* --font-size-700 */
-
     /* Body variables */
     --default: var(--size-20); /* --font-size-500 */
     --body-huge: var(--size-24); /* --font-size-600 */
@@ -899,30 +860,30 @@ h6 {
 }
 
 h1 { 
-  font-size: var(--h1-base); 
+  font-size: var(--font-size-1100);
   line-height: 1.1;
   margin-bottom: var(--large);
 }
 
 h2 { 
-  font-size: var(--h2-base);
+  font-size: var(--font-size-1000);
   margin-bottom: var(--medium);
 }
 
 h3 { 
-  font-size: var(--h3-base);
+  font-size: var(--font-size-800);
   line-height: 1.1;
   margin-bottom: var(--regular);
 }
 
 h4 {
-  font-size: var(--heading-label-tiny);
+  font-size: var(--font-size-700);
   margin-bottom: var(--small);
 }
 
 /* TODO: Check with Maria */
-h5 { font-size: var(--heading-label-tiny); }
-h6 { font-size: var(--heading-label-tiny); }
+h5 { font-size: var(--font-size-700); }
+h6 { font-size: var(--font-size-700); }
 
 p,
 dl,
