@@ -84,7 +84,7 @@ header .nav-menu-overlay .nav-menu {
   padding: 100px 30px;
   max-width: 1456px;
   height: calc(100% - 200px);
-  color: var( --neutral-solid-30-s);
+  color: var(--neutral-solid-30-s);
 }
 
 /** Lanaguge Selector CSS **/
@@ -170,7 +170,7 @@ header .nav-menu-overlay .nav-menu a {
 }
 
 header .nav-menu-overlay .nav-menu a:visited {
-  color: var( --neutral-solid-30-s);
+  color: var(--neutral-solid-30-s);
 }
 
 .header .nav-item-content-expanded > ul > li a:hover {
@@ -193,7 +193,7 @@ header .nav-menu-overlay .nav-menu-column.left ul a {
 
 header .nav-menu-overlay .nav-menu .submenu a:hover {
   color: var(--white);
-  border-bottom:1px solid var(--white) 
+  border-bottom: 1px solid var(--white);
 }
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
@@ -208,8 +208,9 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
-  color: var( --neutral-solid-30-s);
-  border-bottom:1px solid var(--background-container-on-light-link-primary-hover);
+  color: var(--neutral-solid-30-s);
+  border-bottom: 1px solid
+    var(--background-container-on-light-link-primary-hover);
 }
 
 .header .nav-item-content-expanded > ul {
@@ -342,7 +343,7 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   margin-bottom: 6px;
   margin-left: 8px;
   border-radius: 10px;
-  background-color: var( --neutral-solid-30-s);
+  background-color: var(--neutral-solid-30-s);
   border: 1px;
 }
 
@@ -368,8 +369,8 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   display: inline-block;
   margin-bottom: 3px;
   transform: rotate(225deg);
-  border-bottom: 3px solid var( --neutral-solid-30-s);
-  border-left: 3px solid var( --neutral-solid-30-s);
+  border-bottom: 3px solid var(--neutral-solid-30-s);
+  border-left: 3px solid var(--neutral-solid-30-s);
   border-radius: 1px;
 }
 
@@ -404,7 +405,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
   text-transform: capitalize;
   position: absolute;
   left: 0;
-  color: var( --neutral-solid-30-s);
+  color: var(--neutral-solid-30-s);
   z-index: 2;
   background-color: var(--primary-blue-102);
 }
@@ -436,7 +437,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
 
 header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
   font-size: 16px;
-  color: var( --neutral-solid-30-s);
+  color: var(--neutral-solid-30-s);
   margin-top: 10px;
   font-family: var(--body-font-family);
   text-transform: none;
@@ -738,16 +739,15 @@ header nav .nav-tools {
   font-weight: normal;
 }
 
-
 .section.nav-tools .default-content-wrapper .icon {
-height: 44px;
-display: flex;
-width: 44px;
-justify-content: center;
-align-items: center;
+  height: 44px;
+  display: flex;
+  width: 44px;
+  justify-content: center;
+  align-items: center;
 }
 
-.section.nav-tools .default-content-wrapper .icon img{
+.section.nav-tools .default-content-wrapper .icon img {
   height: 20px;
   width: 20px;
 }
@@ -827,7 +827,7 @@ align-items: center;
   }
 
   .language-container {
-   top: -4px;
+    top: -4px;
   }
 
   header .nav-menu {
