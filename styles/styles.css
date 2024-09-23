@@ -505,48 +505,32 @@
   --spacing-80: 80px;
   --spacing-96: 96px;
 
-  /* Typography spacing */
-  --size-72: 72px;
-  --size-60: 60px;
-  --size-48: 48px;
-  --size-44: 44px;
-  --size-40: 40px;
-  --size-36: 36px;
-  --size-32: 32px;
-  --size-28: 28px;
-  --size-24: 24px;
-  --size-20: 20px;
-  --size-18: 18px;
-  --size-16: 16px;
-  --size-14: 14px;
-  --size-12: 12px;
-
   /* Heading variables */
-  --h1-huge: var(--size-44);
-  --h1-large: var(--size-36);
-  --h1-base: var(--size-24);
-  --h2-large: var(--size-28);
-  --h2-base: var(--size-28);
-  --h3-large: var(--size-24);
-  --h3-base: var(--size-24);
-  --heading-label-large: var(--size-36);
-  --heading-label-base: var(--size-28);
-  --heading-label-small: var(--size-28);
-  --heading-label-tiny: var(--size-24);
+  --h1-huge: 44px;
+  --h1-large: 36px;
+  --h1-base: 24px;
+  --h2-large: 28px;
+  --h2-base: 28px;
+  --h3-large: 24px;
+  --h3-base: 24px;
+  --heading-label-large: 36px;
+  --heading-label-base: 28px;
+  --heading-label-small: 28px;
+  --heading-label-tiny: 24px;
 
   /* Body variables */
-  --default: var(--size-20);
-  --body-huge: var(--size-20);
-  --body-large: var(--size-18);
-  --body-medium: var(--size-16);
-  --body-small: var(--size-14);
-  --body-tiny: var(--size-12);
+  --default: 20px;
+  --body-huge: 20px;
+  --body-large: 18px;
+  --body-medium: 16px;
+  --body-small: 14px;
+  --body-tiny: 12px;
 
   /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-16);
-  --body-title-paragraph: var(--size-28);
-  --body-indicator-paragraph-spacing: var(--spacing-12);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 16px;
+  --body-title-paragraph: 28px;
+  --body-indicator-paragraph-spacing: 12px;
 
   /* Spacing - mobile */
   --none: 0;
@@ -589,7 +573,7 @@
   --body-font-size-citation: 12px;
 
   /* main-heading styles */
-  --main-heading-font-size: var(--size-28);
+  --main-heading-font-size: 28px;
   --main-heading-spacing: 0 0 var(--spacing-36);
   --main-heading-line-height: 110%;
 
@@ -629,38 +613,38 @@
 @media (width >= 768px) {
   :root {
     /* typography specific - h1..h6, body ..etc */
-    --h1-huge: var(--size-60);
-    --h1-large: var(--size-44);
-    --h1-base: var(--size-36);
-    --h2-large: var(--size-32);
-    --h2-base: var(--size-32);
-    --h3-large: var(--size-28);
-    --h3-base: var(--size-28);
-    --heading-label-large: var(--size-36);
-    --heading-label-base: var(--size-28);
-    --heading-label-small: var(--size-28);
-    --heading-label-tiny: var(--size-24);
+    --h1-huge: 60px;
+    --h1-large: 44px;
+    --h1-base: 36px;
+    --h2-large: 32px;
+    --h2-base: 32px;
+    --h3-large: 28px;
+    --h3-base: 28px;
+    --heading-label-large: 36px;
+    --heading-label-base: 28px;
+    --heading-label-small: 28px;
+    --heading-label-tiny: 24px;
 
     /* Body variables */
-    --default: var(--size-20);
-    --body-huge: var(--size-20);
-    --body-large: var(--size-18);
-    --body-medium: var(--size-14);
-    --body-small: var(--size-14);
-    --body-tiny: var(--size-12);
+    --default: 20px;
+    --body-huge: 20px;
+    --body-large: 18px;
+    --body-medium: 14px;
+    --body-small: 14px;
+    --body-tiny: 12px;
 
     /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-18);
-  --body-title-paragraph: var(--size-28);
-  --body-indicator-paragraph-spacing: var(--spacing-8);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 18px;
+  --body-title-paragraph: 28px;
+  --body-indicator-paragraph-spacing: 8px;
 
     /* body styles */
     --body-font-size: var(--default);
     --body-font-size-citation: 12px;
 
     /* main-heading styles */
-    --main-heading-font-size: var(--size-32);
+    --main-heading-font-size: 32px;
     
     /* eyebrow styles */
     --eyebrow-font-size-l: 16px;
@@ -746,31 +730,31 @@
 @media (width >= 1024px) {
   :root {
     /* typography specific - h1..h6, body ..etc */
-    --h1-huge: var(--size-72);
-    --h1-large: var(--size-60); /* --font-size-1200 */
-    --h1-base: var(--size-48); /* --font-size-1100 */
-    --h2-large: var(--size-40); /* --font-size-1000 */
-    --h2-base: var(--size-40); /* --font-size-1000 */
-    --h3-large: var(--size-32); /* --font-size-800 */
-    --h3-base: var(--size-32); /* --font-size-800 */
-    --heading-label-large: var(--size-48); /* --font-size-1100 */
-    --heading-label-base: var(--size-40); /* --font-size-1000 */
-    --heading-label-small: var(--size-36); /* --font-size-900 */
-    --heading-label-tiny: var(--size-28); /* --font-size-700 */
+    --h1-huge: 72px;
+    --h1-large: 60px; /* --font-size-1200 */
+    --h1-base: 48px; /* --font-size-1100 */
+    --h2-large: 40px; /* --font-size-1000 */
+    --h2-base: 40px; /* --font-size-1000 */
+    --h3-large: 32px; /* --font-size-800 */
+    --h3-base: 32px; /* --font-size-800 */
+    --heading-label-large: 48px; /* --font-size-1100 */
+    --heading-label-base: 40px; /* --font-size-1000 */
+    --heading-label-small: 36px; /* --font-size-900 */
+    --heading-label-tiny: 28px; /* --font-size-700 */
 
     /* Body variables */
-    --default: var(--size-20); /* --font-size-500 */
-    --body-huge: var(--size-24); /* --font-size-600 */
-    --body-large: var(--size-20); /* --font-size-500 */
-    --body-medium: var(--size-16); /* --font-size-300 */
-    --body-small: var(--size-14); /* --font-size-200 */
-    --body-tiny: var(--size-12); /* --font-size-100 */
+    --default: 20px; /* --font-size-500 */
+    --body-huge: 24px; /* --font-size-600 */
+    --body-large: 20px; /* --font-size-500 */
+    --body-medium: 16px; /* --font-size-300 */
+    --body-small: 14px; /* --font-size-200 */
+    --body-tiny: 12px; /* --font-size-100 */
 
     /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-20);
-  --body-title-paragraph: var(--size-36);
-  --body-indicator-paragraph-spacing: var(--spacing-12);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 20px;
+  --body-title-paragraph: 36px;
+  --body-indicator-paragraph-spacing: 12px;
     
     /* body styles */
     --body-font-size: var(--default);
@@ -799,7 +783,7 @@
     --xhuge: 96px;
 
     /* main-heading styles */
-    --main-heading-font-size: var(--size-40);
+    --main-heading-font-size: 40px;
     --main-heading-spacing: 0 0 var(--spacing-48);
 
     /* Block specific */
