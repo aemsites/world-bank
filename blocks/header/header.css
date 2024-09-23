@@ -37,7 +37,7 @@ header nav {
   padding: 0 0 calc(var(--nav-padding) - 2px);
   gap: 20px;
   position: relative;
-  border-bottom: 2px solid var(--neutrals-20);
+  border-bottom: 2px solid var(--neutral-solid-10-s);
 }
 
 header nav p {
@@ -84,7 +84,7 @@ header .nav-menu-overlay .nav-menu {
   padding: 100px 30px;
   max-width: 1456px;
   height: calc(100% - 200px);
-  color: var(--neutrals-40);
+  color: var( --neutral-solid-30-s);
 }
 
 /** Lanaguge Selector CSS **/
@@ -104,15 +104,15 @@ header .nav-menu-overlay .nav-menu {
 }
 
 .nav-item-expanded-active {
-  border: 1px solid var(--neutrals-30);
+  border: 1px solid var(--neutral-solid-15-s);
   border-radius: 5px;
-  background: var(--color-white);
+  background: var(--white);
 }
 
 /* Dropdown Text */
 .language-toggle {
   padding-bottom: 14px;
-  color: var(--primary-blue-80);
+  color: var(--text-on-light-link-primary-enabled);
   font-size: 16px;
   display: inline-flex;
   justify-content: flex-end;
@@ -121,7 +121,7 @@ header .nav-menu-overlay .nav-menu {
 }
 
 .language-text {
-  color: var(--primary-blue-80);
+  color: var(--text-on-light-link-primary-enabled);
   font-size: 16px;
   line-height: 22px;
 }
@@ -162,7 +162,7 @@ header .nav-menu-overlay .nav-menu a {
 }
 
 .header .nav-item-content-expanded > ul > li a {
-  color: var(--primary-blue-80);
+  color: var(--text-on-light-link-primary-enabled);
   display: block;
   font-size: 14px;
   line-height: 17px;
@@ -170,7 +170,7 @@ header .nav-menu-overlay .nav-menu a {
 }
 
 header .nav-menu-overlay .nav-menu a:visited {
-  color: var(--neutrals-40);
+  color: var( --neutral-solid-30-s);
 }
 
 .header .nav-item-content-expanded > ul > li a:hover {
@@ -192,8 +192,8 @@ header .nav-menu-overlay .nav-menu-column.left ul a {
 }
 
 header .nav-menu-overlay .nav-menu .submenu a:hover {
-  color: var(--color-white);
-  border-bottom:1px solid var(--color-white) 
+  color: var(--white);
+  border-bottom:1px solid var(--white) 
 }
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
@@ -202,13 +202,13 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
 }
 
 header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
-  color: var(--color-white);
+  color: var(--white);
   font-size: var(--body-large);
   font-weight: 700;
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
-  color: var(--neutrals-40);
+  color: var( --neutral-solid-30-s);
   border-bottom:1px solid var(--background-container-on-light-link-primary-hover);
 }
 
@@ -342,7 +342,7 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   margin-bottom: 6px;
   margin-left: 8px;
   border-radius: 10px;
-  background-color: var(--neutrals-40);
+  background-color: var( --neutral-solid-30-s);
   border: 1px;
 }
 
@@ -368,8 +368,8 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   display: inline-block;
   margin-bottom: 3px;
   transform: rotate(225deg);
-  border-bottom: 3px solid var(--neutrals-40);
-  border-left: 3px solid var(--neutrals-40);
+  border-bottom: 3px solid var( --neutral-solid-30-s);
+  border-left: 3px solid var( --neutral-solid-30-s);
   border-radius: 1px;
 }
 
@@ -391,7 +391,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country {
   text-transform: uppercase;
   display: flex;
   font-weight: 800;
-  color: var(--color-white);
+  color: var(--white);
   flex-direction: column;
   position: relative;
   justify-content: start;
@@ -404,7 +404,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
   text-transform: capitalize;
   position: absolute;
   left: 0;
-  color: var(--neutrals-40);
+  color: var( --neutral-solid-30-s);
   z-index: 2;
   background-color: var(--primary-blue-102);
 }
@@ -424,7 +424,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country div {
 
 header .nav-menu-overlay .nav-menu-column.right > ul {
   font-size: 16px;
-  color: var(--color-white);
+  color: var(--white);
   line-height: 22px;
   letter-spacing: 0.06em;
   text-align: left;
@@ -436,7 +436,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
 
 header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
   font-size: 16px;
-  color: var(--neutrals-40);
+  color: var( --neutral-solid-30-s);
   margin-top: 10px;
   font-family: var(--body-font-family);
   text-transform: none;
@@ -542,7 +542,7 @@ header
   background-color: var(--primary-blue-80);
   outline: none;
   border: none;
-  color: var(--color-white);
+  color: var(--white);
   position: absolute;
   width: 60vw;
   z-index: 3;
@@ -552,7 +552,7 @@ header
 
 .section.nav-sections .default-content-wrapper p {
   font-size: var(--body-medium);
-  color: var(--primary-blue-80);
+  color: var(--text-on-light-link-primary-enabled);
   text-decoration: underline;
   margin-left: 4px;
   max-width: 40vw;
@@ -586,8 +586,8 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
   display: inline-block;
   padding: 2px;
   height: 2px;
-  border-left: 2px solid var(--color-white);
-  border-bottom: 2px solid var(--color-white);
+  border-left: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
   transform: rotate(-45deg);
   margin-top: -2px;
 }
@@ -662,7 +662,7 @@ header nav[aria-expanded="true"] .nav-hamburger-icon {
   height: 44px;
   width: 44px;
   z-index: 3;
-  background-color: var(--color-white);
+  background-color: var(--white);
   border-radius: 50%;
   position: fixed;
   right: 30px;
@@ -762,7 +762,7 @@ align-items: center;
   background: var(--input-background-color);
   height: 71px;
   font-size: var(--search-text-size);
-  color: var(--color-white);
+  color: var(--white);
   font-weight: normal;
 }
 
@@ -772,7 +772,7 @@ align-items: center;
 }
 
 #search-input::placeholder {
-  color: var(--color-white);
+  color: var(--white);
   font-weight: 400;
 }
 
@@ -1016,8 +1016,8 @@ align-items: center;
     display: inline-block;
     padding: 2px;
     height: 2px;
-    border-left: 2px solid var(--color-white);
-    border-bottom: 2px solid var(--color-white);
+    border-left: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
     transform: rotate(-45deg);
     margin-top: -2px;
   }
@@ -1141,7 +1141,7 @@ align-items: center;
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected {
-    background-color: var(--color-white);
+    background-color: var(--white);
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a {
@@ -1408,8 +1408,8 @@ align-items: center;
     display: inline-block;
     padding: 2px;
     height: 2px;
-    border-left: 2px solid var(--color-white);
-    border-bottom: 2px solid var(--color-white);
+    border-left: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
     transform: rotate(-45deg);
     margin-top: -2px;
   }
