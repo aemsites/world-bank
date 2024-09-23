@@ -745,8 +745,16 @@
       {
         "component": "date-time",
         "valueType": "date",
+        "value": "2024-09-23T00:00:00.000Z",
         "name": "content_date",
-        "label": "Date Of Content"
+        "required": true,
+        "label": "Date Of Content creation"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author"
       },
       {
         "component": "select",
@@ -771,14 +779,29 @@
       },
       {
         "component": "tab",
-        "label": "Advance",
+        "label": "Analytics",
         "name": "tab-adv"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "author",
-        "label": "Author"
+        "name": "pageUid",
+        "label": "Page Uid",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pageCategory",
+        "label": "Page Category",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "channel",
+        "label": "Channel",
+        "required": true
       },
       {
         "component": "select",
@@ -817,6 +840,7 @@
         "name": "languages",
         "value": "",
         "label": "Language",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Afrikaans, AFR1", "value": "Afrikaans, AFR1" }, 
@@ -1006,6 +1030,7 @@
         "name": "originating_unit",
         "value": "",
         "label": "Unit",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Accountability Mechanism (AMIPN)", "value": "Accountability Mechanism (AMIPN), AMIPN" },
@@ -1066,6 +1091,7 @@
         "name": "information_classification",
         "value": "",
         "label": "Information Classification",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Confidential", "value": "CON_AI" },

@@ -1,47 +1,72 @@
 
-.tabs{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.tab-navigation {
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
-.tabs .tabs-list {
+.tab-navigation .tabs-list .tab-menu {
   display: flex;
-  width: 100%;
+  list-style: none;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  user-select: none;
   overflow-x: auto;
-  align-items: center;
+  padding: 0;
   gap: 30px;
   border-bottom: 2px solid var(--neutral-solid-10-s);
 }
 
-.tabs .tabs-list::-webkit-scrollbar {
-  display: none; 
-}
+.tab-menu::-webkit-scrollbar {
+  display: none;
+} 
 
-.tabs .tabs-list .tabs-tab {
-  background-color: transparent; /* Set background as transparent */
+.tab-navigation .tabs-list .tab-btn {
+  background-color: transparent;
   padding: 0 1px;
-  transition: color 0.2s;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
   border-radius: 0;
   border-bottom: 5px solid transparent;
   margin: 0;
-}
-
-.tabs .tabs-list .tabs-tab[aria-selected="true"]{
-  color: var(--neutral-solid-90-s);
-  border: 0;
-  border-bottom: 5px solid #00ADE4;
-  cursor: initial;
-  line-height: 140%;
-}
-
-.tabs .tabs-list .tabs-tab p{
   font-size: 16px;
   font-weight: 700;
   line-height: 140%;
 }
 
+.tab-navigation .tabs-list .tab-btn[aria-selected='true']{
+  color: var(--neutral-solid-90-s);
+  border: 0;
+  border-bottom: 5px solid #00ADE4;
+  cursor: initial;
+  line-height: 140%;
+} 
+
+.tab-navigation .tabs-list .left-btn,
+.tab-navigation .tabs-list .right-btn {
+  position: absolute;
+  cursor: pointer;
+  display: none;
+  background: var(--white); 
+  color: var(--accent-blue-primary-70); 
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  padding: 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.tab-navigation .tabs-list .left-btn {
+  left: 0;
+}
+
+.tab-navigation .tabs-list .right-btn {
+  right: 0;
+  text-align: right;
+}
+
+/* tabs-panel starts here */
 
 .tabs .tabs-panel {
   width: 100%;
@@ -94,7 +119,7 @@
   font-weight: 700;
   font-size: var(--font-size-500);
   line-height: 120%;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
 }
 
 .tab-li-element .tab-li-element-date {
