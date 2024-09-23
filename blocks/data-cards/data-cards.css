@@ -96,8 +96,6 @@
 
 .data-cards.news-card-variation .anchor-tag {    
     text-decoration: none;
-    order: 2;
-    padding-left: 18px;
     font-weight: 700;
     font-size: 20px;
     line-height: 120%;
@@ -110,14 +108,10 @@
   border-radius: 8px;
   min-height: 388px;
   padding: 28px 28px 30px;
-
-  /* margin-top: 10px; */
   background-color: var(--color-white);
   text-align: left;
   min-width: 276px;
   border: 1px solid #D9D9D9;
-
-  /* margin-bottom: 10px; */
 }
 
 .data-cards.data-card-variation .data-card-tag {
@@ -182,6 +176,7 @@
   border-bottom: 2px solid var(--neutral-solid-10-s);
   line-height: 150%;
   font-size: var(--font-size-300);
+  padding-bottom: var(--spacing-xxlarge);
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
@@ -194,7 +189,6 @@
 
 .data-cards.news-card-variation .news-card-items .news-card {
   display: grid;
-  padding-top: var(--spacing-medium);
 }
 
 .data-cards.news-card-variation .news-card-items .news-card:not(:first-child) {
@@ -258,7 +252,6 @@
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
   margin: 0;
-  padding: 10px 34px;
 }
 
 .data-cards .news-card .news-card-image {
@@ -322,10 +315,6 @@
   .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child{
     margin-top:0;
     margin-bottom: var(--spacing-medium);
-  }
-
-  .data-cards.news-card-variation .rte-container > div:nth-child(2) {
-    padding-bottom: 48px;
   }
 
   .data-cards.data-card-variation .data-card-items {
@@ -426,10 +415,6 @@
     height: fit-content;
     position: sticky;
     top: 0;
-  }
-  
-  .data-cards.news-card-variation .rte-container > div:nth-child(2) {
-    padding-bottom: 64px;
   }
 
   .data-cards.news-card-variation .rte-container > div:first-child {
