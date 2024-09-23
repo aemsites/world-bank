@@ -485,34 +485,18 @@
   --neutrals-a-90: rgb(0 13 26 / 70%);
   --neutrals-a-100: rgb(0 13 26 / 96%);
 
-  /* Typography spacing */
-  --size-72: 72px;
-  --size-60: 60px;
-  --size-48: 48px;
-  --size-44: 44px;
-  --size-40: 40px;
-  --size-36: 36px;
-  --size-32: 32px;
-  --size-28: 28px;
-  --size-24: 24px;
-  --size-20: 20px;
-  --size-18: 18px;
-  --size-16: 16px;
-  --size-14: 14px;
-  --size-12: 12px;
-
   /* Body variables */
-  --default: var(--size-20);
-  --body-huge: var(--size-20);
-  --body-large: var(--size-18);
-  --body-medium: var(--size-16);
-  --body-small: var(--size-14);
-  --body-tiny: var(--size-12);
+  --default: 20px;
+  --body-huge: 20px;
+  --body-large: 18px;
+  --body-medium: 16px;
+  --body-small: 14px;
+  --body-tiny: 12px;
 
   /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-16);
-  --body-title-paragraph: var(--size-28);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 16px;
+  --body-title-paragraph: 28px;
   --body-indicator-paragraph-spacing: 12px;
 
   /* Spacing - mobile */
@@ -556,7 +540,7 @@
   --body-font-size-citation: 12px;
 
   /* main-heading styles */
-  --main-heading-font-size: var(--size-28);
+  --main-heading-font-size: 28px;
   --main-heading-spacing: 0 0 36px;
   --main-heading-line-height: 110%;
 
@@ -596,17 +580,17 @@
 @media (width >= 768px) {
   :root {
     /* Body variables */
-    --default: var(--size-20);
-    --body-huge: var(--size-20);
-    --body-large: var(--size-18);
-    --body-medium: var(--size-14);
-    --body-small: var(--size-14);
-    --body-tiny: var(--size-12);
+    --default: 20px;
+    --body-huge: 20px;
+    --body-large: 18px;
+    --body-medium: 14px;
+    --body-small: 14px;
+    --body-tiny: 12px;
 
     /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-18);
-  --body-title-paragraph: var(--size-28);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 18px;
+  --body-title-paragraph: 28px;
   --body-indicator-paragraph-spacing: 8px;
 
     /* body styles */
@@ -614,7 +598,7 @@
     --body-font-size-citation: 12px;
 
     /* main-heading styles */
-    --main-heading-font-size: var(--size-32);
+    --main-heading-font-size: 32px;
     
     /* eyebrow styles */
     --eyebrow-font-size-l: 16px;
@@ -700,17 +684,17 @@
 @media (width >= 1024px) {
   :root {
     /* Body variables */
-    --default: var(--size-20); /* --font-size-500 */
-    --body-huge: var(--size-24); /* --font-size-600 */
-    --body-large: var(--size-20); /* --font-size-500 */
-    --body-medium: var(--size-16); /* --font-size-300 */
-    --body-small: var(--size-14); /* --font-size-200 */
-    --body-tiny: var(--size-12); /* --font-size-100 */
+    --default: 20px; /* --font-size-500 */
+    --body-huge: 24px; /* --font-size-600 */
+    --body-large: 20px; /* --font-size-500 */
+    --body-medium: 16px; /* --font-size-300 */
+    --body-small: 14px; /* --font-size-200 */
+    --body-tiny: 12px; /* --font-size-100 */
 
     /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-20);
-  --body-title-paragraph: var(--size-36);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 20px;
+  --body-title-paragraph: 36px;
   --body-indicator-paragraph-spacing: 12px;
     
     /* body styles */
@@ -740,7 +724,7 @@
     --xhuge: 96px;
 
     /* main-heading styles */
-    --main-heading-font-size: var(--size-40);
+    --main-heading-font-size: 40px;
     --main-heading-spacing: 0 0 48px;
 
     /* Block specific */
