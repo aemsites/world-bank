@@ -485,57 +485,6 @@
   --neutrals-a-90: rgb(0 13 26 / 70%);
   --neutrals-a-100: rgb(0 13 26 / 96%);
 
-<<<<<<< HEAD
-  /* spacing (Padding & Margins) */
-  --spacing-0: 0;
-  --spacing-2: 2px;
-  --spacing-4: 4px;
-  --spacing-8: 8px;
-  --spacing-12: 12px;
-  --spacing-16: 16px;
-  --spacing-20: 20px;
-  --spacing-24: 24px;
-  --spacing-28: 28px;
-  --spacing-32: 32px;
-  --spacing-36: 36px;
-  --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-52: 52px;
-  --spacing-56: 56px;
-  --spacing-64: 64px;
-  --spacing-80: 80px;
-  --spacing-96: 96px;
-
-  /* Heading variables */
-  --h1-huge: 44px;
-  --h1-large: 36px;
-  --h1-base: 24px;
-  --h2-large: 28px;
-  --h2-base: 28px;
-  --h3-large: 24px;
-  --h3-base: 24px;
-  --heading-label-large: 36px;
-  --heading-label-base: 28px;
-  --heading-label-small: 28px;
-  --heading-label-tiny: 24px;
-=======
-  /* Typography spacing */
-  --size-72: 72px;
-  --size-60: 60px;
-  --size-48: 48px;
-  --size-44: 44px;
-  --size-40: 40px;
-  --size-36: 36px;
-  --size-32: 32px;
-  --size-28: 28px;
-  --size-24: 24px;
-  --size-20: 20px;
-  --size-18: 18px;
-  --size-16: 16px;
-  --size-14: 14px;
-  --size-12: 12px;
->>>>>>> main
-
   /* Body variables */
   --default: 20px;
   --body-huge: 20px;
@@ -545,15 +494,9 @@
   --body-tiny: 12px;
 
   /** Measuring impact card paragraph varibales **/
-<<<<<<< HEAD
   --body-indicator-paragraph: 12px;
   --body-description-paragraph: 16px;
   --body-title-paragraph: 28px;
-=======
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-16);
-  --body-title-paragraph: var(--size-28);
->>>>>>> main
   --body-indicator-paragraph-spacing: 12px;
 
   /* Spacing - mobile */
@@ -597,13 +540,8 @@
   --body-font-size-citation: 12px;
 
   /* main-heading styles */
-<<<<<<< HEAD
   --main-heading-font-size: 28px;
-  --main-heading-spacing: 0 0 var(--spacing-36);
-=======
-  --main-heading-font-size: var(--size-28);
   --main-heading-spacing: 0 0 36px;
->>>>>>> main
   --main-heading-line-height: 110%;
 
   /* eyebrow styles */
@@ -641,22 +579,6 @@
 */
 @media (width >= 768px) {
   :root {
-<<<<<<< HEAD
-    /* typography specific - h1..h6, body ..etc */
-    --h1-huge: 60px;
-    --h1-large: 44px;
-    --h1-base: 36px;
-    --h2-large: 32px;
-    --h2-base: 32px;
-    --h3-large: 28px;
-    --h3-base: 28px;
-    --heading-label-large: 36px;
-    --heading-label-base: 28px;
-    --heading-label-small: 28px;
-    --heading-label-tiny: 24px;
-
-=======
->>>>>>> main
     /* Body variables */
     --default: 20px;
     --body-huge: 20px;
@@ -666,15 +588,9 @@
     --body-tiny: 12px;
 
     /** Measuring impact card paragraph varibales **/
-<<<<<<< HEAD
   --body-indicator-paragraph: 12px;
   --body-description-paragraph: 18px;
   --body-title-paragraph: 28px;
-=======
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-18);
-  --body-title-paragraph: var(--size-28);
->>>>>>> main
   --body-indicator-paragraph-spacing: 8px;
 
     /* body styles */
@@ -808,13 +724,8 @@
     --xhuge: 96px;
 
     /* main-heading styles */
-<<<<<<< HEAD
     --main-heading-font-size: 40px;
-    --main-heading-spacing: 0 0 var(--spacing-48);
-=======
-    --main-heading-font-size: var(--size-40);
     --main-heading-spacing: 0 0 48px;
->>>>>>> main
 
     /* Block specific */
     --signup-padding: 52px;
