@@ -744,9 +744,11 @@
       },
       {
         "component": "date-time",
-        "valueType": "date",
-        "value": "2024-09-23T00:00:00.000Z",
+        "valueType": "date-time",
         "name": "content_date",
+        "placeholder": "YYYY-MM-DD",
+        "displayFormat": null,
+        "valueFormat": null,
         "required": true,
         "label": "Date Of Content"
       },
