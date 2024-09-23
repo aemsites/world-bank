@@ -42,9 +42,9 @@
 }
 
 .cards-container .rp-card .text-content .title {
-  font-size: var(--font-size-700);
-  line-height: 23px;
-  color: var(--accent-blue-primary-70);
+  font-size: var(--font-size-500);
+  line-height: 22px;
+  color: var(--text-on-light-link-primary-enabled);
   font-weight: 700;
 }
 
