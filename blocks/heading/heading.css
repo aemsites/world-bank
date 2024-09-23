@@ -9,12 +9,12 @@
 }
 
 .heading h1 {
-    font-size: var(--h1-large);
+    font-size: var(--font-size-1200);
     line-height: 40.32px;
 }
 
 .heading h2 {
-    font-size: var(--h2-large);
+    font-size: var(--font-size-1000);
     line-height: 31.36px;
 }
 

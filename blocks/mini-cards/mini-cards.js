@@ -37,7 +37,7 @@ export default function decorate(block) {
       processTag(tagDiv);
     }
     const text = div({ class: 'mc-text-wrapper' }, tagDiv, a({ href: link }, titleDiv), div({ class: 'date-time-info' }, dateDiv, timeDiv.textContent ? timeDiv : ''), locationDiv);
-    row.append(text, imageDiv);
+    row.append(text, a({ href: link }, imageDiv));
     miniCardsContainer.append(row);
   });
 
