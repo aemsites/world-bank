@@ -163,19 +163,23 @@ header .nav-menu-overlay .nav-menu a {
 
 .header .nav-item-content-expanded > ul > li a {
   color: var(--primary-blue-80);
-  text-decoration: underline;
   display: block;
   font-size: 14px;
   line-height: 17px;
+  text-decoration: none;
+}
+
+header .nav-menu-overlay .nav-menu a:visited {
+  color: var(--neutrals-40);
+}
+
+.header .nav-item-content-expanded > ul > li a:hover {
+  text-decoration: underline;
 }
 
 .header .nav-item-content-expanded {
   display: block;
   padding-top: 10px;
-}
-
-header .nav-menu-overlay .nav-menu a:visited {
-  color: var(--neutrals-40);
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a {
@@ -1424,7 +1428,7 @@ header nav .nav-tools {
     max-height: none;
   }
 
-  header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li{
+  header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li {
     padding: 0 20px;
   }
 
