@@ -1087,6 +1087,7 @@
         "component": "text",
         "valueType": "string",
         "name": "surname",
+        "required": true,
         "value": "",
         "label": "Surname"
       },
@@ -1094,6 +1095,7 @@
         "component": "text",
         "valueType": "string",
         "name": "first_name",
+        "required": true,
         "value": "",
         "label": "First Name"
       },
@@ -1101,6 +1103,7 @@
         "component": "text",
         "valueType": "string",
         "name": "display_name",
+        "required": true,
         "value": "",
         "label": "Display Name"
       },
@@ -1108,6 +1111,7 @@
         "component": "text",
         "valueType": "string",
         "name": "job_title",
+        "required": true,
         "value": "",
         "label": "Job Title"
       },
