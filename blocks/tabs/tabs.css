@@ -24,7 +24,7 @@
 .tab-navigation .tabs-list .tab-btn {
   background-color: transparent;
   padding: 0 1px;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
   border-radius: 0;
   border-bottom: 5px solid transparent;
   margin: 0;
@@ -131,7 +131,7 @@
   font-weight: 700;
   font-size: var(--font-size-500);
   line-height: 120%;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
 }
 
 .tab-li-element .tab-li-element-date {

@@ -188,7 +188,7 @@
   text-decoration: none;
   font-weight: 700;
   font-size: var(--font-size-600);
-  color: var(--background-container-on-light-link-primary-enabled);
+  color: var(--text-on-light-link-primary-enabled);
 }
 
 .cards.senior-leadership .cards-card-body p {
