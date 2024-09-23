@@ -198,8 +198,13 @@
     display: grid;
     padding-top: var(--xxlarge)
   }
+
+  .data-cards.news-card-variation .news-card-items .news-card:first-child {
+    padding-top: var(--none);
+    margin-top: -24px;
+  }
   
-  .data-cards.news-card-variation .news-card-items:not(:first-child) .news-card {
+  .data-cards.news-card-variation .news-card-items a:not(:first-child) .news-card {
     box-sizing: border-box;
     border-top: 2px solid var(--neutral-solid-10-s);
   }
