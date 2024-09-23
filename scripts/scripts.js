@@ -228,10 +228,10 @@ async function renderWBDataLayer() {
   const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
   window.wbgData.page = {
     pageInfo: {
-      pageCategory: getMetadata('pageCategory'),
+      pageCategory: getMetadata('pagecategory'),
       channel: getMetadata('channel'),
       contentType: getMetadata('content_type'),
-      pageUid: getMetadata('pageUid'),
+      pageUid: getMetadata('pageuid'),
       pageFirstPub: formatDate(firstPubDateStr),
       pageLastMod: formatDate(lastPubDateStr),
       webpackage: '',
