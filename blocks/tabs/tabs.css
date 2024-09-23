@@ -22,7 +22,7 @@
   background-color: transparent; /* Set background as transparent */
   padding: 0 1px;
   transition: color 0.2s;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
   border-radius: 0;
   border-bottom: 5px solid transparent;
   margin: 0;
@@ -94,7 +94,7 @@
   font-weight: 700;
   font-size: var(--font-size-500);
   line-height: 120%;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
 }
 
 .tab-li-element .tab-li-element-date {

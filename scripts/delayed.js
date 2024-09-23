@@ -1,13 +1,13 @@
 // add delayed functionality here
 import {
-  getMetadata,
+  getMetadata, loadScript,
 } from './aem.js';
 import {
   div, p, section, a, button,
   span, i,
 } from './dom-helpers.js';
 import {
-  getLanguage, fetchLanguageNavigation,
+  getLanguage, fetchLanguageNavigation, getEnvType, isInternalPage,
 } from './utils.js';
 /**
  * Swoosh on page
@@ -131,10 +131,21 @@ function buildTwitterLinks() {
   });
 }
 
-function loadDelayed() {
+async function loadAdobeLaunch() {
+  const adobeotmSrc = {
+    dev: 'https://assets.adobedtm.com/223f6e2cf7c9/40a9f28f4c98/launch-2be0f69b42b2-development.min.js',
+    prod: 'https://assets.adobedtm.com/223f6e2cf7c9/40a9f28f4c98/launch-2be0f69b42b2-development.min.js',
+  };
+  await loadScript(adobeotmSrc[getEnvType()]);
+}
+
+async function loadDelayed() {
   pageSwoosh();
   cookiePopUp();
   buildTwitterLinks();
   getNavigationData(getLanguage());
+  if (!isInternalPage()) {
+    await loadAdobeLaunch();
+  }
 }
 loadDelayed();
