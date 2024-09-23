@@ -196,7 +196,7 @@
 
 .data-cards.news-card-variation .news-card-items .news-card {
   display: grid;
-  padding-top: var(--spacing-32)
+  padding-top: var(--xxlarge)
 }
 
 .data-cards.news-card-variation .news-card-items:not(:first-child) .news-card {
@@ -227,7 +227,7 @@
 
 .data-cards.news-card-variation.block .news-card-items .news-card  > .news-card-title > p {
   margin-top: 10px;
-  margin-bottom: var(--spacing-0);
+  margin-bottom: var(--none);
 }
 
 .data-cards .news-card .news-card-tag.planet {
@@ -328,7 +328,7 @@
   }
 
   .data-cards.news-card-variation .rte-container > div:nth-child(2) {
-    padding-bottom: var(--spacing-16);
+    padding-bottom: 16px;
   }
 
   .data-cards.data-card-variation .data-card-items {
@@ -346,7 +346,7 @@
   .data-cards.news-card-variation .rte-container > div:first-child {
     font-size: var(--font-size-1000);
     line-height: 110%;
-    padding-bottom: var(--spacing-8);
+    padding-bottom: var(--xsmall);
   }
 }
 
@@ -439,7 +439,7 @@
   .data-cards.news-card-variation .rte-container > div:first-child {
     font-size: var(--font-size-1000);
     line-height: 112%;
-    padding-bottom: var(--spacing-12);
+    padding-bottom: var(--xsmall);
       }
 
   .data-cards.news-card-variation.block .rte-container > div:nth-child(1) > div > p {
