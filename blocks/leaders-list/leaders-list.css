@@ -47,7 +47,7 @@
     font-weight: 700;
     font-size: var(--default);
     line-height: 120%;
-    color: var(--primary-blue-70);
+    color: var(--text-on-light-link-primary-enabled);
 }
 
 .leader-item .leader-title{

@@ -11,11 +11,14 @@ import {
   loadBlocks,
   loadCSS,
   fetchPlaceholders,
+  getMetadata,
 } from './aem.js';
 
 import {
   getLanguage,
   createSource,
+  getEnvType,
+  formatDate,
 } from './utils.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -219,6 +222,39 @@ function decorateSectionImages(doc) {
   });
 }
 
+async function renderWBDataLayer() {
+  const config = await fetchPlaceholders();
+  const lastPubDateStr = getMetadata('published-time');
+  const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
+  window.wbgData.page = {
+    pageInfo: {
+      pageCategory: getMetadata('pageCategory'),
+      channel: getMetadata('channel'),
+      contentType: getMetadata('content_type'),
+      pageUid: getMetadata('pageUid'),
+      pageFirstPub: formatDate(firstPubDateStr),
+      pageLastMod: formatDate(lastPubDateStr),
+      webpackage: '',
+    },
+  };
+
+  window.wbgData.site = {
+    siteInfo: {
+      siteLanguage: getLanguage() || 'en',
+      siteType: config.analyticsSiteType || 'main',
+      siteEnv: getEnvType() || 'dev',
+    },
+
+    techInfo: {
+      cmsType: config.analyticsCmsType || 'aem edge',
+      bussVPUnit: config.analyticsBussvpUnit || 'ecr',
+      bussUnit: config.analyticsBussUnit || 'ecrcc',
+      bussUserGroup: config.analyticsBussUserGroup || 'external',
+      bussAgency: config.analyticsBussAgency || 'ibrd',
+    },
+  };
+}
+
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -242,6 +278,7 @@ async function loadLazy(doc) {
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
+  renderWBDataLayer();
 }
 
 /**
@@ -272,6 +309,7 @@ export async function fetchSearch() {
 }
 
 async function loadPage() {
+  window.wbgData ||= {};
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();

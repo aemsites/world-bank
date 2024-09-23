@@ -13,7 +13,7 @@ main .breadcrumb-wrapper ol li {
   display: flex;
   text-overflow: ellipsis;
   font-size: var(--body-small);
-  color: var(--primary-blue-70);
+  color: var(--text-on-light-link-primary-enabled);
 }
 
 main .breadcrumb-wrapper a {
