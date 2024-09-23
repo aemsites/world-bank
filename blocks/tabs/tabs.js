@@ -195,12 +195,12 @@ function createTabListWithButtons(tabBtnContainer) {
   };
   rightbtn.addEventListener('click', () => {
     tabBtnContainer.scrollLeft += 150;
-    setTimeout(iconVisibility, 50);
+    iconVisibility();
   });
 
   leftbtn.addEventListener('click', () => {
-    tabBtnContainer.scrollLeft -= 200;
-    setTimeout(iconVisibility, 50);
+    tabBtnContainer.scrollLeft -= 150;
+    iconVisibility();
   });
 
   tablist.appendChild(leftbtn);

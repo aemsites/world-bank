@@ -66,18 +66,6 @@
   text-align: right;
 }
 
-.tab-navigation .tabs-list.left-btn:focus,
-.tab-navigation .tabs-list .right-btn:focus {
-  outline: none;
-  background: var(--white); 
-}
-
-
-.tab-navigation .tabs-list .left-btn:active,
-.tab-navigation .tabs-list .right-btn:active {
-  background: var(--white); 
-}
-
 /* tabs-panel starts here */
 
 .tabs .tabs-panel {
