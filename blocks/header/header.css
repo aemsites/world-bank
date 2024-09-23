@@ -112,7 +112,7 @@ header .nav-menu-overlay .nav-menu {
 /* Dropdown Text */
 .language-toggle {
   padding-bottom: 14px;
-  color: var(--primary-blue-80);
+  color: var(--text-on-light-link-primary-enabled);
   font-size: 16px;
   display: inline-flex;
   justify-content: flex-end;
@@ -121,7 +121,7 @@ header .nav-menu-overlay .nav-menu {
 }
 
 .language-text {
-  color: var(--primary-blue-80);
+  color: var(--text-on-light-link-primary-enabled);
   font-size: 16px;
   line-height: 22px;
 }
@@ -162,7 +162,7 @@ header .nav-menu-overlay .nav-menu a {
 }
 
 .header .nav-item-content-expanded > ul > li a {
-  color: var(--primary-blue-80);
+  color: var(--text-on-light-link-primary-enabled);
   text-decoration: underline;
   display: block;
   font-size: 14px;
@@ -546,7 +546,7 @@ header
 
 .section.nav-sections .default-content-wrapper p {
   font-size: var(--body-medium);
-  color: var(--primary-blue-80);
+  color: var(--text-on-light-link-primary-enabled);
   text-decoration: underline;
   margin-left: 4px;
   max-width: 40vw;
