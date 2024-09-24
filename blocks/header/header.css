@@ -84,7 +84,7 @@ header .nav-menu-overlay .nav-menu {
   padding: 100px 30px;
   max-width: 1456px;
   height: calc(100% - 200px);
-  color: var(--neutral-solid-30-s);
+  color: var(--text-on-dark-default);
 }
 
 /** Lanaguge Selector CSS **/
@@ -170,7 +170,10 @@ header .nav-menu-overlay .nav-menu a {
 }
 
 header .nav-menu-overlay .nav-menu a:visited {
-  color: var(--neutral-solid-30-s);
+  color: unset;
+}
+header .nav-menu-overlay .nav-menu .nav-menu-column.right a:visited, header .nav-menu-overlay .nav-menu .nav-menu-column.right .footer a:visited, header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:visited {
+  color: unset;
 }
 
 .header .nav-item-content-expanded > ul > li a:hover {
@@ -184,7 +187,7 @@ header .nav-menu-overlay .nav-menu a:visited {
 
 header .nav-menu-overlay .nav-menu-column.left ul a {
   font-family: var(--body-font-family);
-  font-size: 28px;
+  font-size: var(--font-size-1100);
   cursor: not-allowed;
   pointer-events: none;
   font-weight: 700;
@@ -195,20 +198,23 @@ header .nav-menu-overlay .nav-menu .submenu a:hover {
   color: var(--white);
   border-bottom: 1px solid var(--white);
 }
+header .nav-menu-overlay .nav-menu .nav-menu-column.right .footer a:hover, header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hover {
+  color: var(--white);
+}
+
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
   color: white;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
   color: var(--white);
-  font-size: var(--font-size-500);
+  font-size: var(--font-size-600);
   font-weight: 700;
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
-  color: var(--neutral-solid-30-s);
   border-bottom: 1px solid
     var(--background-container-on-light-link-primary-hover);
 }
@@ -383,15 +389,15 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
   height: 3px;
   top: 14px;
   transform: rotate(45deg);
-  border-bottom: 3px solid var(--color-black);
-  border-left: 3px solid var(--color-black);
+  border-bottom: 3px solid var(--black);
+  border-left: 3px solid var(--black);
   border-radius: 1px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country {
   text-transform: uppercase;
   display: flex;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--white);
   flex-direction: column;
   position: relative;
@@ -424,8 +430,8 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country div {
 }
 
 header .nav-menu-overlay .nav-menu-column.right > ul {
-  font-size: 16px;
-  color: var(--white);
+  font-size: var(--font-size-300);
+  color: var(--text-on-dark-emphasis);
   line-height: 22px;
   letter-spacing: 0.06em;
   text-align: left;
@@ -437,21 +443,22 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
 }
 
 header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
-  font-size: 16px;
-  color: var(--neutral-solid-30-s);
+  color: var(--text-on-dark-default);
   margin-top: 10px;
   font-family: var(--body-font-family);
   text-transform: none;
   padding-top: 15px;
   min-width: 100%;
-  border-top: 1px solid var(--primary-blue-80);
+  border-top: 1px solid var(--divider-on-dark-default);
   line-height: 19.2px;
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: var(--spacing-xxsmall);
   font-weight: normal;
 }
-
+header .nav-menu-overlay .nav-menu-column.right > ul > li > ul a{
+  font-size: var(--font-size-300);
+}
 header .nav-menu-overlay .nav-menu-column.right .browse-country div ul {
   position: absolute;
   padding-top: 30px;
@@ -476,12 +483,12 @@ header
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country div ul li {
   display: block;
-  padding: 6px 20px;
+  padding: 6px 0px;
   height: 22px;
   width: 100%;
 }
@@ -494,7 +501,7 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::after {
   height: 3px;
   border-radius: 10px;
   top: 18.5px;
-  background-color: var(--color-black);
+  background-color: var(--black);
   border: 3px;
 }
 
@@ -546,10 +553,19 @@ header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul {
   padding-top: var(--regular);
 }
 
+header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li
+{
+padding-bottom: 5px;
+}
+
+header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li > a {
+font-size: var(--font-size-300);
+}
+
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li > ul {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: var(--spacing-xxsmall);
   font-size: 16px;
   padding-left: 20px;
   margin-top: 10px;
@@ -860,7 +876,7 @@ header nav .nav-tools {
 
   header .nav-menu-overlay {
     min-width: 100%;
-    overflow: hidden auto;
+    overflow: hidden;
   }
 
   header .nav-menu-overlay .nav-menu {
@@ -871,13 +887,12 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right {
     width: auto;
     padding: 0;
-    width: calc(100vw - 50px);
+    width: calc(100vw - 60px);
     overflow: hidden auto;
     height: 70vh;
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
-    font-size: var(--font-size-1000);
     font-weight: 700;
     line-height: 54.47px;
     text-align: left;
@@ -889,11 +904,13 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu {
     display: flex;
-    max-width: fit-content;
+    min-width: 100%;
+    /* max-width: fit-content; */
     flex-flow: column wrap;
     position: relative;
     justify-content: space-around;
-    max-height: calc(670px - 2vw);
+    align-items: flex-start;
+    max-height: 607px;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country {
@@ -902,7 +919,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
-    width: 41vw;
+    min-width: 41vw;
     height: auto;
   }
 
@@ -1110,6 +1127,9 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
     display: none;
   }
+  header .nav-menu-overlay .nav-menu-column.right .browse-country div ul li {
+  padding: 6px 40px;
+  }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li > span {
     display: none;
@@ -1132,14 +1152,14 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul {
-    border-right: 1px solid var(--primary-blue-80);
+    border-right: 1px solid var(--divider-on-dark-default);
     gap: 5px;
     min-width: 340px;
     padding: 0;
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul a {
-    font-size: 18px;
+    font-size: var(--font-size-500);
   }
 
   header .nav-menu-overlay .nav-menu-column.left ul a {
@@ -1174,7 +1194,7 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a {
     font-weight: 700;
-    color: var(--color-black);
+    color: var(--black);
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected > span {
@@ -1184,7 +1204,7 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right > .submenu {
     display: flex;
     flex-flow: column wrap;
-    max-height: 630px;
+    max-height: 650px;
     position: relative;
   }
 
@@ -1422,7 +1442,7 @@ header nav .nav-tools {
     height: 30px;
     top: 40px;
     background-color: var(--primary-blue-102);
-    left: 54rem;
+    left: 50rem;
     z-index: 3;
     display: flex;
     justify-content: center;
