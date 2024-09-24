@@ -1,5 +1,6 @@
 export const TAG_ROOT = 'world-bank:';
 export const SUPPORTED_LANGUAGES = ['en', 'zh', 'ru', 'fr', 'es', 'ar'];
+export const RTL_LANGUAGES = ['ar']; // list of RTL Languages
 export const INTERNAL_PAGES = ['/footer', '/nav', '/fragments', '/data', '/drafts'];
 
 let lang;
@@ -47,6 +48,14 @@ export function getLanguage() {
     }
   }
   return lang;
+}
+
+export function setPageLanguage() {
+  const currentLang = getLanguage();
+  document.documentElement.lang = currentLang;
+  if (RTL_LANGUAGES.includes(currentLang)) {
+    document.documentElement.dir = 'rtl';
+  }
 }
 
 /**
