@@ -19,18 +19,18 @@ main .breadcrumb-wrapper ol li {
 main .breadcrumb-wrapper a {
   font-size: var(--font-size-200);
   line-height: 1.4;
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   text-decoration: none;
 }
 
 main .breadcrumb-wrapper a:visited {
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   text-decoration: none;
 }
 
 main .breadcrumb-wrapper ol li span.breadcrumb-separator {
   display: inline-block;
-  border-left: 1px solid var(--neutrals-40);
+  border-left: 1px solid var(--neutral-solid-30-s);
   height: 17px;
   margin: 0 14px;
 }

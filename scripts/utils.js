@@ -1,5 +1,7 @@
+export const PATH_PREFIX = '/ext';
 export const TAG_ROOT = 'world-bank:';
 export const SUPPORTED_LANGUAGES = ['en', 'zh', 'ru', 'fr', 'es', 'ar'];
+export const RTL_LANGUAGES = ['ar']; // list of RTL Languages
 export const INTERNAL_PAGES = ['/footer', '/nav', '/fragments', '/data', '/drafts'];
 
 let lang;
@@ -14,11 +16,11 @@ export function getPathDetails() {
   const isContentPath = pathname.startsWith('/content');
   const parts = pathname.split('/');
   const safeLangGet = (index) => (parts.length > index ? parts[index] : 'en');
-  /* 4 is the index of the language in the path for AEM content paths like
-     /content/world-bank/global/en/path/to/content.html
-     1 is the index of the language in the path for EDS paths like /en/path/to/content
+  /* 5 is the index of the language in the path for AEM content paths like
+     /content/world-bank/corporate/ext/en/path/to/content.html
+     2 is the index of the language in the path for EDS paths like /en/path/to/content
     */
-  let langCode = isContentPath ? safeLangGet(4) : safeLangGet(1);
+  let langCode = isContentPath ? safeLangGet(5) : safeLangGet(2);
   // remove suffix from lang if any
   if (langCode.indexOf('.') > -1) {
     langCode = langCode.substring(0, langCode.indexOf('.'));
@@ -47,6 +49,14 @@ export function getLanguage() {
     }
   }
   return lang;
+}
+
+export function setPageLanguage() {
+  const currentLang = getLanguage();
+  document.documentElement.lang = currentLang;
+  if (RTL_LANGUAGES.includes(currentLang)) {
+    document.documentElement.dir = 'rtl';
+  }
 }
 
 /**
@@ -112,7 +122,7 @@ export async function fetchLanguageNavigation(langCode) {
 
   if (!window.navigationData[langCode]) {
     window.navigationData[langCode] = new Promise((resolve) => {
-      fetch(`${langCode}/navigation.json`)
+      fetch(`${PATH_PREFIX}${langCode}/navigation.json`)
         .then((resp) => (resp.ok ? resp.json() : {}))
         .then((json) => {
           window.navigationData[langCode] = json.data;
