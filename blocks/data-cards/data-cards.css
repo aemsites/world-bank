@@ -118,7 +118,6 @@
     font-size: 20px;
     line-height: 120%;
     color: var(--accent-blue-primary-70);
-    cursor: default;
   }
 
 .data-cards.data-card-variation .data-card {
@@ -235,7 +234,10 @@
   line-height: 116%;
   color: var(--accent-blue-primary-70);
   margin-bottom: var(--spacing-xxlarge);
-  cursor: pointer;
+}
+
+.data-cards .news-card .news-card-title:hover {
+  text-decoration: underline;
 }
 
 .data-cards.news-card-variation.block .news-card-items .news-card  > .news-card-title > p {
@@ -274,7 +276,6 @@
 .data-cards .news-card .news-card-image {
   order: 0;
   margin-bottom: 20px;
-  cursor: pointer;
 }
 
 .data-cards .news-card .news-card-image img {
