@@ -42,7 +42,7 @@
   .text-container
   .subtitle {
   text-transform: uppercase;
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
   font-weight: 700;
   line-height: 15px;
 }

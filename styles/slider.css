@@ -203,6 +203,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   .carousel-container .button-container button {
     padding: 8px 12px;
     right: 3%;
+    display: none;
   }
 
   .carousel-container .button-container button:disabled {
@@ -230,9 +231,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel .cards-card-body {
-    font-size: 16px;
     line-height: 17px;
-    font-weight: 400;
   }
 
   .carousel-container .button-container {
