@@ -159,17 +159,17 @@
 
   /* Colors: Semantic */
   --accent-blue-primary-05: var(--blue-05);
-  --accent-blue-primary-10: var(--blue-10); /* --primary-blue-20 */
+  --accent-blue-primary-10: var(--blue-10);
   --accent-blue-primary-100: var(--blue-100);
-  --accent-blue-primary-120: var(--blue-120); /* --primary-blue-102 */
+  --accent-blue-primary-120: var(--blue-120);
   --accent-blue-primary-20: var(--blue-20);
   --accent-blue-primary-30: var(--blue-30);
-  --accent-blue-primary-40: var(--blue-40); /* --primary-blue-50 */
+  --accent-blue-primary-40: var(--blue-40);
   --accent-blue-primary-50: var(--blue-50-base);
   --accent-blue-primary-60: var(--blue-60);
-  --accent-blue-primary-70: var(--blue-70); /* --primary-blue-80 */
+  --accent-blue-primary-70: var(--blue-70);
   --accent-blue-primary-80: var(--blue-80);
-  --accent-blue-primary-90: var(--blue-90); /* --primary-blue-100 */
+  --accent-blue-primary-90: var(--blue-90);
   --background-black: var(--black);
   --background-white: var(--white);
   --background-container-primary: var(--global-primary);
@@ -443,21 +443,6 @@
   --global-font-familly: 'Open Sans';
   --heading-font-weight: var(--body-font-weight-bold);
   --label-font-weight: var(--body-font-weight-bold);
-
-  /* colors */
-  --primary-blue-10: #F6FCFF;
-  --primary-blue-20: #E9F7FD;
-  --primary-blue-30: #CDE7F9;
-  --primary-blue-40: #A3DAFF;
-  --primary-blue-50: #169AF3;
-  --primary-blue-60: #0071BC;
-  --primary-blue-70: #004370; /* --accent-blue-primary-70 */
-  --primary-blue-80: #004370; /* --accent-blue-primary-70 */
-  --primary-blue-90: #012740;
-  --primary-blue-100: #012740;
-  --primary-blue-101: #002035;
-  --primary-blue-102: #001C2D;
-  --primary-blue-103: #00538A;
 
   /* neutrals */
   --neutrals-10: #F5F7F9;
@@ -759,7 +744,7 @@ h6 {
   line-height: 1.2;
   margin: 1rem 0;
   letter-spacing: 0;
-  color: var(--primary-blue-100);
+  color: var(--accent-blue-primary-90);
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
@@ -834,7 +819,7 @@ a:any-link {
 
 p strong > em > a:any-link {
   background-color: transparent;
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   font-family: var(--body-font-family);
   font-size: var(--font-size-300);
   font-weight: 700;
@@ -858,13 +843,13 @@ p strong > em > a:any-link {
 
 a:any-link:hover {
   color: rgb(0 13 26 / 96%);
-  text-decoration-color: var(--primary-blue-50);
+  text-decoration-color: var(--accent-blue-primary-40);
 }
 
 a:any-link:focus,
 a:any-link:active {
-  color: var(--primary-blue-100);
-  text-decoration-color: var(--primary-blue-100);
+  color: var(--accent-blue-primary-90);
+  text-decoration-color: var(--accent-blue-primary-90);
 }
 
 a:any-link:visited {
@@ -878,13 +863,13 @@ a:any-link.disabled {
 }
 
 p strong > em > a:any-link:hover {
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   border-bottom: 2px solid rgb(22 154 243 / 100%);
 }
 
 p strong > em > a:any-link:active,
 p strong > em > a:any-link:focus {
-  color: var(--primary-blue-90);
+  color: var(--accent-blue-primary-90);
   border-bottom: 2px solid transparent;
 }
 
@@ -914,7 +899,7 @@ button {
   font-style: normal;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--primary-blue-80);
+  background-color: var(--accent-blue-primary-70);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -924,14 +909,14 @@ button {
 
 a.button:hover,
 button:hover {
-  background-color: var(--primary-blue-50);
-  color: var(--primary-blue-80);
+  background-color: var(--accent-blue-primary-40);
+  color: var(--accent-blue-primary-70);
   cursor: pointer;
 }
 
 a.button:focus,
 button:focus {
-  background-color: var(--primary-blue-100);
+  background-color: var(--accent-blue-primary-90);
   color: var(--background-color);
 }
 
@@ -947,22 +932,22 @@ button:disabled:hover {
 a.button.secondary,
 button.secondary {
   background-color: unset;
-  border: 2px solid var(--primary-blue-80);
-  color: var(--primary-blue-80);
+  border: 2px solid var(--accent-blue-primary-70);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.secondary:hover,
 button.secondary:hover {
   background-color: unset;
-  border: 2px solid var(--primary-blue-50);
-  color: var(--primary-blue-80);
+  border: 2px solid var(--accent-blue-primary-40);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.secondary:focus,
 button.secondary:focus {
-  background-color: var(--primary-blue-20);
-  border: 2px solid var(--primary-blue-80);
-  color: var(--primary-blue-80);
+  background-color: var(--accent-blue-primary-10);
+  border: 2px solid var(--accent-blue-primary-70);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.secondary.disabled,
@@ -978,19 +963,19 @@ button.secondary:disabled:hover {
 a.button.ghost,
 button.ghost {
   background-color: transparent;
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.ghost:hover,
 button.ghost:hover {
-  background-color: var(--primary-blue-10);
-  color: var(--primary-blue-70);
+  background-color: var(--accent-blue-primary-05);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.ghost:focus,
 button.ghost:focus {
-  background-color: var(--primary-blue-20);
-  color: var(--primary-blue-70);
+  background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.ghost.disabled,
@@ -1022,7 +1007,7 @@ p.button-container {
 
   a:any-link:hover {
     color: var(--color-white);
-    text-decoration-color: var(--primary-blue-50);
+    text-decoration-color: var(--accent-blue-primary-40);
   }
 
   a:any-link:focus,
@@ -1061,22 +1046,22 @@ p.button-container {
   a.button:any-link,
   button {
     border: 1px solid transparent;
-    color: var(--primary-blue-80);
+    color: var(--accent-blue-primary-70);
     background-color: var(--background-color);
   }
 
   a.button:hover,
   button:hover {
     background-color: var(--background-color);
-    color: var(--primary-blue-80);
-    border: 1px solid var(--primary-blue-50);
+    color: var(--accent-blue-primary-70);
+    border: 1px solid var(--accent-blue-primary-40);
   }
 
   /* TODO: Not available in Figma - add more */
   a.button:focus,
   button:focus {
     background-color: var(--background-color);
-    color: var(--primary-blue-80);
+    color: var(--accent-blue-primary-70);
   }
 
   /* TODO: To be updated */
@@ -1090,23 +1075,23 @@ p.button-container {
 
   a.button.secondary,
   button.secondary {
-    background-color: var(--primary-blue-80);
+    background-color: var(--accent-blue-primary-70);
     border: 1px solid var(--background-color);
     color: var(--background-color);
   }
 
   a.button.secondary:hover,
   button.secondary:hover {
-    background-color: var(--primary-blue-80);
-    border: 1px solid var(--primary-blue-50);
+    background-color: var(--accent-blue-primary-70);
+    border: 1px solid var(--accent-blue-primary-40);
     color: var(--background-color);
   }
 
   /* TODO: Focus and disabled is not updated in figma */
   a.button.secondary:focus,
   button.secondary:focus {
-    background-color: var(--primary-blue-80);
-    border: 1px solid var(--primary-blue-50);
+    background-color: var(--accent-blue-primary-70);
+    border: 1px solid var(--accent-blue-primary-40);
     color: var(--background-color);
   }
 
@@ -1128,14 +1113,14 @@ p.button-container {
 
   a.button.ghost:hover,
   button.ghost:hover {
-    background-color: var(--primary-blue-10);
-    color: var(--primary-blue-70);
+    background-color: var(--accent-blue-primary-05);
+    color: var(--accent-blue-primary-70);
   }
 
   a.button.ghost:focus,
   button.ghost:focus {
-    background-color: var(--primary-blue-20);
-    color: var(--primary-blue-70);
+    background-color: var(--accent-blue-primary-10);
+    color: var(--accent-blue-primary-70);
   }
 
   a.button.ghost.disabled,
@@ -1207,12 +1192,12 @@ main .section > div {
 
 main .section.bg-primary-blue-90,
 main .section.bg-primary-blue-90[data-sec-inside-container="true"] > div {
-  background-color: var(--primary-blue-90);
+  background-color: var(--accent-blue-primary-90);
 }
 
 main .section.bg-primary-blue-70,
 main .section.bg-primary-blue-70[data-sec-inside-container="true"] > div {
-  background-color: var(--primary-blue-70);
+  background-color: var(--accent-blue-primary-70);
 }
 
 main .section.bg-neutrals-10,
@@ -1310,7 +1295,7 @@ body.no-scroll {
   font-size: var(--main-heading-font-size);
   text-transform: uppercase;
   margin: var(--main-heading-spacing);
-  color: var(--primary-blue-100);
+  color: var(--accent-blue-primary-90);
   line-height: var(--main-heading-line-height);
 }
 
