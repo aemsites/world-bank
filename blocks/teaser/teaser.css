@@ -39,6 +39,12 @@
     border: 1px solid white;
 }
 
+html[dir="rtl"] .teaser-wrapper .video-container .video-play,
+.teaser-wrapper .video-container .video-pause {
+    right: 20px;
+    left: auto;
+}
+
 .video-container .video-play .controls, .video-container .video-pause .controls {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(120%) contrast(100%);
 }

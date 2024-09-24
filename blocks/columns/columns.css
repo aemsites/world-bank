@@ -91,6 +91,11 @@
   z-index: 11;
 }
 
+html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col{
+  left: 0;
+  right: auto;
+}
+
 /* Column alignment - Start */
 
 .columns.halign-top > div {
@@ -216,6 +221,10 @@
   margin-top: 0;
   margin-bottom: 24px;
   text-transform: uppercase;
+}
+
+html[dir="rtl"] .columns.columns-transform-teaser>div p:nth-child(3) {
+  margin: var(--spacing-large) 0 var(--spacing-small) 30px;
 }
 
 .columns.columns-feature-card .columns-feature-card-thumbnail {

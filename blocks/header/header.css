@@ -103,6 +103,11 @@ header .nav-menu-overlay .nav-menu {
   margin-right: 10px;
 }
 
+html[dir="rtl"] .language-container{
+  left: 42px;
+  right: auto;
+}
+
 .nav-item-expanded-active {
   border: 1px solid var(--neutral-solid-15-s);
   border-radius: 5px;
