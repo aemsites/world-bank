@@ -413,11 +413,11 @@
     flex-basis: 60%;
   }
 
-  .data-cards a:not(:first-child) .news-card {
+  .data-cards.news-card-variation .news-card-items a:not(:first-child) .news-card {
     display: grid;
     grid-template-columns: 2fr 25%;
     grid-template-rows: auto auto;
-    padding-top: 30px;
+    padding-top: var(--medium);
     /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
     grid-template-areas:
         "tag image"
