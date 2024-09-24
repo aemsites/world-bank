@@ -149,7 +149,7 @@ function attachFormValidation(block, placeholders) {
         showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_CONFIRMATION_MESSAGE]);
       } else if (consentSuccess && subscriptionStatus === 'Already Subscribed') {
         showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_ERROR_MESSAGE]);
-      }else {
+      } else {
         errorMessage.textContent = 'An error occurred while processing your request. Please try again later.';
       }
     } catch (error) {
