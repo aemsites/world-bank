@@ -39,7 +39,7 @@
 }
 
 .bio-detail .media-inquiries p a:hover{
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   border-bottom: 2px solid rgb(22 154 243 / 100%);
 }
 
@@ -48,7 +48,7 @@
 }
 
 .bio-detail .resources p strong>em>a:any-link:visited {
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   border-bottom: 2px solid rgb(22 154 243 / 100%);
 }
 
@@ -64,7 +64,7 @@
 }
 
 .bio-detail .sections-container p {
-  margin: var(--none);
+  margin: var(--spacing-none);
 }
 
 .bio-detail .first-container .name-job-social {
@@ -79,18 +79,18 @@
 
 .bio-detail .sections-container .display-name {
   font-weight: bold;
-  color: var(--primary-blue-90);
+  color: var(--accent-blue-primary-90);
   line-height: 43px;
 }
 
 .bio-detail .sections-container .display-name h1 {
-  margin: var(--none);
+  margin: var(--spacing-none);
 }
 
 .bio-detail .sections-container .job-title {
   font-size: 18px;
-  color: var(--neutrals-100);
-  margin-top: var(--xsmall);
+  color: var(--neutral-solid-90-s);
+  margin-top: var(--spacing-xsmall);
 }
 
 .bio-detail .sections-container .name-job-social .social-media {
@@ -112,7 +112,7 @@
 }
 
 .bio-detail .sections-container .name-job-social .social-media .social-media-link:hover {
-  border: 2px solid var(--primary-blue-50);
+  border: 2px solid var(--accent-blue-primary-40);
 }
 
 .bio-detail .media-resources {
@@ -127,11 +127,11 @@
 }
 
 .bio-detail .title {
-  border-bottom: 2px solid var(--neutrals-103);
+  border-bottom: 2px solid var(--neutral-solid-20-s);
   margin-bottom: 20px;
   font-size: var(--font-size-200);
   font-weight: 800;
-  padding-bottom: var(--xsmall);
+  padding-bottom: var(--spacing-xsmall);
 }
 
 @media (width >=768px) {

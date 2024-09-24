@@ -74,7 +74,7 @@ header .nav-menu-overlay::-webkit-scrollbar {
 }
 
 header .nav-menu-overlay .nav-menu {
-  background-color: var(--primary-blue-100);
+  background-color: var(--accent-blue-primary-90);
   background-image: url("../../icons/swoosh/type4/default-m.svg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -229,7 +229,7 @@ header .nav-menu-overlay .nav-menu-column.left ul a:hover {
 }
 
 .cancel-container {
-  background: var(--primary-blue-50);
+  background: var(--accent-blue-primary-40);
   height: 44px;
   display: flex;
   width: 44px;
@@ -316,7 +316,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span::before {
   border-radius: 20px;
   position: absolute;
   left: 15px;
-  background-color: var(--primary-blue-50);
+  background-color: var(--accent-blue-primary-40);
   transform: rotate(45deg);
   border: 2px;
 }
@@ -329,7 +329,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span {
   position: relative;
   margin-right: 15px;
   margin-bottom: -8px;
-  background-color: var(--primary-blue-102);
+  background-color: var(--accent-blue-primary-120);
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country span {
@@ -360,7 +360,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span::after {
   top: 20px;
   left: 15px;
   position: absolute;
-  background-color: var(--primary-blue-50);
+  background-color: var(--accent-blue-primary-40);
   border-radius: 20px;
   transform: rotate(-45deg);
   border: 2px;
@@ -413,7 +413,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
   left: 0;
   color: var(--neutral-solid-30-s);
   z-index: 2;
-  background-color: var(--primary-blue-102);
+  background-color: var(--accent-blue-primary-120);
 }
 
 header
@@ -438,7 +438,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
   display: flex;
   margin-top: 0;
   flex-direction: column;
-  gap: var(--xlarge);
+  gap: var(--spacing-xlarge);
   padding: 0;
 }
 
@@ -577,7 +577,7 @@ header
   .nav-menu-column.right
   .browse-country
   input[type="text"] {
-  background-color: var(--primary-blue-80);
+  background-color: var(--accent-blue-primary-70);
   outline: none;
   border: none;
   color: var(--white);
@@ -605,7 +605,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country p {
   width: 30px;
   height: 30px;
   top: 55px;
-  background-color: var(--primary-blue-102);
+  background-color: var(--accent-blue-primary-120);
   left: 60vw;
   z-index: 3;
   display: flex;
@@ -771,7 +771,7 @@ header nav .nav-tools {
 
 .section.nav-tools .default-content-wrapper h6 {
   font-size: var(--font-size-300);
-  color: var(--primary-blue-80);
+  color: var(--accent-blue-primary-70);
   margin: 0;
   font-weight: normal;
 }
@@ -927,7 +927,7 @@ header nav .nav-tools {
     flex-grow: 2;
     display: flex;
     max-width: fit-content;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--accent-blue-primary-70);
     flex-direction: row;
     align-items: center;
     position: absolute;
@@ -968,7 +968,7 @@ header nav .nav-tools {
     display: flex;
     position: absolute;
     bottom: -150px;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--accent-blue-primary-70);
     flex-direction: row;
     align-items: start;
   }
@@ -1003,7 +1003,7 @@ header nav .nav-tools {
     .nav-menu-column.right
     .browse-country
     input[type="text"] {
-    background-color: var(--primary-blue-80);
+    background-color: var(--accent-blue-primary-70);
     outline: none;
     border: none;
     position: absolute;
@@ -1025,7 +1025,7 @@ header nav .nav-tools {
     left: 0;
     top: -15px;
     z-index: 2;
-    background-color: var(--primary-blue-102);
+    background-color: var(--accent-blue-primary-120);
   }
 
   header
@@ -1041,7 +1041,7 @@ header nav .nav-tools {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: var(--primary-blue-102);
+    background-color: var(--accent-blue-primary-120);
     left: 650px;
     z-index: 3;
     display: flex;
@@ -1232,7 +1232,7 @@ header nav .nav-tools {
     padding-top: 40px;
     bottom: -100px;
     width: 100%;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--accent-blue-primary-70);
   }
 
   header
@@ -1389,7 +1389,7 @@ header nav .nav-tools {
     width: 100%;
     flex-direction: row;
     align-items: center;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--accent-blue-primary-70);
   }
 
   header
@@ -1420,7 +1420,7 @@ header nav .nav-tools {
     left: 50px;
     top: -27px;
     z-index: 2;
-    background-color: var(--primary-blue-102);
+    background-color: var(--accent-blue-primary-120);
   }
 
   header
