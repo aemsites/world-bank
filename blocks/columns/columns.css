@@ -164,7 +164,7 @@
   }
 
   .columns.columns-2-cols.columns-heading-with-description div > div {
-    margin-bottom:var(--spacing-medium);
+    margin-bottom:var(--size-icon-large);
   }
 
   .columns.columns-2-cols.columns-heading-with-description > div h2 {
