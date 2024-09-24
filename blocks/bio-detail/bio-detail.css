@@ -39,7 +39,7 @@
 }
 
 .bio-detail .media-inquiries p a:hover{
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   border-bottom: 2px solid rgb(22 154 243 / 100%);
 }
 
@@ -48,7 +48,7 @@
 }
 
 .bio-detail .resources p strong>em>a:any-link:visited {
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   border-bottom: 2px solid rgb(22 154 243 / 100%);
 }
 
@@ -79,7 +79,7 @@
 
 .bio-detail .sections-container .display-name {
   font-weight: bold;
-  color: var(--primary-blue-90);
+  color: var(--accent-blue-primary-90);
   line-height: 43px;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .bio-detail .sections-container .name-job-social .social-media .social-media-link:hover {
-  border: 2px solid var(--primary-blue-50);
+  border: 2px solid var(--accent-blue-primary-40);
 }
 
 .bio-detail .media-resources {
