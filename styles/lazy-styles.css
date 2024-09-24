@@ -140,7 +140,7 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
     content: '';
     position: absolute;
     right: 14%;
-    top: 17%;
+    top: 15%;
     z-index: 10;
     width: 100%;
     height: 100%;
@@ -150,13 +150,6 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
 }
 
 @media (width >= 1024px) {
-    .columns.columns-transform-teaser .columns-img-col::before {
-        right: 16px;
-        width: 438px;
-    }
-}
-
-@media (width > 1024px) {
     .columns.columns-transform-teaser .columns-img-col::before {
         width: 623px;
         height: 592px;
@@ -287,8 +280,8 @@ main span.tweetable {
   
   main span.tweetable > a,
   main span.tweetable > a:visited {
-    color: var(--neutrals-90);
-    background: var(--neutrals-30);
+    color: var(--neutral-solid-80-s);
+    background: var(--neutral-solid-15-s);
     text-decoration: none;
   }
   
