@@ -275,7 +275,7 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
 /* tweetable link css */
 /* stylelint-disable no-descending-specificity */
 main span.tweetable {
-    background: var(--primary-blue-30);
+    background: var(--accent-blue-primary-20);
   }
   
   main span.tweetable > a,
