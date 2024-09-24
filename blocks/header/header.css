@@ -660,7 +660,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: var(--white);
   color: inherit;
   overflow: initial;
   text-overflow: initial;

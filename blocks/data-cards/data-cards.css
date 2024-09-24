@@ -126,7 +126,7 @@
   border-radius: 8px;
   min-height: 388px;
   padding: 28px 28px 30px;
-  background-color: var(--color-white);
+  background-color: var(--white);
   text-align: left;
   min-width: 276px;
   border: 1px solid #D9D9D9;
@@ -221,7 +221,7 @@
   line-height: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--neutrals-a-70);
+  color: var(--neutral-alpha-57-a);
 }
 
 .data-cards .news-card .news-card-title {
