@@ -320,8 +320,8 @@ main .section > div.organizational-cards-wrapper {
   }
 
   .organizational-card .card-content-wrapper .collapse-btn {
-    background: var(--primary-blue-50);
-    border: 1px solid var(--primary-blue-50);
+    background: var(--accent-blue-primary-40);
+    border: 1px solid var(--accent-blue-primary-40);
   }
   
   .organizational-card .card-content-wrapper .collapse-btn img {
