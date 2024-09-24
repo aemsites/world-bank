@@ -106,7 +106,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-white);
+  background-color: var(--white);
   cursor: pointer;
   border: 2px solid transparent;
 }

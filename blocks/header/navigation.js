@@ -160,7 +160,10 @@ const showSubMenu = (
   submenus.forEach((submenu) => {
     submenu.style.display = submenu.id === submenuId ? 'flex' : 'none';
   });
-
+  const countrylist = rightColumn.querySelector(
+    constants.COUNTRY_LIST_WITH_SELECTOR,
+  );
+  countrylist.style.display = 'none';
   // Update the selected state of the menu items in the left column
   const level0Items = leftColumn.querySelectorAll('li');
   level0Items.forEach((item, index) => {
