@@ -291,7 +291,7 @@ header .nav-menu-overlay .nav-menu-column.left ul {
 
 header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
   position: fixed;
-  left: 30px;
+  left: var(--section-gutter-space);
   padding: 0;
   margin: 0;
   z-index: 6;
@@ -430,6 +430,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
   letter-spacing: 0.06em;
   text-align: left;
   display: flex;
+  margin-top: 0;
   flex-direction: column;
   gap: var(--xlarge);
   padding: 0;
@@ -516,7 +517,27 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
 header .nav-menu-overlay .nav-menu-column.right {
   flex-direction: column;
   display: none;
-  padding-left: var(--section-gutter-space);
+  height: calc(90vh - 100px);
+  overflow: hidden auto;
+  margin-top: 20px;
+}
+
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar {
+  background: #002035;
+  width: 8px;
+  border-radius: 8px;
+  height: 8px;
+}
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-thumb {
+  background-color: #169AF3;
+  width: 8px;
+  border-radius: 8px;
+}
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-track {
+  background: #002035;
+  border-radius: 8px;
+  width: 1rem;
+  background-clip: content-box;
 }
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul {
@@ -839,7 +860,7 @@ header nav .nav-tools {
 
   header .nav-menu-overlay {
     min-width: 100%;
-    overflow: hidden scroll;
+    overflow: hidden auto;
   }
 
   header .nav-menu-overlay .nav-menu {
@@ -850,6 +871,9 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right {
     width: auto;
     padding: 0;
+    width: calc(100vw - 50px);
+    overflow: hidden auto;
+    height: 70vh;
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
@@ -1076,7 +1100,11 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.right {
     width: 900px;
+    height: auto;
+    padding-left: var(--section-gutter-space);
+    overflow: visible;
     position: relative;
+    margin-top: 0;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
@@ -1449,7 +1477,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   header
