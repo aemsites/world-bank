@@ -499,21 +499,6 @@
   --body-title-paragraph: 28px;
   --body-indicator-paragraph-spacing: 12px;
 
-  /* Spacing - mobile */
-  --none: 0;
-  --xtiny: 2px;
-  --tiny: 4px;
-  --xxsmall: 4px;
-  --xsmall: 4px;
-  --small: 8px;
-  --regular: 16px;
-  --medium: 20px;
-  --large: 24px;
-  --xlarge: 28px;
-  --xxlarge: 32px;
-  --huge: 40px;
-  --xhuge: 48px;
-
   /* fonts */
   --body-font-family: 'Open Sans', roboto, roboto-fallback;
   --heading-font-family: var(--body-font-family);
@@ -611,21 +596,6 @@
     /* Screen variables */
     --nav-height: 44px;
   
-    /* Spacing - tablet */
-    --none: 0;
-    --xtiny: 2px;
-    --tiny: 4px;
-    --xxsmall: 4px;
-    --xsmall: 8px;
-    --small: 12px;
-    --regular: 20px;
-    --medium: 24px;
-    --large: 28px;
-    --xlarge: 32px;
-    --xxlarge: 40px;
-    --huge: 56px;
-    --xhuge: 64px;
-
     /* Block specific */
     --signup-padding: 32px;
 
@@ -708,21 +678,6 @@
     --nav-height: 50px;
     --nav-padding: 35px;
   
-    /* Spacing - desktop */
-    --none: 0;
-    --xtiny: 2px;
-    --tiny: 4px;
-    --xxsmall: 8px;
-    --xsmall: 12px;
-    --small: 16px;
-    --regular: 24px;
-    --medium: 32px;
-    --large: 40px;
-    --xlarge: 48px;
-    --xxlarge: 64px;
-    --huge: 80px;
-    --xhuge: 96px;
-
     /* main-heading styles */
     --main-heading-font-size: 40px;
     --main-heading-spacing: 0 0 48px;
@@ -830,23 +785,23 @@ h6 {
 h1 { 
   font-size: var(--font-size-1100);
   line-height: 1.1;
-  margin-bottom: var(--large);
+  margin-bottom: var(--spacing-large);
 }
 
 h2 { 
   font-size: var(--font-size-1000);
-  margin-bottom: var(--medium);
+  margin-bottom: var(--spacing-medium);
 }
 
 h3 { 
   font-size: var(--font-size-800);
   line-height: 1.1;
-  margin-bottom: var(--regular);
+  margin-bottom: var(--spacing-regular);
 }
 
 h4 {
   font-size: var(--font-size-700);
-  margin-bottom: var(--small);
+  margin-bottom: var(--spacing-small);
 }
 
 /* TODO: Check with Maria */
@@ -1337,34 +1292,34 @@ main .section.bg-image .sec-img {
   }
 }
 
-main .section[data-sec-spacing="section-none"] { padding-top: var(--none); }
-main .section[data-sec-spacing="section-xtiny"] { padding-top: var(--xtiny); }
-main .section[data-sec-spacing="section-tiny"] { padding-top: var(--tiny); }
-main .section[data-sec-spacing="section-xxsmall"] { padding-top: var(--xxsmall); }
-main .section[data-sec-spacing="section-xsmall"] { padding-top: var(--xsmall); }
-main .section[data-sec-spacing="section-regular"] { padding-top: var(--regular); }
-main .section[data-sec-spacing="section-small"] { padding-top: var(--small); }
-main .section[data-sec-spacing="section-medium"] { padding-top: var(--medium); }
-main .section[data-sec-spacing="section-large"] { padding-top: var(--large); }
-main .section[data-sec-spacing="section-xlarge"] { padding-top: var(--xlarge); }
-main .section[data-sec-spacing="section-xxlarge"] { padding-top: var(--xxlarge); }
-main .section[data-sec-spacing="section-huge"] { padding-top: var(--huge); }
-main .section[data-sec-spacing="section-xhuge"] { padding-top: var(--xhuge); }
+main .section[data-sec-spacing="section-none"] { padding-top: var(--spacing-none); }
+main .section[data-sec-spacing="section-xtiny"] { padding-top: var(--spacing-xtiny); }
+main .section[data-sec-spacing="section-tiny"] { padding-top: var(--spacing-tiny); }
+main .section[data-sec-spacing="section-xxsmall"] { padding-top: var(--spacing-xxsmall); }
+main .section[data-sec-spacing="section-xsmall"] { padding-top: var(--spacing-xsmall); }
+main .section[data-sec-spacing="section-regular"] { padding-top: var(--spacing-regular); }
+main .section[data-sec-spacing="section-small"] { padding-top: var(--spacing-small); }
+main .section[data-sec-spacing="section-medium"] { padding-top: var(--spacing-medium); }
+main .section[data-sec-spacing="section-large"] { padding-top: var(--spacing-large); }
+main .section[data-sec-spacing="section-xlarge"] { padding-top: var(--spacing-xlarge); }
+main .section[data-sec-spacing="section-xxlarge"] { padding-top: var(--spacing-xxlarge); }
+main .section[data-sec-spacing="section-huge"] { padding-top: var(--spacing-huge); }
+main .section[data-sec-spacing="section-xhuge"] { padding-top: var(--spacing-xhuge); }
 
 
-main .section[data-sec-spacing-bottom="section-none"] { padding-bottom: var(--none); }
-main .section[data-sec-spacing-bottom="section-tiny"] { padding-bottom: var(--tiny); }
-main .section[data-sec-spacing-bottom="section-xxsmall"] { padding-bottom: var(--xxsmall); }
-main .section[data-sec-spacing-bottom="section-xtiny"] { padding-bottom: var(--xtiny); }
-main .section[data-sec-spacing-bottom="section-xsmall"] { padding-bottom: var(--xsmall); }
-main .section[data-sec-spacing-bottom="section-regular"] { padding-bottom: var(--regular); }
-main .section[data-sec-spacing-bottom="section-small"] { padding-bottom: var(--small); }
-main .section[data-sec-spacing-bottom="section-medium"] { padding-bottom: var(--medium); }
-main .section[data-sec-spacing-bottom="section-large"] { padding-bottom: var(--large); }
-main .section[data-sec-spacing-bottom="section-xlarge"] { padding-bottom: var(--xlarge); }
-main .section[data-sec-spacing-bottom="section-xxlarge"] { padding-bottom: var(--xxlarge); }
-main .section[data-sec-spacing-bottom="section-huge"] { padding-bottom: var(--huge); }
-main .section[data-sec-spacing-bottom="section-xhuge"] { padding-bottom: var(--xhuge); }
+main .section[data-sec-spacing-bottom="section-none"] { padding-bottom: var(--spacing-none); }
+main .section[data-sec-spacing-bottom="section-tiny"] { padding-bottom: var(--spacing-tiny); }
+main .section[data-sec-spacing-bottom="section-xxsmall"] { padding-bottom: var(--spacing-xxsmall); }
+main .section[data-sec-spacing-bottom="section-xtiny"] { padding-bottom: var(--spacing-xtiny); }
+main .section[data-sec-spacing-bottom="section-xsmall"] { padding-bottom: var(--spacing-xsmall); }
+main .section[data-sec-spacing-bottom="section-regular"] { padding-bottom: var(--spacing-regular); }
+main .section[data-sec-spacing-bottom="section-small"] { padding-bottom: var(--spacing-small); }
+main .section[data-sec-spacing-bottom="section-medium"] { padding-bottom: var(--spacing-medium); }
+main .section[data-sec-spacing-bottom="section-large"] { padding-bottom: var(--spacing-large); }
+main .section[data-sec-spacing-bottom="section-xlarge"] { padding-bottom: var(--spacing-xlarge); }
+main .section[data-sec-spacing-bottom="section-xxlarge"] { padding-bottom: var(--spacing-xxlarge); }
+main .section[data-sec-spacing-bottom="section-huge"] { padding-bottom: var(--spacing-huge); }
+main .section[data-sec-spacing-bottom="section-xhuge"] { padding-bottom: var(--spacing-xhuge); }
 
 body.no-scroll {
   overflow-y: hidden; /* Prevent scrolling */
