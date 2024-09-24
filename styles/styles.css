@@ -445,16 +445,7 @@
   --label-font-weight: var(--body-font-weight-bold);
 
   /* neutrals - alpha */
-  --neutrals-a-10: rgb(0 57 107 / 3%);
-  --neutrals-a-20: rgb(0 57 107 / 5%);
-  --neutrals-a-30: rgb(0 57 107 / 8%);
-  --neutrals-a-40: rgb(0 57 107 / 16%);
-  --neutrals-a-50: rgb(0 57 107 / 24%);
-  --neutrals-a-60: rgb(0 41 77 / 42%);
-  --neutrals-a-70: rgb(0 13 26 / 57%);
-  --neutrals-a-80: rgb(0 13 26 / 65%);
-  --neutrals-a-90: rgb(0 13 26 / 70%);
-  --neutrals-a-100: rgb(0 13 26 / 96%);
+  --neutrals-a-90: #000d1ab3;
 
   /** Measuring impact card paragraph varibales **/
   --body-indicator-paragraph: 12px;
@@ -468,14 +459,9 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* Custom variables */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: white;
   --light-color: #eee;
   --dark-color: #ccc;
   --text-color: var(--neutral-solid-90-s);
-  --color-white: #FFF; /* white */
-  --color-black: #000;
 
   /* Navigation Menu */
   --input-background-color:#002337;
@@ -706,7 +692,7 @@ body {
   font-family: var(--body-font-family);
   line-height: 1.4;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--white);
   display: none;
 }
 
@@ -796,7 +782,7 @@ main pre {
 a:any-link {
   color: var(--neutral-solid-90-s);
   text-decoration: underline;
-  text-decoration-color: var(--color-black);
+  text-decoration-color: var(--black);
   font-size: var(--body-font-size);
   font-weight: 400;
   line-height: 25px;
@@ -884,7 +870,7 @@ button {
   padding: var(--button-vertical-padding) var(--button-horizontal-padding);
   font-style: normal;
   cursor: pointer;
-  color: var(--background-color);
+  color: var(--white);
   background-color: var(--accent-blue-primary-70);
   margin: 16px 0;
   white-space: nowrap;
@@ -903,7 +889,7 @@ button:hover {
 a.button:focus,
 button:focus {
   background-color: var(--accent-blue-primary-90);
-  color: var(--background-color);
+  color: var(--white);
 }
 
 a.button.disabled,
@@ -981,25 +967,25 @@ p.button-container {
 .section.bg-primary-blue-90,
 .section.bg-primary-blue-70 {
   a:any-link {
-    color: var(--color-white);
-    text-decoration-color: var(--color-white);
+    color: var(--white);
+    text-decoration-color: var(--white);
   }
 
   p strong > em > a:any-link {
     background-color: transparent;
-    color: var(--background-color);
+    color: var(--white);
     border-bottom: 2px solid rgb(255 255 255 / 30%)
   }
 
   a:any-link:hover {
-    color: var(--color-white);
+    color: var(--white);
     text-decoration-color: var(--accent-blue-primary-40);
   }
 
   a:any-link:focus,
   a:any-link:active {
-    color: var(--color-white);
-    text-decoration-color: var(--color-white);
+    color: var(--white);
+    text-decoration-color: var(--white);
   }
 
   a:any-link:visited {
@@ -1019,7 +1005,7 @@ p.button-container {
 
   p strong > em > a:any-link:active,
   p strong > em > a:any-link:focus {
-    color: var(--background-color);
+    color: var(--white);
     border-bottom: 2px solid transparent;
   }
 
@@ -1033,12 +1019,12 @@ p.button-container {
   button {
     border: 1px solid transparent;
     color: var(--accent-blue-primary-70);
-    background-color: var(--background-color);
+    background-color: var(--white);
   }
 
   a.button:hover,
   button:hover {
-    background-color: var(--background-color);
+    background-color: var(--white);
     color: var(--accent-blue-primary-70);
     border: 1px solid var(--accent-blue-primary-40);
   }
@@ -1046,7 +1032,7 @@ p.button-container {
   /* TODO: Not available in Figma - add more */
   a.button:focus,
   button:focus {
-    background-color: var(--background-color);
+    background-color: var(--white);
     color: var(--accent-blue-primary-70);
   }
 
@@ -1062,15 +1048,15 @@ p.button-container {
   a.button.secondary,
   button.secondary {
     background-color: var(--accent-blue-primary-70);
-    border: 1px solid var(--background-color);
-    color: var(--background-color);
+    border: 1px solid var(--white);
+    color: var(--white);
   }
 
   a.button.secondary:hover,
   button.secondary:hover {
     background-color: var(--accent-blue-primary-70);
     border: 1px solid var(--accent-blue-primary-40);
-    color: var(--background-color);
+    color: var(--white);
   }
 
   /* TODO: Focus and disabled is not updated in figma */
@@ -1078,7 +1064,7 @@ p.button-container {
   button.secondary:focus {
     background-color: var(--accent-blue-primary-70);
     border: 1px solid var(--accent-blue-primary-40);
-    color: var(--background-color);
+    color: var(--white);
   }
 
   a.button.secondary.disabled,
@@ -1094,7 +1080,7 @@ p.button-container {
   a.button.ghost,
   button.ghost {
     background-color: transparent;
-    color: var(--background-color);
+    color: var(--white);
   }
 
   a.button.ghost:hover,
@@ -1160,7 +1146,7 @@ main .section > div {
 }
 
 .section[class*='bg-primary-blue'] {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .section[class*='bg-primary-blue'] h1,
@@ -1169,7 +1155,7 @@ main .section > div {
 .section[class*='bg-primary-blue'] h4,
 .section[class*='bg-primary-blue'] h5,
 .section[class*='bg-primary-blue'] h6 {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .section[class*='bg-neutrals'] {
@@ -1286,7 +1272,7 @@ body.no-scroll {
 }
 
 .section[class*='bg-primary-blue'] .main-heading p {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 
