@@ -87,7 +87,7 @@
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
   font-weight: 700;
   font-size: var(--font-size-500);
-  line-height: 150%;
+  line-height: 125%;
   color: var(--neutral-solid-90-s);
   display: block;
   margin-bottom: var(--spacing-medium);
