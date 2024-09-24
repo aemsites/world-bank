@@ -36,7 +36,7 @@ function createFeatureCard(row, placeHolders) {
   if (pictureElement) {
     featureDiv.append(pictureElement);
   } else {
-    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Imgae cannot be empty' })));
+    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
   }
   featureDiv.append(featureContentWrapper);
   return featureDiv;
