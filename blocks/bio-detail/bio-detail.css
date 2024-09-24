@@ -64,7 +64,7 @@
 }
 
 .bio-detail .sections-container p {
-  margin: var(--none);
+  margin: var(--spacing-none);
 }
 
 .bio-detail .first-container .name-job-social {
@@ -84,13 +84,13 @@
 }
 
 .bio-detail .sections-container .display-name h1 {
-  margin: var(--none);
+  margin: var(--spacing-none);
 }
 
 .bio-detail .sections-container .job-title {
   font-size: 18px;
   color: var(--neutrals-100);
-  margin-top: var(--xsmall);
+  margin-top: var(--spacing-xsmall);
 }
 
 .bio-detail .sections-container .name-job-social .social-media {
@@ -131,7 +131,7 @@
   margin-bottom: 20px;
   font-size: var(--font-size-200);
   font-weight: 800;
-  padding-bottom: var(--xsmall);
+  padding-bottom: var(--spacing-xsmall);
 }
 
 @media (width >=768px) {
