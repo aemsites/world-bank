@@ -803,6 +803,10 @@ a:any-link {
   text-align: left;
 }
 
+html[dir="rtl"] a:any-link {
+  text-align: right;
+}
+
 p strong > em > a:any-link {
   background-color: transparent;
   color: var(--accent-blue-primary-70);
@@ -1215,8 +1219,17 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-w
   max-width: calc(var(--screen-width) - 28px);
 }
 
+html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
+  padding: 0 28px 0 0;
+  border-radius: 10px 0 0 10px;
+}
+
 main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
   border-radius: 0 0 10px 10px;
+}
+
+html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
+  border-radius: 0 10px 10px 0;
 }
 
 /* Section background image */

@@ -80,8 +80,15 @@
   flex-direction: column;
   row-gap: var(--spacing-regular);
   position: relative;
-  padding-left: 20px;
+  padding-left:20px;
+  padding-right: unset;
   text-align: left;
+}
+
+html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div {
+  padding-right: 20px;
+  padding-left: unset;
+  text-align: right;
 }
 
 .priority-list-wrapper
@@ -89,7 +96,17 @@
   .right-column-container
   .cards-container
   > div:last-child {
-  border-left: 3px solid var(--transparent);
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: var(--transparent);
+  border-right-width: 0;
+}
+
+html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div:last-child {
+  border-right-width: 3px;
+  border-right-style: solid;
+  border-right-color: var(--transparent);
+  border-left-width: 0;
 }
 
 .priority-list-wrapper
@@ -97,7 +114,17 @@
   .right-column-container
   .cards-container
   > div:not(div:last-child) {
-  border-left: 3px solid var(--neutral-solid-10-s);
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: var(--neutral-solid-10-s);
+  border-right-width: 0;
+}
+
+html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div:not(div:last-child) {
+  border-right-width: 3px;
+  border-right-style: solid;
+  border-right-color: var(--neutral-solid-10-s);
+  border-left-width: 0;
 }
 
 .priority-list-wrapper
@@ -124,11 +151,17 @@
   > div::before {
   position: absolute;
   left: -7px;
+  right: auto;
   top: 0;
   content: "";
   width: 12px;
   height: 12px;
   border-radius: 50%;
+}
+
+html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div::before {
+  right: -7px;
+  left: auto;
 }
 
 .priority-list-wrapper
@@ -230,12 +263,18 @@
   .carddesc
   ul {
   padding-left: 20px;
+  padding-right: unset;
   font-size: 16px;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xxsmall);
   margin: 0;
   padding-bottom: var(--spacing-xlarge);
+}
+
+html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div .carddesc ul {
+  padding-right: 20px;
+  padding-left: unset;
 }
 
 .priority-list-wrapper .priority-list .left-column-container {
@@ -310,6 +349,12 @@
     .cards-container
     > div {
     padding-left: 20px;
+    padding-right: unset;
+  }
+
+  html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div {
+    padding-right: 20px;
+    padding-left: unset;
   }
 
   .priority-list-wrapper .priority-list .left-column-container {
@@ -390,6 +435,12 @@
     .cards-container
     > div {
     padding-left: 40px;
+    padding-right: unset;
+  }
+
+  html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div {
+    padding-right: 40px;
+    padding-left: unset;
   }
 
   .priority-list-wrapper .priority-list .left-column-container {
@@ -446,6 +497,12 @@
     ul
     li {
     padding-left: 4px;
+    padding-right: unset;
     width: 45%;
+  }
+
+  html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div .carddesc ul li {
+    padding-right: 4px;
+    padding-left: unset;
   }
 }

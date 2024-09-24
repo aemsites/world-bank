@@ -61,6 +61,10 @@ main .section > div.organizational-cards-wrapper {
   position: relative;
 }
 
+html[dir="rtl"] .organizational-card {
+  text-align: right;
+}
+
 .organizational-card p {
   margin: unset;
   padding: unset;
@@ -73,10 +77,22 @@ main .section > div.organizational-cards-wrapper {
 
 .organizational-card:not(last-child) {
   margin-right: 6px;
+  margin-left: unset;
+}
+
+html[dir="rtl"] .organizational-card:not(last-child) {
+  margin-left: 6px;
+  margin-right: unset;
 }
 
 .organizational-card:not(first-child) {
   margin-left: 6px;
+  margin-right: unset;
+}
+
+html[dir="rtl"] .organizational-card:not(first-child) {
+  margin-right: 6px;
+  margin-left: unset;
 }
 
 .organizational-card .expand-btn {
@@ -101,6 +117,12 @@ main .section > div.organizational-cards-wrapper {
   position: absolute;
   top: 8px;
   right: 0;
+  left: auto;
+}
+
+html[dir="rtl"] .organizational-card .collapse-btn {
+  left: 0;
+  right: auto;
 }
 
 .organizational-card .expand-btn:hover,
@@ -194,6 +216,12 @@ main .section > div.organizational-cards-wrapper {
   position: absolute;
   top: 8px;
   right: 0;
+  left: auto;
+}
+
+html[dir="rtl"] .organizational-card.collapsed .expand-btn {
+  left: 0;
+  right: auto;
 }
 
 .left-justify-content {
@@ -277,6 +305,10 @@ main .section > div.organizational-cards-wrapper {
     margin: 0 12px 0 0;
   }
 
+  html[dir="rtl"] .organizational-card .card-acronym {
+    margin: 0 0 0 12px;
+  }
+
   .organizational-card .card-title {
     display: inline-block;
     width: fit-content;
@@ -312,6 +344,12 @@ main .section > div.organizational-cards-wrapper {
   .organizational-card.collapsed .expand-btn {
     top: calc(50% - 16px);
     right: 0;
+    left: auto;
+  }
+
+  html[dir="rtl"] .organizational-card.collapsed .expand-btn {
+    left: 0;
+    right: auto;
   }
 
   .organizational-card.collapsed .card-content-wrapper {
