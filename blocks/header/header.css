@@ -431,7 +431,7 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: var(--xlarge);
+  gap: var(--spacing-xlarge);
   padding: 0;
 }
 
@@ -521,8 +521,8 @@ header .nav-menu-overlay .nav-menu-column.right {
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul {
   padding: 0;
-  margin-top: var(--small);
-  padding-top: var(--regular);
+  margin-top: var(--spacing-small);
+  padding-top: var(--spacing-regular);
 }
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li > ul {
