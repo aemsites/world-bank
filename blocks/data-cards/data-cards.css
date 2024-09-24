@@ -194,7 +194,7 @@
   border-bottom: 2px solid var(--neutral-solid-10-s);
   line-height: 150%;
   font-size: var(--font-size-300);
-  padding-bottom: var(--large);
+  padding-bottom: var(--spacing-large);
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
@@ -212,7 +212,7 @@
 .data-cards.news-card-variation .news-card-items a:not(:first-child) .news-card{
   box-sizing: border-box;
   border-top: 2px solid var(--neutral-solid-10-s);
-  padding-top: var(--xxlarge);
+  padding-top: var(--spacing-xxlarge);
 }
 
 .data-cards .news-card .news-card-tag {
@@ -234,12 +234,12 @@
   font-size: var(--default);
   line-height: 116%;
   color: var(--accent-blue-primary-70);
-  margin-bottom: var(--xxlarge);
+  margin-bottom: var(--spacing-xxlarge);
 }
 
 .data-cards.news-card-variation.block .news-card-items .news-card  > .news-card-title > p {
   margin-top: 10px;
-  margin-bottom: var(--none);
+  margin-bottom: var(--spacing-none);
 }
 
 .data-cards .news-card .news-card-tag.planet {
@@ -298,7 +298,7 @@
 @media (width >= 768px) {  
   .data-cards .news-card .news-card-title {
     font-size: var(--font-size-700);
-    margin-bottom: var(--xlarge);
+    margin-bottom: var(--spacing-xlarge);
   }
 
   .data-cards.data-card-variation .rte-container {
@@ -417,7 +417,7 @@
     display: grid;
     grid-template-columns: 2fr 25%;
     grid-template-rows: auto auto;
-    padding-top: var(--medium);
+    padding-top: var(--spacing-medium);
     /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
     grid-template-areas:
         "tag image"
@@ -432,7 +432,7 @@
 
   .data-cards a .news-card .news-card-title {
     font-size: var(--font-size-700);
-    margin-bottom: var(--medium);
+    margin-bottom: var(--spacing-medium);
   }
 
   .data-cards a:not(:first-child) .news-card-title {
