@@ -112,7 +112,7 @@
   margin-bottom:var(--spacing-medium);
 }
 
-.data-cards.news-card-variation .news-card-items.anchor-tag {    
+.data-cards.news-card-variation .news-card-items .anchor-tag {    
     text-decoration: none;
     font-weight: 700;
     font-size: 20px;
