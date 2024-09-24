@@ -287,8 +287,8 @@ main span.tweetable {
   
   main span.tweetable > a,
   main span.tweetable > a:visited {
-    color: var(--neutrals-90);
-    background: var(--neutrals-30);
+    color: var(--neutral-solid-80-s);
+    background: var(--neutral-solid-15-s);
     text-decoration: none;
   }
   

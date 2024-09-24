@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;  
-    border-bottom: 2px solid var(--neutrals-20);
+    border-bottom: 2px solid var(--neutral-solid-10-s);
     padding: 0 0 20px;
     width: 100%;
     
@@ -55,5 +55,5 @@
     font-size: var(--eyebrow-font-size-l);
     line-height: 140%;
     letter-spacing: -0.02em;
-    color: var(--neutrals-100);
+    color: var(--neutral-solid-90-s);
 }
