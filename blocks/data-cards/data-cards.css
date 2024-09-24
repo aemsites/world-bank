@@ -270,7 +270,7 @@
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
-  margin: 0;
+  margin: 0 0 var(--spacing-xsmall);
 }
 
 .data-cards .news-card .news-card-image {
