@@ -63,8 +63,7 @@
     "/content/world-bank.resource/ar/query-index.json:/ar/query-index.json",
     "/content/world-bank/placeholders:/placeholders.json",
 
-    "/content/world-bank/corporate/ext:/",
-    "/content/world-bank/corporate/ext/en:/",
+    "/content/world-bank/corporate/ext/en/home:/",
     "/content/world-bank/corporate/ext/en/:/ext/en/",
     "/content/world-bank/corporate/ext/zh:/ext/zh",
     "/content/world-bank/corporate/ext/zh/:/ext/zh/",
