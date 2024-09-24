@@ -45,7 +45,7 @@
   font-size: var(--font-size-1000);
   text-transform: uppercase;
   margin-bottom: var(--spacing-small);
-  line-height: 31px;
+  line-height: 112%;
 }
 
 .columns.columns-transform-teaser > div p:nth-child(2) {
