@@ -541,14 +541,14 @@ header .nav-menu-overlay .nav-menu-column.right {
 }
 
 header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar {
-  background: #002035;
+  background: var(--accent-blue-primary-120);
   width: 8px;
   border-radius: 8px;
   height: 8px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-thumb {
-  background-color: #169af3;
+  background-color: var(--background-container-secondary);
   width: 8px;
   border-radius: 8px;
 }
