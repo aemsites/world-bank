@@ -41,7 +41,7 @@
 
 .data-cards.data-card-variation .data-card-disclaimer > p {
   padding-top: 18px;
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
   line-height:120%;
   color: var(--neutrals-a-90);
   border-top: 2px var(--neutral-alpha-16-a) solid;
@@ -86,12 +86,12 @@
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
   font-weight: 700;
-  flex-basis:100%;
   font-size: var(--font-size-500);
   line-height: 150%;
   color: var(--neutral-solid-90-s);
   display: block;
-  margin-bottom: var(--spacing-regular);
+  margin-bottom: var(--spacing-medium);
+  margin-top:0;
 }
 
 .data-cards.news-card-variation.block .rte-container>div:nth-child(2)>div>p {
@@ -101,6 +101,15 @@
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
   margin: 0;
   padding: 10px 30px;
+}
+
+.data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p:first-child {
+  margin-bottom: var(--spacing-medium);
+}
+
+.data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p:nth-child(2) > a{
+  margin-top:0;
+  margin-bottom:var(--spacing-medium);
 }
 
 .data-cards.news-card-variation .anchor-tag {    
@@ -319,7 +328,7 @@
     /* margin-bottom: var(--spacing-medium); */
 
     > a {
-      margin-bottom: var(--spacing-huge);
+      margin-bottom: var(--spacing-huge) !important;
     }
   }
 
@@ -384,7 +393,7 @@
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p >a {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 
   .data-cards.data-card-variation .data-card-items {
