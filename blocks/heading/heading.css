@@ -32,7 +32,7 @@
     margin-bottom: 0;
     font-weight: 700;
     line-height: 17.5px;
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
 }
 
 .heading .heading-description:empty {
@@ -44,7 +44,7 @@
 }
 
 .heading .heading-description:not(:empty) {
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
     margin-top: 4px;
 }
 
@@ -55,7 +55,7 @@
 
 @media (width <768px) {
     .heading .eyebrowtext:not(:empty)  {
-        font-size: var(--body-small);
+        font-size: var(--font-size-200);
     }
 
     .heading h1 {
@@ -80,7 +80,7 @@
 @media (width >=1024px) {
     .heading .eyebrowtext:not(:empty) {
         line-height: 20px;
-        font-size: var(--body-medium);
+        font-size: var(--font-size-300);
     }
 
     .heading h1 {

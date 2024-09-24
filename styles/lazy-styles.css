@@ -196,11 +196,11 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
     text-align: left;
     line-height: 18px;
     margin: 0 auto;
-    font-size: var(--body-small);
+    font-size: var(--font-size-200);
 }
 
 .cookie-tooltip p > a {
-    font-size: var(--body-small);
+    font-size: var(--font-size-200);
     color: var(--color-white);
     border-bottom: 1px solid var(--color-white);
     text-decoration: none;
@@ -253,17 +253,17 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
 
 @media (width < 768px) {
     .cookie-tooltip p {
-        font-size: var(--body-small);
+        font-size: var(--font-size-200);
         width: 100%;
     }
 
     .cookie-tooltip p > a{
-        font-size: var(--body-small);
+        font-size: var(--font-size-200);
         line-height: 14px;
     }
 
     .cookie-tooltip > .container > button > span {
-        font-size: var(--body-small);
+        font-size: var(--font-size-200);
     }
 
     .cookie-tooltip {
