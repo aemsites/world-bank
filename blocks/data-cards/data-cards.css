@@ -118,8 +118,6 @@
     font-size: 20px;
     line-height: 120%;
     color: var(--accent-blue-primary-70);
-    padding-bottom: 30px;
-    display: inherit;
   }
 
 .data-cards.data-card-variation .data-card {
