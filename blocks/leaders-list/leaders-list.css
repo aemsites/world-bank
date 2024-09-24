@@ -49,7 +49,7 @@
     color: var(--text-on-light-link-primary-enabled);
 }
 
-html:lang(ar) .leader-item .leader-name{
+html[dir="rtl"] .leader-item .leader-name{
     text-align: right;
 }
 

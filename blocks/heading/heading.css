@@ -18,7 +18,7 @@
     line-height: 31.36px;
 }
 
-html:lang(ar) .heading-wrapper .heading h2{
+html[dir="rtl"] .heading-wrapper .heading h2{
 text-align: right;
 
 }

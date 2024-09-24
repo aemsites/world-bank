@@ -121,7 +121,7 @@ html:lang(ar) .cards-wrapper .cards .cards-card-body h3 {
   margin: 0;
 }
 
-html:lang(ar) .cards-wrapper .cards .cards-card-body p {
+html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
   text-align: right;
 }
 
@@ -140,7 +140,7 @@ html:lang(ar) .cards-wrapper .cards .cards-card-body p {
     border-radius: 10px 0 0 10px;
   }
   
-  html:lang(ar) .cards.profile-summary > ul > li img {
+  html[dir="rtl"] .cards.profile-summary > ul > li img {
     border-radius: 0 10px 10px 0;
   }
 
@@ -148,7 +148,7 @@ html:lang(ar) .cards-wrapper .cards .cards-card-body p {
     border-radius: 0 10px 10px 0;
   }
 
-  html:lang(ar) .cards.profile-summary .cards-card-body {
+  html[dir="rtl"] .cards.profile-summary .cards-card-body {
     border-radius: 10px 0 0 10px;
   }
 
@@ -184,7 +184,7 @@ html:lang(ar) .cards-wrapper .cards .cards-card-body p {
     border-radius: 8px 0 0 8px;
   }
 
-  html:lang(ar) .cards.profile-summary > ul > li img {
+  html[dir="rtl"] .cards.profile-summary > ul > li img {
     border-radius: 0 8px 8px 0;
   }
 }
