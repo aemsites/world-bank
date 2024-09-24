@@ -1,5 +1,6 @@
 {
   "mappings": [
+    "/content/world-bank/corporate/ext/en:/",
     "/content/world-bank/corporate/ext/en/home:/",
     "/content/world-bank/corporate/ext/en/:/ext/en/",
     "/content/world-bank/corporate/ext/zh:/ext/zh",

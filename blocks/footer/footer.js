@@ -56,7 +56,7 @@ function addAnchorTag(element) {
   const lang = getLanguage();
   const anchorLink = document.createElement('a');
   const logoImage = element.querySelector('img');
-  anchorLink.href = `/${lang}`;
+  anchorLink.href = `${PATH_PREFIX}/${lang}`;
   anchorLink.title = logoImage.alt;
   anchorLink.appendChild(element);
   return anchorLink;
