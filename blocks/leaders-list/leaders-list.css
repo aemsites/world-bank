@@ -4,7 +4,7 @@
     flex-direction: column;
     list-style-type: none; 
     padding: 0;
-    gap: 16px;
+    gap: 20px;
     margin: 0;
 }
 
@@ -13,9 +13,8 @@
     flex-direction: column;
     gap: 10px;  
     border-bottom: 2px solid var(--neutral-solid-10-s);
-    padding: 0 0 20px;
+    padding: 0 0 28px;
     width: 100%;
-    
 }
 
 @media (width >= 768px) {
