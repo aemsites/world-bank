@@ -444,20 +444,6 @@
   --heading-font-weight: var(--body-font-weight-bold);
   --label-font-weight: var(--body-font-weight-bold);
 
-  /* neutrals */
-  --neutrals-10: #F5F7F9;
-  --neutrals-20: #E7EDF3; /* --neutral-solid-10-s */
-  --neutrals-30: #DAE3EB;
-  --neutrals-40: #BDCCDB;
-  --neutrals-50: #8A9DB1;
-  --neutrals-60: #586E84;
-  --neutrals-70: #4B5E71;
-  --neutrals-80: #3D4C5C;
-  --neutrals-90: #252E37;
-  --neutrals-100: #181F25;
-  --neutrals-101: #181F25;
-  --neutrals-103: #D4DEE8;
-
   /* neutrals - alpha */
   --neutrals-a-10: rgb(0 57 107 / 3%);
   --neutrals-a-20: rgb(0 57 107 / 5%);
@@ -487,7 +473,7 @@
   --background-color: white;
   --light-color: #eee;
   --dark-color: #ccc;
-  --text-color: var(--neutrals-100);
+  --text-color: var(--neutral-solid-90-s);
   --color-white: #FFF; /* white */
   --color-black: #000;
 
@@ -808,7 +794,7 @@ main pre {
 
 /* links */
 a:any-link {
-  color: var(--neutrals-100);
+  color: var(--neutral-solid-90-s);
   text-decoration: underline;
   text-decoration-color: var(--color-black);
   font-size: var(--body-font-size);
@@ -924,7 +910,7 @@ a.button.disabled,
 a.button.disabled:hover,
 button:disabled,
 button:disabled:hover {
-  background-color: var(--neutrals-40);
+  background-color: var(--neutral-solid-30-s);
   color: rgb(0 41 77 / 42%);
   cursor: unset;
 }
@@ -955,8 +941,8 @@ a.button.secondary.disabled:hover,
 button.secondary:disabled,
 button.secondary:disabled:hover {
   background-color: unset;
-  border: 2px solid var(--neutrals-103);
-  color: var(--neutrals-50);
+  border: 2px solid var(--neutral-solid-20-s);
+  color: var(--neutral-solid-40-s);
   cursor: unset;
 }
 
@@ -1069,7 +1055,7 @@ p.button-container {
   a.button.disabled:hover,
   button:disabled,
   button:disabled:hover {
-    background-color: var(--neutrals-40);
+    background-color: var(--neutral-solid-30-s);
     color: rgb(0 41 77 / 42%);
   }
 
@@ -1100,8 +1086,8 @@ p.button-container {
   button.secondary:disabled,
   button.secondary:disabled:hover {
     background-color: unset;
-    border: 1px solid var(--neutrals-103);
-    color: var(--neutrals-50);
+    border: 1px solid var(--neutral-solid-20-s);
+    color: var(--neutral-solid-40-s);
   }
 
   /* ghost on dark */
@@ -1187,7 +1173,7 @@ main .section > div {
 }
 
 .section[class*='bg-neutrals'] {
-  color: var(--neutrals-100);
+  color: var(--neutral-solid-90-s);
 }
 
 main .section.bg-primary-blue-90,
@@ -1202,12 +1188,12 @@ main .section.bg-primary-blue-70[data-sec-inside-container="true"] > div {
 
 main .section.bg-neutrals-10,
 main .section.bg-neutrals-10[data-sec-inside-container="true"] > div {
-  background-color: var(--neutrals-10);
+  background-color: var(--neutral-solid-05-s);
 }
 
 main .section.bg-neutrals-20,
 main .section.bg-neutrals-20[data-sec-inside-container="true"] > div {
-  background-color: var(--neutrals-20);
+  background-color: var(--neutral-solid-10-s);
 }
 
 main .section[class*='bg-'][data-sec-inside-container="true"] {

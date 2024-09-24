@@ -89,7 +89,7 @@
 
 .bio-detail .sections-container .job-title {
   font-size: 18px;
-  color: var(--neutrals-100);
+  color: var(--neutral-solid-90-s);
   margin-top: var(--spacing-xsmall);
 }
 
@@ -127,7 +127,7 @@
 }
 
 .bio-detail .title {
-  border-bottom: 2px solid var(--neutrals-103);
+  border-bottom: 2px solid var(--neutral-solid-20-s);
   margin-bottom: 20px;
   font-size: var(--font-size-200);
   font-weight: 800;

@@ -62,7 +62,7 @@ dialog.livenow-modal:modal .close-x {
 
 dialog.livenow-modal:modal .modal-title {
   display: flex;
-  border-bottom: 2px solid var(--neutrals-20);
+  border-bottom: 2px solid var(--neutral-solid-10-s);
   padding-bottom: 40px;
 }
 
@@ -102,7 +102,7 @@ dialog.livenow-modal:modal .event-title .wblive-header-txt {
   font-weight: 800;
   letter-spacing: 0.05em;
   text-align: left;
-  color: var(--neutrals-100);
+  color: var(--neutral-solid-90-s);
   margin-bottom: 8px;
 }
 
