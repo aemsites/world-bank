@@ -19,6 +19,7 @@ import {
   createSource,
   getEnvType,
   formatDate,
+  setPageLanguage,
 } from './utils.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -117,7 +118,7 @@ function createSkipToMainNavigationBtn() {
 }
 
 async function loadEager(doc) {
-  document.documentElement.lang = getLanguage();
+  setPageLanguage();
   decorateTemplateAndTheme();
   createSkipToMainNavigationBtn();
   const main = doc.querySelector('main');
