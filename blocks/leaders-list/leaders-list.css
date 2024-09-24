@@ -49,6 +49,10 @@
     color: var(--text-on-light-link-primary-enabled);
 }
 
+html:lang(ar) .leader-item .leader-name{
+    text-align: right;
+}
+
 .leader-item .leader-title{
     font-weight: 400;
     font-size: var(--eyebrow-font-size-l);
