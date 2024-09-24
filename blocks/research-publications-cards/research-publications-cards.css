@@ -81,6 +81,10 @@
   .cards-container .rp-card .text-content .title {
     line-height: 27px;
   }
+
+  main .section.research-publications-cards-container {
+    padding-bottom: 127px;
+  }
 }
 
 @media (width >= 1024px) {
@@ -106,5 +110,11 @@
 @media (width < 1024px) {
   .heading-wrapper div:nth-child(2) {
     display: none;
+  }
+}
+
+@media( width < 768px){
+  main .section.research-publications-cards-container {
+    padding-bottom: 112px;
   }
 }
