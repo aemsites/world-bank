@@ -67,9 +67,9 @@
   margin-top: var(--spacing-regular);
   margin-bottom: 0;
   height: 55px;
-  background: var(--white);
+  background: var(--background-white);
   border-radius: 100px;
-  color: var(--accent-blue-primary-70);
+  color: var(--background-container-on-light-link-primary-enabled);
 }
 
 .curated-cards .feature-card .feature-card-content .button:hover {
