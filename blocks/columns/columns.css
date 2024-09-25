@@ -51,6 +51,7 @@
 .columns.columns-transform-teaser > div p:nth-child(2) {
   line-height: 25px;
   font-size: var(--font-size-500);
+  color: var(--text-on-dark-default);
 }
 
 .columns.columns-transform-teaser > div p:nth-child(3) {
@@ -67,7 +68,6 @@
   color: var(--accent-blue-primary-70);
   font-size: var(--font-size-300);
   margin: 0;
-  padding: 11px 27px;
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) em{
@@ -76,7 +76,7 @@
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a {
   background-color: var(--transparent);
-  color: var(--white);
+  color: var(--background-container-on-light-link-secondary-enabled);
   font-size: var(--font-size-300);
   border-bottom: 2px solid #FFFFFF4D;
   border-radius: 0;
@@ -188,10 +188,6 @@
 @media (width >= 1024px) {
   .columns.columns-transform-teaser > div p:nth-child(1) {
     line-height: 44px;
-  }
-
-  .columns.columns-transform-teaser > div p:nth-child(3) {
-    margin-top: 25px;
   }
 
   .columns > div {
@@ -431,10 +427,6 @@
 
   .columns.columns-divider-variant > div > div:last-child {
     padding-left: 20px;
-  }
-
-  .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a {
-    padding: 15px 32px;
   }
 }
 
