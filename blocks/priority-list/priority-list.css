@@ -136,7 +136,7 @@
   .right-column-container
   .cards-container
   > div.people::before {
-  background-color: #f7b841;
+  background-color: var(--priorities-yellow-people);
 }
 
 .priority-list-wrapper
@@ -144,7 +144,7 @@
   .right-column-container
   .cards-container
   > div.prosperity::before {
-  background-color: #872c8f;
+  background-color: var(--priorities-purple-prosperity);
 }
 
 .priority-list-wrapper
@@ -152,7 +152,7 @@
   .right-column-container
   .cards-container
   > div.planet::before {
-  background-color: #07ab50;
+  background-color: #var(--priorities-green-planet);
 }
 
 .priority-list-wrapper
@@ -160,7 +160,7 @@
   .right-column-container
   .cards-container
   > div.infrastructure::before {
-  background-color: #91302f;
+  background-color: #var(--priorities-magenta-infrastructure);
 }
 
 .priority-list-wrapper
@@ -168,7 +168,7 @@
   .right-column-container
   .cards-container
   > div.digital::before {
-  background-color: #5d6472;
+  background-color: #var(--priorities-gray-digital);
 }
 
 .priority-list-wrapper
@@ -176,7 +176,7 @@
   .right-column-container
   .cards-container
   > div.cross-cutting-areas::before {
-  background-color: #004370;
+  background-color: #var(--priorities-blue-cross-cutting);
 }
 
 .priority-list-wrapper
