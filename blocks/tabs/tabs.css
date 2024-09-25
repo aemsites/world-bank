@@ -32,7 +32,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 140%;
-  padding-bottom: var(--spacing-regular);
+  padding-bottom: var(--spacing-xsmall);
 }
 
 .tab-navigation .tabs-list .tab-btn[aria-selected='true']{
