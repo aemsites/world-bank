@@ -4,7 +4,7 @@
 .heading h4,
 .heading h5,
 .heading h6 {
-    color: var( --accent-blue-primary-90);
+    color: var(--text-on-light-highlight);
     margin-bottom: 0;
 }
 
@@ -24,7 +24,7 @@
 .heading h4 span,
 .heading h5 span,
 .heading h6 span {
-    color: var(--accent-blue-primary-90);
+    color: var(--text-on-light-highlight);
     font-weight: 400;
 }
 
