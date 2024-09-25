@@ -54,6 +54,10 @@
   color: var(--accent-blue-primary-70);
 }
 
+.mini-card-title p{
+    color: var(--background-container-on-light-link-primary-enabled);
+}
+
 .date-time-info, .mini-card-location {
   font-style: normal;
   font-weight: 400;
