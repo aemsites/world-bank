@@ -70,13 +70,9 @@
         "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://asset-picker-ext--world-bank--aemsites.aem.page/tools/assets-selector/image.config.json",
+        "configUrl": "https://asset-picker-ext--world-bank--aemsites.aem.page/tools/asset-selector/image.config.json",
+        "configFileName": "image.config.json",
         "valueType": "string"
-      },
-      {
-        "component": "custom-asset-namespace:custom-asset-mimetype",
-        "valueType": "string",
-        "name": "imageMimeType"
       },
       {
         "component": "text",
