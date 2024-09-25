@@ -833,6 +833,10 @@ html[dir="rtl"] a:any-link {
   text-align: right;
 }
 
+html[dir="rtl"] p strong > em > a:any-link {
+  text-align: center;
+}
+
 a:any-link.disabled {
   color: rgb(0 41 77 / 42%);
   cursor: unset;
