@@ -99,7 +99,7 @@
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container a, .data-cards.news-card-variation .rte-container>div:nth-child(3)>div>p.button-container a {
-  padding: 10px 30px;
+  padding: var(--button-vertical-padding-secondary) var(--button-horizontal-padding-secondary);
   margin: 0 0 var(--spacing-xsmall);
 }
 
