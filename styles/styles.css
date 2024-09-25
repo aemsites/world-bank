@@ -514,6 +514,10 @@
   /** Button Padding **/
   --button-vertical-padding: 12px;
   --button-horizontal-padding: 32px;
+
+  /** Button Padding Secondary **/
+  --button-vertical-padding-secondary: 8px;
+  --button-horizontal-padding-secondary: 24px;
 }
 
 /*
@@ -678,6 +682,10 @@
     --heading-font-weight: var(--body-font-weight-bold);
     --label-font-weight: var(--body-font-weight-bold);
     --button-vertical-padding: 16px;
+
+    /** Button Padding Secondary **/
+  --button-vertical-padding-secondary: 12px;
+  --button-horizontal-padding-secondary: 32px;
   }
 }
 
