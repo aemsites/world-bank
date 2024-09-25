@@ -129,6 +129,12 @@
   --neutral-solid-80-s: #252e37;
   --neutral-solid-90-s: #181f25;
   --neutral-solid-95-s: #181f25;
+  --priorities-blue-cross-cutting: #004370;
+  --priorities-gray-digital: #5d6472;
+  --priorities-green-planet: #07ab50;
+  --priorities-magenta-infrastructure: #91302f;
+  --priorities-purple-prosperity: #872c8f;
+  --priorities-yellow-people: #f7b841;
   --purple-10: #f1e1ff;
   --purple-20: #e5c7ff;
   --purple-30: #cd95fe;
@@ -508,6 +514,10 @@
   /** Button Padding **/
   --button-vertical-padding: 12px;
   --button-horizontal-padding: 32px;
+
+  /** Button Padding Secondary **/
+  --button-vertical-padding-secondary: 8px;
+  --button-horizontal-padding-secondary: 24px;
 }
 
 /*
@@ -672,6 +682,10 @@
     --heading-font-weight: var(--body-font-weight-bold);
     --label-font-weight: var(--body-font-weight-bold);
     --button-vertical-padding: 16px;
+
+    /** Button Padding Secondary **/
+  --button-vertical-padding-secondary: 12px;
+  --button-horizontal-padding-secondary: 32px;
   }
 }
 
