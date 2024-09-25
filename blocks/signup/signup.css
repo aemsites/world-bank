@@ -1,28 +1,35 @@
 .email-signup-container .main-heading p {
-  margin-bottom: 12px;
+  margin-bottom:  var(--spacing-xsmall);
+  font-size: var(--font-size-1000);
+  color: var(--text-on-light-emphasis);
 }
 
 .email-signup-container .signup-description {
   font-size: var(--font-size-300);
   margin-bottom: var(--spacing-large);
   margin-top: 0;
+  color: var(--text-on-light-emphasis);
 }
 
 .email-signup-container input[type="email"],
 .email-signup-container input[type="text"] {
   padding: 22px 0 10px 10px;
   margin-right: 10px;
-  border-radius: 5px;
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0 ;
   border: 1px solid #4c809c;
   font-size: var(--font-size-200);
   width: 100%;
   color: var(--text-on-light-default);
 }
 
+.email-signup-container input[type="text"] {
+  border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+}
+
 .email-signup-container .checkbox-group {
   display: flex;
   gap: 8px;
-  margin-top: 18px;
+  margin-top: var(--padding-margins-sp1);
   align-items: start;
   font-size: var(--font-size-100);
 }
@@ -69,8 +76,7 @@ input:not(:placeholder-shown) + .floating-placeholder {
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-top: 20px;
-  padding: 12px 0;
+  margin-top: var(--padding-margins-sp1);
   width: 100%;
   gap: 8px;
   justify-content: center;
@@ -125,7 +131,7 @@ input:not(:placeholder-shown) + .floating-placeholder {
   .email-signup-container input[type="text"] {
     padding: 22px 0 10px 19px;
     font-size: 14px;
-    border: 1px solid var(--neutral-alpha-24-a);
+    border: 1px solid var(--divider-on-light-emphasis);
     margin-right: 0;
   }
 
@@ -147,12 +153,8 @@ input:not(:placeholder-shown) + .floating-placeholder {
     display: flex;
   }
 
-  .email-signup-container .checkbox-group {
-    margin-top: 6px;
-  }
-
   .email-signup-container input[type="email"] {
-    border-radius: 50px 0 0 50px;
+    border-radius: 100px 0 0 100px;
   }
 
   .email-signup-container input[type="text"] {
@@ -181,21 +183,9 @@ input:not(:placeholder-shown) + .floating-placeholder {
     margin-bottom: unset;
   }
 
-  .email-signup-container .main-heading p {
-    margin-bottom: 16px;
-  }
-
   .email-signup-container .signup-content {
     padding: 0 100px 0 0;
     max-width: 500px;
-  }
-
-  .email-signup-container #signup-form {
-    margin: 20px 0;
-  }
-
-  .email-signup-container .checkbox-group {
-    margin-top: 16px;
   }
 
   .email-signup-container button#signup-btn,

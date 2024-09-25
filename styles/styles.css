@@ -427,6 +427,7 @@
   --size-icon-regular: 1rem;
   --size-icon-large: 1.25rem;
   --size-icon-xxlarge: 4rem;
+  --padding-margins-sp1: 0.75rem;
 
   /* typography */
   --font-size-100: 0.75rem;
@@ -1197,7 +1198,7 @@ main .section[class*='bg-'][data-sec-inside-container="true"] {
 main .section[class*='bg-'][data-sec-inside-container="true"] > div {
   max-width: calc(var(--screen-width) - var(--section-container-space) - var(--section-container-space));
   padding: var(--section-container-space);
-  border-radius: 8px;
+  border-radius: var(--border-radius-medium);
   position: relative;
 }
 
@@ -1225,10 +1226,6 @@ main .section.bg-image .sec-img {
 @media (width >= 1024px) {
   main .section.bg-image .sec-img {
     top: -20px;
-  }
-
-  main .section[class*='bg-'][data-sec-inside-container="true"] > div {
-    border-radius: 10px;
   }
 
   main .section[data-sec-width="true"][data-sec-inside-container="true"] > div {
