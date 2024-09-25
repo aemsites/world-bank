@@ -1,6 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { getLanguage } from '../../scripts/utils.js';
+import { getLanguage, PATH_PREFIX } from '../../scripts/utils.js';
 
 /**
  * Switch block handler
@@ -56,7 +56,7 @@ function addAnchorTag(element) {
   const lang = getLanguage();
   const anchorLink = document.createElement('a');
   const logoImage = element.querySelector('img');
-  anchorLink.href = `/${lang}`;
+  anchorLink.href = `${PATH_PREFIX}/${lang}`;
   anchorLink.title = logoImage.alt;
   anchorLink.appendChild(element);
   return anchorLink;
@@ -93,7 +93,7 @@ export default async function decorate(block) {
   // load footer as fragment
   const footerMeta = getMetadata('footer');
   const lang = getLanguage();
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : `/${lang}/footer`;
+  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : `${PATH_PREFIX}/${lang}/footer`;
   const fragment = await loadFragment(footerPath);
 
   // decorate footer DOM
