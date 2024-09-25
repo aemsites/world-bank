@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: 10px;  
     border-bottom: 2px solid var(--neutral-solid-10-s);
-    padding: 0 0 28px;
+    padding: var(--spacing-xsmall) 0 var(--spacing-large);
     width: 100%;
 }
 

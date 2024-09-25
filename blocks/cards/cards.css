@@ -197,7 +197,7 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 
 .cards.senior-leadership > ul {
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1.5rem;
+  grid-gap: var(--spacing-xlarge);
 }
 
 .cards.senior-leadership > ul > li {
@@ -209,7 +209,13 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 }
 
 .cards.senior-leadership .cards-card-body {
-  margin: 16px 0 0;
+  margin: var(--spacing-small) 0 0;
+}
+
+.cards.senior-leadership .cards-card-body h3 {
+  margin-bottom: var(--spacing-xxsmall);
+  line-height: 10px;
+  font-size: var(--font-size-600);
 }
 
 .cards.senior-leadership .cards-card-body h3 a {
@@ -228,5 +234,6 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 @media (width >= 1024px) {
   .cards.senior-leadership > ul {
     grid-template-columns: repeat(5, 1fr);
+    grid-gap: var(--spacing-medium);
   }
 }
