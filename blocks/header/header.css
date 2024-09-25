@@ -142,6 +142,10 @@ html[dir="rtl"] .language-container{
   margin-left: 6px;
 }
 
+html[dir="rtl"] .language-toggle::after{
+  margin-right: 6px;
+}
+
 .language-toggle-border {
   border-bottom: 1px solid #d9d9d9;
 }
