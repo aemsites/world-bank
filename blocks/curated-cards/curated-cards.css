@@ -46,6 +46,7 @@
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-text .feature-card-content-description {
   margin: 0;
+  line-height: 125%;
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-link {
