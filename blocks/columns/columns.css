@@ -24,7 +24,7 @@
 .columns.columns-transform-teaser > div {
   display: grid;
   grid-template-columns: 45% 55%;
-  padding: var(--spacing-xhuge) 0 66px;
+  padding: var(--spacing-xhuge) 0;
   position: relative;
 }
 
@@ -381,7 +381,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   .bg-primary-blue-90 .columns.columns-transform-teaser > div {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    padding: 0;
+    padding: 0 0 20px;
   }
 
   .bg-primary-blue-90 .columns.columns-transform-teaser > div div:nth-child(1) {

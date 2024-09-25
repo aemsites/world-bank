@@ -80,14 +80,14 @@
   display: inline-block;
 }
 
-.section .data-cards-wrapper .data-cards.news-card-variation .rte-container div p em {
+.section .data-cards-wrapper .data-cards.news-card-variation .rte-container div p em, .section .data-cards-wrapper .data-cards.data-card-variation .rte-container div p em {
   display: flex;
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
   font-weight: 700;
   font-size: var(--font-size-500);
-  line-height: 150%;
+  line-height: 125%;
   color: var(--neutral-solid-90-s);
   display: block;
   margin-bottom: var(--spacing-medium);
@@ -98,9 +98,9 @@
   margin: var(--spacing-regular) 0 0;
 }
 
-.data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
-  margin: 0;
+.data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container a, .data-cards.news-card-variation .rte-container>div:nth-child(3)>div>p.button-container a {
   padding: 10px 30px;
+  margin: 0 0 var(--spacing-xsmall);
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p:first-child {
@@ -126,7 +126,7 @@
   border-radius: 8px;
   min-height: 388px;
   padding: 28px 28px 30px;
-  background-color: var(--color-white);
+  background-color: var(--white);
   text-align: left;
   min-width: 276px;
   border: 1px solid #D9D9D9;
@@ -221,7 +221,7 @@
   line-height: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--neutrals-a-70);
+  color: var(--neutral-alpha-57-a);
 }
 
 .data-cards .news-card .news-card-title {
@@ -265,12 +265,6 @@
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container, .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container {
   display: inline-block;
-  
-  /* margin-bottom: var(--spacing-xsmall); */
-}
-
-.data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container a {
-  margin: 0;
 }
 
 .data-cards .news-card .news-card-image {
