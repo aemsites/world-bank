@@ -1,5 +1,7 @@
 import { processTags } from '../../scripts/utils.js';
-import { div, a } from '../../scripts/dom-helpers.js';
+import {
+  div, a, button, img, p,
+} from '../../scripts/dom-helpers.js';
 
 function processTag(tag) {
   let tagTxt = tag.innerText;
@@ -24,6 +26,92 @@ function createRTEContainer(rteElements) {
   rteElements.forEach((rte) => rteContainer.append(rte));
   return rteContainer;
 }
+
+/* Carousel Starts here */
+/* eslint-disable no-bitwise */
+
+function arrowIcon(props) {
+  const icon = img();
+  icon.src = `${window.hlx.codeBasePath}/icons/${props}.svg`;
+  icon.alt = `${props}`;
+  icon.loading = 'lazy';
+  icon.dataset.iconName = `${props}`;
+  return icon;
+}
+
+function arrow(props) {
+  const container = p({ class: 'arrow-button-container' });
+  const anchor = button({ class: 'carousel-button' });
+  anchor.classList.add(`button-${props}`);
+  anchor.type = 'button';
+  anchor.append(arrowIcon(props));
+  container.append(anchor);
+  return container;
+}
+
+function moveDirection(itemWidth, option) {
+  const carouselItems = document.querySelector('.data-card-items');
+  if (option === '+') {
+    carouselItems.scrollLeft += itemWidth;
+  } else {
+    carouselItems.scrollLeft -= itemWidth;
+  }
+}
+
+function buttonEvents(nextBtn, prevBtn) {
+  const cardsContainer = document.querySelector('.data-card-items');
+  const moveRightBtn = document.querySelector(`.button-${nextBtn}`);
+  const moveLeftBtn = document.querySelector(`.button-${prevBtn}`);
+  const screenWidth = window.screen.width;
+  let currentIndex = 0;
+  let maxIndex = cardsContainer.children.length;
+
+  if (screenWidth > 600) {
+    maxIndex -= 1;
+  } else if (screenWidth > 700) {
+    maxIndex -= 2;
+  }
+
+  function updateButtons() {
+    moveLeftBtn.disabled = currentIndex <= 0;
+    moveRightBtn.disabled = currentIndex >= maxIndex - 1;
+  }
+
+  updateButtons();
+
+  moveLeftBtn.addEventListener('click', () => {
+    currentIndex -= 1;
+    const carouselItems = document.querySelector('.data-card-items > a');
+    const totalItems = carouselItems.children.length || 1;
+    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10)
+    + ((currentIndex === 0 & screenWidth >= 600) * 10000);
+    moveDirection(itemWidth, '-');
+    updateButtons();
+  }, true);
+
+  moveRightBtn.addEventListener('click', () => {
+    currentIndex += 1;
+    const carouselItems = document.querySelector('.data-card-items > a');
+    const totalItems = carouselItems.children.length || 1;
+    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10)
+    + ((maxIndex - 1 === currentIndex & screenWidth >= 600) * 10000);
+    moveDirection(itemWidth, '+');
+    updateButtons();
+  }, true);
+}
+
+function addCarouselToDataCards(block) {
+  const divContainer = div({ class: 'carousel-arrows' });
+  const nextBtn = 'next';
+  const prevBtn = 'prev';
+  divContainer.append(arrow(`${prevBtn}`));
+  divContainer.append(arrow(`${nextBtn}`));
+  block.append(divContainer);
+
+  buttonEvents(nextBtn, prevBtn);
+}
+
+/* Carousel Ends here */
 
 export default async function decorate(block) {
   const isDataCardVariation = block.classList.contains('data-card-variation');
@@ -57,6 +145,7 @@ export default async function decorate(block) {
       row.parentNode.insertBefore(anchor, row);
       anchor.appendChild(row);
     });
+    addCarouselToDataCards(block);
   }
 
   const isNewsCardVariation = block.classList.contains('news-card-variation');

@@ -3,15 +3,52 @@
   flex-direction: column;
 }
 
+/********************** Carousel starts here *********************/
+
+.data-cards.data-card-variation > .carousel-arrows {
+  display:flex;
+  gap: var(--spacing-xsmall);
+  margin-top: var(--spacing-medium);
+}
+
+.data-cards.data-card-variation > .carousel-arrows > .arrow-button-container {
+  margin:0;
+}
+
+.data-cards.data-card-variation > .carousel-arrows > .arrow-button-container > .carousel-button {
+  all:unset;
+  background-color: var(--white);
+  border: 2px solid var(--accent-blue-primary-70);
+  border-radius: 50%;
+  padding: 8px 13px;
+  cursor: pointer;
+}
+
+.data-cards.data-card-variation > .carousel-arrows > .arrow-button-container > .carousel-button:hover {
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.data-cards.data-card-variation > .carousel-arrows > .arrow-button-container > .carousel-button:disabled {
+  opacity: 0.5;
+  background-color: var(--neutral-solid-30-s);
+  color: rgb(0 41 77 / 42%);
+  cursor: unset;
+}
+
+/************** Carousel Ends here **********************/
+
 .data-cards.data-card-variation .data-card-items {
   display: flex;
   flex-flow: row nowrap;
-  overflow-x: auto;
+  overflow-x: hidden;
   gap: var(--spacing-medium);
   margin: 0;
   padding: 0;
   list-style: none;
   color: var(--text-color);
+  transition: transform 0.5s ease-in;
+  scroll-behavior: smooth;
 }
 
 .data-cards .rte-container > div:nth-child(3) {
@@ -293,6 +330,10 @@
 }
 
 @media (width >= 768px) {  
+  .data-cards.data-card-variation > .carousel-arrows {
+    display:none;
+  }
+  
   .data-cards .news-card .news-card-title {
     font-size: var(--font-size-700);
   }
