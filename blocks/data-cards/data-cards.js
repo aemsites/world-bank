@@ -49,8 +49,8 @@ function arrow(props) {
   return container;
 }
 
-function moveDirection(itemWidth, option) {
-  const carouselItems = document.querySelector('.data-card-items');
+function moveDirection(itemWidth, option, block) {
+  const carouselItems = block.querySelector('.data-card-items');
   if (option === '+') {
     carouselItems.scrollLeft += itemWidth;
   } else {
@@ -58,10 +58,10 @@ function moveDirection(itemWidth, option) {
   }
 }
 
-function buttonEvents(nextBtn, prevBtn) {
-  const cardsContainer = document.querySelector('.data-card-items');
-  const moveRightBtn = document.querySelector(`.button-${nextBtn}`);
-  const moveLeftBtn = document.querySelector(`.button-${prevBtn}`);
+function buttonEvents(nextBtn, prevBtn, block) {
+  const cardsContainer = block.querySelector('.data-card-items');
+  const moveRightBtn = block.querySelector(`.button-${nextBtn}`);
+  const moveLeftBtn = block.querySelector(`.button-${prevBtn}`);
   const screenWidth = window.screen.width;
   let currentIndex = 0;
   let maxIndex = cardsContainer.children.length;
@@ -81,21 +81,21 @@ function buttonEvents(nextBtn, prevBtn) {
 
   moveLeftBtn.addEventListener('click', () => {
     currentIndex -= 1;
-    const carouselItems = document.querySelector('.data-card-items > a');
+    const carouselItems = block.querySelector('.data-card-items > a');
     const totalItems = carouselItems.children.length || 1;
     const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10)
     + ((currentIndex === 0 & screenWidth >= 600) * 10000);
-    moveDirection(itemWidth, '-');
+    moveDirection(itemWidth, '-', block);
     updateButtons();
   }, true);
 
   moveRightBtn.addEventListener('click', () => {
     currentIndex += 1;
-    const carouselItems = document.querySelector('.data-card-items > a');
+    const carouselItems = block.querySelector('.data-card-items > a');
     const totalItems = carouselItems.children.length || 1;
     const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10)
     + ((maxIndex - 1 === currentIndex & screenWidth >= 600) * 10000);
-    moveDirection(itemWidth, '+');
+    moveDirection(itemWidth, '+', block);
     updateButtons();
   }, true);
 }
@@ -108,7 +108,7 @@ function addCarouselToDataCards(block) {
   divContainer.append(arrow(`${nextBtn}`));
   block.append(divContainer);
 
-  buttonEvents(nextBtn, prevBtn);
+  buttonEvents(nextBtn, prevBtn, block);
 }
 
 /* Carousel Ends here */
