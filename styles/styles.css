@@ -393,6 +393,12 @@
   --text-on-state-success-emphasis: var(--green-10);
   --text-on-state-warning-default: var(--yellow-20);
   --text-on-state-warning-emphasys: var(--yellow-10);
+  --button-primary-outline-enabled: var(--background-white);
+  --button-primary-background-enabled: var(--accent-blue-primary-70);
+  --button-secondary-outline-enabled: var(--accent-blue-primary-70);
+  --button-primary-label-default: var(--background-white);
+  --button-secondary-background-enabled: var(--background-white);
+  --button-secondary-label-enabled: var(--accent-blue-primary-70);
 
   /* number */
   --border-radius-none: 0rem;
@@ -866,17 +872,17 @@ button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: 1px solid var(--button-primary-outline-enabled);
   padding: var(--button-vertical-padding) var(--button-horizontal-padding);
   font-style: normal;
   cursor: pointer;
-  color: var(--white);
-  background-color: var(--accent-blue-primary-70);
+  color: var(--button-primary-label-default);
+  background-color: var(--button-primary-background-enabled);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: var(--border-radius-x-large);
 }
 
 a.button:hover,
@@ -904,8 +910,8 @@ button:disabled:hover {
 a.button.secondary,
 button.secondary {
   background-color: unset;
-  border: 2px solid var(--accent-blue-primary-70);
-  color: var(--accent-blue-primary-70);
+  border: 2px solid var(--button-secondary-outline-enabled);
+  color: var(--button-secondary-label-enabled);
 }
 
 a.button.secondary:hover,

@@ -67,7 +67,7 @@
   margin-top: var(--spacing-regular);
   margin-bottom: 0;
   height: 55px;
-  background: var(--background-white);
+  background: var(--button-primary-outline-enabled);
   border-radius: 100px;
   color: var(--background-container-on-light-link-primary-enabled);
 }
