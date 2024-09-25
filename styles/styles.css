@@ -803,10 +803,6 @@ a:any-link {
   text-align: left;
 }
 
-html[dir="rtl"] a:any-link {
-  text-align: right;
-}
-
 p strong > em > a:any-link {
   background-color: transparent;
   color: var(--accent-blue-primary-70);
@@ -845,6 +841,10 @@ a:any-link:active {
 a:any-link:visited {
   color: var(--purple-70);
   text-decoration-color: var(--purple-70);
+}
+
+html[dir="rtl"] a:any-link {
+  text-align: right;
 }
 
 a:any-link.disabled {

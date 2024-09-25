@@ -61,10 +61,6 @@ main .section > div.organizational-cards-wrapper {
   position: relative;
 }
 
-html[dir="rtl"] .organizational-card {
-  text-align: right;
-}
-
 .organizational-card p {
   margin: unset;
   padding: unset;
@@ -80,12 +76,16 @@ html[dir="rtl"] .organizational-card {
   margin-left: unset;
 }
 
-html[dir="rtl"] .organizational-card:not(last-child) {
+.organizational-card:not(first-child) {
   margin-left: 6px;
   margin-right: unset;
 }
 
-.organizational-card:not(first-child) {
+html[dir="rtl"] .organizational-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .organizational-card:not(last-child) {
   margin-left: 6px;
   margin-right: unset;
 }
@@ -118,11 +118,6 @@ html[dir="rtl"] .organizational-card:not(first-child) {
   top: 8px;
   right: 0;
   left: auto;
-}
-
-html[dir="rtl"] .organizational-card .collapse-btn {
-  left: 0;
-  right: auto;
 }
 
 .organizational-card .expand-btn:hover,
@@ -217,6 +212,11 @@ html[dir="rtl"] .organizational-card .collapse-btn {
   top: 8px;
   right: 0;
   left: auto;
+}
+
+html[dir="rtl"] .organizational-card .collapse-btn {
+  left: 0;
+  right: auto;
 }
 
 html[dir="rtl"] .organizational-card.collapsed .expand-btn {
@@ -347,11 +347,6 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
     left: auto;
   }
 
-  html[dir="rtl"] .organizational-card.collapsed .expand-btn {
-    left: 0;
-    right: auto;
-  }
-
   .organizational-card.collapsed .card-content-wrapper {
     padding-bottom: unset;
     border-bottom: unset;
@@ -370,6 +365,11 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
   .organizational-card .card-content-wrapper .collapse-btn:hover {
     background: var(--accent-blue-primary-40);
     border: 1px solid var(--accent-blue-primary-120);
+  }
+
+  html[dir="rtl"] .organizational-card.collapsed .expand-btn {
+    left: 0;
+    right: auto;
   }
 }
 

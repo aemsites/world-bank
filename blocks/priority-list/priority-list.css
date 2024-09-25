@@ -85,28 +85,13 @@
   text-align: left;
 }
 
-html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div {
-  padding-right: 20px;
-  padding-left: unset;
-  text-align: right;
-}
-
 .priority-list-wrapper
   .priority-list
   .right-column-container
   .cards-container
   > div:last-child {
-  border-left-width: 3px;
-  border-left-style: solid;
-  border-left-color: var(--transparent);
+  border-left: 3px solid var(--transparent);
   border-right-width: 0;
-}
-
-html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div:last-child {
-  border-right-width: 3px;
-  border-right-style: solid;
-  border-right-color: var(--transparent);
-  border-left-width: 0;
 }
 
 .priority-list-wrapper
@@ -114,16 +99,23 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
   .right-column-container
   .cards-container
   > div:not(div:last-child) {
-  border-left-width: 3px;
-  border-left-style: solid;
-  border-left-color: var(--neutral-solid-10-s);
+  border-left: 3px solid var(--neutral-solid-10-s);
   border-right-width: 0;
 }
 
+html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div {
+  padding-right: 20px;
+  padding-left: unset;
+  text-align: right;
+}
+
+html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div:last-child {
+  border-right: 3px solid var(--transparent);
+  border-left-width: 0;
+}
+
 html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div:not(div:last-child) {
-  border-right-width: 3px;
-  border-right-style: solid;
-  border-right-color: var(--neutral-solid-10-s);
+  border-right: 3px solid var(--neutral-solid-10-s);
   border-left-width: 0;
 }
 
