@@ -112,7 +112,7 @@ h4 {
   font-size: var(--font-size-600);
 }
 
-html:lang(ar) .cards-wrapper .cards .cards-card-body h3 {
+html[dir="rtl"] .cards-wrapper .cards .cards-card-body h3 {
   text-align: right;
 }
 
