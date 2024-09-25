@@ -171,15 +171,15 @@
 }
 
 .data-cards.data-card-variation .data-card-tag.digital {
-  border-bottom-color: #var(--priorities-gray-digital);
+  border-bottom-color: var(--priorities-gray-digital);
 }
 
 .data-cards.data-card-variation .data-card-tag.planet {
-  border-bottom-color: #var(--priorities-green-planet);
+  border-bottom-color: var(--priorities-green-planet);
 }
 
 .data-cards.data-card-variation .data-card-tag.infrastructure {
-  border-bottom-color: #var(--priorities-magenta-infrastructure);
+  border-bottom-color: var(--priorities-magenta-infrastructure);
 }
 
 
@@ -248,7 +248,7 @@
   display: block;
   width: 2px;
   min-height: 92%;
-  background: #var(--priorities-green-planet);
+  background: var(--priorities-green-planet);
   position: absolute;
   left: 0;
   top: -18px;
@@ -256,11 +256,11 @@
 }
 
 .data-cards .news-card .news-card-title.planet::before {
-  background: #var(--priorities-green-planet);
+  background: var(--priorities-green-planet);
 }
 
 .data-cards .news-card .news-card-title.infrastructure::before { 
-  background: #var(--priorities-magenta-infrastructure);
+  background: var(--priorities-magenta-infrastructure);
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container, .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container {

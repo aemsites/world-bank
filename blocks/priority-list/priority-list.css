@@ -152,7 +152,7 @@
   .right-column-container
   .cards-container
   > div.planet::before {
-  background-color: #var(--priorities-green-planet);
+  background-color: var(--priorities-green-planet);
 }
 
 .priority-list-wrapper
@@ -160,7 +160,7 @@
   .right-column-container
   .cards-container
   > div.infrastructure::before {
-  background-color: #var(--priorities-magenta-infrastructure);
+  background-color: var(--priorities-magenta-infrastructure);
 }
 
 .priority-list-wrapper
@@ -168,7 +168,7 @@
   .right-column-container
   .cards-container
   > div.digital::before {
-  background-color: #var(--priorities-gray-digital);
+  background-color: var(--priorities-gray-digital);
 }
 
 .priority-list-wrapper
@@ -176,7 +176,7 @@
   .right-column-container
   .cards-container
   > div.cross-cutting-areas::before {
-  background-color: #var(--priorities-blue-cross-cutting);
+  background-color: var(--priorities-blue-cross-cutting);
 }
 
 .priority-list-wrapper
