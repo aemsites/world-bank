@@ -98,7 +98,7 @@
 
 .teaser-wrapper .button-container .button.dark-bg {
     background-color: var(--white);
-    color: var(--background-container-on-light-link-primary-enabled);
+    color: var(--accent-blue-primary-90);
 }
 
 .teaser-wrapper .button-container .button.dark-bg:focus {
@@ -233,20 +233,12 @@
     .teaser-wrapper .teaser-title {
         padding: 19% 12% 0;
     }
-
-    .teaser-wrapper .teaser-title-wrapper {
-        width: 60%;
-    }
     
 }
 
 @media (width <=768px) {
     .teaser-wrapper {
         margin-top: 20px;
-    }
-  
-    .teaser-wrapper .teaser-title-wrapper {
-        width: 72%;
     }
 
     .teaser-wrapper .teaser-swoosh-wrapper {
@@ -299,22 +291,20 @@
         font-size: 3.5vw;
     }
 
-    .teaser-wrapper .button-container {
-        border-radius: 100px;
-        padding: 15px 0px 32px 0px;
-    }
-    
 }
 
 @media (width <= 390px) {
+    main .section > div.teaser-wrapper {
+        padding: 0;
+    }
     
     .teaser-wrapper {
         padding: 0;
     }
 
     .teaser-wrapper > .teaser.block > .teaser-container {
-        height: 350px;
-        width: 350px;
+        height: 417px;
+        width: 417px;
     }
 
     .teaser-wrapper > .teaser.block > .teaser-container > .teaser-swoosh-wrapper {
