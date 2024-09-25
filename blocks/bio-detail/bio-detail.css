@@ -41,7 +41,7 @@
 
 .bio-detail .media-inquiries p a:hover{
   color: var(--accent-blue-primary-70);
-  border-bottom: 2px solid var(--blue-40);
+  border-bottom: 2px solid var(--accent-blue-primary-40);
 }
 
 .bio-detail .media-inquiries p:nth-child(4) a:hover {
@@ -109,7 +109,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-white);
+  background-color: var(--background-white);
   cursor: pointer;
   border: 2px solid transparent;
 }
