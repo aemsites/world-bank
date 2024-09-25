@@ -67,9 +67,9 @@
 }
 
 .cards.profile-summary .cards-card-body h1,
-h2,
-h3,
-h4 {
+.cards.profile-summary .cards-card-body h2,
+.cards.profile-summary .cards-card-body h3,
+.cards.profile-summary .cards-card-body h4 {
   font-size: var(--font-size-1100);
   line-height: 28px;
   margin-bottom: var(--spacing-medium);
