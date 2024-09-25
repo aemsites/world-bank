@@ -3,7 +3,7 @@ main .breadcrumb-wrapper ol {
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
-  padding: 24px 0 0;
+  padding: var(--spacing-small) 0 0;
 }
 
 main .breadcrumb-wrapper ol li {
@@ -30,7 +30,7 @@ main .breadcrumb-wrapper a:visited {
 
 main .breadcrumb-wrapper ol li span.breadcrumb-separator {
   display: inline-block;
-  border-left: 1px solid var(--neutral-solid-30-s);
+  border-left: 1px solid var(--global-interactive-on-light-disabled);
   height: 17px;
   margin: 0 14px;
 }
