@@ -843,6 +843,10 @@ a:any-link:visited {
   text-decoration-color: var(--purple-70);
 }
 
+html[dir="rtl"] a:any-link {
+  text-align: right;
+}
+
 a:any-link.disabled {
   color: rgb(0 41 77 / 42%);
   cursor: unset;
@@ -866,6 +870,10 @@ p strong > em > a:any-link.disabled {
 
 p strong > em > a:any-link:visited {
   border-bottom: 2px solid transparent;
+}
+
+html[dir="rtl"] p strong > em > a:any-link {
+  text-align: center;
 }
 
 /* buttons */
@@ -1215,8 +1223,17 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-w
   max-width: calc(var(--screen-width) - 28px);
 }
 
+html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
+  padding: 0 28px 0 0;
+  border-radius: 10px 0 0 10px;
+}
+
 main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
   border-radius: 0 0 10px 10px;
+}
+
+html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
+  border-radius: 0 10px 10px 0;
 }
 
 /* Section background image */
