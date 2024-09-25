@@ -147,6 +147,8 @@ function attachFormValidation(block, placeholders) {
         showThankYouMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_THANK_YOU_MESSAGE]);
       } else if (consentSuccess && subscriptionStatus === 'Not Subscribed') {
         showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_CONFIRMATION_MESSAGE]);
+      } else if (consentSuccess && subscriptionStatus === 'Already Subscribed') {
+        showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_ERROR_MESSAGE]);
       } else {
         errorMessage.textContent = 'An error occurred while processing your request. Please try again later.';
       }

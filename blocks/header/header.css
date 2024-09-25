@@ -74,7 +74,7 @@ header .nav-menu-overlay::-webkit-scrollbar {
 }
 
 header .nav-menu-overlay .nav-menu {
-  background-color: var(--primary-blue-100);
+  background-color: var(--accent-blue-primary-90);
   background-image: url("../../icons/swoosh/type4/default-m.svg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -84,7 +84,7 @@ header .nav-menu-overlay .nav-menu {
   padding: 100px 30px;
   max-width: 1456px;
   height: calc(100% - 200px);
-  color: var(--neutral-solid-30-s);
+  color: var(--text-on-dark-default);
 }
 
 /** Lanaguge Selector CSS **/
@@ -170,25 +170,24 @@ header .nav-menu-overlay .nav-menu a {
 }
 
 header .nav-menu-overlay .nav-menu a:visited {
-  color: var(--neutral-solid-30-s);
+  color: var(--text-on-dark-default);
 }
 
 .header .nav-item-content-expanded > ul > li a:hover {
   text-decoration: underline;
 }
 
-.header .nav-item-content-expanded {
-  display: block;
-  padding-top: 10px;
-}
-
 header .nav-menu-overlay .nav-menu-column.left ul a {
   font-family: var(--body-font-family);
-  font-size: 28px;
+  font-size: var(--font-size-1100);
   cursor: not-allowed;
   pointer-events: none;
   font-weight: 700;
   line-height: 38.13px;
+}
+
+header .nav-menu-overlay .nav-menu-column.right > ul > li > ul a {
+  font-size: var(--font-size-300);
 }
 
 header .nav-menu-overlay .nav-menu .submenu a:hover {
@@ -198,19 +197,39 @@ header .nav-menu-overlay .nav-menu .submenu a:hover {
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
   color: white;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
   color: var(--white);
-  font-size: var(--font-size-500);
+  font-size: var(--font-size-600);
   font-weight: 700;
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
-  color: var(--neutral-solid-30-s);
+  color: var(--black);
   border-bottom: 1px solid
     var(--background-container-on-light-link-primary-hover);
+}
+
+header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li > a {
+  font-size: var(--font-size-300);
+}
+
+header .nav-menu-overlay .nav-menu .nav-menu-column.right a:visited,
+header .nav-menu-overlay .nav-menu .nav-menu-column.right .footer a:visited,
+header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:visited {
+  color: unset;
+}
+
+.header .nav-item-content-expanded {
+  display: block;
+  padding-top: 10px;
+}
+
+header .nav-menu-overlay .nav-menu .nav-menu-column.right .footer a:hover,
+header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hover {
+  color: var(--white);
 }
 
 .header .nav-item-content-expanded > ul {
@@ -223,7 +242,7 @@ header .nav-menu-overlay .nav-menu-column.left ul a:hover {
 }
 
 .cancel-container {
-  background: var(--primary-blue-50);
+  background: var(--accent-blue-primary-40);
   height: 44px;
   display: flex;
   width: 44px;
@@ -291,7 +310,7 @@ header .nav-menu-overlay .nav-menu-column.left ul {
 
 header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
   position: fixed;
-  left: 30px;
+  left: var(--section-gutter-space);
   padding: 0;
   margin: 0;
   z-index: 6;
@@ -310,7 +329,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span::before {
   border-radius: 20px;
   position: absolute;
   left: 15px;
-  background-color: var(--primary-blue-50);
+  background-color: var(--accent-blue-primary-40);
   transform: rotate(45deg);
   border: 2px;
 }
@@ -323,7 +342,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span {
   position: relative;
   margin-right: 15px;
   margin-bottom: -8px;
-  background-color: var(--primary-blue-102);
+  background-color: var(--accent-blue-primary-120);
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country span {
@@ -354,7 +373,7 @@ header .nav-menu-overlay .nav-menu-column.left ul li span::after {
   top: 20px;
   left: 15px;
   position: absolute;
-  background-color: var(--primary-blue-50);
+  background-color: var(--accent-blue-primary-40);
   border-radius: 20px;
   transform: rotate(-45deg);
   border: 2px;
@@ -383,15 +402,15 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
   height: 3px;
   top: 14px;
   transform: rotate(45deg);
-  border-bottom: 3px solid var(--color-black);
-  border-left: 3px solid var(--color-black);
+  border-bottom: 3px solid var(--black);
+  border-left: 3px solid var(--black);
   border-radius: 1px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country {
   text-transform: uppercase;
   display: flex;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--white);
   flex-direction: column;
   position: relative;
@@ -407,7 +426,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
   left: 0;
   color: var(--neutral-solid-30-s);
   z-index: 2;
-  background-color: var(--primary-blue-102);
+  background-color: var(--accent-blue-primary-120);
 }
 
 header
@@ -424,30 +443,30 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country div {
 }
 
 header .nav-menu-overlay .nav-menu-column.right > ul {
-  font-size: 16px;
-  color: var(--white);
+  font-size: var(--font-size-300);
+  color: var(--text-on-dark-emphasis);
   line-height: 22px;
   letter-spacing: 0.06em;
   text-align: left;
   display: flex;
+  margin-top: 0;
   flex-direction: column;
-  gap: var(--xlarge);
+  gap: var(--spacing-xlarge);
   padding: 0;
 }
 
 header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
-  font-size: 16px;
-  color: var(--neutral-solid-30-s);
+  color: var(--text-on-dark-default);
   margin-top: 10px;
   font-family: var(--body-font-family);
   text-transform: none;
   padding-top: 15px;
   min-width: 100%;
-  border-top: 1px solid var(--primary-blue-80);
+  border-top: 1px solid var(--divider-on-dark-default);
   line-height: 19.2px;
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: var(--spacing-xxsmall);
   font-weight: normal;
 }
 
@@ -475,12 +494,12 @@ header
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country div ul li {
   display: block;
-  padding: 6px 20px;
+  padding: 6px 0;
   height: 22px;
   width: 100%;
 }
@@ -493,7 +512,7 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::after {
   height: 3px;
   border-radius: 10px;
   top: 18.5px;
-  background-color: var(--color-black);
+  background-color: var(--black);
   border: 3px;
 }
 
@@ -516,19 +535,45 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
 header .nav-menu-overlay .nav-menu-column.right {
   flex-direction: column;
   display: none;
-  padding-left: var(--section-gutter-space);
+  height: calc(90vh - 100px);
+  overflow: hidden auto;
+  margin-top: 20px;
+}
+
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar {
+  background: var(--accent-blue-primary-120);
+  width: 8px;
+  border-radius: 8px;
+  height: 8px;
+}
+
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-thumb {
+  background-color: var(--background-container-secondary);
+  width: 8px;
+  border-radius: 8px;
+}
+
+header .nav-menu-overlay .nav-menu-column.right::-webkit-scrollbar-track {
+  background: #002035;
+  border-radius: 8px;
+  width: 1rem;
+  background-clip: content-box;
 }
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul {
   padding: 0;
-  margin-top: var(--small);
-  padding-top: var(--regular);
+  margin-top: var(--spacing-small);
+  padding-top: var(--spacing-regular);
+}
+
+header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li {
+  padding-bottom: 5px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li > ul > li > ul {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: var(--spacing-xxsmall);
   font-size: 16px;
   padding-left: 20px;
   margin-top: 10px;
@@ -540,7 +585,7 @@ header
   .nav-menu-column.right
   .browse-country
   input[type="text"] {
-  background-color: var(--primary-blue-80);
+  background-color: var(--accent-blue-primary-70);
   outline: none;
   border: none;
   color: var(--white);
@@ -568,7 +613,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country p {
   width: 30px;
   height: 30px;
   top: 55px;
-  background-color: var(--primary-blue-102);
+  background-color: var(--accent-blue-primary-120);
   left: 60vw;
   z-index: 3;
   display: flex;
@@ -615,7 +660,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: var(--white);
   color: inherit;
   overflow: initial;
   text-overflow: initial;
@@ -734,7 +779,7 @@ header nav .nav-tools {
 
 .section.nav-tools .default-content-wrapper h6 {
   font-size: var(--font-size-300);
-  color: var(--primary-blue-80);
+  color: var(--accent-blue-primary-70);
   margin: 0;
   font-weight: normal;
 }
@@ -839,7 +884,7 @@ header nav .nav-tools {
 
   header .nav-menu-overlay {
     min-width: 100%;
-    overflow: hidden scroll;
+    overflow: hidden;
   }
 
   header .nav-menu-overlay .nav-menu {
@@ -848,12 +893,13 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right {
-    width: auto;
     padding: 0;
+    width: calc(100vw - 60px);
+    overflow: hidden auto;
+    height: 70vh;
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
-    font-size: var(--font-size-1000);
     font-weight: 700;
     line-height: 54.47px;
     text-align: left;
@@ -865,11 +911,14 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu {
     display: flex;
-    max-width: fit-content;
+    min-width: 100%;
+
+    /* max-width: fit-content; */
     flex-flow: column wrap;
     position: relative;
     justify-content: space-around;
-    max-height: calc(670px - 2vw);
+    align-items: flex-start;
+    max-height: 607px;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country {
@@ -878,7 +927,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
-    width: 41vw;
+    min-width: 41vw;
     height: auto;
   }
 
@@ -886,7 +935,7 @@ header nav .nav-tools {
     flex-grow: 2;
     display: flex;
     max-width: fit-content;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--accent-blue-primary-70);
     flex-direction: row;
     align-items: center;
     position: absolute;
@@ -911,7 +960,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer > ul > li {
-    color: var(nav-menu-footer-color);
+    color: var(--nav-menu-footer-color);
     padding: 0 35px;
     margin: 0;
   }
@@ -927,7 +976,7 @@ header nav .nav-tools {
     display: flex;
     position: absolute;
     bottom: -150px;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--accent-blue-primary-70);
     flex-direction: row;
     align-items: start;
   }
@@ -962,7 +1011,7 @@ header nav .nav-tools {
     .nav-menu-column.right
     .browse-country
     input[type="text"] {
-    background-color: var(--primary-blue-80);
+    background-color: var(--accent-blue-primary-70);
     outline: none;
     border: none;
     position: absolute;
@@ -984,7 +1033,7 @@ header nav .nav-tools {
     left: 0;
     top: -15px;
     z-index: 2;
-    background-color: var(--primary-blue-102);
+    background-color: var(--accent-blue-primary-120);
   }
 
   header
@@ -1000,7 +1049,7 @@ header nav .nav-tools {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: var(--primary-blue-102);
+    background-color: var(--accent-blue-primary-120);
     left: 650px;
     z-index: 3;
     display: flex;
@@ -1076,11 +1125,47 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.right {
     width: 900px;
+    height: auto;
+    padding-left: var(--section-gutter-space);
+    overflow: visible;
     position: relative;
+    margin-top: 0;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
     display: none;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li {
+    flex: 0 1 auto;
+    position: relative;
+    font-weight: 500;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
+    padding: 8px 0;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.left > ul > li {
+    padding: 10px 40px 10px 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right .footer > ul > li {
+    color: var(--nav-menu-footer-color);
+    padding: 0 25px;
+    margin: 0;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.right .browse-country div ul li {
+    padding: 6px 40px;
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li > span {
@@ -1104,36 +1189,19 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul {
-    border-right: 1px solid var(--primary-blue-80);
+    border-right: 1px solid var(--divider-on-dark-default);
     gap: 5px;
     min-width: 340px;
     padding: 0;
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul a {
-    font-size: 18px;
+    font-size: var(--font-size-500);
   }
 
   header .nav-menu-overlay .nav-menu-column.left ul a {
     cursor: pointer;
     pointer-events: all;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
-    font-weight: 500;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-  }
-
-  header .nav-menu-overlay .nav-menu-column.left > ul > li {
-    padding: 10px 40px 10px 20px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    cursor: pointer;
   }
 
   header .nav-menu-overlay .nav-menu-column.right > ul > li > ul {
@@ -1146,7 +1214,7 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a {
     font-weight: 700;
-    color: var(--color-black);
+    color: var(--black);
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected > span {
@@ -1156,23 +1224,12 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right > .submenu {
     display: flex;
     flex-flow: column wrap;
-    max-height: 630px;
+    max-height: 650px;
     position: relative;
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu:first-child {
     display: flex;
-  }
-
-  header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
-    display: flex;
-    flex-direction: column;
-  }
-
-  header .nav-menu-overlay .nav-menu-column.right .footer > ul > li {
-    color: var(--nav-menu-footer-color);
-    padding: 0 25px;
-    margin: 0;
   }
 
   header
@@ -1184,7 +1241,7 @@ header nav .nav-tools {
     padding-top: 40px;
     bottom: -100px;
     width: 100%;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--accent-blue-primary-70);
   }
 
   header
@@ -1234,12 +1291,6 @@ header nav .nav-tools {
     margin: 0;
     margin-left: 20px;
     align-items: center;
-  }
-
-  header .nav-menu-overlay .nav-menu-column.right .submenu .footer > ul > li {
-    color: var(--nav-menu-footer-color);
-    padding: 0 25px;
-    margin: 0;
   }
 
   header
@@ -1341,7 +1392,7 @@ header nav .nav-tools {
     width: 100%;
     flex-direction: row;
     align-items: center;
-    border-top: 1px solid var(--primary-blue-80);
+    border-top: 1px solid var(--accent-blue-primary-70);
   }
 
   header
@@ -1372,7 +1423,7 @@ header nav .nav-tools {
     left: 50px;
     top: -27px;
     z-index: 2;
-    background-color: var(--primary-blue-102);
+    background-color: var(--accent-blue-primary-120);
   }
 
   header
@@ -1393,8 +1444,8 @@ header nav .nav-tools {
     width: 30px;
     height: 30px;
     top: 40px;
-    background-color: var(--primary-blue-102);
-    left: 54rem;
+    background-color: var(--accent-blue-primary-120);
+    left: 50rem;
     z-index: 3;
     display: flex;
     justify-content: center;
@@ -1449,7 +1500,7 @@ header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.right .submenu .footer ul li {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   header
