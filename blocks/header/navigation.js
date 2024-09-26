@@ -164,6 +164,11 @@ const showSubMenu = (
     constants.COUNTRY_LIST_WITH_SELECTOR,
   );
   countrylist.style.display = 'none';
+  const indicator = rightColumn.querySelector(
+    '.browse-country p',
+  );
+  indicator.style.transform = 'rotate(0deg)';
+
   // Update the selected state of the menu items in the left column
   const level0Items = leftColumn.querySelectorAll('li');
   level0Items.forEach((item, index) => {
