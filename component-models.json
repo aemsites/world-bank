@@ -597,7 +597,7 @@
         "valueType": "string",
         "name": "alt",
         "value": "Default alt",
-        "label": "News Card Alt Text"
+        "label": "Alt Text"
       }
     ]
   },
@@ -611,13 +611,6 @@
         "label": "Image",
         "multi": false,
         "required": true
-      },
-      {
-        "component": "text",
-        "name": "alttext",
-        "value": "Default Alt",
-        "label": "Alt Text",
-        "valueType": "string"
       },
       {
         "component": "aem-tag",
@@ -651,6 +644,13 @@
         "value": "",
         "label": "Link",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Alt Text"
       }
     ]
   },
@@ -1363,13 +1363,6 @@
         "multi": false
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
-        "label": "Mini Card Alt Text"
-      },
-      {
         "component": "aem-tag",
         "name": "mini-card-tag",
         "label": "Card Type",
@@ -1414,6 +1407,13 @@
         "label": "Link",
         "valueType": "string",
         "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Alt Text"
       }
     ]
   },
