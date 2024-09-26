@@ -28,6 +28,10 @@
   position: relative;
 }
 
+.columns > div > div > p {
+  margin: var(--spacing-none);
+}
+
 .columns.columns-transform-teaser > div p {
   margin: 0;
 }
@@ -163,6 +167,11 @@ html[dir="rtl"] .columns > div {
 
   .columns h2 {
     font-weight: 400;
+  }
+
+  .columns > div > div > h2 {
+    margin-bottom: var(--spacing-xxsmall);
+    color: var(--text-on-light-highlight);
   }
   
   .columns h2 strong {
