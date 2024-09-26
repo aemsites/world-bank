@@ -144,9 +144,10 @@ input:not(:placeholder-shown) + .floating-placeholder {
     font-size: var(--eyebrow-font-size-l);
     margin: 0;
     overflow: visible;
-    border-radius: 0 50px 50px 0;
+    border-radius: 0 100px 100px 0;
     text-align: center;
     width: 150px;
+    padding: 15px 29px 10px 25px;
   }
 
   .email-signup-container .input-group {
