@@ -15,7 +15,7 @@ function updateHeadingStructure(block) {
     bottomLineDiv,
     borderLineClassDiv,
     spacingTopClassDiv,
-    spacingBottomClassDiv
+    spacingBottomClassDiv,
   ] = children;
 
   const getTextContent = (div) => div?.querySelector('p')?.textContent.trim() || '';
@@ -44,7 +44,6 @@ function updateHeadingStructure(block) {
   const suffixSpan = span(suffixText);
 
   headerElement.append(prefixSpan, ` ${mainHeadingText} `, suffixSpan);
-  
 
   // Append elements to the heading block
   headingBlock.append(eyebrow, headerElement);
