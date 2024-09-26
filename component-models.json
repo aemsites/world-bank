@@ -615,7 +615,7 @@
       {
         "component": "text",
         "name": "alttext",
-        "value": "",
+        "value": "Default Alt",
         "label": "Alt Text",
         "valueType": "string"
       },
