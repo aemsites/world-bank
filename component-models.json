@@ -2146,7 +2146,10 @@
           { "name": "Spacing xxlarge", "value": "heading-xxlarge" },
           { "name": "Spacing huge", "value": "heading-huge" },
           { "name": "Spacing xhuge", "value": "heading-xhuge" }
-        ]
+        ],
+        "condition": { 
+          "==": [{ "var": "show_borderline" }, true] 
+        }
       }
     ]
   }
