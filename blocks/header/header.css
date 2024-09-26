@@ -377,6 +377,16 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   border: 1px;
 }
 
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::before {
+  transform: rotate(145deg);
+}
+
+html[dir = 'rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
+  margin-right: 8px;
+}
+
+
+
 header .nav-menu-overlay .nav-menu-column.left ul li span::after {
   content: "";
   width: 8px;
@@ -402,6 +412,18 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   border-bottom: 3px solid var(--neutral-solid-30-s);
   border-left: 3px solid var(--neutral-solid-30-s);
   border-radius: 1px;
+}
+
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::after {
+  transform: rotate(-145deg);
+}
+
+html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
+  margin-right: -14px;
+  border-top: 3px solid var(--neutral-solid-30-s);
+  border-right: 3px solid var(--neutral-solid-30-s);
+  border-bottom: none;
+  border-left: none;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
@@ -1143,6 +1165,11 @@ header nav .nav-tools {
     margin-top: 0;
   }
 
+  html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right {
+    padding-right: var(--section-gutter-space);
+    padding-left: var(--spacing-none);
+  }
+
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
     display: none;
   }
@@ -1304,6 +1331,21 @@ header nav .nav-tools {
     align-items: center;
   }
 
+  html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right>.submenu {
+    text-align: right;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.left>ul {
+    border-left: 1px solid var(--divider-on-dark-default);
+    border-right: none;
+    text-align: right;
+  }
+
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left>ul>li.selected{
+    border-radius: 0 10px 10px 0;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1423,6 +1465,10 @@ header nav .nav-tools {
     /* margin-top: -20px; */
   }
 
+  html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"] {
+    right: 50px;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1462,6 +1508,10 @@ header nav .nav-tools {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+  }
+
+  html[dir='rtl']   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
+    right: 50rem;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
