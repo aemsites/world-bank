@@ -25,7 +25,7 @@
 .tab-navigation .tabs-list .tab-btn {
   background-color: transparent;
   padding: 0 1px;
-  color: var(--text-on-light-link-primary-enabled);
+  color: var(--background-container-on-light-link-primary-enabled);
   border-radius: 0;
   border-bottom: 5px solid transparent;
   margin: 0;
