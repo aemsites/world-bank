@@ -201,7 +201,7 @@
   border-bottom: 2px solid var(--neutral-solid-10-s);
   line-height: 150%;
   font-size: var(--font-size-300);
-  padding-bottom: var(--spacing-large);
+  padding-bottom: var(--spacing-xxlarge);
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
@@ -209,7 +209,7 @@
   font-weight: 700;
   font-size: var(--font-size-500);
   line-height: 150%;
-  color: var(--neutral-solid-90-s);
+  color: var(--text-on-light-emphasis);
 }
 
 .data-cards.news-card-variation .news-card-items .news-card {
@@ -276,7 +276,6 @@
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container, 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container {
   display: inline-block;
-  margin-bottom: var(--spacing-xsmall);
 }
 
 .data-cards .news-card .news-card-image {
@@ -290,14 +289,15 @@
 }
 
 .section .data-cards.news-card-variation .rte-container > .main-heading > div > p:first-child {
-  margin-bottom:0;
   font-size: var(--font-size-1000);
   color: var(--text-on-light-highlight);
 }
 
 .section .data-cards-wrapper .data-cards.news-card-variation > .rte-container > div:nth-child(2) > div > p a {
   margin: 0;
-  padding: 4px 0 8px;
+  padding: var(--button-vertical-padding) 0 var(--spacing-xxsmall) 0;
+  border-bottom: 2px solid var(--divider-on-light-emphasis);
+  color: var(--text-on-light-link-primary-enabled);
 }
 
 @media (width >= 768px) {  
@@ -365,10 +365,6 @@
   .data-cards.news-card-variation .rte-container > div:first-child {
     font-size: var(--font-size-1000);
     line-height: 110%;
-  }
-
-  .data-cards.news-card-variation .rte-container > div:nth-child(2){
-    padding-bottom: 48px;
   }
 
 }
@@ -459,10 +455,6 @@
   .data-cards.news-card-variation .rte-container > div:first-child {
     font-size: var(--font-size-1000);
     line-height: 112%;
-  }
-
-  .data-cards.news-card-variation .rte-container > div:nth-child(2){
-    padding-bottom: 60px;
   }
 
   .data-cards.news-card-variation.block .rte-container > div:nth-child(1) > div > p {

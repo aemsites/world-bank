@@ -69,6 +69,7 @@
   color: var(--background-container-on-light-link-primary-enabled);
   font-size: var(--font-size-300);
   margin: 0;
+  border: 1px solid var(--button-primary-outline-enabled);
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) em{
