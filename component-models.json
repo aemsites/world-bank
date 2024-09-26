@@ -2050,6 +2050,52 @@
     "id": "heading",
     "fields": [
       {
+        "component": "select",
+        "name": "heading-top-spacing",
+        "value": "",
+        "label": "Heading Spacing Top (padding top)",
+        "description": "Heading top spacing",
+        "valueType": "string",
+        "options": [
+          { "name": "Default spacing", "value": "heading-top-spacing-default" },
+          { "name": "No space / padding", "value": "heading-top-none" },
+          { "name": "Spacing tiny", "value": "heading-top-tiny" },
+          { "name": "Spacing xxsmall", "value": "heading-top-xxsmall" },
+          { "name": "Spacing xsmall", "value": "heading-top-xsmall" },
+          { "name": "Spacing regular", "value": "heading-top-regular" },
+          { "name": "Spacing small", "value": "heading-top-small" },
+          { "name": "Spacing medium", "value": "heading-top-medium" },
+          { "name": "Spacing large", "value": "heading-top-large" },
+          { "name": "Spacing xlarge", "value": "heading-top-xlarge" },
+          { "name": "Spacing xxlarge", "value": "heading-top-xxlarge" },
+          { "name": "Spacing huge", "value": "heading-top-huge" },
+          { "name": "Spacing xhuge", "value": "heading-top-xhuge" }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "heading-bottom-spacing",
+        "value": "",
+        "label": "Heading Spacing Bottom (padding bottom)",
+        "description": "Heading bottom spacing",
+        "valueType": "string",
+        "options": [
+          { "name": "Default spacing", "value": "heading-bottom-spacing-default" },
+          { "name": "No space / padding", "value": "heading-bottom-none" },
+          { "name": "Spacing tiny", "value": "heading-bottom-tiny" },
+          { "name": "Spacing xxsmall", "value": "heading-bottom-xxsmall" },
+          { "name": "Spacing xsmall", "value": "heading-bottom-xsmall" },
+          { "name": "Spacing regular", "value": "heading-bottom-regular" },
+          { "name": "Spacing small", "value": "heading-bottom-small" },
+          { "name": "Spacing medium", "value": "heading-bottom-medium" },
+          { "name": "Spacing large", "value": "heading-bottom-large" },
+          { "name": "Spacing xlarge", "value": "heading-bottom-xlarge" },
+          { "name": "Spacing xxlarge", "value": "heading-bottom-xxlarge" },
+          { "name": "Spacing huge", "value": "heading-bottom-huge" },
+          { "name": "Spacing xhuge", "value": "heading-bottom-xhuge" }
+        ]
+      },
+      {
         "component": "text",
         "valueType": "string",
         "name": "eyebrowtext",
