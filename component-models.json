@@ -2124,6 +2124,29 @@
         "valueType": "boolean",
         "name": "show_borderline",
         "label": "Show Borderline"
+      },
+      {
+        "component": "select",
+        "name": "border-spacing",
+        "value": "",
+        "label": "Border Spacing Top (padding top)",
+        "description": "Border top spacing, default is 16px.",
+        "valueType": "string",
+        "options": [
+          { "name": "Default spacing", "value": "heading-spacing-default" },
+          { "name": "No space / padding", "value": "heading-none" },
+          { "name": "Spacing tiny", "value": "heading-tiny" },
+          { "name": "Spacing xxsmall", "value": "heading-xxsmall" },
+          { "name": "Spacing xsmall", "value": "heading-xsmall" },
+          { "name": "Spacing regular", "value": "heading-regular" },
+          { "name": "Spacing small", "value": "heading-small" },
+          { "name": "Spacing medium", "value": "heading-medium" },
+          { "name": "Spacing large", "value": "heading-large" },
+          { "name": "Spacing xlarge", "value": "heading-xlarge" },
+          { "name": "Spacing xxlarge", "value": "heading-xxlarge" },
+          { "name": "Spacing huge", "value": "heading-huge" },
+          { "name": "Spacing xhuge", "value": "heading-xhuge" }
+        ]
       }
     ]
   }
