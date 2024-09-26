@@ -19,6 +19,7 @@ function processTag(tagdiv, tagAuthored) {
 function createFeatureCard(row, placeHolders) {
   const [
     featureImageContent,
+    featureAltContent,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
@@ -27,6 +28,7 @@ function createFeatureCard(row, placeHolders) {
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = '';
+  featureAltContent.innerHTML = ''; 
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
     div({ class: ' feature-card-content-text' }, a({ href: featureLink.textContent }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent))),
