@@ -123,7 +123,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 120%;
-    color: var(--accent-blue-primary-70);
+    color: var(--background-container-on-light-link-primary-enabled);
   }
 
 .data-cards.data-card-variation .data-card {
@@ -218,35 +218,36 @@
 
 .data-cards.news-card-variation .news-card-items a:not(:first-child) .news-card{
   box-sizing: border-box;
-  border-top: 2px solid var(--neutral-solid-10-s);
+  border-top: 2px solid var(--divider-on-light-subdued);
   padding-top: var(--spacing-xxlarge);
 }
 
 .data-cards .news-card .news-card-tag {
   order: 1;
-  padding-left: 18px;
+  padding-left: var(--spacing-medium);
   font-weight: 700;
   font-size: var(--font-size-100);
   line-height: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--neutral-alpha-57-a);
+  color: var(--text-on-light-subdued);
 }
 
 .data-cards .news-card .news-card-title {
   order: 2;
   position: relative;
-  padding-left: 18px;
+  padding-left: var(--spacing-medium);
   font-weight: 700;
   font-size: var(--default);
   line-height: 116%;
-  color: var(--accent-blue-primary-70);
+  color: var(--background-container-on-light-link-primary-enabled);
   margin-bottom: var(--spacing-xxlarge);
 }
 
 .data-cards.news-card-variation.block .news-card-items .news-card  > .news-card-title > p {
-  margin-top: 10px;
+  margin-top: var(--spacing-xsmall);
   margin-bottom: var(--spacing-none);
+  color: var(--background-container-on-light-link-primary-enabled);
 }
 
 .data-cards .news-card .news-card-tag.planet {
@@ -280,7 +281,7 @@
 
 .data-cards .news-card .news-card-image {
   order: 0;
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-medium);
 }
 
 .data-cards .news-card .news-card-image img {
