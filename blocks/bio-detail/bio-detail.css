@@ -24,6 +24,7 @@
   border-bottom: 2px solid transparent;
   padding: 4px 0;
   font-weight: 400;
+  color: var(--background-container-on-light-link-primary-enabled);
 }
 
 .bio-detail .media-inquiries p em {
@@ -40,7 +41,7 @@
 
 .bio-detail .media-inquiries p a:hover{
   color: var(--accent-blue-primary-70);
-  border-bottom: 2px solid rgb(22 154 243 / 100%);
+  border-bottom: 2px solid var(--accent-blue-primary-40);
 }
 
 .bio-detail .media-inquiries p:nth-child(4) a:hover {
@@ -49,7 +50,7 @@
 
 .bio-detail .resources p strong>em>a:any-link:visited {
   color: var(--accent-blue-primary-70);
-  border-bottom: 2px solid rgb(22 154 243 / 100%);
+  border-bottom: 2px solid var(--accent-blue-primary-40);
 }
 
 .bio-detail .resources p, .bio-detail .resources p em {
@@ -65,6 +66,7 @@
 
 .bio-detail .sections-container p {
   margin: var(--spacing-none);
+  color: var(--text-on-light-emphasis);
 }
 
 .bio-detail .first-container .name-job-social {
@@ -85,6 +87,7 @@
 
 .bio-detail .sections-container .display-name h1 {
   margin: var(--spacing-none);
+  color: var(--text-on-light-highlight);
 }
 
 .bio-detail .sections-container .job-title {
@@ -106,7 +109,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--background-white);
   cursor: pointer;
   border: 2px solid transparent;
 }
@@ -128,10 +131,16 @@
 
 .bio-detail .title {
   border-bottom: 2px solid var(--neutral-solid-20-s);
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-regular);
   font-size: var(--font-size-200);
   font-weight: 800;
   padding-bottom: var(--spacing-xsmall);
+  color: var(--text-on-light-emphasis);
+}
+
+.block-quote-container .default-content-wrapper p{
+    color: var(--text-on-light-emphasis);
+    font-size: var(--font-size-500);
 }
 
 @media (width >=768px) {
@@ -163,7 +172,7 @@
   }
 
   .bio-detail .media-resources {
-    margin-top: 80px;
+    margin-top: var(--spacing-huge);
   }
 
   .bio-detail .second-container .profile-image {
