@@ -236,8 +236,9 @@
   margin-bottom: var(--spacing-xxlarge);
 }
 
-.data-cards .news-card .news-card-title:hover {
+.data-cards .news-card:hover .news-card-title p {
   text-decoration: underline;
+  text-decoration-color: rgb(22 154 243 / 100%)
 }
 
 .data-cards.news-card-variation.block .news-card-items .news-card  > .news-card-title > p {
