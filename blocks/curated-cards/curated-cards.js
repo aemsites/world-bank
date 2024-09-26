@@ -63,7 +63,11 @@ function processRow(row) {
     imageDiv.innerHTML = imageContent.innerHTML;
     if (alttext) {
       const pic = imageDiv.querySelector('img');
-      pic.alt = alttext.querySelector('p').textContent.trim();
+      const p =  alttext.querySelector('p');
+      if(p)
+      {
+      pic.alt = p.textContent.trim();
+      }
     }
   }
 
