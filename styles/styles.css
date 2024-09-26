@@ -1232,15 +1232,11 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-w
 
 html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
   padding: 0 28px 0 0;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
   border-radius: 0 0 10px 10px;
-}
-
-html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
-  border-radius: 0 10px 10px 0;
 }
 
 /* Section background image */
