@@ -53,6 +53,20 @@
     color: var(--divider-on-light-default);
 }
 
+main .section[data-sec-spacing="section-none"] { padding-top: var(--spacing-none); }
+main .section[data-sec-spacing="section-xtiny"] { padding-top: var(--spacing-xtiny); }
+main .section[data-sec-spacing="section-tiny"] { padding-top: var(--spacing-tiny); }
+main .section[data-sec-spacing="section-xxsmall"] { padding-top: var(--spacing-xxsmall); }
+main .section[data-sec-spacing="section-xsmall"] { padding-top: var(--spacing-xsmall); }
+main .section[data-sec-spacing="section-regular"] { padding-top: var(--spacing-regular); }
+main .section[data-sec-spacing="section-small"] { padding-top: var(--spacing-small); }
+main .section[data-sec-spacing="section-medium"] { padding-top: var(--spacing-medium); }
+main .section[data-sec-spacing="section-large"] { padding-top: var(--spacing-large); }
+main .section[data-sec-spacing="section-xlarge"] { padding-top: var(--spacing-xlarge); }
+main .section[data-sec-spacing="section-xxlarge"] { padding-top: var(--spacing-xxlarge); }
+main .section[data-sec-spacing="section-huge"] { padding-top: var(--spacing-huge); }
+main .section[data-sec-spacing="section-xhuge"] { padding-top: var(--spacing-xhuge); }
+
 @media (width <768px) {
     .heading .eyebrowtext:not(:empty)  {
         font-size: var(--font-size-200);
