@@ -85,6 +85,7 @@ text-align: right;
 .heading hr {
     margin-top: var(--spacing-medium);
     color: var(--divider-on-light-default);
+    margin-bottom: 0;
 }
 
 .heading.heading-bottom-none hr {  margin-top: var(--spacing-none); }
