@@ -9,7 +9,7 @@
       "groupKey": "FileTypeGroup",
       "fields": [
         {
-          "excludeTags": ["image/*"],
+          "excludeTags": ["image/*", "video/*", "application/pdf"],
           "element": "checkbox",
           "name": "type",
           "defaultValue": [
@@ -19,6 +19,14 @@
             {
               "label": "Images",
               "value": "image/*"
+            },
+            {
+              "label": "Videos",
+              "value": "video/*"
+            },
+            {
+              "label": "PDFs",
+              "value": "application/pdf"
             }
           ],
           "orientation": "horizontal"
