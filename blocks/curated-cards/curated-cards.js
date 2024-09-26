@@ -44,7 +44,7 @@ function createFeatureCard(row, placeHolders) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent, decsDiv, linkDiv] = row.children;
+  const [imageContent, alttext, tagContent, headingContent, decsDiv, linkDiv] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -61,6 +61,10 @@ function processRow(row) {
 
   if (imageContent) {
     imageDiv.innerHTML = imageContent.innerHTML;
+    if (alttext) {
+      const pic = imageDiv.querySelector('img');
+      pic.alt = alttext.querySelector('p').textContent.trim();
+    }
   }
 
   if (headingContent) {

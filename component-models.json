@@ -591,6 +591,13 @@
         "name": "news-card-image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "News Card Alt Text"
       }
     ]
   },
@@ -604,6 +611,13 @@
         "label": "Image",
         "multi": false,
         "required": true
+      },
+      {
+        "component": "text",
+        "name": "alttext",
+        "value": "Default Alt",
+        "label": "Alt Text",
+        "valueType": "string"
       },
       {
         "component": "aem-tag",
@@ -1347,6 +1361,13 @@
         "name": "mini-card-image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "Mini Card Alt Text"
       },
       {
         "component": "aem-tag",
