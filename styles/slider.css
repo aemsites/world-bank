@@ -45,17 +45,17 @@ html[dir="rtl"] .carousel-container .button-container button {
 
 .carousel-container > .default-content-wrapper > p:first-child {
   font-weight: 800;
-  font-size: 14px;
+  font-size: var(--eyebrow-font-size-m);
   line-height: 15px;
-  padding-bottom: 16px;
+  padding-bottom: var(--spacing-small);
   color: var(--neutral-alpha-57-a);
 }
 
 .carousel-container > .default-content-wrapper > p:nth-child(2) {
   font-weight: 400;
-  font-size: 40px;
+  font-size: var(--font-size-1000);
   line-height: 44px;
-  padding-bottom: 48px;
+  padding-bottom: var(--spacing-xlarge);
   color: var(--accent-blue-primary-90);
   text-transform: uppercase;
 }
