@@ -70,7 +70,7 @@
         "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://author-p136806-e1403562.adobeaemcloud.com/content/world-bank.asset-picker-ext.resource/tools/asset-selector/image.config.json",
+        "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/asset-picker-ext/tools/asset-selector/image.config.json",
         "configFileName": "image.config.json",
         "valueType": "string"
       },
