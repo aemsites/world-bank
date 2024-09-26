@@ -121,8 +121,9 @@ html[dir="rtl"] .language-container{
   font-size: 16px;
   display: inline-flex;
   justify-content: flex-end;
-  width: 100%;
   cursor: pointer;
+  height: 26px;
+  min-width: 69px;
 }
 
 .language-text {
@@ -281,6 +282,7 @@ header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hove
 
   .language-toggle {
     text-transform: uppercase;
+    min-width: 26px;
   }
 
   .language-text {
@@ -669,7 +671,7 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: var(--white);
   color: inherit;
   overflow: initial;
   text-overflow: initial;

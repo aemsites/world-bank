@@ -9,7 +9,7 @@
 
 .cards:not(.profile-summary) > ul > li {
   border: 1px solid var(--dark-color);
-  background-color: var(--background-color);
+  background-color: var(--white);
 }
 
 .cards:not(.profile-summary) .cards-card-body {
@@ -40,7 +40,7 @@
 
 /* Profile View Styles */
 
-.cards.profile-summary ul{
+.cards.profile-summary ul {
   list-style: none;
   padding: 0;
 }
@@ -66,7 +66,10 @@
   margin-top: var(--spacing-large);
 }
 
-.cards.profile-summary .cards-card-body h1,h2,h3,h4 {
+.cards.profile-summary .cards-card-body h1,
+.cards.profile-summary .cards-card-body h2,
+.cards.profile-summary .cards-card-body h3,
+.cards.profile-summary .cards-card-body h4 {
   font-size: var(--font-size-1100);
   line-height: 28px;
   margin-bottom: var(--spacing-medium);
@@ -103,11 +106,30 @@
   object-position: top;
 }
 
+.cards.senior-leadership .cards-card-body h3 {
+  margin-bottom: var(--spacing-xxsmall);
+  line-height: 10px;
+  font-size: var(--font-size-600);
+}
+
+html[dir="rtl"] .cards-wrapper .cards .cards-card-body h3 {
+  text-align: right;
+}
+
+.cards.senior-leadership .cards-card-body p {
+  font-size: var(--font-size-300);
+  margin: 0;
+}
+
+html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
+  text-align: right;
+}
+
 @media (width >= 768px) {
   .cards.profile-summary .cards-card-body p {
     line-height: 22px;
   }
-  
+
   .cards.profile-summary > ul > li {
     grid-template-columns: 252px auto;
   }
@@ -117,9 +139,17 @@
     min-height: 358px;
     border-radius: 10px 0 0 10px;
   }
+  
+  html[dir="rtl"] .cards.profile-summary > ul > li img {
+    border-radius: 0 10px 10px 0;
+  }
 
   .cards.profile-summary .cards-card-body {
     border-radius: 0 10px 10px 0;
+  }
+
+  html[dir="rtl"] .cards.profile-summary .cards-card-body {
+    border-radius: 10px 0 0 10px;
   }
 
   .cards.profile-summary .cards-card-body h1,
@@ -136,7 +166,7 @@
   }
 
   .cards.profile-summary .cards-card-body {
-      padding: 80px;
+    padding: 80px;
   }
 
   .cards.profile-summary .cards-card-body h1,
@@ -153,6 +183,10 @@
   .cards.profile-summary > ul > li img {
     border-radius: 8px 0 0 8px;
   }
+
+  html[dir="rtl"] .cards.profile-summary > ul > li img {
+    border-radius: 0 8px 8px 0;
+  }
 }
 
 /* Senior Leadership View Styles */
@@ -163,11 +197,11 @@
 
 .cards.senior-leadership > ul {
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1.5rem;
+  grid-gap: var(--spacing-xlarge);
 }
 
 .cards.senior-leadership > ul > li {
-  border: none
+  border: none;
 }
 
 .cards.senior-leadership .cards-card-image img {
@@ -175,13 +209,7 @@
 }
 
 .cards.senior-leadership .cards-card-body {
-  margin: 16px 0 0;
-}
-
-.cards.senior-leadership .cards-card-body h3 {
-  margin-bottom: 10px;
-  line-height: 10px;
-  font-size: var(--font-size-600);
+  margin: var(--spacing-small) 0 0;
 }
 
 .cards.senior-leadership .cards-card-body h3 a {
@@ -189,11 +217,6 @@
   font-weight: 700;
   font-size: var(--font-size-600);
   color: var(--text-on-light-link-primary-enabled);
-}
-
-.cards.senior-leadership .cards-card-body p {
-  font-size: var(--font-size-300);
-  margin: 0;
 }
 
 @media (width >= 768px) {
@@ -205,5 +228,6 @@
 @media (width >= 1024px) {
   .cards.senior-leadership > ul {
     grid-template-columns: repeat(5, 1fr);
+    grid-gap: var(--spacing-medium);
   }
 }

@@ -18,7 +18,7 @@
 .card-title p {
     font-size: var(--font-size-600);
     font-weight: 700;
-    line-height: 24px;
+    line-height: 125%;
     margin-top: 12px;
     margin-bottom: 0;
 }
@@ -140,7 +140,6 @@
 
     .card-title p {
         font-weight: 700;
-        line-height: 28.8px;
         margin-top: 16px;
     }
 

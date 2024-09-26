@@ -497,6 +497,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     width: 100%;
     padding: 13px 0 16px;
     font-size: 14px;
+    text-align: center;
   }
 
   .ft-main .ft-main-item:last-child p {

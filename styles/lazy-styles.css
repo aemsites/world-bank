@@ -166,7 +166,7 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
     padding: 16px;
     position: fixed;
     z-index: 9999;
-    color: var(--color-white);
+    color: var(--white);
     left: auto;
     right: 0;
     bottom: 0;
@@ -194,26 +194,26 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
 
 .cookie-tooltip p > a {
     font-size: var(--font-size-200);
-    color: var(--color-white);
-    border-bottom: 1px solid var(--color-white);
+    color: var(--white);
+    border-bottom: 1px solid var(--white);
     text-decoration: none;
     padding: 0;
     text-wrap: wrap;
 }
 
 .cookie-tooltip p > a:visited{
-    color: var(--color-white);
-    text-decoration-color: var(--color-white);
+    color: var(--white);
+    text-decoration-color: var(--white);
 }
 
 .cookie-tooltip p > a:hover{
-    color: var(--color-white);
+    color: var(--white);
 }
 
 .cookie-tooltip .close {
     height: 32px;
     width: 32px;
-    color: var(--color-white);
+    color: var(--white);
     cursor: pointer;
     position: absolute;
     top: 0;
@@ -226,7 +226,7 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
 }
 
 .cookie-tooltip .close span, .cookie-tooltip .close:hover, .cookie-tooltip .close:focus {
-    color: var(--color-white);
+    color: var(--white);
 }
 
 .cookie-tooltip > .container > button > span {
@@ -287,8 +287,8 @@ main span.tweetable {
   
   main span.tweetable > a:hover,
   main span.tweetable > a:focus {
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--black);
+    color: var(--white);
     text-decoration: none;
   }
   

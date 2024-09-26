@@ -87,7 +87,7 @@
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
   font-weight: 700;
   font-size: var(--font-size-500);
-  line-height: 150%;
+  line-height: 125%;
   color: var(--neutral-solid-90-s);
   display: block;
   margin-bottom: var(--spacing-medium);
@@ -126,7 +126,7 @@
   border-radius: 8px;
   min-height: 388px;
   padding: 28px 28px 30px;
-  background-color: var(--color-white);
+  background-color: var(--white);
   text-align: left;
   min-width: 276px;
   border: 1px solid #D9D9D9;
@@ -163,23 +163,23 @@
 }
 
 .data-cards.data-card-variation .data-card-tag.prosperity {
-  border-bottom-color: #872C8F;
+  border-bottom-color: var(--priorities-purple-prosperity);
 }
 
 .data-cards.data-card-variation .data-card-tag.people {
-  border-bottom-color: #F7B841;
+  border-bottom-color: var(--priorities-yellow-people);
 }
 
 .data-cards.data-card-variation .data-card-tag.digital {
-  border-bottom-color: #5D6472;
+  border-bottom-color: var(--priorities-gray-digital);
 }
 
 .data-cards.data-card-variation .data-card-tag.planet {
-  border-bottom-color: #07AB50;
+  border-bottom-color: var(--priorities-green-planet);
 }
 
 .data-cards.data-card-variation .data-card-tag.infrastructure {
-  border-bottom-color: #91302F;
+  border-bottom-color: var(--priorities-magenta-infrastructure);
 }
 
 
@@ -221,7 +221,7 @@
   line-height: 16px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--neutrals-a-70);
+  color: var(--neutral-alpha-57-a);
 }
 
 .data-cards .news-card .news-card-title {
@@ -248,7 +248,7 @@
   display: block;
   width: 2px;
   min-height: 92%;
-  background: #07AB50;
+  background: var(--priorities-green-planet);
   position: absolute;
   left: 0;
   top: -18px;
@@ -256,11 +256,11 @@
 }
 
 .data-cards .news-card .news-card-title.planet::before {
-  background: #07AB50;
+  background: var(--priorities-green-planet);
 }
 
 .data-cards .news-card .news-card-title.infrastructure::before { 
-  background: #91302F;
+  background: var(--priorities-magenta-infrastructure);
 }
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container, .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container {
