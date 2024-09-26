@@ -50,7 +50,7 @@
 
 .bio-detail .resources p strong>em>a:any-link:visited {
   color: var(--accent-blue-primary-70);
-  border-bottom: 2px solid var(--blue-40);
+  border-bottom: 2px solid var(--accent-blue-primary-40);
 }
 
 .bio-detail .resources p, .bio-detail .resources p em {
