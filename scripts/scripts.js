@@ -20,6 +20,7 @@ import {
   getEnvType,
   formatDate,
   setPageLanguage,
+  PATH_PREFIX,
 } from './utils.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -146,13 +147,13 @@ export async function fetchLanguagePlaceholders() {
   const langCode = getLanguage();
   try {
     // Try fetching placeholders with the specified language
-    return await fetchPlaceholders(`/${langCode}`);
+    return await fetchPlaceholders(`${PATH_PREFIX}/${langCode}`);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(`Error fetching placeholders for lang: ${langCode}. Will try to get en placeholders`, error);
     // Retry without specifying a language (using the default language)
     try {
-      return await fetchPlaceholders('/en');
+      return await fetchPlaceholders(`${PATH_PREFIX}/en`);
     } catch (err) {
       // eslint-disable-next-line no-console
       console.error('Error fetching placeholders:', err);
@@ -168,7 +169,7 @@ export async function fetchLanguagePlaceholders() {
 export const fetchLangDatabyFileName = async (fileName) => {
   const langCode = getLanguage();
   try {
-    const response = await fetch(`/${langCode}/${fileName}.json`);
+    const response = await fetch(`${PATH_PREFIX}/${langCode}/${fileName}.json`);
     if (!response.ok) {
       throw new Error('Failed to load data');
     }
@@ -224,7 +225,7 @@ function decorateSectionImages(doc) {
 }
 
 async function renderWBDataLayer() {
-  const config = await fetchPlaceholders();
+  const config = await fetchPlaceholders(PATH_PREFIX);
   const lastPubDateStr = getMetadata('published-time');
   const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
   window.wbgData.page = {

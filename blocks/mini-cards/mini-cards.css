@@ -74,18 +74,32 @@
 
 .image-list-variation .mini-card {
   border-top: unset;
+  padding-bottom: var(--spacing-medium);
   border-bottom: 2px solid var(--neutral-solid-10-s);
+}
+
+.image-list-variation .mini-card-title{
+  font-size: var(--font-size-600);
+  line-height: 24px;
 }
 
 @media (width <768px) {
   .image-list-variation .mini-card .mc-text-wrapper {
     flex-basis: 450px;
   }
+
+  .image-list-variation .date-time-info {
+    line-height: 16.8px;
+  }
 }
 
 @media (width >=768px) {
   .image-list-variation .mini-card .mc-text-wrapper {
     flex-basis: 710px;
+  }
+
+  .image-list-variation .date-time-info {
+    line-height: 24px;
   }
 }
 
@@ -106,4 +120,11 @@
     flex-basis: 710px;
   }
 
+  .image-list-variation .mini-card-title{
+    line-height: 30px;
+  }
+  
+  .image-list-variation .date-time-info {
+    line-height: 16.8px;
+  }
 }
