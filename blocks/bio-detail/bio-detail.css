@@ -64,6 +64,10 @@
   height: 14px;
 }
 
+html[dir="rtl"] .bio-detail .download-image{
+  margin: 0 0 0 9px;
+}
+
 .bio-detail .sections-container p {
   margin: var(--spacing-none);
   color: var(--text-on-light-emphasis);

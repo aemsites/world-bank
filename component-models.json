@@ -2195,7 +2195,7 @@
         "description": "Heading bottom spacing",
         "valueType": "string",
         "options": [
-          { "name": "Default spacing", "value": "heading-bottom-spacing-default" },
+          { "name": "Default spacing", "value": "heading-bottom-default" },
           { "name": "No space / padding", "value": "heading-bottom-none" },
           { "name": "Spacing tiny", "value": "heading-bottom-tiny" },
           { "name": "Spacing xxsmall", "value": "heading-bottom-xxsmall" },
