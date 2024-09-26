@@ -5,31 +5,39 @@
 
 /********************** Carousel starts here *********************/
 
-.data-cards.data-card-variation > .carousel-arrows {
+.data-cards.data-card-variation .arrow-buttons .button-container button {
+  all:unset;
+  background-color: var(--white);
+  border: 2px solid var(--accent-blue-primary-70);
+  padding: 8px 13px;
+  border-radius: 50%;
+}
+
+.data-cards.data-card-variation .data-card-items .data-card.active {
+  opacity: 1;
+  scroll-snap-type: x;
+}
+
+.data-cards.data-card-variation .data-card-items .data-card {
+  scroll-snap-align: start;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background-color: var(--white);
+}
+
+.data-cards.data-card-variation .arrow-buttons {
   display:flex;
   gap: var(--spacing-xsmall);
   margin-top: var(--spacing-medium);
 }
 
-.data-cards.data-card-variation > .carousel-arrows > .arrow-button-container {
-  margin:0;
-}
-
-.data-cards.data-card-variation > .carousel-arrows > .arrow-button-container > .carousel-button {
-  all:unset;
-  background-color: var(--white);
-  border: 2px solid var(--accent-blue-primary-70);
-  border-radius: 50%;
-  padding: 8px 13px;
-  cursor: pointer;
-}
-
-.data-cards.data-card-variation > .carousel-arrows > .arrow-button-container > .carousel-button:hover {
+.data-cards.data-card-variation .arrow-buttons .button-container button:hover {
   opacity: 0.7;
   transition: 0.2s;
 }
 
-.data-cards.data-card-variation > .carousel-arrows > .arrow-button-container > .carousel-button:disabled {
+.data-cards.data-card-variation .arrow-buttons .button-container button:disabled {
   opacity: 0.5;
   background-color: var(--neutral-solid-30-s);
   color: rgb(0 41 77 / 42%);
@@ -41,7 +49,6 @@
 .data-cards.data-card-variation .data-card-items {
   display: flex;
   flex-flow: row nowrap;
-  overflow-x: hidden;
   gap: var(--spacing-medium);
   margin: 0;
   padding: 0;
@@ -49,6 +56,10 @@
   color: var(--text-color);
   transition: transform 0.5s ease-in;
   scroll-behavior: smooth;
+  overflow: scroll hidden;
+  scroll-snap-type: both mandatory;
+  scroll-padding: 0;
+  scrollbar-width: none;
 }
 
 .data-cards .rte-container > div:nth-child(3) {
@@ -162,7 +173,7 @@
     color: var(--accent-blue-primary-70);
   }
 
-.data-cards.data-card-variation .data-card {
+.data-cards.data-card-variation > .data-card-items .data-card {
   box-sizing: border-box;
   border-radius: 8px;
   min-height: 388px;
@@ -332,7 +343,7 @@
 }
 
 @media (width >= 768px) {  
-  .data-cards.data-card-variation > .carousel-arrows {
+  .data-cards.data-card-variation .arrow-buttons .button-container {
     display:none;
   }
   

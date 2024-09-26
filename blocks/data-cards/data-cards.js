@@ -1,6 +1,6 @@
 import { processTags } from '../../scripts/utils.js';
 import {
-  div, a, button, img, p,
+  div, a, p, img, button,
 } from '../../scripts/dom-helpers.js';
 
 function processTag(tag) {
@@ -28,8 +28,8 @@ function createRTEContainer(rteElements) {
 }
 
 /* Carousel Starts here */
-/* eslint-disable no-bitwise */
 
+// Handling Next / Previous Arrow Image
 function arrowIcon(props) {
   const icon = img();
   icon.src = `${window.hlx.codeBasePath}/icons/${props}.svg`;
@@ -39,76 +39,115 @@ function arrowIcon(props) {
   return icon;
 }
 
+// Handling Anchor Tag
 function arrow(props) {
-  const container = p({ class: 'arrow-button-container' });
-  const anchor = button({ class: 'carousel-button' });
-  anchor.classList.add(`button-${props}`);
+  const container = p({ class: 'button-container' });
+  const anchor = button({ class: `button ${props}` });
+  anchor.title = `${props}`;
   anchor.type = 'button';
   anchor.append(arrowIcon(props));
   container.append(anchor);
   return container;
 }
 
-function moveDirection(itemWidth, option, block) {
-  const carouselItems = block.querySelector('.data-card-items');
-  if (option === '+') {
-    carouselItems.scrollLeft += itemWidth;
-  } else {
-    carouselItems.scrollLeft -= itemWidth;
-  }
-}
-
-function buttonEvents(nextBtn, prevBtn, block) {
-  const cardsContainer = block.querySelector('.data-card-items');
-  const moveRightBtn = block.querySelector(`.button-${nextBtn}`);
-  const moveLeftBtn = block.querySelector(`.button-${prevBtn}`);
-  const screenWidth = window.screen.width;
-  let currentIndex = 0;
-  let maxIndex = cardsContainer.children.length;
-
-  if (screenWidth > 600) {
-    maxIndex -= 1;
-  } else if (screenWidth > 700) {
-    maxIndex -= 2;
-  }
-
-  function updateButtons() {
-    moveLeftBtn.disabled = currentIndex <= 0;
-    moveRightBtn.disabled = currentIndex >= maxIndex - 1;
-  }
-
-  updateButtons();
-
-  moveLeftBtn.addEventListener('click', () => {
-    currentIndex -= 1;
-    const carouselItems = block.querySelector('.data-card-items > a');
-    const totalItems = carouselItems.children.length || 1;
-    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10)
-    + ((currentIndex === 0 & screenWidth >= 600) * 10000);
-    moveDirection(itemWidth, '-', block);
-    updateButtons();
-  }, true);
-
-  moveRightBtn.addEventListener('click', () => {
-    currentIndex += 1;
-    const carouselItems = block.querySelector('.data-card-items > a');
-    const totalItems = carouselItems.children.length || 1;
-    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10)
-    + ((maxIndex - 1 === currentIndex & screenWidth >= 600) * 10000);
-    moveDirection(itemWidth, '+', block);
-    updateButtons();
-  }, true);
-}
-
-function addCarouselToDataCards(block) {
-  const divContainer = div({ class: 'carousel-arrows' });
+function createSlider(block) {
   const nextBtn = 'next';
   const prevBtn = 'prev';
+  const divContainer = div({ class: 'arrow-buttons' });
   divContainer.append(arrow(`${prevBtn}`));
   divContainer.append(arrow(`${nextBtn}`));
   block.append(divContainer);
 
-  buttonEvents(nextBtn, prevBtn, block);
+  // Call function after page load
+  const moveRightBtn = block.querySelector(`.${nextBtn}`);
+  const moveLeftBtn = block.querySelector(`.${prevBtn}`);
+  const itemList = [...block.querySelectorAll('.data-card-items > a')];
+  const observerOptions = {
+    rootMargin: '0px',
+    threshold: 1,
+  };
+
+  function moveDirection(itemWidth, option) {
+    const carouselItems = block.querySelector('.data-card-items');
+    if (option === '+') {
+      carouselItems.scrollLeft += itemWidth;
+    } else {
+      carouselItems.scrollLeft -= itemWidth;
+    }
+  }
+
+  // Button Event Handler
+  moveLeftBtn.addEventListener('click', () => {
+    const carouselItems = block.querySelector('.data-card-items');
+    const totalItems = carouselItems.children.length || 1;
+    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10);
+    moveDirection(itemWidth, '-');
+  }, true);
+
+  moveRightBtn.addEventListener('click', () => {
+    const carouselItems = block.querySelector('.data-card-items');
+    const totalItems = carouselItems.children.length || 1;
+    const itemWidth = parseInt(carouselItems.scrollWidth / totalItems, 10);
+    moveDirection(itemWidth, '+');
+  }, true);
+
+  // Observer Callback Function
+  const callBack = (entries) => {
+    const dir = document.documentElement.dir || 'ltr';
+    let disableLeftBtn = false;
+    let disableRightBtn = false;
+
+    if (dir === 'rtl') {
+      document.querySelector('.next').style.right = 'auto';
+      document.querySelector('.prev').style.right = 'auto';
+      document.querySelector('.next').style.left = '0';
+      document.querySelector('.prev').style.left = '0';
+    }
+
+    entries.forEach((entry) => {
+      const {
+        target,
+      } = entry;
+      if (entry.intersectionRatio >= 1) {
+        target.classList.remove('opacity');
+        target.classList.add('active');
+      } else {
+        target.classList.remove('active');
+        target.classList.add('opacity');
+      }
+    });
+    try {
+      if (entries[0].target.parentElement.children[0].className === 'anchor-tag active') {
+        if (dir === 'rtl') {
+          disableLeftBtn = false;
+          disableRightBtn = true;
+        } else {
+          disableLeftBtn = true;
+          disableRightBtn = false;
+        }
+      } else if (entries[0].target.parentElement.children[entries[0].target.parentElement.children.length - 1].className === 'anchor-tag active') {
+        if (dir === 'rtl') {
+          disableLeftBtn = true;
+          disableRightBtn = false;
+        } else {
+          disableLeftBtn = false;
+          disableRightBtn = true;
+        }
+      }
+      moveLeftBtn.disabled = disableLeftBtn;
+      moveRightBtn.disabled = disableRightBtn;
+    } catch (e) {
+      /* error structure was not as expected */
+    }
+  };
+
+  // Create Observer instance
+  const observer = new IntersectionObserver(callBack, observerOptions);
+
+  // Apply observer on each item
+  itemList.forEach((item) => {
+    observer.observe(item);
+  });
 }
 
 /* Carousel Ends here */
@@ -145,7 +184,7 @@ export default async function decorate(block) {
       row.parentNode.insertBefore(anchor, row);
       anchor.appendChild(row);
     });
-    addCarouselToDataCards(block);
+    createSlider(block);
   }
 
   const isNewsCardVariation = block.classList.contains('news-card-variation');
@@ -170,8 +209,8 @@ export default async function decorate(block) {
       image.className = 'news-card-image';
       if (alt) {
         const pic = image.querySelector('img');
-        const p = alt.querySelector('p');
-        pic.alt = p.textContent.trim();
+        const pTag = alt.querySelector('p');
+        pic.alt = pTag.textContent.trim();
         alt.remove();
       }
       const anchor = a({ class: 'anchor-tag', href: link.textContent });
