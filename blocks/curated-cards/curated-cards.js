@@ -19,6 +19,7 @@ function processTag(tagdiv, tagAuthored) {
 function createFeatureCard(row, placeHolders) {
   const [
     featureImageContent,
+    featureAltContent,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
@@ -27,6 +28,9 @@ function createFeatureCard(row, placeHolders) {
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = '';
+  if (featureAltContent) {
+    featureAltContent.innerHTML = '';
+  }
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
     div({ class: ' feature-card-content-text' }, a({ href: featureLink.textContent }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent))),
@@ -44,7 +48,7 @@ function createFeatureCard(row, placeHolders) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent, decsDiv, linkDiv] = row.children;
+  const [imageContent, alttext, tagContent, headingContent, decsDiv, linkDiv] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -61,6 +65,13 @@ function processRow(row) {
 
   if (imageContent) {
     imageDiv.innerHTML = imageContent.innerHTML;
+    if (alttext) {
+      const pic = imageDiv.querySelector('img');
+      const para = alttext.querySelector('p');
+      if (para) {
+        pic.alt = para.textContent.trim();
+      }
+    }
   }
 
   if (headingContent) {

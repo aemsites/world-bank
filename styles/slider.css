@@ -18,7 +18,7 @@
 .carousel-container .button-container button {
   background-color: var(--white);
   border: 2px solid var(--accent-blue-primary-70);
-  padding: 8px 13px;
+  padding: 6px 11px;
   right: 3%;
   cursor: pointer;
   position: absolute;
@@ -35,7 +35,7 @@
 html[dir="rtl"] .carousel-container .button-container button {
   background-color: var(--white);
   border: 2px solid var(--accent-blue-primary-70);
-  padding: 8px 13px;
+  padding: 6px 11px;
   right: auto;
   left: 3%;
   cursor: pointer;
@@ -45,19 +45,20 @@ html[dir="rtl"] .carousel-container .button-container button {
 
 .carousel-container > .default-content-wrapper > p:first-child {
   font-weight: 800;
-  font-size: 14px;
+  font-size: var(--eyebrow-font-size-m);
   line-height: 15px;
-  padding-bottom: 16px;
+  padding-bottom: var(--spacing-small);
   color: var(--neutral-alpha-57-a);
 }
 
 .carousel-container > .default-content-wrapper > p:nth-child(2) {
   font-weight: 400;
-  font-size: 40px;
+  font-size: var(--font-size-1000);
   line-height: 44px;
-  padding-bottom: 48px;
+  padding-bottom: var(--spacing-xlarge);
   color: var(--accent-blue-primary-90);
   text-transform: uppercase;
+  letter-spacing: -2px;
 }
   
 .carousel-container > .default-content-wrapper > p:nth-child(2) > strong {
@@ -218,7 +219,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel > ul {
-    grid-template-columns: repeat(5, 85%);
+    grid-template-columns: repeat(5, 79%);
     gap: 0 24px;
   }
 
@@ -327,20 +328,19 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel > ul {
-    grid-template-columns: repeat(5, 83%);
+    grid-template-columns: repeat(5, 76%);
     gap: 0 24px;
   }
 }
 
 @media only screen and (width > 1024px) {
   main .section.carousel-container {
-    max-width: var(--screen-width);
     margin: auto;
-    padding: 96px var(--section-gutter-space);
+    padding: 96px 0 96px var(--section-gutter-space);
   }
 
   .carousel-container > .default-content-wrapper {
-    flex: 1;
+    flex: .824;
   }
 
   html[dir="rtl"] .carousel-container > .default-content-wrapper {
@@ -348,9 +348,8 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   html[dir="rtl"] .section.carousel-container {
-    max-width: var(--screen-width);
     margin: auto;
-    padding: 96px var(--section-gutter-space);
+    padding: 96px var(--section-gutter-space) 96px 0;
   }
 
   .carousel-container .button-container a.button:any-link, button {
