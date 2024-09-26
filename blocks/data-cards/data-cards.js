@@ -75,10 +75,16 @@ export default async function decorate(block) {
 
     cards.forEach((row) => {
       row.className = 'news-card';
-      const [tag, title, link, image] = [...row.children];
+      const [tag, title, link, image, alt] = [...row.children];
       tag.className = 'news-card-tag';
       title.className = 'news-card-title';
       image.className = 'news-card-image';
+      if (alt) {
+        const pic = image.querySelector('img');
+        const p = alt.querySelector('p');
+        pic.src = p.textContent.trim();
+        alt.remove();
+      }
       const anchor = a({ class: 'anchor-tag', href: link.textContent });
       link.remove();
 
