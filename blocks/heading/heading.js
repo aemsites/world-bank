@@ -12,8 +12,10 @@ function updateHeadingStructure(block) {
     mainHeadingDiv,
     headerTagDiv,
     suffixDiv,
-    descriptionDiv,
     bottomLineDiv,
+    borderLineClassDiv,
+    spacingTopClassDiv,
+    spacingBottomClassDiv
   ] = children;
 
   const getTextContent = (div) => div?.querySelector('p')?.textContent.trim() || '';
@@ -23,10 +25,17 @@ function updateHeadingStructure(block) {
   const mainHeadingText = getTextContent(mainHeadingDiv);
   const headerTag = getTextContent(headerTagDiv) || 'h2';
   const suffixText = getTextContent(suffixDiv);
-  const descriptionText = getTextContent(descriptionDiv);
   const addBottomLine = getTextContent(bottomLineDiv) === 'true';
+  const borderLineClass = getTextContent(borderLineClassDiv);
+  const spacingTopClass = getTextContent(spacingTopClassDiv);
+  const spacingBottomClass = getTextContent(spacingBottomClassDiv);
 
   headingBlock.innerHTML = '';
+
+  // Add the borderline and spacing classes
+  if (borderLineClass) headingBlock.classList.add(borderLineClass);
+  if (spacingTopClass) headingBlock.classList.add(spacingTopClass);
+  if (spacingBottomClass) headingBlock.classList.add(spacingBottomClass);
 
   // Create eyebrow text element
   const eyebrow = p({ class: 'eyebrowtext' }, eyebrowText);
@@ -35,10 +44,10 @@ function updateHeadingStructure(block) {
   const suffixSpan = span(suffixText);
 
   headerElement.append(prefixSpan, ` ${mainHeadingText} `, suffixSpan);
-  const description = p({ class: 'heading-description' }, descriptionText);
+  
 
   // Append elements to the heading block
-  headingBlock.append(eyebrow, headerElement, description);
+  headingBlock.append(eyebrow, headerElement);
   if (addBottomLine) {
     headingBlock.append(hr());
   }
