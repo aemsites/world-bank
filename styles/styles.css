@@ -129,6 +129,12 @@
   --neutral-solid-80-s: #252e37;
   --neutral-solid-90-s: #181f25;
   --neutral-solid-95-s: #181f25;
+  --priorities-blue-cross-cutting: #004370;
+  --priorities-gray-digital: #5d6472;
+  --priorities-green-planet: #07ab50;
+  --priorities-magenta-infrastructure: #91302f;
+  --priorities-purple-prosperity: #872c8f;
+  --priorities-yellow-people: #f7b841;
   --purple-10: #f1e1ff;
   --purple-20: #e5c7ff;
   --purple-30: #cd95fe;
@@ -515,6 +521,10 @@
   /** Button Padding **/
   --button-vertical-padding: 12px;
   --button-horizontal-padding: 32px;
+
+  /** Button Padding Secondary **/
+  --button-vertical-padding-secondary: 8px;
+  --button-horizontal-padding-secondary: 24px;
 }
 
 /*
@@ -679,6 +689,10 @@
     --heading-font-weight: var(--body-font-weight-bold);
     --label-font-weight: var(--body-font-weight-bold);
     --button-vertical-padding: 16px;
+
+    /** Button Padding Secondary **/
+  --button-vertical-padding-secondary: 12px;
+  --button-horizontal-padding-secondary: 32px;
   }
 }
 
@@ -836,6 +850,10 @@ a:any-link:visited {
   text-decoration-color: var(--purple-70);
 }
 
+html[dir="rtl"] a:any-link {
+  text-align: right;
+}
+
 a:any-link.disabled {
   color: rgb(0 41 77 / 42%);
   cursor: unset;
@@ -859,6 +877,10 @@ p strong > em > a:any-link.disabled {
 
 p strong > em > a:any-link:visited {
   border-bottom: 2px solid transparent;
+}
+
+html[dir="rtl"] p strong > em > a:any-link {
+  text-align: center;
 }
 
 /* buttons */
@@ -1208,8 +1230,17 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-w
   max-width: calc(var(--screen-width) - 28px);
 }
 
+html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
+  padding: 0 28px 0 0;
+  border-radius: 10px 0 0 10px;
+}
+
 main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
   border-radius: 0 0 10px 10px;
+}
+
+html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
+  border-radius: 0 10px 10px 0;
 }
 
 /* Section background image */

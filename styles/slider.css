@@ -54,7 +54,7 @@ html[dir="rtl"] .carousel-container .button-container button {
 .carousel-container > .default-content-wrapper > p:nth-child(2) {
   font-weight: 400;
   font-size: 40px;
-  line-height: var(--nav-height);
+  line-height: 44px;
   padding-bottom: 48px;
   color: var(--accent-blue-primary-90);
   text-transform: uppercase;
@@ -130,7 +130,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   
 .carousel .cards-card-body {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 17px;
   font-weight: 400;
   color: var(--neutral-alpha-95-a);
   padding: 24px 0 0;
@@ -147,15 +147,17 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 }
 
 @media only screen and (width <=1024px) {
-  .carousel-container {
-    max-width: var(--screen-width);
-   margin: auto;
-    flex-direction: column;
-  }
-
-  html[dir="rtl"] .carousel-container {
+  .section.carousel-container {
     max-width: var(--screen-width);
     margin: auto;
+    flex-direction: column;
+    padding: 64px 0;
+  }
+
+  html[dir="rtl"] .section.carousel-container {
+    max-width: var(--screen-width);
+    margin: auto;
+    padding: 64px 0;
   }
 
   .carousel-container > .default-content-wrapper {
@@ -169,7 +171,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 17px;
     padding-bottom: 12px;
     color: var(--neutral-alpha-70-a);
@@ -274,8 +276,9 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     top: 20%; 
   }
   
-  .carousel-container {
+  .section.carousel-container {
     flex-direction: column;
+    padding: 48px 0;
   }
 
   .carousel-container > .default-content-wrapper {
@@ -333,7 +336,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   main .section.carousel-container {
     max-width: var(--screen-width);
     margin: auto;
-    padding: 32px var(--section-gutter-space);
+    padding: 96px var(--section-gutter-space);
   }
 
   .carousel-container > .default-content-wrapper {
@@ -344,10 +347,10 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     padding: 0;
   }
 
-  html[dir="rtl"] .carousel-container {
+  html[dir="rtl"] .section.carousel-container {
     max-width: var(--screen-width);
     margin: auto;
-    padding: 32px var(--section-gutter-space);
+    padding: 96px var(--section-gutter-space);
   }
 
   .carousel-container .button-container a.button:any-link, button {
