@@ -32,6 +32,7 @@ export default function decorate(block) {
     if (alt_) {
       const pic = imageDiv.querySelector('img');
       pic.alt = alt_.querySelector('p').textContent.trim();
+      alt_.remove();
     }
     linkDiv.remove();
     if (!timeDiv.textContent) {
