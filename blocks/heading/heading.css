@@ -4,7 +4,7 @@
 .heading h4,
 .heading h5,
 .heading h6 {
-    color: var( --accent-blue-primary-90);
+    color: var(--text-on-light-highlight);
     margin-bottom: 0;
 }
 
@@ -18,13 +18,18 @@
     line-height: 31.36px;
 }
 
+html[dir="rtl"] .heading-wrapper .heading h2{
+text-align: right;
+
+}
+
 .heading h1 span,
 .heading h2 span,
 .heading h3 span,
 .heading h4 span,
 .heading h5 span,
 .heading h6 span {
-    color: var(--accent-blue-primary-90);
+    color: var(--text-on-light-highlight);
     font-weight: 400;
 }
 
