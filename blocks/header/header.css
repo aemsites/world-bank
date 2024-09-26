@@ -413,7 +413,6 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country {
   text-transform: uppercase;
   display: flex;
   font-weight: 700;
-  color: var(--white);
   font-size: var(--font-size-300);
   color: var(--text-on-dark-emphasis);
   flex-direction: column;
