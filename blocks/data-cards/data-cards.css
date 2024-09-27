@@ -9,7 +9,7 @@
   all:unset;
   background-color: var(--white);
   border: 2px solid var(--accent-blue-primary-70);
-  padding: 8px 13px;
+  padding: 7px 11px;
   border-radius: 50%;
 }
 
@@ -28,7 +28,7 @@
 
 .data-cards.data-card-variation .arrow-buttons {
   display:flex;
-  gap: var(--spacing-xsmall);
+  gap: var(--spacing-small);
   margin-top: var(--spacing-medium);
 }
 
@@ -64,7 +64,7 @@
 
 .data-cards .rte-container > div:nth-child(3) {
   margin-top: 0;    
-  margin-bottom: var(--spacing-huge);
+  margin-bottom: 56px;
 }
 
 .data-cards.data-card-variation .rte-container > div:first-child {
@@ -141,7 +141,7 @@
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
   font-weight: 700;
   font-size: var(--font-size-500);
-  line-height: 125%;
+  line-height: 150%;
   color: var(--neutral-solid-90-s);
   display: block;
   margin-bottom: var(--spacing-medium);
@@ -254,7 +254,7 @@
   /* refactor */
   font-weight: 700;
   font-size: var(--font-size-500);
-  line-height: 150%;
+  line-height: 125%;
   color: var(--neutral-solid-90-s);
 }
 
@@ -347,7 +347,7 @@
   .data-cards.data-card-variation .arrow-buttons {
     display: none;
   } 
-  
+
   .data-cards.data-card-variation .arrow-buttons .button-container {
     display:none;
   }
@@ -393,6 +393,7 @@
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child{
+    line-height: 150%;
     margin-top:0;
     margin-bottom: var(--spacing-medium);
   }
@@ -457,6 +458,7 @@
   }
 
   .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child{
+    line-height: 125%;
     margin-top:160px;
     margin-bottom: var(--spacing-medium);
   }
