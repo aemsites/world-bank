@@ -28,6 +28,10 @@
   position: relative;
 }
 
+.columns > div > div > p {
+  margin: var(--spacing-none);
+}
+
 .columns.columns-transform-teaser > div p {
   margin: 0;
 }
@@ -46,11 +50,13 @@
   text-transform: uppercase;
   margin-bottom: var(--spacing-small);
   line-height: 112%;
+  color: var(--text-on-dark-emphasis);
 }
 
 .columns.columns-transform-teaser > div p:nth-child(2) {
   line-height: 25px;
   font-size: var(--font-size-500);
+  color: var(--text-on-dark-default);
 }
 
 .columns.columns-transform-teaser > div p:nth-child(3) {
@@ -63,11 +69,11 @@
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a {
-  background-color: var(--white);
-  color: var(--accent-blue-primary-70);
+  background-color: var(--background-white);
+  color: var(--background-container-on-light-link-primary-enabled);
   font-size: var(--font-size-300);
   margin: 0;
-  padding: 11px 27px;
+  border: 1px solid var(--button-primary-outline-enabled);
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) em{
@@ -76,9 +82,9 @@
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a {
   background-color: var(--transparent);
-  color: var(--white);
+  color: var(--background-container-on-light-link-secondary-enabled);
   font-size: var(--font-size-300);
-  border-bottom: 2px solid #FFFFFF4D;
+  border-bottom: 2px solid var(--divider-on-dark-subdued);
   border-radius: var(--border-radius-none);
   padding: 10px 0 4px;
   margin: 0;
@@ -162,6 +168,11 @@ html[dir="rtl"] .columns > div {
   .columns h2 {
     font-weight: 400;
   }
+
+  .columns > div > div > h2 {
+    margin-bottom: var(--spacing-xxsmall);
+    color: var(--text-on-light-highlight);
+  }
   
   .columns h2 strong {
     font-weight: 700;
@@ -190,14 +201,6 @@ html[dir="rtl"] .columns > div {
   }
 
 @media (width >= 1024px) {
-  .columns.columns-transform-teaser > div p:nth-child(1) {
-    line-height: 44px;
-  }
-
-  .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a {
-    padding: 14px 0 8px;
-  }
-
   .columns > div {
     flex-direction: unset;
     gap: 32px;
@@ -444,10 +447,6 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
     padding-right: 20px;
     padding-left: unset;
-  }
-
-  .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a {
-    padding: 15px 32px;
   }
 }
 
