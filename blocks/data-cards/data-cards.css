@@ -234,6 +234,11 @@
   border-bottom-color: var(--priorities-magenta-infrastructure);
 }
 
+.data-cards.data-card-variation .data-card-tag.cross-cutting-areas {
+  border-bottom-color: var(--priorities-blue-cross-cutting);
+}
+
+
 
 .data-cards.news-card-variation .rte-container > div:first-child {
   font-size: var(--font-size-1000);
@@ -317,6 +322,23 @@
 .data-cards .news-card .news-card-title.infrastructure::before { 
   background: var(--priorities-magenta-infrastructure);
 }
+
+.data-cards .news-card .news-card-title.people::before { 
+  background: var(--priorities-yellow-people);
+}
+
+.data-cards .news-card .news-card-title.prosperity::before { 
+  background: var(--priorities-purple-prosperity);
+}
+
+.data-cards .news-card .news-card-title.digital::before { 
+  background: var(--priorities-gray-digital);
+}
+
+.data-cards .news-card .news-card-title.cross-cutting-areas::before { 
+  background: var(--priorities-blue-cross-cutting);
+}
+
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p.button-container, 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container {
@@ -517,5 +539,9 @@
 
   .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
     margin:var(--spacing-regular) 0;
+  }
+
+  .data-cards.data-card-variation .arrow-buttons{
+  display: none;
   }
 }
