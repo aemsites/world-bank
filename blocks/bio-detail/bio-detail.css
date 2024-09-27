@@ -64,6 +64,10 @@
   height: 14px;
 }
 
+html[dir="rtl"] .bio-detail .download-image{
+  margin: 0 0 0 9px;
+}
+
 .bio-detail .sections-container p {
   margin: var(--spacing-none);
   color: var(--text-on-light-emphasis);
@@ -131,16 +135,20 @@
 
 .bio-detail .title {
   border-bottom: 2px solid var(--neutral-solid-20-s);
-  margin-bottom: var(--spacing-regular);
+  margin-bottom: 20px;
   font-size: var(--font-size-200);
   font-weight: 800;
-  padding-bottom: var(--spacing-xsmall);
+  padding-bottom: var(--spacing-small);
   color: var(--text-on-light-emphasis);
 }
 
 .block-quote-container .default-content-wrapper p{
     color: var(--text-on-light-emphasis);
     font-size: var(--font-size-500);
+}
+
+.bio-detail .sections-container .job-title div p:nth-child(2) {
+  margin-top: 4px;
 }
 
 @media (width >=768px) {
@@ -168,7 +176,7 @@
   .sections-container .first-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .bio-detail .media-resources {

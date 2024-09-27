@@ -2195,7 +2195,7 @@
         "description": "Heading bottom spacing",
         "valueType": "string",
         "options": [
-          { "name": "Default spacing", "value": "heading-bottom-spacing-default" },
+          { "name": "Default spacing", "value": "heading-bottom-default" },
           { "name": "No space / padding", "value": "heading-bottom-none" },
           { "name": "Spacing tiny", "value": "heading-bottom-tiny" },
           { "name": "Spacing xxsmall", "value": "heading-bottom-xxsmall" },
@@ -2209,6 +2209,19 @@
           { "name": "Spacing huge", "value": "heading-bottom-huge" },
           { "name": "Spacing xhuge", "value": "heading-bottom-xhuge" }
         ]
+      }      
+    ]
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "fragmentPath",
+        "value": "",
+        "required": true,
+        "label": "Fragment Path"
       }
     ]
   }

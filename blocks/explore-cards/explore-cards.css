@@ -23,6 +23,12 @@
     margin-bottom: 0;
 }
 
+.section .explore-cards > .main-heading > div > p{
+    color: var(--text-on-dark-emphasis);
+    font-size: var(--font-size-1000);
+    line-height: 112%;
+}
+
 .explore-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
