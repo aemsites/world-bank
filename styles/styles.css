@@ -1328,3 +1328,16 @@ body.no-scroll {
   word-wrap: normal;
   z-index: 1000;
 }
+
+#who-we-are{
+  margin-bottom: var(--spacing-small);
+  font-size: var(--font-size-1200);
+}
+
+#who-we-are + p  {
+  margin-top: 0;
+}
+
+#who-we-are+p+p {
+  margin-bottom: 0;
+}

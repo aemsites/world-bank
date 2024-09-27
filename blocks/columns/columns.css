@@ -37,7 +37,6 @@
 }
 
 .columns.columns-divider-variant > div > div > p {
-  margin-top: 0 0 var(--spacing-medium);
   font-size: var(--font-size-500);
 }
 
@@ -50,6 +49,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 0 0 0 23px;
 }
 
 .columns.columns-feature-card .columns-feature-card-content > p,
@@ -78,6 +78,14 @@
 
 .columns.columns-transform-teaser > div p:nth-child(4) {
   display: inline-flex;
+}
+
+.columns.columns-divider-variant div div:nth-child(1) p {
+  margin: 0 0 var(--spacing-xlarge);
+}
+
+.columns.columns-divider-variant div div:nth-child(2) p {
+  margin: 0 0 var(--spacing-regular);
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a {
@@ -546,7 +554,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
     font-size: var(--font-size-1000);
     line-height: 31px;
     text-transform: uppercase;
-    color: var(--accent-blue-primary-70);
+    color: var(--accent-blue-primary-90);
 
     strong {
       font-weight: 400;
