@@ -31,18 +31,14 @@
 
 .explore-card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-medium);
-    width: calc(100vw - 68px);
-    overflow-x: scroll;
-    scrollbar-width: none;
 }
 
 .explore-card {
     position: relative;
     border-radius: 10px;
     height: 400px;
-    width: 276px;
     flex:none;
 }
 
@@ -106,17 +102,9 @@
 }
 
 @media (width >=768px) {
-    .explore-card-container {
-        grid-template-columns: 1fr;
-        width: unset;
-        overflow-x: unset;
-    }
-
     .explore-card {
-        position: relative;
         border-radius: 10px;
         height: 350px;
-        width: unset;
     }
 
     .card-title p {
@@ -153,19 +141,4 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-}
-
-@media (width <768px) {
-    .explore-card-container {
-        display: flex;
-        width: calc(100vw - 28px);
-    }
-
-    .explore-card {
-        flex:none;
-    }
-
-    .explore-card:last-child {
-        padding-right: 20px;
-    }
 }
