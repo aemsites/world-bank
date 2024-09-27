@@ -4,9 +4,6 @@
     align-items: center;
 }
 
-.explore-cards-wrapper .main-heading p {
-    margin:  0 0 24px;
-}
 .explore-cards {
     width: 100%;
 }
@@ -24,6 +21,10 @@
     line-height: 125%;
     margin-top: 16px;
     margin-bottom: 0;
+}
+
+.explore-cards-wrapper .main-heading p {
+    margin:  0 0 24px;
 }
 
 .section .explore-cards > .main-heading > div > p{
@@ -105,10 +106,6 @@
 }
 
 @media (width >=768px) {
-    .explore-cards-wrapper .main-heading p {
-        margin:  0 0 28px;
-    }
-
     .explore-card {
         border-radius: 10px;
         height: 350px;
@@ -120,6 +117,10 @@
         margin-bottom: 0;
     }
 
+    .explore-cards-wrapper .main-heading p {
+        margin:  0 0 24px;
+    }
+    
     .card-icon {
         margin: 32px 0;
     }
