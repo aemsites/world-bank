@@ -54,9 +54,9 @@ function createPersonBio(
   const nameJobSocial = div({ class: 'name-job-social' }, bioName, jobTitle);
   const socialMedias = div({ class: 'social-media' });
   const socialMediaIcons = [
-    { link: x, icon: 'ximage.png', name: 'X' },
-    { link: linkedin, icon: 'linkedin.png', name: 'linkedin' },
-    { link: insta, icon: 'insta.png', name: 'instagram' },
+    { link: x, icon: 'profileiconx.png', name: 'X' },
+    { link: linkedin, icon: 'profileiconin.png', name: 'linkedin' },
+    { link: insta, icon: 'profileiconinsta.png', name: 'instagram' },
   ];
 
   socialMediaIcons.forEach(({ link, icon, name }) => {
