@@ -2216,13 +2216,6 @@
     "id": "fragment",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "suffix",
-        "value": "",
-        "label": "Suffix text"
-      },
-      {
         "component": "aem-content",
         "valueType": "string",
         "name": "fragmentPath",
