@@ -1,15 +1,16 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation, CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
+import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
+import { moveInstrumentation, CLASS_MAIN_HEADING, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import { a, div } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
+
+const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
 function processTag(tag) {
   let tagTxt = tag.innerText;
   if (tagTxt) {
     tagTxt = processTags(tagTxt, 'content-type');
     tag.classList.add(tagTxt);
-    // TODO: Read it from placeholder
-    tag.firstElementChild.innerText = tagTxt;
+    tag.firstElementChild.innerText = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
   }
 }
 
