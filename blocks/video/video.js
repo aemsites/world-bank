@@ -1,6 +1,7 @@
 const getDefaultEmbed = (url) => `<div class="embed-video">
-    <iframe src="${url.href}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen=""
-      scrolling="no" allow="encrypted-media" title="Content from ${url.hostname}" loading="lazy">
+    <iframe src="${url.href}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position:absolute;" allowfullscreen="" frameborder="0" 
+      scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      title="Content from ${url.hostname}" loading="lazy" height="100%" width="100%">
     </iframe>
   </div>`;
 
@@ -11,7 +12,6 @@ const loadEmbed = (block, link) => {
 
   const url = new URL(link);
   block.innerHTML = getDefaultEmbed(url);
-  block.classList = 'block video-embed';
   block.classList.add('embed-is-loaded');
 };
 
