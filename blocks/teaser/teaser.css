@@ -39,6 +39,12 @@
     border: 1px solid white;
 }
 
+html[dir="rtl"] .teaser-wrapper .video-container .video-play,
+html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
+    right: 20px;
+    left: auto;
+}
+
 .video-container .video-play .controls, .video-container .video-pause .controls {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(120%) contrast(100%);
 }
@@ -83,7 +89,7 @@
 
 .teaser-wrapper .button-container {
     border-radius: 100px;
-    padding: 15px 32px 32px 18px;
+    padding: 15px 0 32px;
 }
 
 .teaser-wrapper .button-container .button {
@@ -98,7 +104,7 @@
 
 .teaser-wrapper .button-container .button.dark-bg {
     background-color: var(--white);
-    color: var(--accent-blue-primary-90);
+    color: var(--background-container-on-light-link-primary-enabled);
 }
 
 .teaser-wrapper .button-container .button.dark-bg:focus {
@@ -234,6 +240,9 @@
         padding: 19% 12% 0;
     }
     
+    .teaser-wrapper .teaser-title-wrapper {
+     width: 60%;
+    }
 }
 
 @media (width <=768px) {
@@ -267,6 +276,7 @@
 
     .teaser-wrapper .teaser-title-wrapper {
         margin-top: 1.5%;
+        width: 70%;
     }
 
     .teaser-wrapper .teaser-title {
@@ -291,11 +301,16 @@
         font-size: 3.5vw;
     }
 
+    .teaser-wrapper .button-container {
+        padding: 15px 0 32px;
+    }
+
 }
 
 @media (width <= 390px) {
     main .section > div.teaser-wrapper {
         padding: 0;
+        margin-top: 0;
     }
     
     .teaser-wrapper {
@@ -303,8 +318,9 @@
     }
 
     .teaser-wrapper > .teaser.block > .teaser-container {
-        height: 417px;
-        width: 417px;
+        height: 471px;
+        width: auto;
+        overflow: hidden;
     }
 
     .teaser-wrapper > .teaser.block > .teaser-container > .teaser-swoosh-wrapper {
@@ -318,13 +334,14 @@
     }
 
     .teaser-wrapper > .teaser.block > .teaser-container > .teaser-swoosh-wrapper > .swoosh-bg {
-        height: 95%;
-        width: 95%;
+        height: 410px;
+        width: 410px;
         margin-left: -2.5px;
     }
 
     .teaser-wrapper .swoosh-layers > .swoosh.first {
-        height: 100%;
-        width: 100%;
+        height: 425px;
+        width: 425px;
     }
+    
 }

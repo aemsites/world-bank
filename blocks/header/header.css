@@ -103,6 +103,12 @@ header .nav-menu-overlay .nav-menu {
   margin-right: 10px;
 }
 
+html[dir="rtl"] .language-container{
+  left: 42px;
+  right: auto;
+  text-align: end;
+}
+
 .nav-item-expanded-active {
   border: 1px solid var(--neutral-solid-15-s);
   border-radius: 5px;
@@ -136,6 +142,10 @@ header .nav-menu-overlay .nav-menu {
   content: "";
   transform: rotateZ(45deg);
   margin-left: 6px;
+}
+
+html[dir="rtl"] .language-toggle::after{
+  margin-right: 6px;
 }
 
 .language-toggle-border {
@@ -368,6 +378,16 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   border: 1px;
 }
 
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::before {
+  transform: rotate(145deg);
+}
+
+html[dir = 'rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
+  margin-right: 8px;
+}
+
+
+
 header .nav-menu-overlay .nav-menu-column.left ul li span::after {
   content: "";
   width: 8px;
@@ -395,6 +415,18 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   border-radius: 1px;
 }
 
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::after {
+  transform: rotate(-145deg);
+}
+
+html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
+  margin-right: -14px;
+  border-top: 3px solid var(--neutral-solid-30-s);
+  border-right: 3px solid var(--neutral-solid-30-s);
+  border-bottom: none;
+  border-left: none;
+}
+
 header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
   content: "";
   width: 3px;
@@ -413,9 +445,11 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country {
   text-transform: uppercase;
   display: flex;
   font-weight: 700;
-  color: var(--white);
+  font-size: var(--font-size-300);
+  color: var(--text-on-dark-emphasis);
   flex-direction: column;
   position: relative;
+  gap: 24px;
   justify-content: start;
   align-items: start;
 }
@@ -614,7 +648,7 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country p {
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 55px;
+  top: 70px;
   background-color: var(--accent-blue-primary-120);
   left: 60vw;
   z-index: 3;
@@ -1134,6 +1168,11 @@ header nav .nav-tools {
     margin-top: 0;
   }
 
+  html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right {
+    padding-right: var(--section-gutter-space);
+    padding-left: var(--spacing-none);
+  }
+
   header .nav-menu-overlay .nav-menu-column.right .submenu-main-title {
     display: none;
   }
@@ -1295,6 +1334,21 @@ header nav .nav-tools {
     align-items: center;
   }
 
+  html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right>.submenu {
+    text-align: right;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.left>ul {
+    border-left: 1px solid var(--divider-on-dark-default);
+    border-right: none;
+    text-align: right;
+  }
+
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left>ul>li.selected{
+    border-radius: 0 10px 10px 0;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1414,6 +1468,10 @@ header nav .nav-tools {
     /* margin-top: -20px; */
   }
 
+  html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"] {
+    right: 50px;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1447,12 +1505,16 @@ header nav .nav-tools {
     height: 30px;
     top: 40px;
     background-color: var(--accent-blue-primary-120);
-    left: 50rem;
+    left: 54rem;
     z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+  }
+
+  html[dir='rtl']   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
+    right: 50rem;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
@@ -1537,7 +1599,7 @@ header nav .nav-tools {
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
     left: 31rem;
-    top: 80px;
+    top: 93px;
   }
 }
 

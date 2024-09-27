@@ -399,6 +399,12 @@
   --text-on-state-success-emphasis: var(--green-10);
   --text-on-state-warning-default: var(--yellow-20);
   --text-on-state-warning-emphasys: var(--yellow-10);
+  --button-primary-outline-enabled: var(--background-white);
+  --button-primary-background-enabled: var(--accent-blue-primary-70);
+  --button-secondary-outline-enabled: var(--accent-blue-primary-70);
+  --button-primary-label-default: var(--background-white);
+  --button-secondary-background-enabled: var(--background-white);
+  --button-secondary-label-enabled: var(--accent-blue-primary-70);
 
   /* number */
   --border-radius-none: 0rem;
@@ -427,6 +433,7 @@
   --size-icon-regular: 1rem;
   --size-icon-large: 1.25rem;
   --size-icon-xxlarge: 4rem;
+  --padding-margins-sp1: 0.75rem;
 
   /* typography */
   --font-size-100: 0.75rem;
@@ -803,6 +810,10 @@ a:any-link {
   text-align: left;
 }
 
+html:lang(ar) a {
+  text-align: right;
+}
+
 p strong > em > a:any-link {
   background-color: transparent;
   color: var(--accent-blue-primary-70);
@@ -888,17 +899,17 @@ button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 1px solid transparent;
+  border: 1px solid var(--button-primary-outline-enabled);
   padding: var(--button-vertical-padding) var(--button-horizontal-padding);
   font-style: normal;
   cursor: pointer;
-  color: var(--white);
-  background-color: var(--accent-blue-primary-70);
+  color: var(--button-primary-label-default);
+  background-color: var(--button-primary-background-enabled);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: var(--border-radius-x-large);
 }
 
 a.button:hover,
@@ -926,8 +937,8 @@ button:disabled:hover {
 a.button.secondary,
 button.secondary {
   background-color: unset;
-  border: 2px solid var(--accent-blue-primary-70);
-  color: var(--accent-blue-primary-70);
+  border: 2px solid var(--button-secondary-outline-enabled);
+  color: var(--button-secondary-label-enabled);
 }
 
 a.button.secondary:hover,
@@ -1213,7 +1224,7 @@ main .section[class*='bg-'][data-sec-inside-container="true"] {
 main .section[class*='bg-'][data-sec-inside-container="true"] > div {
   max-width: calc(var(--screen-width) - var(--section-container-space) - var(--section-container-space));
   padding: var(--section-container-space);
-  border-radius: 8px;
+  border-radius: var(--border-radius-medium);
   position: relative;
 }
 
@@ -1225,15 +1236,11 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-w
 
 html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
   padding: 0 28px 0 0;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
   border-radius: 0 0 10px 10px;
-}
-
-html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
-  border-radius: 0 10px 10px 0;
 }
 
 /* Section background image */
@@ -1250,10 +1257,6 @@ main .section.bg-image .sec-img {
 @media (width >= 1024px) {
   main .section.bg-image .sec-img {
     top: -20px;
-  }
-
-  main .section[class*='bg-'][data-sec-inside-container="true"] > div {
-    border-radius: 10px;
   }
 
   main .section[data-sec-width="true"][data-sec-inside-container="true"] > div {

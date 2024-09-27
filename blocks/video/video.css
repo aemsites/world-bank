@@ -1,0 +1,19 @@
+.video {
+  text-align: center;
+  width: 100%;
+  margin: 32px auto;
+}
+
+.video > div {
+  display: flex;
+  justify-content: center;
+}
+
+.video .embed-video {
+  left: 0;
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  border: 1px solid #1e1e1e;
+}
