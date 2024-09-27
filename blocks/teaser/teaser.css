@@ -40,7 +40,7 @@
 }
 
 html[dir="rtl"] .teaser-wrapper .video-container .video-play,
-.teaser-wrapper .video-container .video-pause {
+html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
     right: 20px;
     left: auto;
 }

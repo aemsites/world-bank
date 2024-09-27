@@ -143,6 +143,10 @@ input:not(:placeholder-shown) + .floating-placeholder {
     width: 150px;
   }
 
+  html[dir="rtl"] .email-signup-container button#signup-btn-desktop {
+    border-radius: 50px 0 0 50px;
+  }
+
   .email-signup-container .input-group {
     display: flex;
   }
