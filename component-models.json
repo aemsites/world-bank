@@ -2209,6 +2209,19 @@
           { "name": "Spacing huge", "value": "heading-bottom-huge" },
           { "name": "Spacing xhuge", "value": "heading-bottom-xhuge" }
         ]
+      },
+      {
+        "id": "fragment",
+        "fields": [
+          {
+            "component": "aem-content",
+            "valueType": "string",
+            "name": "fragmentPath",
+            "value": "",
+            "required": true,
+            "label": "Fragment Path"
+          }
+        ]
       }
     ]
   }
