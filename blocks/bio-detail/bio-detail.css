@@ -101,24 +101,6 @@ html[dir="rtl"] .bio-detail .download-image{
   margin-top: var(--spacing-regular);
 }
 
-/*
-.bio-detail .sections-container .name-job-social .social-media .social-media-link {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-white);
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.bio-detail .sections-container .name-job-social .social-media .social-media-link:hover {
-  border: 2px solid var(--accent-blue-primary-40);
-}
-*/
-
 .bio-detail .social-media-link img {
   border-radius: 50%;
   border: 2px solid transparent;

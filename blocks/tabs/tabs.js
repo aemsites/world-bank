@@ -2,7 +2,7 @@ import { getMetadata, toClassName, fetchPlaceholders } from '../../scripts/aem.j
 import {
   a, button, div, li, ul,
 } from '../../scripts/dom-helpers.js';
-import { getLanguage, fetchData } from '../../scripts/utils.js';
+import { getLanguage, fetchData, scriptEnabled } from '../../scripts/utils.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 const langCode = getLanguage();
@@ -165,6 +165,8 @@ function removeSpinner(tabPanel) {
 async function decorateTab(tabPanel, type) {
   tabPanel.innerHTML = '';
   showSpinner(tabPanel);
+
+  if (!scriptEnabled()) return;
 
   const url = await getTabUrl(type);
   const data = await fetchDataForTab(type, url);
