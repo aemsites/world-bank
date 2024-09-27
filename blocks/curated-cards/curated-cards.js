@@ -6,12 +6,14 @@ import {
 import { processTags } from '../../scripts/utils.js';
 
 const FEATURE_BTN_LABEL = 'curated-banner-button-label';
+const MORE_TOP_STORY = 'more-top-story-label';
+const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
-function processTag(tagdiv, tagAuthored) {
+function processTag(tagdiv, tagAuthored, placeholders) {
   let tagValue = tagAuthored.innerText;
   if (tagValue) {
     tagValue = processTags(tagValue, 'content-type');
-    tagdiv.textContent = tagValue;
+    tagdiv.textContent = placeholders[toCamelCase(tagValue)] || tagValue;
   }
 }
 
@@ -60,7 +62,7 @@ function processRow(row) {
   decsDiv.remove();
 
   if (tagContent) {
-    processTag(tagElement, tagContent);
+    processTag(tagElement, tagContent, listOfAllPlaceholdersData);
   }
 
   if (imageContent) {
@@ -89,7 +91,6 @@ function processRow(row) {
 export default async function decorate(block) {
   const ulElement = ul();
   const curatedCardsInputList = Array.from(block.children);
-  const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
   if (curatedCardsInputList.length > 0) {
     const featureCard = createFeatureCard(curatedCardsInputList[0], listOfAllPlaceholdersData);
@@ -118,7 +119,7 @@ export default async function decorate(block) {
         { class: 'curated-cards list' },
         div(
           { class: 'curated-cards-line-div' },
-          div({ class: 'line-text' }, 'MORE TOP STORIES'),
+          div({ class: 'line-text' }, listOfAllPlaceholdersData[toCamelCase(MORE_TOP_STORY)] || 'MORE TOP STORIES'),
           div({ class: 'line' }),
         ),
         ulElement,
