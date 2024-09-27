@@ -22,7 +22,7 @@ import {
   PATH_PREFIX,
 } from './utils.js';
 
-const LCP_BLOCKS = []; // add your LCP blocks to the list
+const LCP_BLOCKS = ['bio-detail']; // add your LCP blocks to the list
 export const CLASS_MAIN_HEADING = 'main-heading';
 
 /**
