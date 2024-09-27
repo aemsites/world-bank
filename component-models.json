@@ -2221,6 +2221,14 @@
         "name": "suffix",
         "value": "",
         "label": "Suffix text"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "fragmentPath",
+        "value": "",
+        "required": true,
+        "label": "Fragment Path"
       }
     ]
   }
