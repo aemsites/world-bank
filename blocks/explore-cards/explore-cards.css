@@ -32,7 +32,7 @@
 .explore-card-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-medium);
+    gap: 32px;
 }
 
 .explore-card {
@@ -43,8 +43,8 @@
 }
 
 .card-icon {
-    width: 72px;
-    height: 72px;
+    width: 70px;
+    height: 70px;
     background-color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -97,7 +97,7 @@
 .story-type {
     font-size: var(--font-size-100);
     font-weight: 700;
-    line-height: 13.2px;
+    line-height: 16px;
     letter-spacing: 0.06em;
 }
 
