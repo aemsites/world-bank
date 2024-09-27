@@ -86,7 +86,7 @@
   font-size: var(--font-size-300);
   border-bottom: 2px solid var(--divider-on-dark-subdued);
   border-radius: var(--border-radius-none);
-  padding: 10px 0 4px;
+  padding: 12px 0 4px;
   margin: 0;
 }
 
