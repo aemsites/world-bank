@@ -11,7 +11,7 @@
 .story-type p {
     font-size: var(--font-size-100);
     font-weight: 700;
-    line-height: 13.2px;
+    line-height: 16px;
     letter-spacing: 0.06em;
 }
 
@@ -141,4 +141,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .explore-card-container .main-heading p {
+        margin:  0 0 58px;
+    }
 }
