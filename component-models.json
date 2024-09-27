@@ -2216,12 +2216,11 @@
     "id": "fragment",
     "fields": [
       {
-        "component": "aem-content",
+        "component": "text",
         "valueType": "string",
-        "name": "fragmentPath",
+        "name": "suffix",
         "value": "",
-        "required": true,
-        "label": "Fragment Path"
+        "label": "Suffix text"
       }
     ]
   }
