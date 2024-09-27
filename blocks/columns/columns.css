@@ -152,6 +152,10 @@ html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col{
   justify-content: flex-end;
 }
 
+.columns.columns-divider-variant > div {
+  gap: var(--section-gutter-space);
+}
+
 html[dir="rtl"] .columns > div {
   text-align: right;
 }
@@ -332,7 +336,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 .columns.columns-divider-variant > div > div:last-child {
   border-left: 2px solid var(--neutral-solid-10-s);
   border-right-width: 0;
-  padding-left: 10px;
+  padding-left: 28px;
   padding-right: unset;
 }
 
@@ -361,6 +365,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 }
 
 @media (width >= 768px) {
+  .columns.columns-divider-variant > div {
+    gap: 32px;
+  }
+
   .columns.columns-feature-card > div > div {
     display: grid;
     grid-template-columns: 228px 1fr;
@@ -370,6 +378,14 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
     position: relative;
     column-gap: 28px;
     margin-bottom: var(--spacing-xhuge);
+  }
+
+  .columns.columns-divider-variant > div > div:last-child {
+    padding-left: 32px;
+  }
+
+  html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
+    padding-left: 32px;
   }
 
   .columns.columns-feature-card > div > div > p:first-child {
@@ -484,12 +500,12 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   }
 
   .columns.columns-divider-variant > div > div:last-child {
-    padding-left: 20px;
+    padding-left: 48px;
     padding-right: unset;
   }
   
   html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
-    padding-right: 20px;
+    padding-right: 48px;
     padding-left: unset;
   }
 }
@@ -589,8 +605,12 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
   border-right: 2px solid  var(--neutral-solid-10-s);
   border-left-width: 0;
-  padding-right: 10px;
+  padding-right: 28px;
   padding-left: unset;
+}
+
+.columns.columns-divider-variant > div > div:last-child ul{
+padding-left: 22px;
 }
 
 .columns.columns-image-left {
@@ -624,6 +644,10 @@ html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
   .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
     font-size: var(--font-size-1000);
     line-height: 44px;
+  }
+  
+  .columns.columns-divider-variant > div {
+    gap: 32px;
   }
 
 }
