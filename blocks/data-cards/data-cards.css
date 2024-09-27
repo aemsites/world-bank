@@ -177,7 +177,7 @@
 .data-cards.data-card-variation > .data-card-items .data-card {
   box-sizing: border-box;
   border-radius: 8px;
-  min-height: 388px;
+  min-height: 100%;
   padding: var(--spacing-large);
   background-color: var(--background-white);
   text-align: left;
