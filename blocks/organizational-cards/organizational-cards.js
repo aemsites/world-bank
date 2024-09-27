@@ -18,11 +18,15 @@ export default async function decorate(block) {
   picEl.classList.add('bg-wrapper');
   picEl.appendChild(gradOverlayEl);
 
-  [...cards].forEach((card) => {
+  [...cards].forEach((card, index) => {
     const contentWrapper = document.createElement('div');
     contentWrapper.classList.add('card-content-wrapper');
-
-    card.classList.add('organizational-card', 'collapsed');
+    if (index !== 1) {
+      card.classList.add('organizational-card', 'collapsed');
+    }
+    else{
+      card.classList.add('organizational-card');
+    }
     const acronymEl = card.children[0];
     acronymEl.classList.add('card-acronym');
     card.children[1].classList.add('card-title');
