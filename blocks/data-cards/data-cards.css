@@ -154,7 +154,7 @@
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container a, .data-cards.news-card-variation .rte-container>div:nth-child(3)>div>p.button-container a {
-  padding: var(--button-vertical-padding-secondary) var(--button-horizontal-padding-secondary);
+  padding: 10px 30px;
   margin: 0 0 var(--spacing-xsmall);
 }
 
@@ -181,7 +181,6 @@
   min-height: 100%;
   padding: var(--spacing-large);
   background-color: var(--background-white);
-  text-align: left;
   min-width: 276px;
   border: 1px solid #D9D9D9;
 }
@@ -287,6 +286,10 @@
   color: var(--text-on-light-subdued);
 }
 
+html[dir="rtl"] .data-cards .news-card .news-card-tag {
+  padding: 0 18px 0 0;
+}
+
 .data-cards .news-card .news-card-title {
   order: 2;
   position: relative;
@@ -296,6 +299,10 @@
   line-height: 116%;
   color: var(--background-container-on-light-link-primary-enabled);
   margin-bottom: var(--spacing-medium);
+}
+
+html[dir="rtl"] .data-cards .news-card .news-card-title {
+  padding: 0 18px 0 0;
 }
 
 .data-cards.news-card-variation.block .news-card-items .news-card  > .news-card-title > p {
@@ -318,6 +325,10 @@
   left: 0;
   top: -14px;
   z-index: 1;
+}
+
+html[dir="rtl"] .data-cards .news-card .news-card-title::before {
+  right: 0;
 }
 
 .data-cards .news-card .news-card-title.planet::before {
