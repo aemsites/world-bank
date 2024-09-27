@@ -52,7 +52,7 @@
   font-size: var(--font-size-300);
   line-height: 20px;
   padding: var(--spacing-regular) 0 var(--spacing-regular);
-  border-top: 2px solid var(--neutral-alpha-08-a);
+  border-top: 2px solid var(--divider-on-light-subdued);
   margin-top: var(--spacing-xlarge);
 }
 
@@ -63,7 +63,7 @@
 .cards-container .rp-card .text-content .card-btn div {
   font-size: var(--font-size-300);
   line-height: 22px;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
   font-weight: 700;
   width: max-content;
   border-bottom: 2px solid #0049724d;

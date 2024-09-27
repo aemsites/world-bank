@@ -140,6 +140,7 @@ html[dir="rtl"] .bio-detail .download-image{
   font-weight: 800;
   padding-bottom: var(--spacing-small);
   color: var(--text-on-light-emphasis);
+  line-height: 15px;
 }
 
 .block-quote-container .default-content-wrapper p{
