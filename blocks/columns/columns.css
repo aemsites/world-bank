@@ -51,6 +51,7 @@
 .columns.columns-divider-variant > div > div > p {
   margin-top: 0 0 var(--spacing-medium);
   font-size: var(--font-size-500);
+  line-height: 150%;
 }
 
 .columns.columns-divider-variant > div > div > ul{
@@ -237,6 +238,7 @@ html[dir="rtl"] .columns > div {
     font-size:var(--font-size-500);
     line-height: 125%;
     margin:var(--spacing-none);
+    color: var(--text-on-dark-emphasis);
   }
 
 @media (width >= 1024px) {
@@ -425,6 +427,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 @media (768px <= width < 1024px) {
   .columns.columns-divider-variant > div > div:first-child > p {
     font-size: var(--font-size-600);
+    line-height: 25px;
   }
 
   .columns.columns-transform-teaser .columns-img-col {
