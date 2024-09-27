@@ -121,8 +121,11 @@ export default async function decorate(block) {
   mediaInquiries.className = 'media-inquiries';
   resources.className = 'resources';
   const profileImg = profileImage.querySelector('div > picture > img');
-  const optimizedPic = createOptimizedPicture(profileImg.src, 'profile-img', false, [{ width: '460', height: '460', loading: 'eager' }]);
-  moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
+  const optimizedPic = createOptimizedPicture(profileImg.src, displayName.innerText, true);
+  const newProfilePic = optimizedPic.querySelector('img');
+  newProfilePic.width = 460;
+  newProfilePic.height = 460;
+  moveInstrumentation(profileImg, newProfilePic);
   profileImg.closest('picture').replaceWith(optimizedPic);
 
   const mediaTargetDiv = block.querySelector('.media-inquiries');
