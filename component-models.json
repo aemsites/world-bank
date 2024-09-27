@@ -2184,5 +2184,18 @@
         "label": "Fragment Path"
       }
     ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "videoUrl",
+        "value": "",
+        "label": "Video URL",
+        "required": true
+      }
+    ]
   }
 ]
