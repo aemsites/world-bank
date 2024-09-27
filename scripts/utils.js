@@ -220,3 +220,13 @@ export function getQueryString(key = 'tip', path = window.location.href) {
   const pageUrl = new URL(path);
   return pageUrl.searchParams.get(key);
 }
+
+/**
+ * Check if 3rd party scripts are enabled or not.
+ * @returns
+ */
+export function scriptEnabled() {
+  if (getQueryString('tip') === 'noscript') return false;
+
+  return true;
+}

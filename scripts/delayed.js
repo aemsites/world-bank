@@ -7,7 +7,7 @@ import {
   span, i,
 } from './dom-helpers.js';
 import {
-  getLanguage, fetchLanguageNavigation, isInternalPage, getQueryString, PATH_PREFIX,
+  getLanguage, fetchLanguageNavigation, isInternalPage, scriptEnabled, PATH_PREFIX,
 } from './utils.js';
 /**
  * Swoosh on page
@@ -132,7 +132,7 @@ function buildTwitterLinks() {
 }
 
 async function loadAdobeLaunch() {
-  if (getQueryString('tip') === 'noaa') { return; }
+  if (!scriptEnabled()) { return; }
 
   const config = await fetchPlaceholders(PATH_PREFIX);
   const env = config.environment || 'Dev';
