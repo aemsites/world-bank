@@ -86,7 +86,7 @@
   font-size: var(--font-size-300);
   border-bottom: 2px solid var(--divider-on-dark-subdued);
   border-radius: var(--border-radius-none);
-  padding: 10px 0 4px;
+  padding: 12px 0 4px;
   margin: 0;
 }
 
@@ -95,6 +95,11 @@
   right: 0;
   top: -110px;
   z-index: 11;
+}
+
+html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col{
+  left: 0;
+  right: auto;
 }
 
 /* Column alignment - Start */
@@ -223,6 +228,10 @@ html[dir="rtl"] .columns > div {
   margin-top: var(--spacing-none);
   margin-bottom: var(--spacing-large);
   text-transform: uppercase;
+}
+
+html[dir="rtl"] .columns.columns-transform-teaser>div p:nth-child(4) {
+  margin-right: 30px;
 }
 
 .columns.columns-feature-card .columns-feature-card-thumbnail {
