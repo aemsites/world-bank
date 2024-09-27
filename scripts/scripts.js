@@ -17,7 +17,6 @@ import {
 import {
   getLanguage,
   createSource,
-  getEnvType,
   formatDate,
   setPageLanguage,
   PATH_PREFIX,
@@ -244,7 +243,7 @@ async function renderWBDataLayer() {
     siteInfo: {
       siteLanguage: getLanguage() || 'en',
       siteType: config.analyticsSiteType || 'main',
-      siteEnv: getEnvType() || 'dev',
+      siteEnv: config.environment || 'Dev',
     },
 
     techInfo: {
