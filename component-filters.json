@@ -9,7 +9,7 @@
   },
   {
     "id": "column",
-    "components": ["text", "image", "button", "title"]
+    "components": ["text", "image", "button", "title" ]
   },
   {
     "id": "section",
@@ -38,7 +38,8 @@
       "breadcrumb",
       "block-quote",
       "impact-cards",
-      "heading"
+      "heading",
+      "fragment"
     ]
   },
   {
