@@ -106,6 +106,7 @@ header .nav-menu-overlay .nav-menu {
 html[dir="rtl"] .language-container{
   left: 42px;
   right: auto;
+  text-align: end;
 }
 
 .nav-item-expanded-active {
