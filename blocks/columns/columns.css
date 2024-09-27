@@ -28,6 +28,18 @@
   position: relative;
 }
 
+.column-layout-67-33 > div > div > p {
+  font-size: var(--font-size-500);
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: -0.25px;
+  color: var(--text-on-light-emphasis);
+}
+
+.column-layout-67-33 > div > div > p > a {
+  margin: 0;
+}
+
 .columns > div > div > p {
   margin: var(--spacing-none);
 }
@@ -38,6 +50,18 @@
 
 .columns.columns-divider-variant > div > div > p {
   margin-top: 0 0 var(--spacing-medium);
+  font-size: var(--font-size-500);
+}
+
+.columns.columns-divider-variant > div > div > ul{
+  font-size: var(--font-size-500);
+  line-height: 125%;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+  color: var(--text-on-light-default);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .columns.columns-feature-card .columns-feature-card-content > p,
@@ -177,6 +201,12 @@ html[dir="rtl"] .columns > div {
     margin-bottom: var(--spacing-xxsmall);
     color: var(--text-on-light-highlight);
   }
+
+  .column-layout-67-33 > div > div > h2 {
+    line-height: 112%;
+    letter-spacing: -0.03em;
+    margin-top: 0;
+  }
   
   .columns h2 strong {
     font-weight: 700;
@@ -217,7 +247,8 @@ html[dir="rtl"] .columns > div {
 }
 
 .columns.columns-divider-variant > div > div:first-child > p {
-  font-size: var(--font-size-600);
+  font-size: var(--font-size-700);
+  line-height: 116%;
 }
 
 .columns.columns-feature-card > div > div > p:first-child {
@@ -383,6 +414,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 }
 
 @media (768px <= width < 1024px) {
+  .columns.columns-divider-variant > div > div:first-child > p {
+    font-size: var(--font-size-600);
+  }
+
   .columns.columns-transform-teaser .columns-img-col {
     right: -65px;
   }
