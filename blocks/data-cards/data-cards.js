@@ -36,6 +36,8 @@ function arrowIcon(props) {
   icon.alt = `${props}`;
   icon.loading = 'lazy';
   icon.dataset.iconName = `${props}`;
+  icon.width = '14';
+  icon.height = '12';
   return icon;
 }
 
