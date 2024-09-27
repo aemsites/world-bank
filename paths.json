@@ -58,12 +58,12 @@
     "/content/world-bank/corporate/ext/fr/data/leadership/icsid:/ext/fr/leadership/icsid.json",
     "/content/world-bank/corporate/ext/es/data/leadership/icsid:/ext/es/leadership/icsid.json",
     "/content/world-bank/corporate/ext/ar/data/leadership/icsid:/ext/ar/leadership/icsid.json",
-    "/content/world-bank.resource/en/query-index.json:/ext/en/query-index.json",
-    "/content/world-bank.resource/zh/query-index.json:/ext/zh/query-index.json",
-    "/content/world-bank.resource/ru/query-index.json:/ext/ru/query-index.json",
-    "/content/world-bank.resource/fr/query-index.json:/ext/fr/query-index.json",
-    "/content/world-bank.resource/es/query-index.json:/ext/es/query-index.json",
-    "/content/world-bank.resource/ar/query-index.json:/ext/ar/query-index.json",
+    "/content/world-bank.resource/ext/en/query-index.json:/ext/en/query-index.json",
+    "/content/world-bank.resource/ext/zh/query-index.json:/ext/zh/query-index.json",
+    "/content/world-bank.resource/ext/ru/query-index.json:/ext/ru/query-index.json",
+    "/content/world-bank.resource/ext/fr/query-index.json:/ext/fr/query-index.json",
+    "/content/world-bank.resource/ext/es/query-index.json:/ext/es/query-index.json",
+    "/content/world-bank.resource/ext/ar/query-index.json:/ext/ar/query-index.json",
     "/content/world-bank/corporate/placeholders:/ext/placeholders.json"
 
   ],
