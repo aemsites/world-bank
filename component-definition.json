@@ -230,7 +230,8 @@
                     "curated-card-tags": "world-bank:content-type/event",
                     "curated-card-title": "Curated Card Title",
                     "curated-card-description": "Card Description",
-                    "curated-card-link": "/content/world-bank/global/en"
+                    "curated-card-link": "/content/world-bank/global/en",
+                    "alttext": "default alt"
                   },
                   "item2": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -240,7 +241,8 @@
                     "curated-card-tags": "world-bank:content-type/event",
                     "curated-card-title": "Curated Card Title",
                     "curated-card-description": "Card Description",
-                    "curated-card-link": "/content/world-bank/global/en"
+                    "curated-card-link": "/content/world-bank/global/en",
+                    "alttext": "default alt"
                   },
                   "item3": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -250,7 +252,8 @@
                     "curated-card-tags": "world-bank:content-type/feature story",
                     "curated-card-title": "Curated Card Title",
                     "curated-card-description": "Card Description",
-                    "curated-card-link": "/content/world-bank/global/en"
+                    "curated-card-link": "/content/world-bank/global/en",
+                    "alttext": "default alt"
                   },
                   "item4": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -260,7 +263,8 @@
                     "curated-card-tags": "evworld-bank:content-type/event",
                     "curated-card-title": "Curated Card Title",
                     "curated-card-description": "Card Description",
-                    "curated-card-link": "/content/world-bank/global/en"
+                    "curated-card-link": "/content/world-bank/global/en",
+                    "alttext": "default alt"
                   }
                 }
               }
@@ -528,7 +532,8 @@
                     "mini-card-date": "July 18",
                     "mini-card-time": "8:30 AM",
                     "mini-card-link": "/content/world-bank/global/en",
-                    "mini-card-location": "city, country"
+                    "mini-card-location": "city, country",
+                    "alt": "default alt"
                   },
                   "item2": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -539,7 +544,8 @@
                     "mini-card-title": "Mini Card Title",
                     "mini-card-date": "July 18",
                     "mini-card-time": "",
-                    "mini-card-link": "/content/world-bank/global/en"
+                    "mini-card-link": "/content/world-bank/global/en",
+                    "alt": "default alt"
                   },
                   "item3": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
@@ -550,7 +556,8 @@
                     "mini-card-title": "Mini Card Title",
                     "mini-card-date": "July 18",
                     "mini-card-time": "",
-                    "mini-card-link": "/content/world-bank/global/en"
+                    "mini-card-link": "/content/world-bank/global/en",
+                    "alt": "default alt"
                   }
                 }
               }
