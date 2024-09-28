@@ -78,7 +78,7 @@ async function loadFonts() {
 // eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
-    const pictureElement = document.querySelector('.default-content-wrapper > p > picture');
+    const pictureElement = main.querySelector('p > picture');
     if (pictureElement) {
       const pElement = pictureElement.parentElement;
       pElement.className = 'image-container';
