@@ -24,6 +24,7 @@ import {
 
 const LCP_BLOCKS = ['bio-detail']; // add your LCP blocks to the list
 export const CLASS_MAIN_HEADING = 'main-heading';
+export const LANGUAGE_ROOT = `/ext/${getLanguage()}`;
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -300,8 +301,7 @@ function loadDelayed() {
 export async function fetchSearch() {
   window.searchData = window.searchData || {};
   if (Object.keys(window.searchData).length === 0) {
-    const lang = getLanguage();
-    const path = `/${lang}/query-index.json?limit=500&offset=0`;
+    const path = `${LANGUAGE_ROOT}/query-index.json?limit=500&offset=0`;
 
     const resp = await fetch(path);
     window.searchData = JSON.parse(await resp.text()).data;
