@@ -231,7 +231,7 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
     opacity: 0.95;
 }
 
-@media (width <=1024px) {
+@media (width < 1024px) {
     .teaser-wrapper .teaser-swoosh-wrapper {
         margin-right: 16px;
     }
@@ -245,7 +245,7 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
     }
 }
 
-@media (width <=768px) {
+@media (width < 768px) {
     .teaser-wrapper {
         margin-top: 20px;
     }
