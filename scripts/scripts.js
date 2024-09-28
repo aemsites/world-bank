@@ -72,17 +72,24 @@ async function loadFonts() {
 }
 
 /**
+ * remove the adujusts the auto images
+ * @param {Element} main The container element
+ */
+function adjustAutoImages(main) {
+  const pictureElement = main.querySelector('div > p > picture');
+  if (pictureElement) {
+    const pElement = pictureElement.parentElement;
+    pElement.className = 'auto-image-container';
+  }
+}
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 // eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
-    const pictureElement = main.querySelector('p > picture');
-    if (pictureElement) {
-      const pElement = pictureElement.parentElement;
-      pElement.className = 'image-container';
-    }
+    adjustAutoImages(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
