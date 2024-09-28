@@ -13,10 +13,6 @@
     line-height: 40.32px;
 }
 
-.heading p{
-    margin: 0;
-}
-
 .heading h2 {
     font-size: var(--font-size-1000);
     line-height: 31.36px;
