@@ -1,3 +1,5 @@
+import { scriptEnabled } from '../../scripts/utils.js';
+
 const getDefaultEmbed = (url) => `<div class="embed-video">
     <iframe src="${url.href}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position:absolute;" allowfullscreen="" frameborder="0" 
       scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -16,6 +18,11 @@ const loadEmbed = (block, link) => {
 };
 
 export default function decorate(block) {
+  if (!scriptEnabled()) {
+    block.innerHTML = 'Video rendering is disabled';
+    return;
+  }
+
   const placeholder = block.querySelector('picture');
   const link = block.querySelector('a').href;
   block.textContent = '';

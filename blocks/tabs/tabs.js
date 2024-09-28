@@ -2,7 +2,7 @@ import { getMetadata, toClassName, fetchPlaceholders } from '../../scripts/aem.j
 import {
   a, button, div, li, ul,
 } from '../../scripts/dom-helpers.js';
-import { getLanguage, fetchData } from '../../scripts/utils.js';
+import { getLanguage, fetchData, scriptEnabled } from '../../scripts/utils.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 const langCode = getLanguage();
@@ -166,6 +166,8 @@ async function decorateTab(tabPanel, type) {
   tabPanel.innerHTML = '';
   showSpinner(tabPanel);
 
+  if (!scriptEnabled()) return;
+
   const url = await getTabUrl(type);
   const data = await fetchDataForTab(type, url);
 
@@ -183,7 +185,7 @@ async function decorateTab(tabPanel, type) {
 }
 
 function createTabListWithButtons(tabBtnContainer) {
-  const tablist = div({ class: 'tabs-list', role: 'tablist' });
+  const tablist = div({ class: 'tabs-list' });
   const rightbtn = button({ class: 'right-btn' }, '>>');
   const leftbtn = button({ class: 'left-btn' }, '<<');
 
@@ -217,7 +219,7 @@ function createTabListWithButtons(tabBtnContainer) {
 }
 
 export default async function decorate(block) {
-  const tabBtnContainer = ul({ class: 'tab-menu' });
+  const tabBtnContainer = ul({ class: 'tab-menu', role: 'tablist' });
   const tablist = createTabListWithButtons(tabBtnContainer);
 
   // Decorate tabs and tab panels
