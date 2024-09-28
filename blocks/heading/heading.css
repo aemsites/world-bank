@@ -16,10 +16,6 @@
 .heading p{
     margin: 0;
 }
- 
-.heading-container .default-content-wrapper p{
-    margin-top: 0;
-}
 
 .heading h2 {
     font-size: var(--font-size-1000);
