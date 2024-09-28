@@ -69,6 +69,18 @@
   border-bottom: 2px solid #0049724d;
 }
 
+.cards-container .rp-card:hover .text-content a.title {
+  color: var(--global-interactive-on-dark-focused);
+}
+
+.cards-container .rp-card:hover .text-content .desc {
+  border-top-color: var(--global-interactive-on-dark-hover);
+}
+
+.cards-container .rp-card:hover .text-content .card-btn div {
+  border-bottom-color: var(--global-interactive-on-dark-hover);
+}
+
 .cards-container .rp-card .text-content a .card-btn p {
   margin: 10px 0;
 }
