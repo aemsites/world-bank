@@ -166,19 +166,6 @@ export function getHref() {
   return `${window.parent.location.origin}${urlParams.get('path')}`;
 }
 
-/*
- * Returns the environment type based on the hostname.
- */
-export function getEnvType(hostname = window.location.hostname) {
-  const fqdnToEnvType = {
-    'worldbank.org': 'prod',
-    'www.worldbank.org': 'prod',
-    'main--aem-competency--aem-comp.hlx.page': 'prod',
-    'main--aem-competency--aem-comp.hlx.live': 'prod',
-  };
-  return fqdnToEnvType[hostname] || 'dev';
-}
-
 /**
  * Check if a page is internal or not
  */
@@ -222,4 +209,24 @@ export function formatDate(dObjStr) {
  */
 export function getUrlExtension(url) {
   return url.split(/[#?]/)[0].split('.').pop().trim();
+}
+
+/**
+ * Get the query string value
+ * @param {*} key
+ * @returns
+ */
+export function getQueryString(key = 'tip', path = window.location.href) {
+  const pageUrl = new URL(path);
+  return pageUrl.searchParams.get(key);
+}
+
+/**
+ * Check if 3rd party scripts are enabled or not.
+ * @returns
+ */
+export function scriptEnabled() {
+  if (getQueryString('tip') === 'noscript') return false;
+
+  return true;
 }
