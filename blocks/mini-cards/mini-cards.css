@@ -105,6 +105,7 @@
 .image-list-variation .date-time-info {
   line-height: 17.5px;
 }
+
 @media (width <768px) {
   .image-list-variation .mini-card .mc-text-wrapper {
     flex-basis: 450px;
