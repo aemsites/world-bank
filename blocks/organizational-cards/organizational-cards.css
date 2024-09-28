@@ -56,7 +56,7 @@ main .section > div.organizational-cards-wrapper {
   color: var(--white);
   font-weight: 700;
   text-align: left;
-  transition: background 0.3s linear;
+  transition: all 200ms ease-out;
   background: rgba(1 39 64 / 90%);
   position: relative;
 }
@@ -155,12 +155,13 @@ html[dir="rtl"] .organizational-card:not(first-child) {
 
 .organizational-card .card-link-wrapper {
   width: 100%;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .organizational-card .card-link-wrapper .button-container {
   height: 30px;
   border-bottom: 2px solid var(--divider-on-dark-subdued);
+  padding: var(--button-vertical-padding-secondary) 0 var(--spacing-xxsmall) 0;
 }
 
 .organizational-card

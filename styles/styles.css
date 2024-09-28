@@ -556,7 +556,7 @@
     --section-gutter-space: 48px;
   
     /* Screen variables */
-    --nav-height: 44px;
+    --nav-height: 34px;
   
     /* Block specific */
     --signup-padding: 32px;
@@ -629,7 +629,7 @@
     --section-reduced-space: 320px;
   
     /* Screen variables */
-    --nav-height: 50px;
+    --nav-height: 44px;
     --nav-padding: 35px;
   
     /* main-heading styles */
@@ -723,7 +723,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  padding: var(--nav-padding) 0;
+  padding: var(--spacing-medium) 0;
 }
 
 h1,
