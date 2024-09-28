@@ -85,7 +85,7 @@ text-align: right;
 
 .heading hr {
     margin-top: var(--spacing-medium);
-    color: var(--divider-on-light-default);
+    color: var(--divider-on-light-emphasis);
     margin-bottom: 0;
 }
 
