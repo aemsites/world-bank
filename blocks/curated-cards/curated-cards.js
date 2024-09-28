@@ -75,6 +75,7 @@ function processRow(row) {
       if (para && pic) {
         pic.alt = para.textContent.trim();
       }
+      alttext.remove();
     }
   }
 

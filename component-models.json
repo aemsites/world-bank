@@ -608,7 +608,7 @@
       {
         "component": "text",
         "name": "alttext",
-        "value": "Default Alt",
+        "value": "",
         "label": "Alt Text",
         "valueType": "string"
       }
@@ -1372,7 +1372,7 @@
         "component": "text",
         "valueType": "string",
         "name": "alt",
-        "value": "Default alt",
+        "value": "",
         "label": "Mini Card Alt Text"
       }
     ]
