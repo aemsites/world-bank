@@ -1329,6 +1329,11 @@ body.no-scroll {
   z-index: 1000;
 }
 
+.auto-image-container {
+  padding:0;
+  margin:0;
+}
+
 #who-we-are{
   margin-bottom: var(--spacing-small);
   font-size: var(--font-size-1200);
