@@ -56,7 +56,7 @@ main .section > div.organizational-cards-wrapper {
   color: var(--white);
   font-weight: 700;
   text-align: left;
-  transition: background 0.3s linear;
+  transition: all 200ms ease-out;
   background: rgba(1 39 64 / 90%);
   position: relative;
 }
