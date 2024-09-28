@@ -89,6 +89,7 @@
   padding-block-start: unset;
   padding-bottom: var(--spacing-regular);
   border-bottom: 2px solid var(--neutral-solid-10-s);
+  gap: var(--spacing-regular);
 }
 
 .image-list-variation .mini-card-title {
