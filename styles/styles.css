@@ -1328,3 +1328,8 @@ body.no-scroll {
   word-wrap: normal;
   z-index: 1000;
 }
+
+.auto-image-container {
+  padding:0;
+  margin:0;
+}
