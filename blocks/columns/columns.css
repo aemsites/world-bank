@@ -617,6 +617,10 @@ html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
 padding-left: 22px;
 }
 
+html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child ul{
+  padding-right: 18px;
+}
+
 .columns.columns-image-left {
 
   /* stylelint-disable-next-line no-descending-specificity */
