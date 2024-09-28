@@ -399,10 +399,6 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
     padding-left: 32px;
   }
 
-  html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
-    padding-left: 32px;
-  }
-
   .columns.columns-feature-card > div > div > p:first-child {
     line-height: 112%;
     grid-area: title;
