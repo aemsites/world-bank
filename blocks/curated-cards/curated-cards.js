@@ -31,6 +31,8 @@ function createFeatureCard(row, placeHolders) {
   moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = '';
   if (featureAltContent) {
+    const pic = featureImageContent.querySelector('img');
+    pic.src = featureAltContent.textContent.trim();
     featureAltContent.innerHTML = '';
   }
   const featureContentWrapper = div(
