@@ -62,6 +62,10 @@ input:not(:placeholder-shown) + .floating-placeholder {
   line-height: 12px;
 }
 
+html[dir="rtl"] .input-group .floating-placeholder {
+  right: 10px;
+}
+
 .email-signup-container .checkbox-group label p {
   margin: 0;
 }

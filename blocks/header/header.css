@@ -813,6 +813,11 @@ header nav .nav-tools {
   margin-left: auto;
 }
 
+html[dir="rtl"] header nav .nav-tools {
+  margin-right: auto;
+  margin-left: initial;
+}
+
 .section.nav-tools .default-content-wrapper h6 {
   font-size: var(--font-size-300);
   color: var(--accent-blue-primary-70);
@@ -1484,6 +1489,10 @@ header nav .nav-tools {
     top: -27px;
     z-index: 2;
     background-color: var(--accent-blue-primary-120);
+  }
+
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
+    right: 50px;
   }
 
   header
