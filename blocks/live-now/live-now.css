@@ -137,11 +137,11 @@ dialog.livenow-modal:modal .modal-column-right .join-event-btn {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  min-width: 180px;
   height: 70px;
+  padding: 0 10px;
   border-radius: 100px;
   background-color: var(--white);
   text-decoration: none;
@@ -179,6 +179,7 @@ dialog.livenow-modal:modal .modal-column-right .join-event-btn .join-btn-txt {
   font-family: var(--heading-font-family);
   font-size: 16px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 dialog.livenow-modal:modal &::before {
@@ -220,7 +221,7 @@ dialog.livenow-modal:modal &::before {
 
   dialog.livenow-modal:modal .modal-column-right .join-event-btn {
     height: 64px;
-    width: 182px;
+    min-width: 162px;
   }
 
   dialog.livenow-modal:modal .modal-column-left .modal-title {
@@ -271,7 +272,7 @@ dialog.livenow-modal:modal &::before {
 
   dialog.livenow-modal:modal .modal-column-right .join-event-btn {
     height: 56px;
-    width: 174px;
+    min-width: 154px;
   }
 
   dialog.livenow-modal:modal .modal-title {
