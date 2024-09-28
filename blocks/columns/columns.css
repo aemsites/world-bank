@@ -629,6 +629,10 @@ html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
 padding-left: 22px;
 }
 
+html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child ul{
+  padding-right: 18px;
+}
+
 .columns.columns-image-left {
 
   /* stylelint-disable-next-line no-descending-specificity */
@@ -693,3 +697,8 @@ padding-left: 22px;
   }
 }
 }
+
+main .section.bg-default:first-child .default-content-wrapper p:has(picture){
+  margin-bottom: 0;
+ }
+ 
