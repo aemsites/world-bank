@@ -102,6 +102,10 @@ text-align: right;
 .heading-border-spacing-huge hr { margin-top: var(--spacing-huge); }
 .heading-border-spacing-xhuge hr { margin-top: var(--spacing-xhuge); }
 
+.heading p{
+    margin: 0;
+    padding: 0;
+}
 
 @media (width <768px) {
     .heading .eyebrowtext:not(:empty)  {
