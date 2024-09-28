@@ -259,11 +259,16 @@ html[dir="rtl"] .columns > div {
     flex: 1;
     order: unset;
   }
+  
+  .columns.columns-divider-variant > div > div:first-child > p {
+    min-width: 469px;
+  }
 }
 
 .columns.columns-divider-variant > div > div:first-child > p {
   font-size: var(--font-size-700);
   line-height: 116%;
+  color: var(--text-on-light-emphasis);
 }
 
 .columns.columns-feature-card > div > div > p:first-child {
