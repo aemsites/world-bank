@@ -1,3 +1,7 @@
+main .section.bg-default:first-child .default-content-wrapper:has(h1#who-we-are) p:has(picture){
+  margin-bottom: 0;
+}
+
 .columns > div {
   display: flex;
   flex-direction: column;
