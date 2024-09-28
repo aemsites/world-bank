@@ -23,6 +23,8 @@ function createSocialMediaLink(linkName, className, iconPath, name) {
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
     linkImage.alt = name;
+    linkImage.width = '50';
+    linkImage.height = '50';
     anchor.appendChild(linkImage);
     const socialMediaLink = div({ class: 'social-media-link' }, anchor);
     socialMediaLink.addEventListener('click', () => {
@@ -52,9 +54,9 @@ function createPersonBio(
   const nameJobSocial = div({ class: 'name-job-social' }, bioName, jobTitle);
   const socialMedias = div({ class: 'social-media' });
   const socialMediaIcons = [
-    { link: x, icon: 'ximage.png', name: 'X' },
-    { link: linkedin, icon: 'linkedin.png', name: 'linkedin' },
-    { link: insta, icon: 'insta.png', name: 'instagram' },
+    { link: x, icon: 'profileiconx.png', name: 'X' },
+    { link: linkedin, icon: 'profileiconin.png', name: 'linkedin' },
+    { link: insta, icon: 'profileiconinsta.png', name: 'instagram' },
   ];
 
   socialMediaIcons.forEach(({ link, icon, name }) => {
@@ -119,8 +121,11 @@ export default async function decorate(block) {
   mediaInquiries.className = 'media-inquiries';
   resources.className = 'resources';
   const profileImg = profileImage.querySelector('div > picture > img');
-  const optimizedPic = createOptimizedPicture(profileImg.src, 'profile-img', false, [{ width: '460', height: '460', loading: 'eager' }]);
-  moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
+  const optimizedPic = createOptimizedPicture(profileImg.src, displayName.innerText, true);
+  const newProfilePic = optimizedPic.querySelector('img');
+  newProfilePic.width = 460;
+  newProfilePic.height = 460;
+  moveInstrumentation(profileImg, newProfilePic);
   profileImg.closest('picture').replaceWith(optimizedPic);
 
   const mediaTargetDiv = block.querySelector('.media-inquiries');

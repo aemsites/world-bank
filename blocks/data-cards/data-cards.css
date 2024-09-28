@@ -155,7 +155,7 @@
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p.button-container a, .data-cards.news-card-variation .rte-container>div:nth-child(3)>div>p.button-container a {
   padding: 10px 30px;
-  margin: 0 0 var(--spacing-xsmall);
+  margin: 0 var(--spacing-xsmall) var(--spacing-xsmall) 0;
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(2) > div > p:first-child {

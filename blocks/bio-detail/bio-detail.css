@@ -14,11 +14,6 @@
   border-radius: 5px;
 }
 
-.social-media-link img {
-  width: 15px;
-  height: 15px;
-}
-
 .bio-detail .resources p a {
   margin: 0;
   border-bottom: 2px solid transparent;
@@ -106,19 +101,12 @@ html[dir="rtl"] .bio-detail .download-image{
   margin-top: var(--spacing-regular);
 }
 
-.bio-detail .sections-container .name-job-social .social-media .social-media-link {
-  height: 50px;
-  width: 50px;
+.bio-detail .social-media-link img {
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-white);
-  cursor: pointer;
   border: 2px solid transparent;
 }
 
-.bio-detail .sections-container .name-job-social .social-media .social-media-link:hover {
+.bio-detail .social-media-link img:hover {
   border: 2px solid var(--accent-blue-primary-40);
 }
 
