@@ -72,7 +72,7 @@ function processRow(row) {
     if (alttext) {
       const pic = imageDiv.querySelector('img');
       const para = alttext.querySelector('p');
-      if (para) {
+      if (para && pic) {
         pic.alt = para.textContent.trim();
       }
     }

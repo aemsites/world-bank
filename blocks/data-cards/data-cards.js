@@ -212,7 +212,7 @@ export default async function decorate(block) {
       if (alt) {
         const pic = image.querySelector('img');
         const pTag = alt.querySelector('p');
-        if(pTag)
+        if(pTag && pic)
         {
         pic.alt = pTag.textContent.trim();
         }

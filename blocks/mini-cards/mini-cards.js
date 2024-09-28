@@ -33,7 +33,7 @@ export default function decorate(block) {
     if (alt) {
       const pic = imageDiv.querySelector('img');
       const p = alt.querySelector('p');
-      if (p) {
+      if (p && pic) {
         pic.alt = p.textContent.trim();
       }
       alt.remove();
