@@ -212,7 +212,10 @@ export default async function decorate(block) {
       if (alt) {
         const pic = image.querySelector('img');
         const pTag = alt.querySelector('p');
+        if(pTag)
+        {
         pic.alt = pTag.textContent.trim();
+        }
         alt.remove();
       }
       const anchor = a({ class: 'anchor-tag', href: link.textContent });
