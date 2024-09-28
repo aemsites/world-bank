@@ -32,7 +32,9 @@ function createFeatureCard(row, placeHolders) {
   featureTagContent.innerHTML = '';
   if (featureAltContent) {
     const pic = featureImageContent.querySelector('img');
-    pic.alt = featureAltContent.textContent.trim();
+    if (pic) {
+      pic.alt = featureAltContent.textContent.trim();
+    }
     featureAltContent.innerHTML = '';
   }
   const featureContentWrapper = div(
