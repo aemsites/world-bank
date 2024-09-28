@@ -22,7 +22,7 @@ export default function decorate(block) {
   const miniCardsContainer = div({ class: 'mini-card-container' });
   cards.forEach((row) => {
     row.className = 'mini-card';
-    const [imageDiv, alt, tagDiv, titleDiv, dateDiv, timeDiv, locationDiv, linkDiv] = row.children;
+    const [imageDiv, tagDiv, titleDiv, dateDiv, timeDiv, locationDiv, linkDiv, alt] = row.children;
     imageDiv.className = 'mini-card-image';
     tagDiv.className = 'mini-card-tag';
     titleDiv.className = 'mini-card-title';

@@ -21,11 +21,11 @@ function processTag(tagdiv, tagAuthored, placeholders) {
 function createFeatureCard(row, placeHolders) {
   const [
     featureImageContent,
-    featureAltContent,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
     featureLink,
+    featureAltContent,
   ] = row.children;
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
@@ -52,7 +52,7 @@ function createFeatureCard(row, placeHolders) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, alttext, tagContent, headingContent, decsDiv, linkDiv] = row.children;
+  const [imageContent, tagContent, headingContent, decsDiv, linkDiv, alttext] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
