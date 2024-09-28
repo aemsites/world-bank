@@ -119,6 +119,8 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body h3 {
 .cards.senior-leadership .cards-card-body p {
   font-size: var(--font-size-300);
   margin: 0;
+  line-height: 125%;
+  margin-bottom: var(--spacing-xtiny);
 }
 
 html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
@@ -217,11 +219,17 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
   font-weight: 700;
   font-size: var(--font-size-600);
   color: var(--text-on-light-link-primary-enabled);
+  line-height: 125%;
+  letter-spacing: -0.063px;
 }
 
 @media (width >= 768px) {
   .cards.senior-leadership > ul {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .cards.senior-leadership .cards-card-body h3 a {
+    letter-spacing: -0.07px;
   }
 }
 
@@ -229,5 +237,9 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
   .cards.senior-leadership > ul {
     grid-template-columns: repeat(5, 1fr);
     grid-gap: var(--spacing-medium);
+  }
+
+  .cards.senior-leadership .cards-card-body h3 a {
+    letter-spacing: -0.084px;
   }
 }

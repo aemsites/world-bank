@@ -1,4 +1,4 @@
-import { fetchSearch } from '../../scripts/scripts.js';
+import { fetchSearch, LANGUAGE_ROOT } from '../../scripts/scripts.js';
 import {
   ol, li, a, span,
 } from '../../scripts/dom-helpers.js';
@@ -42,14 +42,10 @@ export default async function decorate(block) {
     const crumb = li({ class: 'crumb' });
     // This condition is for homepage path
     if (!pagePath) {
-      let lang = '';
-      // For homepage other than en, add language to homepage path
-      if (document.documentElement.lang !== 'en') {
-        lang = `/${document.documentElement.lang}`;
-      }
+      const href = `${origin}${LANGUAGE_ROOT}/home`;
       const homeSvg = `${window.hlx.codeBasePath}/icons/home.svg`;
       // TODO:localize the title and alt
-      const homeLink = `<a href='${origin + lang}' title='Home'><img src='${homeSvg}' alt='Home'>
+      const homeLink = `<a href='${href}' title='Home'><img src='${homeSvg}' alt='Home'>
                                       </img></a>`;
       crumb.innerHTML = homeLink;
       const pipelineSymbol = span({ class: 'breadcrumb-separator' });
