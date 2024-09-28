@@ -22,6 +22,10 @@
   transition: transform .2s;
 }
 
+.image-list-variation .mc-text-wrapper {
+  gap:0;
+}
+
 .mini-cards .mini-card .mc-text-wrapper {
   display: flex;
   flex-direction: column;
@@ -87,10 +91,6 @@
 
 .image-list-variation .mini-card-container {
   gap: var(--spacing-regular)
-}
-
-.image-list-variation .mc-text-wrapper{
-  gap:0;
 }
 
 .image-list-variation .mini-card {
