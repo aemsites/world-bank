@@ -120,6 +120,7 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body h3 {
   font-size: var(--font-size-300);
   margin: 0;
   line-height: 125%;
+  margin-bottom: var(--spacing-xtiny);
 }
 
 html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
