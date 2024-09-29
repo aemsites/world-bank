@@ -1096,6 +1096,7 @@ p.button-container {
 .section[class*='bg-primary-blue'] a.button:focus:not(:focus-visible),
 .section[class*='bg-primary-blue'] button:focus:not(:focus-visible) {
   background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
 }
 
 .section[class*='bg-primary-blue'] a.button.secondary,
