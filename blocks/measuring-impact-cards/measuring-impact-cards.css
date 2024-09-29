@@ -66,6 +66,10 @@
     margin-bottom: var(--spacing-tiny);
 }
 
+.impact-card-wrapper a:hover .impact-card-content p:first-child {
+    color: var(--global-interactive-on-dark-hover);
+}
+
 @media (width >= 768px) {
     .measuring-impact-cards{
         display: grid;

@@ -67,6 +67,10 @@
   line-height: 58px;
 }
 
+.curated-cards .feature-card .feature-card-content .feature-card-content-heading:hover {
+  color: var(--global-interactive-on-dark-hover);
+}
+
 .curated-cards.list {
   background-color: var(--accent-blue-primary-90);
   border-radius: 0 0 10px 10px;

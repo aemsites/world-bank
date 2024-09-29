@@ -164,6 +164,10 @@ html[dir="rtl"] .organizational-card:not(first-child) {
   padding: var(--button-vertical-padding-secondary) 0 var(--spacing-xxsmall) 0;
 }
 
+.organizational-card .card-link-wrapper .button-container:hover {
+  border-bottom-color: var(--global-interactive-on-dark-hover);
+}
+
 .organizational-card
   .card-link-wrapper
   .button-container
@@ -178,10 +182,6 @@ html[dir="rtl"] .organizational-card:not(first-child) {
   background-color: unset;
   padding: 0;
   margin: unset;
-}
-
-.organizational-card .card-link-wrapper .button-container > a.button:hover {
-  border: 1px solid var(--transparent);
 }
 
 .organizational-card.collapsed {
