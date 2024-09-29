@@ -256,6 +256,7 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
   }
 
   .cards.senior-leadership .cards-card-body h3 a {
+    letter-spacing: -0.084px;
     line-height: 30px;
   }
 }

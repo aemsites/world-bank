@@ -1,6 +1,22 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
+const wrapImageWithLink = (li) => {
+  const imgDiv = li.querySelector('.cards-card-image');
+  const h3link = li.querySelector('.cards-card-body h3:first-child a');
+
+  if (!imgDiv || !h3link) return;
+
+  const link = document.createElement('a');
+  link.href = h3link.href;
+
+  const picture = imgDiv.querySelector('picture');
+  if (picture) {
+    link.appendChild(picture);
+    imgDiv.prepend(link);
+  }
+};
+
 export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
@@ -20,19 +36,7 @@ export default function decorate(block) {
     img.closest('picture').replaceWith(optimizedPic);
   });
 
-  [...ul.children].forEach((li) => {
-    const a = document.createElement('a');
-    const imgDiv = li.querySelector('.cards-card-image');
-    const h3link = li.querySelector('.cards-card-body h3:first-child a');
-    if (imgDiv && h3link) {
-      a.href = h3link.href;
-      const pic = imgDiv.querySelector('picture');
-      if (pic) {
-        a.append(pic);
-        imgDiv.prepend(a);
-      }
-    }
-  });
+  [...ul.children].forEach(wrapImageWithLink);
 
   block.textContent = '';
   block.append(ul);
