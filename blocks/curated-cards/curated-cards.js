@@ -85,8 +85,8 @@ function processRow(row) {
     heading.textContent = headingContent.textContent;
   }
 
-  textWrapper.append(a({ href: link }, heading), tagElement);
-  liTag.append(imageDiv, textWrapper);
+  textWrapper.append(heading, tagElement);
+  liTag.append(a({ href: link }, imageDiv, textWrapper));
 
   row.innerHTML = '';
   return liTag;

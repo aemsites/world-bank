@@ -102,11 +102,7 @@
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(3) a {
-  background-color: var(--background-white);
-  color: var(--background-container-on-light-link-primary-enabled);
-  font-size: var(--font-size-300);
   margin: 0;
-  border: 1px solid var(--button-primary-outline-enabled);
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) em{
@@ -121,6 +117,10 @@
   border-radius: var(--border-radius-none);
   padding: 12px 0 4px;
   margin: 0;
+}
+
+.bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a:focus-visible {
+  border: 2px solid var(--links-focus-color);
 }
 
 .columns.columns-transform-teaser .columns-img-col {

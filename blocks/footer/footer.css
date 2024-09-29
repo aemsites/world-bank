@@ -56,7 +56,6 @@ footer ul li {
 
 .ft-social a:any-link {
   padding-left: 0;
-  text-decoration: none;
 }
 
 .ft-social .ft-social-list {
@@ -67,6 +66,16 @@ footer ul li {
   font-size: 16px;
   font-weight: 700;
   line-height: 22px;
+  display: block;
+}
+
+.ft-social .ft-social-list a .icon img {
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+
+.ft-social .ft-social-list a:hover .icon img {
+  border-color: var(--global-interactive-on-dark-hover);
 }
 
 .ft-social .ft-social-list:first-child {

@@ -81,6 +81,7 @@ input:not(:placeholder-shown) + .floating-placeholder {
   gap: 8px;
   justify-content: center;
   z-index: 999;
+  border: none;
 }
 
 .email-signup-container button#signup-btn .icon,
