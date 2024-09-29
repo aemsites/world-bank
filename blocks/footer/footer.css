@@ -194,7 +194,7 @@ html[dir="rtl"] .ft-social-list:first-child {
 
 .ft-main .ft-main-item ul li a.button {
   margin: 0;
-  padding: 15px 32px;
+  padding: 16px 32px;
 }
 
 .ft-main .ft-main-item p {
@@ -276,6 +276,10 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     padding: 32px 0 0;
     margin: 32px 0 0;
     border-top: 1px solid var(--accent-blue-primary-60);
+  }
+
+  .ft-main .ft-main-item ul li a.button {
+    padding: 12px 32px;
   }
 
   .ft-main .ft-main-item:last-child ul {
@@ -504,7 +508,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
 
   .ft-main .ft-main-item:last-child ul li a {
     width: 100%;
-    padding: 13px 0 16px;
+    padding: 12px 0;
     font-size: 14px;
     text-align: center;
   }
