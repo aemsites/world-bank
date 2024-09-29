@@ -66,6 +66,20 @@
   margin-top: var(--spacing-large);
 }
 
+.cards.profile-summary .cards-card-body p > a {
+  line-height: 19px;
+  margin: 0;
+}
+
+.cards.senior-leadership .cards-card-body h3 a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--font-size-600);
+  color: var(--text-on-light-link-primary-enabled);
+  line-height: 125%;
+  letter-spacing: -0.063px;
+}
+
 .cards.profile-summary .cards-card-body p.button-container a {
   margin: 0;
 }
@@ -94,11 +108,6 @@
   text-align: left;
   text-wrap: wrap;
   color: var(--text-on-light-emphasis);
-}
-
-.cards.profile-summary .cards-card-body p > a {
-  line-height: 19px;
-  margin: 0;
 }
 
 .cards.profile-summary > ul > li img {
@@ -220,16 +229,6 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
   margin: var(--spacing-small) 0 0;
 }
 
-.cards.senior-leadership .cards-card-body h3 a {
-  text-decoration: none;
-  font-weight: 700;
-  line-height: 22.5px;
-  font-size: var(--font-size-600);
-  color: var(--text-on-light-link-primary-enabled);
-  line-height: 125%;
-  letter-spacing: -0.063px;
-}
-
 .cards.senior-leadership li:hover .cards-card-image img {
   transform: scale(1.15);
 }
@@ -246,9 +245,6 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 
   .cards.senior-leadership .cards-card-body h3 a {
     line-height: 25px;
-  }
-
-  .cards.senior-leadership .cards-card-body h3 a {
     letter-spacing: -0.07px;
   }
 }
