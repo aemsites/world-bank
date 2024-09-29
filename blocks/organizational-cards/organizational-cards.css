@@ -287,7 +287,7 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
   }
 
   .organizational-card:not(.collapsed) {
-    padding: 32px 0;
+    padding: 24px 0;
   }
 
   .organizational-card .collapse-btn {
@@ -328,6 +328,10 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
 
   .organizational-card .card-link-wrapper > .button-container {
     padding: unset;
+  }
+
+  .organizational-card .card-link-wrapper {
+    margin-top: 12px;
   }
 
   .organizational-card.collapsed {
@@ -383,7 +387,7 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
   }
 
   .organizational-card:not(.collapsed) {
-    padding: 32px 0;
+    padding: 24px 0;
     min-height: unset;
     max-height: unset;
   }

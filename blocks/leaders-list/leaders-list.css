@@ -12,7 +12,7 @@
     flex-direction: column;
     gap: 10px;  
     border-bottom: 2px solid var(--neutral-solid-10-s);
-    padding: var(--spacing-xsmall) 0 var(--spacing-large);
+    padding: 0 0 var(--spacing-large) 0;
     width: 100%;
 }
 
