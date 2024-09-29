@@ -67,8 +67,8 @@ export default async function decorate(block) {
             class: 'breadcrumb-separator',
           });
           crumb.append(pipelineSymbol);
+          list.append(crumb);
         }
-        list.append(crumb);
       }
     }
     pagePath = `${pagePath}/`;
