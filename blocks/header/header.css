@@ -95,7 +95,7 @@ header .nav-menu-overlay .nav-menu {
   text-align: right;
   opacity: 1;
   right: 42px;
-  top: -2px;
+  top: -5px;
   border: 1px solid transparent;
   position: absolute;
   min-width: 125px;
@@ -107,6 +107,7 @@ html[dir="rtl"] .language-container{
   left: 42px;
   right: auto;
   text-align: end;
+  margin-left: 10px;
 }
 
 .nav-item-expanded-active {
@@ -364,6 +365,10 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country span {
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a span {
   text-align: center;
   vertical-align: middle;
+}
+
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span {
+  margin-left: 15px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
@@ -972,6 +977,10 @@ html[dir="rtl"] header nav .nav-tools {
     height: auto;
   }
 
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left li {
+    text-align: right;
+  }
+
   header .nav-menu-overlay .nav-menu-column.right > .submenu .footer {
     flex-grow: 2;
     display: flex;
@@ -1364,6 +1373,11 @@ html[dir="rtl"] header nav .nav-tools {
     border-right: 1px solid var(--nav-menu-footer-color);
   }
 
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .submenu .footer>ul>li:not(li:last-child) {
+    border-left: 1px solid var(--nav-menu-footer-color);
+    border-right: none;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1523,7 +1537,7 @@ html[dir="rtl"] header nav .nav-tools {
   }
 
   html[dir='rtl']   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
-    right: 50rem;
+    right: 54rem;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
