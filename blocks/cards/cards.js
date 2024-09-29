@@ -19,6 +19,21 @@ export default function decorate(block) {
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     img.closest('picture').replaceWith(optimizedPic);
   });
+
+  [...ul.children].forEach((li) => {
+    const a = document.createElement('a');
+    const imgDiv = li.querySelector('.cards-card-image');
+    const h3link = li.querySelector('.cards-card-body h3:first-child a');
+    if (imgDiv && h3link) {
+      a.href = h3link.href;
+      const pic = imgDiv.querySelector('picture');
+      if (pic) {
+        a.append(pic);
+        imgDiv.prepend(a);
+      }
+    }
+  });
+
   block.textContent = '';
   block.append(ul);
 }
