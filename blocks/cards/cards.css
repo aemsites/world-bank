@@ -198,6 +198,7 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 .cards.senior-leadership > ul {
   grid-template-columns: 1fr 1fr;
   grid-gap: var(--spacing-xlarge);
+  grid-column-gap: 16px;
 }
 
 .cards.senior-leadership > ul > li {
@@ -215,6 +216,7 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 .cards.senior-leadership .cards-card-body h3 a {
   text-decoration: none;
   font-weight: 700;
+  line-height: 22.5px;
   font-size: var(--font-size-600);
   color: var(--text-on-light-link-primary-enabled);
 }
@@ -222,6 +224,11 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 @media (width >= 768px) {
   .cards.senior-leadership > ul {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+  }
+
+  .cards.senior-leadership .cards-card-body h3 a {
+    line-height: 25px;
   }
 }
 
@@ -229,5 +236,9 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
   .cards.senior-leadership > ul {
     grid-template-columns: repeat(5, 1fr);
     grid-gap: var(--spacing-medium);
+  }
+
+  .cards.senior-leadership .cards-card-body h3 a {
+    line-height: 30px;
   }
 }
