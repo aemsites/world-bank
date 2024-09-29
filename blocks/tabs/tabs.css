@@ -27,19 +27,20 @@
   padding: 0 1px;
   color: var(--background-container-on-light-link-primary-enabled);
   border-radius: 0;
-  border-bottom: 5px solid transparent;
+  border-bottom: 3px solid transparent;
   margin: 0;
-  font-size: 16px;
+  font-size: var(--font-size-300);
   font-weight: 700;
-  line-height: 140%;
+  line-height: 20px;
   padding-bottom: var(--spacing-xsmall);
 }
 
 .tab-navigation .tabs-list .tab-btn[aria-selected='true']{
   border: 0;
-  border-bottom: 5px solid #00ADE4;
+  border-bottom: 3px solid var(--background-container-secondary);
   cursor: initial;
-  line-height: 140%;
+  line-height: 24px;
+  color: var(--text-on-light-emphasis);
 } 
 
 .tab-navigation .tabs-list .left-btn,
