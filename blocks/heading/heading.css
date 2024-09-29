@@ -65,6 +65,7 @@ text-align: right;
     margin-top: 0;
     font-weight: 700;
     line-height: 17.5px;
+    color: var(--text-on-light-highlight);
     font-size: var(--font-size-300);
 
 }
@@ -84,7 +85,9 @@ text-align: right;
 
 .heading hr {
     margin-top: var(--spacing-medium);
-    color: var(--divider-on-light-default);
+    height: 2px;
+    border: none;
+    background-color: var(--divider-on-light-emphasis);
     margin-bottom: 0;
 }
 

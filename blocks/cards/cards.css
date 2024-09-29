@@ -51,7 +51,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px;
+  padding: 40px var(--spacing-xlarge);
 }
 
 .cards.profile-summary .cards-card-image {
@@ -64,6 +64,24 @@
 
 .cards.profile-summary .cards-card-body p.button-container {
   margin-top: var(--spacing-large);
+}
+
+.cards.profile-summary .cards-card-body p > a {
+  line-height: 19px;
+  margin: 0;
+}
+
+.cards.senior-leadership .cards-card-body h3 a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--font-size-600);
+  color: var(--text-on-light-link-primary-enabled);
+  line-height: 125%;
+  letter-spacing: -0.063px;
+}
+
+.cards.profile-summary .cards-card-body p.button-container a {
+  margin: 0;
 }
 
 .cards.profile-summary .cards-card-body h1,
@@ -90,11 +108,6 @@
   text-align: left;
   text-wrap: wrap;
   color: var(--text-on-light-emphasis);
-}
-
-.cards.profile-summary .cards-card-body p > a {
-  line-height: 19px;
-  margin: 0;
 }
 
 .cards.profile-summary > ul > li img {
@@ -200,6 +213,7 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 .cards.senior-leadership > ul {
   grid-template-columns: 1fr 1fr;
   grid-gap: var(--spacing-xlarge);
+  grid-column-gap: 16px;
 }
 
 .cards.senior-leadership > ul > li {
@@ -215,15 +229,6 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
   margin: var(--spacing-small) 0 0;
 }
 
-.cards.senior-leadership .cards-card-body h3 a {
-  text-decoration: none;
-  font-weight: 700;
-  font-size: var(--font-size-600);
-  color: var(--text-on-light-link-primary-enabled);
-  line-height: 125%;
-  letter-spacing: -0.063px;
-}
-
 .cards.senior-leadership li:hover .cards-card-image img {
   transform: scale(1.15);
 }
@@ -235,9 +240,11 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 @media (width >= 768px) {
   .cards.senior-leadership > ul {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 24px;
   }
 
   .cards.senior-leadership .cards-card-body h3 a {
+    line-height: 25px;
     letter-spacing: -0.07px;
   }
 }
@@ -250,5 +257,6 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 
   .cards.senior-leadership .cards-card-body h3 a {
     letter-spacing: -0.084px;
+    line-height: 30px;
   }
 }
