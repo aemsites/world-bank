@@ -288,6 +288,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 
 .columns.columns-feature-card .button-container a.button:hover {
   color: var(--white);
+  border-bottom-color: var(--global-interactive-on-dark-hover);
 }
 
 .columns.columns-feature-card .columns-feature-card-content:last-child {
