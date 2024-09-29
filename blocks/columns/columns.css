@@ -90,6 +90,10 @@
   margin: 0;
 }
 
+.bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a:focus-visible {
+  border: 2px solid var(--links-focus-color);
+}
+
 .columns.columns-transform-teaser .columns-img-col {
   position: absolute;
   right: 0;

@@ -374,6 +374,7 @@
         "valueType": "string",
         "options": [
           { "name": "Transparent / White / Default", "value": "bg-default" },
+          { "name": "Dark Background Container", "value": "bg-primary-blue" },
           { "name": "Primary Blue 90", "value": "bg-primary-blue-90" },
           { "name": "Primary Blue 70", "value": "bg-primary-blue-70" },
           { "name": "Neutrals 10", "value": "bg-neutrals-10" },
@@ -1545,20 +1546,6 @@
         "name": "buttonProperties",
         "valueType": "string",
         "fields": [
-          {
-            "component": "select",
-            "valueType": "string",
-            "name": "btn-style",
-            "value": "",
-            "label": "Button Style",
-            "options": [
-              { "name": "Dark Background", "value": "dark-bg" },
-              { "name": "Dark Background - Underline", "value": "dark-bg-ul" },
-              { "name": "Light Background - Primary", "value": "light-bg-1" },
-              { "name": "Light Background - Secondary", "value": "light-bg-2" },
-              { "name": "Light Background - Underline", "value": "light-bg-ul" }
-            ]
-          },
           {
             "component": "text",
             "valueType": "string",

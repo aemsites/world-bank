@@ -405,6 +405,7 @@
   --button-primary-label-default: var(--background-white);
   --button-secondary-background-enabled: var(--background-white);
   --button-secondary-label-enabled: var(--accent-blue-primary-70);
+  --links-focus-color: #DA570E; /* Custom variable, not available in figma */
 
   /* number */
   --border-radius-none: 0rem;
@@ -810,7 +811,12 @@ a:any-link {
   text-align: left;
 }
 
-html:lang(ar) a {
+a:focus-visible {
+  border: 2px solid var(--links-focus-color);
+  outline-style: unset;
+}
+
+html[dir="rtl"] a {
   text-align: right;
 }
 
@@ -899,7 +905,7 @@ button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 1px solid var(--button-primary-outline-enabled);
+  border: 2px solid var(--button-primary-outline-enabled);
   padding: var(--button-vertical-padding) var(--button-horizontal-padding);
   font-style: normal;
   cursor: pointer;
@@ -912,6 +918,13 @@ button {
   border-radius: var(--border-radius-x-large);
 }
 
+a.button.secondary,
+button.secondary {
+  background-color: unset;
+  border: 2px solid var(--button-secondary-outline-enabled);
+  color: var(--button-secondary-label-enabled);
+}
+
 a.button:hover,
 button:hover {
   background-color: var(--accent-blue-primary-40);
@@ -919,10 +932,11 @@ button:hover {
   cursor: pointer;
 }
 
-a.button:focus,
-button:focus {
-  background-color: var(--accent-blue-primary-90);
-  color: var(--white);
+a.button:focus-visible,
+button:focus-visible,
+a.button.secondary:focus-visible,
+button.secondary:focus-visible {
+  border-color: var(--links-focus-color);
 }
 
 a.button.disabled,
@@ -934,24 +948,10 @@ button:disabled:hover {
   cursor: unset;
 }
 
-a.button.secondary,
-button.secondary {
-  background-color: unset;
-  border: 2px solid var(--button-secondary-outline-enabled);
-  color: var(--button-secondary-label-enabled);
-}
-
 a.button.secondary:hover,
 button.secondary:hover {
   background-color: var(--accent-blue-primary-40);
   border: 2px solid var(--accent-blue-primary-40);
-  color: var(--accent-blue-primary-70);
-}
-
-a.button.secondary:focus,
-button.secondary:focus {
-  background-color: var(--accent-blue-primary-10);
-  border: 2px solid var(--accent-blue-primary-70);
   color: var(--accent-blue-primary-70);
 }
 
@@ -963,6 +963,19 @@ button.secondary:disabled:hover {
   border: 2px solid var(--neutral-solid-20-s);
   color: var(--neutral-solid-40-s);
   cursor: unset;
+}
+
+a.button:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-90);
+  color: var(--white);
+}
+
+a.button.secondary:focus:not(:focus-visible),
+button.secondary:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  border: 2px solid var(--accent-blue-primary-70);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.ghost,
@@ -977,12 +990,6 @@ button.ghost:hover {
   color: var(--accent-blue-primary-70);
 }
 
-a.button.ghost:focus,
-button.ghost:focus {
-  background-color: var(--accent-blue-primary-10);
-  color: var(--accent-blue-primary-70);
-}
-
 a.button.ghost.disabled,
 a.button.ghost.disabled:hover,
 button.ghost:disabled,
@@ -990,6 +997,12 @@ button.ghost:disabled:hover {
   background-color: transparent;
   color: rgb(0 41 77 / 42%);
   cursor: unset;
+}
+
+a.button.ghost:focus:not(:focus-visible),
+button.ghost:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
 }
 
 p.button-container {
@@ -1013,31 +1026,39 @@ p.button-container {
   text-decoration-color: var(--accent-blue-primary-40);
 }
 
-.section[class*='bg-primary-blue'] a:any-link:focus,
-.section[class*='bg-primary-blue'] a:any-link:active {
-  color: var(--white);
-  text-decoration-color: var(--white);
-}
-
 .section[class*='bg-primary-blue'] a:any-link:visited {
   color: var(--purple-40);
   text-decoration-color: var(--purple-40);
 }
 
-.section[class*='bg-primary-blue'] a:any-link.disabled {
-  color: rgb(255 255 255 / 48%);
-  text-decoration-color: rgb(255 255 255 / 48%);
-  cursor: unset;
+.section[class*='bg-primary-blue'] a:any-link:active {
+  color: var(--white);
+  text-decoration-color: var(--white);
 }
 
 .section[class*='bg-primary-blue'] p strong > em > a:any-link:hover {
   border-bottom: 2px solid rgb(22 154 243 / 100%)
 }
 
-.section[class*='bg-primary-blue'] p strong > em > a:any-link:active,
-.section[class*='bg-primary-blue'] p strong > em > a:any-link:focus {
+.section[class*='bg-primary-blue'] p strong > em > a:any-link:active {
   color: var(--white);
   border-bottom: 2px solid transparent;
+}
+
+.section[class*='bg-primary-blue'] a:any-link:focus:not(:focus-visible) {
+  color: var(--white);
+  text-decoration-color: var(--white);
+}
+
+.section[class*='bg-primary-blue'] p strong > em > a:any-link:focus:not(:focus-visible) {
+  color: var(--white);
+  border-bottom: 2px solid transparent;
+}
+
+.section[class*='bg-primary-blue'] a:any-link.disabled {
+  color: rgb(255 255 255 / 48%);
+  text-decoration-color: rgb(255 255 255 / 48%);
+  cursor: unset;
 }
 
 .section[class*='bg-primary-blue'] p strong > em > a:any-link.disabled {
@@ -1048,51 +1069,47 @@ p.button-container {
 
 .section[class*='bg-primary-blue'] a.button:any-link,
 .section[class*='bg-primary-blue'] button {
-  border: 1px solid transparent;
   color: var(--accent-blue-primary-70);
   background-color: var(--white);
+  border: 2px solid transparent;
 }
 
 .section[class*='bg-primary-blue'] a.button:hover,
 .section[class*='bg-primary-blue'] button:hover {
-  background-color: var(--white);
-  color: var(--accent-blue-primary-70);
-  border: 1px solid var(--accent-blue-primary-40);
+  background-color: var(--accent-blue-primary-40);
 }
 
-.section[class*='bg-primary-blue'] a.button:focus,
-.section[class*='bg-primary-blue'] button:focus {
-  background-color: var(--white);
-  color: var(--accent-blue-primary-70);
+.section[class*='bg-primary-blue'] a.button:any-link:focus-visible, 
+.section[class*='bg-primary-blue'] button:focus-visible {
+  border-color: var(--links-focus-color);
 }
 
 .section[class*='bg-primary-blue'] a.button.disabled,
 .section[class*='bg-primary-blue'] a.button.disabled:hover,
 .section[class*='bg-primary-blue'] button:disabled,
 .section[class*='bg-primary-blue'] button:disabled:hover {
-  background-color: var(--neutral-solid-30-s);
-  color: rgb(0 41 77 / 42%);
+  background-color: var(--white);
+  color: var(--global-states-disable-medium);
+  border-color: var(--global-states-disable-regular);
+}
+
+.section[class*='bg-primary-blue'] a.button:focus:not(:focus-visible),
+.section[class*='bg-primary-blue'] button:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
 }
 
 .section[class*='bg-primary-blue'] a.button.secondary,
 .section[class*='bg-primary-blue'] button.secondary {
-  background-color: var(--accent-blue-primary-70);
-  border: 1px solid var(--white);
+  background-color: transparent;
+  border: 2px solid var(--white);
   color: var(--white);
 }
 
 .section[class*='bg-primary-blue'] a.button.secondary:hover,
 .section[class*='bg-primary-blue'] button.secondary:hover {
-  background-color: var(--accent-blue-primary-70);
-  border: 1px solid var(--accent-blue-primary-40);
-  color: var(--white);
-}
-
-.section[class*='bg-primary-blue'] a.button.secondary:focus,
-.section[class*='bg-primary-blue'] button.secondary:focus {
-  background-color: var(--accent-blue-primary-70);
-  border: 1px solid var(--accent-blue-primary-40);
-  color: var(--white);
+  background-color: var(--accent-blue-primary-40);
+  border-color: var(--accent-blue-primary-40);
+  color: var(--accent-blue-primary-70);
 }
 
 .section[class*='bg-primary-blue'] a.button.secondary.disabled,
@@ -1100,8 +1117,15 @@ p.button-container {
 .section[class*='bg-primary-blue'] button.secondary:disabled,
 .section[class*='bg-primary-blue'] button.secondary:disabled:hover {
   background-color: unset;
-  border: 1px solid var(--neutral-solid-20-s);
+  border-color: var(--neutral-solid-20-s);
   color: var(--neutral-solid-40-s);
+}
+
+.section[class*='bg-primary-blue'] a.button.secondary:focus:not(:focus-visible),
+.section[class*='bg-primary-blue'] button.secondary:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
+  border-color: var(--white);
 }
 
 /* ghost on dark */
@@ -1117,12 +1141,6 @@ p.button-container {
   color: var(--accent-blue-primary-70);
 }
 
-.section[class*='bg-primary-blue'] a.button.ghost:focus,
-.section[class*='bg-primary-blue'] button.ghost:focus {
-  background-color: var(--accent-blue-primary-10);
-  color: var(--accent-blue-primary-70);
-}
-
 .section[class*='bg-primary-blue'] a.button.ghost.disabled,
 .section[class*='bg-primary-blue'] a.button.ghost.disabled:hover,
 .section[class*='bg-primary-blue'] button.ghost:disabled,
@@ -1130,6 +1148,12 @@ p.button-container {
   background-color: transparent;
   color: rgb(0 41 77 / 42%);
   cursor: unset;
+}
+
+.section[class*='bg-primary-blue'] a.button.ghost:focus:not(:focus-visible),
+.section[class*='bg-primary-blue'] button.ghost:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
 }
 
 main img {

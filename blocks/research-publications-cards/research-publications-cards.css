@@ -9,8 +9,13 @@
   margin: var(--spacing-none) var(--spacing-none) var(--spacing-xlarge);
 }
 
-.cards-container .rp-card .text-content .card-btn p{
+.cards-container .rp-card .text-content .card-btn p {
   padding: 17px var(--spacing-none) var(--spacing-xxsmall);
+}
+
+.cards-container a,
+.cards-container button {
+  display: block;
 }
 
 .button-wrapper {
@@ -18,7 +23,7 @@
   margin-top: var(--spacing-xlarge);
 }
 
-.button-wrapper a.button{
+.button-wrapper a.button {
   font-size: var(--font-size-200);
 }
 
