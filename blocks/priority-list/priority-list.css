@@ -42,7 +42,7 @@
   .text-container
   .subtitle {
   text-transform: uppercase;
-  font-size: var(--font-size-200);
+  font-size: var(--font-size-300);
   font-weight: 700;
   line-height: 15px;
 }
@@ -65,7 +65,7 @@
   background-color: var(--white);
   color: var(--accent-blue-primary-70);
   padding: 0 0 var(--spacing-xxsmall) 0;
-  font-size: 16px;
+  font-size: 14px;
   margin: 0;
   border-radius: 0;
   border-bottom: 2px solid #0049724d;
@@ -211,7 +211,7 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
   > div
   .cardtitle {
   text-transform: capitalize;
-  font-size: 24px;
+  font-size: var(--font-size-800);
   color: var(--accent-blue-primary-90);
   line-height: 29px;
   font-weight: 700;
@@ -233,7 +233,7 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
   display: flex;
   flex-direction: column;
   row-gap: var(--spacing-xsmall);
-  font-size: 18px;
+  font-size: var(--font-size-500);
   color: var(--neutral-solid-90-s);
 }
 
@@ -298,7 +298,7 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
   color: var(--neutral-solid-90-s);
   text-decoration-color: var(--neutral-solid-90-s);
   line-height: 22px;
-  font-size: 16px;
+  font-size: var(--font-size-300);
   text-transform: capitalize;
 }
 
@@ -369,9 +369,9 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
     position: sticky;
     top: 100px;
     width: 341px;
-    height: 322px;
-    background-size: contain;
-    background-position: center center;
+    height: 341px;
+    background-size: 100% 100%;
+    background-position: right center;
     transition: background-image 200ms linear;
   }
 
@@ -408,8 +408,16 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
     > div
     .cardtitle {
     line-height: 43px;
-    font-size: 36px;
     margin-top: -15px;
+  }
+
+  .priority-list-wrapper
+  .priority-list
+  .right-column-container
+  .text-container
+  .button-wrapper
+  a {
+    font-size: 16px;
   }
 
   .priority-list-wrapper
@@ -443,10 +451,13 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
     .priority-list
     .left-column-container
     .image-container {
+    max-width: 731px;
+    max-height: 731px;
     position: sticky;
     top: 30px;
     width: 100%;
     background-size: contain;
+    background-position: right;
     height: 550px;
     transition: background-image 400ms linear;
   }
@@ -457,15 +468,6 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
     .image-container
     img {
     display: none;
-  }
-
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .cards-container
-    > div
-    .carddesc {
-    font-size: 20px;
   }
 
   .priority-list-wrapper

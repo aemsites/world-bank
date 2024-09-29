@@ -57,6 +57,7 @@
     margin: 32px 0;
     background-repeat: no-repeat;
     background-position: center;
+    border: 2px solid var(--white);
 }
 
 .card-icon.icon-video {
@@ -72,6 +73,7 @@
     color: var(--white);
     display: block;
     height: 100%;
+    transition: transform .2s;
 }
 
 .explore-card a .card-img {
@@ -96,6 +98,19 @@
     color: var(--white);
     z-index: 1;
     border-radius: 0 0 10px 10px;
+}
+
+.explore-card a:hover .card-content .card-title {
+    border-bottom: 3px solid var(--global-interactive-on-dark-hover);
+    padding-bottom: var(--spacing-medium);
+}
+
+.explore-card a:hover .card-icon {
+    border-color: var(--global-interactive-on-dark-hover);
+}
+
+.explore-card a:hover {
+    transform: scale(1.15);
 }
 
 .story-type {

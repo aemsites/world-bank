@@ -374,6 +374,7 @@
         "valueType": "string",
         "options": [
           { "name": "Transparent / White / Default", "value": "bg-default" },
+          { "name": "Dark Background Container", "value": "bg-primary-blue" },
           { "name": "Primary Blue 90", "value": "bg-primary-blue-90" },
           { "name": "Primary Blue 70", "value": "bg-primary-blue-70" },
           { "name": "Neutrals 10", "value": "bg-neutrals-10" },
@@ -573,13 +574,6 @@
         "required": true
       },
       {
-        "component": "text",
-        "name": "alttext",
-        "value": "Default Alt",
-        "label": "Alt Text",
-        "valueType": "string"
-      },
-      {
         "component": "aem-tag",
         "name": "curated-card-tags",
         "label": "Tags for Card",
@@ -610,6 +604,13 @@
         "name": "curated-card-link",
         "value": "",
         "label": "Link",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "alttext",
+        "value": "",
+        "label": "Alt Text",
         "valueType": "string"
       }
     ]
@@ -1323,13 +1324,6 @@
         "multi": false
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
-        "label": "Mini Card Alt Text"
-      },
-      {
         "component": "aem-tag",
         "name": "mini-card-tag",
         "label": "Card Type",
@@ -1374,6 +1368,13 @@
         "label": "Link",
         "valueType": "string",
         "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "",
+        "label": "Mini Card Alt Text"
       }
     ]
   },
@@ -1545,20 +1546,6 @@
         "name": "buttonProperties",
         "valueType": "string",
         "fields": [
-          {
-            "component": "select",
-            "valueType": "string",
-            "name": "btn-style",
-            "value": "",
-            "label": "Button Style",
-            "options": [
-              { "name": "Dark Background", "value": "dark-bg" },
-              { "name": "Dark Background - Underline", "value": "dark-bg-ul" },
-              { "name": "Light Background - Primary", "value": "light-bg-1" },
-              { "name": "Light Background - Secondary", "value": "light-bg-2" },
-              { "name": "Light Background - Underline", "value": "light-bg-ul" }
-            ]
-          },
           {
             "component": "text",
             "valueType": "string",
@@ -1863,6 +1850,13 @@
         "name": "image",
         "label": "Background Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Background Alternate Text"
       }
     ]
   },
