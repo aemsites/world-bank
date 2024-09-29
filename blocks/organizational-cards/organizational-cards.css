@@ -56,7 +56,7 @@ main .section > div.organizational-cards-wrapper {
   color: var(--white);
   font-weight: 700;
   text-align: left;
-  transition: background 0.3s linear;
+  transition: all 200ms ease-out;
   background: rgba(1 39 64 / 90%);
   position: relative;
 }
@@ -155,12 +155,17 @@ html[dir="rtl"] .organizational-card:not(first-child) {
 
 .organizational-card .card-link-wrapper {
   width: 100%;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .organizational-card .card-link-wrapper .button-container {
   height: 30px;
   border-bottom: 2px solid var(--divider-on-dark-subdued);
+  padding: var(--button-vertical-padding-secondary) 0 var(--spacing-xxsmall) 0;
+}
+
+.organizational-card .card-link-wrapper .button-container:hover {
+  border-bottom-color: var(--global-interactive-on-dark-hover);
 }
 
 .organizational-card
@@ -177,10 +182,6 @@ html[dir="rtl"] .organizational-card:not(first-child) {
   background-color: unset;
   padding: 0;
   margin: unset;
-}
-
-.organizational-card .card-link-wrapper .button-container > a.button:hover {
-  border: 1px solid var(--transparent);
 }
 
 .organizational-card.collapsed {
@@ -286,7 +287,7 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
   }
 
   .organizational-card:not(.collapsed) {
-    padding: 32px 0;
+    padding: 24px 0;
   }
 
   .organizational-card .collapse-btn {
@@ -327,6 +328,10 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
 
   .organizational-card .card-link-wrapper > .button-container {
     padding: unset;
+  }
+
+  .organizational-card .card-link-wrapper {
+    margin-top: 12px;
   }
 
   .organizational-card.collapsed {
@@ -382,7 +387,7 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
   }
 
   .organizational-card:not(.collapsed) {
-    padding: 32px 0;
+    padding: 24px 0;
     min-height: unset;
     max-height: unset;
   }

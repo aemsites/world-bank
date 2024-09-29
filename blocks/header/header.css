@@ -98,8 +98,8 @@ header .nav-menu-overlay .nav-menu {
   top: -2px;
   border: 1px solid transparent;
   position: absolute;
-  min-width: 125px;
-  padding: 13px 10px;
+  min-width: 100px;
+  padding: 13px 18px;
   margin-right: 10px;
 }
 
@@ -118,9 +118,10 @@ html[dir="rtl"] .language-container{
 
 /* Dropdown Text */
 .language-toggle {
-  padding-bottom: 14px;
+  padding-bottom: 8px;
   color: var(--text-on-light-link-primary-enabled);
   font-size: 16px;
+  width: 100%;
   display: inline-flex;
   justify-content: flex-end;
   cursor: pointer;
@@ -649,6 +650,10 @@ header
   height: 18px;
 }
 
+.section.nav-sections .default-content-wrapper a:hover p {
+  text-decoration-color: var(--accent-blue-primary-40);
+}
+
 header .nav-menu-overlay .nav-menu-column.right .browse-country p {
   position: absolute;
   width: 30px;
@@ -706,6 +711,15 @@ header nav .nav-hamburger button {
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+}
+
+header nav .nav-hamburger button:focus {
+  background-color: unset;
+  color: unset;
+}
+
+header nav .nav-hamburger button:focus-visible {
+  outline: 2px solid var(--links-focus-color);
 }
 
 header nav .nav-hamburger-icon,
@@ -780,6 +794,10 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 header nav .nav-brand img {
   width: var(--logo-width);
   height: auto;
+}
+
+header nav .nav-brand a:focus-visible img {
+  outline: 2px solid var(--links-focus-color);
 }
 
 .nav-tools .default-content-wrapper {
@@ -918,7 +936,7 @@ html[dir="rtl"] header nav .nav-tools {
   }
 
   .language-container {
-    top: -4px;
+    top: -10px;
   }
 
   header .nav-menu {
