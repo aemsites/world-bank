@@ -14,6 +14,10 @@
   border-radius: 5px;
 }
 
+.bio-detail .social-media-link a {
+  display: block;
+}
+
 .bio-detail .resources p a {
   margin: 0;
   border-bottom: 2px solid transparent;
@@ -34,9 +38,14 @@
   font-weight: normal;
 }
 
-.bio-detail .media-inquiries p a:hover{
+.bio-detail .media-inquiries p a:hover {
   color: var(--accent-blue-primary-70);
   border-bottom: 2px solid var(--accent-blue-primary-40);
+}
+
+.bio-detail .media-inquiries p a:focus-visible,
+.bio-detail .resources p a:focus-visible {
+  border: 2px solid var(--links-focus-color);
 }
 
 .bio-detail .media-inquiries p:nth-child(4) a:hover {

@@ -196,10 +196,12 @@ header .nav-menu-overlay .nav-menu-column.left ul a {
   pointer-events: none;
   font-weight: 700;
   line-height: 38.13px;
+  color: var(--white);
 }
 
 header .nav-menu-overlay .nav-menu-column.right > ul > li > ul a {
   font-size: var(--font-size-300);
+  color: var(--white);
 }
 
 header .nav-menu-overlay .nav-menu .submenu a:hover {
@@ -704,6 +706,10 @@ header nav .nav-hamburger button {
   white-space: initial;
 }
 
+header nav .nav-hamburger button:focus-visible {
+  outline: 2px solid var(--links-focus-color);
+}
+
 header nav .nav-hamburger-icon,
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
@@ -776,6 +782,10 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 header nav .nav-brand img {
   width: var(--logo-width);
   height: auto;
+}
+
+header nav .nav-brand a:focus-visible img {
+  outline: 2px solid var(--links-focus-color);
 }
 
 .nav-tools .default-content-wrapper {

@@ -204,6 +204,7 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 
 .cards.senior-leadership > ul > li {
   border: none;
+  transition: transform .2s;
 }
 
 .cards.senior-leadership .cards-card-image img {
@@ -221,6 +222,14 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
   color: var(--text-on-light-link-primary-enabled);
   line-height: 125%;
   letter-spacing: -0.063px;
+}
+
+.cards.senior-leadership li:hover .cards-card-image img {
+  transform: scale(1.15);
+}
+
+.cards.senior-leadership li:hover .cards-card-body h3 a {
+  color: var(--global-interactive-on-dark-focused);
 }
 
 @media (width >= 768px) {
