@@ -27,19 +27,18 @@
   padding: 0 1px;
   color: var(--background-container-on-light-link-primary-enabled);
   border-radius: 0;
-  border-bottom: 5px solid transparent;
+  border-bottom: 3px solid transparent;
   margin: 0;
   font-size: 16px;
   font-weight: 700;
   line-height: 140%;
-  padding-bottom: var(--spacing-xsmall);
+  padding-bottom: 14px;
 }
 
 .tab-navigation .tabs-list .tab-btn[aria-selected='true']{
   border: 0;
-  border-bottom: 5px solid #00ADE4;
+  border-bottom: 3px solid #00ADE4;
   cursor: initial;
-  line-height: 140%;
 } 
 
 .tab-navigation .tabs-list .left-btn,
