@@ -2,7 +2,7 @@
   padding-bottom: 0;
 }
 
-.priority-list-wrapper .priority-list {
+.priority-list {
   display: grid;
   max-width: var(--screen-width);
   grid-template-rows: max-content 1fr;
@@ -11,57 +11,38 @@
   position: relative;
 }
 
-.priority-list-wrapper .priority-list .right-column-container .text-container {
+.priority-list .right-column-container .text-container {
   color: var(--accent-blue-primary-90);
   display: flex;
   flex-direction: column;
   row-gap: var(--spacing-medium);
 }
 
-.priority-list-wrapper .priority-list .right-column-container {
+.priority-list .right-column-container {
   display: flex;
   flex-direction: column;
   row-gap: var(--spacing-xlarge);
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .text-container
-  .main-heading
-  p {
+.priority-list .right-column-container .text-container .main-heading p {
   margin: 0;
   font-weight: 400;
   max-width: 550px;
   word-break: whitespace;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .text-container
-  .subtitle {
+.priority-list .right-column-container .text-container .subtitle {
   text-transform: uppercase;
   font-size: var(--font-size-300);
   font-weight: 700;
   line-height: 15px;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .text-container
-  .subtitle
-  p {
+.priority-list .right-column-container .text-container .subtitle p {
   margin: 0;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .text-container
-  .button-wrapper
-  a {
+.priority-list .right-column-container .text-container .button-wrapper a {
   background-color: var(--white);
   color: var(--accent-blue-primary-70);
   padding: 0 0 var(--spacing-xxsmall) 0;
@@ -71,11 +52,19 @@
   border-bottom: 2px solid #0049724d;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div {
+.priority-list .right-column-container .cards-container > div .carddesc ul a {
+  color: var(--neutral-solid-90-s);
+  text-decoration-color: var(--neutral-solid-90-s);
+  line-height: 22px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.priority-list .right-column-container .text-container .button-wrapper a:hover {
+    border-bottom-color: var(--global-interactive-on-dark-hover);
+  }
+
+.priority-list .right-column-container .cards-container > div {
   display: flex;
   flex-direction: column;
   row-gap: var(--spacing-regular);
@@ -85,62 +74,41 @@
   text-align: left;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div:last-child {
+.priority-list .right-column-container .cards-container > div:last-child {
   border-left: 3px solid var(--transparent);
   border-right-width: 0;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div:not(div:last-child) {
+.priority-list .right-column-container .cards-container > div:not(div:last-child) {
   border-left: 3px solid var(--neutral-solid-10-s);
   border-right-width: 0;
 }
 
-html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div {
+html[dir="rtl"] .priority-list .right-column-container .cards-container > div {
   padding-right: 20px;
   padding-left: unset;
   text-align: right;
 }
 
-html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div:last-child {
+html[dir="rtl"] .priority-list .right-column-container .cards-container > div:last-child {
   border-right: 3px solid var(--transparent);
   border-left-width: 0;
 }
 
-html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div:not(div:last-child) {
+html[dir="rtl"] .priority-list .right-column-container .cards-container > div:not(div:last-child) {
   border-right: 3px solid var(--neutral-solid-10-s);
   border-left-width: 0;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .left-column-container
-  .image-container
-  img {
+.priority-list .left-column-container .image-container img {
   height: 342px;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div
-  img {
+.priority-list .right-column-container .cards-container > div img {
   display: none;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div::before {
+.priority-list .right-column-container .cards-container > div::before {
   position: absolute;
   left: -7px;
   right: auto;
@@ -151,65 +119,36 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
   border-radius: 50%;
 }
 
-html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div::before {
+html[dir="rtl"] .priority-list .right-column-container .cards-container > div::before {
   right: -7px;
   left: auto;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div.people::before {
+.priority-list .right-column-container .cards-container > div.people::before {
   background-color: var(--priorities-yellow-people);
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div.prosperity::before {
+.priority-list .right-column-container .cards-container > div.prosperity::before {
   background-color: var(--priorities-purple-prosperity);
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div.planet::before {
+.priority-list .right-column-container .cards-container > div.planet::before {
   background-color: var(--priorities-green-planet);
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div.infrastructure::before {
+.priority-list .right-column-container .cards-container > div.infrastructure::before {
   background-color: var(--priorities-magenta-infrastructure);
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div.digital::before {
+.priority-list .right-column-container .cards-container > div.digital::before {
   background-color: var(--priorities-gray-digital);
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div.cross-cutting-areas::before {
+.priority-list .right-column-container .cards-container > div.cross-cutting-areas::before {
   background-color: var(--priorities-blue-cross-cutting);
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div
-  .cardtitle {
+.priority-list .right-column-container .cards-container > div .cardtitle {
   text-transform: capitalize;
   font-size: var(--font-size-800);
   color: var(--accent-blue-primary-90);
@@ -218,18 +157,13 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
   margin-top: -8px;
 }
 
-.priority-list-wrapper .priority-list .right-column-container .cards-container {
+.priority-list .right-column-container .cards-container {
   display: flex;
   flex-direction: column;
   max-height: fit-content;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div
-  .carddesc {
+.priority-list .right-column-container .cards-container > div .carddesc {
   display: flex;
   flex-direction: column;
   row-gap: var(--spacing-xsmall);
@@ -237,23 +171,11 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
   color: var(--neutral-solid-90-s);
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div
-  .carddesc
-  p {
+.priority-list .right-column-container .cards-container > div .carddesc p {
   margin: 0;
 }
 
-.priority-list-wrapper
-  .priority-list
-  .right-column-container
-  .cards-container
-  > div
-  .carddesc
-  ul {
+.priority-list .right-column-container .cards-container > div .carddesc ul {
   padding-left: 20px;
   padding-right: unset;
   font-size: 16px;
@@ -264,18 +186,18 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
   padding-bottom: var(--spacing-xlarge);
 }
 
-html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div .carddesc ul {
+html[dir="rtl"] .priority-list .right-column-container .cards-container > div .carddesc ul {
   padding-right: 20px;
   padding-left: unset;
 }
 
-.priority-list-wrapper .priority-list .left-column-container {
+.priority-list .left-column-container {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.priority-list-wrapper .priority-list .left-column-container .image-container {
+.priority-list .left-column-container .image-container {
   background-size: contain;
   background-size: 95%;
   background-repeat: no-repeat;
@@ -314,58 +236,39 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
 }
 
 @media (width >=768px) and (width < 1024px) {
-  .priority-list-wrapper .priority-list {
+  .priority-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 0 48px;
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .text-container {
+  .priority-list .right-column-container .text-container {
     padding: 0 var(--spacing-xxsmall);
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .text-container
-    .subtitle {
+  .priority-list .right-column-container .text-container .subtitle {
     text-transform: uppercase;
     font-size: var(--font-size-300);
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .cards-container
-    > div {
+  .priority-list .right-column-container .cards-container > div {
     padding-left: 20px;
     padding-right: unset;
   }
 
-  html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div {
+  html[dir="rtl"] .priority-list .right-column-container .cards-container > div {
     padding-right: 20px;
     padding-left: unset;
   }
 
-  .priority-list-wrapper .priority-list .left-column-container {
+  .priority-list .left-column-container {
     position: relative;
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .cards-container
-    > div
-    .carddesc {
+  .priority-list .right-column-container .cards-container > div .carddesc {
     font-size: 18px;
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .left-column-container
-    .image-container {
+  .priority-list .left-column-container .image-container {
     position: sticky;
     top: 100px;
     width: 341px;
@@ -375,38 +278,26 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
     transition: background-image 200ms linear;
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .left-column-container
-    .image-container
-    img {
+  .priority-list .left-column-container .image-container img {
     display: none;
   }
 }
 
 @media (width >= 1024px) {
-  .priority-list-wrapper .priority-list {
+  .priority-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 0 68px;
   }
 
-  .priority-list-wrapper .priority-list .right-column-container {
+  .priority-list .right-column-container {
     padding-bottom: 0;
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .text-container {
+  .priority-list .right-column-container .text-container {
     padding: 0 var(--spacing-xxsmall);
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .cards-container
-    > div
-    .cardtitle {
+  .priority-list .right-column-container .cards-container > div .cardtitle {
     line-height: 43px;
     margin-top: -15px;
   }
@@ -429,21 +320,17 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
     font-size: var(--font-size-300);
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .cards-container
-    > div {
+  .priority-list .right-column-container .cards-container > div {
     padding-left: 40px;
     padding-right: unset;
   }
 
-  html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div {
+  html[dir="rtl"] .priority-list .right-column-container .cards-container > div {
     padding-right: 40px;
     padding-left: unset;
   }
 
-  .priority-list-wrapper .priority-list .left-column-container {
+  .priority-list .left-column-container {
     position: relative;
   }
 
@@ -462,11 +349,7 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
     transition: background-image 400ms linear;
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .left-column-container
-    .image-container
-    img {
+  .priority-list .left-column-container .image-container img {
     display: none;
   }
 
@@ -482,20 +365,13 @@ html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .c
     justify-content: space-between;
   }
 
-  .priority-list-wrapper
-    .priority-list
-    .right-column-container
-    .cards-container
-    > div
-    .carddesc
-    ul
-    li {
+  .priority-list .right-column-container .cards-container > div .carddesc ul li {
     padding-left: 4px;
     padding-right: unset;
     width: 45%;
   }
 
-  html[dir="rtl"] .priority-list-wrapper .priority-list .right-column-container .cards-container > div .carddesc ul li {
+  html[dir="rtl"] .priority-list .right-column-container .cards-container > div .carddesc ul li {
     padding-right: 4px;
     padding-left: unset;
   }
