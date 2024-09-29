@@ -1850,6 +1850,13 @@
         "name": "image",
         "label": "Background Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Background Alternate Text"
       }
     ]
   },
