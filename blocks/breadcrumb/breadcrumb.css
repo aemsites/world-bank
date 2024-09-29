@@ -7,11 +7,7 @@ main .breadcrumb-wrapper ol {
 }
 
 main .breadcrumb-wrapper ol li {
-  max-width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
   display: flex;
-  text-overflow: ellipsis;
   font-size: var(--font-size-200);
   color: var(--text-on-light-link-primary-enabled);
 }
