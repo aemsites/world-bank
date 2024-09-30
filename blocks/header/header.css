@@ -95,7 +95,7 @@ header .nav-menu-overlay .nav-menu {
   text-align: right;
   opacity: 1;
   right: 42px;
-  top: -2px;
+  top: -4px;
   border: 1px solid transparent;
   position: absolute;
   min-width: 100px;
@@ -107,6 +107,7 @@ html[dir="rtl"] .language-container{
   left: 42px;
   right: auto;
   text-align: end;
+  margin-left: 10px;
 }
 
 .nav-item-expanded-active {
@@ -365,6 +366,10 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country span {
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a span {
   text-align: center;
   vertical-align: middle;
+}
+
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span {
+  margin-left: 15px;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
@@ -831,6 +836,11 @@ header nav .nav-tools {
   margin-left: auto;
 }
 
+html[dir="rtl"] header nav .nav-tools {
+  margin-right: auto;
+  margin-left: initial;
+}
+
 .section.nav-tools .default-content-wrapper h6 {
   font-size: var(--font-size-300);
   color: var(--accent-blue-primary-70);
@@ -888,7 +898,7 @@ header nav .nav-tools {
   position: absolute;
   z-index: 1;
   width: 100vw;
-  top: 84px;
+  top: calc(var(--nav-height) + (var(--nav-padding) * 2));
 }
 
 .search-input-wrapper {
@@ -907,20 +917,12 @@ header nav .nav-tools {
 }
 
 @media (width >= 1024px) {
-  .search-container {
-    top: 120px;
-  }
-
   .search-input-container {
     width: 70%;
   }
 }
 
 @media (width >=768px) and (width< 1024px) {
-  .search-container {
-    top: 94px;
-  }
-
   header .nav-wrapper {
     overflow-y: visible;
   }
@@ -983,6 +985,10 @@ header nav .nav-tools {
   header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
     min-width: 41vw;
     height: auto;
+  }
+
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left li {
+    text-align: right;
   }
 
   header .nav-menu-overlay .nav-menu-column.right > .submenu .footer {
@@ -1377,6 +1383,11 @@ header nav .nav-tools {
     border-right: 1px solid var(--nav-menu-footer-color);
   }
 
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .submenu .footer>ul>li:not(li:last-child) {
+    border-left: 1px solid var(--nav-menu-footer-color);
+    border-right: none;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1504,6 +1515,10 @@ header nav .nav-tools {
     background-color: var(--accent-blue-primary-120);
   }
 
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
+    right: 50px;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1532,7 +1547,7 @@ header nav .nav-tools {
   }
 
   html[dir='rtl']   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
-    right: 50rem;
+    right: 54rem;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
@@ -1564,6 +1579,10 @@ header nav .nav-tools {
     flex-direction: row;
     justify-content: start;
     align-items: center;
+  }
+
+  .section.nav-tools .default-content-wrapper .icon img {
+    padding-top: 4px;
   }
 }
 
