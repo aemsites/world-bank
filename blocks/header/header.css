@@ -94,13 +94,12 @@ header .nav-menu-overlay .nav-menu {
   line-height: 22px;
   text-align: right;
   opacity: 1;
-  right: 42px;
+  right: 25px;
   top: -5px;
   border: 1px solid transparent;
   position: absolute;
   min-width: 100px;
-  padding: 13px 18px;
-  margin-right: 10px;
+  padding: 13px var(--spacing-regular) 13px 18px;
 }
 
 html[dir="rtl"] .language-container{
@@ -127,6 +126,7 @@ html[dir="rtl"] .language-container{
   cursor: pointer;
   height: 26px;
   min-width: 69px;
+  gap: 6px;
 }
 
 .language-text {
@@ -263,6 +263,7 @@ header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hove
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-right: -10px;
 }
 
 .overlay {
@@ -292,10 +293,10 @@ header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hove
     text-transform: uppercase;
   }
 
-  .cancel-container {
+  /* .cancel-container {
     width: 30px;
     height: 30px;
-  }
+  } */
 }
 
 /* End of language selector styles */
@@ -499,7 +500,6 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
   color: var(--text-on-dark-emphasis);
   line-height: 22px;
   letter-spacing: 0.06em;
-  /* text-align: left; */
   display: flex;
   margin-top: 0;
   flex-direction: column;
@@ -864,9 +864,7 @@ html[dir="rtl"] header nav .nav-tools {
 }
 
 .section.nav-tools .default-content-wrapper .icon {
-  height: 44px;
   display: flex;
-  width: 44px;
   justify-content: center;
   align-items: center;
 }
@@ -913,7 +911,7 @@ html[dir="rtl"] header nav .nav-tools {
   position: absolute;
   z-index: 1;
   width: 100vw;
-  top: 84px;
+  top: calc(var(--nav-height) + (var(--nav-padding) * 2));
 }
 
 .search-input-wrapper {
@@ -932,20 +930,12 @@ html[dir="rtl"] header nav .nav-tools {
 }
 
 @media (width >= 1024px) {
-  .search-container {
-    top: 120px;
-  }
-
   .search-input-container {
     width: 70%;
   }
 }
 
 @media (width >=768px) and (width< 1024px) {
-  .search-container {
-    top: 94px;
-  }
-
   header .nav-wrapper {
     overflow-y: visible;
   }
@@ -1608,6 +1598,10 @@ html[dir="rtl"] header nav .nav-tools {
     flex-direction: row;
     justify-content: start;
     align-items: center;
+  }
+
+  .section.nav-tools .default-content-wrapper .icon img {
+    padding-top: 4px;
   }
 }
 
