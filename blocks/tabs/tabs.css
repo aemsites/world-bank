@@ -39,7 +39,6 @@
   border: 0;
   border-bottom: 3px solid var(--background-container-secondary);
   cursor: initial;
-  line-height: 24px;
   color: var(--text-on-light-emphasis);
 } 
 
