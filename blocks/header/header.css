@@ -898,7 +898,7 @@ html[dir="rtl"] header nav .nav-tools {
   position: absolute;
   z-index: 1;
   width: 100vw;
-  top: 84px;
+  top: calc(var(--nav-height) + (var(--nav-padding) * 2));
 }
 
 .search-input-wrapper {
@@ -917,20 +917,12 @@ html[dir="rtl"] header nav .nav-tools {
 }
 
 @media (width >= 1024px) {
-  .search-container {
-    top: 120px;
-  }
-
   .search-input-container {
     width: 70%;
   }
 }
 
 @media (width >=768px) and (width< 1024px) {
-  .search-container {
-    top: 94px;
-  }
-
   header .nav-wrapper {
     overflow-y: visible;
   }
@@ -1587,6 +1579,10 @@ html[dir="rtl"] header nav .nav-tools {
     flex-direction: row;
     justify-content: start;
     align-items: center;
+  }
+
+  .section.nav-tools .default-content-wrapper .icon img {
+    padding-top: 4px;
   }
 }
 
