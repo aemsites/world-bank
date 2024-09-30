@@ -219,6 +219,10 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
   font-weight: 700;
 }
 
+header .nav-menu-overlay .nav-menu-column ul a:any-link:focus {
+  color: var(--text-on-dark-default);
+}
+
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   color: var(--black);
   border-bottom: 1px solid

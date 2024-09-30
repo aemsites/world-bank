@@ -41,6 +41,7 @@
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-text a {
   text-decoration: none;
+  display: block;
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-description {
