@@ -3,5 +3,5 @@ Please always provide the [GitHub issue(s)](../issues) your PR is for, as well a
 Fix #<gh-issue-id>
 
 Test URLs:
-- Before: https://main--world-bank--aemsites.hlx.live/
-- After: https://<branch>--world-bank--aemsites.hlx.live/
+- Before: https://main--world-bank--aemsites.aem.live/
+- After: https://<branch>--world-bank--aemsites.aem.live/
