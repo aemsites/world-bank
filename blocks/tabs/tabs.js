@@ -244,7 +244,7 @@ export default async function decorate(block) {
       'aria-controls': `tabpanel-${id}`,
       'aria-selected': !i,
       role: 'tab',
-    }, p({class: 'tab-title' }, tab.textContent));
+    }, p({ class: 'tab-title' }, tab.textContent));
 
     tabButton.addEventListener('click', () => {
       block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
