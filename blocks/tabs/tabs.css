@@ -16,6 +16,7 @@
   margin-bottom: var(--spacing-none);
   gap: 28px;
   border-bottom: 2px solid var(--neutral-solid-10-s);
+  cursor: pointer;
 }
 
 .tab-menu::-webkit-scrollbar {
