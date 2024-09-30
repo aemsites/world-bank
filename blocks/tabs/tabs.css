@@ -95,12 +95,12 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  padding: 20px 0 0;
+  padding: var(--spacing-regular) 0 0;
   border-top: 2px solid var(--neutral-solid-10-s);
 }
 
 .tabs .tabs-panel .tab-li-element:first-child {
-  margin-top: var(--global-gutter);
+  margin-top: var(--spacing-medium);
   border-top: none ;
 }
 
