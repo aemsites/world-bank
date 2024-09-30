@@ -11,7 +11,7 @@
 .story-type p {
     font-size: var(--font-size-100);
     font-weight: 700;
-    line-height: 13.2px;
+    line-height: 16px;
     letter-spacing: 0.06em;
 }
 
@@ -19,8 +19,12 @@
     font-size: var(--font-size-600);
     font-weight: 700;
     line-height: 125%;
-    margin-top: 12px;
+    margin-top: 16px;
     margin-bottom: 0;
+}
+
+.explore-cards-wrapper .main-heading p {
+    margin:  0 0 24px;
 }
 
 .section .explore-cards > .main-heading > div > p{
@@ -31,32 +35,29 @@
 
 .explore-card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--spacing-medium);
-    width: calc(100vw - 68px);
-    overflow-x: scroll;
-    scrollbar-width: none;
+    grid-template-columns: 1fr;
+    gap: 32px;
 }
 
 .explore-card {
     position: relative;
     border-radius: 10px;
     height: 400px;
-    width: 276px;
     flex:none;
 }
 
 .card-icon {
-    width: 72px;
-    height: 72px;
+    width: 70px;
+    height: 70px;
     background-color: var(--white);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 24px 0;
+    margin: 32px 0;
     background-repeat: no-repeat;
     background-position: center;
+    border: 2px solid var(--white);
 }
 
 .card-icon.icon-video {
@@ -72,6 +73,7 @@
     color: var(--white);
     display: block;
     height: 100%;
+    transition: transform .2s;
 }
 
 .explore-card a .card-img {
@@ -98,31 +100,40 @@
     border-radius: 0 0 10px 10px;
 }
 
+.explore-card a:hover .card-content .card-title {
+    border-bottom: 3px solid var(--global-interactive-on-dark-hover);
+    padding-bottom: var(--spacing-medium);
+}
+
+.explore-card a:hover .card-icon {
+    border-color: var(--global-interactive-on-dark-hover);
+}
+
+.explore-card a:hover {
+    transform: scale(1.15);
+}
+
 .story-type {
     font-size: var(--font-size-100);
     font-weight: 700;
-    line-height: 13.2px;
+    line-height: 16px;
     letter-spacing: 0.06em;
 }
 
 @media (width >=768px) {
-    .explore-card-container {
-        grid-template-columns: 1fr;
-        width: unset;
-        overflow-x: unset;
-    }
-
     .explore-card {
-        position: relative;
         border-radius: 10px;
         height: 350px;
-        width: unset;
     }
 
     .card-title p {
         margin-top: 16px;
         font-size: var(--font-size-600);
         margin-bottom: 0;
+    }
+
+    .explore-cards-wrapper .main-heading p {
+        margin:  0 0 28px;
     }
 
     .card-icon {
@@ -153,19 +164,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-}
-
-@media (width <768px) {
-    .explore-card-container {
-        display: flex;
-        width: calc(100vw - 28px);
-    }
-
-    .explore-card {
-        flex:none;
-    }
-
-    .explore-card:last-child {
-        padding-right: 20px;
+    .explore-cards-wrapper .main-heading p {
+        margin:  0 0 58px;
     }
 }

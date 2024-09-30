@@ -33,10 +33,11 @@
     border-radius: 50%;
     cursor: pointer;
     z-index: 2;
+    border: 2px solid transparent;
 }
 
 .video-container .video-play:hover, .video-container .video-pause:hover {
-    border: 1px solid white;
+    border-color: var(--global-interactive-on-dark-hover);
 }
 
 html[dir="rtl"] .teaser-wrapper .video-container .video-play,
@@ -88,94 +89,7 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
 }
 
 .teaser-wrapper .button-container {
-    border-radius: 100px;
     padding: 15px 0 32px;
-}
-
-.teaser-wrapper .button-container .button {
-    width: 137px;
-    height: 55px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    font-size: var(--font-size-300);
-}
-
-.teaser-wrapper .button-container .button.dark-bg {
-    background-color: var(--white);
-    color: var(--background-container-on-light-link-primary-enabled);
-}
-
-.teaser-wrapper .button-container .button.dark-bg:focus {
-    background-color: var(--accent-blue-primary-10);
-    border: 1px solid var(--accent-blue-primary-70);
-}
-
-.teaser-wrapper .button-container .button.dark-bg:hover {
-    border: 1px solid var(--accent-blue-primary-40);
-}
-
-.teaser-wrapper .button-container .button.dark-bg-ul {
-    background-color: var(--white);
-    color: var(--accent-blue-primary-90);
-    text-decoration: underline var(--accent-blue-primary-90);
-}
-
-.teaser-wrapper .button-container .button.dark-bg-ul:focus {
-    background-color: var(--accent-blue-primary-10);
-    border: 1px solid var(--accent-blue-primary-70);
-}
-
-.teaser-wrapper .button-container .button.dark-bg-ul:hover {
-    border: 1px solid var(--accent-blue-primary-40);
-}
-
-.teaser-wrapper .button-container .button.light-bg-1 {
-    background-color: var(--accent-blue-primary-70);
-    color: var(--white);
-}
-
-.teaser-wrapper .button-container .button.light-bg-1:focus {
-    background-color: var(--accent-blue-primary-90);
-    color: var(--white);
-}
-
-.teaser-wrapper .button-container .button.light-bg-1:hover {
-    background-color: var(--accent-blue-primary-40);
-    color: var(--black);
-}
-
-.teaser-wrapper .button-container .button.light-bg-2 {
-    background-color: rgb(255 255 255 / 0%);
-    color: var(--accent-blue-primary-90);
-    border: 1px solid var(--accent-blue-primary-70);
-}
-
-.teaser-wrapper .button-container .button.light-bg-2:focus {
-    border: 1px solid var(--black);
-    color: var(--black);
-    background-color: var(--accent-blue-primary-40);
-}
-
-.teaser-wrapper .button-container .button.light-bg-2:hover {
-    border: 1px solid var(--black);
-}
-
-.teaser-wrapper .button-container .button.light-bg-ul {
-    background-color: var(--accent-blue-primary-70);
-    color: var(--accent-blue-primary-90);
-    text-decoration: underline var(--white);
-}
-
-.teaser-wrapper .button-container .button.light-bg-ul:focus {
-    background-color: var(--accent-blue-primary-90);
-    color: var(--white);
-}
-
-.teaser-wrapper .button-container .button.light-bg-ul:hover {
-    background-color: var(--accent-blue-primary-40);
-    color: var(--black);
 }
 
 .teaser-wrapper .teaser-swoosh-wrapper {
@@ -231,7 +145,7 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
     opacity: 0.95;
 }
 
-@media (width <=1024px) {
+@media (width < 1024px) {
     .teaser-wrapper .teaser-swoosh-wrapper {
         margin-right: 16px;
     }
@@ -245,7 +159,7 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
     }
 }
 
-@media (width <=768px) {
+@media (width < 768px) {
     .teaser-wrapper {
         margin-top: 20px;
     }

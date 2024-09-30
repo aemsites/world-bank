@@ -36,6 +36,8 @@ function arrowIcon(props) {
   icon.alt = `${props}`;
   icon.loading = 'lazy';
   icon.dataset.iconName = `${props}`;
+  icon.width = '14';
+  icon.height = '12';
   return icon;
 }
 
@@ -210,7 +212,9 @@ export default async function decorate(block) {
       if (alt) {
         const pic = image.querySelector('img');
         const pTag = alt.querySelector('p');
-        pic.alt = pTag.textContent.trim();
+        if (pTag && pic) {
+          pic.alt = pTag.textContent.trim();
+        }
         alt.remove();
       }
       const anchor = a({ class: 'anchor-tag', href: link.textContent });

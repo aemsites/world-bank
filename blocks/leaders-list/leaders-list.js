@@ -15,11 +15,13 @@ export default async function decorate(block) {
 
   // Iterate over the JSON data to create list items
   jsonData.forEach((leader) => {
-    const liItem = li({ class: 'leader-item' });
-    const link = a({ href: leader.Link, target: '_blank' }, div({ class: 'leader-name' }, p({}, `${leader.Name}`)));
-    const jobTitle = div({ class: 'leader-title' }, p({}, `${leader.Title}`));
-    liItem.append(link, jobTitle);
-    ulElement.appendChild(liItem);
+    if (leader && leader.Link) {
+      const liItem = li({ class: 'leader-item' });
+      const link = a({ href: leader.Link, target: '_blank' }, div({ class: 'leader-name' }, p({}, `${leader.Name}`)));
+      const jobTitle = div({ class: 'leader-title' }, p({}, `${leader.Title}`));
+      liItem.append(link, jobTitle);
+      ulElement.appendChild(liItem);
+    }
   });
   // Append the list to the container
   container.appendChild(ulElement);

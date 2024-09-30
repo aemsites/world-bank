@@ -21,7 +21,6 @@ export default async function decorate(block) {
   [...cards].forEach((card) => {
     const contentWrapper = document.createElement('div');
     contentWrapper.classList.add('card-content-wrapper');
-
     card.classList.add('organizational-card', 'collapsed');
     const acronymEl = card.children[0];
     acronymEl.classList.add('card-acronym');
@@ -30,6 +29,7 @@ export default async function decorate(block) {
     card.children[3].classList.add('card-link-wrapper', 'left-justify-content');
     const anchorEl = card.children[3].querySelector('a');
     anchorEl.classList.add('card-link');
+    anchorEl.setAttribute('aria-label', `${anchorEl.innerText} - ${card.children[1].innerText}`);
     const collapseBtn = document.createElement('div');
     collapseBtn.classList.add('collapse-btn');
     collapseBtn.tabIndex = 0;

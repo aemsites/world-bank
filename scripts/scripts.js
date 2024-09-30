@@ -17,14 +17,14 @@ import {
 import {
   getLanguage,
   createSource,
-  getEnvType,
   formatDate,
   setPageLanguage,
   PATH_PREFIX,
 } from './utils.js';
 
-const LCP_BLOCKS = []; // add your LCP blocks to the list
+const LCP_BLOCKS = ['bio-detail']; // add your LCP blocks to the list
 export const CLASS_MAIN_HEADING = 'main-heading';
+export const LANGUAGE_ROOT = `/ext/${getLanguage()}`;
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -73,13 +73,24 @@ async function loadFonts() {
 }
 
 /**
+ * remove the adujusts the auto images
+ * @param {Element} main The container element
+ */
+function adjustAutoImages(main) {
+  const pictureElement = main.querySelector('div > p > picture');
+  if (pictureElement) {
+    const pElement = pictureElement.parentElement;
+    pElement.className = 'auto-image-container';
+  }
+}
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 // eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
-    // TODO: add auto block, if needed
+    adjustAutoImages(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -244,7 +255,7 @@ async function renderWBDataLayer() {
     siteInfo: {
       siteLanguage: getLanguage() || 'en',
       siteType: config.analyticsSiteType || 'main',
-      siteEnv: getEnvType() || 'dev',
+      siteEnv: config.environment || 'Dev',
     },
 
     techInfo: {
@@ -301,8 +312,7 @@ function loadDelayed() {
 export async function fetchSearch() {
   window.searchData = window.searchData || {};
   if (Object.keys(window.searchData).length === 0) {
-    const lang = getLanguage();
-    const path = `/${lang}/query-index.json?limit=500&offset=0`;
+    const path = `${LANGUAGE_ROOT}/query-index.json?limit=500&offset=0`;
 
     const resp = await fetch(path);
     window.searchData = JSON.parse(await resp.text()).data;

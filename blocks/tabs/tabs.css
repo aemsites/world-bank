@@ -14,7 +14,7 @@
   overflow-x: auto;
   padding: 0;
   margin: 0;
-  gap: 30px;
+  gap: 28px;
   border-bottom: 2px solid var(--neutral-solid-10-s);
 }
 
@@ -27,19 +27,20 @@
   padding: 0 1px;
   color: var(--background-container-on-light-link-primary-enabled);
   border-radius: 0;
-  border-bottom: 5px solid transparent;
+  border-bottom: 3px solid transparent;
   margin: 0;
-  font-size: 16px;
+  font-size: var(--font-size-300);
   font-weight: 700;
-  line-height: 140%;
-  padding-bottom: var(--spacing-xsmall);
+  line-height: 20px;
+  padding-bottom: 13px;
 }
 
 .tab-navigation .tabs-list .tab-btn[aria-selected='true']{
   border: 0;
-  border-bottom: 5px solid #00ADE4;
+  border-bottom: 3px solid var(--background-container-secondary);
   cursor: initial;
-  line-height: 140%;
+  line-height: 24px;
+  color: var(--text-on-light-emphasis);
 } 
 
 .tab-navigation .tabs-list .left-btn,
@@ -104,11 +105,11 @@
   border-top: none ;
 }
 
-.tab-li-element  a {
+.tab-li-element a {
   text-decoration: none;
 }
 
-.tab-li-element  .tab-li-element-type {
+.tab-li-element .tab-li-element-type {
   font-weight: 700;
   font-size: var(--font-size-100);
   line-height: 110%;
@@ -123,6 +124,10 @@
   font-size: var(--font-size-500);
   line-height: 120%;
   color: var(--text-on-light-link-primary-enabled);
+}
+
+.tab-li-element a:hover .tab-li-element-heading {
+  color: var(--global-interactive-on-dark-focused);
 }
 
 .tab-li-element .tab-li-element-date {
