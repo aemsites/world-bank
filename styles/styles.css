@@ -724,7 +724,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  padding: var(--spacing-medium) 0;
+  padding: var(--nav-padding) 0;
 }
 
 h1,
