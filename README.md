@@ -2,8 +2,8 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--world-bank--aemsites.hlx.page/
-- Live: https://main--world-bank--aemsites.hlx.live/
+- Preview: https://main--world-bank--aemsites.aem.page/
+- Live: https://main--world-bank--aemsites.aem.live/
 
 ## Installation
 

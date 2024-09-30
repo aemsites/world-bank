@@ -23,19 +23,6 @@
   display: none;
 } 
 
-.tab-navigation .tabs-list .tab-btn {
-  background-color: transparent;
-  padding: 0 1px;
-  color: var(--background-container-on-light-link-primary-enabled);
-  border-radius: 0;
-  border-bottom: 5px solid transparent;
-  margin: 0;
-  font-size: var(--font-size-300);
-  font-weight: 700;
-  line-height: 20px;
-  padding-bottom: var(--spacing-xsmall);
-}
-
 .tab-navigation .tabs-list .tab-btn[aria-selected='true']{
   border: 0;
   border-bottom: 3px solid var(--background-container-secondary);
@@ -46,6 +33,15 @@
 .tab-navigation .tabs-list .tab-btn .tab-title {
   margin: var(--spacing-none);
   text-transform: capitalize;
+  background-color: transparent;
+  padding: 0 1px;
+  color: var(--background-container-on-light-link-primary-enabled);
+  border-radius: 0;
+  border-bottom: 5px solid transparent;
+  font-size: var(--font-size-300);
+  font-weight: 700;
+  line-height: 20px;
+  padding-bottom: var(--spacing-xsmall);
 }
 
 .tab-navigation .tabs-list .tab-btn .tab-title:hover {
