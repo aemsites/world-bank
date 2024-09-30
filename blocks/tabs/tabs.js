@@ -1,6 +1,6 @@
 import { getMetadata, toClassName, fetchPlaceholders } from '../../scripts/aem.js';
 import {
-  a, button, div, li, ul,
+  a, button, div, li, ul, p,
 } from '../../scripts/dom-helpers.js';
 import { getLanguage, fetchData, scriptEnabled } from '../../scripts/utils.js';
 import { loadFragment } from '../fragment/fragment.js';
@@ -244,7 +244,7 @@ export default async function decorate(block) {
       'aria-controls': `tabpanel-${id}`,
       'aria-selected': !i,
       role: 'tab',
-    }, tab.textContent);
+    }, p({class: 'tab-title' }, tab.textContent));
 
     tabButton.addEventListener('click', () => {
       block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
