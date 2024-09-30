@@ -3,17 +3,45 @@
     flex-direction: column;
     list-style-type: none; 
     padding: 0;
-    gap: 20px;
+    gap: var(--spacing-regular);
     margin: 0;
 }
 
 .leader-item {
     display: flex;
     flex-direction: column;
-    gap: 10px;  
     border-bottom: 2px solid var(--neutral-solid-10-s);
     padding: 0 0 var(--spacing-large) 0;
     width: 100%;
+}
+
+.leader-item p {
+    padding: 0;
+    margin: 0;
+}
+
+.leader-item a {
+    text-decoration: none;
+}
+
+.leader-item .leader-title {
+    font-weight: 400;
+    font-size: var(--font-size-300);
+    line-height: 22px;
+    letter-spacing: -0.02em;
+    color: var(--text-on-light-emphasis);
+}
+
+.leader-item a .leader-name {
+    font-weight: 700;
+    font-size: var(--font-size-600);
+    line-height: 24px;
+    text-align: justify;
+    color: var(--text-on-light-link-primary-enabled);
+}
+
+.leader-item a:hover .leader-name {
+    color: var(--global-interactive-on-dark-focused);
 }
 
 @media (width >= 768px) {
@@ -28,59 +56,16 @@
     .leader-item .leader-title {
         width: 50%;
         text-align: right; /* Aligns text to the right */
+        line-height:  20px;
+    }
+
+    .leader-item a .leader-name {
+        line-height: 25px;
     }
 }
 
-.leader-item p {
-    padding: 0;
-    margin: 0;
-}
-
-.leader-item a {
-    text-decoration: none;
-}
-
-.leader-item a .leader-name {
-    font-weight: 700;
-    font-size: var(--font-size-600);
-    line-height: 120%;
-    text-align: justify;
-    color: var(--text-on-light-link-primary-enabled);
-}
-
-.leader-item a:hover .leader-name {
-    color: var(--global-interactive-on-dark-focused);
-}
-
-/* html[dir="rtl"] .leader-item .leader-name{
-    text-align: right;
-} */
-
-.leader-item .leader-title {
-    font-weight: 400;
-    font-size: var(--font-size-400);
-    line-height: 20px;
-    letter-spacing: -0.02em;
-    color: var(--text-on-light-emphasis);
-}
-
-
-@media (width >= 768px) {
-    .leader-item{
-        flex-direction: row;
+@media (width >= 1024px) {
+    .leader-item a .leader-name {
+        line-height: 30px;
     }
-
-    .leader-item a{
-        width: 50%;
-    }
-
-    .leader-item .leader-name{
-        font-size: var(--font-size-600);
-    }
-
-    .leader-item .leader-title{
-        width: 50%;
-        text-align: right; /* Aligns text to the right */
-    }
-
 }
