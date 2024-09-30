@@ -1,9 +1,11 @@
-import { getMetadata, toClassName, fetchPlaceholders } from '../../scripts/aem.js';
+import { getMetadata, toClassName, fetchPlaceholders} from '../../scripts/aem.js';
 import {
   a, button, div, li, ul,
 } from '../../scripts/dom-helpers.js';
 import { getLanguage, fetchData, scriptEnabled } from '../../scripts/utils.js';
 import { loadFragment } from '../fragment/fragment.js';
+import {
+  fetchLanguagePlaceholders} from '../../scripts/scripts.js';
 
 const langCode = getLanguage();
 const upiId = getMetadata('upi');
@@ -52,9 +54,11 @@ function removeShowMoreButton(tabPanel) {
   }
 }
 
-function showMoreButton(tabPanel, loadMoreFn) {
+async function showMoreButton(tabPanel, loadMoreFn) {
   const buttonContainer = div({ class: 'show-more-container' });
-  const buttonEl = button({ class: 'show-more-button' }, 'Show More');
+  const languagePlaceholders = await fetchLanguagePlaceholders();
+  console.log(languagePlaceholders,"loh")
+  const buttonEl = button({ class: 'show-more-button' }, languagePlaceholders.loadMore);
   buttonEl.addEventListener('click', () => {
     loadMoreFn();
   });
