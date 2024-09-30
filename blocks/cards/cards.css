@@ -205,7 +205,6 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 }
 
 /* Senior Leadership View Styles */
-
 .cards.senior-leadership {
   padding: 0;
 }
@@ -218,11 +217,11 @@ html[dir="rtl"] .cards-wrapper .cards .cards-card-body p {
 
 .cards.senior-leadership > ul > li {
   border: none;
-  transition: transform .2s;
 }
 
 .cards.senior-leadership .cards-card-image img {
   border-radius: 5px;
+  transition: transform .2s;
 }
 
 .cards.senior-leadership .cards-card-body {
