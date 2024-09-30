@@ -94,13 +94,12 @@ header .nav-menu-overlay .nav-menu {
   line-height: 22px;
   text-align: right;
   opacity: 1;
-  right: 42px;
-  top: -4px;
+  right: 25px;
+  top: -5px;
   border: 1px solid transparent;
   position: absolute;
   min-width: 100px;
-  padding: 13px 18px;
-  margin-right: 10px;
+  padding: 13px var(--spacing-regular) 13px 18px;
 }
 
 html[dir="rtl"] .language-container{
@@ -127,6 +126,7 @@ html[dir="rtl"] .language-container{
   cursor: pointer;
   height: 26px;
   min-width: 69px;
+  gap: 6px;
 }
 
 .language-text {
@@ -219,6 +219,10 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
   font-weight: 700;
 }
 
+header .nav-menu-overlay .nav-menu-column ul a:any-link:focus {
+  color: var(--text-on-dark-default);
+}
+
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
   color: var(--black);
   border-bottom: 1px solid
@@ -263,6 +267,7 @@ header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hove
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-right: -10px;
 }
 
 .overlay {
@@ -292,10 +297,10 @@ header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hove
     text-transform: uppercase;
   }
 
-  .cancel-container {
+  /* .cancel-container {
     width: 30px;
     height: 30px;
-  }
+  } */
 }
 
 /* End of language selector styles */
@@ -333,6 +338,10 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
   height: 44px;
   width: 44px;
   border-radius: 50%;
+}
+
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
+  right: var(--section-gutter-space);
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul li span::before {
@@ -447,6 +456,12 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
   border-radius: 1px;
 }
 
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
+  right: 10px;
+  transform: rotate(225deg);
+
+}
+
 header .nav-menu-overlay .nav-menu-column.right .browse-country {
   text-transform: uppercase;
   display: flex;
@@ -489,7 +504,6 @@ header .nav-menu-overlay .nav-menu-column.right > ul {
   color: var(--text-on-dark-emphasis);
   line-height: 22px;
   letter-spacing: 0.06em;
-  text-align: left;
   display: flex;
   margin-top: 0;
   flex-direction: column;
@@ -770,6 +784,11 @@ header nav[aria-expanded="true"] .nav-hamburger-icon {
   top: 28px;
 }
 
+html[dir="rtl"] header nav[aria-expanded="true"] .nav-hamburger-icon {
+  left: 30px;
+  right: auto;
+}
+
 header nav[aria-expanded="true"] .nav-hamburger-icon::before,
 header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   transform: rotate(45deg);
@@ -849,9 +868,7 @@ html[dir="rtl"] header nav .nav-tools {
 }
 
 .section.nav-tools .default-content-wrapper .icon {
-  height: 44px;
   display: flex;
-  width: 44px;
   justify-content: center;
   align-items: center;
 }
@@ -1049,6 +1066,11 @@ html[dir="rtl"] header nav .nav-tools {
     > ul
     > li:not(li:last-child) {
     border-right: 1px solid var(--nav-menu-footer-color);
+  }
+
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .submenu .footer>ul>li:not(li:last-child) {
+    border-left: 1px solid var(--nav-menu-footer-color);
+    border-right: none;
   }
 
   header
@@ -1381,6 +1403,7 @@ html[dir="rtl"] header nav .nav-tools {
     > ul
     > li:not(li:last-child) {
     border-right: 1px solid var(--nav-menu-footer-color);
+    padding-bottom: 0;
   }
 
   html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .submenu .footer>ul>li:not(li:last-child) {
@@ -1547,7 +1570,7 @@ html[dir="rtl"] header nav .nav-tools {
   }
 
   html[dir='rtl']   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
-    right: 54rem;
+    right: 49rem;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
@@ -1624,6 +1647,10 @@ html[dir="rtl"] header nav .nav-tools {
     width: 546px;
   }
 
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
+    right: 0;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1634,10 +1661,19 @@ html[dir="rtl"] header nav .nav-tools {
     top: 0;
   }
 
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"]{
+    right: 0;
+  }
+
   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
     left: 31rem;
     top: 93px;
   }
+
+  html[dir="rtl"]  header .nav-menu-overlay .nav-menu-column.right .browse-country p {
+    right: 31rem;
+    bottom: 93px;
+   }
 }
 
 input::-webkit-clear-button {
