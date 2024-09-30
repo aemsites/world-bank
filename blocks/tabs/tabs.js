@@ -54,7 +54,7 @@ function removeShowMoreButton(tabPanel) {
 
 function showMoreButton(tabPanel, loadMoreFn) {
   const buttonContainer = div({ class: 'show-more-container' });
-  const buttonEl = button({ class: 'show-more-button' }, 'Show More');
+  const buttonEl = button({ class: 'show-more-button' }, 'Load More');
   buttonEl.addEventListener('click', () => {
     loadMoreFn();
   });

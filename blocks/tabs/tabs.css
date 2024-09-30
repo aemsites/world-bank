@@ -71,9 +71,14 @@
 
 .tabs .tabs-panel {
   width: 100%;
-  gap: 20px;
+  gap: var(--spacing-regular);
   display: flex;
   flex-direction: column;
+}
+
+.tabs .tabs-panel .show-more-container .show-more-button{
+  margin-top: var(--spacing-xxsmall);
+  margin-bottom: 0;
 }
 
 .tabs .tabs-panel main .section > div {
@@ -120,8 +125,8 @@
 
 .tab-li-element .tab-li-element-heading {
   font-weight: 700;
-  font-size: var(--font-size-500);
-  line-height: 120%;
+  font-size: var(--font-size-600);
+  line-height: 150%;
   color: var(--text-on-light-link-primary-enabled);
 }
 
@@ -133,7 +138,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: var(--font-size-200);
-  line-height: 150%;
+  line-height: 17.5px;
   color: var(--neutral-solid-90-s);  
 }
 
