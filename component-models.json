@@ -70,7 +70,7 @@
         "component": "wbg-asset-namespace:wbg-asset",
         "name": "dm_image",
         "label": "Image",
-        "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/asset-picker-ext/tools/asset-selector/image.config.json",
+        "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/main/tools/asset-selector/image.config.json",
         "valueType": "string"
       },
       {
@@ -2136,8 +2136,8 @@
           { "name": "Spacing huge", "value": "heading-border-spacing-huge" },
           { "name": "Spacing xhuge", "value": "heading-border-spacing-xhuge" }
         ],
-        "condition": { 
-          "==": [{ "var": "show_borderline" }, true] 
+        "condition": {
+          "==": [{ "var": "show_borderline" }, true]
         }
       },
       {
@@ -2185,7 +2185,7 @@
           { "name": "Spacing huge", "value": "heading-bottom-huge" },
           { "name": "Spacing xhuge", "value": "heading-bottom-xhuge" }
         ]
-      }      
+      }
     ]
   },
   {
