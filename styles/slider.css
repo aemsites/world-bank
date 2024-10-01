@@ -1,5 +1,6 @@
 .carousel-container {
   display: flex;
+  max-width: calc(1600px - var(--section-gutter-space));
   padding: 0 var(--section-gutter-space);
   background-color: var(--white);
   box-shadow: none;
@@ -336,7 +337,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 @media only screen and (width > 1024px) {
   main .section.carousel-container {
     margin: auto;
-    padding: 96px 0 96px var(--section-gutter-space);
+    padding-left: var(--section-gutter-space);
   }
 
   .carousel-container > .default-content-wrapper {
