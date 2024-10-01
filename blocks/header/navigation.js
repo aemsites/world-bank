@@ -252,7 +252,7 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
     menuLeftColumn,
     menuRightColumn,
   );
-  const menuOverlay = div({ class: constants.NAV_MENU_OVERLAY }, navMenu);
+  const menuOverlay = div({ class: constants.NAV_MENU_OVERLAY}, navMenu);
 
   // Iterate Over structured nav data to create left & right menu navigation.
   structuredNav.forEach((level0Item, index) => {

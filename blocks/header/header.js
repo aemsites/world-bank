@@ -148,11 +148,16 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   
   if(!expanded)
     {
+     hamburgerDiv.setAttribute('tabindex', '-1');
+     document.body.querySelector('main').setAttribute('tabindex', '-1');
+     document.body.querySelector('.footer').setAttribute('tabindex', '-1');
      hamburgerButton.setAttribute('tabindex', '-1');
      hamburgerIcon.setAttribute('tabindex', '0');
     }
     else
     {
+      document.body.querySelector('main')..removeAttribute('tabindex');
+      hamburgerDiv.removeAttribute('tabindex');
       hamburgerButton.removeAttribute('tabindex');
       hamburgerIcon.removeAttribute('tabindex');
     }
