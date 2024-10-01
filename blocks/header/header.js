@@ -27,11 +27,14 @@ function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById(constants.NAV);
     const navSections = nav.querySelector(constants.NAV_SECTIONS_WITH_SELECTOR);
+    const expanded = isDesktop && nav.getAttribute('aria-expanded') === 'true';
     // eslint-disable-next-line no-use-before-define
+    if(expanded)
+    {
     toggleMenu(nav, navSections);
+    }
   }
 }
-
 function openOnKeydown(e) {
   const focused = document.activeElement;
   const isNavDrop = focused.className === 'nav-drop';
@@ -137,6 +140,23 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   const navMenuOverlay = navSections.querySelector(
     constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
   );
+
+  
+  const hamburgerDiv = nav.querySelector('.nav-hamburger');
+  const hamburgerButton = hamburgerDiv.querySelector('button');
+  const hamburgerIcon = hamburgerDiv.querySelector('.nav-hamburger-icon');
+  
+  if(!expanded)
+    {
+     hamburgerButton.setAttribute('tabindex', '-1');
+     hamburgerIcon.setAttribute('tabindex', '0');
+    }
+    else
+    {
+      hamburgerButton.removeAttribute('tabindex');
+      hamburgerIcon.removeAttribute('tabindex');
+    }
+
   if (!expanded) {
     document.body.classList.add('no-scroll');
     navMenuOverlay.classList.add(constants.OPEN);
@@ -153,6 +173,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     window.removeEventListener(constants.KEY_DOWN, closeOnEscape);
   }
+  
   const headerWrapper = document.querySelector('.header-wrapper');
   const searchContainer = headerWrapper.querySelector('.search-container');
   if (searchContainer) {
@@ -346,7 +367,7 @@ export default async function decorate(block) {
         'aria-controls': 'nav',
         'aria-label': constants.OPEN_NAVIGATION,
       },
-      span({ class: 'nav-hamburger-icon' }),
+      span({ class: 'nav-hamburger-icon'}),
     ),
   );
   nav.prepend(hamburger);

@@ -18,16 +18,27 @@ const filterCountry = (e) => {
   if (!inputBrowseCountry) return;
   const filter = inputBrowseCountry.value.toUpperCase();
   const countryList = inputBrowseCountry.nextElementSibling;
+  const p = document.querySelector('.browse-country p');
+  p.style.transform = 'rotate(-180deg)';
+  countryList.style.display = 'block';
+  let flag = 0;
   const listItems = countryList.children;
   const listItemsArray = Array.from(listItems);
   listItemsArray.forEach((item) => {
-    if (item.textContent.toUpperCase().indexOf(filter) > -1) {
+    if (item.textContent.toUpperCase().indexOf(filter) === 0) {
       item.style.display = '';
+      flag = 1;
     } else {
       item.style.display = 'none';
     }
   });
+  if(!flag)
+  {
+    countryList.style.display = 'none';
+  }
 };
+
+
 const closesearchbar = (e, navSections) => {
   const indicator = navSections.querySelector('.browse-country p');
   const inputtext = navSections.querySelector('.browse-country input');
@@ -59,6 +70,7 @@ const createCountryDropDown = (category, countrySearchPlaceholder) => {
           type: 'text',
           placeholder: countrySearchPlaceholder,
           oninput: (e) => filterCountry(e),
+          onfocus: (e) => filterCountry(e),
         }),
         countryList,
       ),

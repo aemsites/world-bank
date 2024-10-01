@@ -184,7 +184,7 @@ header .nav-menu-overlay .nav-menu a {
 
 header .nav-menu-overlay .nav-menu a:visited {
   color: var(--text-on-dark-default);
-}
+}z
 
 .header .nav-item-content-expanded > ul > li a:hover {
   text-decoration: underline;
@@ -731,6 +731,14 @@ header nav .nav-hamburger button:focus {
   background-color: unset;
   color: unset;
 }
+header nav[aria-expanded="true"] .nav-brand, header nav[aria-expanded="true"] .nav-sections .default-content-wrapper{
+  display: none;
+}
+
+header nav[aria-expanded="true"] .nav-hamburger-icon:focus-visible {
+  outline: 2px solid var(--links-focus-color);
+}
+
 
 header nav .nav-hamburger button:focus-visible {
   outline: 2px solid var(--links-focus-color);
