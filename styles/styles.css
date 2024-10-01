@@ -851,7 +851,6 @@ h4 {
 h5 {
   font-size: var(--font-size-700);
 }
-
 h6 {
   font-size: var(--font-size-700);
 }
@@ -1395,51 +1394,39 @@ main .section.bg-image .sec-img {
 main .section[data-sec-spacing="section-none"] {
   padding-top: var(--spacing-none);
 }
-
 main .section[data-sec-spacing="section-xtiny"] {
   padding-top: var(--spacing-xtiny);
 }
-
 main .section[data-sec-spacing="section-tiny"] {
   padding-top: var(--spacing-tiny);
 }
-
 main .section[data-sec-spacing="section-xxsmall"] {
   padding-top: var(--spacing-xxsmall);
 }
-
 main .section[data-sec-spacing="section-xsmall"] {
   padding-top: var(--spacing-xsmall);
 }
-
 main .section[data-sec-spacing="section-regular"] {
   padding-top: var(--spacing-regular);
 }
-
 main .section[data-sec-spacing="section-small"] {
   padding-top: var(--spacing-small);
 }
-
 main .section[data-sec-spacing="section-medium"] {
   padding-top: var(--spacing-medium);
 }
-
 main .section[data-sec-spacing="section-large"] {
   padding-top: var(--spacing-large);
 }
-
 main .section[data-sec-spacing="section-xlarge"] {
   padding-top: var(--spacing-xlarge);
 }
-
 main .section[data-sec-spacing="section-xxlarge"] {
   padding-top: var(--spacing-xxlarge);
 }
-
 main .section[data-sec-spacing="section-huge"] {
   padding-top: var(--spacing-huge);
 }
-
 main .section[data-sec-spacing="section-xhuge"] {
   padding-top: var(--spacing-xhuge);
 }
@@ -1447,51 +1434,39 @@ main .section[data-sec-spacing="section-xhuge"] {
 main .section[data-sec-spacing-bottom="section-none"] {
   padding-bottom: var(--spacing-none);
 }
-
 main .section[data-sec-spacing-bottom="section-tiny"] {
   padding-bottom: var(--spacing-tiny);
 }
-
 main .section[data-sec-spacing-bottom="section-xxsmall"] {
   padding-bottom: var(--spacing-xxsmall);
 }
-
 main .section[data-sec-spacing-bottom="section-xtiny"] {
   padding-bottom: var(--spacing-xtiny);
 }
-
 main .section[data-sec-spacing-bottom="section-xsmall"] {
   padding-bottom: var(--spacing-xsmall);
 }
-
 main .section[data-sec-spacing-bottom="section-regular"] {
   padding-bottom: var(--spacing-regular);
 }
-
 main .section[data-sec-spacing-bottom="section-small"] {
   padding-bottom: var(--spacing-small);
 }
-
 main .section[data-sec-spacing-bottom="section-medium"] {
   padding-bottom: var(--spacing-medium);
 }
-
 main .section[data-sec-spacing-bottom="section-large"] {
   padding-bottom: var(--spacing-large);
 }
-
 main .section[data-sec-spacing-bottom="section-xlarge"] {
   padding-bottom: var(--spacing-xlarge);
 }
-
 main .section[data-sec-spacing-bottom="section-xxlarge"] {
   padding-bottom: var(--spacing-xxlarge);
 }
-
 main .section[data-sec-spacing-bottom="section-huge"] {
   padding-bottom: var(--spacing-huge);
 }
-
 main .section[data-sec-spacing-bottom="section-xhuge"] {
   padding-bottom: var(--spacing-xhuge);
 }
