@@ -1,6 +1,7 @@
 {
   "repoNames": [
-    "delivery-p136806-e1403562.adobeaemcloud.com"
+    "delivery-p136806-e1403562.adobeaemcloud.com",
+    "delivery-p136806-e1377844.adobeaemcloud.com"
   ],
   "aemTierType": [
         "delivery"
@@ -72,6 +73,28 @@
       ],
       "header": "Expiration Status",
       "groupKey": "ExpirationGroup"
+    },
+    {
+        "fields": [
+            {
+                "element": "Number",
+                "name": "property=tiff:imageWidth",
+                "range": true,
+                "quiet": true,
+                "label": "Width",
+                "hideArrows": true,
+                "columns": 2,
+                "readOnly": true,
+                "defaultValue": [
+                    {
+                        "min": 0,
+                        "max": 5000
+                    }
+                ]
+            }
+        ],
+        "header": "Size",
+        "groupKey": "SizeGroup"
     }
   ]
 }

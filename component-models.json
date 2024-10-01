@@ -64,18 +64,18 @@
     ]
   },
   {
-    "id": "dam-asset",
+    "id": "dm-asset",
     "fields": [
       {
         "component": "custom-asset-namespace:custom-asset",
-        "name": "image",
+        "name": "dm_image",
         "label": "Image",
-        "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/asset-picker-ext/tools/asset-selector/image.config.json",
+        "configUrl": "https://asset-picker-ext--world-bank--aemsites.aem.live/tools/asset-selector/image.config.json",
         "valueType": "string"
       },
       {
         "component": "text",
-        "name": "imageAlt",
+        "name": "dm_alttext",
         "label": "Alt Text",
         "valueType": "string"
       }
