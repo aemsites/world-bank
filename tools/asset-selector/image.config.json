@@ -7,6 +7,35 @@
   ],
   "filterSchema": [
     {
+      "header": "File Types",
+      "groupKey": "FileTypeGroup",
+      "fields": [
+        {
+          "excludeTags": ["image/*", "video/*", "application/pdf"],
+          "element": "checkbox",
+          "name": "type",
+          "defaultValue": [
+            "image/*"
+          ],
+          "options": [
+            {
+              "label": "Images",
+              "value": "image/*"
+            },
+            {
+              "label": "Videos",
+              "value": "video/*"
+            },
+            {
+              "label": "PDFs",
+              "value": "application/pdf"
+            }
+          ],
+          "orientation": "horizontal"
+        }
+      ]
+    },
+    {
       "header": "Assets Tags",
       "groupKey": "AssetTagsGroup",
       "fields": [
