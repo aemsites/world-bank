@@ -2,6 +2,7 @@ import {
   div, p, form, input, label, button, span,
 } from '../../scripts/dom-helpers.js';
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { getLanguage } from '../../scripts/utils.js';
 
 const CONSTANTS = {
   SIGNUP_HEADING: 'signupHeading',
@@ -114,13 +115,13 @@ function attachFormValidation(block, placeholders) {
     if (window.wbgData) {
       const newsletterVal = placeholder[CONSTANTS.SIGNUP_CUSWBG_SUBSCRIPTION_LIST].split(':@');
 
-      window.wbgData.page.pageInfo.formName = 'Subscribe by Email';
-      window.wbgData.page.pageInfo.formType = 'Email Subscription';
+      window.wbgData.page.pageInfo.formName = 'world bank group newsletters';
+      window.wbgData.page.pageInfo.formType = 'newsletter';
       window.wbgData.page.pageInfo.formSubmit = profileType;
 
       window.wbgData.page.newsletter = {
         userID: btoa(email),
-        subscriptionlist: newsletterVal[0],
+        subscriptionlist: `${newsletterVal[0]}:${getLanguage()}`,
       };
 
       if (profileType === 'N' && typeof _satellite === 'object') {
