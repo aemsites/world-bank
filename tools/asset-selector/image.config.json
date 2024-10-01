@@ -2,6 +2,9 @@
   "repoNames": [
     "delivery-p136806-e1403562.adobeaemcloud.com"
   ],
+  "aemTierType": [
+        "delivery"
+  ],
   "filterSchema": [
     {
       "header": "File Types",
