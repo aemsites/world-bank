@@ -127,7 +127,7 @@ html[dir="rtl"] .bio-detail .download-image{
 
 .bio-detail .media-inquiries p {
   font-size: var(--font-size-300);
-  line-height: 22px;
+  line-height: 20px;
 }
 
 .bio-detail .title {
@@ -143,6 +143,11 @@ html[dir="rtl"] .bio-detail .download-image{
 .block-quote-container .default-content-wrapper p{
     color: var(--text-on-light-emphasis);
     font-size: var(--font-size-500);
+    line-height: 150%;
+}
+
+.block-quote-container .default-content-wrapper p:first-child{
+  margin-top: 0;
 }
 
 .bio-detail .sections-container .job-title div p:nth-child(2) {
