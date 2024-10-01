@@ -30,7 +30,7 @@
 
 .carousel > ul > li img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3 / 1.93;
   object-fit: cover;
   border-radius: 10px;
 }

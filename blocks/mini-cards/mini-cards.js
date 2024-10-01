@@ -1,15 +1,16 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation, CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
+import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
+import { moveInstrumentation, CLASS_MAIN_HEADING, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import { a, div } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
+
+const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
 function processTag(tag) {
   let tagTxt = tag.innerText;
   if (tagTxt) {
     tagTxt = processTags(tagTxt, 'content-type');
     tag.classList.add(tagTxt);
-    // TODO: Read it from placeholder
-    tag.firstElementChild.innerText = tagTxt;
+    tag.firstElementChild.innerText = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
   }
 }
 
@@ -21,7 +22,7 @@ export default function decorate(block) {
   const miniCardsContainer = div({ class: 'mini-card-container' });
   cards.forEach((row) => {
     row.className = 'mini-card';
-    const [imageDiv, tagDiv, titleDiv, dateDiv, timeDiv, locationDiv, linkDiv] = row.children;
+    const [imageDiv, tagDiv, titleDiv, dateDiv, timeDiv, locationDiv, linkDiv, alt] = row.children;
     imageDiv.className = 'mini-card-image';
     tagDiv.className = 'mini-card-tag';
     titleDiv.className = 'mini-card-title';
@@ -29,6 +30,14 @@ export default function decorate(block) {
     timeDiv.className = 'mini-card-time';
     locationDiv.className = 'mini-card-location';
     const link = linkDiv.textContent ? linkDiv.textContent : '';
+    if (alt) {
+      const pic = imageDiv.querySelector('img');
+      const p = alt.querySelector('p');
+      if (p && pic) {
+        pic.alt = p.textContent.trim();
+      }
+      alt.remove();
+    }
     linkDiv.remove();
     if (!timeDiv.textContent) {
       timeDiv.remove();
@@ -37,7 +46,7 @@ export default function decorate(block) {
       processTag(tagDiv);
     }
     const text = div({ class: 'mc-text-wrapper' }, tagDiv, a({ href: link }, titleDiv), div({ class: 'date-time-info' }, dateDiv, timeDiv.textContent ? timeDiv : ''), locationDiv);
-    row.append(text, imageDiv);
+    row.append(text, a({ href: link }, imageDiv));
     miniCardsContainer.append(row);
   });
 

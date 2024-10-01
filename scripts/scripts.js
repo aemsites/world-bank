@@ -11,15 +11,20 @@ import {
   loadBlocks,
   loadCSS,
   fetchPlaceholders,
+  getMetadata,
 } from './aem.js';
 
 import {
   getLanguage,
   createSource,
+  formatDate,
+  setPageLanguage,
+  PATH_PREFIX,
 } from './utils.js';
 
-const LCP_BLOCKS = []; // add your LCP blocks to the list
+const LCP_BLOCKS = ['bio-detail']; // add your LCP blocks to the list
 export const CLASS_MAIN_HEADING = 'main-heading';
+export const LANGUAGE_ROOT = `/ext/${getLanguage()}`;
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -68,13 +73,48 @@ async function loadFonts() {
 }
 
 /**
+ * remove the adujusts the auto images
+ * @param {Element} main The container element
+ */
+function adjustAutoImages(main) {
+  const pictureElement = main.querySelector('div > p > picture');
+  if (pictureElement) {
+    const pElement = pictureElement.parentElement;
+    pElement.className = 'auto-image-container';
+  }
+}
+
+/**
+ * Return the placeholder file specific to language
+ * @returns
+ */
+export async function fetchLanguagePlaceholders() {
+  const langCode = getLanguage();
+  try {
+    // Try fetching placeholders with the specified language
+    return await fetchPlaceholders(`${PATH_PREFIX}/${langCode}`);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(`Error fetching placeholders for lang: ${langCode}. Will try to get en placeholders`, error);
+    // Retry without specifying a language (using the default language)
+    try {
+      return await fetchPlaceholders(`${PATH_PREFIX}/en`);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Error fetching placeholders:', err);
+    }
+  }
+  return {}; // default to empty object
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 // eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
   try {
-    // TODO: add auto block, if needed
+    adjustAutoImages(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -100,7 +140,8 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 
-function createSkipToMainNavigationBtn() {
+async function createSkipToMainNavigationBtn() {
+  const placeholder = await fetchLanguagePlaceholders();
   const main = document.querySelector('main');
   main.id = 'main';
 
@@ -109,12 +150,12 @@ function createSkipToMainNavigationBtn() {
   anchor.id = 'skip-to-main-content';
   anchor.className = 'visually-hidden focusable';
   anchor.href = '#main';
-  anchor.textContent = 'Skip to Main Navigation';
+  anchor.textContent = placeholder.skipToMainContent || 'Skip to Main Content';
   document.body.insertBefore(anchor, document.body.firstChild);
 }
 
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
+  setPageLanguage();
   decorateTemplateAndTheme();
   createSkipToMainNavigationBtn();
   const main = doc.querySelector('main');
@@ -135,36 +176,13 @@ async function loadEager(doc) {
 }
 
 /**
- * Return the placeholder file specific to language
- * @returns
- */
-export async function fetchLanguagePlaceholders() {
-  const langCode = getLanguage();
-  try {
-    // Try fetching placeholders with the specified language
-    return await fetchPlaceholders(`/${langCode}`);
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(`Error fetching placeholders for lang: ${langCode}. Will try to get en placeholders`, error);
-    // Retry without specifying a language (using the default language)
-    try {
-      return await fetchPlaceholders('/en');
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error('Error fetching placeholders:', err);
-    }
-  }
-  return {}; // default to empty object
-}
-
-/**
  * Return the json for any placeholder file specific to language using filename as argument
  * @returns
  */
 export const fetchLangDatabyFileName = async (fileName) => {
   const langCode = getLanguage();
   try {
-    const response = await fetch(`/${langCode}/${fileName}.json`);
+    const response = await fetch(`${PATH_PREFIX}/${langCode}/${fileName}.json`);
     if (!response.ok) {
       throw new Error('Failed to load data');
     }
@@ -219,6 +237,39 @@ function decorateSectionImages(doc) {
   });
 }
 
+async function renderWBDataLayer() {
+  const config = await fetchPlaceholders(PATH_PREFIX);
+  const lastPubDateStr = getMetadata('published-time');
+  const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
+  window.wbgData.page = {
+    pageInfo: {
+      pageCategory: getMetadata('pagecategory'),
+      channel: getMetadata('channel'),
+      contentType: getMetadata('content_type'),
+      pageUid: getMetadata('pageuid'),
+      pageFirstPub: formatDate(firstPubDateStr),
+      pageLastMod: formatDate(lastPubDateStr),
+      webpackage: '',
+    },
+  };
+
+  window.wbgData.site = {
+    siteInfo: {
+      siteLanguage: getLanguage() || 'en',
+      siteType: config.analyticsSiteType || 'main',
+      siteEnv: config.environment || 'Dev',
+    },
+
+    techInfo: {
+      cmsType: config.analyticsCmsType || 'aem edge',
+      bussVPUnit: config.analyticsBussvpUnit || 'ecr',
+      bussUnit: config.analyticsBussUnit || 'ecrcc',
+      bussUserGroup: config.analyticsBussUserGroup || 'external',
+      bussAgency: config.analyticsBussAgency || 'ibrd',
+    },
+  };
+}
+
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -242,6 +293,7 @@ async function loadLazy(doc) {
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
+  renderWBDataLayer();
 }
 
 /**
@@ -262,8 +314,7 @@ function loadDelayed() {
 export async function fetchSearch() {
   window.searchData = window.searchData || {};
   if (Object.keys(window.searchData).length === 0) {
-    const lang = getLanguage();
-    const path = `/${lang}/query-index.json?limit=500&offset=0`;
+    const path = `${LANGUAGE_ROOT}/query-index.json?limit=500&offset=0`;
 
     const resp = await fetch(path);
     window.searchData = JSON.parse(await resp.text()).data;
@@ -272,6 +323,7 @@ export async function fetchSearch() {
 }
 
 async function loadPage() {
+  window.wbgData ||= {};
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();

@@ -1,5 +1,6 @@
 .carousel-container {
   display: flex;
+  max-width: calc(1600px - var(--section-gutter-space));
   padding: 0 var(--section-gutter-space);
   background-color: var(--white);
   box-shadow: none;
@@ -18,7 +19,7 @@
 .carousel-container .button-container button {
   background-color: var(--white);
   border: 2px solid var(--accent-blue-primary-70);
-  padding: 8px 13px;
+  padding: 6px 11px;
   right: 3%;
   cursor: pointer;
   position: absolute;
@@ -35,7 +36,7 @@
 html[dir="rtl"] .carousel-container .button-container button {
   background-color: var(--white);
   border: 2px solid var(--accent-blue-primary-70);
-  padding: 8px 13px;
+  padding: 6px 11px;
   right: auto;
   left: 3%;
   cursor: pointer;
@@ -45,19 +46,20 @@ html[dir="rtl"] .carousel-container .button-container button {
 
 .carousel-container > .default-content-wrapper > p:first-child {
   font-weight: 800;
-  font-size: 14px;
+  font-size: var(--eyebrow-font-size-m);
   line-height: 15px;
-  padding-bottom: 16px;
+  padding-bottom: var(--spacing-small);
   color: var(--neutral-alpha-57-a);
 }
 
 .carousel-container > .default-content-wrapper > p:nth-child(2) {
   font-weight: 400;
-  font-size: 40px;
-  line-height: var(--nav-height);
-  padding-bottom: 48px;
+  font-size: var(--font-size-1000);
+  line-height: 44px;
+  padding-bottom: var(--spacing-xlarge);
   color: var(--accent-blue-primary-90);
   text-transform: uppercase;
+  letter-spacing: -2px;
 }
   
 .carousel-container > .default-content-wrapper > p:nth-child(2) > strong {
@@ -130,7 +132,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   
 .carousel .cards-card-body {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 17px;
   font-weight: 400;
   color: var(--neutral-alpha-95-a);
   padding: 24px 0 0;
@@ -147,15 +149,17 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 }
 
 @media only screen and (width <=1024px) {
-  .carousel-container {
-    max-width: var(--screen-width);
-   margin: auto;
-    flex-direction: column;
-  }
-
-  html[dir="rtl"] .carousel-container {
+  .section.carousel-container {
     max-width: var(--screen-width);
     margin: auto;
+    flex-direction: column;
+    padding: 64px 0;
+  }
+
+  html[dir="rtl"] .section.carousel-container {
+    max-width: var(--screen-width);
+    margin: auto;
+    padding: 64px 0;
   }
 
   .carousel-container > .default-content-wrapper {
@@ -169,7 +173,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 17px;
     padding-bottom: 12px;
     color: var(--neutral-alpha-70-a);
@@ -203,6 +207,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   .carousel-container .button-container button {
     padding: 8px 12px;
     right: 3%;
+    display: none;
   }
 
   .carousel-container .button-container button:disabled {
@@ -215,7 +220,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel > ul {
-    grid-template-columns: repeat(5, 85%);
+    grid-template-columns: repeat(5, 79%);
     gap: 0 24px;
   }
 
@@ -230,9 +235,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel .cards-card-body {
-    font-size: 16px;
     line-height: 17px;
-    font-weight: 400;
   }
 
   .carousel-container .button-container {
@@ -275,8 +278,9 @@ html[dir="rtl"] .section > div.carousel-wrapper {
     top: 20%; 
   }
   
-  .carousel-container {
+  .section.carousel-container {
     flex-direction: column;
+    padding: 48px 0;
   }
 
   .carousel-container > .default-content-wrapper {
@@ -325,30 +329,28 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   }
 
   .carousel > ul {
-    grid-template-columns: repeat(5, 83%);
+    grid-template-columns: repeat(5, 76%);
     gap: 0 24px;
   }
 }
 
 @media only screen and (width > 1024px) {
   main .section.carousel-container {
-    max-width: var(--screen-width);
     margin: auto;
-    padding: 32px var(--section-gutter-space);
+    padding-left: var(--section-gutter-space);
   }
 
   .carousel-container > .default-content-wrapper {
-    flex: 1;
+    flex: .824;
   }
 
   html[dir="rtl"] .carousel-container > .default-content-wrapper {
     padding: 0;
   }
 
-  html[dir="rtl"] .carousel-container {
-    max-width: var(--screen-width);
+  html[dir="rtl"] .section.carousel-container {
     margin: auto;
-    padding: 32px var(--section-gutter-space);
+    padding: 96px var(--section-gutter-space) 96px 0;
   }
 
   .carousel-container .button-container a.button:any-link, button {

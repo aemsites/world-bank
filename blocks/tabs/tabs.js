@@ -1,7 +1,10 @@
 import { getMetadata, toClassName, fetchPlaceholders } from '../../scripts/aem.js';
-import { a, button, div } from '../../scripts/dom-helpers.js';
-import { getLanguage, fetchData } from '../../scripts/utils.js';
+import {
+  a, button, div, li, ul,
+} from '../../scripts/dom-helpers.js';
+import { getLanguage, fetchData, scriptEnabled } from '../../scripts/utils.js';
 import { loadFragment } from '../fragment/fragment.js';
+import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
 const langCode = getLanguage();
 const upiId = getMetadata('upi');
@@ -50,9 +53,10 @@ function removeShowMoreButton(tabPanel) {
   }
 }
 
-function showMoreButton(tabPanel, loadMoreFn) {
+async function showMoreButton(tabPanel, loadMoreFn) {
   const buttonContainer = div({ class: 'show-more-container' });
-  const buttonEl = button({ class: 'show-more-button' }, 'Show More');
+  const languagePlaceholders = await fetchLanguagePlaceholders();
+  const buttonEl = button({ class: 'show-more-button' }, languagePlaceholders.loadMore);
   buttonEl.addEventListener('click', () => {
     loadMoreFn();
   });
@@ -164,6 +168,8 @@ async function decorateTab(tabPanel, type) {
   tabPanel.innerHTML = '';
   showSpinner(tabPanel);
 
+  if (!scriptEnabled()) return;
+
   const url = await getTabUrl(type);
   const data = await fetchDataForTab(type, url);
 
@@ -180,15 +186,48 @@ async function decorateTab(tabPanel, type) {
   removeSpinner(tabPanel);
 }
 
+function createTabListWithButtons(tabBtnContainer) {
+  const tablist = div({ class: 'tabs-list' });
+  const rightbtn = button({ class: 'right-btn' }, '>>');
+  const leftbtn = button({ class: 'left-btn' }, '<<');
+
+  const iconVisibility = () => {
+    const scrollLeftValue = Math.ceil(tabBtnContainer.scrollLeft);
+    const scrollableWidth = tabBtnContainer.scrollWidth - tabBtnContainer.clientWidth;
+    leftbtn.style.display = scrollLeftValue > 0 ? 'block' : 'none';
+    rightbtn.style.display = scrollableWidth > 0 && scrollLeftValue < scrollableWidth ? 'block' : 'none';
+  };
+  rightbtn.addEventListener('click', () => {
+    tabBtnContainer.scrollLeft += 150;
+    iconVisibility();
+  });
+
+  leftbtn.addEventListener('click', () => {
+    tabBtnContainer.scrollLeft -= 150;
+    iconVisibility();
+  });
+
+  tablist.appendChild(leftbtn);
+  tablist.appendChild(rightbtn);
+  tablist.appendChild(tabBtnContainer);
+
+  setTimeout(iconVisibility, 0);
+  const resizeObserver = new ResizeObserver(() => {
+    iconVisibility();
+  });
+  resizeObserver.observe(tabBtnContainer);
+
+  return tablist;
+}
+
 export default async function decorate(block) {
-  const tablist = div({ class: 'tabs-list', role: 'tablist' });
+  const tabBtnContainer = ul({ class: 'tab-menu', role: 'tablist' });
+  const tablist = createTabListWithButtons(tabBtnContainer);
 
-  // decorate tabs and tabpanels
+  // Decorate tabs and tab panels
   const tabs = [...block.children].map((child) => child.firstElementChild);
-
   tabs.forEach((tab, i) => {
     const id = toClassName(tab.textContent);
-    // decorate tabpanel
     const tabpanel = block.children[i];
     const tabType = tabpanel.children[1].textContent;
     tabpanel.className = 'tabs-panel';
@@ -199,36 +238,38 @@ export default async function decorate(block) {
     tabpanel.setAttribute('type', tabType);
     tabpanel.setAttribute('data-loaded', false);
     tabpanel.children[1].remove();
-    // build tab button
-    const tabButton = button({
-      class: 'tabs-tab',
+
+    const tabButton = li({
+      class: 'tab-btn',
       id: `tab-${id}`,
       type: 'button',
       'aria-controls': `tabpanel-${id}`,
       'aria-selected': !i,
       role: 'tab',
-    }, tab.textContent);
+    }, button({ class: 'tab-title' }, tab.textContent.trim()));
 
     tabButton.addEventListener('click', () => {
       block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
         panel.setAttribute('aria-hidden', true);
       });
-      tablist.querySelectorAll('button').forEach((btn) => {
+      tablist.querySelectorAll('li').forEach((btn) => {
         btn.setAttribute('aria-selected', false);
       });
       tabpanel.setAttribute('aria-hidden', false);
       tabButton.setAttribute('aria-selected', true);
-      const dataLoaded = tabpanel.getAttribute('data-loaded');
-      if (tabType !== 'manual' && dataLoaded === 'false') {
+
+      if (tabType !== 'manual' && tabpanel.getAttribute('data-loaded') === 'false') {
         decorateTab(tabpanel, tabType);
         tabpanel.setAttribute('data-loaded', true);
       }
     });
+
     if (i === 0 && tabType !== 'manual') {
       decorateTab(tabpanel, tabType);
       tabpanel.setAttribute('data-loaded', true);
     }
-    tablist.append(tabButton);
+
+    tabBtnContainer.append(tabButton);
     tab.remove();
   });
 
@@ -245,5 +286,6 @@ export default async function decorate(block) {
     tabPanel.append(content);
   });
 
-  block.prepend(tablist);
+  const tabNav = div({ class: 'tab-navigation' }, tablist);
+  block.prepend(tabNav);
 }

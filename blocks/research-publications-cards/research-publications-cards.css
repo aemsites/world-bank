@@ -6,52 +6,58 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: var(--main-heading-spacing);
+  margin: var(--spacing-none) var(--spacing-none) var(--spacing-xlarge);
 }
 
-.cards-container .rp-card .text-content .card-btn p{
-  height: 48px;
-  display: flex;
-  align-items: center;
+.cards-container .rp-card .text-content .card-btn p {
+  padding: 17px var(--spacing-none) var(--spacing-xxsmall);
+}
+
+.cards-container a,
+.cards-container button {
+  display: block;
 }
 
 .button-wrapper {
   display: block;
-  margin-top: 50px;
+  margin-top: var(--spacing-xlarge);
+}
+
+.button-wrapper a.button {
+  font-size: var(--font-size-200);
 }
 
 .cards-container {
   display: grid;
-  gap: 40px;
+  gap: 100px;
 }
 
 .cards-container .rp-card {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 40px;
-  align-items: top;
+  gap: var(--spacing-xlarge);
 }
 
 .cards-container .rp-card .card-img {
-    align-self: start;
+  align-self: start;
+}
+
+.cards-container .rp-card .card-img img {
+  width: 100%;
 }
 
 .cards-container .rp-card .text-content .title {
-  font-size: var(--font-size-500);
+  font-size: var(--font-size-700);
   line-height: 22px;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
   font-weight: 700;
 }
 
-.text-content .title div {
-  height: 65px;
-}
-
 .cards-container .rp-card .text-content .desc {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: var(--font-size-300);
+  line-height: 20px;
   padding: var(--spacing-regular) 0 var(--spacing-regular);
-  border-top: 1px solid var(--neutral-solid-10-s);
+  border-top: 2px solid var(--divider-on-light-subdued);
   margin-top: var(--spacing-xlarge);
 }
 
@@ -60,30 +66,61 @@
 }
 
 .cards-container .rp-card .text-content .card-btn div {
-  font-size: 16px;
+  font-size: var(--font-size-300);
   line-height: 22px;
-  color: var(--accent-blue-primary-70);
+  color: var(--text-on-light-link-primary-enabled);
   font-weight: 700;
-  width: fit-content;
+  width: max-content;
   border-bottom: 2px solid #0049724d;
+}
+
+.cards-container .rp-card:hover .text-content a.title {
+  color: var(--global-interactive-on-dark-focused);
+}
+
+.cards-container .rp-card:hover .text-content .desc {
+  border-top-color: var(--global-interactive-on-dark-hover);
+}
+
+.cards-container .rp-card:hover .text-content .card-btn div {
+  border-bottom-color: var(--global-interactive-on-dark-hover);
 }
 
 .cards-container .rp-card .text-content a .card-btn p {
   margin: 10px 0;
 }
 
+@media (width >= 768px) {
+  .cards-container .rp-card {
+    align-items: center;
+  }
+
+  .cards-container .rp-card .text-content .title {
+    line-height: 27px;
+  }
+
+  main .section.research-publications-cards-container {
+    padding-bottom: 127px;
+  }
+}
+
 @media (width >= 1024px) {
-  .research-publications-cards a.button{
-    font-size: var(--font-size-300);
+  .research-publications-cards a.button {
+    font-size: var(--font-size-200);
+    padding: 15px 32px;
   }
 
   .cards-container {
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 156px;
   }
 
   .button-wrapper {
     display: none;
+  }
+
+  .cards-container .rp-card .text-content .title {
+    line-height: 32px;
   }
 }
 
@@ -91,19 +128,10 @@
   .heading-wrapper div:nth-child(2) {
     display: none;
   }
-
-  .cards-container .rp-card{
-    gap:20px;
-  }
 }
 
-@media (width >= 768px) {
-  .cards-container .rp-card {
-    align-items: center;
-  }  
-
-  .cards-container .rp-card .text-content .title {
-    font-size: var(--font-size-600);
-    line-height: 29px;
+@media( width < 768px){
+  main .section.research-publications-cards-container {
+    padding-bottom: 112px;
   }
 }

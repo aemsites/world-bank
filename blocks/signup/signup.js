@@ -2,6 +2,7 @@ import {
   div, p, form, input, label, button, span,
 } from '../../scripts/dom-helpers.js';
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { getLanguage } from '../../scripts/utils.js';
 
 const CONSTANTS = {
   SIGNUP_HEADING: 'signupHeading',
@@ -110,6 +111,26 @@ function attachFormValidation(block, placeholders) {
     }
   });
 
+  function pushToWBGDataLayer(email, profileType, placeholder) {
+    if (window.wbgData) {
+      const newsletterVal = placeholder[CONSTANTS.SIGNUP_CUSWBG_SUBSCRIPTION_LIST].split(':@');
+
+      window.wbgData.page.pageInfo.formName = 'world bank group newsletters';
+      window.wbgData.page.pageInfo.formType = 'newsletter';
+      window.wbgData.page.pageInfo.formSubmit = profileType;
+
+      window.wbgData.page.newsletter = {
+        userID: btoa(email),
+        subscriptionlist: `${newsletterVal[0]}:${getLanguage()}`,
+      };
+
+      if (profileType === 'N' && typeof _satellite === 'object') {
+        // eslint-disable-next-line no-undef
+        _satellite.track('extnewsletter');
+      }
+    }
+  }
+
   document.getElementById('signup-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -142,14 +163,19 @@ function attachFormValidation(block, placeholders) {
     try {
       const consentSuccess = await callConsentAPI(email, firstName, placeholders);
       const subscriptionStatus = await callSubscriptionAPI(email, firstName, placeholders);
-
+      let profileType = 'E';
       if (consentSuccess && subscriptionStatus === 'Profile Created') {
         showThankYouMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_THANK_YOU_MESSAGE]);
+        profileType = 'N';
       } else if (consentSuccess && subscriptionStatus === 'Not Subscribed') {
         showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_CONFIRMATION_MESSAGE]);
+        profileType = 'N';
+      } else if (consentSuccess && subscriptionStatus === 'Already Subscribed') {
+        showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_ERROR_MESSAGE]);
       } else {
         errorMessage.textContent = 'An error occurred while processing your request. Please try again later.';
       }
+      pushToWBGDataLayer(email, profileType, placeholders);
     } catch (error) {
       errorMessage.textContent = 'An unexpected error occurred. Please try again later.';
     }

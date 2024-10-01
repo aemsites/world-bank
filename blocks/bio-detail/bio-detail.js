@@ -2,6 +2,7 @@ import { div, img } from '../../scripts/dom-helpers.js';
 
 import { fetchLanguagePlaceholders, moveInstrumentation } from '../../scripts/scripts.js';
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { getLanguage, getUrlExtension } from '../../scripts/utils.js';
 
 function createStructure(firstContainer, secondContainer, block) {
   const sectionsContainer = div(
@@ -12,14 +13,18 @@ function createStructure(firstContainer, secondContainer, block) {
   block.append(sectionsContainer);
 }
 
-function createSocialMediaLink(linkName, className, iconPath) {
+function createSocialMediaLink(linkName, className, iconPath, name) {
   if (linkName && linkName.textContent.trim()) {
     const anchor = document.createElement('a');
     anchor.href = linkName.textContent.trim();
-    anchor.title = linkName.textContent.trim();
+    anchor.title = name;
+    anchor.dataset.customlink = 'sm:body';
+    anchor.dataset.text = name;
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
-    linkImage.alt = iconPath;
+    linkImage.alt = name;
+    linkImage.width = '50';
+    linkImage.height = '50';
     anchor.appendChild(linkImage);
     const socialMediaLink = div({ class: 'social-media-link' }, anchor);
     socialMediaLink.addEventListener('click', () => {
@@ -49,13 +54,13 @@ function createPersonBio(
   const nameJobSocial = div({ class: 'name-job-social' }, bioName, jobTitle);
   const socialMedias = div({ class: 'social-media' });
   const socialMediaIcons = [
-    { link: x, icon: 'ximage.png' },
-    { link: linkedin, icon: 'linkedin.png' },
-    { link: insta, icon: 'insta.png' },
+    { link: x, icon: 'profileiconx.png', name: 'X' },
+    { link: linkedin, icon: 'profileiconin.png', name: 'linkedin' },
+    { link: insta, icon: 'profileiconinsta.png', name: 'instagram' },
   ];
 
-  socialMediaIcons.forEach(({ link, icon }) => {
-    const socialMediaLink = createSocialMediaLink(link, 'xlink', icon);
+  socialMediaIcons.forEach(({ link, icon, name }) => {
+    const socialMediaLink = createSocialMediaLink(link, 'xlink', icon, name);
     if (socialMediaLink) {
       socialMedias.append(socialMediaLink);
     }
@@ -88,6 +93,11 @@ function createResources(block) {
     downloadImg.src = `${window.hlx.codeBasePath}/icons/download.png`;
     downloadImg.alt = 'download';
     link.insertBefore(downloadImg, link.firstChild);
+    const downloadLink = link.querySelector('a');
+    if (downloadLink) {
+      downloadLink.dataset.customlink = `fd:body content:${getLanguage()}:${getUrlExtension(downloadLink.href)}`;
+      downloadLink.dataset.text = downloadLink.textContent;
+    }
   });
 }
 
@@ -111,8 +121,12 @@ export default async function decorate(block) {
   mediaInquiries.className = 'media-inquiries';
   resources.className = 'resources';
   const profileImg = profileImage.querySelector('div > picture > img');
-  const optimizedPic = createOptimizedPicture(profileImg.src, 'profile-img', false, [{ width: '460', height: '460', loading: 'eager' }]);
-  moveInstrumentation(profileImg, optimizedPic.querySelector('img'));
+  const optimizedPic = createOptimizedPicture(profileImg.src, displayName.innerText, true);
+  const newProfilePic = optimizedPic.querySelector('img');
+  newProfilePic.width = 460;
+  newProfilePic.height = 460;
+  newProfilePic.title = displayName.innerText.trim();
+  moveInstrumentation(profileImg, newProfilePic);
   profileImg.closest('picture').replaceWith(optimizedPic);
 
   const mediaTargetDiv = block.querySelector('.media-inquiries');

@@ -10,7 +10,7 @@ import {
   fetchLangDatabyFileName,
 } from '../../scripts/scripts.js';
 import {
-  getLanguage,
+  getLanguage, PATH_PREFIX,
 } from '../../scripts/utils.js';
 import * as constants from './constants.js';
 import {
@@ -77,7 +77,7 @@ function closeSearchBox() {
 
   searchContainer.style.display = 'none';
   cancelContainer.style.display = 'none';
-  searchImage.style.display = 'block';
+  searchImage.style.display = 'flex';
   overlay.style.display = 'none';
   document.body.classList.remove('no-scroll');
 }
@@ -286,7 +286,7 @@ export default async function decorate(block) {
   const langCode = getLanguage();
   const navPath = navMeta
     ? new URL(navMeta, window.location).pathname
-    : `/${langCode}/nav`;
+    : `${PATH_PREFIX}/${langCode}/nav`;
   const fragment = await loadFragment(navPath);
   const placeholdersData = await fetchLanguagePlaceholders();
 

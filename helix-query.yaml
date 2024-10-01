@@ -3,17 +3,17 @@ version: 1
 indices:
   site-en: &base-site
     include:
-      - '/en/**'
+      - '/ext/en/**'
     exclude:
-      - '/en/drafts'
-      - '/en/drafts/**'
-      - '/en/fragments'
-      - '/en/fragments/**'
-      - '/en/footer'
-      - '/en/nav'
-      - '/en/data'
-      - '/en/data/**'
-    target: /en/query-index.json
+      - '/ext/en/drafts'
+      - '/ext/en/drafts/**'
+      - '/ext/en/fragments'
+      - '/ext/en/fragments/**'
+      - '/ext/en/footer'
+      - '/ext/en/nav'
+      - '/ext/en/data'
+      - '/ext/en/data/**'
+    target: /ext/en/query-index.json
     properties:
       title:
         select: main h1
@@ -45,78 +45,81 @@ indices:
       information_classification:
         select: head > meta[name="information_classification"]
         value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
 
   site-zh:
     <<: *base-site
     include:
-      - '/zh/**'
+      - '/ext/zh/**'
     exclude:
-      - '/zh/drafts'
-      - '/zh/drafts/**'
-      - '/zh/fragments'
-      - '/zh/fragments/**'
-      - '/zh/footer'
-      - '/zh/nav'
-      - '/zh/data'
-      - '/zh/data/**'
-    target: /zh/query-index.json
+      - '/ext/zh/drafts'
+      - '/ext/zh/drafts/**'
+      - '/ext/zh/fragments'
+      - '/ext/zh/fragments/**'
+      - '/ext/zh/footer'
+      - '/ext/zh/nav'
+      - '/ext/zh/data'
+      - '/ext/zh/data/**'
+    target: /ext/zh/query-index.json
   
   site-ru:
     <<: *base-site
     include:
-      - '/ru/**'
+      - '/ext/ru/**'
     exclude:
-      - '/ru/drafts'
-      - '/ru/drafts/**'
-      - '/ru/fragments'
-      - '/ru/fragments/**'
-      - '/ru/footer'
-      - '/ru/nav'
-      - '/ru/data'
-      - '/ru/data/**'
-    target: /ru/query-index.json
+      - '/ext/ru/drafts'
+      - '/ext/ru/drafts/**'
+      - '/ext/ru/fragments'
+      - '/ext/ru/fragments/**'
+      - '/ext/ru/footer'
+      - '/ext/ru/nav'
+      - '/ext/ru/data'
+      - '/ext/ru/data/**'
+    target: /ext/ru/query-index.json
 
   site-fr:
     <<: *base-site
     include:
-      - '/fr/**'
+      - '/ext/fr/**'
     exclude:
-      - '/fr/drafts'
-      - '/fr/drafts/**'
-      - '/fr/fragments'
-      - '/fr/fragments/**'
-      - '/fr/footer'
-      - '/fr/nav'
-      - '/fr/data'
-      - '/fr/data/**'
-    target: /fr/query-index.json
+      - '/ext/fr/drafts'
+      - '/ext/fr/drafts/**'
+      - '/ext/fr/fragments'
+      - '/ext/fr/fragments/**'
+      - '/ext/fr/footer'
+      - '/ext/fr/nav'
+      - '/ext/fr/data'
+      - '/ext/fr/data/**'
+    target: /ext/fr/query-index.json
 
   site-es:
     <<: *base-site
     include:
-      - '/es/**'
+      - '/ext/es/**'
     exclude:
-      - '/es/drafts'
-      - '/es/drafts/**'
-      - '/es/fragments'
-      - '/es/fragments/**'
-      - '/es/footer'
-      - '/es/nav'
-      - '/es/data'
-      - '/es/data/**'
-    target: /es/query-index.json
+      - '/ext/es/drafts'
+      - '/ext/es/drafts/**'
+      - '/ext/es/fragments'
+      - '/ext/es/fragments/**'
+      - '/ext/es/footer'
+      - '/ext/es/nav'
+      - '/ext/es/data'
+      - '/ext/es/data/**'
+    target: /ext/es/query-index.json
 
   site-ar:
     <<: *base-site
     include:
-      - '/ar/**'
+      - '/ext/ar/**'
     exclude:
-      - '/ar/drafts'
-      - '/ar/drafts/**'
-      - '/ar/fragments'
-      - '/ar/fragments/**'
-      - '/ar/footer'
-      - '/ar/nav'
-      - '/ar/data'
-      - '/ar/data/**'
-    target: /ar/query-index.json
+      - '/ext/ar/drafts'
+      - '/ext/ar/drafts/**'
+      - '/ext/ar/fragments'
+      - '/ext/ar/fragments/**'
+      - '/ext/ar/footer'
+      - '/ext/ar/nav'
+      - '/ext/ar/data'
+      - '/ext/ar/data/**'
+    target: /ext/ar/query-index.json

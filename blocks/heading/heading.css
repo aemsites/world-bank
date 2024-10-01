@@ -4,18 +4,23 @@
 .heading h4,
 .heading h5,
 .heading h6 {
-    color: var( --primary-blue-90);
-    margin-bottom: 0;
+    color: var(--text-on-light-highlight);
+    margin: 0;
 }
 
 .heading h1 {
-    font-size: var(--h1-large);
+    font-size: var(--font-size-1200);
     line-height: 40.32px;
 }
 
 .heading h2 {
-    font-size: var(--h2-large);
+    font-size: var(--font-size-1000);
     line-height: 31.36px;
+}
+
+html[dir="rtl"] .heading-wrapper .heading h2{
+text-align: right;
+
 }
 
 .heading h1 span,
@@ -24,15 +29,45 @@
 .heading h4 span,
 .heading h5 span,
 .heading h6 span {
-    color: var(--primary-blue-90);
     font-weight: 400;
 }
 
+.heading.heading-top-none { padding-top: var(--spacing-none); }
+.heading.heading-top-xtiny { padding-top: var(--spacing-xtiny); }
+.heading.heading-top-tiny { padding-top: var(--spacing-tiny); }
+.heading.heading-top-xxsmall { padding-top: var(--spacing-xxsmall); }
+.heading.heading-top-xsmall { padding-top: var(--spacing-xsmall); }
+.heading.heading-top-regular { padding-top: var(--spacing-regular); }
+.heading.heading-top-small { padding-top: var(--spacing-small); }
+.heading.heading-top-medium { padding-top: var(--spacing-medium); }
+.heading.heading-top-large { padding-top: var(--spacing-large); }
+.heading.heading-top-xlarge { padding-top: var(--spacing-xlarge); }
+.heading.heading-top-xxlarge { padding-top: var(--spacing-xxlarge); }
+.heading.heading-top-huge { padding-top: var(--spacing-huge); }
+.heading.heading-top-xhuge { padding-top: var(--spacing-xhuge); }
+
+.heading.heading-bottom-none { padding-bottom: var(--spacing-none); }
+.heading.heading-bottom-xtiny { padding-bottom: var(--spacing-xtiny); }
+.heading.heading-bottom-tiny { padding-bottom: var(--spacing-tiny); }
+.heading.heading-bottom-xxsmall { padding-bottom: var(--spacing-xxsmall); }
+.heading.heading-bottom-xsmall { padding-bottom: var(--spacing-xsmall); }
+.heading.heading-bottom-regular { padding-bottom: var(--spacing-regular); }
+.heading.heading-bottom-small { padding-bottom: var(--spacing-small); }
+.heading.heading-bottom-medium { padding-bottom: var(--spacing-medium); }
+.heading.heading-bottom-large { padding-bottom: var(--spacing-large); }
+.heading.heading-bottom-xlarge { padding-bottom: var(--spacing-xlarge); }
+.heading.heading-bottom-xxlarge { padding-bottom: var(--spacing-xxlarge); }
+.heading.heading-bottom-huge { padding-bottom: var(--spacing-huge); }
+.heading.heading-bottom-xhuge { padding-bottom: var(--spacing-xhuge); }
+
 .heading .eyebrowtext:not(:empty) {
-    margin-bottom: 0;
+    margin-bottom: var(--spacing-small);
+    margin-top: 0;
     font-weight: 700;
     line-height: 17.5px;
-    font-size: var(--body-medium);
+    color: var(--text-on-light-highlight);
+    font-size: var(--font-size-300);
+
 }
 
 .heading .heading-description:empty {
@@ -44,18 +79,40 @@
 }
 
 .heading .heading-description:not(:empty) {
-    font-size: var(--body-medium);
+    font-size: var(--font-size-300);
     margin-top: 4px;
 }
 
 .heading hr {
     margin-top: var(--spacing-medium);
-    color: var(--divider-on-light-default);
+    height: 2px;
+    border: none;
+    background-color: var(--divider-on-light-emphasis);
+    margin-bottom: 0;
+}
+
+.heading-border-spacing-none hr {  margin-top: var(--spacing-none); }
+.heading-border-spacing-xtiny hr { margin-top: var(--spacing-xtiny); }
+.heading-border-spacing-tiny hr { margin-top: var(--spacing-tiny); }
+.heading-border-spacing-xxsmall hr { margin-top: var(--spacing-xxsmall); }
+.heading-border-spacing-xsmall hr { margin-top: var(--spacing-xsmall); }
+.heading-border-spacing-regular hr { margin-top: var(--spacing-regular); }
+.heading-border-spacing-small hr { margin-top: var(--spacing-small); }
+.heading-border-spacing-medium hr { margin-top: var(--spacing-medium); }
+.heading-border-spacing-large hr { margin-top: var(--spacing-large); }
+.heading-border-spacing-xlarge hr { margin-top: var(--spacing-xlarge); }
+.heading-border-spacing-xxlarge hr { margin-top: var(--spacing-xxlarge); }
+.heading-border-spacing-huge hr { margin-top: var(--spacing-huge); }
+.heading-border-spacing-xhuge hr { margin-top: var(--spacing-xhuge); }
+
+.heading p{
+    margin: 0;
+    padding: 0;
 }
 
 @media (width <768px) {
     .heading .eyebrowtext:not(:empty)  {
-        font-size: var(--body-small);
+        font-size: var(--font-size-200);
     }
 
     .heading h1 {
@@ -80,7 +137,7 @@
 @media (width >=1024px) {
     .heading .eyebrowtext:not(:empty) {
         line-height: 20px;
-        font-size: var(--body-medium);
+        font-size: var(--font-size-300);
     }
 
     .heading h1 {

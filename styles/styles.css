@@ -129,6 +129,12 @@
   --neutral-solid-80-s: #252e37;
   --neutral-solid-90-s: #181f25;
   --neutral-solid-95-s: #181f25;
+  --priorities-blue-cross-cutting: #004370;
+  --priorities-gray-digital: #5d6472;
+  --priorities-green-planet: #07ab50;
+  --priorities-magenta-infrastructure: #91302f;
+  --priorities-purple-prosperity: #872c8f;
+  --priorities-yellow-people: #f7b841;
   --purple-10: #f1e1ff;
   --purple-20: #e5c7ff;
   --purple-30: #cd95fe;
@@ -159,17 +165,17 @@
 
   /* Colors: Semantic */
   --accent-blue-primary-05: var(--blue-05);
-  --accent-blue-primary-10: var(--blue-10); /* --primary-blue-20 */
+  --accent-blue-primary-10: var(--blue-10);
   --accent-blue-primary-100: var(--blue-100);
-  --accent-blue-primary-120: var(--blue-120); /* --primary-blue-102 */
+  --accent-blue-primary-120: var(--blue-120);
   --accent-blue-primary-20: var(--blue-20);
   --accent-blue-primary-30: var(--blue-30);
-  --accent-blue-primary-40: var(--blue-40); /* --primary-blue-50 */
+  --accent-blue-primary-40: var(--blue-40);
   --accent-blue-primary-50: var(--blue-50-base);
   --accent-blue-primary-60: var(--blue-60);
-  --accent-blue-primary-70: var(--blue-70); /* --primary-blue-80 */
+  --accent-blue-primary-70: var(--blue-70);
   --accent-blue-primary-80: var(--blue-80);
-  --accent-blue-primary-90: var(--blue-90); /* --primary-blue-100 */
+  --accent-blue-primary-90: var(--blue-90);
   --background-black: var(--black);
   --background-white: var(--white);
   --background-container-primary: var(--global-primary);
@@ -393,6 +399,13 @@
   --text-on-state-success-emphasis: var(--green-10);
   --text-on-state-warning-default: var(--yellow-20);
   --text-on-state-warning-emphasys: var(--yellow-10);
+  --button-primary-outline-enabled: var(--background-white);
+  --button-primary-background-enabled: var(--accent-blue-primary-70);
+  --button-secondary-outline-enabled: var(--accent-blue-primary-70);
+  --button-primary-label-default: var(--background-white);
+  --button-secondary-background-enabled: var(--background-white);
+  --button-secondary-label-enabled: var(--accent-blue-primary-70);
+  --links-focus-color: #DA570E; /* Custom variable, not available in figma */
 
   /* number */
   --border-radius-none: 0rem;
@@ -421,6 +434,7 @@
   --size-icon-regular: 1rem;
   --size-icon-large: 1.25rem;
   --size-icon-xxlarge: 4rem;
+  --padding-margins-sp1: 0.75rem;
 
   /* typography */
   --font-size-100: 0.75rem;
@@ -444,124 +458,14 @@
   --heading-font-weight: var(--body-font-weight-bold);
   --label-font-weight: var(--body-font-weight-bold);
 
-  /* colors */
-  --primary-blue-10: #F6FCFF;
-  --primary-blue-20: #E9F7FD;
-  --primary-blue-30: #CDE7F9;
-  --primary-blue-40: #A3DAFF;
-  --primary-blue-50: #169AF3;
-  --primary-blue-60: #0071BC;
-  --primary-blue-70: #004370; /* --accent-blue-primary-70 */
-  --primary-blue-80: #004370; /* --accent-blue-primary-70 */
-  --primary-blue-90: #012740;
-  --primary-blue-100: #012740;
-  --primary-blue-101: #002035;
-  --primary-blue-102: #001C2D;
-  --primary-blue-103: #00538A;
-
-  /* neutrals */
-  --neutrals-10: #F5F7F9;
-  --neutrals-20: #E7EDF3; /* --neutral-solid-10-s */
-  --neutrals-30: #DAE3EB;
-  --neutrals-40: #BDCCDB;
-  --neutrals-50: #8A9DB1;
-  --neutrals-60: #586E84;
-  --neutrals-70: #4B5E71;
-  --neutrals-80: #3D4C5C;
-  --neutrals-90: #252E37;
-  --neutrals-100: #181F25;
-  --neutrals-101: #181F25;
-  --neutrals-103: #D4DEE8;
-
   /* neutrals - alpha */
-  --neutrals-a-10: rgb(0 57 107 / 3%);
-  --neutrals-a-20: rgb(0 57 107 / 5%);
-  --neutrals-a-30: rgb(0 57 107 / 8%);
-  --neutrals-a-40: rgb(0 57 107 / 16%);
-  --neutrals-a-50: rgb(0 57 107 / 24%);
-  --neutrals-a-60: rgb(0 41 77 / 42%);
-  --neutrals-a-70: rgb(0 13 26 / 57%);
-  --neutrals-a-80: rgb(0 13 26 / 65%);
-  --neutrals-a-90: rgb(0 13 26 / 70%);
-  --neutrals-a-100: rgb(0 13 26 / 96%);
-
-  /* spacing (Padding & Margins) */
-  --spacing-0: 0;
-  --spacing-2: 2px;
-  --spacing-4: 4px;
-  --spacing-8: 8px;
-  --spacing-12: 12px;
-  --spacing-16: 16px;
-  --spacing-20: 20px;
-  --spacing-24: 24px;
-  --spacing-28: 28px;
-  --spacing-32: 32px;
-  --spacing-36: 36px;
-  --spacing-40: 40px;
-  --spacing-48: 48px;
-  --spacing-52: 52px;
-  --spacing-56: 56px;
-  --spacing-64: 64px;
-  --spacing-80: 80px;
-  --spacing-96: 96px;
-
-  /* Typography spacing */
-  --size-72: 72px;
-  --size-60: 60px;
-  --size-48: 48px;
-  --size-44: 44px;
-  --size-40: 40px;
-  --size-36: 36px;
-  --size-32: 32px;
-  --size-28: 28px;
-  --size-24: 24px;
-  --size-20: 20px;
-  --size-18: 18px;
-  --size-16: 16px;
-  --size-14: 14px;
-  --size-12: 12px;
-
-  /* Heading variables */
-  --h1-huge: var(--size-44);
-  --h1-large: var(--size-36);
-  --h1-base: var(--size-24);
-  --h2-large: var(--size-28);
-  --h2-base: var(--size-28);
-  --h3-large: var(--size-24);
-  --h3-base: var(--size-24);
-  --heading-label-large: var(--size-36);
-  --heading-label-base: var(--size-28);
-  --heading-label-small: var(--size-28);
-  --heading-label-tiny: var(--size-24);
-
-  /* Body variables */
-  --default: var(--size-20);
-  --body-huge: var(--size-20);
-  --body-large: var(--size-18);
-  --body-medium: var(--size-16);
-  --body-small: var(--size-14);
-  --body-tiny: var(--size-12);
+  --neutrals-a-90: #000d1ab3;
 
   /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-16);
-  --body-title-paragraph: var(--size-28);
-  --body-indicator-paragraph-spacing: var(--spacing-12);
-
-  /* Spacing - mobile */
-  --none: var(--spacing-0);
-  --xtiny: var(--spacing-2);
-  --tiny: var(--spacing-4);
-  --xxsmall: var(--spacing-4);
-  --xsmall: var(--spacing-4);
-  --small: var(--spacing-8);
-  --regular: var(--spacing-16);
-  --medium: var(--spacing-20);
-  --large: var(--spacing-24);
-  --xlarge: var(--spacing-28);
-  --xxlarge: var(--spacing-32);
-  --huge: var(--spacing-40);
-  --xhuge: var(--spacing-48);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 16px;
+  --body-title-paragraph: 28px;
+  --body-indicator-paragraph-spacing: 12px;
 
   /* fonts */
   --body-font-family: 'Open Sans', roboto, roboto-fallback;
@@ -569,14 +473,9 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* Custom variables */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: white;
   --light-color: #eee;
   --dark-color: #ccc;
-  --text-color: var(--neutrals-100);
-  --color-white: #FFF; /* white */
-  --color-black: #000;
+  --text-color: var(--neutral-solid-90-s);
 
   /* Navigation Menu */
   --input-background-color:#002337;
@@ -585,13 +484,13 @@
   --nav-menu-footer-color: #99b6C7;
 
   /* body sizes */
-  --body-font-size: var(--default);
+  --body-font-size: var(--font-size-500);
   --body-font-size-citation: 12px;
 
   /* main-heading styles */
-  --main-heading-font-size: var(--size-28);
-  --main-heading-spacing: 0 0 var(--spacing-36);
-  --main-heading-line-height: 110%;
+  --main-heading-font-size: 28px;
+  --main-heading-spacing: 0 0 36px;
+  --main-heading-line-height: 112%;
 
   /* eyebrow styles */
   --eyebrow-font-size-l: 14px;
@@ -618,7 +517,15 @@
   --section-container-space: var(--spacing-xxlarge); 
 
   /* Block specific */
-  --signup-padding: var(--spacing-28);
+  --signup-padding: 28px;
+
+  /** Button Padding **/
+  --button-vertical-padding: 12px;
+  --button-horizontal-padding: 32px;
+
+  /** Button Padding Secondary **/
+  --button-vertical-padding-secondary: 8px;
+  --button-horizontal-padding-secondary: 24px;
 }
 
 /*
@@ -628,39 +535,18 @@
 */
 @media (width >= 768px) {
   :root {
-    /* typography specific - h1..h6, body ..etc */
-    --h1-huge: var(--size-60);
-    --h1-large: var(--size-44);
-    --h1-base: var(--size-36);
-    --h2-large: var(--size-32);
-    --h2-base: var(--size-32);
-    --h3-large: var(--size-28);
-    --h3-base: var(--size-28);
-    --heading-label-large: var(--size-36);
-    --heading-label-base: var(--size-28);
-    --heading-label-small: var(--size-28);
-    --heading-label-tiny: var(--size-24);
-
-    /* Body variables */
-    --default: var(--size-20);
-    --body-huge: var(--size-20);
-    --body-large: var(--size-18);
-    --body-medium: var(--size-14);
-    --body-small: var(--size-14);
-    --body-tiny: var(--size-12);
-
     /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-18);
-  --body-title-paragraph: var(--size-28);
-  --body-indicator-paragraph-spacing: var(--spacing-8);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 18px;
+  --body-title-paragraph: 28px;
+  --body-indicator-paragraph-spacing: 8px;
 
     /* body styles */
-    --body-font-size: var(--default);
+    --body-font-size: var(--font-size-500);
     --body-font-size-citation: 12px;
 
     /* main-heading styles */
-    --main-heading-font-size: var(--size-32);
+    --main-heading-font-size: 32px;
     
     /* eyebrow styles */
     --eyebrow-font-size-l: 16px;
@@ -671,25 +557,10 @@
     --section-gutter-space: 48px;
   
     /* Screen variables */
-    --nav-height: 44px;
+    --nav-height: 34px;
   
-    /* Spacing - tablet */
-    --none: var(--spacing-0);
-    --xtiny: var(--spacing-2);
-    --tiny: var(--spacing-4);
-    --xxsmall: var(--spacing-4);
-    --xsmall: var(--spacing-8);
-    --small: var(--spacing-12);
-    --regular: var(--spacing-20);
-    --medium: var(--spacing-24);
-    --large: var(--spacing-28);
-    --xlarge: var(--spacing-32);
-    --xxlarge: var(--spacing-40);
-    --huge: var(--spacing-56);
-    --xhuge: var(--spacing-64);
-
     /* Block specific */
-    --signup-padding: var(--spacing-32);
+    --signup-padding: 32px;
 
     /* number */
     --border-radius-none: 0rem;
@@ -745,65 +616,29 @@
 
 @media (width >= 1024px) {
   :root {
-    /* typography specific - h1..h6, body ..etc */
-    --h1-huge: var(--size-72);
-    --h1-large: var(--size-60); /* --font-size-1200 */
-    --h1-base: var(--size-48); /* --font-size-1100 */
-    --h2-large: var(--size-40); /* --font-size-1000 */
-    --h2-base: var(--size-40); /* --font-size-1000 */
-    --h3-large: var(--size-32); /* --font-size-800 */
-    --h3-base: var(--size-32); /* --font-size-800 */
-    --heading-label-large: var(--size-48); /* --font-size-1100 */
-    --heading-label-base: var(--size-40); /* --font-size-1000 */
-    --heading-label-small: var(--size-36); /* --font-size-900 */
-    --heading-label-tiny: var(--size-28); /* --font-size-700 */
-
-    /* Body variables */
-    --default: var(--size-20); /* --font-size-500 */
-    --body-huge: var(--size-24); /* --font-size-600 */
-    --body-large: var(--size-20); /* --font-size-500 */
-    --body-medium: var(--size-16); /* --font-size-300 */
-    --body-small: var(--size-14); /* --font-size-200 */
-    --body-tiny: var(--size-12); /* --font-size-100 */
-
     /** Measuring impact card paragraph varibales **/
-  --body-indicator-paragraph: var(--size-12);
-  --body-description-paragraph: var(--size-20);
-  --body-title-paragraph: var(--size-36);
-  --body-indicator-paragraph-spacing: var(--spacing-12);
+  --body-indicator-paragraph: 12px;
+  --body-description-paragraph: 20px;
+  --body-title-paragraph: 36px;
+  --body-indicator-paragraph-spacing: 12px;
     
     /* body styles */
-    --body-font-size: var(--default);
+    --body-font-size: var(--font-size-500);
 
     /* Gutter space */
     --section-gutter-space: 72px;
     --section-reduced-space: 320px;
   
     /* Screen variables */
-    --nav-height: 50px;
+    --nav-height: 44px;
     --nav-padding: 35px;
   
-    /* Spacing - desktop */
-    --none: var(--spacing-0);
-    --xtiny: var(--spacing-2);
-    --tiny: var(--spacing-4);
-    --xxsmall: var(--spacing-8);
-    --xsmall: var(--spacing-12);
-    --small: var(--spacing-16);
-    --regular: var(--spacing-24);
-    --medium: var(--spacing-32);
-    --large: var(--spacing-40);
-    --xlarge: var(--spacing-48);
-    --xxlarge: var(--spacing-64);
-    --huge: var(--spacing-80);
-    --xhuge: var(--spacing-96);
-
     /* main-heading styles */
-    --main-heading-font-size: var(--size-40);
-    --main-heading-spacing: 0 0 var(--spacing-48);
+    --main-heading-font-size: 40px;
+    --main-heading-spacing: 0 0 48px;
 
     /* Block specific */
-    --signup-padding: var(--spacing-52);
+    --signup-padding: 52px;
 
     /* numbers */
     --border-radius-none: 0rem;
@@ -854,6 +689,11 @@
     --global-font-familly: 'Open Sans';
     --heading-font-weight: var(--body-font-weight-bold);
     --label-font-weight: var(--body-font-weight-bold);
+    --button-vertical-padding: 16px;
+
+    /** Button Padding Secondary **/
+  --button-vertical-padding-secondary: 12px;
+  --button-horizontal-padding-secondary: 32px;
   }
 }
 
@@ -864,13 +704,17 @@
   src: local('Arial');
 }
 
+html:lang(ar) {
+  direction: rtl;
+}
+
 body {
   font-size: var(--body-font-size);
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.4;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--white);
   display: none;
 }
 
@@ -894,35 +738,35 @@ h6 {
   line-height: 1.2;
   margin: 1rem 0;
   letter-spacing: 0;
-  color: var(--primary-blue-100);
+  color: var(--accent-blue-primary-90);
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
 h1 { 
-  font-size: var(--h1-base); 
+  font-size: var(--font-size-1100);
   line-height: 1.1;
-  margin-bottom: var(--large);
+  margin-bottom: var(--spacing-large);
 }
 
 h2 { 
-  font-size: var(--h2-base);
-  margin-bottom: var(--medium);
+  font-size: var(--font-size-1000);
+  margin-bottom: var(--spacing-medium);
 }
 
 h3 { 
-  font-size: var(--h3-base);
+  font-size: var(--font-size-800);
   line-height: 1.1;
-  margin-bottom: var(--regular);
+  margin-bottom: var(--spacing-regular);
 }
 
 h4 {
-  font-size: var(--heading-label-tiny);
-  margin-bottom: var(--small);
+  font-size: var(--font-size-700);
+  margin-bottom: var(--spacing-small);
 }
 
 /* TODO: Check with Maria */
-h5 { font-size: var(--heading-label-tiny); }
-h6 { font-size: var(--heading-label-tiny); }
+h5 { font-size: var(--font-size-700); }
+h6 { font-size: var(--font-size-700); }
 
 p,
 dl,
@@ -937,7 +781,7 @@ blockquote {
 code,
 pre {
   font-family: var(--fixed-font-family);
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
 }
 
 code {
@@ -958,20 +802,29 @@ main pre {
 
 /* links */
 a:any-link {
-  color: var(--neutrals-100);
+  color: var(--neutral-solid-90-s);
   text-decoration: underline;
-  text-decoration-color: var(--color-black);
+  text-decoration-color: var(--black);
   font-size: var(--body-font-size);
   font-weight: 400;
   line-height: 25px;
   text-align: left;
 }
 
+a:focus-visible {
+  border: 2px solid var(--links-focus-color);
+  outline-style: unset;
+}
+
+html[dir="rtl"] a {
+  text-align: right;
+}
+
 p strong > em > a:any-link {
   background-color: transparent;
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   font-family: var(--body-font-family);
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.25px;
@@ -993,18 +846,22 @@ p strong > em > a:any-link {
 
 a:any-link:hover {
   color: rgb(0 13 26 / 96%);
-  text-decoration-color: var(--primary-blue-50);
+  text-decoration-color: var(--accent-blue-primary-40);
 }
 
 a:any-link:focus,
 a:any-link:active {
-  color: var(--primary-blue-100);
-  text-decoration-color: var(--primary-blue-100);
+  color: var(--accent-blue-primary-90);
+  text-decoration-color: var(--accent-blue-primary-90);
 }
 
 a:any-link:visited {
   color: var(--purple-70);
   text-decoration-color: var(--purple-70);
+}
+
+html[dir="rtl"] a:any-link {
+  text-align: right;
 }
 
 a:any-link.disabled {
@@ -1013,13 +870,13 @@ a:any-link.disabled {
 }
 
 p strong > em > a:any-link:hover {
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
   border-bottom: 2px solid rgb(22 154 243 / 100%);
 }
 
 p strong > em > a:any-link:active,
 p strong > em > a:any-link:focus {
-  color: var(--primary-blue-90);
+  color: var(--accent-blue-primary-90);
   border-bottom: 2px solid transparent;
 }
 
@@ -1032,72 +889,71 @@ p strong > em > a:any-link:visited {
   border-bottom: 2px solid transparent;
 }
 
+html[dir="rtl"] p strong > em > a:any-link {
+  text-align: center;
+}
+
 /* buttons */
 a.button:any-link,
 button {
   font-family: var(--body-font-family);
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   font-weight: 700;
-  line-height: 24px;
+  line-height: 150%;
   letter-spacing: 0.25px;
   text-align: center;
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 1px solid transparent;
-  padding: 12px 32px;
+  border: 1px solid var(--button-primary-outline-enabled);
+  padding: var(--button-vertical-padding) var(--button-horizontal-padding);
   font-style: normal;
   cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--primary-blue-80);
+  color: var(--button-primary-label-default);
+  background-color: var(--button-primary-background-enabled);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: var(--border-radius-x-large);
+}
+
+a.button.secondary,
+button.secondary {
+  background-color: unset;
+  border: 2px solid var(--button-secondary-outline-enabled);
+  color: var(--button-secondary-label-enabled);
 }
 
 a.button:hover,
 button:hover {
-  background-color: var(--primary-blue-50);
-  color: var(--primary-blue-80);
+  background-color: var(--accent-blue-primary-40);
+  color: var(--accent-blue-primary-70);
   cursor: pointer;
 }
 
-a.button:focus,
-button:focus {
-  background-color: var(--primary-blue-100);
-  color: var(--background-color);
+a.button:focus-visible,
+button:focus-visible,
+a.button.secondary:focus-visible,
+button.secondary:focus-visible {
+  border-color: var(--links-focus-color);
+  outline-style: unset;
 }
 
 a.button.disabled,
 a.button.disabled:hover,
 button:disabled,
 button:disabled:hover {
-  background-color: var(--neutrals-40);
+  background-color: var(--neutral-solid-30-s);
   color: rgb(0 41 77 / 42%);
   cursor: unset;
 }
 
-a.button.secondary,
-button.secondary {
-  background-color: unset;
-  border: 2px solid var(--primary-blue-80);
-  color: var(--primary-blue-80);
-}
-
 a.button.secondary:hover,
 button.secondary:hover {
-  background-color: unset;
-  border: 2px solid var(--primary-blue-50);
-  color: var(--primary-blue-80);
-}
-
-a.button.secondary:focus,
-button.secondary:focus {
-  background-color: var(--primary-blue-20);
-  border: 2px solid var(--primary-blue-80);
-  color: var(--primary-blue-80);
+  background-color: var(--accent-blue-primary-40);
+  border: 2px solid var(--accent-blue-primary-40);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.secondary.disabled,
@@ -1105,27 +961,34 @@ a.button.secondary.disabled:hover,
 button.secondary:disabled,
 button.secondary:disabled:hover {
   background-color: unset;
-  border: 2px solid var(--neutrals-103);
-  color: var(--neutrals-50);
+  border: 2px solid var(--neutral-solid-20-s);
+  color: var(--neutral-solid-40-s);
   cursor: unset;
+}
+
+a.button:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-90);
+  color: var(--white);
+}
+
+a.button.secondary:focus:not(:focus-visible),
+button.secondary:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  border: 2px solid var(--accent-blue-primary-70);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.ghost,
 button.ghost {
   background-color: transparent;
-  color: var(--primary-blue-70);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.ghost:hover,
 button.ghost:hover {
-  background-color: var(--primary-blue-10);
-  color: var(--primary-blue-70);
-}
-
-a.button.ghost:focus,
-button.ghost:focus {
-  background-color: var(--primary-blue-20);
-  color: var(--primary-blue-70);
+  background-color: var(--accent-blue-primary-05);
+  color: var(--accent-blue-primary-70);
 }
 
 a.button.ghost.disabled,
@@ -1137,150 +1000,162 @@ button.ghost:disabled:hover {
   cursor: unset;
 }
 
+a.button.ghost:focus:not(:focus-visible),
+button.ghost:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
+}
+
 p.button-container {
   margin: 0;
 }
 
 /* Links and buttons in dark theme */
-.section.bg-primary-blue-90,
-.section.bg-primary-blue-70 {
-  a:any-link {
-    color: var(--color-white);
-    text-decoration-color: var(--color-white);
-  }
+.section[class*='bg-primary-blue'] a:any-link {
+  color: var(--white);
+  text-decoration-color: var(--white);
+}
 
-  p strong > em > a:any-link {
-    background-color: transparent;
-    color: var(--background-color);
-    border-bottom: 2px solid rgb(255 255 255 / 30%)
-  }
+.section[class*='bg-primary-blue'] p strong > em > a:any-link {
+  background-color: transparent;
+  color: var(--white);
+  border-bottom: 2px solid rgb(255 255 255 / 30%)
+}
 
-  a:any-link:hover {
-    color: var(--color-white);
-    text-decoration-color: var(--primary-blue-50);
-  }
+.section[class*='bg-primary-blue'] a:any-link:hover {
+  color: var(--white);
+  text-decoration-color: var(--accent-blue-primary-40);
+}
 
-  a:any-link:focus,
-  a:any-link:active {
-    color: var(--color-white);
-    text-decoration-color: var(--color-white);
-  }
+.section[class*='bg-primary-blue'] a:any-link:visited {
+  color: var(--purple-40);
+  text-decoration-color: var(--purple-40);
+}
 
-  a:any-link:visited {
-    color: var(--purple-40);
-    text-decoration-color: var(--purple-40);
-  }
+.section[class*='bg-primary-blue'] a:any-link:active {
+  color: var(--white);
+  text-decoration-color: var(--white);
+}
 
-  a:any-link.disabled {
-    color: rgb(255 255 255 / 48%);
-    text-decoration-color: rgb(255 255 255 / 48%);
-    cursor: unset;
-  }
+.section[class*='bg-primary-blue'] p strong > em > a:any-link:hover {
+  border-bottom: 2px solid rgb(22 154 243 / 100%)
+}
 
-  p strong > em > a:any-link:hover {
-    border-bottom: 2px solid rgb(22 154 243 / 100%)
-  }
+.section[class*='bg-primary-blue'] p strong > em > a:any-link:active {
+  color: var(--white);
+  border-bottom: 2px solid transparent;
+}
 
-  p strong > em > a:any-link:active,
-  p strong > em > a:any-link:focus {
-    color: var(--background-color);
-    border-bottom: 2px solid transparent;
-  }
+.section[class*='bg-primary-blue'] a:any-link:focus:not(:focus-visible) {
+  color: var(--white);
+  text-decoration-color: var(--white);
+}
 
-  p strong > em > a:any-link.disabled {
-    background-color: transparent;
-    color: rgb(0 41 77 / 42%);
-    border-bottom: 2px solid transparent;
-  }
+.section[class*='bg-primary-blue'] p strong > em > a:any-link:focus:not(:focus-visible) {
+  color: var(--white);
+  border-bottom: 2px solid transparent;
+}
 
-  a.button:any-link,
-  button {
-    border: 1px solid transparent;
-    color: var(--primary-blue-80);
-    background-color: var(--background-color);
-  }
+.section[class*='bg-primary-blue'] a:any-link.disabled {
+  color: rgb(255 255 255 / 48%);
+  text-decoration-color: rgb(255 255 255 / 48%);
+  cursor: unset;
+}
 
-  a.button:hover,
-  button:hover {
-    background-color: var(--background-color);
-    color: var(--primary-blue-80);
-    border: 1px solid var(--primary-blue-50);
-  }
+.section[class*='bg-primary-blue'] p strong > em > a:any-link.disabled {
+  background-color: transparent;
+  color: rgb(0 41 77 / 42%);
+  border-bottom: 2px solid transparent;
+}
 
-  /* TODO: Not available in Figma - add more */
-  a.button:focus,
-  button:focus {
-    background-color: var(--background-color);
-    color: var(--primary-blue-80);
-  }
+.section[class*='bg-primary-blue'] a.button:any-link,
+.section[class*='bg-primary-blue'] button {
+  color: var(--accent-blue-primary-70);
+  background-color: var(--white);
+  border: 2px solid transparent;
+}
 
-  /* TODO: To be updated */
-  a.button.disabled,
-  a.button.disabled:hover,
-  button:disabled,
-  button:disabled:hover {
-    background-color: var(--neutrals-40);
-    color: rgb(0 41 77 / 42%);
-  }
+.section[class*='bg-primary-blue'] a.button:hover,
+.section[class*='bg-primary-blue'] button:hover {
+  background-color: var(--accent-blue-primary-40);
+}
 
-  a.button.secondary,
-  button.secondary {
-    background-color: var(--primary-blue-80);
-    border: 1px solid var(--background-color);
-    color: var(--background-color);
-  }
+.section[class*='bg-primary-blue'] a.button:any-link:focus-visible, 
+.section[class*='bg-primary-blue'] button:focus-visible {
+  border-color: var(--links-focus-color);
+}
 
-  a.button.secondary:hover,
-  button.secondary:hover {
-    background-color: var(--primary-blue-80);
-    border: 1px solid var(--primary-blue-50);
-    color: var(--background-color);
-  }
+.section[class*='bg-primary-blue'] a.button.disabled,
+.section[class*='bg-primary-blue'] a.button.disabled:hover,
+.section[class*='bg-primary-blue'] button:disabled,
+.section[class*='bg-primary-blue'] button:disabled:hover {
+  background-color: var(--white);
+  color: var(--global-states-disable-medium);
+  border-color: var(--global-states-disable-regular);
+}
 
-  /* TODO: Focus and disabled is not updated in figma */
-  a.button.secondary:focus,
-  button.secondary:focus {
-    background-color: var(--primary-blue-80);
-    border: 1px solid var(--primary-blue-50);
-    color: var(--background-color);
-  }
+.section[class*='bg-primary-blue'] a.button:focus:not(:focus-visible),
+.section[class*='bg-primary-blue'] button:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
+}
 
-  a.button.secondary.disabled,
-  a.button.secondary.disabled:hover,
-  button.secondary:disabled,
-  button.secondary:disabled:hover {
-    background-color: unset;
-    border: 1px solid var(--neutrals-103);
-    color: var(--neutrals-50);
-  }
+.section[class*='bg-primary-blue'] a.button.secondary,
+.section[class*='bg-primary-blue'] button.secondary {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
 
-  /* ghost on dark */
-  a.button.ghost,
-  button.ghost {
-    background-color: transparent;
-    color: var(--background-color);
-  }
+.section[class*='bg-primary-blue'] a.button.secondary:hover,
+.section[class*='bg-primary-blue'] button.secondary:hover {
+  background-color: var(--accent-blue-primary-40);
+  border-color: var(--accent-blue-primary-40);
+  color: var(--accent-blue-primary-70);
+}
 
-  a.button.ghost:hover,
-  button.ghost:hover {
-    background-color: var(--primary-blue-10);
-    color: var(--primary-blue-70);
-  }
+.section[class*='bg-primary-blue'] a.button.secondary.disabled,
+.section[class*='bg-primary-blue'] a.button.secondary.disabled:hover,
+.section[class*='bg-primary-blue'] button.secondary:disabled,
+.section[class*='bg-primary-blue'] button.secondary:disabled:hover {
+  background-color: unset;
+  border-color: var(--neutral-solid-20-s);
+  color: var(--neutral-solid-40-s);
+}
 
-  a.button.ghost:focus,
-  button.ghost:focus {
-    background-color: var(--primary-blue-20);
-    color: var(--primary-blue-70);
-  }
+.section[class*='bg-primary-blue'] a.button.secondary:focus:not(:focus-visible),
+.section[class*='bg-primary-blue'] button.secondary:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
+  border-color: var(--white);
+}
 
-  a.button.ghost.disabled,
-  a.button.ghost.disabled:hover,
-  button.ghost:disabled,
-  button.ghost:disabled:hover {
-    background-color: transparent;
-    color: rgb(0 41 77 / 42%);
-    cursor: unset;
-  }
+/* ghost on dark */
+.section[class*='bg-primary-blue'] a.button.ghost,
+.section[class*='bg-primary-blue'] button.ghost {
+  background-color: transparent;
+  color: var(--white);
+}
+
+.section[class*='bg-primary-blue'] a.button.ghost:hover,
+.section[class*='bg-primary-blue'] button.ghost:hover {
+  background-color: var(--accent-blue-primary-05);
+  color: var(--accent-blue-primary-70);
+}
+
+.section[class*='bg-primary-blue'] a.button.ghost.disabled,
+.section[class*='bg-primary-blue'] a.button.ghost.disabled:hover,
+.section[class*='bg-primary-blue'] button.ghost:disabled,
+.section[class*='bg-primary-blue'] button.ghost:disabled:hover {
+  background-color: transparent;
+  color: rgb(0 41 77 / 42%);
+  cursor: unset;
+}
+
+.section[class*='bg-primary-blue'] a.button.ghost:focus:not(:focus-visible),
+.section[class*='bg-primary-blue'] button.ghost:focus:not(:focus-visible) {
+  background-color: var(--accent-blue-primary-10);
+  color: var(--accent-blue-primary-70);
 }
 
 main img {
@@ -1303,7 +1178,7 @@ main img {
 /* sections */
 main .section {
   margin: 0;
-  padding: var(--spacing-32) 0;
+  padding: 32px 0;
   position: relative;
   z-index: 0;
 }
@@ -1324,7 +1199,7 @@ main .section > div {
 }
 
 .section[class*='bg-primary-blue'] {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .section[class*='bg-primary-blue'] h1,
@@ -1333,31 +1208,31 @@ main .section > div {
 .section[class*='bg-primary-blue'] h4,
 .section[class*='bg-primary-blue'] h5,
 .section[class*='bg-primary-blue'] h6 {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 .section[class*='bg-neutrals'] {
-  color: var(--neutrals-100);
+  color: var(--neutral-solid-90-s);
 }
 
 main .section.bg-primary-blue-90,
 main .section.bg-primary-blue-90[data-sec-inside-container="true"] > div {
-  background-color: var(--primary-blue-90);
+  background-color: var(--accent-blue-primary-90);
 }
 
 main .section.bg-primary-blue-70,
 main .section.bg-primary-blue-70[data-sec-inside-container="true"] > div {
-  background-color: var(--primary-blue-70);
+  background-color: var(--accent-blue-primary-70);
 }
 
 main .section.bg-neutrals-10,
 main .section.bg-neutrals-10[data-sec-inside-container="true"] > div {
-  background-color: var(--neutrals-10);
+  background-color: var(--neutral-solid-05-s);
 }
 
 main .section.bg-neutrals-20,
 main .section.bg-neutrals-20[data-sec-inside-container="true"] > div {
-  background-color: var(--neutrals-20);
+  background-color: var(--neutral-solid-10-s);
 }
 
 main .section[class*='bg-'][data-sec-inside-container="true"] {
@@ -1369,7 +1244,7 @@ main .section[class*='bg-'][data-sec-inside-container="true"] {
 main .section[class*='bg-'][data-sec-inside-container="true"] > div {
   max-width: calc(var(--screen-width) - var(--section-container-space) - var(--section-container-space));
   padding: var(--section-container-space);
-  border-radius: 8px;
+  border-radius: var(--border-radius-medium);
   position: relative;
 }
 
@@ -1377,6 +1252,11 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-w
   padding: 0 0 0 28px;
   border-radius: 10px 10px 0 0;
   max-width: calc(var(--screen-width) - 28px);
+}
+
+html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
+  padding: 0 28px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper + div {
@@ -1399,58 +1279,58 @@ main .section.bg-image .sec-img {
     top: -20px;
   }
 
-  main .section[class*='bg-'][data-sec-inside-container="true"] > div {
-    border-radius: 10px;
-  }
-
   main .section[data-sec-width="true"][data-sec-inside-container="true"] > div {
     max-width: calc(var(--screen-width) + (var(--section-gutter-space)*2) - (var(--section-reduced-space) * 2));
   }
 }
 
-main .section[data-sec-spacing="section-none"] { padding-top: var(--none); }
-main .section[data-sec-spacing="section-xtiny"] { padding-top: var(--xtiny); }
-main .section[data-sec-spacing="section-tiny"] { padding-top: var(--tiny); }
-main .section[data-sec-spacing="section-xxsmall"] { padding-top: var(--xxsmall); }
-main .section[data-sec-spacing="section-xsmall"] { padding-top: var(--xsmall); }
-main .section[data-sec-spacing="section-regular"] { padding-top: var(--regular); }
-main .section[data-sec-spacing="section-small"] { padding-top: var(--small); }
-main .section[data-sec-spacing="section-medium"] { padding-top: var(--medium); }
-main .section[data-sec-spacing="section-large"] { padding-top: var(--large); }
-main .section[data-sec-spacing="section-xlarge"] { padding-top: var(--xlarge); }
-main .section[data-sec-spacing="section-xxlarge"] { padding-top: var(--xxlarge); }
-main .section[data-sec-spacing="section-huge"] { padding-top: var(--huge); }
-main .section[data-sec-spacing="section-xhuge"] { padding-top: var(--xhuge); }
+main .section[data-sec-spacing="section-none"] { padding-top: var(--spacing-none); }
+main .section[data-sec-spacing="section-xtiny"] { padding-top: var(--spacing-xtiny); }
+main .section[data-sec-spacing="section-tiny"] { padding-top: var(--spacing-tiny); }
+main .section[data-sec-spacing="section-xxsmall"] { padding-top: var(--spacing-xxsmall); }
+main .section[data-sec-spacing="section-xsmall"] { padding-top: var(--spacing-xsmall); }
+main .section[data-sec-spacing="section-regular"] { padding-top: var(--spacing-regular); }
+main .section[data-sec-spacing="section-small"] { padding-top: var(--spacing-small); }
+main .section[data-sec-spacing="section-medium"] { padding-top: var(--spacing-medium); }
+main .section[data-sec-spacing="section-large"] { padding-top: var(--spacing-large); }
+main .section[data-sec-spacing="section-xlarge"] { padding-top: var(--spacing-xlarge); }
+main .section[data-sec-spacing="section-xxlarge"] { padding-top: var(--spacing-xxlarge); }
+main .section[data-sec-spacing="section-huge"] { padding-top: var(--spacing-huge); }
+main .section[data-sec-spacing="section-xhuge"] { padding-top: var(--spacing-xhuge); }
 
 
-main .section[data-sec-spacing-bottom="section-none"] { padding-bottom: var(--none); }
-main .section[data-sec-spacing-bottom="section-tiny"] { padding-bottom: var(--tiny); }
-main .section[data-sec-spacing-bottom="section-xxsmall"] { padding-bottom: var(--xxsmall); }
-main .section[data-sec-spacing-bottom="section-xtiny"] { padding-bottom: var(--xtiny); }
-main .section[data-sec-spacing-bottom="section-xsmall"] { padding-bottom: var(--xsmall); }
-main .section[data-sec-spacing-bottom="section-regular"] { padding-bottom: var(--regular); }
-main .section[data-sec-spacing-bottom="section-small"] { padding-bottom: var(--small); }
-main .section[data-sec-spacing-bottom="section-medium"] { padding-bottom: var(--medium); }
-main .section[data-sec-spacing-bottom="section-large"] { padding-bottom: var(--large); }
-main .section[data-sec-spacing-bottom="section-xlarge"] { padding-bottom: var(--xlarge); }
-main .section[data-sec-spacing-bottom="section-xxlarge"] { padding-bottom: var(--xxlarge); }
-main .section[data-sec-spacing-bottom="section-huge"] { padding-bottom: var(--huge); }
-main .section[data-sec-spacing-bottom="section-xhuge"] { padding-bottom: var(--xhuge); }
+main .section[data-sec-spacing-bottom="section-none"] { padding-bottom: var(--spacing-none); }
+main .section[data-sec-spacing-bottom="section-tiny"] { padding-bottom: var(--spacing-tiny); }
+main .section[data-sec-spacing-bottom="section-xxsmall"] { padding-bottom: var(--spacing-xxsmall); }
+main .section[data-sec-spacing-bottom="section-xtiny"] { padding-bottom: var(--spacing-xtiny); }
+main .section[data-sec-spacing-bottom="section-xsmall"] { padding-bottom: var(--spacing-xsmall); }
+main .section[data-sec-spacing-bottom="section-regular"] { padding-bottom: var(--spacing-regular); }
+main .section[data-sec-spacing-bottom="section-small"] { padding-bottom: var(--spacing-small); }
+main .section[data-sec-spacing-bottom="section-medium"] { padding-bottom: var(--spacing-medium); }
+main .section[data-sec-spacing-bottom="section-large"] { padding-bottom: var(--spacing-large); }
+main .section[data-sec-spacing-bottom="section-xlarge"] { padding-bottom: var(--spacing-xlarge); }
+main .section[data-sec-spacing-bottom="section-xxlarge"] { padding-bottom: var(--spacing-xxlarge); }
+main .section[data-sec-spacing-bottom="section-huge"] { padding-bottom: var(--spacing-huge); }
+main .section[data-sec-spacing-bottom="section-xhuge"] { padding-bottom: var(--spacing-xhuge); }
 
 body.no-scroll {
   overflow-y: hidden; /* Prevent scrolling */
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .main-heading p {
   font-size: var(--main-heading-font-size);
   text-transform: uppercase;
   margin: var(--main-heading-spacing);
-  color: var(--primary-blue-100);
+  color: var(--accent-blue-primary-90);
   line-height: var(--main-heading-line-height);
 }
 
 .section[class*='bg-primary-blue'] .main-heading p {
-  color: var(--color-white);
+  color: var(--white);
 }
 
 
@@ -1471,4 +1351,9 @@ body.no-scroll {
   height: auto;
   word-wrap: normal;
   z-index: 1000;
+}
+
+.auto-image-container {
+  padding:0;
+  margin:0;
 }

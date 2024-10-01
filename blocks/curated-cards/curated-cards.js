@@ -6,12 +6,14 @@ import {
 import { processTags } from '../../scripts/utils.js';
 
 const FEATURE_BTN_LABEL = 'curated-banner-button-label';
+const MORE_TOP_STORY = 'more-top-story-label';
+const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
-function processTag(tagdiv, tagAuthored) {
+function processTag(tagdiv, tagAuthored, placeholders) {
   let tagValue = tagAuthored.innerText;
   if (tagValue) {
     tagValue = processTags(tagValue, 'content-type');
-    tagdiv.textContent = tagValue;
+    tagdiv.textContent = placeholders[toCamelCase(tagValue)] || tagValue;
   }
 }
 
@@ -23,13 +25,21 @@ function createFeatureCard(row, placeHolders) {
     featureHeadingContent,
     featureDescContent,
     featureLink,
+    featureAltContent,
   ] = row.children;
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = '';
+  if (featureAltContent) {
+    const pic = featureImageContent.querySelector('img');
+    if (pic) {
+      pic.alt = featureAltContent.textContent.trim();
+    }
+    featureAltContent.innerHTML = '';
+  }
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
-    div({ class: ' feature-card-content-text' }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent)),
+    div({ class: ' feature-card-content-text' }, a({ href: featureLink.textContent }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent))),
     div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
   const pictureElement = featureImageContent.querySelector('picture');
@@ -44,7 +54,7 @@ function createFeatureCard(row, placeHolders) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent, decsDiv, linkDiv] = row.children;
+  const [imageContent, tagContent, headingContent, decsDiv, linkDiv, alttext] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -56,19 +66,27 @@ function processRow(row) {
   decsDiv.remove();
 
   if (tagContent) {
-    processTag(tagElement, tagContent);
+    processTag(tagElement, tagContent, listOfAllPlaceholdersData);
   }
 
   if (imageContent) {
     imageDiv.innerHTML = imageContent.innerHTML;
+    if (alttext) {
+      const pic = imageDiv.querySelector('img');
+      const para = alttext.querySelector('p');
+      if (para && pic) {
+        pic.alt = para.textContent.trim();
+      }
+      alttext.remove();
+    }
   }
 
   if (headingContent) {
     heading.textContent = headingContent.textContent;
   }
 
-  textWrapper.append(a({ href: link }, heading), tagElement);
-  liTag.append(imageDiv, textWrapper);
+  textWrapper.append(heading, tagElement);
+  liTag.append(a({ href: link }, imageDiv, textWrapper));
 
   row.innerHTML = '';
   return liTag;
@@ -78,7 +96,6 @@ function processRow(row) {
 export default async function decorate(block) {
   const ulElement = ul();
   const curatedCardsInputList = Array.from(block.children);
-  const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
   if (curatedCardsInputList.length > 0) {
     const featureCard = createFeatureCard(curatedCardsInputList[0], listOfAllPlaceholdersData);
@@ -107,7 +124,7 @@ export default async function decorate(block) {
         { class: 'curated-cards list' },
         div(
           { class: 'curated-cards-line-div' },
-          div({ class: 'line-text' }, 'MORE TOP STORIES'),
+          div({ class: 'line-text' }, listOfAllPlaceholdersData[toCamelCase(MORE_TOP_STORY)] || 'MORE TOP STORIES'),
           div({ class: 'line' }),
         ),
         ulElement,

@@ -14,9 +14,8 @@
   border-radius: 5px;
 }
 
-.social-media-link img {
-  width: 15px;
-  height: 15px;
+.bio-detail .social-media-link a {
+  display: block;
 }
 
 .bio-detail .resources p a {
@@ -24,6 +23,7 @@
   border-bottom: 2px solid transparent;
   padding: 4px 0;
   font-weight: 400;
+  color: var(--background-container-on-light-link-primary-enabled);
 }
 
 .bio-detail .media-inquiries p em {
@@ -38,13 +38,14 @@
   font-weight: normal;
 }
 
-.bio-detail .media-inquiries p:nth-child(4) a {
-  text-decoration: underline;
+.bio-detail .media-inquiries p a:hover {
+  color: var(--accent-blue-primary-70);
+  border-bottom: 2px solid var(--accent-blue-primary-40);
 }
 
-.bio-detail .media-inquiries p a:hover{
-  color: var(--primary-blue-70);
-  border-bottom: 2px solid rgb(22 154 243 / 100%);
+.bio-detail .media-inquiries p a:focus-visible,
+.bio-detail .resources p a:focus-visible {
+  border: 2px solid var(--links-focus-color);
 }
 
 .bio-detail .media-inquiries p:nth-child(4) a:hover {
@@ -52,8 +53,8 @@
 }
 
 .bio-detail .resources p strong>em>a:any-link:visited {
-  color: var(--primary-blue-70);
-  border-bottom: 2px solid rgb(22 154 243 / 100%);
+  color: var(--accent-blue-primary-70);
+  border-bottom: 2px solid var(--accent-blue-primary-40);
 }
 
 .bio-detail .resources p, .bio-detail .resources p em {
@@ -67,8 +68,13 @@
   height: 14px;
 }
 
+html[dir="rtl"] .bio-detail .download-image{
+  margin: 0 0 0 9px;
+}
+
 .bio-detail .sections-container p {
-  margin: var(--none);
+  margin: var(--spacing-none);
+  color: var(--text-on-light-emphasis);
 }
 
 .bio-detail .first-container .name-job-social {
@@ -83,18 +89,20 @@
 
 .bio-detail .sections-container .display-name {
   font-weight: bold;
-  color: var(--primary-blue-90);
+  color: var(--accent-blue-primary-90);
   line-height: 43px;
 }
 
 .bio-detail .sections-container .display-name h1 {
-  margin: var(--none);
+  margin: var(--spacing-none);
+  color: var(--text-on-light-highlight);
+  line-height: 31.36px;
 }
 
 .bio-detail .sections-container .job-title {
   font-size: 18px;
-  color: var(--neutrals-100);
-  margin-top: var(--xsmall);
+  color: var(--neutral-solid-90-s);
+  margin-top: var(--spacing-xsmall);
 }
 
 .bio-detail .sections-container .name-job-social .social-media {
@@ -103,20 +111,13 @@
   margin-top: var(--spacing-regular);
 }
 
-.bio-detail .sections-container .name-job-social .social-media .social-media-link {
-  height: 50px;
-  width: 50px;
+.bio-detail .social-media-link img {
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-white);
-  cursor: pointer;
   border: 2px solid transparent;
 }
 
-.bio-detail .sections-container .name-job-social .social-media .social-media-link:hover {
-  border: 2px solid var(--primary-blue-50);
+.bio-detail .social-media-link img:hover {
+  border: 2px solid var(--accent-blue-primary-40);
 }
 
 .bio-detail .media-resources {
@@ -126,19 +127,34 @@
 }
 
 .bio-detail .media-inquiries p {
-  font-size: var(--body-medium);
+  font-size: var(--font-size-300);
   line-height: 22px;
 }
 
 .bio-detail .title {
-  border-bottom: 2px solid var(--neutrals-103);
+  border-bottom: 2px solid var(--neutral-solid-20-s);
   margin-bottom: 20px;
-  font-size: var(--body-small);
+  font-size: var(--font-size-200);
   font-weight: 800;
-  padding-bottom: var(--xsmall);
+  padding-bottom: var(--spacing-small);
+  color: var(--text-on-light-emphasis);
+  line-height: 15.4px;
+}
+
+.block-quote-container .default-content-wrapper p{
+    color: var(--text-on-light-emphasis);
+    font-size: var(--font-size-500);
+}
+
+.bio-detail .sections-container .job-title div p:nth-child(2) {
+  margin-top: 4px;
 }
 
 @media (width >=768px) {
+  .bio-detail .sections-container .display-name h1 {
+    line-height: 40.32px;
+  }
+
   .profile-image img {
     height: 264px;
   }
@@ -160,14 +176,18 @@
 }
 
 @media (width >=1024px) {
+  .bio-detail .sections-container .display-name h1 {
+    line-height: 53.76px;
+  }
+  
   .sections-container .first-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   .bio-detail .media-resources {
-    margin-top: 80px;
+    margin-top: var(--spacing-huge);
   }
 
   .bio-detail .second-container .profile-image {

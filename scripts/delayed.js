@@ -1,13 +1,13 @@
 // add delayed functionality here
 import {
-  getMetadata,
+  getMetadata, loadScript, fetchPlaceholders,
 } from './aem.js';
 import {
   div, p, section, a, button,
   span, i,
 } from './dom-helpers.js';
 import {
-  getLanguage, fetchLanguageNavigation,
+  getLanguage, fetchLanguageNavigation, isInternalPage, scriptEnabled, PATH_PREFIX,
 } from './utils.js';
 /**
  * Swoosh on page
@@ -131,10 +131,21 @@ function buildTwitterLinks() {
   });
 }
 
-function loadDelayed() {
+async function loadAdobeLaunch() {
+  if (!scriptEnabled()) { return; }
+
+  const config = await fetchPlaceholders(PATH_PREFIX);
+  const env = config.environment || 'Dev';
+  await loadScript(config[`analyticsEndpoint${env}`]);
+}
+
+async function loadDelayed() {
   pageSwoosh();
   cookiePopUp();
   buildTwitterLinks();
   getNavigationData(getLanguage());
+  if (!isInternalPage()) {
+    await loadAdobeLaunch();
+  }
 }
 loadDelayed();

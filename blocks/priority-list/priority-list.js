@@ -6,17 +6,20 @@ const desktopConst = 400;
 const tabConst = 150;
 const tabTopPosition = 100;
 function createCard(card) {
-  const [cardtitle, carddesc, ,] = card.children;
-  if (!cardtitle || !carddesc) {
+  const [cardtitle, carddesc, imagediv, imagealt] = card.children;
+  if (!cardtitle || !carddesc || !imagediv || !imagealt) {
     return;
   }
   cardtitle.textContent = cardtitle.textContent.replace(
     `${TAG_ROOT}category/`,
     '',
   );
-  card.className = cardtitle.textContent;
+  card.className = cardtitle.textContent.trim();
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
+  const image = imagediv.querySelector('img');
+  image.alt = imagealt.querySelector('p').textContent.trim() || '';
+  imagealt.remove();
 }
 function handlePriorityListScroll(leftColumnContainer, cards) {
   const image = leftColumnContainer.querySelector('.image-container');
@@ -101,7 +104,7 @@ export default async function decorate(block) {
   const firstimg = cards.at(0).querySelector('img');
   if (firstimg) {
     const imgElement = img({
-      src: firstimg.src, alt: '', height: 731, width: 704,
+      src: firstimg.src, alt: firstimg.alt || '', height: 731, width: 704,
     });
     imageContainer.append(imgElement);
     imageContainer.style.backgroundImage = `url(${

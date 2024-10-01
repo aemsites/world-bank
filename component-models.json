@@ -392,6 +392,7 @@
         "valueType": "string",
         "options": [
           { "name": "Transparent / White / Default", "value": "bg-default" },
+          { "name": "Dark Background Container", "value": "bg-primary-blue" },
           { "name": "Primary Blue 90", "value": "bg-primary-blue-90" },
           { "name": "Primary Blue 70", "value": "bg-primary-blue-70" },
           { "name": "Neutrals 10", "value": "bg-neutrals-10" },
@@ -451,46 +452,6 @@
         "condition": {
           "!=": [{ "var": "style" }, "bg-image"]
         }
-      }
-    ]
-  },
-  {
-    "id": "hero",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "value": "",
-        "label": "Description",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "buttontext",
-        "label": "Button Text",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "buttonlink",
-        "label": "Button Link",
-        "value": ""
       }
     ]
   },
@@ -609,6 +570,13 @@
         "name": "news-card-image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "Default alt",
+        "label": "News Card Alt Text"
       }
     ]
   },
@@ -654,6 +622,13 @@
         "name": "curated-card-link",
         "value": "",
         "label": "Link",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "alttext",
+        "value": "",
+        "label": "Alt Text",
         "valueType": "string"
       }
     ]
@@ -763,8 +738,16 @@
       {
         "component": "date-time",
         "valueType": "date",
+        "value": "2024-09-23T00:00:00.000Z",
         "name": "content_date",
-        "label": "Date Of Content"
+        "required": true,
+        "label": "Date Of Content creation"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author"
       },
       {
         "component": "select",
@@ -789,14 +772,29 @@
       },
       {
         "component": "tab",
-        "label": "Advance",
+        "label": "Analytics",
         "name": "tab-adv"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "author",
-        "label": "Author"
+        "name": "pageUid",
+        "label": "Page Uid",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pageCategory",
+        "label": "Page Category",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "channel",
+        "label": "Channel",
+        "required": true
       },
       {
         "component": "select",
@@ -835,6 +833,7 @@
         "name": "languages",
         "value": "",
         "label": "Language",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Afrikaans, AFR1", "value": "Afrikaans, AFR1" },
@@ -1024,6 +1023,7 @@
         "name": "originating_unit",
         "value": "",
         "label": "Unit",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Accountability Mechanism (AMIPN)", "value": "Accountability Mechanism (AMIPN), AMIPN" },
@@ -1084,6 +1084,7 @@
         "name": "information_classification",
         "value": "",
         "label": "Information Classification",
+        "required": true,
         "valueType": "string",
         "options": [
           { "name": "Confidential", "value": "CON_AI" },
@@ -1385,6 +1386,13 @@
         "label": "Link",
         "valueType": "string",
         "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alt",
+        "value": "",
+        "label": "Mini Card Alt Text"
       }
     ]
   },
@@ -1557,20 +1565,6 @@
         "valueType": "string",
         "fields": [
           {
-            "component": "select",
-            "valueType": "string",
-            "name": "btn-style",
-            "value": "",
-            "label": "Button Style",
-            "options": [
-              { "name": "Dark Background", "value": "dark-bg" },
-              { "name": "Dark Background - Underline", "value": "dark-bg-ul" },
-              { "name": "Light Background - Primary", "value": "light-bg-1" },
-              { "name": "Light Background - Secondary", "value": "light-bg-2" },
-              { "name": "Light Background - Underline", "value": "light-bg-ul" }
-            ]
-          },
-          {
             "component": "text",
             "valueType": "string",
             "name": "btn-text",
@@ -1726,6 +1720,13 @@
         "name": "image",
         "label": "Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "alttext",
+        "label": "Alt Text",
+        "value": ""
       }
     ]
   },
@@ -1867,6 +1868,13 @@
         "name": "image",
         "label": "Background Image",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Background Alternate Text"
       }
     ]
   },
@@ -2087,6 +2095,10 @@
           {
             "name": "h6",
             "value": "h6"
+          },
+          {
+            "name": "p",
+            "value": "p"
           }
         ]
       },
@@ -2098,17 +2110,120 @@
         "label": "Suffix text"
       },
       {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "value": "",
-        "label": "Description"
-      },
-      {
         "component": "boolean",
         "valueType": "boolean",
         "name": "show_borderline",
         "label": "Show Borderline"
+      },
+      {
+        "component": "select",
+        "name": "heading-border-spacing",
+        "value": "",
+        "label": "Border Spacing Top (padding top)",
+        "valueType": "string",
+        "options": [
+          { "name": "Default spacing", "value": "heading-border-spacing-default" },
+          { "name": "No space / padding", "value": "heading-border-spacing-none" },
+          { "name": "Spacing tiny", "value": "heading-border-spacing-tiny" },
+          { "name": "Spacing xxsmall", "value": "heading-border-spacing-xxsmall" },
+          { "name": "Spacing xsmall", "value": "heading-border-spacing-xsmall" },
+          { "name": "Spacing regular", "value": "heading-border-spacing-regular" },
+          { "name": "Spacing small", "value": "heading-border-spacing-small" },
+          { "name": "Spacing medium", "value": "heading-border-spacing-medium" },
+          { "name": "Spacing large", "value": "heading-border-spacing-large" },
+          { "name": "Spacing xlarge", "value": "heading-border-spacing-xlarge" },
+          { "name": "Spacing xxlarge", "value": "heading-border-spacing-xxlarge" },
+          { "name": "Spacing huge", "value": "heading-border-spacing-huge" },
+          { "name": "Spacing xhuge", "value": "heading-border-spacing-xhuge" }
+        ],
+        "condition": { 
+          "==": [{ "var": "show_borderline" }, true] 
+        }
+      },
+      {
+        "component": "select",
+        "name": "heading-top-spacing",
+        "value": "",
+        "label": "Heading Spacing Top (padding top)",
+        "description": "Heading top spacing",
+        "valueType": "string",
+        "options": [
+          { "name": "Default spacing", "value": "heading-top-spacing-default" },
+          { "name": "No space / padding", "value": "heading-top-none" },
+          { "name": "Spacing tiny", "value": "heading-top-tiny" },
+          { "name": "Spacing xxsmall", "value": "heading-top-xxsmall" },
+          { "name": "Spacing xsmall", "value": "heading-top-xsmall" },
+          { "name": "Spacing regular", "value": "heading-top-regular" },
+          { "name": "Spacing small", "value": "heading-top-small" },
+          { "name": "Spacing medium", "value": "heading-top-medium" },
+          { "name": "Spacing large", "value": "heading-top-large" },
+          { "name": "Spacing xlarge", "value": "heading-top-xlarge" },
+          { "name": "Spacing xxlarge", "value": "heading-top-xxlarge" },
+          { "name": "Spacing huge", "value": "heading-top-huge" },
+          { "name": "Spacing xhuge", "value": "heading-top-xhuge" }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "heading-bottom-spacing",
+        "value": "",
+        "label": "Heading Spacing Bottom (padding bottom)",
+        "description": "Heading bottom spacing",
+        "valueType": "string",
+        "options": [
+          { "name": "Default spacing", "value": "heading-bottom-default" },
+          { "name": "No space / padding", "value": "heading-bottom-none" },
+          { "name": "Spacing tiny", "value": "heading-bottom-tiny" },
+          { "name": "Spacing xxsmall", "value": "heading-bottom-xxsmall" },
+          { "name": "Spacing xsmall", "value": "heading-bottom-xsmall" },
+          { "name": "Spacing regular", "value": "heading-bottom-regular" },
+          { "name": "Spacing small", "value": "heading-bottom-small" },
+          { "name": "Spacing medium", "value": "heading-bottom-medium" },
+          { "name": "Spacing large", "value": "heading-bottom-large" },
+          { "name": "Spacing xlarge", "value": "heading-bottom-xlarge" },
+          { "name": "Spacing xxlarge", "value": "heading-bottom-xxlarge" },
+          { "name": "Spacing huge", "value": "heading-bottom-huge" },
+          { "name": "Spacing xhuge", "value": "heading-bottom-xhuge" }
+        ]
+      }      
+    ]
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "fragmentPath",
+        "value": "",
+        "required": true,
+        "label": "Fragment Path"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "videoUrl",
+        "value": "",
+        "label": "Video URL",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iframe",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "iframeUrl",
+        "value": "",
+        "label": "iFrame URL",
+        "description": "Please provide a URL to an iFrame app."
       }
     ]
   }

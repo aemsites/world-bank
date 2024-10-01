@@ -3,6 +3,7 @@
     flex-flow: row wrap;
     padding: 0;
     gap: var(--spacing-medium);
+    margin-top: var(--spacing-xlarge);
 }
 
 .measuring-impact-cards .impact-card-wrapper{
@@ -63,6 +64,10 @@
     letter-spacing: -0.015em;
     color: var(--accent-blue-primary-90);
     margin-bottom: var(--spacing-tiny);
+}
+
+.impact-card-wrapper a:hover .impact-card-content p:first-child {
+    color: var(--global-interactive-on-dark-hover);
 }
 
 @media (width >= 768px) {
