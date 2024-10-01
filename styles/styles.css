@@ -937,6 +937,7 @@ button:focus-visible,
 a.button.secondary:focus-visible,
 button.secondary:focus-visible {
   border-color: var(--links-focus-color);
+  outline-style: unset;
 }
 
 a.button.disabled,

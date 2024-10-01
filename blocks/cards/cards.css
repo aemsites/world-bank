@@ -20,6 +20,10 @@
   line-height: 0;
 }
 
+.cards:not(.profile-summary) .cards-card-image a {
+  display: block;
+}
+
 .cards:not(.profile-summary) .cards-card-body > *:first-child {
   margin-top: 0;
 }
