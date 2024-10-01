@@ -125,6 +125,7 @@ export default async function decorate(block) {
   const newProfilePic = optimizedPic.querySelector('img');
   newProfilePic.width = 460;
   newProfilePic.height = 460;
+  newProfilePic.title = displayName.innerText.trim();
   moveInstrumentation(profileImg, newProfilePic);
   profileImg.closest('picture').replaceWith(optimizedPic);
 
