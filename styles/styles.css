@@ -1316,11 +1316,9 @@ body.no-scroll {
   overflow-y: hidden; /* Prevent scrolling */
 }
 
-body::-webkit-scrollbar
-{
+body::-webkit-scrollbar {
   display: none;
 }
-
 
 .main-heading p {
   font-size: var(--main-heading-font-size);

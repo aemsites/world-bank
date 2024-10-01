@@ -104,7 +104,7 @@ export default async function decorate(block) {
   const firstimg = cards.at(0).querySelector('img');
   if (firstimg) {
     const imgElement = img({
-      src: firstimg.src, alt: firstimg.link || '', height: 731, width: 704,
+      src: firstimg.src, alt: firstimg.alt || '', height: 731, width: 704,
     });
     imageContainer.append(imgElement);
     imageContainer.style.backgroundImage = `url(${

@@ -91,6 +91,11 @@
   flex-direction: column;
 }
 
+.tabs .tabs-panel .show-more-container .show-more-button{
+  margin-top: var(--spacing-xxsmall);
+  margin-bottom: 0;
+}
+
 .tabs .tabs-panel main .section > div {
   padding: 0;
 }
@@ -115,7 +120,7 @@
 }
 
 .tabs .tabs-panel .tab-li-element:first-child {
-  margin-top: var(--global-gutter);
+  margin-top: var(--spacing-medium);
   border-top: none ;
 }
 
@@ -148,7 +153,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: var(--font-size-200);
-  line-height:  17.5px;
+  line-height: 17.5px;
   color: var(--neutral-solid-90-s);  
 }
 

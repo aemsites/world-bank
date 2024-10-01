@@ -36,8 +36,8 @@
   color: var(--text-on-light-emphasis);
 }
 
-.column-layout-67-33 > div > div > p > a {
-  margin: 0;
+.column-layout-67-33 > div > div > p > a.button {
+  margin: var(--spacing-medium) 0 0;
 }
 
 .columns > div > div > p {
