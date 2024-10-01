@@ -1,4 +1,7 @@
 {
+  "repoNames": [
+    "delivery-p136806-e1403562.adobeaemcloud.com"
+  ],
   "aemTierType": [
         "delivery"
   ],
@@ -8,7 +11,7 @@
       "groupKey": "FileTypeGroup",
       "fields": [
         {
-          "excludeTags": ["image/*", "video/*", "application/pdf"],
+          /* "excludeTags": ["image/*", "video/*", "application/pdf"],*/
           "element": "checkbox",
           "name": "type",
           "defaultValue": [
