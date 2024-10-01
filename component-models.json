@@ -1706,9 +1706,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "alttext",
+        "name": "imageAlt",
         "label": "Alt Text",
-        "value": "Default Alt"
+        "value": ""
       }
     ]
   },
