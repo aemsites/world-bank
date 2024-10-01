@@ -1708,7 +1708,7 @@
         "valueType": "string",
         "name": "imageAlt",
         "label": "Alt Text",
-        "value": "Default Alt"
+        "value": ""
       }
     ]
   },
