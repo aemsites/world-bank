@@ -67,6 +67,8 @@ body[class*='page-swoosh-']::before {
   main .section.bio-detail-container[data-sec-swoosh="sec-swoosh-type6"][data-sec-inside-container="true"] .bio-detail-wrapper::before {
     height: 110%;
     background-image: url('../icons/swoosh/type6/default-d.svg');
+    background-position-x: calc(100% - 53px);
+    background-position-y: 0;
   }
 }
 

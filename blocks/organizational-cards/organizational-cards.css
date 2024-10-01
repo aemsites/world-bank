@@ -354,7 +354,7 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
 
   .organizational-card.collapsed .card-content-wrapper {
     padding-bottom: unset;
-    border-bottom: unset;
+    border-bottom: 2px solid var(--divider-on-dark-default);
   }
 
   .organizational-card .card-content-wrapper .collapse-btn {
