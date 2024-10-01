@@ -1,6 +1,6 @@
 /* add global styles that can be loaded post LCP here */
 
-/* Body & Section swoosh 
+/* Body & Section swoosh
   body color: #F5F7F9
   primary-blue-90: #00538A
   primary-blue-70: #0071BC
@@ -12,8 +12,8 @@ main .section[data-sec-swoosh="sec-swoosh-type2"]::before { background-position:
 main .section[data-sec-swoosh="sec-swoosh-type3"]::before { background-position: left top; }
 main .section[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-position: center center; }
 
-main .section[data-sec-swoosh="sec-swoosh-type5"] > div::before { 
-    background-position: right center; 
+main .section[data-sec-swoosh="sec-swoosh-type5"] > div::before {
+    background-position: right center;
     background-size: contain;
 }
 
@@ -37,19 +37,19 @@ main .section.bio-detail-container[data-sec-swoosh="sec-swoosh-type6"][data-sec-
   height: 100%;
   z-index: 0;
   top: -45px;
-  background-position: right top; 
+  background-position: right top;
   background-image: url('../icons/swoosh/type6/default-m.svg');
 }
 
 main .section[data-sec-swoosh^="sec-swoosh"][data-sec-inside-container="true"] > div::before { z-index: 0; }
 
-main .section[data-sec-swoosh^="sec-swoosh"][data-sec-inside-container="true"] > div > * { 
-    z-index: 1; 
-    position: relative; 
+main .section[data-sec-swoosh^="sec-swoosh"][data-sec-inside-container="true"] > div > * {
+    z-index: 1;
+    position: relative;
 }
 
-body[class*='page-swoosh-']::before { 
-  background-position: left top; 
+body[class*='page-swoosh-']::before {
+  background-position: left top;
   background-size: 60%;
 }
 
@@ -60,7 +60,7 @@ body[class*='page-swoosh-']::before {
 }
 
 @media (width >= 1024px) {
-  body[class*='page-swoosh-']::before { 
+  body[class*='page-swoosh-']::before {
     background-size: 40%;
   }
 
@@ -80,40 +80,40 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary90-m.svg'); }
     main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary70-m.svg'); }
     main .section[class*='bg-neutrals'][data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/neutrals-m.svg'); }
-    
+
     main .section.bg-default[data-sec-swoosh="sec-swoosh-type2"]::before { background-image: url('../icons/swoosh/type2/default-m.svg'); }
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type2"]::before { background-image: url('../icons/swoosh/type2/primary90-m.svg'); }
     main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type2"]::before { background-image: url('../icons/swoosh/type2/primary70-m.svg'); }
     main .section[class*='bg-neutrals'][data-sec-swoosh="sec-swoosh-type2"]::before { background-image: url('../icons/swoosh/type2/neutrals-m.svg'); }
-  
+
     main .section.bg-default[data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/default-m.svg'); }
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/primary90-m.svg'); }
     main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/primary70-m.svg'); }
     main .section[class*='bg-neutrals'][data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/neutrals-m.svg'); }
-  
+
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-image: url('../icons/swoosh/primary-blue-90/mobile.svg'); }
 }
-  
+
 @media (width >= 768px) and (width < 1024px) {
     main .section.bg-default[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/default-tab.svg'); }
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary90-tab.svg'); }
     main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary70-tab.svg'); }
     main .section[class*='bg-neutrals'][data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/neutrals-tab.svg'); }
-  
+
     main .section.bg-default[data-sec-swoosh="sec-swoosh-type2"]::before { background-image: url('../icons/swoosh/type2/default-tab.svg'); }
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type2"]::before { background-image: url('../icons/swoosh/type2/primary90-tab.svg'); }
     main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type2"]::before { background-image: url('../icons/swoosh/type2/primary70-tab.svg'); }
     main .section[class*='bg-neutrals'][data-sec-swoosh="sec-swoosh-type2"]::before { background-image: url('../icons/swoosh/type2/neutrals-tab.svg'); }
-  
+
     main .section.bg-default[data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/default-tab.svg'); }
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/primary90-tab.svg'); }
     main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/primary70-tab.svg'); }
     main .section[class*='bg-neutrals'][data-sec-swoosh="sec-swoosh-type3"]::before { background-image: url('../icons/swoosh/type3/neutrals-tab.svg'); }
-  
+
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-primary-blue-90"]::before { background-image: url('../icons/swoosh/primary-blue-90/tab.svg'); }
 }
-  
-@media (width >= 1024px) {  
+
+@media (width >= 1024px) {
     main .section.bg-default[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/default-d.svg'); }
     main .section.bg-primary-blue-90[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary90-d.svg'); }
     main .section.bg-primary-blue-70[data-sec-swoosh="sec-swoosh-type1"]::before { background-image: url('../icons/swoosh/type1/primary70-d.svg'); }
@@ -157,7 +157,7 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
         height: 592px;
         right: -18px;
         top: 24px;
-        background-image: url('../../icons/swoosh-desktop.svg');
+        background-image: url('../icons/swoosh-desktop.svg');
     }
 }
 
@@ -279,21 +279,21 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
 main span.tweetable {
     background: var(--accent-blue-primary-20);
   }
-  
+
   main span.tweetable > a,
   main span.tweetable > a:visited {
     color: var(--neutral-solid-80-s);
     background: var(--neutral-solid-15-s);
     text-decoration: none;
   }
-  
+
   main span.tweetable > a:hover,
   main span.tweetable > a:focus {
     background: var(--black);
     color: var(--white);
     text-decoration: none;
   }
-  
+
   main span.tweetable > a > i::before {
     content: url('../icons/xlogo.svg');
     display: inline-block;
@@ -302,6 +302,6 @@ main span.tweetable {
     margin-left: 5px;
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(200%) contrast(100%);
   }
-  /* stylelint-enable no-descending-specificity */
-  
-  /* end of tweetable link css */
+/* stylelint-enable no-descending-specificity */
+
+/* end of tweetable link css */

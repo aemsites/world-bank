@@ -1,0 +1,15 @@
+meta {
+  name: GET Site Profile - Access Config
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://admin.hlx.page/config/{{org}}/profiles/:profileName/access.json
+  body: none
+  auth: none
+}
+
+params:path {
+  profileName: world-bank-default
+}
