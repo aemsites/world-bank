@@ -1,0 +1,36 @@
+sitemaps:
+  default:
+    origin: https://main--world-bank--aemsites.aem.live
+    default: en
+    lastmod: YYYY-MM-DD
+    languages:
+      en:
+        source: /ext/en/query-index.json
+        destination: /ext/en/sitemap.xml
+        alternate: /ext/en/{path}
+        hreflang: en
+      zh:
+        source: /ext/zh/query-index.json
+        destination: /ext/zh/sitemap.xml
+        alternate: /ext/zh/{path}
+        hreflang: zh
+      ru:
+        source: /ext/ru/query-index.json
+        destination: /ext/ru/sitemap.xml
+        alternate: /ext/ru/{path}
+        hreflang: ru
+      fr:
+        source: /ext/fr/query-index.json
+        destination: /ext/fr/sitemap.xml
+        alternate: /ext/fr/{path}
+        hreflang: fr
+      es:
+        source: /ext/es/query-index.json
+        destination: /ext/es/sitemap.xml
+        alternate: /ext/es/{path}
+        hreflang: es
+      ar:
+        source: /ext/ar/query-index.json
+        destination: /ext/ar/sitemap.xml
+        alternate: /ext/ar/{path}
+        hreflang: ar
