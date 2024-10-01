@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://main--world-bank--aemsites.aem.live/ext/en/sitemap.xml</loc>
+  </sitemap>
+   <sitemap>
+    <loc>https://main--world-bank--aemsites.aem.live/ext/zh/sitemap.xml</loc>
+  </sitemap>
+   <sitemap>
+    <loc>https://main--world-bank--aemsites.aem.live/ext/ru/sitemap.xml</loc>
+  </sitemap>
+   <sitemap>
+    <loc>https://main--world-bank--aemsites.aem.live/ext/fr/sitemap.xml</loc>
+  </sitemap>
+   <sitemap>
+    <loc>https://main--world-bank--aemsites.aem.live/ext/es/sitemap.xml</loc>
+  </sitemap>
+   <sitemap>
+    <loc>https://main--world-bank--aemsites.aem.live/ext/ar/sitemap.xml</loc>
+  </sitemap>
+</sitemapindex>

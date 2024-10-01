@@ -45,6 +45,9 @@ indices:
       information_classification:
         select: head > meta[name="information_classification"]
         value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
 
   site-zh:
     <<: *base-site
