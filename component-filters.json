@@ -9,7 +9,7 @@
   },
   {
     "id": "column",
-    "components": ["text", "image", "button", "title", "teaser", "dam-asset"]
+    "components": ["text", "image", "button", "title", "teaser", "dm-asset"]
   },
   {
     "id": "section",
@@ -39,7 +39,7 @@
       "block-quote",
       "impact-cards",
       "heading",
-      "dam-asset"
+      "dm-asset"
     ]
   },
   {
