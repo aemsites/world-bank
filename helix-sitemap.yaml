@@ -2,6 +2,7 @@ sitemaps:
   default:
     origin: https://main--world-bank--aemsites.aem.live
     default: en
+    lastmod: YYYY-MM-DD
     languages:
       en:
         source: /ext/en/query-index.json
