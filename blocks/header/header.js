@@ -207,13 +207,27 @@ function createSearchBox() {
 
     searchImage.style.display = isVisible ? 'block' : 'none';
   } else {
-    cancelContainer = div({ class: 'cancel-container' });
+    cancelContainer = div(
+      {
+        class: 'cancel-container',
+        role: 'button',
+        tabindex: 0,
+        'aria-label': 'close Search Box',
+      },
+    );
     const cancelImg = img({ class: 'cancel-image' });
     cancelImg.src = `${window.hlx.codeBasePath}/icons/cancel.svg`;
     cancelImg.alt = 'cancel';
     cancelImg.style.cssText = 'display: flex; cursor: pointer;';
     cancelContainer.addEventListener('click', () => {
       closeSearchBox();
+    });
+    cancelContainer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        closeSearchBox();
+      } else if (e.key === 'Escape') {
+        closeSearchBox();
+      }
     });
     cancelContainer.appendChild(cancelImg);
     navTools.appendChild(cancelContainer);
@@ -255,6 +269,12 @@ function settingAltTextForSearchIcon() {
   searchImage.addEventListener('click', () => {
     createSearchBox();
   });
+  searchImage.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      createSearchBox();
+      e.currentTarget.nextElementSibling.focus();
+    }
+  });
   searchImage.setAttribute('title', listOfAllPlaceholdersData.searchAltText);
 }
 
@@ -280,6 +300,29 @@ async function changeTrendingData(navSections) {
   trendingDataWrapper.append(trendingDataDiv);
 }
 
+const setAccessibilityAttrForSearchIcon = (contentWrapper) => {
+  const [iconTag] = [...contentWrapper.children];
+  const iconSpan = iconTag.querySelector('span');
+  iconSpan.setAttribute('role', 'button');
+  iconSpan.setAttribute('aria-label', 'Perform a search query');
+  iconSpan.setAttribute('tabindex', 0);
+};
+
+const closeSearchOnFocusOut = (e) => {
+  const navWrapper = document.querySelector('.nav-wrapper');
+  const headerWrapper = document.querySelector('.header-wrapper');
+  const searchContainer = headerWrapper.querySelector('.search-container');
+  if (searchContainer && searchContainer.style.display !== 'none') {
+    const cancelContainer = navWrapper.querySelector('.cancel-container');
+    const searchImage = document.querySelector('.icon-search');
+    const isClickInside = searchContainer.contains(e.target)
+      || cancelContainer.contains(e.target)
+      || searchImage.contains(e.target);
+    if (!isClickInside) {
+      closeSearchBox();
+    }
+  }
+};
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -333,9 +376,24 @@ export default async function decorate(block) {
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
+    setAccessibilityAttrForSearchIcon(contentWrapper);
     const languageSelector = getLanguageSelector(placeholdersData, langCode);
     contentWrapper.prepend(languageSelector);
   }
+
+  // Close Search Container on Focus out
+  document.addEventListener('click', (e) => {
+    closeSearchOnFocusOut(e);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      const headerWrapper = document.querySelector('.header-wrapper');
+      const searchContainer = headerWrapper.querySelector('.search-container');
+      if (searchContainer && searchContainer.style.display !== 'none' && searchContainer.contains(e.target)) {
+        closeSearchBox();
+      }
+    }
+  });
 
   // hamburger for mobile
   const hamburger = div(
