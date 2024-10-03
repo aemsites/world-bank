@@ -39,10 +39,8 @@ const filterCountry = (e) => {
 };
 
 const closesearchbar = (e, navSections) => {
-  if(e.type === 'keydown')
-  {
-    if(e.key !== 'Enter')
-    {
+  if (e.type === 'keydown') {
+    if (e.key !== 'Enter') {
       return;
     }
   }
