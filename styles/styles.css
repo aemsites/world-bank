@@ -812,8 +812,7 @@ a:any-link {
 }
 
 a:focus-visible {
-  border: 2px solid var(--links-focus-color);
-  outline-style: unset;
+  outline: 2px solid var(--links-focus-color);
 }
 
 html[dir="rtl"] a {
