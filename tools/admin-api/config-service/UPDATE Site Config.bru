@@ -1,0 +1,125 @@
+meta {
+  name: UPDATE Site Config
+  type: http
+  seq: 8
+}
+
+post {
+  url: https://admin.hlx.page/config/{{org}}/sites/:siteName
+  body: json
+  auth: none
+}
+
+params:path {
+  siteName: world-bank.json
+}
+
+body:json {
+  {
+    "version": 1,
+    "extends": {
+      "profile": "world-bank-default"
+    },
+    "code": {
+      "owner": "{{org}}",
+      "repo": "{{repo}}",
+      "source": {
+        "type": "github",
+        "url": "https://github.com/{{org}}/{{repo}}"
+      }
+    },
+    "content": {
+      "source": {
+        "url": "https://author-p136806-e1403562.adobeaemcloud.com/bin/franklin.delivery/wbgextapp/externalweb/main",
+        "type": "markup",
+        "suffix": ".html"
+      },
+      "contentBusId": "fdf3ba5b2fcc0403c1f14f25222b67628a4ec415c3664bc91f046b467d0"
+    },
+    "access": {
+      "admin": {
+        "role": {
+          "author": [
+            "1CD51E6566915A800A495C36@techacct.adobe.com"
+          ],
+          "publish": [
+            "1CD51E6566915A800A495C36@techacct.adobe.com"
+          ]
+        },
+        "requireAuth": "auto"
+      }
+    },
+    "public": {
+      "paths": {
+        "mappings": [
+          "/content/world-bank/corporate/ext/en:/",
+          "/content/world-bank/corporate/ext/en/home:/",
+          "/content/world-bank/corporate/ext/en/:/ext/en/",
+          "/content/world-bank/corporate/ext/zh:/ext/zh",
+          "/content/world-bank/corporate/ext/zh/:/ext/zh/",
+          "/content/world-bank/corporate/ext/ru:/ext/ru",
+          "/content/world-bank/corporate/ext/ru/:/ext/ru/",
+          "/content/world-bank/corporate/ext/fr:/ext/fr",
+          "/content/world-bank/corporate/ext/fr/:/ext/fr/",
+          "/content/world-bank/corporate/ext/es:/ext/es",
+          "/content/world-bank/corporate/ext/es/:/ext/es/",
+          "/content/world-bank/corporate/ext/ar:/ext/ar",
+          "/content/world-bank/corporate/ext/ar/:/ext/ar/",
+          "/content/world-bank/corporate/metadata:/metadata.json",
+          "/content/world-bank/corporate/redirects:/redirects.json",
+          "/content/world-bank/corporate/configuration:/.helix/config.json",
+          "/content/world-bank/corporate/ext/en/data/placeholders:/ext/en/placeholders.json",
+          "/content/world-bank/corporate/ext/zh/data/placeholders:/ext/zh/placeholders.json",
+          "/content/world-bank/corporate/ext/ru/data/placeholders:/ext/ru/placeholders.json",
+          "/content/world-bank/corporate/ext/fr/data/placeholders:/ext/fr/placeholders.json",
+          "/content/world-bank/corporate/ext/es/data/placeholders:/ext/es/placeholders.json",
+          "/content/world-bank/corporate/ext/ar/data/placeholders:/ext/ar/placeholders.json",
+          "/content/world-bank/corporate/ext/en/data/navigation:/ext/en/navigation.json",
+          "/content/world-bank/corporate/ext/zh/data/navigation:/ext/zh/navigation.json",
+          "/content/world-bank/corporate/ext/ru/data/navigation:/ext/ru/navigation.json",
+          "/content/world-bank/corporate/ext/fr/data/navigation:/ext/fr/navigation.json",
+          "/content/world-bank/corporate/ext/es/data/navigation:/ext/es/navigation.json",
+          "/content/world-bank/corporate/ext/ar/data/navigation:/ext/ar/navigation.json",
+          "/content/world-bank/corporate/ext/en/data/trending:/ext/en/trending.json",
+          "/content/world-bank/corporate/ext/zh/data/trending:/ext/zh/trending.json",
+          "/content/world-bank/corporate/ext/ru/data/trending:/ext/ru/trending.json",
+          "/content/world-bank/corporate/ext/fr/data/trending:/ext/fr/trending.json",
+          "/content/world-bank/corporate/ext/es/data/trending:/ext/es/trending.json",
+          "/content/world-bank/corporate/ext/ar/data/trending:/ext/ar/trending.json",
+          "/content/world-bank/corporate/ext/en/data/leadership/ibrd:/ext/en/leadership/ibrd.json",
+          "/content/world-bank/corporate/ext/zh/data/leadership/ibrd:/ext/zh/leadership/ibrd.json",
+          "/content/world-bank/corporate/ext/ru/data/leadership/ibrd:/ext/ru/leadership/ibrd.json",
+          "/content/world-bank/corporate/ext/fr/data/leadership/ibrd:/ext/fr/leadership/ibrd.json",
+          "/content/world-bank/corporate/ext/es/data/leadership/ibrd:/ext/es/leadership/ibrd.json",
+          "/content/world-bank/corporate/ext/ar/data/leadership/ibrd:/ext/ar/leadership/ibrd.json",
+          "/content/world-bank/corporate/ext/en/data/leadership/ifc:/ext/en/leadership/ifc.json",
+          "/content/world-bank/corporate/ext/zh/data/leadership/ifc:/ext/zh/leadership/ifc.json",
+          "/content/world-bank/corporate/ext/ru/data/leadership/ifc:/ext/ru/leadership/ifc.json",
+          "/content/world-bank/corporate/ext/fr/data/leadership/ifc:/ext/fr/leadership/ifc.json",
+          "/content/world-bank/corporate/ext/es/data/leadership/ifc:/ext/es/leadership/ifc.json",
+          "/content/world-bank/corporate/ext/ar/data/leadership/ifc:/ext/ar/leadership/ifc.json",
+          "/content/world-bank/corporate/ext/en/data/leadership/miga:/ext/en/leadership/miga.json",
+          "/content/world-bank/corporate/ext/zh/data/leadership/miga:/ext/zh/leadership/miga.json",
+          "/content/world-bank/corporate/ext/ru/data/leadership/miga:/ext/ru/leadership/miga.json",
+          "/content/world-bank/corporate/ext/fr/data/leadership/miga:/ext/fr/leadership/miga.json",
+          "/content/world-bank/corporate/ext/es/data/leadership/miga:/ext/es/leadership/miga.json",
+          "/content/world-bank/corporate/ext/ar/data/leadership/miga:/ext/ar/leadership/miga.json",
+          "/content/world-bank/corporate/ext/en/data/leadership/icsid:/ext/en/leadership/icsid.json",
+          "/content/world-bank/corporate/ext/zh/data/leadership/icsid:/ext/zh/leadership/icsid.json",
+          "/content/world-bank/corporate/ext/ru/data/leadership/icsid:/ext/ru/leadership/icsid.json",
+          "/content/world-bank/corporate/ext/fr/data/leadership/icsid:/ext/fr/leadership/icsid.json",
+          "/content/world-bank/corporate/ext/es/data/leadership/icsid:/ext/es/leadership/icsid.json",
+          "/content/world-bank/corporate/ext/ar/data/leadership/icsid:/ext/ar/leadership/icsid.json",
+          "/content/world-bank.resource/en/query-index.json:/ext/en/query-index.json",
+          "/content/world-bank.resource/zh/query-index.json:/ext/zh/query-index.json",
+          "/content/world-bank.resource/ru/query-index.json:/ext/ru/query-index.json",
+          "/content/world-bank.resource/fr/query-index.json:/ext/fr/query-index.json",
+          "/content/world-bank.resource/es/query-index.json:/ext/es/query-index.json",
+          "/content/world-bank.resource/ar/query-index.json:/ext/ar/query-index.json",
+          "/content/world-bank/corporate/placeholders:/ext/placeholders.json"
+        ],
+        "includes": ["/content/world-bank/"]
+      }
+    }
+  }
+}

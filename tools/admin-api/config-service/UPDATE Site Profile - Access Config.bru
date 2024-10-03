@@ -1,0 +1,37 @@
+meta {
+  name: UPDATE Site Profile - Access Config
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://admin.hlx.page/config/{{org}}/profiles/:profileName/access.json
+  body: json
+  auth: none
+}
+
+params:path {
+  profileName: world-bank-default
+}
+
+body:json {
+  {
+    "admin": {
+      "role": {
+        "admin": [
+          "rrusher@adobe.com",
+          "apradhan2@worldbankgroup.org"
+        ],
+        "author": [
+          "*@adobe.com",
+          "*@worldbank.org"
+        ],
+        "publish": [
+          "*@adobe.com",
+          "*@worldbank.org"
+        ]
+      },
+      "requireAuth": "auto"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+meta {
+  name: UPDATE Site Profile
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://admin.hlx.page/config/{{org}}/profiles/:profileName
+  body: json
+  auth: none
+}
+
+params:path {
+  profileName: world-bank-default.json
+}
+
+body:json {
+  {
+    "version": 1,
+    "code": {
+      "owner": "{{org}}",
+      "repo": "{{repo}}",
+      "source": {
+        "type": "github",
+        "url": "https://github.com/{{org}}/{{repo}}"
+      }
+    },
+    "access": {
+      "admin": {
+        "role": {
+          "admin": [
+            "rrusher@adobe.com",
+            "apradhan2@worldbankgroup.org"
+          ],
+          "author": [
+            "*@adobe.com",
+            "*@worldbank.org"
+          ],
+          "publish": [
+            "*@adobe.com",
+            "*@worldbank.org"
+          ]
+        },
+        "requireAuth": "auto"
+      }
+    },
+    "robots": {
+      "txt": "User-agent: *\nDisallow: /"
+    },
+    "sidekick": {
+      "plugins": [
+        {
+          "id": "aemedit",
+          "title": "Edit in AEM",
+          "environments": [
+            "dev",
+            "preview",
+            "live"
+          ],
+          "event": "aemedit"
+        },
+        {
+          "id": "edit",
+          "excludePaths": [
+            "/**"
+          ],
+          "environments": [
+            "any"
+          ]
+        },
+        {
+          "id": "reload",
+          "excludePaths": [
+            "/**"
+          ],
+          "environments": [
+            "any"
+          ]
+        },
+        {
+          "id": "publish",
+          "excludePaths": [
+            "/**"
+          ],
+          "environments": [
+            "any"
+          ]
+        },
+        {
+          "id": "delete",
+          "excludePaths": [
+            "/**"
+          ],
+          "environments": [
+            "any"
+          ]
+        },
+        {
+          "id": "unpublish",
+          "excludePaths": [
+            "/**"
+          ],
+          "environments": [
+            "any"
+          ]
+        }
+      ]
+    }
+  }
+}

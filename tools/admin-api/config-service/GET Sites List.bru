@@ -1,0 +1,11 @@
+meta {
+  name: GET Sites List
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://admin.hlx.page/config/{{org}}/sites.json
+  body: none
+  auth: none
+}
