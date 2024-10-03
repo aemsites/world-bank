@@ -166,10 +166,6 @@ html[dir="rtl"] .ft-social .ft-social-list:dir(rtl) ul li.ft-main-item:not(:last
   padding: 0 12px 0 0;
 }
 
-html[dir="rtl"] .ft-social .ft-social-list:nth-child(2)>ul>li:not(:first-child) {
-  padding: 0 28px 0 0;
-}
-
 .ft-main {
   display: grid;
   grid-template-columns: repeat(3, 1fr) 1.45fr;
