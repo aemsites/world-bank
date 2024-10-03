@@ -899,13 +899,13 @@ button {
   font-family: var(--body-font-family);
   font-size: var(--font-size-300);
   font-weight: 700;
-  line-height: 24px;
+  line-height: 150%;
   letter-spacing: 0.25px;
   text-align: center;
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid var(--button-primary-outline-enabled);
+  border: 1px solid var(--button-primary-outline-enabled);
   padding: var(--button-vertical-padding) var(--button-horizontal-padding);
   font-style: normal;
   cursor: pointer;
@@ -937,6 +937,7 @@ button:focus-visible,
 a.button.secondary:focus-visible,
 button.secondary:focus-visible {
   border-color: var(--links-focus-color);
+  outline-style: unset;
 }
 
 a.button.disabled,
