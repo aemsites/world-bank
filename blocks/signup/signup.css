@@ -29,6 +29,11 @@
   border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
 }
 
+html[dir="rtl"] .email-signup-container input[type="email"],
+html[dir="rtl"] .email-signup-container input[type="text"] {
+  margin-right: unset;
+}
+
 .email-signup-container .checkbox-group {
   display: flex;
   gap: 8px;
@@ -169,6 +174,10 @@ html[dir="rtl"] .input-group .floating-placeholder {
 
   .email-signup-container input[type="email"] {
     border-radius: 100px 0 0 100px;
+  }
+
+  html[dir="rtl"] .email-signup-container input[type="email"] {
+    border-radius: 0 100px 100px 0;
   }
 
   .email-signup-container input[type="text"] {
