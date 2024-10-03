@@ -28,8 +28,8 @@ function closeOnEscape(e) {
     const nav = document.getElementById(constants.NAV);
     const navSections = nav.querySelector(constants.NAV_SECTIONS_WITH_SELECTOR);
     const expanded = isDesktop && nav.getAttribute('aria-expanded') === 'true';
-    // eslint-disable-next-line no-use-before-define
     if (expanded) {
+      // eslint-disable-next-line no-use-before-define
       toggleMenu(nav, navSections);
     }
   }
