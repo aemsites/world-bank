@@ -83,7 +83,10 @@ function populateTab(data, tabPanel, elementType, createItemFn) {
       removeShowMoreButton(tabPanel);
     }
   }
-  loadMoreItems();
+
+  if (items.length > 0) {
+    loadMoreItems();
+  }
 }
 
 function populateBlogTab(data, tabPanel) {
