@@ -1,0 +1,15 @@
+meta {
+  name: GET Site Config - Public
+  type: http
+  seq: 10
+}
+
+get {
+  url: https://admin.hlx.page/config/{{org}}/sites/:siteName/public.json
+  body: none
+  auth: none
+}
+
+params:path {
+  siteName: world-bank
+}

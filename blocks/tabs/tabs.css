@@ -52,6 +52,11 @@
   cursor: pointer;
 }
 
+.tab-navigation .tabs-list .tab-btn .tab-title:focus-visible {
+  outline: 2px solid var(--links-focus-color);
+  border-color: transparent;
+}
+
 .tab-navigation .tabs-list .tab-btn[aria-selected='true'] .tab-title:hover{
   text-decoration: none;
   cursor: initial;
