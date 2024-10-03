@@ -29,9 +29,8 @@ function closeOnEscape(e) {
     const navSections = nav.querySelector(constants.NAV_SECTIONS_WITH_SELECTOR);
     const expanded = isDesktop && nav.getAttribute('aria-expanded') === 'true';
     // eslint-disable-next-line no-use-before-define
-    if(expanded)
-    {
-    toggleMenu(nav, navSections);
+    if (expanded) {
+      toggleMenu(nav, navSections);
     }
   }
 }
@@ -98,6 +97,7 @@ async function overlayLoad(navSections) {
   const leftColumn = navSections.querySelector('.nav-menu-column.left');
   isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
   document.body.addEventListener('click', (e) => closesearchbar(e, navSections));
+  document.body.addEventListener('keydown', (e) => closesearchbar(e, navSections));
 }
 
 async function toggleMenu(nav, navSections, forceExpanded = null) {
@@ -141,26 +141,29 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
     constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
   );
 
-  
   const hamburgerDiv = nav.querySelector('.nav-hamburger');
   const hamburgerButton = hamburgerDiv.querySelector('button');
   const hamburgerIcon = hamburgerDiv.querySelector('.nav-hamburger-icon');
-  
-  if(!expanded)
-    {
-     hamburgerDiv.setAttribute('tabindex', '-1');
-     document.body.querySelector('main').setAttribute('tabindex', '-1');
-     document.body.querySelector('.footer').setAttribute('tabindex', '-1');
-     hamburgerButton.setAttribute('tabindex', '-1');
-     hamburgerIcon.setAttribute('tabindex', '0');
-    }
-    else
-    {
-      document.body.querySelector('main')..removeAttribute('tabindex');
-      hamburgerDiv.removeAttribute('tabindex');
-      hamburgerButton.removeAttribute('tabindex');
-      hamburgerIcon.removeAttribute('tabindex');
-    }
+  const skiptomain = document.getElementById('skip-to-main-content');
+
+  if (!expanded) {
+    hamburgerDiv.setAttribute('tabindex', '-1');
+    navMenuOverlay.querySelector('.nav-menu').setAttribute('aria-hidden', 'false');
+    document.querySelector('main').setAttribute('inert', 'true');
+    document.querySelector('footer').setAttribute('inert', 'true');
+    hamburgerButton.setAttribute('tabindex', '-1');
+    hamburgerIcon.setAttribute('tabindex', '0');
+    skiptomain.setAttribute('tabindex', '-1');
+  } else {
+    hamburgerDiv.removeAttribute('tabindex');
+    navMenuOverlay.querySelector('.nav-menu').setAttribute('aria-hidden', 'true');
+    document.querySelector('main').removeAttribute('inert', 'false');
+    document.querySelector('footer').removeAttribute('inert', 'false');
+    hamburgerDiv.removeAttribute('tabindex');
+    hamburgerButton.removeAttribute('tabindex');
+    hamburgerIcon.removeAttribute('tabindex');
+    skiptomain.removeAttribute('tabindex');
+  }
 
   if (!expanded) {
     document.body.classList.add('no-scroll');
@@ -178,7 +181,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     window.removeEventListener(constants.KEY_DOWN, closeOnEscape);
   }
-  
+
   const headerWrapper = document.querySelector('.header-wrapper');
   const searchContainer = headerWrapper.querySelector('.search-container');
   if (searchContainer) {
@@ -188,6 +191,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   const leftColumn = navSections.querySelector('.nav-menu-column.left');
   closesideMenu(leftColumn, rightColumn);
 }
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -372,7 +376,7 @@ export default async function decorate(block) {
         'aria-controls': 'nav',
         'aria-label': constants.OPEN_NAVIGATION,
       },
-      span({ class: 'nav-hamburger-icon'}),
+      span({ class: 'nav-hamburger-icon' }),
     ),
   );
   nav.prepend(hamburger);

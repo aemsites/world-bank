@@ -219,8 +219,10 @@ header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
   font-weight: 700;
 }
 
-header .nav-menu-overlay .nav-menu-column ul a:any-link:focus {
-  color: var(--text-on-dark-default);
+header .nav-menu-overlay .nav-menu-column ul a:any-link:focus-visible,
+header .nav-menu-overlay .nav-menu .nav-menu-column.right .footer a:focus-visible,
+header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:focus-visible {
+  color: unset;
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
@@ -326,6 +328,11 @@ header .nav-menu-overlay .nav-menu-column.left ul {
   gap: 20px;
   width: 90%;
 }
+
+header .nav-menu-overlay .nav-menu-column.left li:focus-visible {
+outline: 2px solid var(--links-focus-color);
+}
+
 
 header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back {
   position: fixed;
@@ -666,6 +673,10 @@ header
 
 .section.nav-sections .default-content-wrapper a:hover p {
   text-decoration-color: var(--accent-blue-primary-40);
+}
+
+header .nav-menu-overlay .nav-menu-column.right .browse-country p:focus{
+  outline: 2px solid var(--links-focus-color);
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country p {
