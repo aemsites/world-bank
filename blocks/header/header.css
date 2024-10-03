@@ -103,10 +103,9 @@ header .nav-menu-overlay .nav-menu {
 }
 
 html[dir="rtl"] .language-container{
-  left: 42px;
+  left: 28px;
   right: auto;
   text-align: end;
-  margin-left: 10px;
 }
 
 .nav-item-expanded-active {
@@ -320,7 +319,6 @@ header .nav-menu-overlay .nav-menu-column.left > ul {
 
 header .nav-menu-overlay .nav-menu-column.left ul {
   margin: 0;
-  text-align: left;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -393,9 +391,9 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   border: 1px;
 }
 
-html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::before {
+/* html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::before {
   transform: rotate(145deg);
-}
+} */
 
 html[dir = 'rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   margin-right: 8px;
@@ -430,9 +428,9 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   border-radius: 1px;
 }
 
-html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::after {
+/* html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::after {
   transform: rotate(-145deg);
-}
+} */
 
 html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   margin-right: -14px;
@@ -457,7 +455,7 @@ header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
 }
 
 html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .nav-menu-overlay-back::before {
-  right: 10px;
+  right: 12px;
   transform: rotate(225deg);
 
 }
@@ -484,6 +482,10 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
   color: var(--neutral-solid-30-s);
   z-index: 2;
   background-color: var(--accent-blue-primary-120);
+}
+
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .browse-country .country-list {
+  right: 0;
 }
 
 header
@@ -684,6 +686,10 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country p {
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country p:hover {
   cursor: pointer;
+}
+
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .browse-country p {
+  right: 60vw;
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
@@ -1106,6 +1112,10 @@ html[dir="rtl"] header nav .nav-tools {
     margin-top: -20px;
   }
 
+  html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .browse-country input[type="text"]{
+    right: 0;
+  }
+
   header
     .nav-menu-overlay
     .nav-menu-column.right
@@ -1139,6 +1149,10 @@ html[dir="rtl"] header nav .nav-tools {
     align-items: center;
     border-radius: 50%;
     top: 15px;
+  }
+
+  html[dir="rtl"]   header .nav-menu-overlay .nav-menu-column.right .browse-country p {
+    right: 575px;
   }
 
   header .nav-menu-overlay .nav-menu-column.right .browse-country p::after {
