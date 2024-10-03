@@ -32,6 +32,11 @@
   margin-top: var(--spacing-medium);
 }
 
+html[dir="rtl"] .data-cards.data-card-variation .arrow-buttons {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
 .data-cards.data-card-variation .arrow-buttons .button-container button:hover {
   opacity: 0.7;
   transition: 0.2s;
