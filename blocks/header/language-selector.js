@@ -47,7 +47,7 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
       if (langCode === language) return;
       const liElement = li(
         a(
-          { href: `${url}` },
+          { href: `${url}`, lang: language },
           getLanguageDisplayText(placeholdersData, language, false),
         ),
       );
@@ -61,7 +61,15 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
 const getLanguageSelector = (placeholdersData, lang) => {
   const metaLangContent = getMetadata(constants.LANGUAGE_SELECTOR_META_NAME);
 
-  const languageToggle = div({ role: 'button', 'aria-expanded': 'false' });
+  const languageToggle = div(
+    {
+      role: 'button',
+      'aria-expanded': 'false',
+      'aria-controls': 'language-content',
+      tabindex: 0,
+      'aria-label': 'Choose language',
+    },
+  );
   const langSelector = div({ class: constants.LANGUAGE_CONTAINER_CLASS }, languageToggle);
 
   // Show only Current Language when no meta content authored
@@ -71,11 +79,16 @@ const getLanguageSelector = (placeholdersData, lang) => {
   } else {
     const languageMap = fetchLanguageSelectorContent(placeholdersData, metaLangContent, lang);
     const languageSelectorContent = div(
-      { class: constants.LANGUAGE_CONTENT_CLASS },
+      { class: constants.LANGUAGE_CONTENT_CLASS, id: 'language-content' },
       languageMap,
     );
     languageToggle.classList.add(constants.LANGUAGE_TOGGLE_CLASS);
     langSelector.addEventListener('click', toggleExpandLanguageSelector);
+    langSelector.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        toggleExpandLanguageSelector(event);
+      }
+    });
     langSelector.append(languageSelectorContent);
   }
   // Show Language code in Mobile
