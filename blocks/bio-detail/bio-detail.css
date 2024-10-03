@@ -45,7 +45,7 @@
 
 .bio-detail .media-inquiries p a:focus-visible,
 .bio-detail .resources p a:focus-visible {
-  border: 2px solid var(--links-focus-color);
+  outline: 2px solid var(--links-focus-color);;
 }
 
 .bio-detail .media-inquiries p:nth-child(4) a:hover {
