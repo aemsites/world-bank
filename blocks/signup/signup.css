@@ -21,6 +21,8 @@
   font-size: var(--font-size-200);
   width: 100%;
   color: var(--text-on-light-default);
+  box-sizing: border-box;
+  padding-right: 10px;
 }
 
 .email-signup-container input[type="text"] {
@@ -139,6 +141,7 @@ html[dir="rtl"] .input-group .floating-placeholder {
     font-size: 14px;
     border: 1px solid var(--divider-on-light-emphasis);
     margin-right: 0;
+    padding-right: 10px;
   }
 
   .email-signup-container button#signup-btn {
