@@ -72,6 +72,40 @@ async function loadFonts() {
   }
 }
 
+async function renderWBDataLayer() {
+  const config = await fetchPlaceholders(PATH_PREFIX);
+  const lastPubDateStr = getMetadata('published-time');
+  const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
+  window.wbgData.page = {
+    pageInfo: {
+      pageCategory: getMetadata('pagecategory'),
+      channel: getMetadata('channel'),
+      contentType: getMetadata('content_type'),
+      pageUid: getMetadata('pageuid'),
+      pageName: getMetadata('pagename'),
+      pageFirstPub: formatDate(firstPubDateStr),
+      pageLastMod: formatDate(lastPubDateStr),
+      webpackage: '',
+    },
+  };
+
+  window.wbgData.site = {
+    siteInfo: {
+      siteLanguage: getLanguage() || 'en',
+      siteType: config.analyticsSiteType || 'main',
+      siteEnv: config.environment || 'Dev',
+    },
+
+    techInfo: {
+      cmsType: config.analyticsCmsType || 'aem edge',
+      bussVPUnit: config.analyticsBussvpUnit || 'ecr',
+      bussUnit: config.analyticsBussUnit || 'ecrcc',
+      bussUserGroup: config.analyticsBussUserGroup || 'external',
+      bussAgency: config.analyticsBussAgency || 'ibrd',
+    },
+  };
+}
+
 /**
  * remove the adujusts the auto images
  * @param {Element} main The container element
@@ -158,6 +192,7 @@ async function loadEager(doc) {
   setPageLanguage();
   decorateTemplateAndTheme();
   createSkipToMainNavigationBtn();
+  renderWBDataLayer();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -237,39 +272,6 @@ function decorateSectionImages(doc) {
   });
 }
 
-async function renderWBDataLayer() {
-  const config = await fetchPlaceholders(PATH_PREFIX);
-  const lastPubDateStr = getMetadata('published-time');
-  const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
-  window.wbgData.page = {
-    pageInfo: {
-      pageCategory: getMetadata('pagecategory'),
-      channel: getMetadata('channel'),
-      contentType: getMetadata('content_type'),
-      pageUid: getMetadata('pageuid'),
-      pageFirstPub: formatDate(firstPubDateStr),
-      pageLastMod: formatDate(lastPubDateStr),
-      webpackage: '',
-    },
-  };
-
-  window.wbgData.site = {
-    siteInfo: {
-      siteLanguage: getLanguage() || 'en',
-      siteType: config.analyticsSiteType || 'main',
-      siteEnv: config.environment || 'Dev',
-    },
-
-    techInfo: {
-      cmsType: config.analyticsCmsType || 'aem edge',
-      bussVPUnit: config.analyticsBussvpUnit || 'ecr',
-      bussUnit: config.analyticsBussUnit || 'ecrcc',
-      bussUserGroup: config.analyticsBussUserGroup || 'external',
-      bussAgency: config.analyticsBussAgency || 'ibrd',
-    },
-  };
-}
-
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -293,7 +295,6 @@ async function loadLazy(doc) {
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
-  renderWBDataLayer();
 }
 
 /**

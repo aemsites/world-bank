@@ -186,7 +186,7 @@ export function formatDate(dObjStr) {
     if (dd < 10) dd = `0${dd}`;
     if (mm < 10) mm = `0${mm}`;
 
-    const formatted = `${dd}-${mm}-${yyyy}`;
+    const formatted = `${mm}-${dd}-${yyyy}`;
     return formatted;
   }
   return '';
