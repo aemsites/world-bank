@@ -27,11 +27,13 @@ function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById(constants.NAV);
     const navSections = nav.querySelector(constants.NAV_SECTIONS_WITH_SELECTOR);
-    // eslint-disable-next-line no-use-before-define
-    toggleMenu(nav, navSections);
+    const expanded = isDesktop && nav.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      // eslint-disable-next-line no-use-before-define
+      toggleMenu(nav, navSections);
+    }
   }
 }
-
 function openOnKeydown(e) {
   const focused = document.activeElement;
   const isNavDrop = focused.className === 'nav-drop';
@@ -95,6 +97,7 @@ async function overlayLoad(navSections) {
   const leftColumn = navSections.querySelector('.nav-menu-column.left');
   isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
   document.body.addEventListener('click', (e) => closesearchbar(e, navSections));
+  document.body.addEventListener('keydown', (e) => closesearchbar(e, navSections));
 }
 
 async function toggleMenu(nav, navSections, forceExpanded = null) {
@@ -137,6 +140,31 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   const navMenuOverlay = navSections.querySelector(
     constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
   );
+
+  const hamburgerDiv = nav.querySelector('.nav-hamburger');
+  const hamburgerButton = hamburgerDiv.querySelector('button');
+  const hamburgerIcon = hamburgerDiv.querySelector('.nav-hamburger-icon');
+  const skiptomain = document.getElementById('skip-to-main-content');
+
+  if (!expanded) {
+    hamburgerDiv.setAttribute('tabindex', '-1');
+    navMenuOverlay.querySelector('.nav-menu').setAttribute('aria-hidden', 'false');
+    document.querySelector('main').setAttribute('inert', 'true');
+    document.querySelector('footer').setAttribute('inert', 'true');
+    hamburgerButton.setAttribute('tabindex', '-1');
+    hamburgerIcon.setAttribute('tabindex', '0');
+    skiptomain.setAttribute('tabindex', '-1');
+  } else {
+    hamburgerDiv.removeAttribute('tabindex');
+    navMenuOverlay.querySelector('.nav-menu').setAttribute('aria-hidden', 'true');
+    document.querySelector('main').removeAttribute('inert');
+    document.querySelector('footer').removeAttribute('inert');
+    hamburgerDiv.removeAttribute('tabindex');
+    hamburgerButton.removeAttribute('tabindex');
+    hamburgerIcon.removeAttribute('tabindex');
+    skiptomain.removeAttribute('tabindex');
+  }
+
   if (!expanded) {
     document.body.classList.add('no-scroll');
     navMenuOverlay.classList.add(constants.OPEN);
@@ -153,6 +181,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     window.removeEventListener(constants.KEY_DOWN, closeOnEscape);
   }
+
   const headerWrapper = document.querySelector('.header-wrapper');
   const searchContainer = headerWrapper.querySelector('.search-container');
   if (searchContainer) {
@@ -162,6 +191,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   const leftColumn = navSections.querySelector('.nav-menu-column.left');
   closesideMenu(leftColumn, rightColumn);
 }
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element

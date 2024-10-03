@@ -33,6 +33,10 @@ main .breadcrumb-wrapper ol li span.breadcrumb-separator {
   margin: 0 14px;
 }
 
+main .breadcrumb-wrapper ol li:last-child span.breadcrumb-separator {
+  display: none;
+}
+
 main .breadcrumb-wrapper img {
   width: 12px;
   height: 12px;
