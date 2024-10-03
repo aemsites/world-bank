@@ -47,9 +47,6 @@ footer ul li {
 }
 
 .ft-social {
-  /* display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 0; */
   display: flex;
   flex-wrap: wrap;
   border-bottom: 1px var(--accent-blue-primary-60) solid;
@@ -241,11 +238,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
 
 @media (width <= 1024px) {
   .ft-social {
-    /* grid-template-columns: 1fr 2fr; */
-
-    /* grid-template-rows: 1fr; */
-
-    /* grid-gap: 0; */
     padding: 40px 0 32px;
   }
 
@@ -262,16 +254,12 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   }
 
   .ft-social .ft-social-list:last-child {
-    /* grid-column: 1 / 3;
-    grid-row: 2 / 2; */
     width: 100%;
   }
 
   .ft-social .ft-social-list:last-child ul {
     justify-content: center;
     padding: 32px 0 0;
-
-    /* margin: 32px 0 0; */
     border-top: 1px solid var(--accent-blue-primary-60);
   }
 
@@ -403,10 +391,6 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   .ft-main .ft-main-item:last-child ul li {
     text-align: center;
     width: 100%;
-  }
-
-  .ft-social .ft-social-list:nth-child(2)>ul>li:not(:first-child) {
-    /* padding: 0 0 0 35px; */
   }
 
   .ft-main .ft-main-item:not(:last-child) ul li:not(:last-child) {
