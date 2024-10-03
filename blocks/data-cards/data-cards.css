@@ -392,7 +392,7 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
 }
 
 .section .data-cards-wrapper .data-cards.news-card-variation > .rte-container > div:nth-child(2) > div > p a:focus-visible {
-  border: 2px solid var(--links-focus-color);
+  outline: 2px solid var(--links-focus-color);;
 }
 
 .data-cards.news-card-variation.block .news-card-items .news-card:hover > .news-card-title > p {
