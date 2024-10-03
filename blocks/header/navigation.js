@@ -282,7 +282,7 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
         tabindex: '0',
         role: 'link',
         'aria-expanded': 'false',
-        onkeydown: (e) => (e.code === 'Enter' && isDesktop.matches
+        onkeydown: (e) => (e.code === 'Enter'
           ? showSubMenu(
             menuLeftColumn,
             menuRightColumn,

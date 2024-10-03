@@ -157,8 +157,8 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     hamburgerDiv.removeAttribute('tabindex');
     navMenuOverlay.querySelector('.nav-menu').setAttribute('aria-hidden', 'true');
-    document.querySelector('main').removeAttribute('inert', 'false');
-    document.querySelector('footer').removeAttribute('inert', 'false');
+    document.querySelector('main').removeAttribute('inert');
+    document.querySelector('footer').removeAttribute('inert');
     hamburgerDiv.removeAttribute('tabindex');
     hamburgerButton.removeAttribute('tabindex');
     hamburgerIcon.removeAttribute('tabindex');
