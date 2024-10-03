@@ -66,6 +66,7 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
     height: 100%;
     width: 100%;
     position: relative;
+    border-radius: 10px;
 }
 
 .teaser-wrapper .teaser-title-wrapper {
