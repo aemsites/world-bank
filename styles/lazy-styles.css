@@ -169,7 +169,6 @@ html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
     }
 
     html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
-        transform: scaleX(-1);
         left: -2%;
         top: 1%;
         right: auto;
@@ -288,7 +287,6 @@ html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
     }
 
     html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before { 
-        transform: scaleX(-1);
         left: 10%;
         top: 14%;
         right: auto;
