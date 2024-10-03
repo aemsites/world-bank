@@ -1,0 +1,15 @@
+meta {
+  name: GET Site Aggregated Config
+  type: http
+  seq: 7
+}
+
+get {
+  url: https://admin.hlx.page/config/{{org}}/aggregated/:siteName
+  body: none
+  auth: none
+}
+
+params:path {
+  siteName: world-bank.json
+}

@@ -27,11 +27,13 @@ function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById(constants.NAV);
     const navSections = nav.querySelector(constants.NAV_SECTIONS_WITH_SELECTOR);
-    // eslint-disable-next-line no-use-before-define
-    toggleMenu(nav, navSections);
+    const expanded = isDesktop && nav.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      // eslint-disable-next-line no-use-before-define
+      toggleMenu(nav, navSections);
+    }
   }
 }
-
 function openOnKeydown(e) {
   const focused = document.activeElement;
   const isNavDrop = focused.className === 'nav-drop';
@@ -95,6 +97,7 @@ async function overlayLoad(navSections) {
   const leftColumn = navSections.querySelector('.nav-menu-column.left');
   isDesktop.addEventListener('change', () => closesideMenu(leftColumn, rightColumn));
   document.body.addEventListener('click', (e) => closesearchbar(e, navSections));
+  document.body.addEventListener('keydown', (e) => closesearchbar(e, navSections));
 }
 
 async function toggleMenu(nav, navSections, forceExpanded = null) {
@@ -137,6 +140,31 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   const navMenuOverlay = navSections.querySelector(
     constants.NAV_MENU_OVERLAY_WITH_SELECTOR,
   );
+
+  const hamburgerDiv = nav.querySelector('.nav-hamburger');
+  const hamburgerButton = hamburgerDiv.querySelector('button');
+  const hamburgerIcon = hamburgerDiv.querySelector('.nav-hamburger-icon');
+  const skiptomain = document.getElementById('skip-to-main-content');
+
+  if (!expanded) {
+    hamburgerDiv.setAttribute('tabindex', '-1');
+    navMenuOverlay.querySelector('.nav-menu').setAttribute('aria-hidden', 'false');
+    document.querySelector('main').setAttribute('inert', 'true');
+    document.querySelector('footer').setAttribute('inert', 'true');
+    hamburgerButton.setAttribute('tabindex', '-1');
+    hamburgerIcon.setAttribute('tabindex', '0');
+    skiptomain.setAttribute('tabindex', '-1');
+  } else {
+    hamburgerDiv.removeAttribute('tabindex');
+    navMenuOverlay.querySelector('.nav-menu').setAttribute('aria-hidden', 'true');
+    document.querySelector('main').removeAttribute('inert');
+    document.querySelector('footer').removeAttribute('inert');
+    hamburgerDiv.removeAttribute('tabindex');
+    hamburgerButton.removeAttribute('tabindex');
+    hamburgerIcon.removeAttribute('tabindex');
+    skiptomain.removeAttribute('tabindex');
+  }
+
   if (!expanded) {
     document.body.classList.add('no-scroll');
     navMenuOverlay.classList.add(constants.OPEN);
@@ -153,6 +181,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     window.removeEventListener(constants.KEY_DOWN, closeOnEscape);
   }
+
   const headerWrapper = document.querySelector('.header-wrapper');
   const searchContainer = headerWrapper.querySelector('.search-container');
   if (searchContainer) {
@@ -162,11 +191,13 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
   const leftColumn = navSections.querySelector('.nav-menu-column.left');
   closesideMenu(leftColumn, rightColumn);
 }
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 let listOfAllPlaceholdersData = [];
+let searchContainer;
 
 function makeImageClickableNSettingAltText() {
   const logoImage = document.querySelector('.nav-brand img');
@@ -192,7 +223,7 @@ function createSearchBox() {
   const navWrapper = document.querySelector('.nav-wrapper');
   const headerWrapper = document.querySelector('.header-wrapper');
   const navTools = document.querySelector('.nav-tools p');
-  let searchContainer = headerWrapper.querySelector('.search-container');
+  searchContainer = headerWrapper.querySelector('.search-container');
   let cancelContainer = navWrapper.querySelector('.cancel-container');
   let overlay = document.querySelector('.overlay');
   const searchImage = document.querySelector('.icon-search');
@@ -207,13 +238,25 @@ function createSearchBox() {
 
     searchImage.style.display = isVisible ? 'block' : 'none';
   } else {
-    cancelContainer = div({ class: 'cancel-container' });
+    cancelContainer = div(
+      {
+        class: 'cancel-container',
+        role: 'button',
+        tabindex: 0,
+        'aria-label': 'close Search Box',
+      },
+    );
     const cancelImg = img({ class: 'cancel-image' });
     cancelImg.src = `${window.hlx.codeBasePath}/icons/cancel.svg`;
     cancelImg.alt = 'cancel';
     cancelImg.style.cssText = 'display: flex; cursor: pointer;';
     cancelContainer.addEventListener('click', () => {
       closeSearchBox();
+    });
+    cancelContainer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === 'Escape') {
+        closeSearchBox();
+      }
     });
     cancelContainer.appendChild(cancelImg);
     navTools.appendChild(cancelContainer);
@@ -255,6 +298,12 @@ function settingAltTextForSearchIcon() {
   searchImage.addEventListener('click', () => {
     createSearchBox();
   });
+  searchImage.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      createSearchBox();
+      e.currentTarget.nextElementSibling.focus();
+    }
+  });
   searchImage.setAttribute('title', listOfAllPlaceholdersData.searchAltText);
 }
 
@@ -280,6 +329,26 @@ async function changeTrendingData(navSections) {
   trendingDataWrapper.append(trendingDataDiv);
 }
 
+const setAccessibilityAttrForSearchIcon = (contentWrapper) => {
+  const [iconTag] = [...contentWrapper.children];
+  const iconSpan = iconTag.querySelector('span');
+  iconSpan.setAttribute('role', 'button');
+  iconSpan.setAttribute('aria-label', 'Perform a search query');
+  iconSpan.setAttribute('tabindex', 0);
+};
+
+const closeSearchOnFocusOut = (e, navTools) => {
+  if (searchContainer && searchContainer.style.display !== 'none') {
+    const cancelContainer = navTools.querySelector('.cancel-container');
+    const searchImage = navTools.querySelector('.icon-search');
+    const isClickInside = searchContainer.contains(e.target)
+      || cancelContainer.contains(e.target)
+      || searchImage.contains(e.target);
+    if (!isClickInside) {
+      closeSearchBox();
+    }
+  }
+};
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -333,8 +402,21 @@ export default async function decorate(block) {
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
+    setAccessibilityAttrForSearchIcon(contentWrapper);
     const languageSelector = getLanguageSelector(placeholdersData, langCode);
     contentWrapper.prepend(languageSelector);
+
+    // Close Search Container on Focus out
+    document.addEventListener('click', (e) => {
+      closeSearchOnFocusOut(e, navTools);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        if (searchContainer && searchContainer.style.display !== 'none' && searchContainer.contains(e.target)) {
+          closeSearchBox();
+        }
+      }
+    });
   }
 
   // hamburger for mobile

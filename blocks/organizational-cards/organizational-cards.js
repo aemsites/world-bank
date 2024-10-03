@@ -34,7 +34,7 @@ export default async function decorate(block) {
     collapseBtn.classList.add('collapse-btn');
     collapseBtn.tabIndex = 0;
     const minusIcon = document.createElement('img');
-    minusIcon.src = `${window.hlx.codeBasePath}/icons/icon-minus.png`;
+    minusIcon.src = `${window.hlx.codeBasePath}/icons/icon-minus.svg`;
     minusIcon.setAttribute('alt', 'Minus icon');
     minusIcon.width = 20;
     minusIcon.height = 20;
@@ -43,7 +43,7 @@ export default async function decorate(block) {
     expandBtn.classList.add('expand-btn');
     expandBtn.tabIndex = 0;
     const plusIcon = document.createElement('img');
-    plusIcon.src = `${window.hlx.codeBasePath}/icons/icon-plus.png`;
+    plusIcon.src = `${window.hlx.codeBasePath}/icons/icon-plus.svg`;
     plusIcon.setAttribute('alt', 'Plus icon');
     plusIcon.width = 20;
     plusIcon.height = 20;

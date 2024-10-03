@@ -45,7 +45,7 @@
 
 .bio-detail .media-inquiries p a:focus-visible,
 .bio-detail .resources p a:focus-visible {
-  border: 2px solid var(--links-focus-color);
+  outline: 2px solid var(--links-focus-color);;
 }
 
 .bio-detail .media-inquiries p:nth-child(4) a:hover {
@@ -96,6 +96,7 @@ html[dir="rtl"] .bio-detail .download-image{
 .bio-detail .sections-container .display-name h1 {
   margin: var(--spacing-none);
   color: var(--text-on-light-highlight);
+  line-height: 31.36px;
 }
 
 .bio-detail .sections-container .job-title {
@@ -127,7 +128,7 @@ html[dir="rtl"] .bio-detail .download-image{
 
 .bio-detail .media-inquiries p {
   font-size: var(--font-size-300);
-  line-height: 20px;
+  line-height: 22px;
 }
 
 .bio-detail .title {
@@ -137,17 +138,12 @@ html[dir="rtl"] .bio-detail .download-image{
   font-weight: 800;
   padding-bottom: var(--spacing-small);
   color: var(--text-on-light-emphasis);
-  line-height: 15px;
+  line-height: 15.4px;
 }
 
 .block-quote-container .default-content-wrapper p{
     color: var(--text-on-light-emphasis);
     font-size: var(--font-size-500);
-    line-height: 150%;
-}
-
-.block-quote-container .default-content-wrapper p:first-child{
-  margin-top: 0;
 }
 
 .bio-detail .sections-container .job-title div p:nth-child(2) {
@@ -155,6 +151,10 @@ html[dir="rtl"] .bio-detail .download-image{
 }
 
 @media (width >=768px) {
+  .bio-detail .sections-container .display-name h1 {
+    line-height: 40.32px;
+  }
+
   .profile-image img {
     height: 264px;
   }
@@ -176,6 +176,10 @@ html[dir="rtl"] .bio-detail .download-image{
 }
 
 @media (width >=1024px) {
+  .bio-detail .sections-container .display-name h1 {
+    line-height: 53.76px;
+  }
+  
   .sections-container .first-container{
     display: flex;
     flex-direction: column;
