@@ -129,27 +129,28 @@ html[dir="rtl"] .organizational-card:not(first-child) {
 .organizational-card .card-acronym {
   font-size: var(--font-size-1000);
   height: 46px;
-  line-height: 46px;
+  line-height: 115%;
   display: flex;
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
 .organizational-card .card-title {
-  font-size: 14px;
-  line-height: 17.5px;
+  font-size: var(--font-size-200);
+  line-height: 125%;
   width: 100%;
 }
 
 .organizational-card .card-mission {
   border-top: 2px solid var(--accent-blue-primary-40);
-  font-size: 16px;
+  font-size: var(--font-size-300);
   font-weight: 400;
-  line-height: 24px;
+  line-height: 150%;
   min-height: 104px;
-  padding-top: 32px;
+  padding-top: 24px;
   margin-top: 32px;
 }
 
@@ -287,7 +288,7 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
   }
 
   .organizational-card:not(.collapsed) {
-    padding: 24px 0;
+    padding: 40px 0;
   }
 
   .organizational-card .collapse-btn {
@@ -302,8 +303,8 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
   .organizational-card .card-acronym {
     display: inline-block;
     width: fit-content;
-    font-size: 32px;
-    margin: 0 12px 0 0;
+    font-size: var(--font-size-1000);
+    margin: 0 8px 0 0;
   }
 
   html[dir="rtl"] .organizational-card .card-acronym {
@@ -315,15 +316,17 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
     width: fit-content;
     border-bottom: unset;
     height: fit-content;
-    line-height: 19px;
+    line-height: 21px;
     min-height: unset;
   }
 
   .organizational-card .card-mission {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    margin-top: 12px;
     min-height: unset;
     border-top: unset;
     padding-top: unset;
+    line-height: 20px;
   }
 
   .organizational-card .card-link-wrapper > .button-container {
@@ -354,7 +357,7 @@ html[dir="rtl"] .organizational-card.collapsed .expand-btn {
 
   .organizational-card.collapsed .card-content-wrapper {
     padding-bottom: unset;
-    border-bottom: unset;
+    border-bottom: 2px solid var(--divider-on-dark-default);
   }
 
   .organizational-card .card-content-wrapper .collapse-btn {

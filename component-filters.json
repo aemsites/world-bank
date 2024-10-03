@@ -9,7 +9,7 @@
   },
   {
     "id": "column",
-    "components": ["text", "image", "button", "title" ]
+    "components": ["text", "image", "button", "title", "dm-asset"]
   },
   {
     "id": "section",
@@ -38,8 +38,10 @@
       "block-quote",
       "impact-cards",
       "heading",
+      "dm-asset",
       "fragment",
-      "video"
+      "video",
+      "iframe"
     ]
   },
   {

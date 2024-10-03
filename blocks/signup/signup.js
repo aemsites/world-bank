@@ -2,6 +2,7 @@ import {
   div, p, form, input, label, button, span,
 } from '../../scripts/dom-helpers.js';
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { getLanguage } from '../../scripts/utils.js';
 
 const CONSTANTS = {
   SIGNUP_HEADING: 'signupHeading',
@@ -28,6 +29,8 @@ const CONSTANTS = {
   SIGNUP_EVENT_SUB_LIST: 'signupEventSubList',
   SIGNUP_EVENT_SUB_UPDATE_LIST: 'signupEventSubUpdateList',
   SIGNUP_SUBSCRIPTION_TYPE: 'signupSubscriptionType',
+  SIGNUP_ANALYTICS_FORMNAME: 'signupAnalyticsFormname',
+  SIGNUP_ANALYTICS_FORMTYPE: 'signupAnalyticsFormtype',
 };
 
 async function callConsentAPI(email, firstName, placeholders) {
@@ -90,6 +93,30 @@ function showThankYouMessage(formElement, message) {
   `;
 }
 
+function pushToWBGDataLayerOnload(placeholder) {
+  if (window.wbgData) {
+    window.wbgData.page.pageInfo.formName = placeholder[CONSTANTS.SIGNUP_ANALYTICS_FORMNAME] || 'Subscribe by Email';
+    window.wbgData.page.pageInfo.formType = placeholder[CONSTANTS.SIGNUP_ANALYTICS_FORMTYPE] || 'Email Subscription';
+  }
+}
+
+function pushToWBGDataLayer(email, profileType, placeholder) {
+  if (window.wbgData) {
+    const newsletterVal = placeholder[CONSTANTS.SIGNUP_CUSWBG_SUBSCRIPTION_LIST].split(':@');
+    window.wbgData.page.pageInfo.formSubmit = profileType;
+
+    window.wbgData.page.newsletter = {
+      userID: btoa(email),
+      subscriptionlist: `${newsletterVal[0]}:${getLanguage()}`,
+    };
+
+    if (profileType === 'N' && typeof _satellite === 'object') {
+      // eslint-disable-next-line no-undef
+      _satellite.track('extnewsletter');
+    }
+  }
+}
+
 function attachFormValidation(block, placeholders) {
   const emailInput = block.querySelector('#email');
   const errorMessage = block.querySelector('#error-message');
@@ -109,26 +136,6 @@ function attachFormValidation(block, placeholders) {
       emailInput.classList.remove('input-error');
     }
   });
-
-  function pushToWBGDataLayer(email, profileType, placeholder) {
-    if (window.wbgData) {
-      const newsletterVal = placeholder[CONSTANTS.SIGNUP_CUSWBG_SUBSCRIPTION_LIST].split(':@');
-
-      window.wbgData.page.pageInfo.formName = 'Subscribe by Email';
-      window.wbgData.page.pageInfo.formType = 'Email Subscription';
-      window.wbgData.page.pageInfo.formSubmit = profileType;
-
-      window.wbgData.page.newsletter = {
-        userID: btoa(email),
-        subscriptionlist: newsletterVal[0],
-      };
-
-      if (profileType === 'N' && typeof _satellite === 'object') {
-        // eslint-disable-next-line no-undef
-        _satellite.track('extnewsletter');
-      }
-    }
-  }
 
   document.getElementById('signup-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -237,6 +244,7 @@ function createSignupModule(block, placeholders) {
   );
 
   formelement.querySelector('.checkbox-group label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];
+  formelement.querySelector('#signup-btn-desktop').dataset.form = 'world bank group newsletters::newsletter';
 
   container.appendChild(content);
   container.appendChild(formelement);
@@ -250,6 +258,7 @@ async function fetchingPlaceholdersData(block) {
   const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
   if (!listOfAllPlaceholdersData) return;
 
+  pushToWBGDataLayerOnload(listOfAllPlaceholdersData);
   createSignupModule(block, listOfAllPlaceholdersData);
 }
 

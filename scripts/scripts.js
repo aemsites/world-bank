@@ -72,6 +72,40 @@ async function loadFonts() {
   }
 }
 
+async function renderWBDataLayer() {
+  const config = await fetchPlaceholders(PATH_PREFIX);
+  const lastPubDateStr = getMetadata('published-time');
+  const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
+  window.wbgData.page = {
+    pageInfo: {
+      pageCategory: getMetadata('pagecategory'),
+      channel: getMetadata('channel'),
+      contentType: getMetadata('content_type'),
+      pageUid: getMetadata('pageuid'),
+      pageName: getMetadata('pagename'),
+      pageFirstPub: formatDate(firstPubDateStr),
+      pageLastMod: formatDate(lastPubDateStr),
+      webpackage: '',
+    },
+  };
+
+  window.wbgData.site = {
+    siteInfo: {
+      siteLanguage: getLanguage() || 'en',
+      siteType: config.analyticsSiteType || 'main',
+      siteEnv: config.environment || 'Dev',
+    },
+
+    techInfo: {
+      cmsType: config.analyticsCmsType || 'aem edge',
+      bussVPUnit: config.analyticsBussvpUnit || 'ecr',
+      bussUnit: config.analyticsBussUnit || 'ecrcc',
+      bussUserGroup: config.analyticsBussUserGroup || 'external',
+      bussAgency: config.analyticsBussAgency || 'ibrd',
+    },
+  };
+}
+
 /**
  * remove the adujusts the auto images
  * @param {Element} main The container element
@@ -83,6 +117,30 @@ function adjustAutoImages(main) {
     pElement.className = 'auto-image-container';
   }
 }
+
+/**
+ * Return the placeholder file specific to language
+ * @returns
+ */
+export async function fetchLanguagePlaceholders() {
+  const langCode = getLanguage();
+  try {
+    // Try fetching placeholders with the specified language
+    return await fetchPlaceholders(`${PATH_PREFIX}/${langCode}`);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(`Error fetching placeholders for lang: ${langCode}. Will try to get en placeholders`, error);
+    // Retry without specifying a language (using the default language)
+    try {
+      return await fetchPlaceholders(`${PATH_PREFIX}/en`);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('Error fetching placeholders:', err);
+    }
+  }
+  return {}; // default to empty object
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -116,7 +174,8 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 
-function createSkipToMainNavigationBtn() {
+async function createSkipToMainNavigationBtn() {
+  const placeholder = await fetchLanguagePlaceholders();
   const main = document.querySelector('main');
   main.id = 'main';
 
@@ -125,7 +184,7 @@ function createSkipToMainNavigationBtn() {
   anchor.id = 'skip-to-main-content';
   anchor.className = 'visually-hidden focusable';
   anchor.href = '#main';
-  anchor.textContent = 'Skip to Main Navigation';
+  anchor.textContent = placeholder.skipToMainContent || 'Skip to Main Content';
   document.body.insertBefore(anchor, document.body.firstChild);
 }
 
@@ -133,6 +192,7 @@ async function loadEager(doc) {
   setPageLanguage();
   decorateTemplateAndTheme();
   createSkipToMainNavigationBtn();
+  renderWBDataLayer();
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -148,29 +208,6 @@ async function loadEager(doc) {
   } catch (e) {
     // do nothing
   }
-}
-
-/**
- * Return the placeholder file specific to language
- * @returns
- */
-export async function fetchLanguagePlaceholders() {
-  const langCode = getLanguage();
-  try {
-    // Try fetching placeholders with the specified language
-    return await fetchPlaceholders(`${PATH_PREFIX}/${langCode}`);
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error(`Error fetching placeholders for lang: ${langCode}. Will try to get en placeholders`, error);
-    // Retry without specifying a language (using the default language)
-    try {
-      return await fetchPlaceholders(`${PATH_PREFIX}/en`);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error('Error fetching placeholders:', err);
-    }
-  }
-  return {}; // default to empty object
 }
 
 /**
@@ -235,39 +272,6 @@ function decorateSectionImages(doc) {
   });
 }
 
-async function renderWBDataLayer() {
-  const config = await fetchPlaceholders(PATH_PREFIX);
-  const lastPubDateStr = getMetadata('published-time');
-  const firstPubDateStr = getMetadata('content_date') || lastPubDateStr;
-  window.wbgData.page = {
-    pageInfo: {
-      pageCategory: getMetadata('pagecategory'),
-      channel: getMetadata('channel'),
-      contentType: getMetadata('content_type'),
-      pageUid: getMetadata('pageuid'),
-      pageFirstPub: formatDate(firstPubDateStr),
-      pageLastMod: formatDate(lastPubDateStr),
-      webpackage: '',
-    },
-  };
-
-  window.wbgData.site = {
-    siteInfo: {
-      siteLanguage: getLanguage() || 'en',
-      siteType: config.analyticsSiteType || 'main',
-      siteEnv: config.environment || 'Dev',
-    },
-
-    techInfo: {
-      cmsType: config.analyticsCmsType || 'aem edge',
-      bussVPUnit: config.analyticsBussvpUnit || 'ecr',
-      bussUnit: config.analyticsBussUnit || 'ecrcc',
-      bussUserGroup: config.analyticsBussUserGroup || 'external',
-      bussAgency: config.analyticsBussAgency || 'ibrd',
-    },
-  };
-}
-
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -291,7 +295,6 @@ async function loadLazy(doc) {
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
-  renderWBDataLayer();
 }
 
 /**

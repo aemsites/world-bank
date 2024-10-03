@@ -1,6 +1,6 @@
 import { getMetadata, toClassName, fetchPlaceholders } from '../../scripts/aem.js';
 import {
-  a, button, div, li, ul, p,
+  a, button, div, li, ul,
 } from '../../scripts/dom-helpers.js';
 import { getLanguage, fetchData, scriptEnabled } from '../../scripts/utils.js';
 import { loadFragment } from '../fragment/fragment.js';
@@ -83,7 +83,10 @@ function populateTab(data, tabPanel, elementType, createItemFn) {
       removeShowMoreButton(tabPanel);
     }
   }
-  loadMoreItems();
+
+  if (items.length > 0) {
+    loadMoreItems();
+  }
 }
 
 function populateBlogTab(data, tabPanel) {
@@ -246,7 +249,7 @@ export default async function decorate(block) {
       'aria-controls': `tabpanel-${id}`,
       'aria-selected': !i,
       role: 'tab',
-    }, p({ class: 'tab-title' }, tab.textContent));
+    }, button({ class: 'tab-title' }, tab.textContent.trim()));
 
     tabButton.addEventListener('click', () => {
       block.querySelectorAll('[role=tabpanel]').forEach((panel) => {

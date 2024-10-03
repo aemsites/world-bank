@@ -13,6 +13,11 @@
   order: 0;
 }
 
+.auto-image-container picture img {
+  height: 272px;
+  object-fit: cover;
+}
+
 .columns > div > .columns-img-col img {
   display: block;
 }
@@ -36,7 +41,7 @@
   color: var(--text-on-light-emphasis);
 }
 
-.column-layout-67-33 > div > div > p > a {
+.column-layout-67-33 > div > div > p > a.button {
   margin: 0;
 }
 
@@ -120,7 +125,7 @@
 }
 
 .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(4) a:focus-visible {
-  border: 2px solid var(--links-focus-color);
+  outline: 2px solid var(--links-focus-color);;
 }
 
 .columns.columns-transform-teaser .columns-img-col {
@@ -357,6 +362,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 }
 
 @media(width < 1024px) {
+  .column-layout-67-33 > div > div > p > a.button {
+    margin: var(--spacing-medium) 0 0;
+  }
+
   .bg-primary-blue-90 .columns.columns-transform-teaser p:nth-child(1) {
     line-height: 35px;
   }
@@ -381,6 +390,11 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 }
 
 @media (width >= 768px) {
+  .auto-image-container picture img {
+    height: 400px;
+    object-fit: cover;
+  }
+
   .columns.columns-divider-variant > div {
     gap: 32px;
   }
@@ -443,6 +457,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   .columns.columns-transform-teaser .columns-img-col {
     right: -65px;
   }
+
 }
 
 @media (width < 768px) {
@@ -486,6 +501,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 }
 
 @media (width >= 1024px) {
+  .auto-image-container picture img {
+    height: auto;
+  }
+
   .columns.columns-feature-card > div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -646,6 +665,11 @@ html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child ul{
       flex-direction: row;
       gap: 40px;
     }
+  }
+
+  .columns.columns-image-right > div > div:nth-child(1) p:nth-child(2),
+  .columns.columns-image-left > div > div:nth-child(2) p:nth-child(2){
+    line-height: 36px;
   }
 }
 

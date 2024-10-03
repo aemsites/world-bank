@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /ext/**/drafts/
+Disallow: /ext/**/fragments/
+Disallow: /ext/**/footer
+Disallow: /ext/**/nav
+Disallow: /ext/**/data
+Disallow: /ext/**/data/
+
+Sitemap: https://www.worldbank.org/sitemap-index.xml
