@@ -785,6 +785,13 @@
       {
         "component": "text",
         "valueType": "string",
+        "name": "pageName",
+        "label": "Page Name",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
         "name": "pageCategory",
         "label": "Page Category",
         "required": true
