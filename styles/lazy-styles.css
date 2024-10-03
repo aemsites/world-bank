@@ -151,6 +151,14 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
     background-image: url('../../icons/swoosh-tablet.svg');
 }
 
+html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
+    transform: scaleX(-1);
+    left: 17%;
+    top: 15%;
+    right: auto;
+}
+
+
 @media (width >= 1024px) {
     .columns.columns-transform-teaser .columns-img-col::before {
         width: 623px;
@@ -159,7 +167,15 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
         top: 24px;
         background-image: url('../icons/swoosh-desktop.svg');
     }
+
+    html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
+        transform: scaleX(-1);
+        left: -2%;
+        top: 1%;
+        right: auto;
+    }
 }
+
 
 /* Cookie Pop Up Styles */
 .cookie-tooltip {
@@ -269,6 +285,13 @@ body.page-swoosh-half-curve::before { background-image: url('../icons/swoosh/pag
 
     .columns.columns-transform-teaser .columns-img-col::before {
         right: 9%;
+    }
+
+    html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before { 
+        transform: scaleX(-1);
+        left: 10%;
+        top: 10%;
+        right: auto;
     }
 }
 
