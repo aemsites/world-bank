@@ -104,7 +104,6 @@ export default async function decorate(block) {
       src: firstimg.src, alt: firstimg.alt || '', height: 731, width: 704,
     });
     imageContainer.append(imgElement);
-    imageContainer.style.backgroundImage = 'none';
     imageContainer.style.backgroundImage = `url(${
       firstimg.src
     })`;

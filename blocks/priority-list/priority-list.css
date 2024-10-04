@@ -204,6 +204,7 @@ html[dir="rtl"] .priority-list .right-column-container .cards-container > div .c
 }
 
 .priority-list .left-column-container .image-container {
+  background-image: none;
   background-size: contain;
   background-size: 95%;
   background-repeat: no-repeat;
