@@ -30,7 +30,7 @@ main .breadcrumb-wrapper ol li span.breadcrumb-separator {
   display: inline-block;
   border-left: 1px solid var(--neutral-solid-30-s);
   height: 17px;
-  margin: 0 12px;
+  margin: 0 14px;
 }
 
 main .breadcrumb-wrapper ol li:last-child span.breadcrumb-separator {
