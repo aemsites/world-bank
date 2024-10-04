@@ -3,8 +3,7 @@ import {
   getMetadata, loadScript, fetchPlaceholders,
 } from './aem.js';
 import {
-  div, p, section, a, button,
-  span, i,
+  a, span, i,
 } from './dom-helpers.js';
 import {
   getLanguage, fetchLanguageNavigation, isInternalPage, scriptEnabled, PATH_PREFIX,
@@ -20,55 +19,6 @@ function pageSwoosh() {
   } else {
     document.body.classList.remove(pSwoosh);
   }
-}
-
-const setConsentCookie = (name, value, daysToExpire, cookieSection) => {
-  const currDate = new Date();
-  currDate.setTime(currDate.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
-
-  const expiration = `expires=${currDate.toUTCString()}`;
-  const url = new URL(window.location.href);
-  const domain = `; domain=${url.hostname};`;
-  document.cookie = `${name}=${value}; ${expiration}; path=/${domain}`;
-  cookieSection.style.display = 'none';
-};
-
-function cookiePopUp() {
-  const consentCookie = document.cookie.replace(/(?:(?:^|.*;\s*)consent_cookie\s*=\s*([^;]*).*$)|^.*$/, '$1');
-  if (consentCookie.indexOf('1') >= 0) {
-    return;
-  }
-
-  const cookieSection = section({ class: 'cookie-tooltip' });
-  const placeholders = window.placeholders[`/${getLanguage()}`] || {};
-  const hasCookieText = !!(placeholders && placeholders.cookiePopUpText);
-  if (!hasCookieText) return;
-  const cookieContainer = div(
-    { class: 'container' },
-    p(
-      `${placeholders.cookiePopUpText}`,
-      a(
-        { href: `${placeholders.cookiePopUpLearnMoreLink || '#'}` },
-        `${placeholders.cookiePopUpLearnMoreLinkLabel || 'Click Here'}`,
-      ),
-    ),
-    button(
-      {
-        type: 'button',
-        class: 'close accept-consent',
-        'aria-label': `${placeholders.cookiePopUpCloseAriaLabel || 'Close Cookie Notification'}`,
-        onclick: () => setConsentCookie('consent_cookie', '1', 365, cookieSection),
-      },
-      span(
-        { 'aria-hidden': 'true' },
-        '×',
-      ),
-    ),
-  );
-
-  cookieSection.append(cookieContainer);
-  const footerTag = document.querySelector('footer');
-  footerTag.append(cookieSection);
 }
 
 const getNavigationData = async (langCode) => {
@@ -141,7 +91,6 @@ async function loadAdobeLaunch() {
 
 async function loadDelayed() {
   pageSwoosh();
-  cookiePopUp();
   buildTwitterLinks();
   getNavigationData(getLanguage());
   if (!isInternalPage()) {

@@ -1,13 +1,14 @@
-import { div, img } from '../../scripts/dom-helpers.js';
+import { div } from '../../scripts/dom-helpers.js';
 import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 import { TAG_ROOT } from '../../scripts/utils.js';
 
+const isMobile = window.matchMedia('(max-width: 768px)');
 const desktopConst = 400;
 const tabConst = 150;
 const tabTopPosition = 100;
 function createCard(card) {
-  const [cardtitle, carddesc, imagediv, imagealt] = card.children;
-  if (!cardtitle || !carddesc || !imagediv || !imagealt) {
+  const [cardtitle, carddesc, imagediv] = card.children;
+  if (!cardtitle || !carddesc || !imagediv) {
     return;
   }
   cardtitle.textContent = cardtitle.textContent.replace(
@@ -17,10 +18,21 @@ function createCard(card) {
   card.className = cardtitle.textContent.trim();
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
-  const image = imagediv.querySelector('img');
-  image.alt = imagealt.querySelector('p').textContent.trim() || '';
-  imagealt.remove();
 }
+
+const handleBG = new ResizeObserver(() => {
+  const priorityListleft = document.querySelector('.priority-list .left-column-container');
+  const priorityListright = document.querySelector('.priority-list .right-column-container');
+  const imageContainer = priorityListleft.querySelector('.image-container');
+  const cards = priorityListright.querySelector('.cards-container');
+  if (isMobile) {
+    const firstimg = [...cards.children].at(0).querySelector('img');
+    imageContainer.style.backgroundImage = `url(${
+      firstimg.src
+    })`;
+  }
+});
+
 function handlePriorityListScroll(leftColumnContainer, cards) {
   const image = leftColumnContainer.querySelector('.image-container');
   if (image.getBoundingClientRect().top === tabTopPosition) {
@@ -103,10 +115,6 @@ export default async function decorate(block) {
   const imageContainer = div({ class: 'image-container' });
   const firstimg = cards.at(0).querySelector('img');
   if (firstimg) {
-    const imgElement = img({
-      src: firstimg.src, alt: firstimg.alt || '', height: 731, width: 704,
-    });
-    imageContainer.append(imgElement);
     imageContainer.style.backgroundImage = `url(${
       firstimg.src
     })`;
@@ -115,5 +123,6 @@ export default async function decorate(block) {
   block.append(leftColumnContainer);
 
   window.addEventListener('scroll', () => handlePriorityListScroll(leftColumnContainer, cards));
+  handleBG.observe(document.body);
   block.append(rightColumnContainer);
 }

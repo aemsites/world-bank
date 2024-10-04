@@ -19,6 +19,8 @@ import {
   createSource,
   formatDate,
   setPageLanguage,
+  cookiePopUp,
+  showCookieConsent,
   PATH_PREFIX,
 } from './utils.js';
 
@@ -180,7 +182,6 @@ async function createSkipToMainNavigationBtn() {
   main.id = 'main';
 
   const anchor = document.createElement('a');
-  anchor.tabIndex = 0;
   anchor.id = 'skip-to-main-content';
   anchor.className = 'visually-hidden focusable';
   anchor.href = '#main';
@@ -188,10 +189,32 @@ async function createSkipToMainNavigationBtn() {
   document.body.insertBefore(anchor, document.body.firstChild);
 }
 
+/**
+ * Translate 404 page
+ * @returns
+ */
+export async function load404() {
+  const main = document.querySelector('main');
+  const placeholders = await fetchLanguagePlaceholders();
+  const homelink = main.querySelector('p a');
+  const searchForm = main.querySelector('form');
+  main.querySelector('h1').innerText = placeholders.notFoundHeading || 'Page Not Found';
+  main.querySelector('h2').innerText = placeholders.notFoundSubHeading || '404 Error';
+  main.querySelector('h2 + p').innerText = placeholders.notFoundText || 'The page you requested could not be found. Try using the search box below or click on the homepage button to go there.';
+  homelink.innerText = placeholders.notFoundBtnLabel || 'Go to homepage';
+  homelink.title = placeholders.notFoundBtnLabel || 'Go to homepage';
+  homelink.href = placeholders.logoUrl || '/';
+  searchForm.action = placeholders.searchRedirectUrl || 'https://www.worldbank.org/en/search';
+  searchForm.querySelector('input').placeholder = placeholders.searchVariable || 'Search worldbank.org';
+  main.classList.remove('loading');
+  return null;
+}
+
 async function loadEager(doc) {
   setPageLanguage();
   decorateTemplateAndTheme();
-  createSkipToMainNavigationBtn();
+  await createSkipToMainNavigationBtn();
+  await cookiePopUp();
   renderWBDataLayer();
   const main = doc.querySelector('main');
   if (main) {
@@ -285,7 +308,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   decorateSectionImages(doc);
-
+  showCookieConsent();
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
 

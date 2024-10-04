@@ -1,3 +1,8 @@
+import {
+  div, p, section, a, button,
+  span,
+} from './dom-helpers.js';
+
 export const PATH_PREFIX = '/ext';
 export const TAG_ROOT = 'world-bank:';
 export const SUPPORTED_LANGUAGES = ['en', 'zh', 'ru', 'fr', 'es', 'ar'];
@@ -77,18 +82,18 @@ export function processTags(tag, prefix = '') {
  */
 export function decorateLinkedPictures(container) {
   [...container.querySelectorAll('picture + br + a')]
-    .filter((a) => {
+    .filter((link) => {
       try {
         // ignore domain in comparison
-        return new URL(a.href).pathname;
+        return new URL(link.href).pathname;
       } catch (e) {
         return false;
       }
     })
-    .forEach((a) => {
+    .forEach((link) => {
       const picture = a.previousElementSibling.previousElementSibling;
       picture.remove();
-      const br = a.previousElementSibling;
+      const br = link.previousElementSibling;
       br.remove();
       const txt = a.innerHTML;
       a.innerHTML = picture.outerHTML;
@@ -229,4 +234,60 @@ export function scriptEnabled() {
   if (getQueryString('tip') === 'noscript') return false;
 
   return true;
+}
+
+const setConsentCookie = (name, value, daysToExpire, cookieSection) => {
+  const currDate = new Date();
+  currDate.setTime(currDate.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+
+  const expiration = `expires=${currDate.toUTCString()}`;
+  const url = new URL(window.location.href);
+  const domain = `; domain=${url.hostname};`;
+  document.cookie = `${name}=${value}; ${expiration}; path=/${domain}`;
+  cookieSection.style.display = 'none';
+};
+
+export function cookiePopUp() {
+  const consentCookie = document.cookie.replace(/(?:(?:^|.*;\s*)consent_cookie\s*=\s*([^;]*).*$)|^.*$/, '$1');
+  if (consentCookie.indexOf('1') >= 0) {
+    return;
+  }
+
+  const cookieSection = section({ class: 'cookie-tooltip', style: 'display:none;' });
+  const placeholders = window.placeholders[`${PATH_PREFIX}/${getLanguage()}`] || {};
+  const hasCookieText = !!(placeholders && placeholders.cookiePopUpText);
+  if (!hasCookieText) return;
+  const cookieContainer = div(
+    { class: 'container' },
+    p(
+      { tabindex: 0 },
+      `${placeholders.cookiePopUpText} `,
+      a(
+        { href: `${placeholders.cookiePopUpLearnMoreLink || '#'}` },
+        `${placeholders.cookiePopUpLearnMoreLinkLabel || 'Click Here'}`,
+      ),
+    ),
+    button(
+      {
+        type: 'button',
+        class: 'close accept-consent',
+        'aria-label': `${placeholders.cookiePopUpCloseAriaLabel || 'Close Cookie Notification'}`,
+        onclick: () => setConsentCookie('consent_cookie', '1', 365, cookieSection),
+      },
+      span(
+        { 'aria-hidden': 'true' },
+        '×',
+      ),
+    ),
+  );
+
+  cookieSection.append(cookieContainer);
+  document.body.insertBefore(cookieSection, document.body.firstChild);
+}
+
+export function showCookieConsent() {
+  const cookieSection = document.querySelector('.cookie-tooltip');
+  if (cookieSection) {
+    cookieSection.style = 'display:block;';
+  }
 }

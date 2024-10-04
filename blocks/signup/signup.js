@@ -93,16 +93,12 @@ function showThankYouMessage(formElement, message) {
   `;
 }
 
-function pushToWBGDataLayerOnload(placeholder) {
-  if (window.wbgData) {
-    window.wbgData.page.pageInfo.formName = placeholder[CONSTANTS.SIGNUP_ANALYTICS_FORMNAME] || 'Subscribe by Email';
-    window.wbgData.page.pageInfo.formType = placeholder[CONSTANTS.SIGNUP_ANALYTICS_FORMTYPE] || 'Email Subscription';
-  }
-}
-
 function pushToWBGDataLayer(email, profileType, placeholder) {
   if (window.wbgData) {
     const newsletterVal = placeholder[CONSTANTS.SIGNUP_CUSWBG_SUBSCRIPTION_LIST].split(':@');
+
+    window.wbgData.page.pageInfo.formName = placeholder[CONSTANTS.SIGNUP_ANALYTICS_FORMNAME] || 'world bank group newsletters';
+    window.wbgData.page.pageInfo.formType = placeholder[CONSTANTS.SIGNUP_ANALYTICS_FORMTYPE] || 'newsletter';
     window.wbgData.page.pageInfo.formSubmit = profileType;
 
     window.wbgData.page.newsletter = {
@@ -244,7 +240,6 @@ function createSignupModule(block, placeholders) {
   );
 
   formelement.querySelector('.checkbox-group label').innerHTML = placeholders[CONSTANTS.SIGNUP_TERMS];
-  formelement.querySelector('#signup-btn-desktop').dataset.form = 'world bank group newsletters::newsletter';
 
   container.appendChild(content);
   container.appendChild(formelement);
@@ -258,7 +253,6 @@ async function fetchingPlaceholdersData(block) {
   const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
   if (!listOfAllPlaceholdersData) return;
 
-  pushToWBGDataLayerOnload(listOfAllPlaceholdersData);
   createSignupModule(block, listOfAllPlaceholdersData);
 }
 
