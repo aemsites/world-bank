@@ -15,7 +15,7 @@ function createVideoPlayer(videoSrc) {
     div({ class: 'video-play', id: 'playButton', tabindex: 0 },
       button({ class: 'video-play-btn', 'aria-label': 'video-play-btn' }, img({
         class: 'play-icon controls', src: playIcon, width: 28, height: 28, alt: 'play',
-      }))
+      })),
     ),
     div({ class: 'video-pause inactive', id: 'pauseButton' },
       button({ class: 'video-pause-btn', 'aria-label': 'video-pause-btn' }, img({
