@@ -175,125 +175,17 @@ html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
     }
 }
 
-
-/* Cookie Pop Up Styles */
-.cookie-tooltip {
-    float: left;
-    background: rgb(0 0 0 / 87%);
-    padding: 16px;
-    position: fixed;
-    z-index: 9999;
-    color: var(--white);
-    left: auto;
-    right: 0;
-    bottom: 0;
-}
-
-.cookie-tooltip, .cookie-tooltip .close, .cookie-tooltip p {
-    animation-duration: .6s;
-    animation-name: slideUp;
-}
-
-.container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
-.cookie-tooltip p {
-    width: 80%;
-    text-align: left;
-    line-height: 18px;
-    margin: 0 auto;
-    font-size: var(--font-size-200);
-}
-
-.cookie-tooltip p > a {
-    font-size: var(--font-size-200);
-    color: var(--white);
-    border-bottom: 1px solid var(--white);
-    text-decoration: none;
-    padding: 0;
-    text-wrap: wrap;
-}
-
-.cookie-tooltip p > a:visited{
-    color: var(--white);
-    text-decoration-color: var(--white);
-}
-
-.cookie-tooltip p > a:hover{
-    color: var(--white);
-}
-
-.cookie-tooltip .close {
-    height: 32px;
-    width: 32px;
-    color: var(--white);
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: transparent;
-    box-shadow: none;
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-.cookie-tooltip .close span, .cookie-tooltip .close:hover, .cookie-tooltip .close:focus {
-    color: var(--white);
-}
-
-.cookie-tooltip > .container > button > span {
-    font-size: var(--body-font-size);
-}
-
-@media (width >= 768px) {
-    .cookie-tooltip {
-        width: 100%;
-    }
-
-    .cookie-tooltip .container {
-        max-width: 1170px;
-        padding: 0;
-    }
-}
-
 @media (width < 768px) {
-    .cookie-tooltip p {
-        font-size: var(--font-size-200);
-        width: 100%;
-    }
-
-    .cookie-tooltip p > a{
-        font-size: var(--font-size-200);
-        line-height: 14px;
-    }
-
-    .cookie-tooltip > .container > button > span {
-        font-size: var(--font-size-200);
-    }
-
-    .cookie-tooltip {
-        left: 8px;
-        bottom: 8px;
-        right: 8px;
-    }
-
     .columns.columns-transform-teaser .columns-img-col::before {
         right: 9%;
     }
-
+  
     html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before { 
         left: 10%;
         top: 14%;
         right: auto;
     }
-}
-
-/* End of Cookie Pop Up Styles */
+  }
 
 /* tweetable link css */
 /* stylelint-disable no-descending-specificity */

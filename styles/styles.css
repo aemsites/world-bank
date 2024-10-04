@@ -822,6 +822,13 @@ html[dir="rtl"] a {
   text-align: right;
 }
 
+.cookie-tooltip p a {
+  font-size: var(--font-size-200);
+  color: var(--white);
+  border-bottom: 1px solid var(--white);
+  text-decoration: none;
+}
+
 p strong > em > a:any-link {
   background-color: transparent;
   color: var(--accent-blue-primary-70);
@@ -869,6 +876,11 @@ html[dir="rtl"] a:any-link {
 a:any-link.disabled {
   color: rgb(0 41 77 / 42%);
   cursor: unset;
+}
+
+.cookie-tooltip p > a:visited,
+.cookie-tooltip p > a:hover {
+  color: var(--white);
 }
 
 p strong > em > a:any-link:hover {
@@ -1323,19 +1335,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.main-heading p {
-  font-size: var(--main-heading-font-size);
-  text-transform: uppercase;
-  margin: var(--main-heading-spacing);
-  color: var(--accent-blue-primary-90);
-  line-height: var(--main-heading-line-height);
-}
-
-.section[class*='bg-primary-blue'] .main-heading p {
-  color: var(--white);
-}
-
-
 #skip-to-main-content {
   position: absolute;
   overflow: hidden;
@@ -1358,4 +1357,87 @@ body::-webkit-scrollbar {
 .auto-image-container {
   padding:0;
   margin:0;
+}
+
+
+/* Cookie Pop Up Styles */
+.cookie-tooltip {
+  background: rgb(0 0 0 / 87%);
+  padding: 16px 20px;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.cookie-tooltip, .cookie-tooltip .close {
+  animation-duration: .6s;
+  animation-name: slideUp;
+}
+
+.cookie-tooltip .container {
+  margin: auto;
+}
+
+.cookie-tooltip p {
+  line-height: 18px;
+  color: var(--white);
+  margin: 0 auto;
+  font-size: var(--font-size-200);
+  animation-duration: .6s;
+  animation-name: slideUp;
+}
+
+.cookie-tooltip .close {
+  height: 32px;
+  width: 32px;
+  color: var(--white);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.cookie-tooltip .close:focus-visible {
+  outline: 2px solid var(--links-focus-color);
+}
+
+.cookie-tooltip > .container > button > span {
+  font-size: var(--body-font-size);
+}
+
+@media (width >= 1024px) {
+  .cookie-tooltip .container {
+      max-width: calc(var(--screen-width) + (var(--section-gutter-space)*2) - (var(--section-reduced-space) * 2));
+  }
+}
+
+@media (width < 768px) {
+  .cookie-tooltip p > a {
+      line-height: 14px;
+  }
+
+  .cookie-tooltip > .container > button > span {
+      font-size: var(--font-size-200);
+  }
+}
+
+/* End of Cookie Pop Up Styles */
+
+.main-heading p {
+  font-size: var(--main-heading-font-size);
+  text-transform: uppercase;
+  margin: var(--main-heading-spacing);
+  color: var(--accent-blue-primary-90);
+  line-height: var(--main-heading-line-height);
+}
+
+.section[class*='bg-primary-blue'] .main-heading p {
+  color: var(--white);
 }
