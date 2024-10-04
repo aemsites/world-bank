@@ -196,7 +196,7 @@ async function createSkipToMainNavigationBtn() {
 export async function load404() {
   const main = document.querySelector('main');
   const placeholders = await fetchLanguagePlaceholders();
-  const homelink = main.querySelector('.button-container a');
+  const homelink = main.querySelector('p a');
   const searchForm = main.querySelector('form');
   main.querySelector('h1').innerText = placeholders.notFoundHeading || 'Page Not Found';
   main.querySelector('h2').innerText = placeholders.notFoundSubHeading || '404 Error';
