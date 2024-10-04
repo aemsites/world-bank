@@ -94,7 +94,7 @@ function showThankYouMessage(formElement, message) {
 }
 
 function pushToWBGDataLayerOnload(placeholder) {
-  if (window.wbgData) {
+  if (window.wbgData && window.wbgData.page) {
     window.wbgData.page.pageInfo.formName = placeholder[CONSTANTS.SIGNUP_ANALYTICS_FORMNAME] || 'Subscribe by Email';
     window.wbgData.page.pageInfo.formType = placeholder[CONSTANTS.SIGNUP_ANALYTICS_FORMTYPE] || 'Email Subscription';
   }
