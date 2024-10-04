@@ -40,15 +40,16 @@ function cookiePopUp() {
   }
 
   const cookieSection = section({ class: 'cookie-tooltip' });
-  const placeholders = window.placeholders[`/${getLanguage()}`] || {};
+  const placeholders = window.placeholders[`${PATH_PREFIX}/${getLanguage()}`] || {};
   const hasCookieText = !!(placeholders && placeholders.cookiePopUpText);
   if (!hasCookieText) return;
   const cookieContainer = div(
     { class: 'container' },
     p(
+      { tabindex: 1 },
       `${placeholders.cookiePopUpText}`,
       a(
-        { href: `${placeholders.cookiePopUpLearnMoreLink || '#'}` },
+        { href: `${placeholders.cookiePopUpLearnMoreLink || '#'}`, tabindex: 1 },
         `${placeholders.cookiePopUpLearnMoreLinkLabel || 'Click Here'}`,
       ),
     ),
@@ -56,6 +57,7 @@ function cookiePopUp() {
       {
         type: 'button',
         class: 'close accept-consent',
+        tabindex: 1,
         'aria-label': `${placeholders.cookiePopUpCloseAriaLabel || 'Close Cookie Notification'}`,
         onclick: () => setConsentCookie('consent_cookie', '1', 365, cookieSection),
       },

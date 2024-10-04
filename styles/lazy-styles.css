@@ -242,6 +242,10 @@ html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
     padding: 0;
 }
 
+.cookie-tooltip .close:focus-visible {
+    outline: 2px solid var(--links-focus-color);
+}
+
 .cookie-tooltip .close span, .cookie-tooltip .close:hover, .cookie-tooltip .close:focus {
     color: var(--white);
 }
