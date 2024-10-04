@@ -2,6 +2,7 @@ import { div, img } from '../../scripts/dom-helpers.js';
 import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 import { TAG_ROOT } from '../../scripts/utils.js';
 
+const isMobile = window.matchMedia('(max-width: 768px)');
 const desktopConst = 400;
 const tabConst = 150;
 const tabTopPosition = 100;
@@ -104,9 +105,11 @@ export default async function decorate(block) {
       src: firstimg.src, alt: firstimg.alt || '', height: 731, width: 704,
     });
     imageContainer.append(imgElement);
-    imageContainer.style.backgroundImage = `url(${
-      firstimg.src
-    })`;
+    if (!isMobile) {
+      imageContainer.style.backgroundImage = `url(${
+        firstimg.src
+      })`;
+    }
   }
   leftColumnContainer.append(imageContainer);
   block.append(leftColumnContainer);
