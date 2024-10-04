@@ -20,15 +20,18 @@ function createCard(card) {
   carddesc.className = 'carddesc';
 }
 
-function handleBG(priorityListleft, cards) {
+const handleBG = new ResizeObserver(() => {
+  const priorityListleft = document.querySelector('.priority-list .left-column-container');
+  const priorityListright = document.querySelector('.priority-list .right-column-container');
   const imageContainer = priorityListleft.querySelector('.image-container');
+  const cards = priorityListright.querySelector('.cards-container');
   if (isMobile) {
-    const firstimg = cards.at(0).querySelector('img');
+    const firstimg = [...cards.children].at(0).querySelector('img');
     imageContainer.style.backgroundImage = `url(${
       firstimg.src
     })`;
   }
-}
+});
 
 function handlePriorityListScroll(leftColumnContainer, cards) {
   const image = leftColumnContainer.querySelector('.image-container');
@@ -120,6 +123,6 @@ export default async function decorate(block) {
   block.append(leftColumnContainer);
 
   window.addEventListener('scroll', () => handlePriorityListScroll(leftColumnContainer, cards));
-  window.addEventListener('resize', () => handleBG(leftColumnContainer, cards));
+  handleBG.observe(document.body);
   block.append(rightColumnContainer);
 }
