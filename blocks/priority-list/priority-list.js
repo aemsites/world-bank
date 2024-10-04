@@ -7,8 +7,8 @@ const desktopConst = 400;
 const tabConst = 150;
 const tabTopPosition = 100;
 function createCard(card) {
-  const [cardtitle, carddesc, imagediv] = card.children;
-  if (!cardtitle || !carddesc || !imagediv) {
+  const [cardtitle, carddesc, imagediv, imagealt] = card.children;
+  if (!cardtitle || !carddesc || !imagediv || !imagealt) {
     return;
   }
   cardtitle.textContent = cardtitle.textContent.replace(
@@ -18,6 +18,9 @@ function createCard(card) {
   card.className = cardtitle.textContent.trim();
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
+  const image = imagediv.querySelector('img');
+  image.alt = imagealt.querySelector('p').textContent.trim() || '';
+  imagealt.remove();
 }
 function handlePriorityListScroll(leftColumnContainer, cards) {
   const image = leftColumnContainer.querySelector('.image-container');
@@ -64,21 +67,6 @@ function handlePriorityListScroll(leftColumnContainer, cards) {
         image.style.backgroundImage = `url(${card.querySelector('img').src})`;
       }
     });
-  }
-}
-
-function handleBGImage() {
-  console.log('called');
-  const priorityList = document.querySelector('.priority-list .left-column-container');
-  const imageContainer = priorityList.querySelector('.image-container');
-  const cards = priorityList.querySelector('.cards-container');
-  if (isMobile) {
-    imageContainer.style.backgroundImage = 'none';
-  } else {
-    const firstimg = cards.at(0).querySelector('img');
-    imageContainer.style.backgroundImage = `url(${
-      firstimg.src
-    })`;
   }
 }
 export default async function decorate(block) {
@@ -130,6 +118,5 @@ export default async function decorate(block) {
   block.append(leftColumnContainer);
 
   window.addEventListener('scroll', () => handlePriorityListScroll(leftColumnContainer, cards));
-  window.addEventListener('resize', () => handleBGImage());
   block.append(rightColumnContainer);
 }
