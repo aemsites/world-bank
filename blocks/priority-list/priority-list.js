@@ -23,7 +23,6 @@ function createCard(card) {
 function handleBG(priorityListleft, cards) {
   const imageContainer = priorityListleft.querySelector('.image-container');
   if (isMobile) {
-    imageContainer.style.backgroundImage = 'none';
     const firstimg = cards.at(0).querySelector('img');
     imageContainer.style.backgroundImage = `url(${
       firstimg.src
