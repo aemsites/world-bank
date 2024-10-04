@@ -19,6 +19,7 @@ import {
   createSource,
   formatDate,
   setPageLanguage,
+  cookiePopUp,
   PATH_PREFIX,
 } from './utils.js';
 
@@ -180,7 +181,6 @@ async function createSkipToMainNavigationBtn() {
   main.id = 'main';
 
   const anchor = document.createElement('a');
-  anchor.tabIndex = 0;
   anchor.id = 'skip-to-main-content';
   anchor.className = 'visually-hidden focusable';
   anchor.href = '#main';
@@ -212,7 +212,6 @@ export async function load404() {
 async function loadEager(doc) {
   setPageLanguage();
   decorateTemplateAndTheme();
-  createSkipToMainNavigationBtn();
   renderWBDataLayer();
   const main = doc.querySelector('main');
   if (main) {
@@ -229,6 +228,8 @@ async function loadEager(doc) {
   } catch (e) {
     // do nothing
   }
+  await createSkipToMainNavigationBtn();
+  await cookiePopUp();
 }
 
 /**
