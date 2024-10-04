@@ -104,8 +104,9 @@ export default async function decorate(block) {
     const imgElement = img({
       src: firstimg.src, alt: firstimg.alt || '', height: 731, width: 704,
     });
-    imageContainer.append(imgElement);
-    if (!isMobile) {
+    if (isMobile) {
+      imageContainer.append(imgElement);
+    } else if (!isMobile) {
       imageContainer.style.backgroundImage = `url(${
         firstimg.src
       })`;
