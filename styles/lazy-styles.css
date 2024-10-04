@@ -175,6 +175,18 @@ html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
     }
 }
 
+@media (width < 768px) {
+    .columns.columns-transform-teaser .columns-img-col::before {
+        right: 9%;
+    }
+  
+    html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before { 
+        left: 10%;
+        top: 14%;
+        right: auto;
+    }
+  }
+
 /* tweetable link css */
 /* stylelint-disable no-descending-specificity */
 main span.tweetable {

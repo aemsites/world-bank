@@ -261,7 +261,7 @@ export function cookiePopUp() {
     { class: 'container' },
     p(
       { tabindex: 0 },
-      `${placeholders.cookiePopUpText}`,
+      `${placeholders.cookiePopUpText} `,
       a(
         { href: `${placeholders.cookiePopUpLearnMoreLink || '#'}` },
         `${placeholders.cookiePopUpLearnMoreLinkLabel || 'Click Here'}`,
