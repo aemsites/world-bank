@@ -16,7 +16,7 @@ main .breadcrumb-wrapper ol li {
 
 main .breadcrumb-wrapper a {
   font-size: var(--font-size-200);
-  line-height: 1.4;
+  line-height: 1.2;
   color: var(--accent-blue-primary-70);
   text-decoration: none;
 }
@@ -31,6 +31,10 @@ main .breadcrumb-wrapper ol li span.breadcrumb-separator {
   border-left: 1px solid var(--neutral-solid-30-s);
   height: 17px;
   margin: 0 14px;
+}
+
+main .breadcrumb-wrapper ol li:last-child span.breadcrumb-separator {
+  display: none;
 }
 
 main .breadcrumb-wrapper img {
