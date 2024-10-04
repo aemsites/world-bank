@@ -6,8 +6,8 @@ const desktopConst = 400;
 const tabConst = 150;
 const tabTopPosition = 100;
 function createCard(card) {
-  const [cardtitle, carddesc, imagediv, imagealt] = card.children;
-  if (!cardtitle || !carddesc || !imagediv || !imagealt) {
+  const [cardtitle, carddesc, imagediv] = card.children;
+  if (!cardtitle || !carddesc || !imagediv) {
     return;
   }
   cardtitle.textContent = cardtitle.textContent.replace(
@@ -17,9 +17,6 @@ function createCard(card) {
   card.className = cardtitle.textContent.trim();
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
-  const image = imagediv.querySelector('img');
-  image.alt = imagealt.querySelector('p').textContent.trim() || '';
-  imagealt.remove();
 }
 function handlePriorityListScroll(leftColumnContainer, cards) {
   const image = leftColumnContainer.querySelector('.image-container');
@@ -107,6 +104,7 @@ export default async function decorate(block) {
       src: firstimg.src, alt: firstimg.alt || '', height: 731, width: 704,
     });
     imageContainer.append(imgElement);
+    imageContainer.style.backgroundImage = 'none';
     imageContainer.style.backgroundImage = `url(${
       firstimg.src
     })`;
