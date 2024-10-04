@@ -205,7 +205,8 @@ html[dir="rtl"] .priority-list .right-column-container .cards-container > div .c
 
 .priority-list .left-column-container .image-container {
   background-size: contain;
-  background-size: 95%;
+  background-position: center;
+  width: 100%;
   background-repeat: no-repeat;
   height: 342px;
 }
