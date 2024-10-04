@@ -152,6 +152,10 @@ function attachFormValidation(block, placeholders) {
 
     // Reset previous styles
     emailInput.classList.remove('input-error');
+    emailInput.setAttribute('aria-invalid', 'false');
+    emailInput.setAttribute('aria-describedby', 'email-error');
+    agreeInput.setAttribute('aria-invalid', 'false');
+    agreeInput.setAttribute('aria-describedby', 'terms-error');
 
     if (!validateEmail(email)) {
       errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_EMAIL_VALIDATION_MESSAGE] || 'Please enter a valid email.';
