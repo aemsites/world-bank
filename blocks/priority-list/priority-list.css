@@ -42,6 +42,11 @@
   margin: 0;
 }
 
+.priority-list .right-column-container .text-container .button-wrapper{
+  display: block;
+  margin-top: 0;
+}
+
 .priority-list .right-column-container .text-container .button-wrapper a {
   background-color: var(--white);
   color: var(--accent-blue-primary-70);
@@ -159,6 +164,7 @@ html[dir="rtl"] .priority-list .right-column-container .cards-container > div::b
 
 .priority-list .right-column-container .cards-container {
   display: flex;
+  gap: 0;
   flex-direction: column;
   max-height: fit-content;
 }
