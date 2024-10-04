@@ -1,7 +1,3 @@
-.section.priority-list-container {
-  padding-bottom: 0;
-}
-
 .priority-list {
   display: grid;
   max-width: var(--screen-width);
