@@ -20,6 +20,7 @@ import {
   formatDate,
   setPageLanguage,
   cookiePopUp,
+  showCookieConsent,
   PATH_PREFIX,
 } from './utils.js';
 
@@ -212,6 +213,8 @@ export async function load404() {
 async function loadEager(doc) {
   setPageLanguage();
   decorateTemplateAndTheme();
+  await createSkipToMainNavigationBtn();
+  await cookiePopUp();
   renderWBDataLayer();
   const main = doc.querySelector('main');
   if (main) {
@@ -228,8 +231,6 @@ async function loadEager(doc) {
   } catch (e) {
     // do nothing
   }
-  await createSkipToMainNavigationBtn();
-  await cookiePopUp();
 }
 
 /**
@@ -307,7 +308,7 @@ async function loadLazy(doc) {
   if (hash && element) element.scrollIntoView();
 
   decorateSectionImages(doc);
-
+  showCookieConsent();
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
 

@@ -253,7 +253,7 @@ export function cookiePopUp() {
     return;
   }
 
-  const cookieSection = section({ class: 'cookie-tooltip' });
+  const cookieSection = section({ class: 'cookie-tooltip', style: 'display:none;' });
   const placeholders = window.placeholders[`${PATH_PREFIX}/${getLanguage()}`] || {};
   const hasCookieText = !!(placeholders && placeholders.cookiePopUpText);
   if (!hasCookieText) return;
@@ -283,4 +283,8 @@ export function cookiePopUp() {
 
   cookieSection.append(cookieContainer);
   document.body.insertBefore(cookieSection, document.body.firstChild);
+}
+
+export function showCookieConsent() {
+  document.querySelector('.cookie-tooltip').style = 'display:block;';
 }
