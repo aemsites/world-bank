@@ -286,5 +286,8 @@ export function cookiePopUp() {
 }
 
 export function showCookieConsent() {
-  document.querySelector('.cookie-tooltip').style = 'display:block;';
+  const cookieSection = document.querySelector('.cookie-tooltip');
+  if (cookieSection) {
+    cookieSection.style = 'display:block;';
+  }
 }
