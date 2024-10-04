@@ -11,55 +11,107 @@
   <meta property="og:title" content="Page not found">
   <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
   <script type="module">
-    window.addEventListener('load', () => {
-      if (document.referrer) {
-        const { origin, pathname } = new URL(document.referrer);
-        if (origin === window.location.origin) {
-          const backBtn = document.createElement('a');
-          backBtn.classList.add('button', 'error-button-back');
-          backBtn.href = pathname;
-          backBtn.textContent = 'Go back';
-          backBtn.title = 'Go back';
-          const btnContainer = document.querySelector('.button-container');
-          btnContainer.append(backBtn);
-        }
-      }
-    });
-  </script>
-  <script type="module">
     import { sampleRUM } from '/scripts/aem.js';
+    import { load404 } from '/scripts/scripts.js';
     sampleRUM('404', { source: document.referrer });
+
+    await load404();
   </script>
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
-    main.error {
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
+    body.error header .language-container {
+      display: none;
     }
 
-    main.error .error-number {
+    body.error main.loading .section .default-content-wrapper {
+      opacity: 0;
+    }
+
+    body.error main .section {
+      text-align: center;
+    }
+
+    body.error main .section a.button {
+      text-transform: uppercase;
+      margin-top: 40px;
+    }
+
+    body.error main .section form {
+      display: block;
+      position: relative;
+    }
+
+    body.error main .section form input {
       width: 100%;
+      height: 45px;
+      padding: 2px 10px;
     }
 
-    main.error .error-number text {
-      font-family: var(--fixed-font-family);
+    body.error main .section form button {
+      position: absolute;
+      right: 0;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+      border: unset;
+      border-radius: unset;
+    }
+
+    html[dir="rtl"] body.error main .section form button {
+      left: 0;
+      right: unset;
+    }
+
+    body.error main .section form button:hover,
+    body.error main .section form button:focus {
+      background-color: transparent;
+    }
+
+    body.error main .section form button .search-icon {
+      cursor: pointer;
+      width: 24px;
+      padding: 10px;
     }
   </style>
   <link rel="stylesheet" href="/styles/lazy-styles.css">
 </head>
 
-<body>
+<body class="error">
   <header></header>
-  <main class="error">
-    <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
-      </p>
+  <main class="loading">
+    <div>
+      <h1 id="page-not-found">Page Not Found</h1>
+      <h2 id="error">404 Error</h2>
+      <p>The page you requested could not be found. Try using the search box below or click on the homepage button to go there.</p>
+      <form role="search" name="search" method="get" action="https://www.worldbank.org/en/search">
+        <input type="search" id="error-search-input" name="q" placeholder="Search worldbank.org">
+        <button type="submit" title="Search" class="search-submit-icon">
+          <img class="search-icon" src="/icons/search.svg" alt="search">
+        </button>
+      </form>
+      <p><a href="/ext/en/home">Go to homepage</a></p>
+      <div class="section-metadata">
+        <div>
+          <div>sec-spacing</div>
+          <div>section-xhuge</div>
+        </div>
+        <div>
+          <div>sec-spacing-bottom</div>
+          <div>section-xhuge</div>
+        </div>
+        <div>
+          <div>sec-swoosh</div>
+          <div>sec-swoosh-type1</div>
+        </div>
+        <div>
+          <div>style</div>
+          <div>bg-primary-blue-70</div>
+        </div>
+        <div>
+          <div>sec-width</div>
+          <div>true</div>
+        </div>
+      </div>
     </div>
   </main>
   <footer></footer>
