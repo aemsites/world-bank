@@ -22,6 +22,7 @@ function createFeatureCard(row, placeHolders) {
   const [
     featureImageContent,
     featureAltContent,
+    featureQueryParams,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
@@ -43,6 +44,13 @@ function createFeatureCard(row, placeHolders) {
     div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
   const pictureElement = featureImageContent.querySelector('picture');
+  if (featureQueryParams) {
+    const pic = pictureElement.querySelector('img');
+    const baseUrl = pic.src.split('?')[0]; // Get the base URL without query params
+    if (pic) {
+      pic.src = `${baseUrl}?${featureQueryParams.textContent}`;
+    }
+  }
   if (pictureElement) {
     featureDiv.append(pictureElement);
   } else {
