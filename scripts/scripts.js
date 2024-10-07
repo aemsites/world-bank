@@ -290,33 +290,33 @@ function decorateSectionImages(doc) {
     const sectionMobImg = sectionImgContainer.dataset.mobImage;
     let defaultImgUrl = null;
 
-    const picture = document.createElement('picture');
+    const newPic = document.createElement('picture');
     if (sectionImg) {
-      picture.appendChild(createSource(sectionImg, 1920, '(min-width: 1024px)'));
+      newPic.appendChild(createSource(sectionImg, 1920, '(min-width: 1024px)'));
       defaultImgUrl = sectionImg;
     }
 
     if (sectionTabImg) {
-      picture.appendChild(createSource(sectionTabImg, 1024, '(min-width: 768px)'));
+      newPic.appendChild(createSource(sectionTabImg, 1024, '(min-width: 768px)'));
       defaultImgUrl = sectionTabImg;
     }
 
     if (sectionMobImg) {
-      picture.appendChild(createSource(sectionTabImg, 600, '(max-width: 767px)'));
+      newPic.appendChild(createSource(sectionTabImg, 600, '(max-width: 767px)'));
       defaultImgUrl = sectionMobImg;
     }
 
-    const img = document.createElement('img');
-    img.src = defaultImgUrl;
-    img.alt = '';
-    img.className = 'sec-img';
-    img.loading = 'lazy';
-    img.width = '768';
-    img.height = '100%';
+    const newImg = document.createElement('img');
+    newImg.src = defaultImgUrl;
+    newImg.alt = '';
+    newImg.className = 'sec-img';
+    newImg.loading = 'lazy';
+    newImg.width = '768';
+    newImg.height = '100%';
 
     if (defaultImgUrl) {
-      picture.appendChild(img);
-      sectionImgContainer.prepend(picture);
+      newPic.appendChild(newImg);
+      sectionImgContainer.prepend(newPic);
     }
   });
 }
