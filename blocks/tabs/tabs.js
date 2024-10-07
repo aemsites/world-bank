@@ -242,20 +242,24 @@ export default async function decorate(block) {
     tabpanel.setAttribute('data-loaded', false);
     tabpanel.children[1].remove();
 
-    const tabButton = li({
-      class: 'tab-btn',
+    const tabButton = button({
+      class: 'tab-title',
       id: `tab-${id}`,
       type: 'button',
       'aria-controls': `tabpanel-${id}`,
       'aria-selected': !i,
       role: 'tab',
-    }, button({ class: 'tab-title' }, tab.textContent.trim()));
+    }, tab.textContent.trim());
+
+    const tabListEl = li({
+      class: 'tab-btn',
+    }, tabButton);
 
     tabButton.addEventListener('click', () => {
       block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
         panel.setAttribute('aria-hidden', true);
       });
-      tablist.querySelectorAll('li').forEach((btn) => {
+      tablist.querySelectorAll('button').forEach((btn) => {
         btn.setAttribute('aria-selected', false);
       });
       tabpanel.setAttribute('aria-hidden', false);
@@ -267,12 +271,29 @@ export default async function decorate(block) {
       }
     });
 
+    tabButton.addEventListener('keydown', (event) => {
+      const tabBtn = Array.from(tablist.querySelectorAll('button[class^="tab-"]'));
+      const currentIndex = tabBtn.indexOf(tabButton);
+
+      if (event.key === 'ArrowLeft') {
+        const previousTab = currentIndex === 0
+          ? tabBtn[tabBtn.length - 1]
+          : tabBtn[currentIndex - 1];
+        previousTab.focus();
+      } else if (event.key === 'ArrowRight') {
+        const nextTab = currentIndex === tabBtn.length - 1
+          ? tabBtn[0]
+          : tabBtn[currentIndex + 1];
+        nextTab.focus();
+      }
+    });
+
     if (i === 0 && tabType !== 'manual') {
       decorateTab(tabpanel, tabType);
       tabpanel.setAttribute('data-loaded', true);
     }
 
-    tabBtnContainer.append(tabButton);
+    tabBtnContainer.append(tabListEl);
     tab.remove();
   });
 
