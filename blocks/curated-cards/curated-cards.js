@@ -45,12 +45,6 @@ function createFeatureCard(row, placeHolders) {
   );
   const pictureElement = featureImageContent.querySelector('picture');
 
-  if (pictureElement) {
-    featureDiv.append(pictureElement);
-  } else {
-    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
-  }
-
   if (featureQueryParams) {
     // Iterate over all child elements of <picture>
     pictureElement.children.forEach((child) => {
@@ -62,6 +56,12 @@ function createFeatureCard(row, placeHolders) {
       }
     });
   }
+  if (pictureElement) {
+    featureDiv.append(pictureElement);
+  } else {
+    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
+  }
+
 
   featureDiv.append(featureContentWrapper);
   return featureDiv;
