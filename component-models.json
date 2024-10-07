@@ -600,6 +600,12 @@
         "valueType": "string"
       },
       {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "enable-smart-crop",
+        "label": "Enable Smart Crop"
+      },
+      {
         "component": "aem-tag",
         "name": "curated-card-tags",
         "label": "Tags for Card",
