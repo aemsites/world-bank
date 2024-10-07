@@ -278,7 +278,6 @@ const getNavigationMenu = (structuredNav, placeholdersData) => {
     const level0MenuItem = li(
       {
         tabindex: '0',
-        role: 'link',
         'aria-expanded': 'false',
         onkeydown: (e) => (e.code === 'Enter'
           ? showSubMenu(
