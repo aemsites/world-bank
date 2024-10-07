@@ -35,6 +35,7 @@ function createFeatureCard(row, placeHolders) {
     const pic = featureImageContent.querySelector('img');
     if (pic) {
       pic.alt = featureAltContent.textContent.trim();
+      pic.title = featureAltContent.textContent.trim();
     }
     featureAltContent.innerHTML = '';
   }
@@ -45,6 +46,16 @@ function createFeatureCard(row, placeHolders) {
   );
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
+    if (featureQueryParams) {
+      pictureElement.children.forEach((child) => {
+        const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
+        if (child.tagName === 'SOURCE') {
+          child.srcset = `${baseUrl}?${featureQueryParams.textContent}`;
+        } else if (child.tagName === 'IMG') {
+          child.src = `${baseUrl}?${featureQueryParams.textContent}`;
+        }
+      });
+    }
     featureDiv.append(pictureElement);
   } else {
     featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));

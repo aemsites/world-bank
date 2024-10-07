@@ -13,12 +13,7 @@ import {
   fetchPlaceholders,
   getMetadata,
 } from './aem.js';
-
-import {
-  picture,
-  source,
-  img,
-} from './dom-helpers.js';
+import { picture, source, img } from './dom-helpers.js';
 
 import {
   getLanguage,
@@ -125,13 +120,13 @@ export function decorateDMImages(main) {
     const url = new URL(a.href);
     if (url.hostname.endsWith('.adobeaemcloud.com')) {
       const pictureEl = picture(
-        source({ srcset: url.href, type: 'image/webp', media: '(min-width: 992px)' }),
-        source({ srcset: url.href, type: 'image/webp', media: '(min-width: 768px)' }),
-        source({ srcset: url.href, type: 'image/webp', media: '(min-width: 320px)' }),
-        source({ srcset: url.href, media: '(min-width: 992px)' }),
-        source({ srcset: url.href, media: '(min-width: 768px)' }),
-        source({ srcset: url.href, media: '(min-width: 320px)' }),
-        img({ src: url.href }),
+        source({ srcset: `${url.href}?width=1400&quality=85&preferwebp=true`, type: 'image/webp', media: '(min-width: 992px)' }),
+        source({ srcset: `${url.href}?width=1320&quality=85&preferwebp=true`, type: 'image/webp', media: '(min-width: 768px)' }),
+        source({ srcset: `${url.href}?width=780&quality=85&preferwebp=true`, type: 'image/webp', media: '(min-width: 320px)' }),
+        source({ srcset: `${url.href}?width=1400&quality=85`, media: '(min-width: 992px)' }),
+        source({ srcset: `${url.href}?width=1320&quality=85`, media: '(min-width: 768px)' }),
+        source({ srcset: `${url.href}?width=780&quality=85`, media: '(min-width: 320px)' }),
+        img({ src: `${url.href}?width=1400&quality=85`, alt: a.innerText }),
       );
       a.replaceWith(pictureEl);
     }
