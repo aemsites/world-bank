@@ -47,7 +47,7 @@ function createFeatureCard(row, placeHolders) {
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
     if (featureQueryParams) {
-      pictureElement.children.forEach((child) => {
+      Array.from(pictureElement.children).forEach((child) => {
         const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
         if (child.tagName === 'SOURCE') {
           child.srcset = `${baseUrl}?${featureQueryParams.textContent}`;
