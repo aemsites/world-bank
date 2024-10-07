@@ -18,9 +18,7 @@
     height: 482px;
 }
 
-.teaser-wrapper .video-container .video-play, .teaser-wrapper .video-container .video-pause {
-    width: 34px;
-    height: 34px;
+.teaser-wrapper .video-container .video-play-btn, .teaser-wrapper .video-container .video-pause-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,8 +48,8 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(313deg) brightness(120%) contrast(100%);
 }
     
-.video-container .video-pause .controls .pause-icon {
-    height: 32px;
+.video-container .video-pause .controls.pause-icon {
+    height: 34px;
 }
     
 .teaser-wrapper video {

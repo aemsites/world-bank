@@ -23,7 +23,7 @@
   display: none;
 } 
 
-.tab-navigation .tabs-list .tab-btn[aria-selected='true']{
+.tab-navigation .tabs-list .tab-btn > button[aria-selected='true']{
   border: 0;
   border-bottom: 3px solid var(--background-container-secondary);
   cursor: initial;
@@ -55,6 +55,7 @@
 .tab-navigation .tabs-list .tab-btn .tab-title:focus-visible {
   outline: 2px solid var(--links-focus-color);
   border-color: transparent;
+  outline-offset: -1px;
 }
 
 .tab-navigation .tabs-list .tab-btn[aria-selected='true'] .tab-title:hover{
