@@ -44,25 +44,11 @@ function createFeatureCard(row, placeHolders) {
     div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
   const pictureElement = featureImageContent.querySelector('picture');
-
-  if (featureQueryParams) {
-    // Iterate over all child elements of <picture>
-    pictureElement.children.forEach((child) => {
-      const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0]; // Get base URL
-      if (child.tagName === 'SOURCE') {
-        child.srcset = `${baseUrl}?${featureQueryParams.textContent}`; // Update srcset for <source> elements
-      } else if (child.tagName === 'IMG') {
-        child.src = `${baseUrl}?${featureQueryParams.textContent}`; // Update src for <img> element
-      }
-    });
-  }
   if (pictureElement) {
     featureDiv.append(pictureElement);
   } else {
     featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
   }
-
-
   featureDiv.append(featureContentWrapper);
   return featureDiv;
 }
