@@ -2,12 +2,15 @@ function handleExpandCollapse(event) {
   const button = event.target;
   const card = button.closest('.organizational-card');
   card.classList.toggle('collapsed');
+  const isCollapsed = card.classList.contains('collapsed');
+  card.setAttribute('aria-expanded', !isCollapsed);
 }
 
 function closeOpenCards() {
   const openCards = document.querySelectorAll('.organizational-card:not(.collapsed)');
   [...openCards].forEach((card) => {
     card.classList.add('collapsed');
+    card.setAttribute('aria-expanded', false);
   });
 }
 
@@ -39,9 +42,11 @@ export default async function decorate(block) {
     minusIcon.width = 20;
     minusIcon.height = 20;
     collapseBtn.appendChild(minusIcon);
+
     const expandBtn = document.createElement('div');
     expandBtn.classList.add('expand-btn');
     expandBtn.tabIndex = 0;
+    expandBtn.setAttribute('role', 'button');
     const plusIcon = document.createElement('img');
     plusIcon.src = `${window.hlx.codeBasePath}/icons/icon-plus.svg`;
     plusIcon.setAttribute('alt', 'Plus icon');
@@ -56,7 +61,7 @@ export default async function decorate(block) {
         handleExpandCollapse(event);
       });
       expandBtn.addEventListener(trigger, (event) => {
-        if (trigger === 'keydown' && event.key !== 'Enter') return; // escape non-enter keys
+        if (trigger === 'keydown' && event.key !== 'Enter') return;
         closeOpenCards();
         handleExpandCollapse(event);
       });
