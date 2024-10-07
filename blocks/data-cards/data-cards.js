@@ -5,16 +5,13 @@ import {
 import { toCamelCase } from '../../scripts/aem.js';
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
-
 const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
-
 function processTag(tag) {
-  console.log(tag,tag.innerText,tag.textContent)
   let tagTxt = tag.innerText;
   if (tagTxt) {
     tagTxt = processTags(tagTxt, 'category');
-    tagTxt= listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
+    tagTxt = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
     tag.classList.add(tagTxt);
     tag.firstElementChild.innerText = tagTxt;
   }
