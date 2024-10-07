@@ -21,11 +21,11 @@ function processTag(tagdiv, tagAuthored, placeholders) {
 function createFeatureCard(row, placeHolders) {
   const [
     featureImageContent,
+    featureAltContent,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
     featureLink,
-    featureAltContent,
   ] = row.children;
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
