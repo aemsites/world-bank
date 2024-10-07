@@ -282,6 +282,7 @@ function createSearchBox() {
       name: 'myInput',
       placeholder: listOfAllPlaceholdersData.searchVariable,
       value: '',
+      autocomplete: 'off'
     });
     searchInputBox.addEventListener('keydown', handleEnterKey);
     searchInputContainer.append(searchInputBox, searchIcon);

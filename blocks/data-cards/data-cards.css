@@ -380,6 +380,10 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
   height: 100%;
 }
 
+.data-cards .news-card .news-card-image img:hover, .data-cards a:not(:first-child) .news-card-image img:hover{
+  transform: scale(1.15);
+}
+
 .section .data-cards.news-card-variation .rte-container > .main-heading > div > p:first-child {
   font-size: var(--font-size-1000);
   color: var(--text-on-light-highlight);

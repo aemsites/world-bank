@@ -2,11 +2,19 @@ import { processTags } from '../../scripts/utils.js';
 import {
   div, a, p, img, button,
 } from '../../scripts/dom-helpers.js';
+import { toCamelCase } from '../../scripts/aem.js';
+import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+
+
+const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
+
 
 function processTag(tag) {
+  console.log(tag,tag.innerText,tag.textContent)
   let tagTxt = tag.innerText;
   if (tagTxt) {
     tagTxt = processTags(tagTxt, 'category');
+    tagTxt= listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
     tag.classList.add(tagTxt);
     tag.firstElementChild.innerText = tagTxt;
   }
