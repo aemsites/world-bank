@@ -34,26 +34,35 @@ function createFeatureCard(row, placeHolders) {
   if (featureAltContent) {
     const pic = featureImageContent.querySelector('img');
     if (pic) {
-      const baseUrl = pic.src.split('?')[0];
       pic.alt = featureAltContent.textContent.trim();
-      pic.src = `${baseUrl}?${featureQueryParams.textContent}`;
     }
     featureAltContent.innerHTML = '';
-  }
-  if (featureQueryParams) {
-    const pic = featureImageContent.querySelector('img');
-    const baseUrl = pic.src.split('?')[0];
-    if (pic) {
-      pic.src = `${baseUrl}?${featureQueryParams.textContent}`;
-    }
   }
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
     div({ class: ' feature-card-content-text' }, a({ href: featureLink.textContent }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent))),
     div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
-  const pictureElement = featureImageContent.querySelector('img');
-  featureDiv.append(pictureElement);
+  const pictureElement = featureImageContent.querySelector('picture');
+
+  if (pictureElement) {
+    featureDiv.append(pictureElement);
+  } else {
+    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
+  }
+
+  if (featureQueryParams) {
+    // Iterate over all child elements of <picture>
+    pictureElement.children.forEach((child) => {
+      const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0]; // Get base URL
+      if (child.tagName === 'SOURCE') {
+        child.srcset = `${baseUrl}?${featureQueryParams.textContent}`; // Update srcset for <source> elements
+      } else if (child.tagName === 'IMG') {
+        child.src = `${baseUrl}?${featureQueryParams.textContent}`; // Update src for <img> element
+      }
+    });
+  }
+
   featureDiv.append(featureContentWrapper);
   return featureDiv;
 }
