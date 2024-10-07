@@ -67,7 +67,6 @@ text-align: right;
     line-height: 17.5px;
     color: var(--text-on-light-highlight);
     font-size: var(--font-size-300);
-
 }
 
 .heading .heading-description:empty {
@@ -108,6 +107,10 @@ text-align: right;
 .heading p{
     margin: 0;
     padding: 0;
+}
+
+.uppercase{
+    text-transform: uppercase;
 }
 
 @media (width <768px) {
