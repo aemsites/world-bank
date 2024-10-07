@@ -44,17 +44,18 @@ function createFeatureCard(row, placeHolders) {
     div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
   );
   const pictureElement = featureImageContent.querySelector('picture');
+
+  if (pictureElement) {
+    featureDiv.append(pictureElement);
+  } else {
+    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
+  }
   if (featureQueryParams) {
     const pic = pictureElement.querySelector('img');
     const baseUrl = pic.src.split('?')[0]; // Get the base URL without query params
     if (pic) {
       pic.src = `${baseUrl}?${featureQueryParams.textContent}`;
     }
-  }
-  if (pictureElement) {
-    featureDiv.append(pictureElement);
-  } else {
-    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
   }
   featureDiv.append(featureContentWrapper);
   return featureDiv;
