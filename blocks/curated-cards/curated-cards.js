@@ -46,13 +46,14 @@ function createFeatureCard(row, placeHolders) {
   );
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
-    if (featureQueryParams) {
+    const queryParams = featureQueryParams.textContent.trim();
+    if (queryParams.length > 0) {
       Array.from(pictureElement.children).forEach((child) => {
         const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
-        if (child.tagName === 'SOURCE') {
-          child.srcset = `${baseUrl}?${featureQueryParams.textContent}`;
-        } else if (child.tagName === 'IMG') {
-          child.src = `${baseUrl}?${featureQueryParams.textContent}`;
+        if (child.tagName === 'SOURCE' && child.srcset) {
+          child.srcset = `${baseUrl}?${queryParams}`;
+        } else if (child.tagName === 'IMG' && child.src) {
+          child.src = `${baseUrl}?${queryParams}`;
         }
       });
     }
