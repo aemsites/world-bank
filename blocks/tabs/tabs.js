@@ -281,10 +281,9 @@ export default async function decorate(block) {
           : tabBtn[currentIndex - 1];
         previousTab.focus();
       } else if (event.key === 'ArrowRight') {
-        const nextTab =
-          currentIndex === tabBtn.length - 1
-            ? tabBtn[0]
-            : tabBtn[currentIndex + 1];
+        const nextTab = currentIndex === tabBtn.length - 1
+          ? tabBtn[0]
+          : tabBtn[currentIndex + 1];
         nextTab.focus();
       }
     });
