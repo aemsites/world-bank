@@ -118,43 +118,10 @@ export function decorateDMImages(main) {
   main.querySelectorAll('a[href^="https://delivery-p"]').forEach((a) => {
     const url = new URL(a.href);
     if (url.hostname.endsWith('.adobeaemcloud.com')) {
-      url.searchParams.delete('height');
-      url.searchParams.set('width', '750');
-      const webp750Url = url.href;
-      url.searchParams.delete('preferwebp');
-      const jpg750Url = url.href;
-      url.searchParams.set('width', '2000');
-      url.searchParams.set('preferwebp', true);
-      const webp2000Url = url.href;
-      url.searchParams.delete('preferwebp');
-      const jpg2000Url = url.href;
-
-      const pic = document.createElement('picture');
-
-      const source1 = document.createElement('source');
-      source1.type = 'image/webp';
-      source1.srcset = webp750Url;
-
-      const source2 = document.createElement('source');
-      source2.type = 'image/webp';
-      source2.srcset = webp2000Url;
-      source2.media = '(min-width: 600px)';
-
-      const source3 = document.createElement('source');
-      const nonWebpType = 'image/jpg';
-      source3.type = nonWebpType;
-      source3.media = '(min-width: 600px)';
-      source3.srcset = jpg2000Url;
-
       const img = document.createElement('img');
       img.loading = 'lazy';
-      img.src = jpg750Url;
-
-      pic.appendChild(source1);
-      pic.appendChild(source2);
-      pic.appendChild(source3);
-      pic.appendChild(img);
-      a.replaceWith(pic);
+      img.src = url.href;
+      a.replaceWith(img);
     }
   });
 }
