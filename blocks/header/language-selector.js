@@ -45,9 +45,15 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
     langPairs.forEach((pair) => {
       const [language, url] = pair.split(constants.PIPE_SEPARATOR).map((part) => part.trim());
       if (langCode === language) return;
+
+      let langAttr = {};
+      if (language.length === 2) {
+        langAttr = { lang: language };
+      }
+
       const liElement = li(
         a(
-          { href: `${url}`, lang: language },
+          { href: `${url}`, ...langAttr },
           getLanguageDisplayText(placeholdersData, language, false),
         ),
       );

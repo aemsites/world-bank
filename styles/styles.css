@@ -950,8 +950,7 @@ a.button:focus-visible,
 button:focus-visible,
 a.button.secondary:focus-visible,
 button.secondary:focus-visible {
-  border-color: var(--links-focus-color);
-  outline-style: unset;
+  outline: 2px solid var(--links-focus-color);
 }
 
 a.button.disabled,
@@ -1096,7 +1095,7 @@ p.button-container {
 
 .section[class*='bg-primary-blue'] a.button:any-link:focus-visible, 
 .section[class*='bg-primary-blue'] button:focus-visible {
-  border-color: var(--links-focus-color);
+  outline: 2px solid var(--links-focus-color);
 }
 
 .section[class*='bg-primary-blue'] a.button.disabled,
