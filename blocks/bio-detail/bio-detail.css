@@ -139,6 +139,7 @@ html[dir="rtl"] .bio-detail .download-image{
   padding-bottom: var(--spacing-small);
   color: var(--text-on-light-emphasis);
   line-height: 15.4px;
+  text-transform: uppercase;
 }
 
 .block-quote-container .default-content-wrapper p{
