@@ -68,7 +68,10 @@
               "page": {
                 "resourceType": "core/franklin/components/section/v1/section",
                 "template": {
-                  "model": "section"
+                  "name": "Section",
+                  "model": "section",
+                  "style": "default",
+                  "filter": "section"
                 }
               }
             }
