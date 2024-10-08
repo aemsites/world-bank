@@ -14,12 +14,12 @@ function createVideoPlayer(videoSrc) {
   const videoPlayer = div({ class: 'video-container' },
     div({ class: 'video-play', id: 'playButton', tabindex: 0 },
       button({ class: 'video-play-btn', 'aria-label': 'video-play-btn' }, img({
-        class: 'play-icon controls', src: playIcon, width: 28, height: 28, alt: 'play',
+        class: 'play-icon controls', src: playIcon, width: 28, height: 28, alt: 'play animation',
       })),
     ),
     div({ class: 'video-pause inactive', id: 'pauseButton' },
       button({ class: 'video-pause-btn', 'aria-label': 'video-pause-btn' }, img({
-        class: 'pause-icon controls', src: pauseIcon, width: 28, height: 28, alt: 'pause',
+        class: 'pause-icon controls', src: pauseIcon, width: 28, height: 28, alt: 'pause animation',
       })),
     ),
     video({ id: 'videoPlayer' },
