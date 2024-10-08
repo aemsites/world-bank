@@ -649,7 +649,7 @@ padding-left: 22px;
 }
 
 .columns.columns-divider-variant>div>div:last-child ul li::marker {
-  color: #181F25;
+  color: var(--neutral-solid-90-s);
 }
 
 html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child ul{
