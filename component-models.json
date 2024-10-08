@@ -2110,17 +2110,17 @@
         ]
       },
       {
-        "component": "boolean",
-        "valueType": "boolean",
-        "name": "uppercase",
-        "label": "Make Heading Text Uppercase"
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "suffix",
         "value": "",
         "label": "Suffix text"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "uppercase",
+        "label": "Make Heading Text Uppercase"
       },
       {
         "component": "boolean",

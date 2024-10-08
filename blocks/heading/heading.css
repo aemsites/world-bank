@@ -67,6 +67,7 @@ text-align: right;
     line-height: 17.5px;
     color: var(--text-on-light-highlight);
     font-size: var(--font-size-300);
+    text-transform: uppercase;
 }
 
 .heading .heading-description:empty {
@@ -104,16 +105,16 @@ text-align: right;
 .heading-border-spacing-huge hr { margin-top: var(--spacing-huge); }
 .heading-border-spacing-xhuge hr { margin-top: var(--spacing-xhuge); }
 
-.heading p{
+.heading p {
     margin: 0;
     padding: 0;
 }
 
-.uppercase{
+.heading .uppercase {
     text-transform: uppercase;
 }
 
-@media (width <768px) {
+@media (width < 768px) {
     .heading .eyebrowtext:not(:empty)  {
         font-size: var(--font-size-200);
     }
