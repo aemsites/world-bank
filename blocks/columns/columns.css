@@ -29,7 +29,7 @@
 .columns.columns-transform-teaser > div {
   display: grid;
   grid-template-columns: 45% 55%;
-  padding: var(--spacing-xhuge) 0;
+  padding: var(--spacing-xhuge) 0 75px;
   position: relative;
 }
 
@@ -362,6 +362,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 }
 
 @media(width < 1024px) {
+  .columns.columns-transform-teaser>div{
+    padding: var(--spacing-xhuge) 0;
+  }
+
   .column-layout-67-33 > div > div > p > a.button {
     margin: var(--spacing-medium) 0 0;
   }
