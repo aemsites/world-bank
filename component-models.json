@@ -2629,6 +2629,24 @@
     ]
   },
   {
+    "id": "dm-asset",
+    "fields": [
+      {
+        "component": "text",
+        "name": "dm_alttext",
+        "label": "Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "dm-image",
+        "label": "Image",
+        "configUrl": "https://feature-upsr-102--ups-dev--aemsites.aem.live/tools/asset-selector/image.config.json",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "explore-cards",
     "fields": [
       {
