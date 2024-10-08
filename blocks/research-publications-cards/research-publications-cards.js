@@ -11,7 +11,11 @@ function createCard(cardData) {
     imgElement.setAttribute('alt', imageAltText.textContent);
     imageContainer.className = 'card-img';
     imageAltText.remove();
-    const imgLink = a({ href: tLink, title: cardTitle.textContent }, imgElement.parentElement);
+    const imgLink = a({
+      href: tLink,
+      title: cardTitle.textContent,
+      tabIndex: '-1',
+    }, imgElement.parentElement);
     imageContainer.append(imgLink);
   }
   desc.className = 'desc';
