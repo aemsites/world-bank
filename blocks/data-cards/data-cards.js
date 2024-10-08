@@ -21,6 +21,7 @@ function processNewsTag(tag) {
   let tagTxt = tag.innerText;
   if (tagTxt) {
     tagTxt = processTags(tagTxt, 'category');
+    tagTxt = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
     tag.nextElementSibling.classList.add(tagTxt);
     tag.firstElementChild.innerText = tagTxt;
   }

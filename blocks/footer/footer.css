@@ -49,7 +49,7 @@ footer ul li {
 .ft-social {
   display: flex;
   flex-wrap: wrap;
-  border-bottom: 2px var(--accent-blue-primary-60) solid;
+  border-bottom: 2px var(--divider-on-dark-default) solid;
   padding: 44px 0 42px;
   gap: 32px;
 }
@@ -202,7 +202,7 @@ html[dir="rtl"] .ft-social .ft-social-list:dir(rtl) ul li.ft-main-item:not(:last
 }
 
 .ft-main .ft-main-item:last-child {
-  border-left: 2px solid var(--accent-blue-primary-60);
+  border-left: 2px solid var(--divider-on-dark-default);
   margin: 0 0 0 20px;
   min-width: 40%;
   padding: 0 0 0 48px;
