@@ -1,0 +1,16 @@
+{
+  "options": [
+    {
+      "name": "Default",
+      "value": ""
+    },
+    {
+      "name": "Primary",
+      "value": "primary"
+    },
+    {
+      "name": "Secondary",
+      "value": "secondary"
+    }
+  ]
+}
