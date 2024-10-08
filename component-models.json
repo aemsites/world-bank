@@ -2119,6 +2119,12 @@
       {
         "component": "boolean",
         "valueType": "boolean",
+        "name": "uppercase",
+        "label": "Make Heading Text Uppercase"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
         "name": "show_borderline",
         "label": "Show Borderline"
       },
@@ -2152,7 +2158,6 @@
         "name": "heading-top-spacing",
         "value": "",
         "label": "Heading Spacing Top (padding top)",
-        "description": "Heading top spacing",
         "valueType": "string",
         "options": [
           { "name": "Default spacing", "value": "heading-top-spacing-default" },
@@ -2175,7 +2180,6 @@
         "name": "heading-bottom-spacing",
         "value": "",
         "label": "Heading Spacing Bottom (padding bottom)",
-        "description": "Heading bottom spacing",
         "valueType": "string",
         "options": [
           { "name": "Default spacing", "value": "heading-bottom-default" },
