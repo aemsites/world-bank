@@ -127,6 +127,8 @@ function attachFormValidation(block, placeholders) {
     errorMessage.textContent = ''; // Reset error message
     if (!validateEmail(emailInput.value)) {
       emailInput.classList.add('input-error');
+      emailInput.setAttribute('aria-invalid', 'true');
+      emailInput.setAttribute('aria-describedby', 'email-error');
       errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_EMAIL_VALIDATION_MESSAGE] || 'Please enter a valid email.';
       emailInput.setAttribute('aria-invalid', 'true');
     } else {
@@ -150,10 +152,16 @@ function attachFormValidation(block, placeholders) {
 
     // Reset previous styles
     emailInput.classList.remove('input-error');
+    emailInput.setAttribute('aria-invalid', 'false');
+    emailInput.setAttribute('aria-describedby', 'email-error');
+    agreeInput.setAttribute('aria-invalid', 'false');
+    agreeInput.setAttribute('aria-describedby', 'terms-error');
 
     if (!validateEmail(email)) {
       errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_EMAIL_VALIDATION_MESSAGE] || 'Please enter a valid email.';
       emailInput.classList.add('input-error');
+      emailInput.setAttribute('aria-invalid', 'true');
+      emailInput.setAttribute('aria-describedby', 'email-error');
       return;
     }
 
@@ -161,6 +169,8 @@ function attachFormValidation(block, placeholders) {
       termErrorMessage.textContent = placeholders[CONSTANTS.SIGNUP_TERMS_VALIDATION]
         || 'Please agree with the terms.';
       agreeInput.classList.add('input-error');
+      agreeInput.setAttribute('aria-invalid', 'true');
+      agreeInput.setAttribute('aria-describedby', 'terms-error');
       return;
     }
 
@@ -206,6 +216,7 @@ function createSignupModule(block, placeholders) {
           type: 'email',
           id: 'email',
           placeholder: ' ',
+          require: true,
           'aria-describedby': 'error-message',
         }),
         label({
@@ -233,12 +244,13 @@ function createSignupModule(block, placeholders) {
       input({
         type: 'checkbox',
         id: 'agree',
+        require: true,
       }),
       label({
         for: 'agree',
       }, placeholders[CONSTANTS.SIGNUP_TERMS] || 'I agree with the terms of the Privacy Notice and consent to my personal data being processed, to the extent necessary, to subscribe to the selected updates.'),
     ),
-    div({ class: 'error-message', id: 'term-error-message' }),
+    div({ class: 'error-message', id: 'term-error-message', role: 'alert' }),
     button({ type: 'submit', id: 'signup-btn' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
   );
 
