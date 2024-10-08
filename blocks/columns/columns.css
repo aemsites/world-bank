@@ -649,6 +649,10 @@ html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child {
 padding-left: 22px;
 }
 
+.columns.columns-divider-variant>div>div:last-child ul li::marker {
+  color: #181F25;
+}
+
 html[dir="rtl"] .columns.columns-divider-variant > div > div:last-child ul{
   padding-right: 18px;
 }
