@@ -30,6 +30,10 @@
   color: var(--text-on-light-emphasis);
 } 
 
+.tab-navigation .tabs-list .tab-btn > button[aria-selected='true']:hover{
+  text-decoration: none;
+}
+
 .tab-navigation .tabs-list .tab-btn .tab-title {
   margin: var(--spacing-none);
   text-transform: capitalize;
@@ -47,6 +51,7 @@
 .tab-navigation .tabs-list .tab-btn .tab-title:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px ;
+  text-underline-offset: 4px;
   text-decoration-color: var(--accent-blue-primary-40);
   color: var(--text-on-light-emphasis);
   cursor: pointer;
