@@ -537,6 +537,10 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
     padding-bottom: var(--spacing-medium);
   }
 
+  .data-cards .news-card .news-card-image img {
+    transition: transform 0.2s;
+  }
+
   .data-cards.news-card-variation .news-card-items a:not(:first-child) .news-card {
     display: grid;
     grid-template-columns: auto 30%;
@@ -574,6 +578,7 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
     align-self: center;
     width: 100%;
     max-width: 248px;
+    transition: transform 0.2s;
   }
 
   .data-cards.news-card-variation .rte-container {
