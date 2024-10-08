@@ -323,6 +323,21 @@
           }
         },
         {
+          "title": "News Card",
+          "id": "news-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "News Card",
+                  "model": "news-card"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Dynamic Media Asset",
           "id": "dm-asset",
           "plugins": {
@@ -474,6 +489,21 @@
                   "name": "live-now",
                   "model": "live-now",
                   "key-value": true
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Impact Card",
+          "id": "impact-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Impact Card",
+                  "model": "impact-card"
                 }
               }
             }

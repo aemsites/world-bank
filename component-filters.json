@@ -84,6 +84,12 @@
     ]
   },
   {
+    "id": "impact-cards",
+    "components": [
+      "impact-card"
+    ]
+  },
+  {
     "id": "mini-cards",
     "components": [
       "mini-card"

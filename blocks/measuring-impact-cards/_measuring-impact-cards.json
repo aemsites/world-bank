@@ -1,0 +1,138 @@
+{
+  "definitions": [
+    {
+      "title": "Impact Card",
+      "id": "impact-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Impact Card",
+              "model": "impact-card"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "impact-card",
+      "fields": [
+        {
+          "component": "select",
+          "name": "indicator",
+          "value": "",
+          "label": "Indicator Tag",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Protection for the Poorest ",
+              "value": "protectionForThePoorest-people"
+            },
+            {
+              "name": "No Learning Poverty",
+              "value": "noLeavingPoverty-people"
+            },
+            {
+              "name": "Healthier Lives",
+              "value": "healthierLives-people"
+            },
+            {
+              "name": "Effective Macroeconomic & Fiscal Management",
+              "value": "effectiveMacroEconomicNFiscalManagement-prosperity"
+            },
+            {
+              "name": "Green and Blue Planet & Resilient Populations",
+              "value": "greenNBluePlanetNResilientPopulations-planet"
+            },
+            {
+              "name": "Inclusive and Equitable Water and Sanitation Services",
+              "value": "inclusiveNEquitableWaterNSanitationServices-planet"
+            },
+            {
+              "name": "Sustainable Food Systems",
+              "value": "sustainableFoodSystems-planet"
+            },
+            {
+              "name": "Connected Communities",
+              "value": "connectedCommunities-infrastructure"
+            },
+            {
+              "name": "Affordable, Reliable & Sustainable Energy For All",
+              "value": "affordableNReliableEnergyForAll-infrastructure"
+            },
+            {
+              "name": "Digital Connectivity",
+              "value": "digitalConnectivity-digital"
+            },
+            {
+              "name": "Digital Services",
+              "value": "digitalServices-digital"
+            },
+            {
+              "name": "Gender Equality and Youth Inclusion",
+              "value": "genderEqualityNYouthInclusion-crossCuttingThemes"
+            },
+            {
+              "name": "More and Better Jobs",
+              "value": "moreNBetterJobs-crossCuttingThemes"
+            },
+            {
+              "name": "Better Lives for People in Fragility, Conflict & Violence",
+              "value": "betterLivesForPeopleInFCV-crossCuttingThemes"
+            },
+            {
+              "name": "More Private Investment ",
+              "value": "morePrivateInvestment-crossCuttingThemes"
+            }
+          ]
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Icon",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "value": "",
+          "label": "Icon Alternate Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "value": "",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "value": "",
+          "label": "Impact Link",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "impact-cards",
+      "components": [
+        "impact-card"
+      ]
+    }
+  ]
+}
