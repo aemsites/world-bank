@@ -155,4 +155,51 @@ export default async function decorate(block) {
     resources,
     block,
   );
+
+  function isMobileViewport() {
+    return window.matchMedia('(max-width: 768px)').matches; // Adjust width as necessary
+  }
+
+  const mediaInq = block.querySelectorAll('.media-inquiries a');
+  const resourcesLinks = block.querySelectorAll('.resources > div > p a');
+  const socialMediaIcons = block.querySelectorAll(
+    '.second-container .social-media-link a',
+  );
+
+  const lastResourceLink = resourcesLinks[resourcesLinks.length - 1];
+  const lastSocialMediaIcon = socialMediaIcons[socialMediaIcons.length - 1];
+
+  // Function to set tab index
+  const setTabIndex = (elements, index) => {
+    elements.forEach((element) => {
+      element.tabIndex = index;
+    });
+  };
+
+  // Event listener for keydown event
+  block.addEventListener('keydown', (event) => {
+    const { key, shiftKey } = event;
+
+    if (key === 'Tab' && isMobileViewport()) {
+      if (document.activeElement === lastSocialMediaIcon) {
+        setTabIndex(mediaInq, 0);
+        setTabIndex(resourcesLinks, 0);
+        mediaInq[0].focus();
+      } else if (document.activeElement === lastResourceLink) {
+        setTabIndex(socialMediaIcons, -1); // Disable tabbing on social media icons
+      } else if (shiftKey) {
+        if (document.activeElement === lastResourceLink) {
+          setTabIndex(socialMediaIcons, -1); // Disable tabbing on social media icons
+          setTabIndex(resourcesLinks, 0); // Enable tabbing on resources
+          setTabIndex(mediaInq, 0);
+        } else if (document.activeElement === mediaInq[0]) {
+          setTabIndex(socialMediaIcons, 0);
+          lastSocialMediaIcon.focus();
+        } else if (document.activeElement === socialMediaIcons[0]) {
+          setTabIndex(resourcesLinks, -1);
+          setTabIndex(mediaInq, -1);
+        }
+      }
+    }
+  });
 }
