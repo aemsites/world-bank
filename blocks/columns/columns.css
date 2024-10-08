@@ -29,7 +29,7 @@
 .columns.columns-transform-teaser > div {
   display: grid;
   grid-template-columns: 45% 55%;
-  padding: var(--spacing-xhuge) 0;
+  padding: var(--spacing-xhuge) 0 75px;
   position: relative;
 }
 
@@ -207,11 +207,9 @@ html[dir="rtl"] .columns > div {
   .columns.columns-2-cols > div > div:last-child:has(p:only-child) > p:has(a:only-child) {
     align-self: flex-end;
   }
-  
 }
 
 /* Column alignment - End */
-
   .columns h2 {
     font-weight: 400;
   }
@@ -219,6 +217,7 @@ html[dir="rtl"] .columns > div {
   .columns > div > div > h2 {
     margin-bottom: var(--spacing-xxsmall);
     color: var(--text-on-light-highlight);
+    text-transform: uppercase;
   }
 
   .column-layout-67-33 > div > div > h2 {
@@ -362,6 +361,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 }
 
 @media(width < 1024px) {
+  .columns.columns-transform-teaser>div{
+    padding: var(--spacing-xhuge) 0;
+  }
+
   .column-layout-67-33 > div > div > p > a.button {
     margin: var(--spacing-medium) 0 0;
   }

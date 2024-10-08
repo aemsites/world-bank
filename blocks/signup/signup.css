@@ -132,10 +132,6 @@ html[dir="rtl"] .email-signup-container .error-message {
 
 /* Tablet Styles */
 @media (width >=768px) {
-  .email-signup-container .input-container {
-    width: 40%;
-  }
-
   input:focus + .floating-placeholder,
   input:not(:placeholder-shown) + .floating-placeholder {
     padding-left: 10px;
@@ -174,7 +170,12 @@ html[dir="rtl"] .email-signup-container .error-message {
   }
 
   .email-signup-container .input-group {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+  }
+
+  .email-signup-container .checkbox-group {
+    grid-template-columns: 1fr auto;
   }
 
   .email-signup-container input[type="email"] {
