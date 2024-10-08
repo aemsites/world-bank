@@ -1701,3 +1701,10 @@ html[dir="rtl"] header nav .nav-tools {
 input::-webkit-clear-button {
   display: none;
 }
+
+@media (width < 390px) {
+  header nav .nav-brand img {
+    width: 40vw; /* fallback */
+    width: 40dvw;
+  }
+}
