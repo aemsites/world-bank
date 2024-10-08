@@ -154,6 +154,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
     hamburgerButton.setAttribute('tabindex', '-1');
     hamburgerIcon.setAttribute('tabindex', '0');
     skiptomain.setAttribute('tabindex', '-1');
+    hamburgerIcon.focus();
   } else {
     hamburgerDiv.removeAttribute('tabindex');
     navMenuOverlay.querySelector('.nav-menu').setAttribute('aria-hidden', 'true');
@@ -163,6 +164,7 @@ async function toggleMenu(nav, navSections, forceExpanded = null) {
     hamburgerButton.removeAttribute('tabindex');
     hamburgerIcon.removeAttribute('tabindex');
     skiptomain.removeAttribute('tabindex');
+    hamburgerButton.focus();
   }
 
   if (!expanded) {
@@ -350,6 +352,68 @@ const closeSearchOnFocusOut = (e, navTools) => {
     }
   }
 };
+
+function handleMainMenuFocus(block, navSections, hamburger) {
+  block.addEventListener('keydown', (e) => {
+    const allowedKeys = ['ArrowLeft', 'ArrowRight', 'ArrowDown', 'ArrowUp', 'Tab'];
+    if (!allowedKeys.includes(e.key)) return;
+
+    const leftColumn = navSections.querySelector('.nav-menu-column.left');
+    const rightColumn = navSections.querySelector('.nav-menu-column.right');
+    const closeIcon = hamburger.querySelector('.nav-hamburger-icon');
+    const focused = document.activeElement;
+
+    const isLeftColumn = leftColumn.contains(focused);
+    const isRightColumn = rightColumn.contains(focused);
+    const isNavCloseIcon = closeIcon.contains(focused);
+
+    const getNextElement = (elements, direction) => {
+      const currentIndex = Array.from(elements).indexOf(focused);
+      const nextIndex = currentIndex + (direction === 'down' ? 1 : -1);
+      return elements[nextIndex];
+    };
+
+    if (isLeftColumn && e.key === 'ArrowRight') {
+      rightColumn.querySelector('ul.submenu[aria-expanded="true"] a')?.focus();
+    }
+
+    if (isRightColumn && e.key === 'ArrowLeft') {
+      leftColumn.querySelector('ul > li.selected')?.focus();
+    }
+
+    if (isRightColumn && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+      const links = rightColumn.querySelectorAll(
+        'ul.submenu[aria-expanded="true"] a',
+      );
+      const direction = e.key === 'ArrowDown' ? 'down' : 'up';
+      getNextElement(links, direction)?.focus();
+    }
+
+    if (isLeftColumn && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+      const items = leftColumn.querySelectorAll('ul > li');
+      const direction = e.key === 'ArrowDown' ? 'down' : 'up';
+      getNextElement(items, direction)?.focus();
+    }
+
+    if (isNavCloseIcon && e.key === 'Tab') {
+      // initial focus doesn't seem to have the desired effect
+      // so we're manually setting the enter to the first element
+      const enterEvent = new KeyboardEvent('keydown', {
+        bubbles: true,
+        cancelable: true,
+        key: 'Enter',
+        code: 'Enter',
+        charCode: 13,
+        keyCode: 13,
+        which: 13,
+      });
+
+      const firstLi = leftColumn.querySelector('ul > li');
+      firstLi.dispatchEvent(enterEvent);
+    }
+  });
+}
+
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
@@ -440,4 +504,5 @@ export default async function decorate(block) {
   block.append(navWrapper);
   if (isDesktop.matches) await changeTrendingData(navSections);
   fetchingPlaceholdersData(placeholdersData);
+  handleMainMenuFocus(block, navSections, hamburger);
 }
