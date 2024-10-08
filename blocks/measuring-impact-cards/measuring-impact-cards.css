@@ -67,7 +67,7 @@
 }
 
 .impact-card-wrapper a:hover .impact-card-content p:first-child {
-    color: var(--global-interactive-on-dark-hover);
+    color: var(--global-interactive-on-dark-focused);
 }
 
 @media (width >= 768px) {
