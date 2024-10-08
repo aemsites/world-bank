@@ -130,10 +130,10 @@ function attachFormValidation(block, placeholders) {
       emailInput.setAttribute('aria-invalid', 'true');
       emailInput.setAttribute('aria-describedby', 'email-error');
       errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_EMAIL_VALIDATION_MESSAGE] || 'Please enter a valid email.';
+      emailInput.setAttribute('aria-invalid', 'true');
     } else {
       emailInput.classList.remove('input-error');
-      emailInput.setAttribute('aria-invalid', 'false');
-      emailInput.removeAttribute('aria-describedby');
+      emailInput.removeAttribute('aria-invalid');
     }
   });
 
@@ -217,6 +217,7 @@ function createSignupModule(block, placeholders) {
           id: 'email',
           placeholder: ' ',
           require: true,
+          'aria-describedby': 'error-message',
         }),
         label({
           for: 'email',
@@ -237,7 +238,7 @@ function createSignupModule(block, placeholders) {
       ),
       button({ type: 'submit', id: 'signup-btn-desktop' }, span({ class: 'icon' }), placeholders[CONSTANTS.SIGNUP_BUTTON_TEXT] || 'Sign up'),
     ),
-    div({ class: 'error-message', id: 'error-message', role: 'alert' }),
+    div({ class: 'error-message', id: 'error-message', 'aria-live': 'polite' }),
     div(
       { class: 'input-group checkbox-group' },
       input({

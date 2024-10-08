@@ -1,5 +1,5 @@
 import {
-  div, a, span, img, video, source,
+  div, a, span, img, video, source, button,
 } from '../../scripts/dom-helpers.js';
 import { readBlockConfig } from '../../scripts/aem.js';
 
@@ -13,14 +13,14 @@ function createVideoPlayer(videoSrc) {
   /* eslint-disable function-paren-newline */
   const videoPlayer = div({ class: 'video-container' },
     div({ class: 'video-play', id: 'playButton', tabindex: 0 },
-      img({
-        class: 'play-icon controls', src: playIcon, width: 28, height: 28, alt: 'play',
-      }),
+      button({ class: 'video-play-btn', 'aria-label': 'video-play-btn' }, img({
+        class: 'play-icon controls', src: playIcon, width: 28, height: 28, alt: 'play animation',
+      })),
     ),
     div({ class: 'video-pause inactive', id: 'pauseButton' },
-      img({
-        class: 'pause-icon controls', src: pauseIcon, width: 28, height: 28, alt: 'pause',
-      }),
+      button({ class: 'video-pause-btn', 'aria-label': 'video-pause-btn' }, img({
+        class: 'pause-icon controls', src: pauseIcon, width: 28, height: 28, alt: 'pause animation',
+      })),
     ),
     video({ id: 'videoPlayer' },
       source({ src: videoSrc, type: 'video/mp4' }, 'Your browser does not support the video tag.'),
