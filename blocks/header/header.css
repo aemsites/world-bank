@@ -910,16 +910,6 @@ html[dir="rtl"] header nav .nav-tools {
   font-weight: normal;
 }
 
-#search-input:-internal-autofill-selected {
-  background-color: var(--input-background-color) !important;
-  color: black !important;
-}
-
-#search-input:-webkit-autofill {
-  background-color: red !important;
-  color: black !important;
-}
-
 .search-icon {
   cursor: pointer;
   width: 34px;
@@ -1710,4 +1700,11 @@ html[dir="rtl"] header nav .nav-tools {
 
 input::-webkit-clear-button {
   display: none;
+}
+
+@media (width < 390px) {
+  header nav .nav-brand img {
+    width: 40vw; /* fallback */
+    width: 40dvw;
+  }
 }
