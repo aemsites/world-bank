@@ -14,37 +14,45 @@
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
                 "name": "Curated Card",
                 "model": "curated-card",
-                "cc_link": "/content/dam/world-bank/corporate/ext/sample/3000x2400.svg",
+                "curated-card-image": "/content/dam/world-bank/corporate/ext/sample/3000x2400.svg",
+                "curated-card-tags": "world-bank:content-type/feature story",
                 "curated-card-title": "Curated Card Title 1",
                 "curated-card-description": "Card Description",
-                "curated-card-link": "/content/world-bank/corporate/ext/en"
+                "curated-card-link": "/content/world-bank/global/en",
+                "alttext": "default alt"
               },
               "item2": {
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
                 "name": "Curated Card",
                 "model": "curated-card",
-                "cc_link": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
+                "curated-card-image": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
+                "curated-card-tags": "world-bank:content-type/event",
                 "curated-card-title": "Curated Card Title 2",
                 "curated-card-description": "Card Description",
-                "curated-card-link": "/content/world-bank/corporate/ext/en"
+                "curated-card-link": "/content/world-bank/global/en",
+                "alttext": "default alt"
               },
               "item3": {
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
                 "name": "Curated Card",
                 "model": "curated-card",
-                "cc_link": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
+                "curated-card-image": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
+                "curated-card-tags": "world-bank:content-type/event",
                 "curated-card-title": "Curated Card Title 3",
                 "curated-card-description": "Card Description",
-                "curated-card-link": "/content/world-bank/corporate/ext/en"
+                "curated-card-link": "/content/world-bank/global/en",
+                "alttext": "default alt"
               },
               "item4": {
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                "name": "Curated Card",
+                "curated-card-name": "Curated Card",
                 "model": "curated-card",
-                "cc_link": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
+                "curated-card-image": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
+                "curated-card-tags": "evworld-bank:content-type/event",
                 "curated-card-title": "Curated Card Title 4",
                 "curated-card-description": "Card Description",
-                "curated-card-link": "/content/world-bank/corporate/ext/en"
+                "curated-card-link": "/content/world-bank/global/en",
+                "alttext": "default alt"
               }
             }
           }
@@ -80,14 +88,14 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "cc_link",
+          "name": "curated-card-image",
           "label": "Image",
           "multi": false,
           "condition": { "===": [{"var" : "cc_reveal"}, false] }
         },
         {
           "component": "text",
-          "name": "cc_linkText",
+          "name": "alttext",
           "label": "Alt Text",
           "valueType": "string",
           "condition": { "===": [{"var" : "cc_reveal"}, false] }
