@@ -94,26 +94,34 @@
           "condition": { "===": [{"var" : "cc_reveal"}, false] }
         },
         {
+          "component": "text",
+          "name": "cc_linkText",
+          "label": "Alt Text",
+          "valueType": "string",
+          "condition": { "===": [{"var" : "cc_reveal"}, false] }
+        },
+        {
           "component": "custom-asset-namespace:custom-asset",
           "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/main/tools/asset-selector/image.config.json",
           "valueType": "string",
-          "name": "cc_linkDM",
+          "name": "dm_link",
           "label": "Dynamic Media Image",
           "multi": false,
           "condition": { "===": [{"var" : "cc_reveal"}, true] }
         },
         {
-          "component": "boolean",
-          "label": "Use Smart Crop",
-          "name": "cc_linkSC",
-          "valueType": "boolean",
+          "component": "text",
+          "name": "dm_linkText",
+          "label": "Alt Text",
+          "valueType": "string",
           "condition": { "===": [{"var" : "cc_reveal"}, true] }
         },
         {
-          "component": "text",
-          "name": "link_text",
-          "label": "Alt Text",
-          "valueType": "string"
+          "component": "boolean",
+          "label": "Use Smart Crop",
+          "name": "dm_linkSC",
+          "valueType": "boolean",
+          "condition": { "===": [{"var" : "cc_reveal"}, true] }
         },
         {
           "component": "text",
@@ -121,7 +129,8 @@
           "name": "custom-query-params",
           "label": "Image Query Params",
           "value": "",
-          "description": "Add custom query params to the image URL"
+          "description": "Add custom query params to the image URL",
+          "condition": { "===": [{"var" : "cc_reveal"}, true] }
         },
         {
           "component": "aem-tag",
