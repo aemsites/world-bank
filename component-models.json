@@ -2484,7 +2484,7 @@
       {
         "component": "boolean",
         "label": "Use Smart Crop",
-        "name": "cc_smartcrop",
+        "name": "cc_linkSC",
         "valueType": "boolean",
         "condition": {
           "===": [
@@ -2497,7 +2497,7 @@
       },
       {
         "component": "text",
-        "name": "cc_linkText",
+        "name": "link_text",
         "label": "Alt Text",
         "valueType": "string"
       },
