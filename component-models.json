@@ -2447,7 +2447,7 @@
       {
         "component": "boolean",
         "label": "Use Dynamic Media Image",
-        "name": "reveal",
+        "name": "card_reveal",
         "valueType": "boolean"
       },
       {
@@ -2459,7 +2459,7 @@
         "condition": {
           "===": [
             {
-              "var": "reveal"
+              "var": "card_reveal"
             },
             false
           ]
@@ -2475,7 +2475,7 @@
         "condition": {
           "===": [
             {
-              "var": "reveal"
+              "var": "card_reveal"
             },
             true
           ]
@@ -2489,7 +2489,7 @@
         "condition": {
           "===": [
             {
-              "var": "reveal"
+              "var": "card_reveal"
             },
             true
           ]
@@ -2497,7 +2497,7 @@
       },
       {
         "component": "text",
-        "name": "card_imageText",
+        "name": "image-text",
         "label": "Alt Text",
         "valueType": "string"
       },

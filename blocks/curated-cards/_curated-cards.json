@@ -82,7 +82,7 @@
         {
           "component": "boolean",
           "label": "Use Dynamic Media Image",
-          "name": "reveal",
+          "name": "card_reveal",
           "valueType": "boolean"
         },
         {
@@ -91,7 +91,7 @@
           "name": "card_image",
           "label": "Image",
           "multi": false,
-          "condition": { "===": [{"var" : "reveal"}, false] }
+          "condition": { "===": [{"var" : "card_reveal"}, false] }
         },
         {
           "component": "custom-asset-namespace:custom-asset",
@@ -100,18 +100,18 @@
           "name": "card_imageDM",
           "label": "Dynamic Media Image",
           "multi": false,
-          "condition": { "===": [{"var" : "reveal"}, true] }
+          "condition": { "===": [{"var" : "card_reveal"}, true] }
         },
         {
           "component": "boolean",
           "label": "Use Smart Crop",
           "name": "card_smartcrop",
           "valueType": "boolean",
-          "condition": { "===": [{"var" : "reveal"}, true] }
+          "condition": { "===": [{"var" : "card_reveal"}, true] }
         },
         {
           "component": "text",
-          "name": "card_imageText",
+          "name": "image-text",
           "label": "Alt Text",
           "valueType": "string"
         },
