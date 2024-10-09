@@ -82,7 +82,7 @@
         {
           "component": "boolean",
           "label": "Use Dynamic Media Image",
-          "name": "cc_reveal",
+          "name": "reveal",
           "valueType": "boolean"
         },
         {
@@ -91,14 +91,14 @@
           "name": "cc_link",
           "label": "Image",
           "multi": false,
-          "condition": { "===": [{"var" : "cc_reveal"}, false] }
+          "condition": { "===": [{"var" : "reveal"}, false] }
         },
         {
           "component": "text",
           "name": "cc_linkText",
           "label": "Alt Text",
           "valueType": "string",
-          "condition": { "===": [{"var" : "cc_reveal"}, false] }
+          "condition": { "===": [{"var" : "reveal"}, false] }
         },
         {
           "component": "custom-asset-namespace:custom-asset",
@@ -107,30 +107,29 @@
           "name": "dm_link",
           "label": "Dynamic Media Image",
           "multi": false,
-          "condition": { "===": [{"var" : "cc_reveal"}, true] }
+          "condition": { "===": [{"var" : "reveal"}, true] }
         },
         {
           "component": "text",
           "name": "dm_linkText",
           "label": "Alt Text",
           "valueType": "string",
-          "condition": { "===": [{"var" : "cc_reveal"}, true] }
+          "condition": { "===": [{"var" : "reveal"}, true] }
         },
         {
           "component": "boolean",
           "label": "Use Smart Crop",
           "name": "dm_linkSC",
           "valueType": "boolean",
-          "condition": { "===": [{"var" : "cc_reveal"}, true] }
+          "condition": { "===": [{"var" : "reveal"}, true] }
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "custom-query-params",
           "label": "Image Query Params",
-          "value": "",
           "description": "Add custom query params to the image URL",
-          "condition": { "===": [{"var" : "cc_reveal"}, true] }
+          "condition": { "===": [{"var" : "reveal"}, true] }
         },
         {
           "component": "aem-tag",

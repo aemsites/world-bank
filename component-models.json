@@ -2447,7 +2447,7 @@
       {
         "component": "boolean",
         "label": "Use Dynamic Media Image",
-        "name": "cc_reveal",
+        "name": "reveal",
         "valueType": "boolean"
       },
       {
@@ -2459,7 +2459,7 @@
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "reveal"
             },
             false
           ]
@@ -2473,7 +2473,7 @@
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "reveal"
             },
             false
           ]
@@ -2489,7 +2489,7 @@
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "reveal"
             },
             true
           ]
@@ -2503,7 +2503,7 @@
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "reveal"
             },
             true
           ]
@@ -2517,7 +2517,7 @@
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "reveal"
             },
             true
           ]
@@ -2528,12 +2528,11 @@
         "valueType": "string",
         "name": "custom-query-params",
         "label": "Image Query Params",
-        "value": "",
         "description": "Add custom query params to the image URL",
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "reveal"
             },
             true
           ]
