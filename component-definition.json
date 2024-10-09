@@ -229,7 +229,6 @@
                     "name": "Curated Card",
                     "model": "curated-card",
                     "cc_link": "/content/dam/world-bank/corporate/ext/sample/3000x2400.svg",
-                    "curated-card-tags": "world-bank:content-type/feature story",
                     "curated-card-title": "Curated Card Title 1",
                     "curated-card-description": "Card Description",
                     "curated-card-link": "/content/world-bank/corporate/ext/en"
@@ -239,7 +238,6 @@
                     "name": "Curated Card",
                     "model": "curated-card",
                     "cc_link": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
-                    "curated-card-tags": "world-bank:content-type/event",
                     "curated-card-title": "Curated Card Title 2",
                     "curated-card-description": "Card Description",
                     "curated-card-link": "/content/world-bank/corporate/ext/en"
@@ -249,7 +247,6 @@
                     "name": "Curated Card",
                     "model": "curated-card",
                     "cc_link": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
-                    "curated-card-tags": "world-bank:content-type/event",
                     "curated-card-title": "Curated Card Title 3",
                     "curated-card-description": "Card Description",
                     "curated-card-link": "/content/world-bank/corporate/ext/en"
@@ -259,7 +256,6 @@
                     "name": "Curated Card",
                     "model": "curated-card",
                     "cc_link": "/content/dam/world-bank/corporate/ext/sample/799x533.svg",
-                    "curated-card-tags": "world-bank:content-type/event",
                     "curated-card-title": "Curated Card Title 4",
                     "curated-card-description": "Card Description",
                     "curated-card-link": "/content/world-bank/corporate/ext/en"
