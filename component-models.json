@@ -2445,13 +2445,55 @@
     "id": "curated-card",
     "fields": [
       {
+        "component": "boolean",
+        "label": "Use Dynamic Media Image",
+        "name": "reveal",
+        "valueType": "boolean"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "condition": {
+          "===": [
+            {
+              "var": "reveal"
+            },
+            false
+          ]
+        }
+      },
+      {
         "component": "custom-asset-namespace:custom-asset",
         "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/main/tools/asset-selector/image.config.json",
         "valueType": "string",
         "name": "curated-card-image",
-        "label": "Image",
+        "label": "Dynamic Media Image",
         "multi": false,
-        "required": true
+        "condition": {
+          "===": [
+            {
+              "var": "reveal"
+            },
+            true
+          ]
+        }
+      },
+      {
+        "component": "boolean",
+        "label": "Use Smart Crop",
+        "name": "smartcrop",
+        "valueType": "boolean",
+        "condition": {
+          "===": [
+            {
+              "var": "reveal"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "text",
