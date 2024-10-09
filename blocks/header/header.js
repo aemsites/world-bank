@@ -217,7 +217,7 @@ function makeImageClickableNSettingAltText() {
 function handleEnterKey(event) {
   if (event.key !== 'Enter') return;
   const inputValue = document.querySelector('.search-container input').value;
-  const url = listOfAllPlaceholdersData.searchRedirectUrl || 'https://www.worldbank.org/en/search?q=' + inputValue;
+  const url = (listOfAllPlaceholdersData.searchRedirectUrl || 'https://www.worldbank.org/en/search?q=') + inputValue;
   if (inputValue) window.location.href = url;
 }
 
@@ -274,7 +274,7 @@ function createSearchBox() {
     searchIcon.alt = 'search';
     searchIcon.addEventListener('click', () => {
       if (searchInputBox.value) {
-        window.location.href = listOfAllPlaceholdersData.searchRedirectUrl || 'https://www.worldbank.org/en/search?q=' + searchInputBox.value;
+        window.location.href = (listOfAllPlaceholdersData.searchRedirectUrl || 'https://www.worldbank.org/en/search?q=') + searchInputBox.value;
       }
     });
 
