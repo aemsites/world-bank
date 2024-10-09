@@ -205,7 +205,7 @@ function makeImageClickableNSettingAltText() {
   const logoImage = document.querySelector('.nav-brand img');
   const anchor = document.createElement('a');
   Object.assign(anchor, {
-    href: listOfAllPlaceholdersData.logoUrl,
+    href: listOfAllPlaceholdersData.logoUrl || 'https://main--world-bank--aemsites.aem.live/ext/en/home',
     title: logoImage?.alt,
   });
   const picture = document.querySelector('.nav-brand picture');
@@ -217,7 +217,7 @@ function makeImageClickableNSettingAltText() {
 function handleEnterKey(event) {
   if (event.key !== 'Enter') return;
   const inputValue = document.querySelector('.search-container input').value;
-  const url = listOfAllPlaceholdersData.searchRedirectUrl + inputValue;
+  const url = listOfAllPlaceholdersData.searchRedirectUrl || 'https://www.worldbank.org/en/search?q=' + inputValue;
   if (inputValue) window.location.href = url;
 }
 
@@ -274,7 +274,7 @@ function createSearchBox() {
     searchIcon.alt = 'search';
     searchIcon.addEventListener('click', () => {
       if (searchInputBox.value) {
-        window.location.href = listOfAllPlaceholdersData.searchRedirectUrl + searchInputBox.value;
+        window.location.href = listOfAllPlaceholdersData.searchRedirectUrl || 'https://www.worldbank.org/en/search?q=' + searchInputBox.value;
       }
     });
 
@@ -282,7 +282,7 @@ function createSearchBox() {
       type: 'text',
       id: 'search-input',
       name: 'myInput',
-      placeholder: listOfAllPlaceholdersData.searchVariable,
+      placeholder: listOfAllPlaceholdersData.searchVariable || 'Search worldbank.org',
       value: '',
       autocomplete: 'off',
     });
@@ -307,7 +307,7 @@ function settingAltTextForSearchIcon() {
       e.currentTarget.nextElementSibling.focus();
     }
   });
-  searchImage.setAttribute('title', listOfAllPlaceholdersData.searchAltText);
+  searchImage.setAttribute('title', listOfAllPlaceholdersData.searchAltText || 'Search');
 }
 
 async function fetchingPlaceholdersData(placeholdersData) {
