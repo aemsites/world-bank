@@ -14,7 +14,7 @@
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
                 "name": "Curated Card",
                 "model": "curated-card",
-                "curated-card-image": "/content/dam/world-bank/sample/3000x2400.svg",
+                "cc_link": "/content/dam/world-bank/sample/3000x2400.svg",
                 "curated-card-tags": "world-bank:content-type/event",
                 "curated-card-title": "Curated Card Title",
                 "curated-card-description": "Card Description",
@@ -25,7 +25,7 @@
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
                 "name": "Curated Card",
                 "model": "curated-card",
-                "curated-card-image": "/content/dam/world-bank/sample/799x533.svg",
+                "cc_link": "/content/dam/world-bank/sample/799x533.svg",
                 "curated-card-tags": "world-bank:content-type/event",
                 "curated-card-title": "Curated Card Title",
                 "curated-card-description": "Card Description",
@@ -36,7 +36,7 @@
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
                 "name": "Curated Card",
                 "model": "curated-card",
-                "curated-card-image": "/content/dam/world-bank/sample/799x533.svg",
+                "cc_link": "/content/dam/world-bank/sample/799x533.svg",
                 "curated-card-tags": "world-bank:content-type/feature story",
                 "curated-card-title": "Curated Card Title",
                 "curated-card-description": "Card Description",
@@ -47,7 +47,7 @@
                 "sling:resourceType": "core/franklin/components/block/v1/block/item",
                 "curated-card-name": "Curated Card",
                 "model": "curated-card",
-                "curated-card-image": "/content/dam/world-bank/sample/799x533.svg",
+                "cc_link": "/content/dam/world-bank/sample/799x533.svg",
                 "curated-card-tags": "evworld-bank:content-type/event",
                 "curated-card-title": "Curated Card Title",
                 "curated-card-description": "Card Description",
@@ -82,7 +82,7 @@
         {
           "component": "boolean",
           "label": "Use Dynamic Media Image",
-          "name": "reveal",
+          "name": "cc_reveal",
           "valueType": "boolean"
         },
         {
@@ -91,14 +91,14 @@
           "name": "cc_link",
           "label": "Image",
           "multi": false,
-          "condition": { "===": [{"var" : "reveal"}, false] }
+          "condition": { "===": [{"var" : "cc_reveal"}, false] }
         },
         {
           "component": "text",
           "name": "cc_linkText",
           "label": "Alt Text",
           "valueType": "string",
-          "condition": { "===": [{"var" : "reveal"}, false] }
+          "condition": { "===": [{"var" : "cc_reveal"}, false] }
         },
         {
           "component": "custom-asset-namespace:custom-asset",
@@ -107,21 +107,21 @@
           "name": "dm_link",
           "label": "Dynamic Media Image",
           "multi": false,
-          "condition": { "===": [{"var" : "reveal"}, true] }
+          "condition": { "===": [{"var" : "cc_reveal"}, true] }
         },
         {
           "component": "text",
           "name": "dm_linkText",
           "label": "Alt Text",
           "valueType": "string",
-          "condition": { "===": [{"var" : "reveal"}, true] }
+          "condition": { "===": [{"var" : "cc_reveal"}, true] }
         },
         {
           "component": "boolean",
           "label": "Use Smart Crop",
           "name": "dm_linkSC",
           "valueType": "boolean",
-          "condition": { "===": [{"var" : "reveal"}, true] }
+          "condition": { "===": [{"var" : "cc_reveal"}, true] }
         },
         {
           "component": "text",
@@ -129,7 +129,7 @@
           "name": "custom-query-params",
           "label": "Image Query Params",
           "description": "Add custom query params to the image URL",
-          "condition": { "===": [{"var" : "reveal"}, true] }
+          "condition": { "===": [{"var" : "cc_reveal"}, true] }
         },
         {
           "component": "aem-tag",
