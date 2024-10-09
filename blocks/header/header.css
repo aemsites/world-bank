@@ -381,10 +381,6 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span {
   vertical-align: middle;
 }
 
-html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span {
-  margin-left: 15px;
-}
-
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   content: "";
   width: 11px;
@@ -397,11 +393,17 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   border: 1px;
 }
 
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::before {
+  transform: rotate(135deg);
+}
+
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span {
+  margin-left: 15px;
+}
+
 html[dir = 'rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   margin-right: 8px;
 }
-
-
 
 header .nav-menu-overlay .nav-menu-column.left ul li span::after {
   content: "";
@@ -428,6 +430,10 @@ header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
   border-bottom: 3px solid var(--neutral-solid-30-s);
   border-left: 3px solid var(--neutral-solid-30-s);
   border-radius: 1px;
+}
+
+html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span::after {
+  transform: rotate(-135deg);
 }
 
 html[dir='rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link span::after {
@@ -1474,6 +1480,11 @@ html[dir="rtl"] header nav .nav-tools {
     left: -30px;
     position: absolute;
   }
+
+  html[dir="rtl"]  header nav[aria-expanded="true"] .nav-hamburger-icon {
+    right: -30px;
+    left: auto;
+   }
 
   header nav .nav-sections .nav-drop::after {
     content: "";
