@@ -780,6 +780,23 @@ header nav[aria-expanded="false"] .nav-hamburger-icon::after {
   will-change: transform;
 }
 
+@media (forced-colors: active) {
+  header nav[aria-expanded="false"] .nav-hamburger-icon,
+  header nav[aria-expanded="false"] .nav-hamburger-icon::before,
+  header nav[aria-expanded="false"] .nav-hamburger-icon::after {
+    background: canvasText;
+  }
+
+  header nav[aria-expanded="true"] .nav-hamburger-icon::before,
+  header nav[aria-expanded="true"] .nav-hamburger-icon::after {
+    background: canvasText;
+  }
+
+  header .nav-menu-overlay .nav-menu-column.left > ul > li > span {
+    background: linkText !important; /* override media query in forced mode only */
+  }
+}
+
 header nav[aria-expanded="false"] .nav-hamburger-icon::before {
   top: -6px;
 }
