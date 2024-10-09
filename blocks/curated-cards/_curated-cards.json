@@ -88,7 +88,7 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "image",
+          "name": "card_image",
           "label": "Image",
           "multi": false,
           "condition": { "===": [{"var" : "reveal"}, false] }
@@ -97,7 +97,7 @@
           "component": "custom-asset-namespace:custom-asset",
           "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/main/tools/asset-selector/image.config.json",
           "valueType": "string",
-          "name": "curated-card-image",
+          "name": "card_imageDM",
           "label": "Dynamic Media Image",
           "multi": false,
           "condition": { "===": [{"var" : "reveal"}, true] }
@@ -105,14 +105,13 @@
         {
           "component": "boolean",
           "label": "Use Smart Crop",
-          "name": "smartcrop",
+          "name": "card_smartcrop",
           "valueType": "boolean",
           "condition": { "===": [{"var" : "reveal"}, true] }
         },
         {
           "component": "text",
-          "name": "alttext",
-          "value": "",
+          "name": "card_imageText",
           "label": "Alt Text",
           "valueType": "string"
         },
