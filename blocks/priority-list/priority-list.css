@@ -238,6 +238,13 @@ html[dir="rtl"] .priority-list .right-column-container .cards-container > div .c
   text-decoration-color: var(--accent-blue-primary-40);
 }
 
+@media(width >= 768px){
+  .priority-list .right-column-container .cards-container>div::before{
+    width: 16px;
+    height: 16px;
+  }
+}
+
 @media (width >=768px) and (width < 1024px) {
   .priority-list {
     grid-template-columns: repeat(2, 1fr);
