@@ -31,6 +31,7 @@ const CONSTANTS = {
   SIGNUP_SUBSCRIPTION_TYPE: 'signupSubscriptionType',
   SIGNUP_ANALYTICS_FORMNAME: 'signupAnalyticsFormname',
   SIGNUP_ANALYTICS_FORMTYPE: 'signupAnalyticsFormtype',
+  SIGNUP_TIMEOUT_ERROR: 'signupTimeoutError'
 };
 
 async function callConsentAPI(email, firstName, placeholders) {
@@ -187,7 +188,7 @@ function attachFormValidation(block, placeholders) {
       } else if (consentSuccess && subscriptionStatus === 'Already Subscribed') {
         showConfirmationMessage(block.querySelector('#signup-form'), placeholders[CONSTANTS.SIGNUP_ERROR_MESSAGE]);
       } else {
-        errorMessage.textContent = 'An error occurred while processing your request. Please try again later.';
+        errorMessage.textContent = placeholders[CONSTANTS.SIGNUP_TIMEOUT_ERROR] ||  'An error occured while processing your request. Please try again later.';
       }
       pushToWBGDataLayer(email, profileType, placeholders);
     } catch (error) {
