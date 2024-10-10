@@ -17,6 +17,45 @@ function processTag(tagdiv, tagAuthored, placeholders) {
   }
 }
 
+function updateDMImage(pictureElement, dmImageContent) {
+  const useSmartCrop = dmImageContent.querySelector('div:nth-child(2)')?.textContent?.trim() || '';
+  const queryParams = dmImageContent.querySelector('div:last-child')?.textContent?.trim() || '';
+  if (pictureElement) {
+    // add query params to the image urls
+    if (queryParams.length > 0) {
+      Array.from(pictureElement.children).forEach((child) => {
+        const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
+        if (child.tagName === 'SOURCE' && child.srcset) {
+          child.srcset = `${baseUrl}?${queryParams}`;
+        } else if (child.tagName === 'IMG' && child.src) {
+          child.src = `${baseUrl}?${queryParams}`;
+        }
+      });
+    }
+    // add smartcrop query param based on viewport
+    if (useSmartCrop.length > 0) {
+      const viewportWidth = window.innerWidth;
+      let smartcropValue;
+      if (viewportWidth > 1024) {
+        smartcropValue = 'desktop';
+      } else if (viewportWidth > 768) {
+        smartcropValue = 'tablet';
+      } else {
+        smartcropValue = 'mobile';
+      }
+      Array.from(pictureElement.children).forEach((child) => {
+        const baseUrl = child.tagName === 'SOURCE' ? child.srcset : child.src;
+        const separator = baseUrl.includes('?') ? '&' : '?';
+        if (child.tagName === 'SOURCE' && child.srcset) {
+          child.srcset = `${baseUrl}${separator}smartcrop=${smartcropValue}`;
+        } else if (child.tagName === 'IMG' && child.src) {
+          child.src = `${baseUrl}${separator}smartcrop=${smartcropValue}`;
+        }
+      });
+    }
+  }
+}
+
 // Creates a feature card element with its content
 function createFeatureCard(row, placeHolders) {
   const [
@@ -56,42 +95,7 @@ function createFeatureCard(row, placeHolders) {
     pictureElement = featureImageContent.querySelector('picture');
   } else {
     pictureElement = dmImageContent.querySelector('picture');
-    const useSmartCrop = dmImageContent.querySelector('div:nth-child(2)')?.textContent?.trim() || '';
-    const queryParams = dmImageContent.querySelector('div:last-child')?.textContent?.trim() || '';
-    if (pictureElement) {
-      // add query params to the image urls
-      if (queryParams.length > 0) {
-        Array.from(pictureElement.children).forEach((child) => {
-          const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
-          if (child.tagName === 'SOURCE' && child.srcset) {
-            child.srcset = `${baseUrl}?${queryParams}`;
-          } else if (child.tagName === 'IMG' && child.src) {
-            child.src = `${baseUrl}?${queryParams}`;
-          }
-        });
-      }
-      // add smartcrop query param based on viewport
-      if (useSmartCrop.length > 0) {
-        const viewportWidth = window.innerWidth;
-        let smartcropValue;
-        if (viewportWidth > 1024) {
-          smartcropValue = 'desktop';
-        } else if (viewportWidth > 768) {
-          smartcropValue = 'tablet';
-        } else {
-          smartcropValue = 'mobile';
-        }
-        Array.from(pictureElement.children).forEach((child) => {
-          const baseUrl = child.tagName === 'SOURCE' ? child.srcset : child.src;
-          const separator = baseUrl.includes('?') ? '&' : '?';
-          if (child.tagName === 'SOURCE' && child.srcset) {
-            child.srcset = `${baseUrl}${separator}smartcrop=${smartcropValue}`;
-          } else if (child.tagName === 'IMG' && child.src) {
-            child.src = `${baseUrl}${separator}smartcrop=${smartcropValue}`;
-          }
-        });
-      }
-    }
+    updateDMImage(pictureElement, dmImageContent);
   }
   // Append image or a fallback placeholder if no pictureElement is found
   if (pictureElement) {
@@ -120,16 +124,12 @@ function processRow(row) {
     processTag(tagElement, tagContent, listOfAllPlaceholdersData);
   }
 
-  if (imageContent) {
+  if (useDM.textContent.trim() === '' && imageContent) {
     imageDiv.innerHTML = imageContent.innerHTML;
-    /* if (alttext) {
-      const pic = imageDiv.querySelector('img');
-      const para = alttext.querySelector('p');
-      if (para && pic) {
-        pic.alt = para.textContent.trim();
-      }
-      alttext.remove();
-    } */
+  } else {
+    const dmPicture = dmImage.querySelector('picture');
+    updateDMImage(dmPicture, dmImage);
+    imageDiv.innerHTML = dmPicture.innerHTML;
   }
 
   if (headingContent) {
