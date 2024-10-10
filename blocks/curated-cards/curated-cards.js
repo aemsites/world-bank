@@ -58,8 +58,8 @@ function createFeatureCard(row, placeHolders) {
     pictureElement = featureImageContent.querySelector('picture');
   } else {
     pictureElement = dmImageContent.querySelector('picture');
-    const useSmartCrop = dmImageContent.querySelector('div:nth-child(2)')?.textContent.trim();
-    const queryParams = dmImageContent.querySelector('div:last-child')?.textContent.trim();
+    const useSmartCrop = dmImageContent.querySelector('div:nth-child(2)')?.textContent?.trim() || '';
+    const queryParams = dmImageContent.querySelector('div:last-child')?.textContent?.trim() || '';
     if (pictureElement) {
       // add query params to the image urls
       if (queryParams.length > 0) {
