@@ -1,0 +1,54 @@
+{
+  "definitions": [
+    {
+      "title": "Leaders List",
+      "id": "leaders-list",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Leaders List",
+              "model": "leaders-list"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "leaders-list",
+      "fields": [
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "leadership-group-name",
+          "label": "Leadership Group",
+          "description": "Select the Leadership Group",
+          "value": "",
+          "required": true,
+          "options": [
+            {
+              "name": "The World Bank (IBRD & IDA)",
+              "value": "ibrd"
+            },
+            {
+              "name": "International Finance Corporation (IFC)",
+              "value": "ifc"
+            },
+            {
+              "name": "Multilateral Investent Guarantee Agency (MIGA)",
+              "value": "miga"
+            },
+            {
+              "name": "International Center For Settlement Of Investment Disputes (ICSID)",
+              "value": "icsid"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

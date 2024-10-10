@@ -1,0 +1,145 @@
+{
+  "definitions": [
+    {
+      "title": "Explore Cards",
+      "id": "explore-cards",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Explore Cards",
+              "model": "explore-cards",
+              "filter": "explore-cards",
+              "title": "<p>Explore Development Stories <strong>From Around the World</strong></p>",
+              "item1": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Explore Card",
+                "model": "explore-card",
+                "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
+                "alt": "Alt text",
+                "title": "Green Jobs. Learn What They Are. And Why We’re Invested.",
+                "link": "/content/world-bank/global/en",
+                "content-type": "world-bank:content-type/audio",
+                "story-type": "world-bank:story-type/immersive-stories"
+              },
+              "item2": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Explore Card",
+                "model": "explore-card",
+                "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
+                "alt": "Alt text",
+                "title": "Inside Somalia: Signs of Hope on the Road to Recovery.",
+                "link": "/content/world-bank/global/en",
+                "content-type": "world-bank:content-type/article",
+                "story-type": "world-bank:story-type/the-development-podcast"
+              },
+              "item3": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Explore Card",
+                "model": "explore-card",
+                "fileReference": "/content/dam/world-bank/sample/placeholder-black.png",
+                "alt": "Alt text",
+                "title": "Discover the Link Between Plastic Pollution and Poverty.",
+                "link": "/content/world-bank/global/en",
+                "content-type": "world-bank:content-type/video",
+                "story-type": "world-bank:story-type/expert-answers"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Explore Card",
+      "id": "explore-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Explore Card",
+              "model": "explore-card"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "explore-cards",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "title",
+          "value": "",
+          "label": "Main heading",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "explore-card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "fileReference",
+          "label": "Card Image",
+          "required": true,
+          "multi": false,
+          "rootPath": "/content/dam/world-bank"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "alt",
+          "value": "Default alt",
+          "label": "Alt text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "value": "",
+          "required": true,
+          "label": "Title"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link",
+          "value": "",
+          "label": "Link",
+          "required": true
+        },
+        {
+          "component": "aem-tag",
+          "name": "content-type",
+          "label": "Content Type",
+          "valueType": "string",
+          "required": true,
+          "rootPath": "/content/cq:tags/world-bank/content-type"
+        },
+        {
+          "component": "aem-tag",
+          "name": "story-type",
+          "label": "Story Type",
+          "valueType": "string",
+          "required": true,
+          "rootPath": "/content/cq:tags/world-bank/story-type"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "explore-cards",
+      "components": [
+        "explore-card"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+node .husky/pre-commit.mjs
+
+npx lint-staged

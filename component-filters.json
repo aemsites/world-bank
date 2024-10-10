@@ -1,15 +1,9 @@
 [
   {
     "id": "main",
-    "components": ["section"]
-  },
-  {
-    "id": "columns",
-    "components": []
-  },
-  {
-    "id": "column",
-    "components": ["text", "image", "button", "title", "dm-asset"]
+    "components": [
+      "section"
+    ]
   },
   {
     "id": "section",
@@ -46,41 +40,60 @@
   },
   {
     "id": "cards",
-    "components": ["card"]
-  },
-  {
-    "id": "curated-cards",
-    "components": ["curated-card"]
-  },
-  {
-    "id": "explore-cards",
-    "components": ["explore-card"]
-  },
-  {
-    "id": "data-cards",
-    "components": ["data-card", "news-card"]
-  },
-  {
-    "id": "mini-cards",
-    "components": ["mini-card"]
-  },
-  {
-    "id": "research-publications-cards",
-    "components": ["research-publications-card"]
-  },
-  {
-    "id": "tabs",
     "components": [
-      "tab"
+      "card"
     ]
   },
   {
-    "id": "priority-list",
-    "components": ["priority-item"]
+    "id": "carousel",
+    "components": [
+      "card"
+    ]
   },
   {
-    "id": "carousel",
-    "components": ["card"]
+    "id": "columns",
+    "components": []
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "dm-asset"
+    ]
+  },
+  {
+    "id": "curated-cards",
+    "components": [
+      "curated-card"
+    ]
+  },
+  {
+    "id": "data-cards",
+    "components": [
+      "data-card",
+      "news-card"
+    ]
+  },
+  {
+    "id": "explore-cards",
+    "components": [
+      "explore-card"
+    ]
+  },
+  {
+    "id": "impact-cards",
+    "components": [
+      "impact-card"
+    ]
+  },
+  {
+    "id": "mini-cards",
+    "components": [
+      "mini-card"
+    ]
   },
   {
     "id": "organizational-cards",
@@ -89,7 +102,21 @@
     ]
   },
   {
-    "id": "impact-cards",
-    "components": ["impact-card"]
+    "id": "priority-list",
+    "components": [
+      "priority-item"
+    ]
+  },
+  {
+    "id": "research-publications-cards",
+    "components": [
+      "research-publications-card"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tab"
+    ]
   }
 ]

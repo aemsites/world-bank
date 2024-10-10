@@ -1,0 +1,56 @@
+{
+  "definitions": [
+    {
+      "title": "Button",
+      "id": "button",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/button/v1/button",
+            "template": {}
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "button",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "href",
+          "value": "",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "text",
+          "value": "",
+          "label": "Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "value": "",
+          "label": "Title"
+        },
+        {
+          "component": "select",
+          "name": "type",
+          "value": "",
+          "label": "Type",
+          "valueType": "string",
+          "options": [
+            {
+              "...": "./partials/_button-types.json#/options"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

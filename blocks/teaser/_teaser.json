@@ -1,0 +1,120 @@
+{
+  "definitions": [
+    {
+      "title": "Teaser",
+      "id": "teaser",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Teaser",
+              "model": "teaser",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "teaser",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "value": "Your text will show here.",
+          "name": "teaserBlurb",
+          "label": "Title"
+        },
+        {
+          "component": "select",
+          "name": "teaserStyle",
+          "value": "image",
+          "label": "Style",
+          "valueType": "string",
+          "options": [
+            { "name": "Video", "value": "video" },
+            { "name": "Image", "value": "image" }
+          ]
+        },
+        {
+          "component": "container",
+          "label": "Video Properties",
+          "name": "videoProperties",
+          "valueType": "string",
+          "condition": { "===": [{ "var": "teaserStyle" }, "video"] },
+          "fields": [
+            {
+              "component": "text",
+              "valueType": "string",
+              "name": "videoReference",
+              "label": "Video Reference",
+              "multi": false,
+              "description": "Provide a URL for the video background."
+            },
+            {
+              "component": "select",
+              "name": "videoBehavior",
+              "value": "autoplay",
+              "label": "Video Behavior (on load)",
+              "valueType": "string",
+              "options": [
+                { "name": "Autoplay", "value": "autoplay" },
+                { "name": "Pause", "value": "pause" }
+              ]
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "label": "Image Properties",
+          "name": "imageProperties",
+          "valueType": "string",
+          "condition": { "===": [{ "var": "teaserStyle" }, "image"] },
+          "fields": [
+            {
+              "component": "reference",
+              "valueType": "string",
+              "name": "imageRef",
+              "label": "Image",
+              "multi": false
+            },
+            {
+              "component": "text",
+              "valueType": "string",
+              "name": "alt",
+              "value": "Default alt",
+              "label": "Alt Text"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "label": "Button Properties",
+          "name": "buttonProperties",
+          "valueType": "string",
+          "fields": [
+            {
+              "component": "text",
+              "valueType": "string",
+              "name": "btn-text",
+              "value": "Button",
+              "label": "Button Text"
+            },
+            {
+              "component": "aem-content",
+              "name": "btn-link",
+              "label": "Button Link",
+              "valueType": "string",
+              "rootPath": "",
+              "description": "Path to linked AEM content"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

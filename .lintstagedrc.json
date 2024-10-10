@@ -1,0 +1,11 @@
+{
+  ".js": [
+    "eslint"
+  ],
+  "*.css": [
+    "stylelint"
+  ],
+  "component-(models|filters|definitions).json": [
+    "eslint"
+  ]
+}

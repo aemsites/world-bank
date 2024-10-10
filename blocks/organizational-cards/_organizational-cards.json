@@ -1,0 +1,139 @@
+{
+  "definitions": [
+    {
+      "title": "Organizational Cards",
+      "id": "organizational-cards",
+        "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Organizational Cards",
+              "model": "organizational-cards",
+              "filter": "organizational-cards",
+              "item1": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Organizational Card",
+                "model": "organizational-card",
+                "acronym": "IBRD",
+                "title": "International Bank for Reconstruction and Development",
+                "mission": "Placeholder",
+                "link": "/content/world-bank/global/en",
+                "linkText": "Learn More"
+              },
+              "item2": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Organizational Card",
+                "model": "organizational-card",
+                "acronym": "IDA",
+                "title": "International Development Association",
+                "mission": "IDA provides grants and interest-free loans to the world's poorest nations to help them grow equitably and sustainably.",
+                "link": "/content/world-bank/global/en",
+                "linkText": "Learn More"
+              },
+              "item3": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Organizational Card",
+                "model": "organizational-card",
+                "acronym": "IFC",
+                "title": "International Finance Corporation",
+                "mission": "Placeholder",
+                "link": "/content/world-bank/global/en",
+                "linkText": "Learn More"
+              },
+              "item4": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Organizational Card",
+                "model": "organizational-card",
+                "acronym": "MIGA",
+                "title": "Multilateral Investment Guarantee Agency",
+                "mission": "Placeholder",
+                "link": "/content/world-bank/global/en",
+                "linkText": "Learn More"
+              },
+              "item5": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Organizational Card",
+                "model": "organizational-card",
+                "acronym": "ICSID",
+                "title": "International Centre for Settlement of Investment Disputes",
+                "mission": "Placeholder",
+                "link": "/content/world-bank/global/en",
+                "linkText": "Learn More"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "organizational-cards",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Background Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "value": "",
+          "label": "Background Alternate Text"
+        }
+      ]
+    },
+    {
+      "id": "organizational-card",
+      "fields":[
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "acronym",
+          "label": "Acronym",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "mission",
+          "label": "Mission",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "link",
+          "label": "Link",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkText",
+          "label": "Link Text",
+          "multi": false
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "organizational-cards",
+      "components": [
+        "organizational-card"
+      ]
+    }
+  ]
+}
