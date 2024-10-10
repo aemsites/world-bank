@@ -7,9 +7,13 @@ meta {
 get {
   url: https://admin.hlx.page/config/{{org}}/sites/:siteName/public.json
   body: none
-  auth: none
+  auth: bearer
 }
 
 params:path {
   siteName: world-bank
+}
+
+auth:bearer {
+  token: {{authToken}}
 }
