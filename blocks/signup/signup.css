@@ -72,7 +72,7 @@ input:not(:placeholder-shown) + .floating-placeholder {
 }
 
 html[dir="rtl"] .input-group .floating-placeholder {
-  right: 10px;
+  right: 29px;
 }
 
 .email-signup-container .checkbox-group label p {
@@ -144,11 +144,10 @@ html[dir="rtl"] .email-signup-container .error-message {
 
   .email-signup-container input[type="email"],
   .email-signup-container input[type="text"] {
-    padding: 22px 0 10px 29px;
+    padding: 22px 10px 10px 29px;
     font-size: 14px;
     border: 1px solid var(--divider-on-light-emphasis);
     margin-right: 0;
-    padding-right: 10px;
   }
 
   .email-signup-container button#signup-btn {
@@ -187,6 +186,11 @@ html[dir="rtl"] .email-signup-container .error-message {
     border-radius: 0 100px 100px 0;
   }
 
+  html[dir="rtl"] .email-signup-container input[type="email"],
+  .email-signup-container input[type="text"] {
+    padding: 22px 29px 10px 10px;
+  }
+
   .email-signup-container input[type="text"] {
     border-radius: 0;
   }
@@ -216,6 +220,10 @@ html[dir="rtl"] .email-signup-container .error-message {
   .email-signup-container .signup-content {
     padding: 0 100px 0 0;
     max-width: 500px;
+  }
+
+  html[dir="rtl"] .email-signup-container .signup-content {
+    padding: 0 0 0 100px;
   }
 
   .email-signup-container button#signup-btn,

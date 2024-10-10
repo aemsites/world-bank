@@ -2,13 +2,17 @@ import { processTags } from '../../scripts/utils.js';
 import {
   div, a, p, img, button,
 } from '../../scripts/dom-helpers.js';
+import { toCamelCase } from '../../scripts/aem.js';
+import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+
+const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
 function processTag(tag) {
   let tagTxt = tag.innerText;
   if (tagTxt) {
     tagTxt = processTags(tagTxt, 'category');
     tag.classList.add(tagTxt);
-    tag.firstElementChild.innerText = tagTxt;
+    tag.firstElementChild.innerText = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
   }
 }
 
@@ -17,7 +21,7 @@ function processNewsTag(tag) {
   if (tagTxt) {
     tagTxt = processTags(tagTxt, 'category');
     tag.nextElementSibling.classList.add(tagTxt);
-    tag.firstElementChild.innerText = tagTxt;
+    tag.firstElementChild.innerText = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
   }
 }
 
