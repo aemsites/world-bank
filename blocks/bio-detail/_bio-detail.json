@@ -1,0 +1,95 @@
+{
+  "definitions": [
+    {
+      "title": "Bio Detail",
+      "id": "bio-detail",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "model": "bio-detail",
+              "name": "Bio Detail",
+              "image": "/content/dam/world-bank/sample/placeholder-black.png",
+              "display-name": "Axel van Trotsenburg",
+              "job-title": " <p>Senior Managing Director</p><p>World Bank Group</p>",
+              "x-link": "www.xlink.com",
+              "linkedin-link": "www.linkedin.com",
+              "instagram-link": "www.instagram.com",
+              "media-inquiries": "<p><strong>Kimberly Versak</strong></p><p>Senior External Affairs Officer</p><p><strong><em><a href='tel:2024588881' title='Tel: 202-458-8881'>Tel: 202-458-8881</a></em></strong></p><p><strong><em><a href='mailto:kversak@worldbank.org' title='kversak@worldbank.org'>kversak@worldbank.org</a></em></strong></p>",
+              "resources": "<p><strong><em><a href='#' title='Full Bio'>Full Bio</a></em></strong></p><p> <strong><em><a href='#' title='High-Res Photo'>High-Res Photo</a></em></strong> </p> <p><strong><em><a href='#' title='Other Download'>Other Download</a></em></strong></p>"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "bio-detail",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false,
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "display-name",
+          "value": "",
+          "label": "Display Name",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "job-title",
+          "value": "",
+          "label": "Job Title",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "x-link",
+          "value": "",
+          "label": "X link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linkedin-link",
+          "value": "",
+          "label": "Linkedin Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "instagram-link",
+          "value": "",
+          "label": "Instagram Link"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "media-inquiries",
+          "value": "",
+          "label": "Media Inquiries",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "resources",
+          "value": "",
+          "label": "Resources"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

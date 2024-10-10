@@ -1,0 +1,69 @@
+{
+  "definitions": [
+    {
+      "title": "Carousel",
+      "id": "carousel",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Carousel",
+              "model": "carousel",
+              "filter": "carousel",
+              "item1": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Card",
+                "model": "card",
+                "image": "/content/dam/world-bank/sample/placeholder-black.png",
+                "text": "<p>Explore History - essential data to learn about the important moments in the history of the World Bank while discovering the gems of the World Bank Group Archives</p>"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "carousel",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "title",
+          "value": "",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "button",
+          "value": "",
+          "label": "Additional Text",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "card",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "carousel",
+      "components": [
+        "card"
+      ]
+    }
+  ]
+}

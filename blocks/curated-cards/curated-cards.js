@@ -1,9 +1,9 @@
 import { toCamelCase } from '../../scripts/aem.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
-  p, h1, div, a, li, ul, picture, img,
+  p, h1, div, a, li, ul,
 } from '../../scripts/dom-helpers.js';
-import { processTags, dynamicMediaAssetProcess } from '../../scripts/utils.js';
+import { processTags } from '../../scripts/utils.js';
 
 const FEATURE_BTN_LABEL = 'curated-banner-button-label';
 const MORE_TOP_STORY = 'more-top-story-label';
@@ -17,12 +17,54 @@ function processTag(tagdiv, tagAuthored, placeholders) {
   }
 }
 
+function removeSmartcropParam(queryParams) {
+  return queryParams.split('&').filter((param) => !param.startsWith('smartcrop=')).join('&');
+}
+
+function updateDMImage(pictureElement, dmImageContent) {
+  const useSmartCrop = dmImageContent.querySelector('p:nth-child(2)')?.textContent.trim() || '';
+  const queryParams = dmImageContent.querySelector('p:nth-child(3)')?.textContent.trim() || '';
+
+  if (!pictureElement) return;
+  const updatedQueryParams = queryParams.length > 0 ? removeSmartcropParam(queryParams) : '';
+
+  let smartcropValue = '';
+  if (useSmartCrop === 'true') {
+    const viewportWidth = window.innerWidth;
+    if (viewportWidth > 1024) {
+      smartcropValue = 'desktop';
+    } else if (viewportWidth > 768) {
+      smartcropValue = 'tablet';
+    } else {
+      smartcropValue = 'mobile';
+    }
+  }
+
+  Array.from(pictureElement.children).forEach((child) => {
+    const isSource = child.tagName === 'SOURCE';
+    const baseUrl = isSource ? child.srcset.split('?')[0] : child.src.split('?')[0];
+    const separator = baseUrl.includes('?') ? '&' : '?';
+    let newUrl = baseUrl;
+    if (updatedQueryParams) {
+      newUrl = `${baseUrl}?${updatedQueryParams}`;
+    }
+    if (smartcropValue) {
+      newUrl += `${separator}smartcrop=${smartcropValue}`;
+    }
+    if (isSource && child.srcset) {
+      child.srcset = newUrl;
+    } else if (child.src) {
+      child.src = newUrl;
+    }
+  });
+}
+
 // Creates a feature card element with its content
 function createFeatureCard(row, placeHolders) {
   const [
+    useDM,
     featureImageContent,
-    featureAltContent,
-    featureQueryParams,
+    dmImageContent,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
@@ -31,35 +73,40 @@ function createFeatureCard(row, placeHolders) {
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = '';
-  if (featureAltContent) {
-    const pic = featureImageContent.querySelector('img');
-    if (pic) {
-      pic.alt = featureAltContent.textContent.trim();
-      pic.title = featureAltContent.textContent.trim();
-      pic.width = 750;
-      pic.height = 450;
-    }
-    featureAltContent.innerHTML = '';
-  }
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
-    div({ class: ' feature-card-content-text' }, a({ href: featureLink.textContent }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent))),
-    div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
+    div(
+      { class: 'feature-card-content-text' },
+      a(
+        { href: featureLink.textContent },
+        h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent),
+        p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
+      ),
+    ),
+    div(
+      { class: 'feature-card-link' },
+      a(
+        { href: featureLink.textContent, class: 'button' },
+        placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story',
+      ),
+    ),
   );
-  const pictureElement = featureImageContent.querySelector('picture');
-  if (pictureElement) {
-    dynamicMediaAssetProcess(pictureElement, featureQueryParams);
-    featureDiv.append(pictureElement);
+
+  let pictureElement;
+  if (useDM.textContent.trim() === '') {
+    pictureElement = featureImageContent.querySelector('picture');
   } else {
-    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
+    pictureElement = dmImageContent.querySelector('picture');
+    updateDMImage(pictureElement, dmImageContent);
   }
+  featureDiv.append(pictureElement);
   featureDiv.append(featureContentWrapper);
   return featureDiv;
 }
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, alttxt, qParam, tagContent, headingContent, decsDiv, linkDiv] = row.children;
+  const [useDM, imageContent, dmImage, tagContent, headingContent, decsDiv, linkDiv] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -74,20 +121,12 @@ function processRow(row) {
     processTag(tagElement, tagContent, listOfAllPlaceholdersData);
   }
 
-  if (imageContent) {
-    imageDiv.append(imageContent.querySelector('picture'));
-    if (alttxt) {
-      const pictureElement = imageDiv.querySelector('picture');
-      const pic = imageDiv.querySelector('img');
-      const para = alttxt.querySelector('p');
-      if (para && pic) {
-        pic.alt = para.textContent.trim();
-      }
-      alttxt.remove();
-      dynamicMediaAssetProcess(pictureElement, qParam);
-      pic.width = 200;
-      pic.height = 150;
-    }
+  if (useDM.textContent.trim() === '' && imageContent) {
+    imageDiv.innerHTML = imageContent.innerHTML;
+  } else {
+    const dmPicture = dmImage.querySelector('picture');
+    updateDMImage(dmPicture, dmImage);
+    imageDiv.innerHTML = dmPicture.outerHTML;
   }
 
   if (headingContent) {
@@ -114,9 +153,7 @@ export default async function decorate(block) {
       const liIndex = processRow(row);
       ulElement.appendChild(liIndex);
     }
-
     block.innerHTML = ''; // Clear all content
-
     block.append(
       featureCard,
       div(

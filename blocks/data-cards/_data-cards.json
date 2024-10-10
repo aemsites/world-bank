@@ -1,0 +1,189 @@
+{
+  "definitions": [
+    {
+      "title": "Data Cards",
+      "id": "data-cards",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Data Cards",
+              "model": "data-cards",
+              "filter": "data-cards",
+              "title": "<p><strong>Data</strong> for Development</p>",
+              "description": "<p>Essential data to guide decisions, monitor progress, and evaluate impacts</p>",
+              "additional-text": "<p>Explore by focus area</p>"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Data Card",
+      "id": "data-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Data Card",
+              "model": "data-card"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "News Card",
+      "id": "news-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "News Card",
+              "model": "news-card"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "data-cards",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "title",
+          "value": "",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "additional-text",
+          "value": "",
+          "label": "Additional Text",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "classes",
+          "value": "",
+          "label": "Classes",
+          "options": [
+            {
+              "name": "Data Card",
+              "value": "data-card-variation"
+            },
+            {
+              "name": "News Card",
+              "value": "news-card-variation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-card",
+      "fields": [
+        {
+          "component": "aem-tag",
+          "name": "tags",
+          "label": "Tags for Card",
+          "valueType": "string",
+          "rootPath": "/content/cq:tags/world-bank/category",
+          "description": "Tags for data card"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "value": "",
+          "label": "Title"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "data-card-link",
+          "value": "",
+          "label": "Link",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "disclaimer",
+          "value": "",
+          "label": "Disclaimer Text"
+        }
+      ]
+    },
+    {
+      "id": "news-card",
+      "fields": [
+        {
+          "component": "aem-tag",
+          "name": "news-card-tags",
+          "label": "Tags for Card",
+          "valueType": "string",
+          "rootPath": "/content/cq:tags/world-bank/category",
+          "description": "Tags for news card"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "news-card-title",
+          "value": "",
+          "label": "Title"
+        },
+        {
+          "component": "text",
+          "name": "news-card-link",
+          "value": "",
+          "label": "Link",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "news-card-image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "alt",
+          "value": "Default alt",
+          "label": "News Card Alt Text"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "data-cards",
+      "components": [
+        "data-card",
+        "news-card"
+      ]
+    }
+  ]
+}

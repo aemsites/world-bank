@@ -23,7 +23,7 @@ module.exports = {
       'error',
       {
         '*': 4,
-        'curated-card': 7,
+        'curated-card': 11,
         'data-card': 5,
         'news-card': 5,
         'explore-card': 7,

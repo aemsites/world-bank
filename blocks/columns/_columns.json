@@ -1,0 +1,170 @@
+{
+  "definitions": [
+    {
+      "title": "Columns",
+      "id": "columns",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "columns": "2",
+              "rows": "1"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "columns",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "value": "",
+          "label": "Column Styles",
+          "valueType": "string",
+          "maxSize": 4,
+          "options": [
+            {
+              "name": "Variations",
+              "children": [
+                {
+                  "name": "Default",
+                  "value": "columns-default-variant"
+                },
+                {
+                  "name": "Heading With Description",
+                  "value": "columns-heading-with-description"
+                },
+                {
+                  "name": "Divider Variant",
+                  "value": "columns-divider-variant"
+                },
+                {
+                  "name": "Transform Teaser",
+                  "value": "columns-transform-teaser"
+                },
+                {
+                  "name": "Feature Card Variation",
+                  "value": "columns-feature-card"
+                },
+                {
+                  "name": "Image Right Variation",
+                  "value": "columns-image-right"
+                },
+                {
+                  "name": "Image Left Variation",
+                  "value": "columns-image-left"
+                }
+              ]
+            },
+            {
+              "name": "Vertical Alignment",
+              "children": [
+                {
+                  "name": "Top (default)",
+                  "value": "valign-top"
+                },
+                {
+                  "name": "Center",
+                  "value": "valign-center"
+                },
+                {
+                  "name": "Bottom",
+                  "value": "valign-bottom"
+                }
+              ]
+            },
+            {
+              "name": "Horizontal Alignment",
+              "children": [
+                {
+                  "name": "Left (default)",
+                  "value": "halign-default"
+                },
+                {
+                  "name": "Center",
+                  "value": "halign-center"
+                },
+                {
+                  "name": "Right",
+                  "value": "halign-right"
+                }
+              ]
+            },
+            {
+              "name": "2 Col Desktop Layout",
+              "children": [
+                {
+                  "name": "50% - 50% (default)",
+                  "value": "columns-layout-default"
+                },
+                {
+                  "name": "33% - 67%",
+                  "value": "column-layout-33-67"
+                },
+                {
+                  "name": "67% - 33%",
+                  "value": "column-layout-67-33"
+                },
+                {
+                  "name": "25% - 75%",
+                  "value": "column-layout-25-75"
+                },
+                {
+                  "name": "75% - 25%",
+                  "value": "column-layout-75-25"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "number",
+          "name": "columns",
+          "value": "2",
+          "label": "Columns",
+          "options": [
+            {
+              "name": "2",
+              "value": "2"
+            },
+            {
+              "name": "3",
+              "value": "3"
+            },
+            {
+              "name": "4",
+              "value": "4"
+            },
+            {
+              "name": "5",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "rows",
+          "value": "",
+          "label": "Rows"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "columns",
+      "components": []
+    },
+    {
+      "id": "column",
+      "components": ["text", "image", "button", "title", "dm-asset"]
+    }
+  ]
+}
