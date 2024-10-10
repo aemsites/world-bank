@@ -291,3 +291,22 @@ export function showCookieConsent() {
     cookieSection.style = 'display:block;';
   }
 }
+
+/**
+ * Process Dynamic media image to append query param
+ * @param {*} pictureElement
+ * @param {*} qParam
+ */
+export function dynamicMediaAssetProcess(pictureElement, qParam) {
+  const queryParams = qParam.textContent.trim();
+  if (queryParams.length > 0) {
+    Array.from(pictureElement.children).forEach((child) => {
+      const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
+      if (child.tagName === 'SOURCE' && child.srcset) {
+        child.srcset = `${baseUrl}?${queryParams}`;
+      } else if (child.tagName === 'IMG' && child.src) {
+        child.src = `${baseUrl}?${queryParams}`;
+      }
+    });
+  }
+}

@@ -18,8 +18,6 @@ function createSocialMediaLink(linkName, className, iconPath, name) {
     const anchor = document.createElement('a');
     anchor.href = linkName.textContent.trim();
     anchor.title = name;
-    anchor.dataset.customlink = 'sm:body';
-    anchor.dataset.text = name;
     const linkImage = img({ class: className });
     linkImage.src = `${window.hlx.codeBasePath}/icons/${iconPath}`;
     linkImage.alt = name;
@@ -130,6 +128,10 @@ export default async function decorate(block) {
   profileImg.closest('picture').replaceWith(optimizedPic);
 
   const mediaTargetDiv = block.querySelector('.media-inquiries');
+  mediaTargetDiv.querySelectorAll('a').forEach((a) => {
+    a.dataset.customlink = 'sm:body';
+    a.dataset.text = a.textContent;
+  });
   const placeholderData = await fetchLanguagePlaceholders();
   mediaTargetDiv.insertBefore(
     div({ class: 'title' }, placeholderData.biodetailMediaText),
