@@ -32,38 +32,76 @@ function createFeatureCard(row, placeHolders) {
   moveInstrumentation(row, featureDiv);
   console.log(useDM);
 
-  featureTagContent.innerHTML = '';
-/*   if (featureAltContent) {
-    const pic = featureImageContent.querySelector('img');
-    if (pic) {
-      pic.alt = featureAltContent.textContent.trim();
-      pic.title = featureAltContent.textContent.trim();
-    }
-    featureAltContent.innerHTML = '';
-  } */
-  /* const featureContentWrapper = div(
+  featureTagContent.innerHTML = ''; // why are we dumping the tag content?
+
+  const featureContentWrapper = div(
     { class: 'feature-card-content' },
-    div({ class: ' feature-card-content-text' }, a({ href: featureLink.textContent }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent))),
-    div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
-  ); */
-  const pictureElement = featureImageContent.querySelector('picture');
-  if (pictureElement) {
-    /* const queryParams = featureQueryParams.textContent.trim();
-    if (queryParams.length > 0) {
-      Array.from(pictureElement.children).forEach((child) => {
-        const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
-        if (child.tagName === 'SOURCE' && child.srcset) {
-          child.srcset = `${baseUrl}?${queryParams}`;
-        } else if (child.tagName === 'IMG' && child.src) {
-          child.src = `${baseUrl}?${queryParams}`;
+    div(
+      { class: 'feature-card-content-text' },
+      a(
+        { href: featureLink.textContent },
+        h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent),
+        p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
+      ),
+    ),
+    div(
+      { class: 'feature-card-link' },
+      a(
+        { href: featureLink.textContent, class: 'button' },
+        placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story',
+      ),
+    ),
+  );
+
+  let pictureElement;
+  if (useDM.textContent.trim() === '') {
+    pictureElement = featureImageContent.querySelector('picture');
+  } else {
+    pictureElement = dmImageContent.querySelector('picture');
+    const useSmartCrop = dmImageContent.querySelector('div:nth-child(2)')?.textContent.trim();
+    const queryParams = dmImageContent.querySelector('div:last-child')?.textContent.trim();
+    if (pictureElement) {
+      // add query params to the image urls
+      if (queryParams.length > 0) {
+        Array.from(pictureElement.children).forEach((child) => {
+          const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
+          if (child.tagName === 'SOURCE' && child.srcset) {
+            child.srcset = `${baseUrl}?${queryParams}`;
+          } else if (child.tagName === 'IMG' && child.src) {
+            child.src = `${baseUrl}?${queryParams}`;
+          }
+        });
+      }
+      // add smartcrop query param based on viewport
+      if (useSmartCrop.length > 0) {
+        const viewportWidth = window.innerWidth;
+        let smartcropValue;
+        if (viewportWidth > 1024) {
+          smartcropValue = 'desktop';
+        } else if (viewportWidth > 768) {
+          smartcropValue = 'tablet';
+        } else {
+          smartcropValue = 'mobile';
         }
-      });
-    } */
+        Array.from(pictureElement.children).forEach((child) => {
+          const baseUrl = child.tagName === 'SOURCE' ? child.srcset : child.src;
+          const separator = baseUrl.includes('?') ? '&' : '?';
+          if (child.tagName === 'SOURCE' && child.srcset) {
+            child.srcset = `${baseUrl}${separator}smartcrop=${smartcropValue}`;
+          } else if (child.tagName === 'IMG' && child.src) {
+            child.src = `${baseUrl}${separator}smartcrop=${smartcropValue}`;
+          }
+        });
+      }
+    }
+  }
+  // Append image or a fallback placeholder if no pictureElement is found
+  if (pictureElement) {
     featureDiv.append(pictureElement);
   } else {
-    // featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
+    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
   }
-  //featureDiv.append(featureContentWrapper);
+  featureDiv.append(featureContentWrapper);
   return featureDiv;
 }
 
