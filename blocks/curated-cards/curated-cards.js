@@ -18,8 +18,8 @@ function processTag(tagdiv, tagAuthored, placeholders) {
 }
 
 function updateDMImage(pictureElement, dmImageContent) {
-  const useSmartCrop = dmImageContent.querySelector('div:nth-child(2)')?.textContent?.trim() || '';
-  const queryParams = dmImageContent.querySelector('div:last-child')?.textContent?.trim() || '';
+  const useSmartCrop = dmImageContent.querySelector('*:nth-child(2)')?.textContent?.trim() || '';
+  const queryParams = dmImageContent.querySelector('*:last-child')?.textContent?.trim() || '';
   if (pictureElement) {
     // add query params to the image urls
     if (queryParams.length > 0) {
