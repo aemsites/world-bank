@@ -1,9 +1,9 @@
-import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
+import { toCamelCase } from '../../scripts/aem.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
   p, h1, div, a, li, ul, picture, img,
 } from '../../scripts/dom-helpers.js';
-import { processTags } from '../../scripts/utils.js';
+import { processTags, dynamicMediaAssetProcess } from '../../scripts/utils.js';
 
 const FEATURE_BTN_LABEL = 'curated-banner-button-label';
 const MORE_TOP_STORY = 'more-top-story-label';
@@ -70,7 +70,6 @@ function createFeatureCard(row, placeHolders) {
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = ''; // why are we dumping the tag content?
-
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
     div(
@@ -156,16 +155,6 @@ export default async function decorate(block) {
       const liIndex = processRow(row);
       ulElement.appendChild(liIndex);
     }
-
-    // Optimize images
-    /* ulElement.querySelectorAll('picture > img').forEach((imgVar) => {
-      const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '250' }]);
-      const newPic = optimizedPic.querySelector('img');
-      moveInstrumentation(imgVar, newPic);
-      newPic.width = 200;
-      newPic.height = 150;
-      imgVar.closest('picture').replaceWith(optimizedPic);
-    }); */
 
     block.innerHTML = ''; // Clear all content
 

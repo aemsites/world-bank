@@ -1285,11 +1285,13 @@ main .section.bg-image .sec-img {
   width: 100%;
   position: absolute;
   z-index: -1;
+  height: 100%;
 }
 
 @media (width >= 1024px) {
   main .section.bg-image .sec-img {
-    top: -20px;
+    top: 0;
+    object-fit: cover;
   }
 
   main .section[data-sec-width="true"][data-sec-inside-container="true"] > div {

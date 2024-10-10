@@ -86,6 +86,9 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
     text-align: center;
     padding-top: 15%;
     text-transform:uppercase;
+    font-weight: normal;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .teaser-wrapper .button-container {

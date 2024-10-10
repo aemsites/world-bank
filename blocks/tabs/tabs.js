@@ -248,6 +248,8 @@ export default async function decorate(block) {
       type: 'button',
       'aria-controls': `tabpanel-${id}`,
       'aria-selected': !i,
+      'data-customlink': 'tb:body content',
+      'data-wbgtabidtabheader': `${id}`,
       role: 'tab',
     }, tab.textContent.trim());
 
