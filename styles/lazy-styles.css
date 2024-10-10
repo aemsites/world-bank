@@ -163,7 +163,7 @@ html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
     .columns.columns-transform-teaser .columns-img-col::before {
         width: 623px;
         height: 592px;
-        right: -18px;
+        right: -4px;
         top: 24px;
         background-image: url('../icons/swoosh-desktop.svg');
     }

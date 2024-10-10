@@ -186,13 +186,13 @@ html[dir="rtl"] .email-signup-container .error-message {
     border-radius: 0 100px 100px 0;
   }
 
-  html[dir="rtl"] .email-signup-container input[type="email"],
-  .email-signup-container input[type="text"] {
-    padding: 22px 29px 10px 10px;
-  }
-
   .email-signup-container input[type="text"] {
     border-radius: 0;
+  }
+
+  html[dir="rtl"] .email-signup-container input[type="email"],
+  html[dir="rtl"] .email-signup-container input[type="text"] {
+    padding: 22px 29px 10px 10px;
   }
 
   .email-signup-container input[type="checkbox"] {
