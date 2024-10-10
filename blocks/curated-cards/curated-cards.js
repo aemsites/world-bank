@@ -1,7 +1,7 @@
 import { toCamelCase } from '../../scripts/aem.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
-  p, h1, div, a, li, ul, picture, img,
+  p, h1, div, a, li, ul,
 } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
 
