@@ -129,7 +129,7 @@ function processRow(row) {
   } else {
     const dmPicture = dmImage.querySelector('picture');
     updateDMImage(dmPicture, dmImage);
-    imageDiv.innerHTML = dmPicture.innerHTML;
+    imageDiv.innerHTML = dmPicture;
   }
 
   if (headingContent) {
