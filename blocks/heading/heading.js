@@ -12,6 +12,7 @@ function updateHeadingStructure(block) {
     mainHeadingDiv,
     headerTagDiv,
     suffixDiv,
+    headingUpperCaseDiv,
     bottomLineDiv,
     borderLineClassDiv,
     spacingTopClassDiv,
@@ -24,6 +25,7 @@ function updateHeadingStructure(block) {
   const prefixText = getTextContent(prefixDiv);
   const mainHeadingText = getTextContent(mainHeadingDiv);
   const headerTag = getTextContent(headerTagDiv) || 'h2';
+  const isHeadingUpperCase = getTextContent(headingUpperCaseDiv) === 'true';
   const suffixText = getTextContent(suffixDiv);
   const addBottomLine = getTextContent(bottomLineDiv) === 'true';
   const borderLineClass = getTextContent(borderLineClassDiv);
@@ -44,6 +46,10 @@ function updateHeadingStructure(block) {
   const suffixSpan = span(suffixText);
 
   headerElement.append(prefixSpan, ` ${mainHeadingText} `, suffixSpan);
+
+  if (isHeadingUpperCase) {
+    headerElement.classList.add('uppercase');
+  }
 
   // Append elements to the heading block
   headingBlock.append(eyebrow, headerElement);

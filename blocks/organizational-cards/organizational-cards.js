@@ -4,6 +4,12 @@ function handleExpandCollapse(event) {
   card.classList.toggle('collapsed');
   const isCollapsed = card.classList.contains('collapsed');
   card.setAttribute('aria-expanded', !isCollapsed);
+  // set the focus on minus icon when card is expanded
+  if (!isCollapsed) {
+    card.querySelector('.collapse-btn').focus();
+  } else {
+    card.querySelector('.expand-btn').focus();
+  }
 }
 
 function closeOpenCards() {
@@ -36,9 +42,11 @@ export default async function decorate(block) {
     const collapseBtn = document.createElement('div');
     collapseBtn.classList.add('collapse-btn');
     collapseBtn.tabIndex = 0;
+    collapseBtn.setAttribute('role', 'button');
+    collapseBtn.setAttribute('aria-label', `Collapse ${card.children[1].innerText}`);
     const minusIcon = document.createElement('img');
     minusIcon.src = `${window.hlx.codeBasePath}/icons/icon-minus.svg`;
-    minusIcon.setAttribute('alt', 'Minus icon');
+    minusIcon.setAttribute('alt', 'Collapse icon');
     minusIcon.width = 20;
     minusIcon.height = 20;
     collapseBtn.appendChild(minusIcon);
@@ -47,9 +55,10 @@ export default async function decorate(block) {
     expandBtn.classList.add('expand-btn');
     expandBtn.tabIndex = 0;
     expandBtn.setAttribute('role', 'button');
+    expandBtn.setAttribute('aria-label', `Expand ${card.children[1].innerText}`);
     const plusIcon = document.createElement('img');
     plusIcon.src = `${window.hlx.codeBasePath}/icons/icon-plus.svg`;
-    plusIcon.setAttribute('alt', 'Plus icon');
+    plusIcon.setAttribute('alt', 'Expand icon');
     plusIcon.width = 20;
     plusIcon.height = 20;
     expandBtn.appendChild(plusIcon);

@@ -380,6 +380,10 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
   height: 100%;
 }
 
+.data-cards .news-card .news-card-image img:hover, .data-cards a:not(:first-child) .news-card-image img:hover{
+  transform: scale(1.15);
+}
+
 .section .data-cards.news-card-variation .rte-container > .main-heading > div > p:first-child {
   font-size: var(--font-size-1000);
   color: var(--text-on-light-highlight);
@@ -390,6 +394,11 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
   padding: var(--button-vertical-padding) 0 var(--spacing-xxsmall) 0;
   border-bottom: 2px solid var(--divider-on-light-emphasis);
   color: var(--text-on-light-link-primary-enabled);
+}
+
+html[dir="rtl"] .data-cards.data-card-variation .rte-container>div:nth-child(3)>div>p.button-container a,
+html[dir="rtl"] .data-cards.news-card-variation .rte-container>div:nth-child(3)>div>p.button-container a {
+  margin: 0 0 var(--spacing-xsmall) var(--spacing-xsmall)
 }
 
 .section .data-cards-wrapper .data-cards.news-card-variation > .rte-container > div:nth-child(2) > div > p a:hover {
@@ -533,6 +542,10 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
     padding-bottom: var(--spacing-medium);
   }
 
+  .data-cards .news-card .news-card-image img {
+    transition: transform 0.2s;
+  }
+
   .data-cards.news-card-variation .news-card-items a:not(:first-child) .news-card {
     display: grid;
     grid-template-columns: auto 30%;
@@ -570,6 +583,7 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
     align-self: center;
     width: 100%;
     max-width: 248px;
+    transition: transform 0.2s;
   }
 
   .data-cards.news-card-variation .rte-container {

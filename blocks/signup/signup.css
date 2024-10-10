@@ -23,6 +23,7 @@
   color: var(--text-on-light-default);
   box-sizing: border-box;
   padding-right: 10px;
+  height: 56px;
 }
 
 .email-signup-container input[type="text"] {
@@ -56,7 +57,7 @@ html[dir="rtl"] .email-signup-container input[type="text"] {
   position: absolute;
   color: var(--text-on-light-subdued);
   font-size: var(--font-size-300);
-  top: 13px;
+  top: 18px;
   left: 10px;
   white-space: nowrap;
 }
@@ -64,14 +65,14 @@ html[dir="rtl"] .email-signup-container input[type="text"] {
 input:focus + .floating-placeholder,
 input:not(:placeholder-shown) + .floating-placeholder {
   transition: all 0.2s ease-in-out;
-  transform: translateY(-70%);
+  transform: translateY(-50%);
   font-size: 12px;
   color: #999;
   line-height: 12px;
 }
 
 html[dir="rtl"] .input-group .floating-placeholder {
-  right: 10px;
+  right: 29px;
 }
 
 .email-signup-container .checkbox-group label p {
@@ -132,13 +133,9 @@ html[dir="rtl"] .email-signup-container .error-message {
 
 /* Tablet Styles */
 @media (width >=768px) {
-  .email-signup-container .input-container {
-    width: 40%;
-  }
-
   input:focus + .floating-placeholder,
   input:not(:placeholder-shown) + .floating-placeholder {
-    padding-left: 10px;
+    padding-left: 20px;
   }
 
   .email-signup-container .signup-description {
@@ -147,11 +144,10 @@ html[dir="rtl"] .email-signup-container .error-message {
 
   .email-signup-container input[type="email"],
   .email-signup-container input[type="text"] {
-    padding: 22px 0 10px 19px;
+    padding: 22px 10px 10px 29px;
     font-size: 14px;
     border: 1px solid var(--divider-on-light-emphasis);
     margin-right: 0;
-    padding-right: 10px;
   }
 
   .email-signup-container button#signup-btn {
@@ -174,7 +170,12 @@ html[dir="rtl"] .email-signup-container .error-message {
   }
 
   .email-signup-container .input-group {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+  }
+
+  .email-signup-container .checkbox-group {
+    grid-template-columns: 1fr auto;
   }
 
   .email-signup-container input[type="email"] {
@@ -183,6 +184,11 @@ html[dir="rtl"] .email-signup-container .error-message {
 
   html[dir="rtl"] .email-signup-container input[type="email"] {
     border-radius: 0 100px 100px 0;
+  }
+
+  html[dir="rtl"] .email-signup-container input[type="email"],
+  .email-signup-container input[type="text"] {
+    padding: 22px 29px 10px 10px;
   }
 
   .email-signup-container input[type="text"] {
@@ -214,6 +220,10 @@ html[dir="rtl"] .email-signup-container .error-message {
   .email-signup-container .signup-content {
     padding: 0 100px 0 0;
     max-width: 500px;
+  }
+
+  html[dir="rtl"] .email-signup-container .signup-content {
+    padding: 0 0 0 100px;
   }
 
   .email-signup-container button#signup-btn,

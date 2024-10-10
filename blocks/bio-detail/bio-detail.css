@@ -77,14 +77,21 @@ html[dir="rtl"] .bio-detail .download-image{
   color: var(--text-on-light-emphasis);
 }
 
-.bio-detail .first-container .name-job-social {
-  display: none;
+.bio-detail .first-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-huge);
+  padding: var(--spacing-small);
 }
 
 .bio-detail .second-container {
   display: flex;
   flex-direction: column-reverse;
   gap: var(--spacing-xhuge);
+}
+
+.bio-detail .second-container .name-job-social {
+  display: none;
 }
 
 .bio-detail .sections-container .display-name {
@@ -139,6 +146,7 @@ html[dir="rtl"] .bio-detail .download-image{
   padding-bottom: var(--spacing-small);
   color: var(--text-on-light-emphasis);
   line-height: 15.4px;
+  text-transform: uppercase;
 }
 
 .block-quote-container .default-content-wrapper p{
@@ -155,6 +163,10 @@ html[dir="rtl"] .bio-detail .download-image{
     line-height: 40.32px;
   }
 
+  .bio-detail .first-container .name-job-social {
+    display: none;
+  }
+
   .profile-image img {
     height: 264px;
   }
@@ -163,6 +175,10 @@ html[dir="rtl"] .bio-detail .download-image{
     display: grid;
     gap: 28px;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .bio-detail .second-container .name-job-social {
+    display: unset;
   }
 
   .bio-detail .media-resources {
@@ -180,10 +196,12 @@ html[dir="rtl"] .bio-detail .download-image{
     line-height: 53.76px;
   }
   
-  .sections-container .first-container{
+  .sections-container .first-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    gap: unset;
+    padding: unset;
   }
 
   .bio-detail .media-resources {
