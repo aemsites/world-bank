@@ -111,7 +111,7 @@
         },
         {
           "component": "boolean",
-          "label": "Use Smart Crop",
+          "label": "Auto Smart Crop",
           "name": "cc_smartCrop",
           "value": "false",
           "valueType": "boolean",

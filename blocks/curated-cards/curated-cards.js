@@ -1,4 +1,4 @@
-import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
+import { toCamelCase } from '../../scripts/aem.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
   p, h1, div, a, li, ul, picture, img,
@@ -17,22 +17,26 @@ function processTag(tagdiv, tagAuthored, placeholders) {
   }
 }
 
+function removeSmartcropParam(queryParams) {
+  return queryParams.split('&').filter((param) => !param.startsWith('smartcrop=')).join('&');
+}
+
 function updateDMImage(pictureElement, dmImageContent) {
   const useSmartCrop = dmImageContent.querySelector('p:nth-child(2)')?.textContent.trim() || '';
   const queryParams = dmImageContent.querySelector('p:nth-child(3')?.textContent.trim() || '';
   if (pictureElement) {
     // add query params to the image urls
     if (queryParams.length > 0) {
+      const updatedQueryParams = removeSmartcropParam(queryParams);
       Array.from(pictureElement.children).forEach((child) => {
         const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
         if (child.tagName === 'SOURCE' && child.srcset) {
-          child.srcset = `${baseUrl}?${queryParams}`;
+          child.srcset = `${baseUrl}?${updatedQueryParams}`;
         } else if (child.tagName === 'IMG' && child.src) {
-          child.src = `${baseUrl}?${queryParams}`;
+          child.src = `${baseUrl}?${updatedQueryParams}`;
         }
       });
     }
-    // add smartcrop query param based on viewport
     if (useSmartCrop === 'true') {
       const viewportWidth = window.innerWidth;
       let smartcropValue;
@@ -97,7 +101,6 @@ function createFeatureCard(row, placeHolders) {
     pictureElement = dmImageContent.querySelector('picture');
     updateDMImage(pictureElement, dmImageContent);
   }
-  // Append image or a fallback placeholder if no pictureElement is found
   if (pictureElement) {
     featureDiv.append(pictureElement);
   } else {
@@ -156,19 +159,7 @@ export default async function decorate(block) {
       const liIndex = processRow(row);
       ulElement.appendChild(liIndex);
     }
-
-    // Optimize images
-    /* ulElement.querySelectorAll('picture > img').forEach((imgVar) => {
-      const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '250' }]);
-      const newPic = optimizedPic.querySelector('img');
-      moveInstrumentation(imgVar, newPic);
-      newPic.width = 200;
-      newPic.height = 150;
-      imgVar.closest('picture').replaceWith(optimizedPic);
-    }); */
-
     block.innerHTML = ''; // Clear all content
-
     block.append(
       featureCard,
       div(
