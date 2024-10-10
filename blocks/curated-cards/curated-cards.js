@@ -30,8 +30,6 @@ function createFeatureCard(row, placeHolders) {
   ] = row.children;
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
-  console.log(useDM);
-
   featureTagContent.innerHTML = ''; // why are we dumping the tag content?
 
   const featureContentWrapper = div(
@@ -107,7 +105,7 @@ function createFeatureCard(row, placeHolders) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent, decsDiv, linkDiv, alttext] = row.children;
+  const [useDM, imageContent, dmImage, tagContent, headingContent, decsDiv, linkDiv] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -124,14 +122,14 @@ function processRow(row) {
 
   if (imageContent) {
     imageDiv.innerHTML = imageContent.innerHTML;
-    if (alttext) {
+    /* if (alttext) {
       const pic = imageDiv.querySelector('img');
       const para = alttext.querySelector('p');
       if (para && pic) {
         pic.alt = para.textContent.trim();
       }
       alttext.remove();
-    }
+    } */
   }
 
   if (headingContent) {
