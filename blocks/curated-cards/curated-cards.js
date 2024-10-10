@@ -36,6 +36,8 @@ function createFeatureCard(row, placeHolders) {
     if (pic) {
       pic.alt = featureAltContent.textContent.trim();
       pic.title = featureAltContent.textContent.trim();
+      pic.width = 750;
+      pic.height = 450;
     }
     featureAltContent.innerHTML = '';
   }
@@ -83,6 +85,8 @@ function processRow(row) {
       }
       alttxt.remove();
       dynamicMediaAssetProcess(pictureElement, qParam);
+      pic.width = 200;
+      pic.height = 150;
     }
   }
 
