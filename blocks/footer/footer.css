@@ -80,12 +80,22 @@ footer ul li {
 
 .ft-social .ft-social-list:first-child {
   padding-right: 40px;
-  border-right: 1px solid var(--accent-blue-primary-60);
+  border-right: 2px solid var(--divider-on-dark-default);
   border-left: 0;
+}
+
+.ft-legal .ft-legal-list li a {
+  opacity: 0.75;
 }
 
 .ft-social .ft-social-list:first-child a {
   padding: 0;
+}
+
+.ft-legal .ft-legal-list li a:any-link:hover {
+  color: var(--white);
+  text-decoration-color: var(--white);
+  text-underline-offset: 2px;
 }
 
 .ft-social .ft-social-list:nth-child(2) {
@@ -112,6 +122,11 @@ html[dir="rtl"] .ft-social .ft-social-list:nth-child(2) {
   
 .ft-main .ft-main-item ul li {
   line-height: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.ft-main .ft-main-item:not(:last-child) ul li a{
+  opacity: 0.75;
 }
 
 .ft-social .ft-social-list:nth-child(2)>ul {
@@ -174,9 +189,9 @@ html[dir="rtl"] .ft-social .ft-social-list:dir(rtl) ul li.ft-main-item:not(:last
 .ft-main .ft-main-item {
   padding-right: 28px;
   min-width: 20%;
-  opacity: 0.75;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .ft-main .ft-main-item a:not(.button) {
   display: inline-block;
   font-size: 16px;
@@ -209,8 +224,16 @@ html[dir="rtl"] .ft-social .ft-social-list:dir(rtl) ul li.ft-main-item:not(:last
   opacity: 0.9;
 }
 
+footer .section.bg-primary-blue-90 a:any-link:hover {
+  color: var(--white);
+  text-decoration-color: var(--white);
+  text-underline-offset: 2px;
+  opacity: 1;
+}
+
 footer .section.bg-primary-blue-90 a:any-link:visited:not(.button) {
   color: var(--white);
+  text-decoration-color: var(--white);
 }
 
 html[dir="rtl"] .ft-main-item:last-child {
@@ -232,12 +255,12 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   margin: auto;
   font-size: 14px;
   line-height: 17px;
-  opacity: 0.75;
 }
 
 .ft-legal .ft-legal-list p {
   margin: 0;
   padding: 0;
+  opacity: 0.75;
 }
 
 @media (width <= 1024px) {
@@ -264,7 +287,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   .ft-social .ft-social-list:last-child ul {
     justify-content: center;
     padding: 32px 0 0;
-    border-top: 1px solid var(--accent-blue-primary-60);
+    border-top: 2px solid var(--divider-on-dark-default);
   }
 
   .ft-main .ft-main-item ul li a.button {

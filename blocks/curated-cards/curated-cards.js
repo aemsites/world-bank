@@ -74,7 +74,6 @@ function createFeatureCard(row, placeHolders) {
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
   featureTagContent.innerHTML = ''; // why are we dumping the tag content?
-
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
     div(
