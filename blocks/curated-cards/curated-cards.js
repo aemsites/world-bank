@@ -23,41 +23,40 @@ function removeSmartcropParam(queryParams) {
 
 function updateDMImage(pictureElement, dmImageContent) {
   const useSmartCrop = dmImageContent.querySelector('p:nth-child(2)')?.textContent.trim() || '';
-  const queryParams = dmImageContent.querySelector('p:nth-child(3')?.textContent.trim() || '';
-  if (pictureElement) {
-    // add query params to the image urls
-    if (queryParams.length > 0) {
-      const updatedQueryParams = removeSmartcropParam(queryParams);
-      Array.from(pictureElement.children).forEach((child) => {
-        const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
-        if (child.tagName === 'SOURCE' && child.srcset) {
-          child.srcset = `${baseUrl}?${updatedQueryParams}`;
-        } else if (child.tagName === 'IMG' && child.src) {
-          child.src = `${baseUrl}?${updatedQueryParams}`;
-        }
-      });
-    }
-    if (useSmartCrop === 'true') {
-      const viewportWidth = window.innerWidth;
-      let smartcropValue;
-      if (viewportWidth > 1024) {
-        smartcropValue = 'desktop';
-      } else if (viewportWidth > 768) {
-        smartcropValue = 'tablet';
-      } else {
-        smartcropValue = 'mobile';
-      }
-      Array.from(pictureElement.children).forEach((child) => {
-        const baseUrl = child.tagName === 'SOURCE' ? child.srcset : child.src;
-        const separator = baseUrl.includes('?') ? '&' : '?';
-        if (child.tagName === 'SOURCE' && child.srcset) {
-          child.srcset = `${baseUrl}${separator}smartcrop=${smartcropValue}`;
-        } else if (child.tagName === 'IMG' && child.src) {
-          child.src = `${baseUrl}${separator}smartcrop=${smartcropValue}`;
-        }
-      });
+  const queryParams = dmImageContent.querySelector('p:nth-child(3)')?.textContent.trim() || '';
+
+  if (!pictureElement) return;
+  const updatedQueryParams = queryParams.length > 0 ? removeSmartcropParam(queryParams) : '';
+
+  let smartcropValue = '';
+  if (useSmartCrop === 'true') {
+    const viewportWidth = window.innerWidth;
+    if (viewportWidth > 1024) {
+      smartcropValue = 'desktop';
+    } else if (viewportWidth > 768) {
+      smartcropValue = 'tablet';
+    } else {
+      smartcropValue = 'mobile';
     }
   }
+
+  Array.from(pictureElement.children).forEach((child) => {
+    const isSource = child.tagName === 'SOURCE';
+    const baseUrl = isSource ? child.srcset.split('?')[0] : child.src.split('?')[0];
+    const separator = baseUrl.includes('?') ? '&' : '?';
+    let newUrl = baseUrl;
+    if (updatedQueryParams) {
+      newUrl = `${baseUrl}?${updatedQueryParams}`;
+    }
+    if (smartcropValue) {
+      newUrl += `${separator}smartcrop=${smartcropValue}`;
+    }
+    if (isSource && child.srcset) {
+      child.srcset = newUrl;
+    } else if (child.src) {
+      child.src = newUrl;
+    }
+  });
 }
 
 // Creates a feature card element with its content
@@ -73,7 +72,7 @@ function createFeatureCard(row, placeHolders) {
   ] = row.children;
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
-  featureTagContent.innerHTML = ''; // why are we dumping the tag content?
+  featureTagContent.innerHTML = '';
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
     div(
@@ -100,11 +99,7 @@ function createFeatureCard(row, placeHolders) {
     pictureElement = dmImageContent.querySelector('picture');
     updateDMImage(pictureElement, dmImageContent);
   }
-  if (pictureElement) {
-    featureDiv.append(pictureElement);
-  } else {
-    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
-  }
+  featureDiv.append(pictureElement);
   featureDiv.append(featureContentWrapper);
   return featureDiv;
 }
