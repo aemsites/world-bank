@@ -584,12 +584,28 @@
     "id": "curated-card",
     "fields": [
       {
-        "component": "reference",
+        "component": "custom-asset-namespace:custom-asset",
+        "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/main/tools/asset-selector/image.config.json",
         "valueType": "string",
         "name": "curated-card-image",
         "label": "Image",
         "multi": false,
         "required": true
+      },
+      {
+        "component": "text",
+        "name": "alttext",
+        "value": "",
+        "label": "Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "custom-query-params",
+        "label": "Image Query Params",
+        "value": "",
+        "description": "Add custom query params to the image URL"
       },
       {
         "component": "aem-tag",
@@ -622,13 +638,6 @@
         "name": "curated-card-link",
         "value": "",
         "label": "Link",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "alttext",
-        "value": "",
-        "label": "Alt Text",
         "valueType": "string"
       }
     ]

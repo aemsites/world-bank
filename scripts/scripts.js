@@ -13,6 +13,7 @@ import {
   fetchPlaceholders,
   getMetadata,
 } from './aem.js';
+import { picture, source, img } from './dom-helpers.js';
 
 import {
   getLanguage,
@@ -109,6 +110,30 @@ async function renderWBDataLayer() {
 }
 
 /**
+ * Decorates Dynamic Media images by modifying their URLs to include specific parameters
+ * and creating a <picture> element with different sources for different image formats and sizes.
+ *
+ * @param {HTMLElement} main - The main container element that includes the links to be processed.
+ */
+export function decorateDMImages(main) {
+  main.querySelectorAll('a[href^="https://delivery-p"]').forEach((a) => {
+    const url = new URL(a.href.split('?')[0]);
+    if (url.hostname.endsWith('.adobeaemcloud.com')) {
+      const pictureEl = picture(
+        source({ srcset: `${url.href}?width=1400&quality=85&preferwebp=true`, type: 'image/webp', media: '(min-width: 992px)' }),
+        source({ srcset: `${url.href}?width=1320&quality=85&preferwebp=true`, type: 'image/webp', media: '(min-width: 768px)' }),
+        source({ srcset: `${url.href}?width=780&quality=85&preferwebp=true`, type: 'image/webp', media: '(min-width: 320px)' }),
+        source({ srcset: `${url.href}?width=1400&quality=85`, media: '(min-width: 992px)' }),
+        source({ srcset: `${url.href}?width=1320&quality=85`, media: '(min-width: 768px)' }),
+        source({ srcset: `${url.href}?width=780&quality=85`, media: '(min-width: 320px)' }),
+        img({ src: `${url.href}?width=1400&quality=85`, alt: a.innerText }),
+      );
+      a.replaceWith(pictureEl);
+    }
+  });
+}
+
+/**
  * remove the adujusts the auto images
  * @param {Element} main The container element
  */
@@ -169,6 +194,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateDMImages(main);
 }
 
 /**
@@ -264,33 +290,33 @@ function decorateSectionImages(doc) {
     const sectionMobImg = sectionImgContainer.dataset.mobImage;
     let defaultImgUrl = null;
 
-    const picture = document.createElement('picture');
+    const newPic = document.createElement('picture');
     if (sectionImg) {
-      picture.appendChild(createSource(sectionImg, 1920, '(min-width: 1024px)'));
+      newPic.appendChild(createSource(sectionImg, 1920, '(min-width: 1024px)'));
       defaultImgUrl = sectionImg;
     }
 
     if (sectionTabImg) {
-      picture.appendChild(createSource(sectionTabImg, 1024, '(min-width: 768px)'));
+      newPic.appendChild(createSource(sectionTabImg, 1024, '(min-width: 768px)'));
       defaultImgUrl = sectionTabImg;
     }
 
     if (sectionMobImg) {
-      picture.appendChild(createSource(sectionTabImg, 600, '(max-width: 767px)'));
+      newPic.appendChild(createSource(sectionTabImg, 600, '(max-width: 767px)'));
       defaultImgUrl = sectionMobImg;
     }
 
-    const img = document.createElement('img');
-    img.src = defaultImgUrl;
-    img.alt = '';
-    img.className = 'sec-img';
-    img.loading = 'lazy';
-    img.width = '768';
-    img.height = '100%';
+    const newImg = document.createElement('img');
+    newImg.src = defaultImgUrl;
+    newImg.alt = '';
+    newImg.className = 'sec-img';
+    newImg.loading = 'lazy';
+    newImg.width = '768';
+    newImg.height = '100%';
 
     if (defaultImgUrl) {
-      picture.appendChild(img);
-      sectionImgContainer.prepend(picture);
+      newPic.appendChild(newImg);
+      sectionImgContainer.prepend(newPic);
     }
   });
 }

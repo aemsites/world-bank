@@ -21,11 +21,12 @@ function processTag(tagdiv, tagAuthored, placeholders) {
 function createFeatureCard(row, placeHolders) {
   const [
     featureImageContent,
+    featureAltContent,
+    featureQueryParams,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
     featureLink,
-    featureAltContent,
   ] = row.children;
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
@@ -34,6 +35,7 @@ function createFeatureCard(row, placeHolders) {
     const pic = featureImageContent.querySelector('img');
     if (pic) {
       pic.alt = featureAltContent.textContent.trim();
+      pic.title = featureAltContent.textContent.trim();
     }
     featureAltContent.innerHTML = '';
   }
@@ -44,6 +46,17 @@ function createFeatureCard(row, placeHolders) {
   );
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
+    const queryParams = featureQueryParams.textContent.trim();
+    if (queryParams.length > 0) {
+      Array.from(pictureElement.children).forEach((child) => {
+        const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
+        if (child.tagName === 'SOURCE' && child.srcset) {
+          child.srcset = `${baseUrl}?${queryParams}`;
+        } else if (child.tagName === 'IMG' && child.src) {
+          child.src = `${baseUrl}?${queryParams}`;
+        }
+      });
+    }
     featureDiv.append(pictureElement);
   } else {
     featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
