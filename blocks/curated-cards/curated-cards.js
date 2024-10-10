@@ -20,9 +20,8 @@ function processTag(tagdiv, tagAuthored, placeholders) {
 // Creates a feature card element with its content
 function createFeatureCard(row, placeHolders) {
   const [
+    useDM,
     featureImageContent,
-    featureAltContent,
-    featureQueryParams,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
@@ -30,15 +29,17 @@ function createFeatureCard(row, placeHolders) {
   ] = row.children;
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
+  console.log(useDM);
+
   featureTagContent.innerHTML = '';
-  if (featureAltContent) {
+/*   if (featureAltContent) {
     const pic = featureImageContent.querySelector('img');
     if (pic) {
       pic.alt = featureAltContent.textContent.trim();
       pic.title = featureAltContent.textContent.trim();
     }
     featureAltContent.innerHTML = '';
-  }
+  } */
   const featureContentWrapper = div(
     { class: 'feature-card-content' },
     div({ class: ' feature-card-content-text' }, a({ href: featureLink.textContent }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent))),
@@ -46,7 +47,7 @@ function createFeatureCard(row, placeHolders) {
   );
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
-    const queryParams = featureQueryParams.textContent.trim();
+    /* const queryParams = featureQueryParams.textContent.trim();
     if (queryParams.length > 0) {
       Array.from(pictureElement.children).forEach((child) => {
         const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
@@ -56,7 +57,7 @@ function createFeatureCard(row, placeHolders) {
           child.src = `${baseUrl}?${queryParams}`;
         }
       });
-    }
+    } */
     featureDiv.append(pictureElement);
   } else {
     featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));

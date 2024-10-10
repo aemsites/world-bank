@@ -2447,19 +2447,19 @@
       {
         "component": "boolean",
         "label": "Use Dynamic Media Image",
-        "name": "cc_reveal",
+        "name": "useDM",
         "valueType": "boolean"
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "curated-card-image",
+        "name": "image",
         "label": "Image",
         "multi": false,
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "useDM"
             },
             false
           ]
@@ -2467,13 +2467,13 @@
       },
       {
         "component": "text",
-        "name": "alttext",
+        "name": "imageAlt",
         "label": "Alt Text",
         "valueType": "string",
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "useDM"
             },
             false
           ]
@@ -2483,13 +2483,13 @@
         "component": "custom-asset-namespace:custom-asset",
         "configUrl": "https://raw.githubusercontent.com/aemsites/world-bank/refs/heads/main/tools/asset-selector/image.config.json",
         "valueType": "string",
-        "name": "dm_link",
+        "name": "cc_image",
         "label": "Dynamic Media Image",
         "multi": false,
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "useDM"
             },
             true
           ]
@@ -2497,13 +2497,13 @@
       },
       {
         "component": "text",
-        "name": "dm_linkText",
+        "name": "cc_imageAlt",
         "label": "Alt Text",
         "valueType": "string",
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "useDM"
             },
             true
           ]
@@ -2512,12 +2512,12 @@
       {
         "component": "boolean",
         "label": "Use Smart Crop",
-        "name": "dm_linkSC",
+        "name": "cc_smartCrop",
         "valueType": "boolean",
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "useDM"
             },
             true
           ]
@@ -2526,13 +2526,13 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "dm_params",
+        "name": "cc_queryparams",
         "label": "Image Query Params",
         "description": "Add custom query params to the image URL",
         "condition": {
           "===": [
             {
-              "var": "cc_reveal"
+              "var": "useDM"
             },
             true
           ]
