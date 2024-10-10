@@ -2498,7 +2498,7 @@
       },
       {
         "component": "text",
-        "name": "cc_imageAlt",
+        "name": "cc_imageText",
         "label": "Alt Text",
         "valueType": "string",
         "condition": {

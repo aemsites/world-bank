@@ -22,7 +22,7 @@ function createFeatureCard(row, placeHolders) {
   const [
     useDM,
     featureImageContent,
-    useSC,
+    dmImageContent,
     featureTagContent,
     featureHeadingContent,
     featureDescContent,
