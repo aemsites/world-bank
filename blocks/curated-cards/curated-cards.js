@@ -1,9 +1,9 @@
-import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
+import { toCamelCase } from '../../scripts/aem.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
   p, h1, div, a, li, ul, picture, img,
 } from '../../scripts/dom-helpers.js';
-import { processTags } from '../../scripts/utils.js';
+import { processTags, dynamicMediaAssetProcess } from '../../scripts/utils.js';
 
 const FEATURE_BTN_LABEL = 'curated-banner-button-label';
 const MORE_TOP_STORY = 'more-top-story-label';
@@ -46,17 +46,7 @@ function createFeatureCard(row, placeHolders) {
   );
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
-    const queryParams = featureQueryParams.textContent.trim();
-    if (queryParams.length > 0) {
-      Array.from(pictureElement.children).forEach((child) => {
-        const baseUrl = child.tagName === 'SOURCE' ? child.srcset.split('?')[0] : child.src.split('?')[0];
-        if (child.tagName === 'SOURCE' && child.srcset) {
-          child.srcset = `${baseUrl}?${queryParams}`;
-        } else if (child.tagName === 'IMG' && child.src) {
-          child.src = `${baseUrl}?${queryParams}`;
-        }
-      });
-    }
+    dynamicMediaAssetProcess(pictureElement, featureQueryParams);
     featureDiv.append(pictureElement);
   } else {
     featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
@@ -67,7 +57,7 @@ function createFeatureCard(row, placeHolders) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [imageContent, tagContent, headingContent, decsDiv, linkDiv, alttext] = row.children;
+  const [imageContent, alttxt, qParam, tagContent, headingContent, decsDiv, linkDiv] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -83,14 +73,16 @@ function processRow(row) {
   }
 
   if (imageContent) {
-    imageDiv.innerHTML = imageContent.innerHTML;
-    if (alttext) {
+    imageDiv.append(imageContent.querySelector('picture'));
+    if (alttxt) {
+      const pictureElement = imageDiv.querySelector('picture');
       const pic = imageDiv.querySelector('img');
-      const para = alttext.querySelector('p');
+      const para = alttxt.querySelector('p');
       if (para && pic) {
         pic.alt = para.textContent.trim();
       }
-      alttext.remove();
+      alttxt.remove();
+      dynamicMediaAssetProcess(pictureElement, qParam);
     }
   }
 
@@ -119,7 +111,7 @@ export default async function decorate(block) {
       ulElement.appendChild(liIndex);
     }
 
-    // Optimize images
+    /*
     ulElement.querySelectorAll('picture > img').forEach((imgVar) => {
       const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '250' }]);
       const newPic = optimizedPic.querySelector('img');
@@ -128,6 +120,7 @@ export default async function decorate(block) {
       newPic.height = 150;
       imgVar.closest('picture').replaceWith(optimizedPic);
     });
+    */
 
     block.innerHTML = ''; // Clear all content
 
