@@ -79,6 +79,7 @@
           "component": "boolean",
           "label": "Use Dynamic Media Image",
           "name": "useDM",
+          "value": false,
           "valueType": "boolean"
         },
         {
@@ -116,6 +117,7 @@
           "component": "boolean",
           "label": "Use Smart Crop",
           "name": "cc_smartCrop",
+          "value": false,
           "valueType": "boolean",
           "condition": { "===": [{"var" : "useDM"}, true] }
         },
