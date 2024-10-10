@@ -125,7 +125,7 @@ html[dir="rtl"] .ft-social .ft-social-list:nth-child(2) {
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-.ft-main .ft-main-item ul li a{
+.ft-main .ft-main-item:not(:last-child) ul li a{
   opacity: 0.75;
 }
 
