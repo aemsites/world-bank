@@ -111,17 +111,6 @@ export default async function decorate(block) {
       ulElement.appendChild(liIndex);
     }
 
-    /*
-    ulElement.querySelectorAll('picture > img').forEach((imgVar) => {
-      const optimizedPic = createOptimizedPicture(imgVar.src, imgVar.alt, false, [{ width: '250' }]);
-      const newPic = optimizedPic.querySelector('img');
-      moveInstrumentation(imgVar, newPic);
-      newPic.width = 200;
-      newPic.height = 150;
-      imgVar.closest('picture').replaceWith(optimizedPic);
-    });
-    */
-
     block.innerHTML = ''; // Clear all content
 
     block.append(
