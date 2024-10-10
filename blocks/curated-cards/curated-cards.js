@@ -33,7 +33,7 @@ function updateDMImage(pictureElement, dmImageContent) {
       });
     }
     // add smartcrop query param based on viewport
-    if (useSmartCrop.length > 0) {
+    if (useSmartCrop.textContent.trim() === 'true') {
       const viewportWidth = window.innerWidth;
       let smartcropValue;
       if (viewportWidth > 1024) {
