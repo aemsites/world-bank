@@ -41,11 +41,11 @@ function createFeatureCard(row, placeHolders) {
     }
     featureAltContent.innerHTML = '';
   } */
-  const featureContentWrapper = div(
+  /* const featureContentWrapper = div(
     { class: 'feature-card-content' },
     div({ class: ' feature-card-content-text' }, a({ href: featureLink.textContent }, h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent), p({ class: 'feature-card-content-description' }, featureDescContent.textContent))),
     div({ class: ' feature-card-link' }, a({ href: featureLink.textContent, class: 'button' }, placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story')),
-  );
+  ); */
   const pictureElement = featureImageContent.querySelector('picture');
   if (pictureElement) {
     /* const queryParams = featureQueryParams.textContent.trim();
@@ -61,9 +61,9 @@ function createFeatureCard(row, placeHolders) {
     } */
     featureDiv.append(pictureElement);
   } else {
-    featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
+    // featureDiv.append(picture({}, img({ style: 'height: 500px;', alt: 'Image cannot be empty' })));
   }
-  featureDiv.append(featureContentWrapper);
+  //featureDiv.append(featureContentWrapper);
   return featureDiv;
 }
 
