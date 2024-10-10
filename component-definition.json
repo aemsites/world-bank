@@ -253,7 +253,7 @@
                   },
                   "item4": {
                     "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                    "curated-card-name": "Curated Card",
+                    "name": "Curated Card",
                     "model": "curated-card",
                     "curated-card-tags": "evworld-bank:content-type/event",
                     "curated-card-title": "Curated Card Title 4",
