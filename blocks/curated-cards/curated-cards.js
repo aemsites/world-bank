@@ -78,7 +78,7 @@ function createFeatureCard(row, placeHolders) {
     div(
       { class: 'feature-card-content-text' },
       a(
-        { href: featureLink.textContent },
+        { href: featureLink?.textContent },
         h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent),
         p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
       ),
@@ -86,7 +86,7 @@ function createFeatureCard(row, placeHolders) {
     div(
       { class: 'feature-card-link' },
       a(
-        { href: featureLink.textContent, class: 'button' },
+        { href: featureLink?.textContent, class: 'button' },
         placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story',
       ),
     ),
@@ -113,8 +113,11 @@ function processRow(row) {
   const imageDiv = div({ class: 'curated-cards-card-img' });
   const tagElement = div({ class: 'curated-cards-card-event' });
   const heading = p();
-  const link = linkDiv.textContent ? linkDiv.textContent : '';
-  linkDiv.remove();
+  let link = '';
+  if (linkDiv) {
+    link = linkDiv.textContent.trim();
+    linkDiv.remove();
+  }
   decsDiv.remove();
 
   if (tagContent) {
