@@ -6,7 +6,7 @@ import {
   a, span, i,
 } from './dom-helpers.js';
 import {
-  getLanguage, fetchLanguageNavigation, isInternalPage, scriptEnabled, PATH_PREFIX,
+  isInternalPage, scriptEnabled, PATH_PREFIX,
 } from './utils.js';
 /**
  * Swoosh on page
@@ -20,10 +20,6 @@ function pageSwoosh() {
     document.body.classList.remove(pSwoosh);
   }
 }
-
-const getNavigationData = async (langCode) => {
-  await fetchLanguageNavigation(`/${langCode}`);
-};
 
 // refactor tweetable links function
 /**
@@ -92,7 +88,6 @@ async function loadAdobeLaunch() {
 async function loadDelayed() {
   pageSwoosh();
   buildTwitterLinks();
-  getNavigationData(getLanguage());
   if (!isInternalPage()) {
     await loadAdobeLaunch();
   }
