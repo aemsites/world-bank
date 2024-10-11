@@ -21,10 +21,6 @@ function pageSwoosh() {
   }
 }
 
-const getNavigationData = async (langCode) => {
-  await fetchLanguageNavigation(`/${langCode}`);
-};
-
 // refactor tweetable links function
 /**
  * Opens a popup for the Twitter links autoblock.
@@ -92,7 +88,6 @@ async function loadAdobeLaunch() {
 async function loadDelayed() {
   pageSwoosh();
   buildTwitterLinks();
-  // getNavigationData(getLanguage());
   if (!isInternalPage()) {
     await loadAdobeLaunch();
   }
