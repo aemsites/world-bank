@@ -10,7 +10,7 @@ import {
   fetchLangDatabyFileName,
 } from '../../scripts/scripts.js';
 import {
-  getLanguage, PATH_PREFIX,
+  getLanguage, PATH_PREFIX, fetchLanguageNavigation,
 } from '../../scripts/utils.js';
 import * as constants from './constants.js';
 import {
@@ -505,4 +505,6 @@ export default async function decorate(block) {
   if (isDesktop.matches) await changeTrendingData(navSections);
   fetchingPlaceholdersData(placeholdersData);
   handleMainMenuFocus(block, navSections, hamburger);
+  fetchLanguageNavigation(`/${langCode}`);
+
 }

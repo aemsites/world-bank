@@ -92,7 +92,7 @@ async function loadAdobeLaunch() {
 async function loadDelayed() {
   pageSwoosh();
   buildTwitterLinks();
-  getNavigationData(getLanguage());
+  // getNavigationData(getLanguage());
   if (!isInternalPage()) {
     await loadAdobeLaunch();
   }
