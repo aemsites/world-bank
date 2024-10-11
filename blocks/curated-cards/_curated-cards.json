@@ -36,15 +36,6 @@
                 "curated-card-title": "Curated Card Title 3",
                 "curated-card-description": "Card Description",
                 "curated-card-link": "/content/world-bank/global/en"
-              },
-              "item4": {
-                "sling:resourceType": "core/franklin/components/block/v1/block/item",
-                "name": "Curated Card",
-                "model": "curated-card",
-                "curated-card-tags": "world-bank:content-type/event",
-                "curated-card-title": "Curated Card Title 4",
-                "curated-card-description": "Card Description",
-                "curated-card-link": "/content/world-bank/global/en"
               }
             }
           }
