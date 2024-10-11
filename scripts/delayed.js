@@ -6,7 +6,7 @@ import {
   a, span, i,
 } from './dom-helpers.js';
 import {
-  getLanguage, fetchLanguageNavigation, isInternalPage, scriptEnabled, PATH_PREFIX,
+  isInternalPage, scriptEnabled, PATH_PREFIX,
 } from './utils.js';
 /**
  * Swoosh on page
