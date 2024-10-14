@@ -69,15 +69,6 @@ footer ul li {
   display: block;
 }
 
-.ft-social .ft-social-list a .icon img {
-  border: 3px solid transparent;
-  border-radius: 50%;
-}
-
-.ft-social .ft-social-list a:hover .icon img {
-  border-color: var(--global-interactive-on-dark-hover);
-}
-
 .ft-social .ft-social-list:first-child {
   padding-right: 40px;
   border-right: 2px solid var(--divider-on-dark-default);
@@ -157,10 +148,22 @@ html[dir="rtl"] .ft-social .ft-social-list:nth-child(2) {
   padding: 0 12px 0 0;
 }
 
+.ft-social .ft-social-list:last-child ul span.icon:hover svg path{
+fill: var(--icon-on-light-link-enabled);
+}
+
 .ft-social .ft-social-list:last-child ul span.icon {
-  max-width: 50px;
-  width: 100%;
-  height: auto;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-primary-background-enabled);
+  height: 50px;
+}
+
+.ft-social .ft-social-list:last-child ul span.icon:hover {
+  background-color: var(--background-container-on-light-link-primary-hover);
 }
 
 .ft-social .ft-social-list:dir(rtl) ul li.ft-main-item:not(:last-child) {

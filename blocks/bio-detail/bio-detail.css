@@ -15,7 +15,7 @@
 }
 
 .bio-detail .social-media-link a {
-  display: block;
+  display: flex;
 }
 
 .bio-detail .resources p a {
@@ -118,14 +118,20 @@ html[dir="rtl"] .bio-detail .download-image{
   margin-top: var(--spacing-regular);
 }
 
-.bio-detail .social-media-link img {
+.bio-detail .social-media-link {
   border-radius: 50%;
-  border: 2px solid transparent;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: var(--white);
+  cursor: pointer;
 }
 
-.bio-detail .social-media-link img:hover {
-  border: 2px solid var(--accent-blue-primary-40);
-}
+.bio-detail .social-media-link:hover {
+  background-color: var(--background-container-on-light-link-primary-hover);
+}  
 
 .bio-detail .media-resources {
   display: grid;
