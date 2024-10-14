@@ -800,6 +800,10 @@ pre {
   overflow: scroll;
 }
 
+strong {
+  font-weight: var(--font-weight-700);
+}
+
 main pre {
   background-color: var(--light-color);
   padding: 1em;
