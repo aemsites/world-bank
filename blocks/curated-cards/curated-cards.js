@@ -5,7 +5,6 @@ import {
 } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
 
-const FEATURE_BTN_LABEL = 'curated-banner-button-label';
 const MORE_TOP_STORY = 'more-top-story-label';
 const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
@@ -60,7 +59,7 @@ function updateDMImage(pictureElement, dmImageContent) {
 }
 
 // Creates a feature card element with its content
-function createFeatureCard(row, placeHolders) {
+function createFeatureCard(row) {
   const [
     useDM,
     featureImageContent,
@@ -69,6 +68,7 @@ function createFeatureCard(row, placeHolders) {
     featureHeadingContent,
     featureDescContent,
     featureLink,
+    readMoreLable,
   ] = row.children;
   const featureDiv = div({ class: 'feature-card' });
   moveInstrumentation(row, featureDiv);
@@ -87,7 +87,7 @@ function createFeatureCard(row, placeHolders) {
       { class: 'feature-card-link' },
       a(
         { href: featureLink?.textContent, class: 'button' },
-        placeHolders[toCamelCase(FEATURE_BTN_LABEL)] || 'Read More Story',
+        readMoreLable.textContent || 'Read More Story',
       ),
     ),
   );
@@ -106,7 +106,16 @@ function createFeatureCard(row, placeHolders) {
 
 // Processes a row to create a list item
 function processRow(row) {
-  const [useDM, imageContent, dmImage, tagContent, headingContent, decsDiv, linkDiv] = row.children;
+  const [
+    useDM,
+    imageContent,
+    dmImage,
+    tagContent,
+    headingContent,
+    decsDiv,
+    linkDiv,
+    readMoreLableDiv,
+  ] = row.children;
   const liTag = li();
   moveInstrumentation(row, liTag);
   const textWrapper = div({ class: 'curated-cards-card-text-wrapper' });
@@ -119,6 +128,7 @@ function processRow(row) {
     linkDiv.remove();
   }
   decsDiv.remove();
+  readMoreLableDiv.remove();
 
   if (tagContent) {
     processTag(tagElement, tagContent, listOfAllPlaceholdersData);
@@ -149,7 +159,7 @@ export default async function decorate(block) {
   const curatedCardsInputList = Array.from(block.children);
 
   if (curatedCardsInputList.length > 0) {
-    const featureCard = createFeatureCard(curatedCardsInputList[0], listOfAllPlaceholdersData);
+    const featureCard = createFeatureCard(curatedCardsInputList[0]);
 
     for (let index = 1; index < curatedCardsInputList.length; index += 1) {
       const row = curatedCardsInputList[index];
