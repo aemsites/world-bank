@@ -2450,7 +2450,7 @@
         "name": "useDM",
         "value": "false",
         "valueType": "boolean"
-      },
+      },  
       {
         "component": "reference",
         "valueType": "string",
@@ -2569,6 +2569,14 @@
         "name": "curated-card-link",
         "label": "Link",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cc-read-more-btn",
+        "label": "Read More Label",
+        "description": "Sets read more button label on first card",
+        "required": false
       }
     ]
   },
