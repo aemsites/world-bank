@@ -45,20 +45,19 @@
 
 .bio-detail .media-inquiries p a:focus-visible,
 .bio-detail .resources p a:focus-visible {
-  outline: 2px solid var(--links-focus-color);
+  outline: 2px solid var(--links-focus-color);;
 }
 
 .bio-detail .media-inquiries p:nth-child(4) a:hover {
-  text-decoration: none;
+  text-decoration: none
 }
 
-.bio-detail .resources p strong > em > a:any-link:visited {
+.bio-detail .resources p strong>em>a:any-link:visited {
   color: var(--accent-blue-primary-70);
   border-bottom: 2px solid var(--accent-blue-primary-40);
 }
 
-.bio-detail .resources p,
-.bio-detail .resources p em {
+.bio-detail .resources p, .bio-detail .resources p em {
   display: flex;
   align-items: center;
 }
@@ -69,7 +68,7 @@
   height: 14px;
 }
 
-html[dir="rtl"] .bio-detail .download-image {
+html[dir="rtl"] .bio-detail .download-image{
   margin: 0 0 0 9px;
 }
 
@@ -131,7 +130,7 @@ html[dir="rtl"] .bio-detail .download-image {
 
 .bio-detail .social-media-link:hover {
   background-color: var(--background-container-on-light-link-primary-hover);
-}
+}  
 
 .bio-detail .media-resources {
   display: grid;
@@ -155,9 +154,9 @@ html[dir="rtl"] .bio-detail .download-image {
   text-transform: uppercase;
 }
 
-.block-quote-container .default-content-wrapper p {
-  color: var(--text-on-light-emphasis);
-  font-size: var(--font-size-500);
+.block-quote-container .default-content-wrapper p{
+    color: var(--text-on-light-emphasis);
+    font-size: var(--font-size-500);
 }
 
 .bio-detail .sections-container .job-title div p:nth-child(2) {
@@ -201,7 +200,7 @@ html[dir="rtl"] .bio-detail .download-image {
   .bio-detail .sections-container .display-name h1 {
     line-height: 53.76px;
   }
-
+  
   .sections-container .first-container {
     display: flex;
     flex-direction: column;

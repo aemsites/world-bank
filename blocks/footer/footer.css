@@ -2,7 +2,7 @@
 footer {
   background-color: var(--accent-blue-primary-90);
 }
-
+  
 footer .block {
   max-width: var(--screen-width);
   margin: auto;
@@ -106,24 +106,24 @@ html[dir="rtl"] .ft-social .ft-social-list:nth-child(2) {
   margin-left: auto;
   margin-right: 0;
 }
-
+  
 .ft-main .ft-main-item ul {
   line-height: 0;
 }
-
+  
 .ft-main .ft-main-item ul li {
   line-height: 0;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-.ft-main .ft-main-item:not(:last-child) ul li a {
+.ft-main .ft-main-item:not(:last-child) ul li a{
   opacity: 0.75;
 }
 
-.ft-social .ft-social-list:nth-child(2) > ul {
+.ft-social .ft-social-list:nth-child(2)>ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px ;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -148,8 +148,8 @@ html[dir="rtl"] .ft-social .ft-social-list:nth-child(2) {
   padding: 0 12px 0 0;
 }
 
-.ft-social .ft-social-list:last-child ul span.icon:hover svg path {
-  fill: var(--icon-on-light-link-enabled);
+.ft-social .ft-social-list:last-child ul span.icon:hover svg path{
+fill: var(--icon-on-light-link-enabled);
 }
 
 .ft-social .ft-social-list:last-child ul span.icon {
@@ -178,11 +178,7 @@ html[dir="rtl"] .ft-social .ft-social-list:last-child ul li:not(:last-child) {
   padding: 0 0 0 12px;
 }
 
-html[dir="rtl"]
-  .ft-social
-  .ft-social-list:dir(rtl)
-  ul
-  li.ft-main-item:not(:last-child) {
+html[dir="rtl"] .ft-social .ft-social-list:dir(rtl) ul li.ft-main-item:not(:last-child) {
   padding: 0 12px 0 0;
 }
 
@@ -349,18 +345,18 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   .ft-main a {
     margin: 0;
   }
-
+    
   .ft-main .ft-main-item:last-child ul li a {
     font-size: 14px;
   }
-
+    
   .ft-main .ft-main-item:last-child p {
     margin: 0 130px 0 0;
   }
 
   html[dir="rtl"] .ft-main-item:last-child {
     border-left: 0;
-    border-right: 0;
+	  border-right: 0;
     padding: 32px 0 0;
   }
 
@@ -436,11 +432,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     padding-left: 0;
   }
 
-  html[dir="rtl"]
-    .ft-social
-    .ft-social-list:nth-child(2)
-    > ul
-    > li:not(:first-child) {
+  html[dir="rtl"] .ft-social .ft-social-list:nth-child(2)>ul>li:not(:first-child) {
     padding: 0 35px 0 0;
   }
 
@@ -536,6 +528,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   .ft-main .ft-main-item:last-child p {
     margin: 0 0 20px;
   }
+
 
   html[dir="rtl"] .ft-main-item:last-child p {
     margin: 0 0 20px;
