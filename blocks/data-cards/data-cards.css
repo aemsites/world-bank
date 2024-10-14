@@ -87,7 +87,7 @@ html[dir="rtl"] .data-cards.data-card-variation .arrow-buttons {
 }
 
 .data-cards .rte-container .button-container a{
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-200);
   line-height: 170%;
 }
@@ -140,7 +140,7 @@ html[dir="rtl"] .data-cards.data-card-variation .arrow-buttons {
 }
 
 .data-cards.data-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-500);
   line-height: 150%;
   color: var(--text-on-light-emphasis);
@@ -169,7 +169,7 @@ html[dir="rtl"] .data-cards.data-card-variation .arrow-buttons {
 
 .data-cards.news-card-variation .news-card-items .anchor-tag {    
     text-decoration: none;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     font-size: 20px;
     line-height: 120%;
     color: var(--background-container-on-light-link-primary-enabled);
@@ -188,7 +188,7 @@ html[dir="rtl"] .data-cards.data-card-variation .arrow-buttons {
 
 .data-cards.data-card-variation .data-card-tag {
   font-size: var(--font-size-100);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 110%;
   letter-spacing: 0.05em;
   border-bottom-width: 2px;
@@ -197,7 +197,7 @@ html[dir="rtl"] .data-cards.data-card-variation .arrow-buttons {
 
 .data-cards.data-card-variation .data-card-title {
   font-size: var(--font-size-1000);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 115%;
   color: var(--text-on-light-emphasis);
 }
@@ -268,7 +268,7 @@ html[dir="rtl"] .data-cards.data-card-variation .data-card-description{
 
 .data-cards.news-card-variation .rte-container > div:nth-child(3) > div > p:first-child {
   /* refactor */
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-500);
   line-height: 125%;
   color: var(--text-on-light-emphasis);
@@ -287,7 +287,7 @@ html[dir="rtl"] .data-cards.data-card-variation .data-card-description{
 .data-cards .news-card .news-card-tag {
   order: 1;
   padding-left: var(--spacing-medium);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-100);
   line-height: 16px;
   letter-spacing: 0.06em;
@@ -303,7 +303,7 @@ html[dir="rtl"] .data-cards .news-card .news-card-tag {
   order: 2;
   position: relative;
   padding-left: var(--spacing-medium);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--default);
   line-height: 116%;
   color: var(--background-container-on-light-link-primary-enabled);

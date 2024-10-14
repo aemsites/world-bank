@@ -231,7 +231,7 @@ html[dir="rtl"] .columns.columns-transform-teaser>div {
   }
   
   .columns h2 strong {
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
   }
 
   .columns.columns-2-cols.columns-heading-with-description div > div {
@@ -247,7 +247,7 @@ html[dir="rtl"] .columns.columns-transform-teaser>div {
   }
 
   .columns.columns-2-cols.columns-heading-with-description > div h2 > strong {
-      font-weight: 700;
+      font-weight: var(--font-weight-700);
     }
 
   .columns.columns-2-cols.columns-heading-with-description > div > div > p {
@@ -341,7 +341,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   margin: var(--spacing-none);
   font-size: var(--font-size-200);
   line-height: 24px;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
 }
 
 .columns.columns-feature-card .button-container a.button:hover {
@@ -619,7 +619,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   p:nth-child(2) {
     margin-top: var(--size-icon-regular); 
     margin-bottom: var(--spacing-xlarge);
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     font-size: var(--font-size-1000);
     line-height: 31px;
     text-transform: uppercase;

@@ -194,7 +194,7 @@ header .nav-menu-overlay .nav-menu-column.left ul a {
   font-size: var(--font-size-1100);
   cursor: not-allowed;
   pointer-events: none;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 38.13px;
 }
 
@@ -213,13 +213,13 @@ header .nav-menu-overlay .nav-menu .submenu a:hover {
 
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a {
   color: white;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
 }
 
 header .nav-menu-overlay .nav-menu-column.right .submenu-main-title a {
   color: var(--white);
   font-size: var(--font-size-600);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul a:hover {
@@ -467,7 +467,7 @@ html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.right .nav-menu-overla
 header .nav-menu-overlay .nav-menu-column.right .browse-country {
   text-transform: uppercase;
   display: flex;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-300);
   color: var(--text-on-dark-emphasis);
   flex-direction: column;
@@ -556,7 +556,7 @@ header
 
 header .nav-menu-overlay .nav-menu-column.right > .submenu > li {
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
 }
 
 header .nav-menu-overlay .nav-menu-column.right .browse-country div ul li {
@@ -1014,7 +1014,7 @@ html[dir="rtl"] header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left li {
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     line-height: 54.47px;
     text-align: left;
   }
@@ -1347,7 +1347,7 @@ html[dir="rtl"] header nav .nav-tools {
   }
 
   header .nav-menu-overlay .nav-menu-column.left > ul > li.selected a {
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     color: var(--black);
   }
 

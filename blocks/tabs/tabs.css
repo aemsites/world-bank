@@ -43,7 +43,7 @@
   border-radius: 0;
   border-bottom: 5px solid transparent;
   font-size: var(--font-size-300);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 20px;
   padding-bottom: var(--spacing-xsmall);
 }
@@ -80,7 +80,7 @@
   border: 0;
   padding: 0 12px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 140%;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .tab-li-element .tab-li-element-type {
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-100);
   line-height: 16px;
   letter-spacing: 0.06em;
@@ -150,7 +150,7 @@
 }
 
 .tab-li-element .tab-li-element-heading {
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-600);
   line-height: 27px;
   color: var(--text-on-light-link-primary-enabled);

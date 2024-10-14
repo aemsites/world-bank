@@ -33,7 +33,7 @@
 }
 
 .leader-item a .leader-name {
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     font-size: var(--font-size-600);
     line-height: 24px;
     text-align: justify;

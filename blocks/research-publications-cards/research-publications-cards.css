@@ -50,7 +50,7 @@
   font-size: var(--font-size-700);
   line-height: 22px;
   color: var(--text-on-light-link-primary-enabled);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
 }
 
 .cards-container .rp-card .text-content .desc {
@@ -69,7 +69,7 @@
   font-size: var(--font-size-300);
   line-height: 22px;
   color: var(--text-on-light-link-primary-enabled);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   width: max-content;
   border-bottom: 2px solid #0049724d;
 }

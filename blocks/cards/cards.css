@@ -78,7 +78,7 @@
 
 .cards.senior-leadership .cards-card-body h3 a {
   text-decoration: none;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-600);
   color: var(--text-on-light-link-primary-enabled);
   line-height: 125%;
@@ -97,7 +97,7 @@
   line-height: 28px;
   margin-bottom: var(--spacing-medium);
   margin-top: 0;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   letter-spacing: -0.015em;
   text-align: left;
   font-style: normal;
