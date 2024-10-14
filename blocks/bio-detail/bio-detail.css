@@ -126,6 +126,7 @@ html[dir="rtl"] .bio-detail .download-image{
   align-items: center;
   height: 50px;
   background-color: var(--white);
+  cursor: pointer;
 }
 
 .bio-detail .social-media-link:hover {
