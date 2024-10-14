@@ -22,7 +22,7 @@
 
 .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     font-size: var(--body-indicator-paragraph);
     line-height: 16px;
     letter-spacing: 1px;
@@ -60,7 +60,7 @@
 .impact-card-content p:first-child {
     font-size: var(--body-title-paragraph);
     line-height: 32px;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     letter-spacing: -0.015em;
     color: var(--accent-blue-primary-90);
     margin-bottom: var(--spacing-tiny);

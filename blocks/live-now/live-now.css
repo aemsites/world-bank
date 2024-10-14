@@ -21,7 +21,7 @@ dialog.livenow-modal:modal {
   align-items: center;
   justify-content: center;
   font-family: var(--body-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
 }
 
 dialog.livenow-modal:modal .modal-content-wrapper {
@@ -178,7 +178,7 @@ dialog.livenow-modal:modal .modal-column-right .join-event-btn .join-btn-txt {
   color: var(--accent-blue-primary-70);
   font-family: var(--heading-font-family);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   white-space: nowrap;
 }
 

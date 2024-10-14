@@ -527,6 +527,13 @@
   /** Button Padding Secondary **/
   --button-vertical-padding-secondary: 8px;
   --button-horizontal-padding-secondary: 24px;
+
+  /* Font weight 700 */
+  --font-weight-700: 700;
+}
+
+html[dir="rtl"] {
+  --font-weight-700: 400;
 }
 
 /*
@@ -735,7 +742,7 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 1.2;
   margin: 1rem 0;
   letter-spacing: 0;
@@ -834,7 +841,7 @@ p strong > em > a:any-link {
   color: var(--accent-blue-primary-70);
   font-family: var(--body-font-family);
   font-size: var(--font-size-300);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 24px;
   letter-spacing: 0.25px;
   text-align: center;
@@ -912,7 +919,7 @@ a.button:any-link,
 button {
   font-family: var(--body-font-family);
   font-size: var(--font-size-300);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 150%;
   letter-spacing: 0.25px;
   text-align: center;
