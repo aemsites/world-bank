@@ -91,7 +91,7 @@
   color: var(--text-on-dark-emphasis, var(--gray-alpha-white-90-a));
   font-size: var(--font-size-100);
   white-space: nowrap;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
 }
 
 .curated-cards.list .curated-cards-line-div .line {
@@ -112,7 +112,7 @@
 
 .curated-cards.list ul li .curated-cards-card-text-wrapper p {
   margin: 0;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-300);
   line-height: 20px;
   color: var(--text-on-dark-emphasis);
@@ -135,7 +135,7 @@
 }
 
 .curated-cards.list ul li .curated-cards-card-text-wrapper .curated-cards-card-event {
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   font-size: var(--font-size-100);
   letter-spacing: 0.06em;
   text-transform: uppercase;

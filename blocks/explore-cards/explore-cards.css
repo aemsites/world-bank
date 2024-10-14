@@ -10,14 +10,14 @@
 
 .story-type p {
     font-size: var(--font-size-100);
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     line-height: 16px;
     letter-spacing: 0.06em;
 }
 
 .card-title p {
     font-size: var(--font-size-600);
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     line-height: 125%;
     margin-top: 16px;
     margin-bottom: 0;
@@ -115,7 +115,7 @@
 
 .story-type {
     font-size: var(--font-size-100);
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     line-height: 16px;
     letter-spacing: 0.06em;
 }
@@ -156,7 +156,7 @@
     }
 
     .card-title p {
-        font-weight: 700;
+        font-weight: var(--font-weight-700);
         margin-top: 16px;
     }
 

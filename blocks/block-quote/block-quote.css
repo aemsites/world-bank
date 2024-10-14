@@ -5,7 +5,7 @@
 }
 
 blockquote {
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     font-size: var(--font-size-700);
     letter-spacing: -0.15px;
     line-height: 115%;

@@ -172,7 +172,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
   .carousel-container > .default-content-wrapper p:first-child {
     grid-column: 1 / 2;
     grid-row: 1 / 1;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     font-size: 14px;
     line-height: 17px;
     padding-bottom: 12px;
@@ -244,7 +244,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 
   .carousel-container .button-container a.button:any-link, button {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     line-height: 23px;
     margin: 0;
   }
@@ -355,7 +355,7 @@ html[dir="rtl"] .section > div.carousel-wrapper {
 
   .carousel-container .button-container a.button:any-link, button {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: var(--font-weight-700);
     line-height: 24px;
     padding: 16px 32px;
   }

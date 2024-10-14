@@ -30,7 +30,7 @@
 .priority-list .right-column-container .text-container .subtitle {
   text-transform: uppercase;
   font-size: var(--font-size-300);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   line-height: 15px;
 }
 
@@ -154,7 +154,7 @@ html[dir="rtl"] .priority-list .right-column-container .cards-container > div::b
   font-size: var(--font-size-800);
   color: var(--accent-blue-primary-90);
   line-height: 29px;
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   margin-top: -8px;
 }
 

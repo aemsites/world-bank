@@ -54,7 +54,7 @@ main .section > div.organizational-cards-wrapper {
   height: 100%;
   z-index: 3;
   color: var(--white);
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   text-align: left;
   transition: all 200ms ease-out;
   background: rgba(1 39 64 / 90%);
@@ -173,7 +173,7 @@ html[dir="rtl"] .organizational-card:not(first-child) {
   .card-link-wrapper
   .button-container
   > a.card-link.button:any-link {
-  font-weight: 700;
+  font-weight: var(--font-weight-700);
   letter-spacing: 0.25px;
   height: 24px;
   line-height: 24px;
