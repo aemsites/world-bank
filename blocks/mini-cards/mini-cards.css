@@ -31,6 +31,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
+  flex-grow: 2;
   gap: 12px;
 }
 
@@ -53,6 +54,11 @@
 
 .mini-cards .mini-card:hover .mini-card-image img {
   transform: scale(1.15);
+}
+
+.mini-cards .mini-card .mini-card-image:not(:has(img))
+{
+  display: none;
 }
 
 .mini-card-tag {
