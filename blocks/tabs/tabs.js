@@ -148,7 +148,7 @@ function populateAllTab(data, tabPanel) {
   });
 }
 
-async function fetchDataForTab(type, url) {
+async function fetchDataForTab(type, url, postDataString) {
   if (type === 'blogs') {
     const postData = {
       search: '*',
@@ -161,7 +161,7 @@ async function fetchDataForTab(type, url) {
     const headers = {
       'ocp-apim-subscription-key': 'a02440fa123c4740a83ed288591eafe4',
     };
-    return fetchData(url, 'POST', headers, postData);
+    return fetchData(url, 'POST', headers, postDataString || postData);
   }
   return fetchData(url);
 }
@@ -177,14 +177,16 @@ function removeSpinner(tabPanel) {
 }
 
 async function decorateTab(tabPanel, type) {
-  tabPanel.innerHTML = '';
-  showSpinner(tabPanel);
-
   if (!scriptEnabled()) return;
-
-  const url = await getTabUrl(type);
-  const data = await fetchDataForTab(type, url);
-
+  let body;
+  const url = tabPanel.children[2].textContent.trim() || await getTabUrl(type);
+  if (type === 'blogs' && tabPanel.children[4].textContent) {
+    body = JSON.parse(tabPanel.children[4].textContent.trim());
+  }
+  const tabReference = tabPanel;
+  tabPanel.innerHTML = '';
+  showSpinner(tabReference);
+  const data = await fetchDataForTab(type, url, body);
   if (data) {
     if (type === 'blogs') populateBlogTab(data, tabPanel);
     else if (type === 'publication') populatePublicationTab(data, tabPanel);
