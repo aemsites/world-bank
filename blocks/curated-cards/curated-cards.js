@@ -3,16 +3,15 @@ import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/sc
 import {
   p, div, a, li, ul,
 } from '../../scripts/dom-helpers.js';
-import { processTags } from '../../scripts/utils.js';
+import { getTaxonomy } from '../../scripts/utils.js';
 
 const MORE_TOP_STORY = 'more-top-story-label';
 const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
 
-function processTag(tagdiv, tagAuthored, placeholders) {
-  let tagValue = tagAuthored.innerText;
+async function processTag(tagdiv, tagAuthored) {
+  const tagValue = tagAuthored.innerText;
   if (tagValue) {
-    tagValue = processTags(tagValue, 'content-type');
-    tagdiv.textContent = placeholders[toCamelCase(tagValue)] || tagValue;
+    tagdiv.textContent = await getTaxonomy(tagValue, 'content-type');
   }
 }
 
@@ -105,7 +104,7 @@ function createFeatureCard(row) {
 }
 
 // Processes a row to create a list item
-function processRow(row) {
+async function processRow(row) {
   const [
     useDM,
     imageContent,
@@ -131,7 +130,7 @@ function processRow(row) {
   readMoreLableDiv.remove();
 
   if (tagContent) {
-    processTag(tagElement, tagContent, listOfAllPlaceholdersData);
+    await processTag(tagElement, tagContent);
   }
 
   if (useDM.textContent.trim() === '' && imageContent) {
@@ -163,7 +162,8 @@ export default async function decorate(block) {
 
     for (let index = 1; index < curatedCardsInputList.length; index += 1) {
       const row = curatedCardsInputList[index];
-      const liIndex = processRow(row);
+      // eslint-disable-next-line no-await-in-loop
+      const liIndex = await processRow(row);
       ulElement.appendChild(liIndex);
     }
     block.innerHTML = ''; // Clear all content
