@@ -177,15 +177,16 @@ function removeSpinner(tabPanel) {
 }
 
 async function decorateTab(tabPanel, type) {
-  showSpinner(tabPanel);
   if (!scriptEnabled()) return;
-  let body; 
+  let body;
   const url = tabPanel.children[2].textContent.trim() || await getTabUrl(type);
-  if(type === 'blogs' && tabPanel.children[4].textContent) {
-    body = JSON.parse(tabPanel.children[4].textContent.trim()) ;
-  } 
+  if (type === 'blogs' && tabPanel.children[4].textContent) {
+    body = JSON.parse(tabPanel.children[4].textContent.trim());
+  }
+  const tabReference = tabPanel;
+  tabPanel.innerHTML = '';
+  showSpinner(tabReference);
   const data = await fetchDataForTab(type, url, body);
-  //tabPanel.innerHTML = '';
   if (data) {
     if (type === 'blogs') populateBlogTab(data, tabPanel);
     else if (type === 'publication') populatePublicationTab(data, tabPanel);
@@ -243,9 +244,6 @@ export default async function decorate(block) {
     const id = toClassName(tab.textContent);
     const tabpanel = block.children[i];
     const tabType = tabpanel.children[1].textContent;
-    // console.log(tabType);
-    // console.log(tabpanel.children[2].textContent);
-    // console.log('>>>>>>>>>>>');
     tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
     tabpanel.setAttribute('aria-hidden', !!i);
