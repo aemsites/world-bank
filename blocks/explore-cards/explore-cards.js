@@ -1,22 +1,6 @@
 import { div } from '../../scripts/dom-helpers.js';
-import { processTags } from '../../scripts/utils.js';
-import { fetchLanguagePlaceholders, CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
-import { toCamelCase } from '../../scripts/aem.js';
-
-async function fetchingPlaceholdersData(block) {
-  const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
-  if (!listOfAllPlaceholdersData) return;
-
-  const storyTypeDivs = block.querySelectorAll('.story-type');
-  if (!storyTypeDivs) return;
-
-  storyTypeDivs.forEach((storyTypeDiv) => {
-    const sTypeKey = toCamelCase(`tag-story-type-${storyTypeDiv.textContent}`);
-    if (listOfAllPlaceholdersData[sTypeKey]) {
-      storyTypeDiv.innerText = listOfAllPlaceholdersData[sTypeKey].toUpperCase();
-    }
-  });
-}
+import { processTags, getTaxonomy } from '../../scripts/utils.js';
+import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   // Style and append the heading to the main container
@@ -28,7 +12,7 @@ export default function decorate(block) {
 
   const cardsContainer = div({ class: 'explore-card-container' });
   // Iterate through each card
-  cards.forEach((card) => {
+  cards.forEach(async (card) => {
     if (!card) return;
 
     // Extract elements from the card
@@ -61,24 +45,17 @@ export default function decorate(block) {
     const cardContent = div({ class: 'card-content' });
 
     // Content type
-    let cType = contentType ? processTags(contentType.innerText, 'content-type') : null;
+    const cType = contentType ? processTags(contentType.innerText, 'content-type') : null;
     const allowedTypes = ['video', 'audio'];
-
-    if (cType) {
-      // Split the cType by the colon ':' and get the part after it
-      const cTypeParts = cType.split(':');
-      cType = cTypeParts.length > 1 ? cTypeParts[1] : cTypeParts[0];
-
-      // Check if the processed cType is in the allowedTypes array
-      if (allowedTypes.includes(cType)) {
-        const cTypeIcon = div({ class: `card-icon icon-${cType}` });
-        cardContent.append(cTypeIcon);
-      }
+    // Check if the processed cType is in the allowedTypes array
+    if (allowedTypes.includes(cType)) {
+      const cTypeIcon = div({ class: `card-icon icon-${cType}` });
+      cardContent.append(cTypeIcon);
     }
 
     // Story type
     const STORY_TYPE = 'story-type';
-    const sType = storyType ? processTags(storyType.innerText, STORY_TYPE) : null;
+    const sType = storyType ? await getTaxonomy(storyType.innerText, STORY_TYPE) : null;
     if (sType) {
       storyType.innerText = sType;
       storyType.className = STORY_TYPE;
@@ -100,5 +77,4 @@ export default function decorate(block) {
   });
 
   block.appendChild(cardsContainer);
-  fetchingPlaceholdersData(block);
 }
