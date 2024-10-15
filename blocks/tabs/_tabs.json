@@ -85,10 +85,6 @@
             {
               "name": "Author Manually",
               "value": "manual"
-            }, 
-            {
-              "name": "Custom Url Tab",
-              "value": "customUrl"
             }
           ]
         },
@@ -109,7 +105,7 @@
           "value": "false",
           "valueType": "boolean",
           "condition": {
-            "==": [{ "var": "tab-type" }, "blog"]
+            "==": [{ "var": "tab-type" }, "blogs"]
           }
         }, 
         {
@@ -123,7 +119,7 @@
               {
                 "var": "post"
               },
-              false
+              true
             ]
           }
           },
