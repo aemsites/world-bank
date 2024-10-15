@@ -3627,7 +3627,7 @@
         "value": "false",
         "valueType": "boolean",
         "condition": {
-          "==": [{ "var": "tab-type" }, "blog"]
+          "==": [{ "var": "tab-type" }, "blogs"]
         }
       }, 
       {
@@ -3637,11 +3637,11 @@
         "value": "",
         "label": "Body",
         "condition": {
-          "===": [
+          "==": [
             {
               "var": "post"
             },
-            false
+            true
           ]
         }
         },
