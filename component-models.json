@@ -17,7 +17,7 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "jcr:pagetitle",
+        "name": "pageTitle",
         "label": "Page Title",
         "required": true
       },
