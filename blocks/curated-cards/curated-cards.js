@@ -1,7 +1,7 @@
 import { toCamelCase } from '../../scripts/aem.js';
 import { moveInstrumentation, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import {
-  p, h1, div, a, li, ul,
+  p, div, a, li, ul,
 } from '../../scripts/dom-helpers.js';
 import { processTags } from '../../scripts/utils.js';
 
@@ -79,7 +79,7 @@ function createFeatureCard(row) {
       { class: 'feature-card-content-text' },
       a(
         { href: featureLink?.textContent },
-        h1({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent),
+        div({ class: 'feature-card-content-heading' }, featureHeadingContent.textContent),
         p({ class: 'feature-card-content-description' }, featureDescContent.textContent),
       ),
     ),
