@@ -8,13 +8,22 @@ import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
 const langCode = getLanguage();
 const upiId = getMetadata('upi');
+const globalProperties = await fetchPlaceholders();
+const langMap = globalProperties.langMap || '[{"code": "en", "name": "English"}]';
+
+function getLanguageName(code) {
+  const languages = JSON.parse(langMap);
+  const language = languages.find((lang) => lang.code === code);
+  return language ? language.name : 'English';
+}
+
+const langName = getLanguageName(langCode);
 
 async function getTabUrl(type) {
   try {
     const tabUrl = `${type}Url`;
-    const globalProperties = await fetchPlaceholders();
     const rawUrl = globalProperties[`${tabUrl}`];
-    return rawUrl.replace('{langCode}', langCode).replace('{upiId}', upiId);
+    return rawUrl.replace('{langCode}', langCode).replace('{upiId}', upiId).replace('{langName}', langName);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(`Error fetching tab URL for type: ${type}`, error);
@@ -143,7 +152,7 @@ async function fetchDataForTab(type, url) {
   if (type === 'blogs') {
     const postData = {
       search: '*',
-      filter: `(bloggers/any(blogger: blogger/upi eq '${upiId}') and (language eq 'English'))`,
+      filter: `(bloggers/any(blogger: blogger/upi eq '${upiId}') and (language eq '${langName}'))`,
       top: 50,
       skip: 0,
       orderby: 'blogDate desc',
