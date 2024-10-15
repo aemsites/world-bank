@@ -6,8 +6,7 @@ import { processTags, getTaxonomy } from '../../scripts/utils.js';
 async function processTag(tag) {
   const tagTxt = tag.innerText;
   if (tagTxt) {
-    const tagClass = processTags(tagTxt, 'content-type');
-    tag.classList.add(tagClass);
+    tag.classList.add(processTags(tagTxt, 'content-type'));
     tag.firstElementChild.innerText = await getTaxonomy(tagTxt, 'content-type');
   }
 }
