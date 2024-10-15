@@ -148,7 +148,7 @@ function populateAllTab(data, tabPanel) {
   });
 }
 
-async function fetchDataForTab(type, url) {
+async function fetchDataForTab(type, url, postDataString) {
   if (type === 'blogs') {
     const postData = {
       search: '*',
@@ -161,7 +161,7 @@ async function fetchDataForTab(type, url) {
     const headers = {
       'ocp-apim-subscription-key': 'a02440fa123c4740a83ed288591eafe4',
     };
-    return fetchData(url, 'POST', headers, postData);
+    return fetchData(url, 'POST', headers, postDataString || postData);
   }
   return fetchData(url);
 }
@@ -177,14 +177,15 @@ function removeSpinner(tabPanel) {
 }
 
 async function decorateTab(tabPanel, type) {
-  tabPanel.innerHTML = '';
   showSpinner(tabPanel);
-
   if (!scriptEnabled()) return;
-
-  const url = await getTabUrl(type);
-  const data = await fetchDataForTab(type, url);
-
+  let body; 
+  const url = tabPanel.children[2].textContent.trim() || await getTabUrl(type);
+  if(type === 'blogs' && tabPanel.children[4].textContent) {
+    body = JSON.parse(tabPanel.children[4].textContent.trim()) ;
+  } 
+  const data = await fetchDataForTab(type, url, body);
+  //tabPanel.innerHTML = '';
   if (data) {
     if (type === 'blogs') populateBlogTab(data, tabPanel);
     else if (type === 'publication') populatePublicationTab(data, tabPanel);
@@ -242,6 +243,9 @@ export default async function decorate(block) {
     const id = toClassName(tab.textContent);
     const tabpanel = block.children[i];
     const tabType = tabpanel.children[1].textContent;
+    // console.log(tabType);
+    // console.log(tabpanel.children[2].textContent);
+    // console.log('>>>>>>>>>>>');
     tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
     tabpanel.setAttribute('aria-hidden', !!i);
