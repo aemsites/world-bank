@@ -66,6 +66,8 @@
   color: var(--text-on-dark-emphasis);
   margin: 0 0 var(--spacing-small);
   line-height: 58px;
+  font-size: var(--font-size-1100);
+  font-weight: var(--font-weight-700);
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-content-heading:hover {
