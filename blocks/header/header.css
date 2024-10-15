@@ -181,6 +181,10 @@ header .nav-menu-overlay .nav-menu a {
   text-decoration: none;
 }
 
+header .nav-sections .default-content-wrapper > p ~ a {
+  text-decoration: none;
+}
+
 header .nav-menu-overlay .nav-menu a:visited {
   color: var(--text-on-dark-default);
 }
@@ -376,6 +380,24 @@ header .nav-menu-overlay .nav-menu-column.right .browse-country span {
   margin-top: 20px;
 }
 
+.section.nav-sections .default-content-wrapper p > span:first-child {
+  text-decoration: none;
+  color: var(--accent-blue-primary-90);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: var(--font-weight-700);
+  border-right: 2px solid var(--accent-blue-primary-40);
+  padding-right: 14px;
+  margin-right: var(--spacing-small);
+  cursor: default;
+}
+
+
+.section.nav-sections .default-content-wrapper p > span:last-child {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 header .nav-menu-overlay .nav-menu-column.right .highlight-link a span {
   text-align: center;
   vertical-align: middle;
@@ -403,6 +425,15 @@ html[dir="rtl"] header .nav-menu-overlay .nav-menu-column.left ul li span {
 
 html[dir = 'rtl'] header .nav-menu-overlay .nav-menu-column.right .highlight-link a span::before {
   margin-right: 8px;
+}
+
+html[dir="rtl"] .section.nav-sections .default-content-wrapper p > span:first-child {
+  border: unset;
+  padding: unset;
+  margin: unset;
+  border-left: 2px solid var(--accent-blue-primary-40);
+  padding-left: 14px;
+  margin-left: var(--spacing-small);
 }
 
 header .nav-menu-overlay .nav-menu-column.left ul li span::after {
@@ -661,7 +692,7 @@ header
 .section.nav-sections .default-content-wrapper p {
   font-size: var(--font-size-300);
   color: var(--text-on-light-link-primary-enabled);
-  text-decoration: underline;
+  text-decoration: none;
   margin-left: 4px;
   max-width: 40vw;
   text-overflow: ellipsis;
