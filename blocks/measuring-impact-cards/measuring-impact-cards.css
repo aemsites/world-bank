@@ -73,7 +73,7 @@
 @media (width >= 768px) {
     .measuring-impact-cards{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
 
     .measuring-impact-cards .impact-card-wrapper p.impact-indicator {
