@@ -986,6 +986,11 @@ html[dir="rtl"] header nav .nav-tools {
     linear-gradient(135deg, transparent 0%,transparent 43%,#fff 45%,#fff 55%,transparent 57%,transparent 100%);
 }
 
+html[dir="rtl"] .search-input-container input[type="search"]::-webkit-search-cancel-button {
+  margin-right: unset;
+  margin-left: var(--spacing-xsmall);
+}
+
 @media (width >= 1024px) {
   .search-input-container {
     width: 70%;
