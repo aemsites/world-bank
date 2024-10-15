@@ -133,8 +133,9 @@ html[dir="rtl"] .ft-social .ft-social-list:nth-child(2) {
 
 .ft-legal .ft-legal-list:last-child ul {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 10px;
 }
 
 .ft-social .ft-social-list:last-child ul {
@@ -198,6 +199,7 @@ html[dir="rtl"] .ft-social .ft-social-list:dir(rtl) ul li.ft-main-item:not(:last
 .ft-main .ft-main-item a:not(.button) {
   display: inline-block;
   font-size: 16px;
+  white-space: break-spaces;
   line-height: 22px;
   padding-left: 0;
 }
@@ -251,7 +253,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
 
 .ft-legal {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: repeat(2, minmax(100px, auto));
   justify-content: space-between;
   border-top: 2px var(--accent-blue-primary-60) solid;
   padding: 42px 0 72px;
