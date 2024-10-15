@@ -85,10 +85,6 @@
             {
               "name": "Author Manually",
               "value": "manual"
-            }, 
-            {
-              "name": "Custom Url Tab",
-              "value": "customUrl"
             }
           ]
         },
