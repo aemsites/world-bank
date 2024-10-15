@@ -279,7 +279,7 @@ function createSearchBox() {
     });
 
     Object.assign(searchInputBox, {
-      type: 'text',
+      type: 'search',
       id: 'search-input',
       name: 'myInput',
       placeholder: listOfAllPlaceholdersData.searchVariable || 'Search worldbank.org',

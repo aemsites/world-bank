@@ -955,7 +955,7 @@ html[dir="rtl"] header nav .nav-tools {
 }
 
 #search-input {
-  width: 90%;
+  width: 100%;
   border: none;
   background: var(--input-background-color);
   height: 71px;
@@ -1003,6 +1003,23 @@ html[dir="rtl"] header nav .nav-tools {
   border-bottom: 2px solid var(--search-input-container-border);
   justify-content: space-between;
   width: 90%;
+}
+
+.search-input-container input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: var(--spacing-xsmall);
+  cursor: pointer;
+  background:
+    linear-gradient(45deg, rgb(0 0 0 / 0%) 0%,rgb(0 0 0 / 0%) 43%,#fff 45%,#fff 55%,rgb(0 0 0 / 0%) 57%,rgb(0 0 0 / 0%) 100%),
+    linear-gradient(135deg, transparent 0%,transparent 43%,#fff 45%,#fff 55%,transparent 57%,transparent 100%);
+}
+
+html[dir="rtl"] .search-input-container input[type="search"]::-webkit-search-cancel-button {
+  margin-right: unset;
+  margin-left: var(--spacing-xsmall);
 }
 
 @media (width >= 1024px) {
