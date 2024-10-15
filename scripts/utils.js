@@ -71,8 +71,7 @@ export function setPageLanguage() {
  */
 export function processTags(tag, prefix = '') {
   if (tag) {
-    const tagName = tag.replace(TAG_ROOT, '').replace(`${prefix}/`, '');
-    return tagName.includes(' ') ? tagName.replace(/ /g, '-') : tagName;
+    return tag.replace(TAG_ROOT, '').replace(`${prefix}/`, '');
   }
   return null;
 }
