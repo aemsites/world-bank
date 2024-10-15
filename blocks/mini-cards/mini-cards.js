@@ -1,4 +1,4 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture, toClassName } from '../../scripts/aem.js';
 import { moveInstrumentation, CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 import { a, div } from '../../scripts/dom-helpers.js';
 import { processTags, getTaxonomy } from '../../scripts/utils.js';
@@ -6,7 +6,7 @@ import { processTags, getTaxonomy } from '../../scripts/utils.js';
 async function processTag(tag) {
   const tagTxt = tag.innerText;
   if (tagTxt) {
-    tag.classList.add(processTags(tagTxt, 'content-type'));
+    tag.classList.add(toClassName(processTags(tagTxt, 'content-type')));
     tag.firstElementChild.innerText = await getTaxonomy(tagTxt, 'content-type');
   }
 }

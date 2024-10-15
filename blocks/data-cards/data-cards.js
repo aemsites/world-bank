@@ -1,3 +1,4 @@
+import { toClassName } from '../../scripts/aem.js';
 import { processTags, getTaxonomy } from '../../scripts/utils.js';
 import {
   div, a, p, img, button,
@@ -6,7 +7,7 @@ import {
 async function processTag(tag) {
   const tagTxt = tag.innerText;
   if (tagTxt) {
-    tag.classList.add(processTags(tagTxt, 'category'));
+    tag.classList.add(toClassName(processTags(tagTxt, 'category')));
     tag.firstElementChild.innerText = await getTaxonomy(tagTxt, 'category');
   }
 }
