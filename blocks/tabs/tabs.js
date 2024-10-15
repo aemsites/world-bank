@@ -179,9 +179,9 @@ function removeSpinner(tabPanel) {
 async function decorateTab(tabPanel, type) {
   if (!scriptEnabled()) return;
   let body;
-  const url = tabPanel.children[2].textContent.trim() || await getTabUrl(type);
-  if (type === 'blogs' && tabPanel.children[4].textContent) {
-    body = JSON.parse(tabPanel.children[4].textContent.trim());
+  const url = tabPanel.children[2]?.textContent.trim() || await getTabUrl(type);
+  if (type === 'blogs' && tabPanel.children[4]?.textContent) {
+    body = JSON.parse(tabPanel.children[4]?.textContent.trim());
   }
   const tabReference = tabPanel;
   tabPanel.innerHTML = '';
