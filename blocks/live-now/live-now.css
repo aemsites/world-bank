@@ -56,6 +56,11 @@ dialog.livenow-modal:modal button[name="close"]:focus {
   border: 2px solid var(--accent-blue-primary-70);
 }
 
+html[dir="rtl"] dialog.livenow-modal:modal button[name="close"] {
+  right: unset;
+  left: 24px;
+}
+
 dialog.livenow-modal:modal .close-x {
   height: 14px;
 }
@@ -70,6 +75,11 @@ dialog.livenow-modal:modal .modal-title img {
   height: 33px;
   width: 52px;
   margin-right: 8px;
+}
+
+html[dir="rtl"] dialog.livenow-modal:modal .modal-title img {
+  margin-right: unset;
+  margin-left: 8px;
 }
 
 dialog.livenow-modal:modal .modal-title .modal-title-txt {
@@ -94,6 +104,11 @@ dialog.livenow-modal:modal .event-title .wblive-header img {
   margin-right: 8px;
   width: 26px;
   height: 33px;
+}
+
+html[dir="rtl"] dialog.livenow-modal:modal .event-title .wblive-header img {
+  margin-right: unset;
+  margin-left: 8px;
 }
 
 dialog.livenow-modal:modal .event-title .wblive-header-txt {
@@ -166,6 +181,11 @@ dialog.livenow-modal:modal .modal-column-right .join-event-btn .event-play {
   align-items: center;
   justify-content: center;
   margin-right: 24px;
+}
+
+html[dir="rtl"] dialog.livenow-modal:modal .modal-column-right .join-event-btn .event-play {
+  margin-right: unset;
+  margin-left: 24px;
 }
 
 dialog.livenow-modal:modal .modal-column-right .join-event-btn .event-play img {
