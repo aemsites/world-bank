@@ -251,7 +251,6 @@ export default async function decorate(block) {
     tabpanel.setAttribute('role', 'tabpanel');
     tabpanel.setAttribute('type', tabType);
     tabpanel.setAttribute('data-loaded', false);
-    tabpanel.children[1].remove();
 
     const tabButton = button({
       class: 'tab-title',
@@ -307,7 +306,6 @@ export default async function decorate(block) {
     }
 
     tabBtnContainer.append(tabListEl);
-    tab.remove();
   });
 
   block.querySelectorAll('[type="manual"] a').forEach(async (link) => {
