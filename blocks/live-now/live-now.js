@@ -1,5 +1,6 @@
 import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 import { toCamelCase } from '../../scripts/aem.js';
+import { getLanguage } from '../../scripts/utils.js';
 
 const MODAL_TITLE = 'live-now-title';
 const MODAL_HEADER = 'live-now-header';
@@ -46,12 +47,14 @@ async function queryEventData(dateTime) {
   const requestMethod = 'POST';
   const contentType = 'application/json';
   const dateString = dateTime.toISOString();
+  const langCode = getLanguage() || 'en';
+
   const payload = {
     search: '*',
     facets: [
       'topics,count:1000',
     ],
-    filter: `hideOnSearch ne 'true' and languageCode eq 'en' and (eventStartDate gt ${dateString} or (eventStartDate lt ${dateString} and eventEndDate gt ${dateString})) and searchType eq 'event'`,
+    filter: `hideOnSearch ne 'true' and languageCode eq '${langCode}' and (eventStartDate gt ${dateString} or (eventStartDate lt ${dateString} and eventEndDate gt ${dateString})) and searchType eq 'event'`,
     count: true,
     searchFields: '*',
     top: 10,
@@ -193,6 +196,7 @@ export default async function decorate(block) {
   const testMode = (block.classList.contains('test-mode'));
   const sessionCookieName = 'wbEventGuid';
   const currentDateTime = new Date();
+
   const eventData = await queryEventData(currentDateTime);
   const events = eventData.value;
 
