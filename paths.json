@@ -64,8 +64,8 @@
     "/content/world-bank.resource/ext/fr/query-index.json:/ext/fr/query-index.json",
     "/content/world-bank.resource/ext/es/query-index.json:/ext/es/query-index.json",
     "/content/world-bank.resource/ext/ar/query-index.json:/ext/ar/query-index.json",
-    "/content/world-bank/corporate/placeholders:/ext/placeholders.json"
-
+    "/content/world-bank/corporate/placeholders:/ext/placeholders.json",
+    "/content/world-bank/corporate/taxonomy:/ext/taxonomy.json"
   ],
   "includes": ["/content/world-bank/"]
 }
