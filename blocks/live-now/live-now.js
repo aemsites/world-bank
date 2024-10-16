@@ -154,7 +154,7 @@ async function buildModal(title, thumbnailPath, url) {
             <img src='${discussionSvg}' alt='Discussion symbol'></img>
             <div class='wblive-header-txt'>${modalHeader}</div>
           </div>
-          <div class='event-title-txt'>${title}</div>
+          <a href='${url}${cidCode}' target='_blank' class='event-title-txt'>${title}</a>
         </div>
       </div>
       <div class='modal-column-right'>
