@@ -79,15 +79,17 @@ function populateTab(data, tabPanel, elementType, createItemFn) {
   let displayedItemsCount = 0;
   const itemsPerPage = 5;
 
-  function loadMoreItems() {
+  async function loadMoreItems() {
     removeShowMoreButton(tabPanel);
     const remainingItems = items.slice(displayedItemsCount, displayedItemsCount + itemsPerPage);
     remainingItems.forEach((item) => {
-      const liElement = createItemFn(item);
-      tabPanel.appendChild(liElement);
+      if (Object.keys(item).length !== 0) {
+        const liElement = createItemFn(item);
+        tabPanel.appendChild(liElement);
+      }
     });
     displayedItemsCount += remainingItems.length;
-    showMoreButton(tabPanel, loadMoreItems);
+    await showMoreButton(tabPanel, loadMoreItems);
     if (displayedItemsCount >= items.length) {
       removeShowMoreButton(tabPanel);
     }
