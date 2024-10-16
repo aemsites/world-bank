@@ -131,6 +131,11 @@ dialog.livenow-modal:modal .event-title .event-title-txt {
   color: var(--accent-blue-primary-70);
   font-size: 36px;
   line-height: 44px;
+  text-decoration: none;
+}
+
+dialog.livenow-modal:modal .event-title .event-title-txt:hover {
+  color: var(--global-interactive-on-dark-hover)
 }
 
 dialog.livenow-modal:modal .modal-column-left {
