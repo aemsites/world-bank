@@ -1,21 +1,23 @@
 import { div } from '../../scripts/dom-helpers.js';
 import { CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
-import { TAG_ROOT } from '../../scripts/utils.js';
+import { TAG_ROOT, getTaxonomy } from '../../scripts/utils.js';
 
 const isMobile = window.matchMedia('(max-width: 768px)');
 const desktopConst = 400;
 const tabConst = 150;
 const tabTopPosition = 100;
-function createCard(card) {
+
+async function createCard(card) {
   const [cardtitle, carddesc, imagediv] = card.children;
   if (!cardtitle || !carddesc || !imagediv) {
     return;
   }
-  cardtitle.textContent = cardtitle.textContent.replace(
+  const tagName = cardtitle.textContent;
+  cardtitle.textContent = await getTaxonomy(tagName);
+  card.className = tagName.replace(
     `${TAG_ROOT}category/`,
     '',
-  );
-  card.className = cardtitle.textContent.trim();
+  ).trim();
   cardtitle.className = 'cardtitle';
   carddesc.className = 'carddesc';
 }
