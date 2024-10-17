@@ -12,6 +12,7 @@ import {
   loadCSS,
   fetchPlaceholders,
   getMetadata,
+  loadScript,
 } from './aem.js';
 import { picture, source, img } from './dom-helpers.js';
 
@@ -22,6 +23,8 @@ import {
   setPageLanguage,
   cookiePopUp,
   showCookieConsent,
+  isInternalPage,
+  scriptEnabled,
   PATH_PREFIX,
 } from './utils.js';
 
@@ -236,6 +239,14 @@ export async function load404() {
   return null;
 }
 
+async function loadAdobeLaunch() {
+  if (!scriptEnabled()) { return; }
+
+  const config = await fetchPlaceholders(PATH_PREFIX);
+  const env = config.environment || 'Dev';
+  await loadScript(config[`analyticsEndpoint${env}`]);
+}
+
 async function loadEager(doc) {
   setPageLanguage();
   decorateTemplateAndTheme();
@@ -328,6 +339,10 @@ function decorateSectionImages(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadBlocks(main);
+
+  if (!isInternalPage()) {
+    await loadAdobeLaunch();
+  }
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

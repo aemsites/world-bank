@@ -1,13 +1,9 @@
 // add delayed functionality here
-import {
-  getMetadata, loadScript, fetchPlaceholders,
-} from './aem.js';
+import { getMetadata } from './aem.js';
 import {
   a, span, i,
 } from './dom-helpers.js';
-import {
-  isInternalPage, scriptEnabled, PATH_PREFIX,
-} from './utils.js';
+
 /**
  * Swoosh on page
  */
@@ -77,19 +73,9 @@ function buildTwitterLinks() {
   });
 }
 
-async function loadAdobeLaunch() {
-  if (!scriptEnabled()) { return; }
-
-  const config = await fetchPlaceholders(PATH_PREFIX);
-  const env = config.environment || 'Dev';
-  await loadScript(config[`analyticsEndpoint${env}`]);
-}
-
-async function loadDelayed() {
+function loadDelayed() {
   pageSwoosh();
   buildTwitterLinks();
-  if (!isInternalPage()) {
-    await loadAdobeLaunch();
-  }
 }
+
 loadDelayed();
