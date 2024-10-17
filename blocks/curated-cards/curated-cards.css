@@ -55,7 +55,6 @@
 }
 
 .curated-cards .feature-card .feature-card-content .feature-card-link {
-  width: 20%;
   display: flex;
   justify-content: flex-end;
   align-self: flex-end;
