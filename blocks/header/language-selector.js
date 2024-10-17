@@ -1,9 +1,9 @@
 import {
   li, ul, a, div,
 } from '../../scripts/dom-helpers.js';
-import { getMetadata } from '../../scripts/aem.js';
+import { getMetadata, fetchPlaceholders } from '../../scripts/aem.js';
 import * as constants from './constants.js';
-import { hasDomainName } from '../../scripts/utils.js';
+import { hasDomainName, PATH_PREFIX } from '../../scripts/utils.js';
 
 function capitalizeFirstLetter(str) {
   if (!str) return str;
@@ -39,7 +39,13 @@ const toggleExpandLanguageSelector = (e) => {
   toggleLangContent(toggleContainer);
 };
 
-const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCode) => {
+const fetchLanguageSelectorContent = async (placeholdersData, metaLangContent, langCode) => {
+  let domain = window?.placeholders[PATH_PREFIX]?.siteDomain;
+  if (!domain) {
+    const config = await fetchPlaceholders(PATH_PREFIX);
+    domain = config.siteDomain;
+  }
+
   const ulElement = ul();
   if (metaLangContent && metaLangContent.split(constants.COMMA_SEPARATOR).length > 0) {
     const langPairs = metaLangContent.split(constants.COMMA_SEPARATOR);
@@ -50,7 +56,7 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
 
       if (langCode === language) return;
 
-      const url = hasDomainName(authoredUrl) ? authoredUrl : `${window?.placeholders['/ext']?.siteDomain}${authoredUrl}`;
+      const url = hasDomainName(authoredUrl) ? authoredUrl : `${domain}${authoredUrl}`;
       let langAttr = {};
       if (language.length === 2) {
         langAttr = { lang: language };
@@ -69,7 +75,7 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
 };
 
 // Create and return Language Selector DOM Element
-const getLanguageSelector = (placeholdersData, lang) => {
+const getLanguageSelector = async (placeholdersData, lang) => {
   const metaLangContent = getMetadata(constants.LANGUAGE_SELECTOR_META_NAME);
 
   const languageToggle = div(
@@ -88,7 +94,7 @@ const getLanguageSelector = (placeholdersData, lang) => {
     updateLanguageTextContent(languageToggle, placeholdersData, lang);
     languageToggle.classList.add(constants.LANGUAGE_TEXT_CLASS);
   } else {
-    const languageMap = fetchLanguageSelectorContent(placeholdersData, metaLangContent, lang);
+    const languageMap = await fetchLanguageSelectorContent(placeholdersData, metaLangContent, lang);
     const languageSelectorContent = div(
       { class: constants.LANGUAGE_CONTENT_CLASS, id: 'language-content' },
       languageMap,
