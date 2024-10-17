@@ -472,7 +472,7 @@ export default async function decorate(block) {
   if (navTools) {
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
     setAccessibilityAttrForSearchIcon(contentWrapper);
-    const languageSelector = getLanguageSelector(placeholdersData, langCode);
+    const languageSelector = await getLanguageSelector(placeholdersData, langCode);
     contentWrapper.prepend(languageSelector);
 
     // Close Search Container on Focus out
