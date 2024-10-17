@@ -365,3 +365,14 @@ export function dynamicMediaAssetProcess(pictureElement, qParam) {
     });
   }
 }
+
+/**
+ * Checks if the given URL contains a domain name.
+ *
+ * @param {string} url - The URL to check.
+ * @returns {boolean} - Returns true if the URL contains a domain name, otherwise false.
+ */
+export function hasDomainName(url) {
+  const domainPattern = /^(https?:\/\/)?([a-z0-9.-]+)\.[a-z]{2,}/i;
+  return domainPattern.test(url);
+}

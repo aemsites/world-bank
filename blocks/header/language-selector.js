@@ -3,6 +3,7 @@ import {
 } from '../../scripts/dom-helpers.js';
 import { getMetadata } from '../../scripts/aem.js';
 import * as constants from './constants.js';
+import { hasDomainName } from '../../scripts/utils.js';
 
 function capitalizeFirstLetter(str) {
   if (!str) return str;
@@ -43,9 +44,13 @@ const fetchLanguageSelectorContent = (placeholdersData, metaLangContent, langCod
   if (metaLangContent && metaLangContent.split(constants.COMMA_SEPARATOR).length > 0) {
     const langPairs = metaLangContent.split(constants.COMMA_SEPARATOR);
     langPairs.forEach((pair) => {
-      const [language, url] = pair.split(constants.PIPE_SEPARATOR).map((part) => part.trim());
+      const [language, authoredUrl] = pair
+        .split(constants.PIPE_SEPARATOR)
+        .map((part) => part.trim());
+
       if (langCode === language) return;
 
+      const url = hasDomainName(authoredUrl) ? authoredUrl : `${window?.placeholders['/ext']?.siteDomain}${authoredUrl}`;
       let langAttr = {};
       if (language.length === 2) {
         langAttr = { lang: language };
