@@ -279,7 +279,7 @@ function createSearchBox() {
     });
 
     Object.assign(searchInputBox, {
-      type: 'text',
+      type: 'search',
       id: 'search-input',
       name: 'myInput',
       placeholder: listOfAllPlaceholdersData.searchVariable || 'Search worldbank.org',
@@ -318,17 +318,20 @@ async function fetchingPlaceholdersData(placeholdersData) {
   settingAltTextForSearchIcon();
 }
 
-async function setTrendingDataAsUrl(tdElement) {
+async function setTrendingDataAsUrl(tdElement, placeholderData) {
   const trendingDataJson = await fetchLangDatabyFileName(constants.TRENDING_DATA_FILENAME);
   const randomTd = trendingDataJson[Math.floor(Math.random() * trendingDataJson.length)];
-  tdElement.textContent = randomTd.Text;
+  const trendingText = placeholderData.trendingData || 'Trending Data';
+  const trendinEl = span(trendingText);
+  const trendingFact = span(randomTd.Text);
+  tdElement.innerHTML = trendinEl.outerHTML + trendingFact.outerHTML;
   return a({ href: randomTd.Link, target: '_blank' }, tdElement);
 }
 
-async function changeTrendingData(navSections) {
+async function changeTrendingData(navSections, placeholderData) {
   if (!navSections) return;
   const trendingDataWrapper = navSections.querySelector('.default-content-wrapper');
-  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(2)'));
+  const trendingDataDiv = await setTrendingDataAsUrl(navSections.querySelector('.default-content-wrapper > p:nth-child(2)'), placeholderData);
   trendingDataWrapper.append(trendingDataDiv);
 }
 
@@ -469,7 +472,7 @@ export default async function decorate(block) {
   if (navTools) {
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
     setAccessibilityAttrForSearchIcon(contentWrapper);
-    const languageSelector = getLanguageSelector(placeholdersData, langCode);
+    const languageSelector = await getLanguageSelector(placeholdersData, langCode);
     contentWrapper.prepend(languageSelector);
 
     // Close Search Container on Focus out
@@ -503,7 +506,7 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
-  if (isDesktop.matches) await changeTrendingData(navSections);
+  if (isDesktop.matches) await changeTrendingData(navSections, placeholdersData);
   fetchingPlaceholdersData(placeholdersData);
   handleMainMenuFocus(block, navSections, hamburger);
 }

@@ -56,6 +56,11 @@
   transform: scale(1.15);
 }
 
+.mini-cards .mini-card .mini-card-image:not(:has(img))
+{
+  display: none;
+}
+
 .mini-card-tag {
   font-weight: var(--font-weight-700);
   font-size: var(--font-size-100);

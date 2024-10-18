@@ -2,7 +2,6 @@ import { div, img } from '../../scripts/dom-helpers.js';
 
 import { fetchLanguagePlaceholders, moveInstrumentation } from '../../scripts/scripts.js';
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { getLanguage, getUrlExtension } from '../../scripts/utils.js';
 
 function createStructure(firstContainer, secondContainer, block) {
   const sectionsContainer = div(
@@ -91,11 +90,6 @@ function createResources(block) {
     downloadImg.src = `${window.hlx.codeBasePath}/icons/download.png`;
     downloadImg.alt = 'download';
     link.insertBefore(downloadImg, link.firstChild);
-    const downloadLink = link.querySelector('a');
-    if (downloadLink) {
-      downloadLink.dataset.customlink = `fd:body content:${getLanguage()}:${getUrlExtension(downloadLink.href)}`;
-      downloadLink.dataset.text = downloadLink.textContent;
-    }
   });
 }
 

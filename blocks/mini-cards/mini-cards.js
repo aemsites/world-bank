@@ -1,16 +1,13 @@
-import { createOptimizedPicture, toCamelCase } from '../../scripts/aem.js';
-import { moveInstrumentation, CLASS_MAIN_HEADING, fetchLanguagePlaceholders } from '../../scripts/scripts.js';
+import { createOptimizedPicture, toClassName } from '../../scripts/aem.js';
+import { moveInstrumentation, CLASS_MAIN_HEADING } from '../../scripts/scripts.js';
 import { a, div } from '../../scripts/dom-helpers.js';
-import { processTags } from '../../scripts/utils.js';
+import { processTags, getTaxonomy } from '../../scripts/utils.js';
 
-const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
-
-function processTag(tag) {
-  let tagTxt = tag.innerText;
+async function processTag(tag) {
+  const tagTxt = tag.innerText;
   if (tagTxt) {
-    tagTxt = processTags(tagTxt, 'content-type');
-    tag.classList.add(tagTxt);
-    tag.firstElementChild.innerText = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
+    tag.classList.add(toClassName(processTags(tagTxt, 'content-type')));
+    tag.firstElementChild.innerText = await getTaxonomy(tagTxt, 'content-type');
   }
 }
 
@@ -20,7 +17,7 @@ export default function decorate(block) {
     heading.classList.add(CLASS_MAIN_HEADING);
   }
   const miniCardsContainer = div({ class: 'mini-card-container' });
-  cards.forEach((row) => {
+  cards.forEach(async (row) => {
     row.className = 'mini-card';
     const [imageDiv, tagDiv, titleDiv, dateDiv, timeDiv, locationDiv, linkDiv, alt] = row.children;
     imageDiv.className = 'mini-card-image';
@@ -43,7 +40,7 @@ export default function decorate(block) {
       timeDiv.remove();
     }
     if (tagDiv) {
-      processTag(tagDiv);
+      await processTag(tagDiv);
     }
     const text = div({ class: 'mc-text-wrapper' }, tagDiv, a({ href: link }, titleDiv), div({ class: 'date-time-info' }, dateDiv, timeDiv.textContent ? timeDiv : ''), locationDiv);
     row.append(text, a({ href: link }, imageDiv));

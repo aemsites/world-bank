@@ -89,13 +89,53 @@
           ]
         },
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "url",
+          "value": "",
+          "label": "URL",
+          "condition": {
+            "!=": [{ "var": "tab-type" }, "manual"]
+          }
+        }, 
+        {
+          "component": "boolean",
+          "label": "POST",
+          "name": "post",
+          "value": "false",
+          "valueType": "boolean",
+          "condition": {
+            "==": [{ "var": "tab-type" }, "blogs"]
+          }
+        }, 
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "body",
+          "value": "",
+          "label": "Body",
+          "condition": {
+            "===": [
+              {
+                "var": "post"
+              },
+              true
+            ]
+          }
+          },
+          {
           "component": "aem-content",
           "valueType": "string",
           "name": "fragmentPath",
           "value": "",
           "label": "Fragment Path",
           "condition": {
-            "==": [{ "var": "tab-type" }, "manual"]
+            "==": [
+              {
+                "var": "tab-type"
+              },
+              "manual"
+            ]
           }
         }
       ]

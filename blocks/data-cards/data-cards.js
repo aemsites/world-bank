@@ -1,27 +1,22 @@
-import { processTags } from '../../scripts/utils.js';
+import { toClassName } from '../../scripts/aem.js';
+import { processTags, getTaxonomy } from '../../scripts/utils.js';
 import {
   div, a, p, img, button,
 } from '../../scripts/dom-helpers.js';
-import { toCamelCase } from '../../scripts/aem.js';
-import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
-const listOfAllPlaceholdersData = await fetchLanguagePlaceholders();
-
-function processTag(tag) {
-  let tagTxt = tag.innerText;
+async function processTag(tag) {
+  const tagTxt = tag.innerText;
   if (tagTxt) {
-    tagTxt = processTags(tagTxt, 'category');
-    tag.classList.add(tagTxt);
-    tag.firstElementChild.innerText = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
+    tag.classList.add(toClassName(processTags(tagTxt, 'category')));
+    tag.firstElementChild.innerText = await getTaxonomy(tagTxt, 'category');
   }
 }
 
-function processNewsTag(tag) {
-  let tagTxt = tag.innerText;
+async function processNewsTag(tag) {
+  const tagTxt = tag.innerText;
   if (tagTxt) {
-    tagTxt = processTags(tagTxt, 'category');
-    tag.nextElementSibling.classList.add(tagTxt);
-    tag.firstElementChild.innerText = listOfAllPlaceholdersData[toCamelCase(tagTxt)] || tagTxt;
+    tag.nextElementSibling.classList.add(processTags(tagTxt, 'category'));
+    tag.firstElementChild.innerText = await getTaxonomy(tagTxt, 'category');
   }
 }
 
@@ -207,7 +202,7 @@ export default async function decorate(block) {
     newsCardItems.append(...cards);
     block.append(newsCardItems);
 
-    cards.forEach((row) => {
+    cards.forEach(async (row) => {
       row.className = 'news-card';
       const [tag, title, link, image, alt] = [...row.children];
       tag.className = 'news-card-tag';
@@ -225,7 +220,7 @@ export default async function decorate(block) {
       link.remove();
 
       if (tag) {
-        processNewsTag(tag);
+        await processNewsTag(tag);
       }
       row.parentNode.insertBefore(anchor, row);
       anchor.appendChild(row);

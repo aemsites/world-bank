@@ -8,13 +8,22 @@ import { fetchLanguagePlaceholders } from '../../scripts/scripts.js';
 
 const langCode = getLanguage();
 const upiId = getMetadata('upi');
+const globalProperties = await fetchPlaceholders();
+const langMap = globalProperties.langMap || '[{"code": "en", "name": "English"}]';
+
+function getLanguageName(code) {
+  const languages = JSON.parse(langMap);
+  const language = languages.find((lang) => lang.code === code);
+  return language ? language.name : 'English';
+}
+
+const langName = getLanguageName(langCode);
 
 async function getTabUrl(type) {
   try {
     const tabUrl = `${type}Url`;
-    const globalProperties = await fetchPlaceholders();
     const rawUrl = globalProperties[`${tabUrl}`];
-    return rawUrl.replace('{langCode}', langCode).replace('{upiId}', upiId);
+    return rawUrl.replace('{langCode}', langCode).replace('{upiId}', upiId).replace('{langName}', langName);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error(`Error fetching tab URL for type: ${type}`, error);
@@ -70,15 +79,17 @@ function populateTab(data, tabPanel, elementType, createItemFn) {
   let displayedItemsCount = 0;
   const itemsPerPage = 5;
 
-  function loadMoreItems() {
+  async function loadMoreItems() {
     removeShowMoreButton(tabPanel);
     const remainingItems = items.slice(displayedItemsCount, displayedItemsCount + itemsPerPage);
     remainingItems.forEach((item) => {
-      const liElement = createItemFn(item);
-      tabPanel.appendChild(liElement);
+      if (Object.keys(item).length !== 0) {
+        const liElement = createItemFn(item);
+        tabPanel.appendChild(liElement);
+      }
     });
     displayedItemsCount += remainingItems.length;
-    showMoreButton(tabPanel, loadMoreItems);
+    await showMoreButton(tabPanel, loadMoreItems);
     if (displayedItemsCount >= items.length) {
       removeShowMoreButton(tabPanel);
     }
@@ -139,11 +150,11 @@ function populateAllTab(data, tabPanel) {
   });
 }
 
-async function fetchDataForTab(type, url) {
+async function fetchDataForTab(type, url, postDataString) {
   if (type === 'blogs') {
     const postData = {
       search: '*',
-      filter: `(bloggers/any(blogger: blogger/upi eq '${upiId}') and (language eq 'English'))`,
+      filter: `(bloggers/any(blogger: blogger/upi eq '${upiId}') and (language eq '${langName}'))`,
       top: 50,
       skip: 0,
       orderby: 'blogDate desc',
@@ -152,7 +163,7 @@ async function fetchDataForTab(type, url) {
     const headers = {
       'ocp-apim-subscription-key': 'a02440fa123c4740a83ed288591eafe4',
     };
-    return fetchData(url, 'POST', headers, postData);
+    return fetchData(url, 'POST', headers, postDataString || postData);
   }
   return fetchData(url);
 }
@@ -168,14 +179,16 @@ function removeSpinner(tabPanel) {
 }
 
 async function decorateTab(tabPanel, type) {
-  tabPanel.innerHTML = '';
-  showSpinner(tabPanel);
-
   if (!scriptEnabled()) return;
-
-  const url = await getTabUrl(type);
-  const data = await fetchDataForTab(type, url);
-
+  let body;
+  const url = tabPanel.children[2]?.textContent.trim() || await getTabUrl(type);
+  if (type === 'blogs' && tabPanel.children[4]?.textContent) {
+    body = JSON.parse(tabPanel.children[4]?.textContent.trim());
+  }
+  const tabReference = tabPanel;
+  tabPanel.innerHTML = '';
+  showSpinner(tabReference);
+  const data = await fetchDataForTab(type, url, body);
   if (data) {
     if (type === 'blogs') populateBlogTab(data, tabPanel);
     else if (type === 'publication') populatePublicationTab(data, tabPanel);
@@ -240,7 +253,6 @@ export default async function decorate(block) {
     tabpanel.setAttribute('role', 'tabpanel');
     tabpanel.setAttribute('type', tabType);
     tabpanel.setAttribute('data-loaded', false);
-    tabpanel.children[1].remove();
 
     const tabButton = button({
       class: 'tab-title',
@@ -296,7 +308,6 @@ export default async function decorate(block) {
     }
 
     tabBtnContainer.append(tabListEl);
-    tab.remove();
   });
 
   block.querySelectorAll('[type="manual"] a').forEach(async (link) => {

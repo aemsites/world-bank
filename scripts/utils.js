@@ -77,6 +77,61 @@ export function processTags(tag, prefix = '') {
 }
 
 /**
+ * Gets taxonomy object.
+ *
+ * @returns {object} Window taxonomy object
+ */
+// eslint-disable-next-line import/prefer-default-export
+export async function fetchTaxonomy() {
+  const langCode = getLanguage();
+  if (!window.taxonomy) {
+    window.taxonomy = window.taxonomy || {};
+    let queryString = '';
+    if (langCode !== 'en') {
+      queryString = `?sheet=${langCode}`;
+    }
+    window.taxonomy = new Promise((resolve) => {
+      fetch(`/ext/taxonomy.json${queryString}`)
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          }
+          return {};
+        })
+        .then((json) => {
+          const tags = {};
+          json.data
+            .filter((tag) => tag.tag)
+            .forEach((tag) => {
+              tags[tag.tag] = tag.title;
+            });
+          window.taxonomy = tags;
+          resolve(window.taxonomy);
+        })
+        .catch(() => {
+          // error loading taxonomy
+          window.taxonomy = {};
+          resolve(window.taxonomy);
+        });
+    });
+  }
+  return window.taxonomy;
+}
+
+/**
+ * Fetch localized tag from AEM taxonomy
+ * @param {*} tag
+ * @returns
+ */
+export async function getTaxonomy(tag, prefix = '') {
+  const tags = await fetchTaxonomy();
+  if (tags) {
+    return tags[tag] || processTags(tag, prefix);
+  }
+  return null;
+}
+
+/**
  * Add a link tag around img tag if image is following by a tag
  * @param {*} container
  */
@@ -309,4 +364,15 @@ export function dynamicMediaAssetProcess(pictureElement, qParam) {
       }
     });
   }
+}
+
+/**
+ * Checks if the given URL contains a domain name.
+ *
+ * @param {string} url - The URL to check.
+ * @returns {boolean} - Returns true if the URL contains a domain name, otherwise false.
+ */
+export function hasDomainName(url) {
+  const domainPattern = /^(https?:\/\/)?([a-z0-9.-]+)\.[a-z]{2,}/i;
+  return domainPattern.test(url);
 }
