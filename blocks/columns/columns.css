@@ -573,12 +573,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   .columns.columns-2-cols.column-layout-67-33 > div > div:last-child {
     flex-basis: 33%;
   }
-
-  .columns.columns-2-cols.column-layout-33-67 > div > div:last-child,
-  .columns.columns-2-cols.column-layout-67-33 > div > div:first-child {
-    flex-basis: 67%;
-  }
-
+  
   .columns.columns-2-cols.column-layout-25-75 > div > div:first-child,
   .columns.columns-2-cols.column-layout-75-25 > div > div:last-child {
     flex-basis: 25%;

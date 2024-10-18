@@ -12,6 +12,7 @@ import {
  * Swoosh on page
  */
 
+//Adobe Target
 window.targetGlobalSettings = {
   bodyHidingEnabled: false,
 };
