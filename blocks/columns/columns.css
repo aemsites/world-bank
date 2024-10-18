@@ -349,6 +349,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   border-bottom-color: var(--global-interactive-on-dark-hover);
 }
 
+.columns.columns-feature-card .button-container a.button:focus {
+  color: var(--accent-blue-primary-70);
+}
+
 .columns.columns-feature-card .columns-feature-card-content:last-child {
   margin-bottom: var(--spacing-xhuge);
 }
@@ -573,12 +577,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   .columns.columns-2-cols.column-layout-67-33 > div > div:last-child {
     flex-basis: 33%;
   }
-
-  .columns.columns-2-cols.column-layout-33-67 > div > div:last-child,
-  .columns.columns-2-cols.column-layout-67-33 > div > div:first-child {
-    flex-basis: 67%;
-  }
-
+  
   .columns.columns-2-cols.column-layout-25-75 > div > div:first-child,
   .columns.columns-2-cols.column-layout-75-25 > div > div:last-child {
     flex-basis: 25%;
@@ -738,3 +737,10 @@ main .section.bg-default:first-child .default-content-wrapper p:has(picture){
   margin-bottom: 0;
  }
  
+
+ @media(width <= 320px) {
+  a.button:any-link, button
+  {
+    white-space: wrap;
+  }
+ }

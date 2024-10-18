@@ -38,10 +38,10 @@
     border-color: var(--global-interactive-on-dark-hover);
 }
 
-html[dir="rtl"] .teaser-wrapper .video-container .video-play,
-html[dir="rtl"] .teaser-wrapper .video-container .video-pause {
+html[dir="rtl"] .teaser-wrapper .video-container .video-play .video-play-btn,
+html[dir="rtl"] .teaser-wrapper .video-container .video-pause .video-pause-btn{
     right: 20px;
-    left: auto;
+    left: unset;
 }
 
 .video-container .video-play .controls, .video-container .video-pause .controls {
