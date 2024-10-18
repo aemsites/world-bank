@@ -113,11 +113,6 @@ function htmlParser(htmlObj, ul, prepend = '') {
       const pictureTagHandler = addAnchorTag(contentValue);
       li.appendChild(pictureTagHandler);
     } else {
-      // if (!contentValue.querySelector('svg')) {
-      //   contentValue.textContent = contentValue.textContent.trim();
-      // }
-
-      // console.log(contentValue);
       li.appendChild(contentValue);
     }
 
