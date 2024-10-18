@@ -349,6 +349,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
   border-bottom-color: var(--global-interactive-on-dark-hover);
 }
 
+.columns.columns-feature-card .button-container a.button:focus {
+  color: var(--accent-blue-primary-70);
+}
+
 .columns.columns-feature-card .columns-feature-card-content:last-child {
   margin-bottom: var(--spacing-xhuge);
 }
