@@ -739,7 +739,6 @@ main .section.bg-default:first-child .default-content-wrapper p:has(picture){
  
 
  @media(width <= 320px) {
-
   a.button:any-link, button
   {
     white-space: wrap;
