@@ -11,6 +11,11 @@ import {
 /**
  * Swoosh on page
  */
+
+window.targetGlobalSettings = {
+  bodyHidingEnabled: false,
+};
+
 function pageSwoosh() {
   const pSwoosh = getMetadata('page-swoosh');
   if (!pSwoosh || pSwoosh.length < 1) return;
