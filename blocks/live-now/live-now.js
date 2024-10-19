@@ -46,7 +46,9 @@ async function queryEventData(dateTime) {
   const subkey = 'a02440fa123c4740a83ed288591eafe4';
   const requestMethod = 'POST';
   const contentType = 'application/json';
-  const dateString = dateTime.toISOString();
+  const estDateString = dateTime.toLocaleString('en-US', { timeZone: 'America/New_York' });
+  const estDate = new Date(estDateString);
+  const utcDate = estDate.toISOString();
   const langCode = getLanguage() || 'en';
 
   const payload = {
@@ -54,7 +56,7 @@ async function queryEventData(dateTime) {
     facets: [
       'topics,count:1000',
     ],
-    filter: `hideOnSearch ne 'true' and languageCode eq '${langCode}' and (eventStartDate gt ${dateString} or (eventStartDate lt ${dateString} and eventEndDate gt ${dateString})) and searchType eq 'event'`,
+    filter: `hideOnSearch ne 'true' and languageCode eq '${langCode}' and (eventStartDate gt ${utcDate} or (eventStartDate lt ${utcDate} and eventEndDate gt ${utcDate})) and searchType eq 'event'`,
     count: true,
     searchFields: '*',
     top: 10,
@@ -196,6 +198,7 @@ export default async function decorate(block) {
   const testMode = (block.classList.contains('test-mode'));
   const sessionCookieName = 'wbEventGuid';
   const currentDateTime = new Date();
+  const currentDateTimeInEST = new Date(currentDateTime.toLocaleString('en-US', { timeZone: 'America/New_York' }));
 
   const eventData = await queryEventData(currentDateTime);
   const events = eventData.value;
@@ -203,7 +206,7 @@ export default async function decorate(block) {
   const filteredEvents = events.filter((event) => {
     const startDate = new Date(event.eventStartDate);
     const endDate = new Date(event.eventEndDate);
-    return currentDateTime >= startDate && currentDateTime <= endDate;
+    return currentDateTimeInEST >= startDate && currentDateTimeInEST <= endDate;
   });
 
   let liveNowModal;
