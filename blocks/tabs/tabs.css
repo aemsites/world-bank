@@ -93,6 +93,16 @@
   text-align: right;
 }
 
+html[dir='rtl'] .tab-navigation .tabs-list .left-btn {
+  right: 0;
+  left: unset;
+}
+
+html[dir='rtl'] .tab-navigation .tabs-list .right-btn {
+  left: 0;
+  right: unset;
+}
+
 /* tabs-panel starts here */
 
 .tabs .tabs-panel {

@@ -202,24 +202,43 @@ async function decorateTab(tabPanel, type) {
   removeSpinner(tabPanel);
 }
 
+function getScrollLeftRTL(element) {
+  const isRTL = document.documentElement.dir === 'rtl';
+
+  if (!isRTL) return element.scrollLeft;
+
+  const { scrollLeft } = element;
+  const maxScroll = element.scrollWidth - element.clientWidth;
+
+  return Math.abs(scrollLeft) === maxScroll ? 0 : maxScroll + scrollLeft;
+}
+
 function createTabListWithButtons(tabBtnContainer) {
   const tablist = div({ class: 'tabs-list' });
   const rightbtn = button({ class: 'right-btn' }, '>>');
   const leftbtn = button({ class: 'left-btn' }, '<<');
+  const dir = document.documentElement.dir || 'ltr';
+  const offset = 150;
 
   const iconVisibility = () => {
-    const scrollLeftValue = Math.ceil(tabBtnContainer.scrollLeft);
+    const scrollLeftValue = getScrollLeftRTL(tabBtnContainer);
     const scrollableWidth = tabBtnContainer.scrollWidth - tabBtnContainer.clientWidth;
-    leftbtn.style.display = scrollLeftValue > 0 ? 'block' : 'none';
-    rightbtn.style.display = scrollableWidth > 0 && scrollLeftValue < scrollableWidth ? 'block' : 'none';
+
+    if (dir === 'rtl') {
+      leftbtn.style.display = scrollableWidth > 0 && scrollLeftValue < scrollableWidth ? 'block' : 'none';
+      rightbtn.style.display = scrollLeftValue > 1 ? 'block' : 'none';
+    } else {
+      leftbtn.style.display = scrollLeftValue > 0 ? 'block' : 'none';
+      rightbtn.style.display = scrollableWidth > 0 && scrollLeftValue < scrollableWidth ? 'block' : 'none';
+    }
   };
   rightbtn.addEventListener('click', () => {
-    tabBtnContainer.scrollLeft += 150;
+    tabBtnContainer.scrollLeft += dir === 'rtl' ? -offset : offset;
     iconVisibility();
   });
 
   leftbtn.addEventListener('click', () => {
-    tabBtnContainer.scrollLeft -= 150;
+    tabBtnContainer.scrollLeft += dir === 'rtl' ? offset : -offset;
     iconVisibility();
   });
 
