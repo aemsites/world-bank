@@ -550,3 +550,15 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
     margin: 0;
   }
 }
+
+@media (width <= 390px) {
+  .ft-social .ft-social-list:first-child > ul > li a {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .ft-social .ft-social-list:first-child > ul > li a img {
+    width: 100%;
+    object-fit: contain;
+  }
+}

@@ -1273,13 +1273,13 @@ main .section[class*='bg-'][data-sec-inside-container="true"] > div {
 }
 
 main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
-  padding: 0 0 0 28px;
+  padding: 0 0 0 16px;
   border-radius: 10px 10px 0 0;
-  max-width: calc(var(--screen-width) - 28px);
+  max-width: calc(var(--screen-width) - 16px);
 }
 
 html[dir="rtl"] main .section[class*='bg-'][data-sec-inside-container="true"] > div.breadcrumb-wrapper {
-  padding: 0 28px 0 0;
+  padding: 0 16px 0 0;
   border-radius: 10px 10px 0 0;
 }
 
