@@ -1438,6 +1438,10 @@ body::-webkit-scrollbar {
   .cookie-tooltip > .container > button > span {
       font-size: var(--font-size-200);
   }
+
+  html[lang='ru'] .button:any-link, button {
+   white-space: normal;
+  }
 }
 
 /* End of Cookie Pop Up Styles */

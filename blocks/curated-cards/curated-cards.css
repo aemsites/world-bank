@@ -207,4 +207,8 @@
   .curated-cards.list ul li {
     grid-template-columns: 84px 1fr;
   }
+
+  html[lang='ru'] .curated-cards .feature-card .feature-card-content {
+   bottom: 0;
+  }
 }
