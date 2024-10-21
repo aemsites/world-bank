@@ -274,7 +274,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   }
 
   .ft-legal .ft-legal-list:last-child ul li {
-    margin: 8px 20px 8px 0;
+    margin: 8px 0;
   }
 
   .ft-social .ft-social-list:last-child ul li:not(:last-child) {
@@ -309,6 +309,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   .ft-legal .ft-legal-list:last-child ul {
     flex-wrap: wrap;
     justify-content: center;
+    column-gap: 20px;
   }
 
   html[dir="rtl"] .ft-social .ft-social-list:last-child ul {
@@ -385,6 +386,7 @@ html[dir="rtl"] .ft-main-item:not(:last-child) {
   .ft-legal .ft-legal-list:last-child ul li a {
     margin: 0;
     padding: 0;
+    white-space: break-spaces;
   }
 }
 
