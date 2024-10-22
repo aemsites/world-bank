@@ -207,4 +207,8 @@
   .curated-cards.list ul li {
     grid-template-columns: 84px 1fr;
   }
+  
+  .curated-cards.list ul li a {
+    grid-template-columns: minmax(20%, 84px) 1fr;
+  }
 }

@@ -177,13 +177,16 @@ html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before {
 
 @media (width < 768px) {
     .columns.columns-transform-teaser .columns-img-col::before {
-        right: 9%;
+      top: 20%;
+      right: 3%;
+      height: 353px;
+      background-image: url('../../icons/swoosh-mobile.svg');
     }
-  
+
     html[dir="rtl"] .columns.columns-transform-teaser .columns-img-col::before { 
-        left: 10%;
-        top: 14%;
-        right: auto;
+      left: 3%;
+      top: 18%;
+      right: unset;
     }
   }
 

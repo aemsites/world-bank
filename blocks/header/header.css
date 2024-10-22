@@ -305,6 +305,10 @@ header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hove
   .language-text {
     text-transform: uppercase;
   }
+
+  .search-icon {
+    width: 24px;
+  }
 }
 
 /* End of language selector styles */
