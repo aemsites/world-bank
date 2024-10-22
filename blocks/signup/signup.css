@@ -81,6 +81,12 @@ html[dir="rtl"] .input-group .floating-placeholder {
 
 .email-signup-container .checkbox-group label p a {
   font-size: var(--font-size-100);
+  line-height: inherit;
+}
+
+.email-signup-container .checkbox-group label p a:visited {
+  color: var(--neutral-solid-90-s);
+  text-decoration-color: var(--neutral-solid-90-s);
 }
 
 .email-signup-container button#signup-btn,
@@ -205,6 +211,7 @@ html[dir="rtl"] .email-signup-container .error-message {
 
   .email-signup-container .checkbox-group label p a {
     font-size: var(--font-size-300);
+    line-height: 25px;
   }
 }
 

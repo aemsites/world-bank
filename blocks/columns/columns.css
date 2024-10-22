@@ -513,6 +513,10 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
     justify-content: center;
     align-items: center;
   }
+
+  .bg-primary-blue-90 .columns.columns-transform-teaser .columns-img-col img {
+    width: 272px;
+  }
 }
 
 @media (width >= 1024px) {
