@@ -70,6 +70,10 @@
   padding: 0 0 0 23px;
 }
 
+.columns.columns-divider-variant > div > div > ul ~ p {
+  color: var(--text-on-light-default);
+}
+
 .columns.columns-feature-card .columns-feature-card-content > p,
 .columns.columns-feature-card .columns-feature-card-content > p strong > em > a {
   margin: 0;
@@ -526,7 +530,7 @@ html[dir="rtl"] .columns.columns-feature-card .columns-feature-card-description 
 
   .columns.columns-feature-card > div {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, calc(33.3333% - 64px));
     column-gap: 96px;
     align-items: flex-start;
   }
