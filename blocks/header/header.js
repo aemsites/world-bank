@@ -426,7 +426,7 @@ export default async function decorate(block) {
     : `${PATH_PREFIX}/${langCode}/nav`;
   const fragment = await loadFragment(navPath);
   const placeholdersData = await fetchLanguagePlaceholders();
-  fetchLanguageNavigation(`/${langCode}`);
+  // fetchLanguageNavigation(`/${langCode}`); moved to eager in scripts.js
 
   // decorate nav DOM
   block.textContent = '';
