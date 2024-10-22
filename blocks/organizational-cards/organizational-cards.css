@@ -142,6 +142,7 @@ html[dir="rtl"] .organizational-card:not(first-child) {
   font-size: var(--font-size-200);
   line-height: 125%;
   width: 100%;
+  min-width: 180px;
 }
 
 .organizational-card .card-mission {
