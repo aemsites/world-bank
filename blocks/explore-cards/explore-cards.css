@@ -92,8 +92,7 @@
     position: absolute;
     bottom: 0;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: flex-end;
     height: 100%;
     left: 0;
