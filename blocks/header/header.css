@@ -306,7 +306,7 @@ header .nav-menu-overlay .nav-menu .nav-menu-column.right .browse-country a:hove
     text-transform: uppercase;
   }
 
-  .search-icon {
+  .search-input-container .search-icon {
     width: 24px;
   }
 }
@@ -435,6 +435,7 @@ html[dir="rtl"] .section.nav-sections .default-content-wrapper p > span:first-ch
   border: unset;
   padding: unset;
   margin: unset;
+  font-weight: 700;
   border-left: 2px solid var(--accent-blue-primary-40);
   padding-left: 14px;
   margin-left: var(--spacing-small);
@@ -1787,4 +1788,12 @@ input::-webkit-clear-button {
     width: 40vw; /* fallback */
     width: 40dvw;
   }
+
+  header
+  .nav-menu-overlay
+  .nav-menu-column.right
+  .browse-country
+  input[type="text"]::placeholder {
+  font-size: 4vw;
+}
 }

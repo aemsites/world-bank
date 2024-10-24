@@ -74,15 +74,15 @@
   border-bottom: 2px solid #0049724d;
 }
 
-.cards-container .rp-card:hover .text-content a.title {
+.cards-container .rp-card .text-content a.title:hover {
   color: var(--global-interactive-on-dark-focused);
 }
 
-.cards-container .rp-card:hover .text-content .desc {
+.cards-container .rp-card .text-content:has(a.title:hover) .desc {
   border-top-color: var(--global-interactive-on-dark-hover);
 }
 
-.cards-container .rp-card:hover .text-content .card-btn div {
+.cards-container .rp-card .text-content .card-btn div:hover {
   border-bottom-color: var(--global-interactive-on-dark-hover);
 }
 

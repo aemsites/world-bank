@@ -248,6 +248,10 @@ html[lang="ru"] .teaser-wrapper .button-container > a {
     .teaser-wrapper {
         padding: 0;
     }
+    
+    .teaser-wrapper .teaser-title {
+        font-size: 22px;
+    }
 
     .teaser-wrapper > .teaser.block > .teaser-container {
         height: 471px;
