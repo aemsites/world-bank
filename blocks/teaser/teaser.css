@@ -233,6 +233,10 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause .video-pause-btn{
     .teaser-wrapper {
         padding: 0;
     }
+    
+    .teaser-wrapper .teaser-title {
+        font-size: 22px;
+    }
 
     .teaser-wrapper > .teaser.block > .teaser-container {
         height: 471px;

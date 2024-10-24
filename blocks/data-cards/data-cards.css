@@ -401,6 +401,10 @@ html[dir="rtl"] .data-cards.news-card-variation .rte-container>div:nth-child(3)>
   margin: 0 0 var(--spacing-xsmall) var(--spacing-xsmall)
 }
 
+.section .data-cards-wrapper .data-cards.news-card-variation > .rte-container > div:nth-child(2) > div > p a:hover {
+  border-bottom: 2px solid var(--background-container-on-light-link-primary-hover);
+}
+
 .section .data-cards-wrapper .data-cards.news-card-variation > .rte-container > div:nth-child(2) > div > p a:focus-visible {
   outline: 2px solid var(--links-focus-color);;
 }
