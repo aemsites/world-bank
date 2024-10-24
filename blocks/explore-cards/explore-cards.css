@@ -91,6 +91,11 @@
 .explore-card .card-content {
     position: absolute;
     bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
     left: 0;
     right: 0;
     padding: var(--spacing-xlarge);
@@ -117,7 +122,9 @@
     font-size: var(--font-size-100);
     font-weight: var(--font-weight-700);
     line-height: 16px;
+    color: var(--text-on-dark-subdued);
     letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 @media (width >=768px) {

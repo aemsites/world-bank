@@ -396,6 +396,10 @@ html[dir="rtl"] .data-cards .news-card .news-card-title::before {
   color: var(--text-on-light-link-primary-enabled);
 }
 
+.section .data-cards-wrapper .data-cards.news-card-variation > .rte-container > div:nth-child(2) > div > p a:hover {
+  border-bottom: 2px solid var(--background-container-on-light-link-primary-hover);
+}
+
 html[dir="rtl"] .data-cards.data-card-variation .rte-container>div:nth-child(3)>div>p.button-container a,
 html[dir="rtl"] .data-cards.news-card-variation .rte-container>div:nth-child(3)>div>p.button-container a {
   margin: 0 0 var(--spacing-xsmall) var(--spacing-xsmall)
