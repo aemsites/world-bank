@@ -91,8 +91,23 @@ html[dir="rtl"] .teaser-wrapper .video-container .video-pause .video-pause-btn{
     line-height: 1.4;
 }
 
+html[lang="ru"] .teaser-wrapper .teaser-title {
+    padding: 0;
+    font-size: 1.5rem;
+    max-width: 275px;
+}
+
+
 .teaser-wrapper .button-container {
     padding: 15px 0 32px;
+}
+
+html[lang="ru"] .teaser-wrapper .button-container {
+    padding: 0;
+}
+
+html[lang="ru"] .teaser-wrapper .button-container > a {
+    margin-bottom: 0;
 }
 
 .teaser-wrapper .teaser-swoosh-wrapper {
