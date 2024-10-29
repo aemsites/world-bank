@@ -18,7 +18,6 @@ export const LEVEL_0 = 'level0';
 export const LEVEL_1 = 'level1';
 export const LEVEL_2 = 'level2';
 export const NAV = 'nav';
-export const TRENDING_DATA_FILENAME = 'trending';
 
 export const SEARCH_BY_COUNTRY = 'Search By Country';
 export const NAV_MENU_COLUMN_RIGHT = 'nav-menu-column right';
