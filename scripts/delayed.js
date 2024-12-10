@@ -1,7 +1,6 @@
 // add delayed functionality here
 import {
   getMetadata, loadScript, fetchPlaceholders,
-  sampleRUM,
 } from './aem.js';
 import {
   a, span, i,
@@ -95,7 +94,6 @@ async function loadAdobeLaunch() {
 async function loadDelayed() {
   pageSwoosh();
   buildTwitterLinks();
-  sampleRUM('cwv');
   if (!isInternalPage()) {
     await loadAdobeLaunch();
   }
