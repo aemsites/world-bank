@@ -7,7 +7,6 @@ import {
 
 import {
   fetchLanguagePlaceholders,
-  fetchLangDatabyFileName,
 } from '../../scripts/scripts.js';
 import {
   getLanguage, PATH_PREFIX, fetchLanguageNavigation,
@@ -319,13 +318,19 @@ async function fetchingPlaceholdersData(placeholdersData) {
 }
 
 async function setTrendingDataAsUrl(tdElement, placeholderData) {
-  const trendingDataJson = await fetchLangDatabyFileName(constants.TRENDING_DATA_FILENAME);
-  const randomTd = trendingDataJson[Math.floor(Math.random() * trendingDataJson.length)];
+  const trendingDataArray = Object.keys(placeholderData)
+    .filter((key) => key.startsWith('trendingFact-'))
+    .map((key) => {
+      const [fact, url] = placeholderData[key].split('|');
+      return { [fact]: url };
+    });
+
+  const randomTd = trendingDataArray[Math.floor(Math.random() * trendingDataArray.length)];
   const trendingText = placeholderData.trendingData || 'Trending Data';
   const trendinEl = span(trendingText);
-  const trendingFact = span(randomTd.Text);
+  const trendingFact = span(Object.keys(randomTd)[0]);
   tdElement.innerHTML = trendinEl.outerHTML + trendingFact.outerHTML;
-  return a({ href: randomTd.Link, target: '_blank' }, tdElement);
+  return a({ href: Object.values(randomTd)[0], target: '_blank' }, tdElement);
 }
 
 async function changeTrendingData(navSections, placeholderData) {
