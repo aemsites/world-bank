@@ -22,6 +22,7 @@ import {
   setPageLanguage,
   cookiePopUp,
   showCookieConsent,
+  fetchLanguageNavigation,
   PATH_PREFIX,
 } from './utils.js';
 
@@ -239,6 +240,7 @@ export async function load404() {
 async function loadEager(doc) {
   setPageLanguage();
   decorateTemplateAndTheme();
+  fetchLanguageNavigation(`/${getLanguage()}`);
   await createSkipToMainNavigationBtn();
   await cookiePopUp();
   renderWBDataLayer();

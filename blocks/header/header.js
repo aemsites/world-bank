@@ -10,7 +10,7 @@ import {
   fetchLangDatabyFileName,
 } from '../../scripts/scripts.js';
 import {
-  getLanguage, PATH_PREFIX, fetchLanguageNavigation,
+  getLanguage, PATH_PREFIX,
 } from '../../scripts/utils.js';
 import * as constants from './constants.js';
 import {
@@ -426,7 +426,6 @@ export default async function decorate(block) {
     : `${PATH_PREFIX}/${langCode}/nav`;
   const fragment = await loadFragment(navPath);
   const placeholdersData = await fetchLanguagePlaceholders();
-  fetchLanguageNavigation(`/${langCode}`);
 
   // decorate nav DOM
   block.textContent = '';
